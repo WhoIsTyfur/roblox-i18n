@@ -302,6 +302,10 @@ class ExportTest(Base):
         self.assertIn("es-mx", state["Settings"])
         code, out = run(self.work, "plan", "single", "spanish")
         self.assertIn("0 need work", out)
+        self.assertFalse(os.path.exists(self.loc("es-mx", "batch-01.draft.json")))
+        self.assertTrue(os.path.exists(self.loc("es-mx", os.path.join("history", "001", "batch-01.draft.json"))))
+        code, out = run(self.work, "apply", "es-mx")
+        self.assertEqual(code, 2)
 
     def test_english_variant_writes_source_columns(self):
         run(self.work, "plan", "single", "en-gb")

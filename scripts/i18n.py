@@ -311,11 +311,21 @@ def existing_for(existing_vals, loc, locales_by_id):
     return None
 
 
-def clear_batch(work, locale, n):
-    for kind in ("todo", "draft", "backin", "back", "review", "resolve"):
-        pth = work.batch(locale, n, kind)
-        if os.path.exists(pth):
-            os.remove(pth)
+def archive_batches(work, locale):
+    """Move a finished or abandoned run's batch files to history/NNN so apply never re-reads them."""
+    d = work.loc(locale)
+    if not os.path.isdir(d):
+        return
+    files = [f for f in os.listdir(d) if f.startswith("batch-")]
+    if not files:
+        return
+    n = 1
+    while os.path.exists(os.path.join(d, "history", "%03d" % n)):
+        n += 1
+    dest = os.path.join(d, "history", "%03d" % n)
+    os.makedirs(dest)
+    for f in files:
+        os.replace(os.path.join(d, f), os.path.join(dest, f))
 
 
 def cmd_plan(a):
@@ -347,21 +357,21 @@ def cmd_plan(a):
                 todo.append(k)
             elif ours is None and a.audit:
                 audit.append(k)
-        n = 0
+        new_todos = []
         for mode, keys in (("translate", todo), ("audit", audit)):
             for i in range(0, len(keys), a.batch):
-                n += 1
-                chunk = keys[i:i + a.batch]
-                new = {"locale": loc["id"], "batch": n, "keys": chunk, "mode": mode}
-                if read_json(work.batch(loc["id"], n, "todo"), {}) != new:
-                    clear_batch(work, loc["id"], n)
-                    write_json(work.batch(loc["id"], n, "todo"), new)
-                    if mode == "audit":
-                        write_json(work.batch(loc["id"], n, "draft"),
-                                   {k: {"text": existing_for(existing[k], loc, lbi), "confidence": "unknown",
-                                        "note": "existing translation under audit"} for k in chunk})
-        for m in [m for m in work.batches(loc["id"]) if m > n]:
-            clear_batch(work, loc["id"], m)
+                new_todos.append({"locale": loc["id"], "batch": len(new_todos) + 1,
+                                  "keys": keys[i:i + a.batch], "mode": mode})
+        old = [read_json(work.batch(loc["id"], m, "todo")) for m in work.batches(loc["id"])]
+        if old != new_todos:
+            archive_batches(work, loc["id"])
+            for t in new_todos:
+                write_json(work.batch(loc["id"], t["batch"], "todo"), t)
+                if t["mode"] == "audit":
+                    write_json(work.batch(loc["id"], t["batch"], "draft"),
+                               {k: {"text": existing_for(existing[k], loc, lbi), "confidence": "unknown",
+                                    "note": "existing translation under audit"} for k in t["keys"]})
+        n = len(new_todos)
         plan["batches"][loc["id"]] = n
         total_batches += n
     write_json(work.p("plan.json"), plan)

@@ -23,6 +23,7 @@ no Key use their Source text as the key.
     batch-01.review.json reviewer output
     batch-01.resolve.json resolve-round output (optional)
     final.json           merged result for the locale (written by `apply`)
+    history/NNN/         batch files of earlier runs (moved there by `plan`)
     disputes.json        translator vs reviewer disagreements (written by `apply --resolve`)
     decisions.json       orchestrator rulings: {"key": {"text", "reason", "needs_native"?}}
   out/                   exported files
