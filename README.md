@@ -92,7 +92,74 @@ Tested in Studio on a LocalizationTable (2026-11-08):
 
 So the skill writes one column per locale plus a bare column for the default
 variant of each multi-locale language: `es` = es-mx (Latin America),
-`pt` = pt-br, `fr` = fr-fr, `en` = en-us.
+`pt` = pt-br, `fr` = fr-fr, `en` = en-us. The example's 54 columns were
+loaded into a LocalizationTable in Studio and every locale, plus es-419,
+es-ar, fr-be, pt-ao, zh-hk, zh-sg and en-au, resolved to the intended text.
+
+One more Roblox trap the same test found: `FormatByKey("k", {price = 99})`
+on `Buy for {price} Robux` renders `Buy for 99.00 Robux`. Pass numbers as
+strings or write `{price:int}`; `{n:num}` is locale-aware (`1.250,50` in
+German) but always prints two decimals. The skill's audit step flags this.
+
+## Languages
+
+Confidence and native-review advice come from each guide's independent
+reviewer; render risk is how likely the script is to hit missing glyphs or
+layout trouble in Roblox fonts (many display fonts have no Cyrillic, Greek or
+Asian glyphs). The same data is in `data/locales.json`.
+
+| Locale | Language | Tier | Confidence | Native review | Roblox render risk |
+|---|---|---|---|---|---|
+| `ar-001` | Arabic | main | medium | strongly recommended | medium |
+| `zh-cn` | Chinese (Simplified) | main | high | recommended | medium |
+| `zh-tw` | Chinese (Traditional) | main | high | recommended | medium |
+| `en-gb` | English (United Kingdom) | main | high | optional | low |
+| `en-us` | English (United States) | main | high | optional | none |
+| `fr-ca` | French (Canada) | main | medium | recommended | low |
+| `fr-fr` | French (France) | main | high | recommended | low |
+| `de-de` | German | main | high | recommended | low |
+| `hi-in` | Hindi | main | medium | strongly recommended | medium |
+| `id-id` | Indonesian | main | medium | recommended | none |
+| `it-it` | Italian | main | high | recommended | low |
+| `ja-jp` | Japanese | main | high | recommended | low |
+| `ko-kr` | Korean | main | high | recommended | low |
+| `pl-pl` | Polish | main | medium | strongly recommended | low |
+| `pt-br` | Portuguese (Brazil) | main | high | recommended | low |
+| `pt-pt` | Portuguese (Portugal) | main | medium | recommended | low |
+| `ru-ru` | Russian | main | high | recommended | medium |
+| `es-mx` | Spanish (Mexico) | main | high | recommended | low |
+| `es-es` | Spanish (Spain) | main | high | recommended | low |
+| `th-th` | Thai | main | medium | strongly recommended | medium |
+| `tr-tr` | Turkish | main | medium | recommended | medium |
+| `vi-vn` | Vietnamese | main | medium | strongly recommended | medium |
+| `sq-al` | Albanian | extended | medium | strongly recommended | low |
+| `bn-bd` | Bengali | extended | medium | strongly recommended | medium |
+| `bs-ba` | Bosnian | extended | medium | strongly recommended | medium |
+| `bg-bg` | Bulgarian | extended | medium | strongly recommended | medium |
+| `my-mm` | Burmese | extended | low | strongly recommended | medium |
+| `hr-hr` | Croatian | extended | medium | strongly recommended | medium |
+| `cs-cz` | Czech | extended | medium | strongly recommended | medium |
+| `da-dk` | Danish | extended | medium | recommended | low |
+| `nl-nl` | Dutch | extended | high | recommended | low |
+| `et-ee` | Estonian | extended | medium | strongly recommended | low |
+| `fil-ph` | Filipino | extended | medium | strongly recommended | low |
+| `fi-fi` | Finnish | extended | medium | strongly recommended | low |
+| `ka-ge` | Georgian | extended | low | strongly recommended | medium |
+| `el-gr` | Greek | extended | medium | strongly recommended | medium |
+| `hu-hu` | Hungarian | extended | medium | strongly recommended | medium |
+| `kk-kz` | Kazakh | extended | medium | strongly recommended | high |
+| `km-kh` | Khmer | extended | low | strongly recommended | medium |
+| `lv-lv` | Latvian | extended | medium | strongly recommended | low |
+| `lt-lt` | Lithuanian | extended | medium | strongly recommended | medium |
+| `ms-my` | Malay | extended | medium | strongly recommended | low |
+| `nb-no` | Norwegian Bokmal | extended | medium | recommended | low |
+| `ro-ro` | Romanian | extended | medium | recommended | medium |
+| `sr-rs` | Serbian | extended | medium | strongly recommended | medium |
+| `si-lk` | Sinhala | extended | low | strongly recommended | medium |
+| `sk-sk` | Slovak | extended | medium | strongly recommended | medium |
+| `sl-sl` | Slovenian | extended | medium | strongly recommended | medium |
+| `sv-se` | Swedish | extended | high | recommended | low |
+| `uk-ua` | Ukrainian | extended | medium | strongly recommended | high |
 
 ## Install
 
@@ -146,10 +213,18 @@ translate what changed.
 
 ## Example
 
-`examples/lantern-lake/` is a full run on a made-up fishing game: the
-source CSV, every intermediate file (drafts, blind back-translations,
-reviews, resolve rounds) and the final CSV and report for all 49 target
-locales.
+`examples/lantern-lake/` is a full run on a made-up fishing game with 40
+strings, translated into all 49 target locales (1,960 translations) by 156
+agent runs. Every intermediate file is there: context, glossary, drafts,
+blind back-translations, reviews, resolve rounds, the final CSV and the
+report.
+
+- Reviewers fixed 41 strings; 8 locales needed a resolve round; 2
+  disputes were ruled on in `decisions.json`.
+- Blind back-translators raised 276 remarks; the ones a reviewer passed
+  are listed in `report.md` as the first things a native speaker should check.
+- Final lint: 49 locales, 0 errors, 0 warnings.
+- The run also found and fixed three bugs in the tool itself.
 
 ## Limits
 

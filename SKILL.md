@@ -56,6 +56,10 @@ user means? Ask once; default `single` for one named language.
      console and VR; a ProximityPrompt already shows the right key;
    - values the code pre-formats in English (`2d 4h`, `12.4`), which
      translators cannot localize;
+   - numbers passed to a plain `{param}`: `FormatByKey` renders a Lua
+     number as `99.00` (tested in Studio). Pass a string, or use
+     `{price:int}`; `{n:num}` groups digits per locale (`1.250,50` in
+     German) but always shows two decimals;
    - text baked into images or decals.
    Report only; change game code only if the user asks.
 
