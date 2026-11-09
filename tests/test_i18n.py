@@ -152,6 +152,22 @@ ES = {
 }
 
 
+sys.path.insert(0, os.path.join(ROOT, "scripts"))
+import i18n  # noqa: E402
+
+
+class KeepTermTest(unittest.TestCase):
+    def test_whole_word(self):
+        es = {"id": "es-es", "code": "es", "script": "Latn"}
+        e, _ = i18n.lint_string("k", "Enter a code", "Introduce un código", es, {}, {}, ["E"], False)
+        self.assertEqual(e, [])
+        e, _ = i18n.lint_string("k", "Press E to sell", "Pulsa para vender", es, {}, {}, ["E"], False)
+        self.assertIn("keep-term 'E' missing", e)
+        ja = {"id": "ja-jp", "code": "ja", "script": "Jpan"}
+        e, _ = i18n.lint_string("k", "Buy for {price} Robux", "{price} Robuxで購入", ja, {}, {}, ["Robux"], False)
+        self.assertEqual(e, [])
+
+
 class ApplyLintTest(Base):
     def setUp(self):
         super().setUp()

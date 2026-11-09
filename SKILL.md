@@ -50,6 +50,12 @@ user means? Ask once; default `single` for one named language.
    - one-word strings with two meanings ("Play", "Free", "Close") that need
      a Context or Example;
    - count strings ("{n} Coins") that need plural-neutral wording;
+   - two translated words inserted side by side ("a {rarity} {pet}"), which
+     gendered languages cannot make agree;
+   - device-specific text ("Press E", "Click") that is wrong on phone,
+     console and VR; a ProximityPrompt already shows the right key;
+   - values the code pre-formats in English (`2d 4h`, `12.4`), which
+     translators cannot localize;
    - text baked into images or decals.
    Report only; change game code only if the user asks.
 

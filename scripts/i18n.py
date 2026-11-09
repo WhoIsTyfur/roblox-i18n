@@ -400,6 +400,15 @@ def tags(text):
     return sorted((m.group(1) + m.group(2).lower()) for m in TAG_RE.finditer(text))
 
 
+def term_re(term):
+    # Latin-only boundaries: \b would fail on "Robuxで" because CJK counts as a word character.
+    return re.compile(r"(?<![A-Za-z0-9])" + re.escape(term) + r"(?![A-Za-z0-9])")
+
+
+def has_term(text, term):
+    return bool(term_re(term).search(text))
+
+
 def lint_string(key, source, text, loc, item, ctx, keep_terms, src_lang_same):
     errors, warns = [], []
     if text is None or not str(text).strip():
@@ -414,11 +423,11 @@ def lint_string(key, source, text, loc, item, ctx, keep_terms, src_lang_same):
     if text == source and not item.get("keep") and not src_lang_same:
         errors.append("identical to source without keep:true")
     for term in keep_terms:
-        if term in source and term not in text:
+        if has_term(source, term) and not has_term(text, term):
             errors.append("keep-term %r missing" % term)
     stripped = visible(text)
     for term in keep_terms:
-        stripped = stripped.replace(term, "")
+        stripped = term_re(term).sub("", stripped)
     letters = [c for c in stripped if unicodedata.category(c).startswith("L")]
     want = SCRIPT_NAMES.get(loc.get("script", "Latn"), ("LATIN",))
     if letters and not item.get("keep"):
