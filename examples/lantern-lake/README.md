@@ -25,3 +25,12 @@ only the 47 remaining locales, which also exercised incremental mode.
 
 Compare a locale's `back.json` with `source.csv` to see what the blind reader
 understood, then its `review.json` to see what the reviewer did about it.
+
+This is a record of one run, so the batch files show the layout the skill
+had that day. Translators and reviewers read `context.json` and
+`source.json` directly, and each `backin.json` is keyed by the real keys
+(`hud.reel`), which hinted at the English. The skill now writes
+`batch-NN.in.json` and `batch-NN.reviewin.json` for those agents and gives
+the back-translator ids like `s001` instead. `tests/test_example.py`
+replays this folder through the current tool and expects the same
+`final.json` files and the same `translated.csv`.

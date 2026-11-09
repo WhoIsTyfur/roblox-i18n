@@ -18,7 +18,7 @@ Source en-us, 40 strings, mode all.
 | da-dk | 40 | 1 | 0 | 0 | 32/8/0 | recommended | low |
 | nl-nl | 40 | 2 | 0 | 0 | 30/10/0 | recommended | low |
 | en-gb | 40 | 0 | 0 | 0 | 38/2/0 | optional | low |
-| et-ee | 40 | 1 | 0 | 0 | 34/6/0 | strongly_recommended | low |
+| et-ee | 40 | 2 | 0 | 0 | 34/6/0 | strongly_recommended | low |
 | fil-ph | 40 | 0 | 0 | 0 | 28/12/0 | strongly_recommended | low |
 | fi-fi | 40 | 0 | 0 | 0 | 35/5/0 | strongly_recommended | low |
 | fr-fr | 40 | 0 | 0 | 0 | 36/4/0 | recommended | low |
