@@ -6,7 +6,8 @@
     "status": "ok",
     "flags": [],
     "keep": true,
-    "note": "Game title, glossary keep; no Spanish title given."
+    "note": "Game title, glossary keep; no Spanish title given.",
+    "blind_remark": "left in English, not translated"
   },
   "hud.cast": {
     "text": "Lanzar",
@@ -21,7 +22,8 @@
     "source_hash": "65eaf7af45ec",
     "status": "ok",
     "flags": [],
-    "note": "Fishing sense, as in 'recoger el sedal' (reel the line in); same verb as the pass name Autorrecogida."
+    "note": "Fishing sense, as in 'recoger el sedal' (reel the line in); same verb as the pass name Autorrecogida.",
+    "blind_remark": "on its own 'Recoger' most often means 'pick up' or 'collect'; it reads as reeling in only from the fishing context"
   },
   "hud.bait_left": {
     "text": "Cebo: {count}",
@@ -44,7 +46,8 @@
     "source_hash": "272febdd796b",
     "status": "ok",
     "flags": [],
-    "note": "Colon and parentheses keep articles and adjectives from agreeing with the inserted names (Carpa dorada and Anguila farol are feminine; rarity tags use the masculine standalone form, per the guide)."
+    "note": "Colon and parentheses keep articles and adjectives from agreeing with the inserted names (Carpa dorada and Anguila farol are feminine; rarity tags use the masculine standalone form, per the guide).",
+    "blind_remark": "the colon between 'you caught' and the fish is a UI-style break, slightly stiff in Spanish but clear"
   },
   "catch.escaped": {
     "text": "Se te ha escapado...",
@@ -83,7 +86,8 @@
     "source_hash": "21b68e8ea782",
     "status": "ok",
     "flags": [],
-    "note": "Masculine standalone tier tag (Raro, Épico, Legendario, Mítico) per the guide; ranks above Legendario."
+    "note": "Masculine standalone tier tag (Raro, Épico, Legendario, Mítico) per the guide; ranks above Legendario.",
+    "blind_remark": "masculine form; after a feminine fish name such as 'Carpa dorada' or 'Anguila farol' it does not agree in gender, though it reads acceptably as a tag in parentheses"
   },
   "shop.rods": {
     "text": "Cañas",
@@ -128,7 +132,8 @@
     "source_hash": "ddb006177f24",
     "status": "ok",
     "flags": [],
-    "note": "Noun from the Reel verb 'recoger' with the auto- prefix (like 'autoguardado'). 'Recogida automática' is clearer but 19, over the 14 budget; 'Recoger auto' would read as 'pick up the car'. The Creator Hub pass name should match."
+    "note": "Noun from the Reel verb 'recoger' with the auto- prefix (like 'autoguardado'). 'Recogida automática' is clearer but 19, over the 14 budget; 'Recoger auto' would read as 'pick up the car'. The Creator Hub pass name should match.",
+    "blind_remark": "coined word, not standard Spanish; 'recogida' suggests pickup or collection rather than reeling in"
   },
   "pass.lucky_bait": {
     "text": "¡El <b>Cebo de la suerte</b> duplica tus probabilidades de sacar peces raros!",
@@ -209,7 +214,8 @@
     "source_hash": "1a7c2eef6c94",
     "status": "ok",
     "flags": [],
-    "note": "Collect the reward, per the guide's reward.claim reference."
+    "note": "Collect the reward, per the guide's reward.claim reference.",
+    "blind_remark": "in everyday Spanish 'reclamar' leans toward 'demand' or 'complain'; common in games for claiming rewards, so still understandable"
   },
   "friends.boost": {
     "text": "Pescar con amigos te da +{percent} % de suerte",
@@ -255,7 +261,8 @@
     "source_hash": "6e924547dc32",
     "status": "ok",
     "flags": [],
-    "note": "'sin moverte' instead of 'inactivo', which would agree with the player's gender. 'así que' makes the cause explicit, as the context describes it; no mention of leaving the server."
+    "note": "'sin moverte' instead of 'inactivo', which would agree with the player's gender. 'así que' makes the cause explicit, as the context describes it; no mention of leaving the server.",
+    "blind_remark": "says only that your fishing stopped, not that you were removed from the game; reads a little as if you stopped by choice"
   },
   "settings.back": {
     "text": "Volver",

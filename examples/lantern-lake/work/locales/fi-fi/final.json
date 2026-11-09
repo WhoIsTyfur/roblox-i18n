@@ -1,0 +1,319 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept in English (glossary: keep; no Finnish title supplied).",
+    "blind_remark": "still in English, not translated"
+  },
+  "hud.cast": {
+    "text": "Heitä",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "heittää = cast the line, the everyday fishing verb."
+  },
+  "hud.reel": {
+    "text": "Kelaa",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "kelata = reel the line in; the pass name Automaattikela uses the same root."
+  },
+  "hud.bait_left": {
+    "text": "Syötit: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form: '{count} syöttiä' would show '1 syöttiä' when count is 1."
+  },
+  "hud.backpack": {
+    "text": "Reppu",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Saaliiksi jäi {rarity} {fish}!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "'Sait...' would need the object ending -n on both inserted words. The anglers' idiom 'jäädä saaliiksi' keeps {rarity} and {fish} in base form, so 'Saaliiksi jäi Myyttinen Lyhtyankerias!' agrees for any tier and fish. Inserted words stay capitalized (accepted game style).",
+    "blind_remark": "with the inserted labels the words appear capitalized mid-sentence, e.g. \"Myyttinen Kultakarppi\""
+  },
+  "catch.escaped": {
+    "text": "Kala pääsi karkuun...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "Names the fish with the generic word; a bare 'Se' reads vague in a toast."
+  },
+  "catch.new_record": {
+    "text": "Uusi ennätys! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: Finnish writes decimals with a comma (12,4 kg); {weight} arrives as 12.4, so format it per locale in code."
+  },
+  "fish.golden_carp": {
+    "text": "Kultakarppi",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "Lyhtyankerias",
+    "confidence": "high",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "lyhty (lantern) + ankerias (eel), one compound. Real lanternfish are 'lyhtykalat' in Finnish, so the coinage reads natural and keeps the glowing-lantern idea."
+  },
+  "rarity.mythic": {
+    "text": "Myyttinen",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Tier above Legendaarinen (the guide's Legendary). Nominative adjective, so it works inserted before {fish}."
+  },
+  "shop.rods": {
+    "text": "Vavat",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "vapa = fishing rod, plural vavat; not 'tangot' (metal rods)."
+  },
+  "shop.equip": {
+    "text": "Varusta",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "Button verb as the guide uses it ('Varusta {pet} -lemmikki'); pairs with the state label 'Käytössä'."
+  },
+  "shop.equipped": {
+    "text": "Käytössä",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "'In use': the usual Finnish state label. 'Varustettu' also fits but sounds stiffer."
+  },
+  "shop.free": {
+    "text": "Ilmainen",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": [],
+    "note": "8/8: costs nothing."
+  },
+  "shop.buy_robux": {
+    "text": "Osta ({price} Robux)",
+    "confidence": "medium",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "The guide's 'Osta {price} Robuxilla' is the most natural Finnish, but lint's keep-term check rejects the inflected 'Robuxilla' (it needs 'Robux' with no letter after it). The price sits in parentheses as a price tag, where the bare unit reads fine for any price. If the developer relaxes that check for Finnish, switch to 'Osta {price} Robuxilla'."
+  },
+  "pass.auto_reel": {
+    "text": "Automaattikela",
+    "confidence": "high",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "'Automatic reel' (the device), same root as Kelaa. 14/14; 'Automaattikelaus' (16) is over budget. The Creator Hub pass name should match."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Onnensyötti</b> tuplaa mahdollisuutesi saada harvinaisia kaloja!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Onnensyötti = onni (luck) + syötti (bait), one compound like 'Onnenjuoma'. Tags stay around the pass name."
+  },
+  "sell.all": {
+    "text": "Myy kaikki",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Myit {count} kalan saaliin {coins} kolikolla!",
+    "confidence": "medium",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "'{count} kalaa' and '{coins} kolikkoa' would show '1 kalaa', '1 kolikkoa'. Genitive '{count} kalan saaliin' (a catch of N fish) and the adessive price '{coins} kolikolla' are correct for 1 and every other number."
+  },
+  "sell.prompt": {
+    "text": "Myy painamalla E",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's '-malla' pattern ('Avaa painamalla E'); E kept."
+  },
+  "ascend.button": {
+    "text": "Kohoa",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "kohota = rise to a higher level. Not religious ('ylösnousemus') and not 'get up' or climbing, as 'Nouse' would read. No established Finnish word for this mechanic; native check welcome. Alternative: 'Ylennys' (promotion)."
+  },
+  "ascend.confirm": {
+    "text": "Haluatko kohota nyt? Aloitat alusta, mutta saat harvinaisia kaloja {bonus} % useammin.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as ascend.button. Finnish writes a space before % (25 %). 'saada kalaa' is the everyday 'catch fish'."
+  },
+  "weather.storm": {
+    "text": "Myrsky on tulossa! Harvinaiset kalat tärppäävät.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "tärpätä = a fish takes the bait, the word Finnish anglers and kids use; 'syövät' would read as just eating."
+  },
+  "quest.title": {
+    "text": "Tehtävät",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Nappaa kaloja Kuutamolahdella: {n}",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "'Nappaa {n} kalaa' would show '1 kalaa' when n is 1, so the count moves after a colon, a common quest-line form. Kuutamolahti = Moonlit Bay (kuutamo = moonlight); 'Kuutamolahdella' = at the bay."
+  },
+  "quest.claim": {
+    "text": "Lunasta",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "Kalastus kavereiden kanssa antaa +{percent} % onnea",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Space before % per Finnish convention; 'kaverit' per the guide; 'onnea' is the partitive of onni (luck), as in Onnensyötti."
+  },
+  "trade.sent": {
+    "text": "Vaihtopyyntö lähti pelaajalle {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "Head noun 'pelaajalle' takes the ending so {player} stays in base form. 'lähti' (went out) is the natural toast verb and fits 33, where 'lähetetty' would be 34."
+  },
+  "trade.accept": {
+    "text": "{player} hyväksyi vaihtopyyntösi",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "{player} is the subject in base form; Finnish past tense has no gender. 'your trade' = your trade request."
+  },
+  "codes.enter": {
+    "text": "Syötä koodi",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Koodi lunastettu! Nauti palkinnostasi.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": []
+  },
+  "afk.kicked": {
+    "text": "Olit liian kauan toimettomana, joten kalastus pysähtyi.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "'joten' (so) carries the cause the context gives; no mention of leaving the server, as in the source."
+  },
+  "settings.back": {
+    "text": "Takaisin",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": [],
+    "note": "8/8; the standard Back button."
+  },
+  "settings.sfx": {
+    "text": "Äänitehosteet",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": [],
+    "note": "The usual settings term in Finnish software and games; 'Ääniefektit' is also common."
+  },
+  "event.ends": {
+    "text": "Loppuu {time} päästä",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "14/14; 'päästä' after a duration needs no ending on {time}. Shorter fallback: 'Jäljellä {time}'. For the developer: {time} arrives as '2d 4h' with English letters; Finnish writes '2 pv 4 t'.",
+    "blind_remark": "\"päästä\" needs {time} in the genitive, e.g. \"5 minuutin\"; reads wrong if {time} is a plain form like \"5 minuuttia\""
+  },
+  "daily.streak": {
+    "text": "{day}. päivä putkeen! Palaa huomenna hakemaan lisää.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "Ordinal '{day}.' ('3. päivä') reads right for every day number, including 1; 'putkeen' (in a row) is the everyday streak word."
+  },
+  "tip.night": {
+    "text": "Vinkki: jotkin kalat tärppäävät vain öisin.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "Same 'tärpätä' (bite) as weather.storm; lowercase after the colon."
+  },
+  "group.join": {
+    "text": "Liity ryhmäämme, niin saat 50 ilmaista syöttiä!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "'ryhmä' as fi.wikipedia and the guide use it; 'ryhmäämme' (our group) is how Finnish invites phrase it. The fixed 50 takes the partitive correctly."
+  },
+  "leaderboard.biggest": {
+    "text": "Painavin kala",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "The board ranks the heaviest single fish; 'Suurin saalis' could read as the biggest total haul."
+  }
+}

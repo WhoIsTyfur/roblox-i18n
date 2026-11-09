@@ -1,0 +1,130 @@
+{
+  "title": {
+    "verdict": "ok"
+  },
+  "hud.cast": {
+    "verdict": "ok"
+  },
+  "hud.reel": {
+    "verdict": "ok"
+  },
+  "hud.bait_left": {
+    "verdict": "ok"
+  },
+  "hud.backpack": {
+    "verdict": "ok"
+  },
+  "catch.success": {
+    "verdict": "ok"
+  },
+  "catch.escaped": {
+    "verdict": "ok"
+  },
+  "catch.new_record": {
+    "verdict": "ok"
+  },
+  "fish.golden_carp": {
+    "verdict": "ok"
+  },
+  "fish.lantern_eel": {
+    "verdict": "ok"
+  },
+  "rarity.mythic": {
+    "verdict": "ok"
+  },
+  "shop.rods": {
+    "verdict": "ok"
+  },
+  "shop.equip": {
+    "verdict": "ok"
+  },
+  "shop.equipped": {
+    "verdict": "ok"
+  },
+  "shop.free": {
+    "verdict": "ok"
+  },
+  "shop.buy_robux": {
+    "verdict": "ok"
+  },
+  "pass.auto_reel": {
+    "verdict": "ok"
+  },
+  "pass.lucky_bait": {
+    "verdict": "ok"
+  },
+  "sell.all": {
+    "verdict": "fix",
+    "text": "Alle verkaufen",
+    "category": "length",
+    "severity": "major",
+    "reason": "14 chars against an estimated 12 and no shorter natural German exists (\"Verkaufen\" loses \"all\"); unknown whether the button wraps at the space or is wide enough, so check it in Studio with de-de or widen the button."
+  },
+  "sell.done": {
+    "verdict": "ok"
+  },
+  "sell.prompt": {
+    "verdict": "ok"
+  },
+  "ascend.button": {
+    "verdict": "ok"
+  },
+  "ascend.confirm": {
+    "verdict": "ok"
+  },
+  "weather.storm": {
+    "verdict": "ok"
+  },
+  "quest.title": {
+    "verdict": "ok"
+  },
+  "quest.catch_n": {
+    "verdict": "ok"
+  },
+  "quest.claim": {
+    "verdict": "ok"
+  },
+  "friends.boost": {
+    "verdict": "ok"
+  },
+  "trade.sent": {
+    "verdict": "ok"
+  },
+  "trade.accept": {
+    "verdict": "ok"
+  },
+  "codes.enter": {
+    "verdict": "ok"
+  },
+  "codes.redeemed": {
+    "verdict": "ok"
+  },
+  "afk.kicked": {
+    "verdict": "fix",
+    "text": "Du warst zu lange inaktiv, deshalb wurde das Angeln beendet.",
+    "category": "fluency",
+    "severity": "minor",
+    "reason": "\"deshalb angelst du nicht mehr\" reads like a habit (\"you don't fish anymore\"); \"wurde das Angeln beendet\" is the natural system-message wording and still doesn't imply removal from the server."
+  },
+  "settings.back": {
+    "verdict": "ok"
+  },
+  "settings.sfx": {
+    "verdict": "ok"
+  },
+  "event.ends": {
+    "verdict": "ok"
+  },
+  "daily.streak": {
+    "verdict": "ok"
+  },
+  "tip.night": {
+    "verdict": "ok"
+  },
+  "group.join": {
+    "verdict": "ok"
+  },
+  "leaderboard.biggest": {
+    "verdict": "ok"
+  }
+}

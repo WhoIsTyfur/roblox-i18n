@@ -1,0 +1,317 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, glossary keep: stays in Latin, as the guide keeps game titles.",
+    "blind_remark": "not translated: English text in Latin script"
+  },
+  "hud.cast": {
+    "text": "Забаци",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Fishing verb 'забацити' (throw the line out), not a spell or a movie cast."
+  },
+  "hud.reel": {
+    "text": "Извуци",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'Pull it out' (land the fish); same verb as the Auto Reel pass (Аутоизвлачење)."
+  },
+  "hud.bait_left": {
+    "text": "Мамци: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so 0, 1, 2 and 5 all read right; '{count} мамаца' breaks at 1 and 21."
+  },
+  "hud.backpack": {
+    "text": "Ранац",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Улов: {fish} ({rarity})!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern: no gendered 'Уловио/ла си' and no {rarity} adjective before {fish}, which could not agree with a feminine fish like Јегуља-фењер."
+  },
+  "catch.escaped": {
+    "text": "Риба је побегла…",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "Names the generic fish so the feminine past tense agrees with 'риба'; single ellipsis character per the guide."
+  },
+  "catch.new_record": {
+    "text": "Нови рекорд! {weight} кг",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "Cyrillic 'кг'. For the developer: {weight} arrives as '12.4' but Serbian writes '12,4', so format it per LocaleId in game code."
+  },
+  "fish.golden_carp": {
+    "text": "Златни шаран",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "Јегуља-фењер",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Invented name kept as 'eel-lantern', the Serbian head-first apposition pattern (like 'човек-паук'); keeps the lantern idea. Alternative: 'Фењерска јегуља'."
+  },
+  "rarity.mythic": {
+    "text": "Митски",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Masculine tier tag like 'Легендарни', per the guide; reads as above Legendary.",
+    "blind_remark": "masculine adjective form; does not agree with a feminine fish name such as the eel (jegulja) if read as describing it"
+  },
+  "shop.rods": {
+    "text": "Пецаљке",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "'Пецаљка' is specifically a fishing rod; 'Штапови' would be any sticks or poles."
+  },
+  "shop.equip": {
+    "text": "Опреми",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equipped": {
+    "text": "Опремљена",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State form agreeing with the feminine 'пецаљка' it labels; 'У употреби' (10) is the neutral fallback if the label ever goes on other items."
+  },
+  "shop.free": {
+    "text": "Гратис",
+    "confidence": "medium",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": [],
+    "note": "Standard Serbian price word for 'free of charge'; 'Бесплатно' is more common in UI but is 9 letters against a budget of 8. Use it if the price slot has room."
+  },
+  "shop.buy_robux": {
+    "text": "Купи за {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Robux stays Latin and undeclined after a number (guide).",
+    "blind_remark": "Robux left in Latin script inside Cyrillic text, undeclined; likely deliberate as a brand name"
+  },
+  "pass.auto_reel": {
+    "text": "Аутоизвлачење",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Verbal noun of the hud.reel verb 'извући' with the prefix 'ауто-' written solid, as Serbian spelling does; 13/14. The Creator Hub store name should match.",
+    "blind_remark": "coined compound; 'izvlachenje' also commonly means a lottery draw or extraction, so on its own it does not clearly say reeling in fish"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Мамац среће</b> удвостручује шансу за ретке рибе!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "'Мамац среће' follows Minecraft's Serbian 'Напитак среће'; 'your' dropped per the guide's no-possessive rule."
+  },
+  "sell.all": {
+    "text": "Продај све",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Продато риба: {count}, зарађено новчића: {coins}!",
+    "confidence": "medium",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form for both numbers: '{count} риба' and '{coins} новчића' are wrong at 1 and 21. Reads 'Fish sold: 12, coins earned: 340!'."
+  },
+  "sell.prompt": {
+    "text": "Притисни E да продаш",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Latin E kept; no comma before the 'да' clause (guide). 20/21."
+  },
+  "ascend.button": {
+    "text": "Уздигни се",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "'Rise up': prestige sense, not religious ('вазнести се') and not climbing ('попни се'). Exactly 10/10, so check it fits the button."
+  },
+  "ascend.confirm": {
+    "text": "Желиш ли да се уздигнеш сада? Почећеш испочетка, али ћеш ловити ретке рибе {bonus}% чешће.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as ascend.button; future tense keeps it gender-neutral; percent with no space (CLDR)."
+  },
+  "weather.storm": {
+    "text": "Стиже олуја! Ретке рибе гризу.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'Риба гризе' is the everyday angler's phrase for fish taking the bait."
+  },
+  "quest.title": {
+    "text": "Задаци",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Улови рибе у Заливу месечине: {n}",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Target number after a colon so n = 1, 2 and 5 all read right ('{n} риба' breaks at 1 and 2-4). Place name 'Залив месечине' (Bay of Moonlight) in the locative; in-world signs should match."
+  },
+  "quest.claim": {
+    "text": "Покупи",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide: 'Покупи', not 'Затражи' (request) or 'Преузми' (download)."
+  },
+  "friends.boost": {
+    "text": "Пецање са пријатељима даје +{percent}% среће",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Genitive after the percent, as in '20% попуста'."
+  },
+  "trade.sent": {
+    "text": "Захтев за размену послат играчу {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "Username stays undeclined after the head noun 'играчу' (guide); passive avoids a gendered 'Послао/ла си'. 32/33."
+  },
+  "trade.accept": {
+    "text": "Играч {player} је прихватио размену",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "Verb agrees with the fixed noun 'играч', so it is right for any player; 'your' dropped per the guide."
+  },
+  "codes.enter": {
+    "text": "Унеси код",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Код искоришћен! Уживај у награди.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": []
+  },
+  "afk.kicked": {
+    "text": "Предуго те није било, па је пецање прекинуто.",
+    "confidence": "medium",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "Impersonal 'you were gone too long' avoids the gendered 'Био/ла си неактиван/на'; no mention of removal from the server, as in the source."
+  },
+  "settings.back": {
+    "text": "Назад",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Звучни ефекти",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Траје још {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "'Lasts {time} more', the guide's countdown pattern. For the developer: {time} arrives as '2d 4h', which mixes Latin into Serbian; a LocaleId-aware formatter should print '2 д 4 ч'."
+  },
+  "daily.streak": {
+    "text": "{day}. дан заредом! Врати се сутра по нове награде.",
+    "confidence": "medium",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "Ordinal '{day}.' avoids plural forms for any day count; 'for more' made explicit as 'new rewards'."
+  },
+  "tip.night": {
+    "text": "Савет: неке рибе гризу само ноћу.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": []
+  },
+  "group.join": {
+    "text": "Придружи се групи и добиј 50 бесплатних мамаца!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "The fixed 50 takes the genitive plural 'мамаца'. 'Група' is the Roblox group word."
+  },
+  "leaderboard.biggest": {
+    "text": "Највећи улов",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "The usual angler phrase, judged by weight; 'Најтежи улов' is the literal alternative."
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, kept byte-identical per the glossary (brand, no official French title).",
+    "blind_remark": "left in English, not translated into French"
+  },
+  "hud.cast": {
+    "text": "Lancer",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": []
+  },
+  "hud.reel": {
+    "text": "Remonter",
+    "confidence": "medium",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "Fishing sense: 'remonter la ligne / le poisson'; 8/8. 'Mouliner' is the angler's word but younger kids may not know it; 'Ferrer' means setting the hook, not reeling in. Same verb as the pass 'Remontée auto'.",
+    "blind_remark": "literally 'bring back up'; on its own it could also read as 'go back up'"
+  },
+  "hud.bait_left": {
+    "text": "Appâts : {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form, correct for 0, 1 and more (French would need '1 appât' vs '2 appâts')."
+  },
+  "hud.backpack": {
+    "text": "Sac",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide vocabulary (inventaire / sac). 'Sac à dos' (9) also fits, but the short label reads cleaner on a HUD button."
+  },
+  "catch.success": {
+    "text": "Tu as pêché : {fish} ({rarity}) !",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Colon and parentheses so no article or adjective has to agree with the inserted fish (Carpe dorée and Anguille-lanterne are feminine); rarity tags Rare / Légendaire / Mythique are epicene. 19/30 without params; filled: 'Tu as pêché : Carpe dorée (Rare) !'."
+  },
+  "catch.escaped": {
+    "text": "Le poisson s'est échappé...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "Names the generic 'poisson' (m.) rather than 'Il', since the species on the line may be feminine (carpe, anguille)."
+  },
+  "catch.new_record": {
+    "text": "Nouveau record ! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "Developer: {weight} arrives as '12.4'; French writes '12,4'. Format the number per locale if possible."
+  },
+  "fish.golden_carp": {
+    "text": "Carpe dorée",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "Anguille-lanterne",
+    "confidence": "high",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Modeled on the real French name 'poisson-lanterne' (lanternfish), keeping the glowing-lantern idea; 17/18. Feminine, but no string puts an article or adjective next to it."
+  },
+  "rarity.mythic": {
+    "text": "Mythique",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.rods": {
+    "text": "Cannes",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "'Cannes à pêche' (14) is over 10; in a fishing shop tab 'Cannes' alone is unambiguous.",
+    "blind_remark": "short for fishing rods; on its own the word can also mean walking canes"
+  },
+  "shop.equip": {
+    "text": "Équiper",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equipped": {
+    "text": "Équipée",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State label, feminine to agree with 'canne', the only item it marks."
+  },
+  "shop.free": {
+    "text": "Gratuit",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Acheter pour {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "19/20 without {price}. If 4-digit prices overflow, 'Payer {price} Robux' is the shorter fallback. Developer: French writes thousands as '1 000', not '1,000'."
+  },
+  "pass.auto_reel": {
+    "text": "Remontée auto",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as hud.reel (Remonter); 13/14. 'Moulinet auto' is the alternative if the developer prefers the reel-device image. The Creator Hub pass name should match.",
+    "blind_remark": "literally 'automatic raising'; the word alone also commonly means a ski lift or a comeback"
+  },
+  "pass.lucky_bait": {
+    "text": "L'<b>Appât de chance</b> double tes chances de pêcher des poissons rares !",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Pass name from the glossary words chance (luck) + appât (bait), like the guide's 'Potion de chance'; the elided article stays outside the bold tag.",
+    "blind_remark": "item name is a stiff literal 'bait of luck'; the word for luck then repeats as 'chances'"
+  },
+  "sell.all": {
+    "text": "Tout vendre",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Poissons vendus : {count}. Pièces gagnées : {coins} !",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Two label forms so 1 fish or 1 coin reads right (no '1 poissons', '1 pièces'). 39/40 without numbers."
+  },
+  "sell.prompt": {
+    "text": "E pour vendre",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "'Appuie sur E pour vendre' is 24 > 21; same pattern as the guide's 'E pour ouvrir'. E sits in the same place on AZERTY. Source-side: phone and console players have no E key; ActionText 'Vendre' alone would serve everyone.",
+    "blind_remark": "clipped; names the keyboard key E in the text itself"
+  },
+  "ascend.button": {
+    "text": "Ascension",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "No natural French infinitive for this prestige reset ('S'élever' reads spiritual or like climbing), so the noun names the mechanic, 9/10. 'Prestige' is the alternative if the developer prefers it."
+  },
+  "ascend.confirm": {
+    "text": "Lancer l'ascension maintenant ? Tu repartiras de zéro, mais tu pêcheras des poissons rares {bonus} % plus souvent.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Same word as the button; lowercase in the sentence so it reads as the game action, not the religious feast (l'Ascension). 'repartir de zéro' = start over."
+  },
+  "weather.storm": {
+    "text": "Une tempête approche ! Les poissons rares mordent.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.title": {
+    "text": "Quêtes",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Poissons à pêcher, Baie Clair-de-Lune : {n}",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so n = 1 reads right (no '1 poissons'); 40/40. Moonlit Bay -> 'Baie Clair-de-Lune' (moonlight, place-name style). The more fluent 'Poissons à pêcher à la Baie Clair-de-Lune : {n}' is 44 if the line has room.",
+    "blind_remark": "stilted, form-like phrasing; unclear whether {n} is the goal or how many are left"
+  },
+  "quest.claim": {
+    "text": "Récupérer",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Not 'Réclamer' (= complain, demand)."
+  },
+  "friends.boost": {
+    "text": "Pêcher avec tes amis donne +{percent} % de chance",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "blind_remark": "the word can read as luck or as odds; does not say a chance of what"
+  },
+  "trade.sent": {
+    "text": "Demande d'échange envoyée à {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": []
+  },
+  "trade.accept": {
+    "text": "{player} a accepté ton échange",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "avoir-participle, so no agreement with the player's unknown gender; 'ton échange' = your trade request."
+  },
+  "codes.enter": {
+    "text": "Entre un code",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Code validé ! Profite de ta récompense.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'Code validé' is the usual French game wording for a redeemed code."
+  },
+  "afk.kicked": {
+    "text": "Tu as été AFK trop longtemps, alors ta pêche s'est arrêtée.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "AFK (kept per guide) instead of 'inactif / inactive', which would need the player's gender; 'as été' takes no agreement. No mention of being removed from the server, as in the source.",
+    "blind_remark": "keeps the English gamer acronym AFK; 'your fishing' could also read as 'your catch'"
+  },
+  "settings.back": {
+    "text": "Retour",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Effets sonores",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Fin dans {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Developer: {time} arrives as '2d 4h'; French expects '2 j 4 h'. Format durations per locale if possible."
+  },
+  "daily.streak": {
+    "text": "Jour {day} de ta série ! Reviens demain pour d'autres récompenses.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'Jour {day} de ta série' avoids a plural for day = 1; 'série' is the usual French word for a login streak. 'for more' made explicit as rewards, per context. 60/62."
+  },
+  "tip.night": {
+    "text": "Astuce : certains poissons ne mordent que la nuit.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": []
+  },
+  "group.join": {
+    "text": "Rejoins la communauté : 50 appâts offerts !",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "Roblox calls groups 'communautés'; 'offerts' is the French promo word for free (guide: '... offerte !')."
+  },
+  "leaderboard.biggest": {
+    "text": "Plus grosse prise",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'gros' = heavy for a fish, 'prise' = a catch (noun); 17/18."
+  }
+}

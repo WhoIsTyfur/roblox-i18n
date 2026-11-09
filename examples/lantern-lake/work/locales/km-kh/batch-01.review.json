@@ -1,0 +1,130 @@
+{
+  "title": {
+    "verdict": "ok"
+  },
+  "hud.cast": {
+    "verdict": "ok"
+  },
+  "hud.reel": {
+    "verdict": "ok"
+  },
+  "hud.bait_left": {
+    "verdict": "ok"
+  },
+  "hud.backpack": {
+    "verdict": "ok"
+  },
+  "catch.success": {
+    "verdict": "ok"
+  },
+  "catch.escaped": {
+    "verdict": "ok"
+  },
+  "catch.new_record": {
+    "verdict": "ok"
+  },
+  "fish.golden_carp": {
+    "verdict": "ok"
+  },
+  "fish.lantern_eel": {
+    "verdict": "ok"
+  },
+  "rarity.mythic": {
+    "verdict": "ok"
+  },
+  "shop.rods": {
+    "verdict": "ok"
+  },
+  "shop.equip": {
+    "verdict": "ok"
+  },
+  "shop.equipped": {
+    "verdict": "ok"
+  },
+  "shop.free": {
+    "verdict": "ok"
+  },
+  "shop.buy_robux": {
+    "verdict": "ok"
+  },
+  "pass.auto_reel": {
+    "verdict": "ok"
+  },
+  "pass.lucky_bait": {
+    "verdict": "ok"
+  },
+  "sell.all": {
+    "verdict": "ok"
+  },
+  "sell.done": {
+    "verdict": "ok"
+  },
+  "sell.prompt": {
+    "verdict": "ok"
+  },
+  "ascend.button": {
+    "verdict": "ok"
+  },
+  "ascend.confirm": {
+    "verdict": "ok"
+  },
+  "weather.storm": {
+    "verdict": "ok"
+  },
+  "quest.title": {
+    "verdict": "ok"
+  },
+  "quest.catch_n": {
+    "verdict": "ok"
+  },
+  "quest.claim": {
+    "verdict": "fix",
+    "text": "យករង្វាន់",
+    "category": "accuracy",
+    "severity": "minor",
+    "reason": "On a quest panel ទទួលយក reads as 'Accept', as if taking on a new quest (the blind back-translation read it that way); យករង្វាន់ 'take the reward' says what the button does and fits the 10 budget."
+  },
+  "friends.boost": {
+    "verdict": "ok"
+  },
+  "trade.sent": {
+    "verdict": "ok"
+  },
+  "trade.accept": {
+    "verdict": "ok"
+  },
+  "codes.enter": {
+    "verdict": "ok"
+  },
+  "codes.redeemed": {
+    "verdict": "ok"
+  },
+  "afk.kicked": {
+    "verdict": "ok"
+  },
+  "settings.back": {
+    "verdict": "ok"
+  },
+  "settings.sfx": {
+    "verdict": "ok"
+  },
+  "event.ends": {
+    "verdict": "ok"
+  },
+  "daily.streak": {
+    "verdict": "ok"
+  },
+  "tip.night": {
+    "verdict": "ok"
+  },
+  "group.join": {
+    "verdict": "fix",
+    "text": "ចូលរួមក្រុមរបស់យើង ដើម្បីបាននុយ 50 ឥតគិតថ្លៃ!",
+    "category": "accuracy",
+    "severity": "minor",
+    "reason": "Khmer has no article, so bare ក្រុម loses 'the' and can read as 'join a team'; ក្រុមរបស់យើង names the studio's group, as in the guide's social.group_reward."
+  },
+  "leaderboard.biggest": {
+    "verdict": "ok"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "settings.sfx": {
+    "accept": true,
+    "reason": "Keep 音效, the standard Simplified game-settings term for sound effects. The lint error is a false positive: 音 is identical in Simplified and Traditional (only 声/聲 differ), and scripts/i18n.py lists 音 in both SIMPLIFIED_ONLY and TRADITIONAL_ONLY. Dodging it with 声效 would read as film/audio jargon, worse for a native player. Fix: drop 音 from TRADITIONAL_ONLY, or confirm 音效 in decisions.json."
+  }
+}

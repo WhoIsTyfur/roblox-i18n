@@ -1,0 +1,291 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, glossary keep."
+  },
+  "hud.cast": {
+    "text": "Cast",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": []
+  },
+  "hud.reel": {
+    "text": "Reel",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": []
+  },
+  "hud.bait_left": {
+    "text": "{count} Bait",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Bait is uncountable, so 0, 1 and 12 Bait all read correctly; no label rewrite needed."
+  },
+  "hud.backpack": {
+    "text": "Backpack",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": [],
+    "note": "Roblox's own term; not 'rucksack', per the en-gb guide."
+  },
+  "catch.success": {
+    "text": "You caught: {rarity} {fish}!",
+    "confidence": "medium",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Source 'a {rarity}' gives 'a Epic' / 'a Uncommon'; label form per the guide's 'New pet: {rarity} {pet}!' pattern. Source owner: apply the same rewrite to en-us."
+  },
+  "catch.escaped": {
+    "text": "It got away...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.new_record": {
+    "text": "New record! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.golden_carp": {
+    "text": "Golden Carp",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "Lantern Eel",
+    "confidence": "high",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": []
+  },
+  "rarity.mythic": {
+    "text": "Mythic",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.rods": {
+    "text": "Rods",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equip": {
+    "text": "Equip",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equipped": {
+    "text": "Equipped",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.free": {
+    "text": "Free",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Buy for {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": []
+  },
+  "pass.auto_reel": {
+    "text": "Auto Reel",
+    "confidence": "high",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": []
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Lucky Bait</b> doubles your rare fish chance!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.all": {
+    "text": "Sell All",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Sold {count} fish! Coins earned: {coins}",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Source gives '1 coins' when coins = 1; label form per the guide. 'fish' is the same for 1 and many. Source owner: apply the same rewrite to en-us."
+  },
+  "sell.prompt": {
+    "text": "Press E to sell",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": []
+  },
+  "ascend.button": {
+    "text": "Ascend",
+    "confidence": "high",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": []
+  },
+  "ascend.confirm": {
+    "text": "Ascend now? You will start again but catch rare fish {bonus}% more often.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "'start over' is mainly US (Cambridge); 'start again' is the usual UK phrasing."
+  },
+  "weather.storm": {
+    "text": "A storm is coming! Rare fish are biting.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.title": {
+    "text": "Quests",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Catch {n} fish at Moonlit Bay",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.claim": {
+    "text": "Claim",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "Fishing with friends gives +{percent}% luck",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": []
+  },
+  "trade.sent": {
+    "text": "Trade request sent to {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": []
+  },
+  "trade.accept": {
+    "text": "{player} accepted your trade",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.enter": {
+    "text": "Enter a code",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Code redeemed! Enjoy your reward.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": []
+  },
+  "afk.kicked": {
+    "text": "You were idle for too long and stopped fishing.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "blind_remark": "ambiguous: grammatically says you yourself stopped fishing, not that the game stopped you; does not say whether you were removed from the server"
+  },
+  "settings.back": {
+    "text": "Back",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Sound Effects",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Ends in {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": []
+  },
+  "daily.streak": {
+    "text": "Day {day} streak! Come back tomorrow for more.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": []
+  },
+  "tip.night": {
+    "text": "Tip: some fish only bite at night.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": []
+  },
+  "group.join": {
+    "text": "Join our community for 50 free bait!",
+    "confidence": "medium",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "Roblox's player UI says Communities since Nov 2024 (guide, glossary 'group'); 'our' as in the guide's social.group_reward row. Keep 'group' only if the game's other UI still says group. Source owner: same change in en-us."
+  },
+  "leaderboard.biggest": {
+    "text": "Biggest Catch",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": []
+  }
+}

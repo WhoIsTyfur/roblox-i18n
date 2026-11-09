@@ -1,0 +1,202 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "role": "title",
+    "where": "Loading screen, game title"
+  },
+  "hud.cast": {
+    "text": "رمي",
+    "role": "button",
+    "where": "Gameplay HUD, big round action button; probably the same slot that turns into hud.reel when a fish bites"
+  },
+  "hud.reel": {
+    "text": "سحب",
+    "role": "button",
+    "where": "Gameplay HUD, big round action button shown while a fish bites (replaces hud.cast)"
+  },
+  "hud.bait_left": {
+    "text": "الطُعم: {count}",
+    "role": "label",
+    "where": "Gameplay HUD, counter of bait the player has left"
+  },
+  "hud.backpack": {
+    "text": "الحقيبة",
+    "role": "button",
+    "where": "Gameplay HUD, button that opens the inventory of caught fish"
+  },
+  "catch.success": {
+    "text": "اصطدت سمكة: {fish} ({rarity})!",
+    "role": "toast",
+    "where": "Toast after a fish is landed"
+  },
+  "catch.escaped": {
+    "text": "هربت السمكة...",
+    "role": "toast",
+    "where": "Toast when the hooked fish escapes"
+  },
+  "catch.new_record": {
+    "text": "رقم قياسي جديد! {weight} كغ",
+    "role": "toast",
+    "where": "Toast after catching a record-weight fish"
+  },
+  "fish.golden_carp": {
+    "text": "شبوط ذهبي",
+    "role": "label",
+    "where": "Fish card in the backpack; also inserted as {fish} into catch.success"
+  },
+  "fish.lantern_eel": {
+    "text": "أنقليس الفانوس",
+    "role": "label",
+    "where": "Fish card in the backpack; also inserted as {fish} into catch.success"
+  },
+  "rarity.mythic": {
+    "text": "خرافي",
+    "role": "label",
+    "where": "Rarity tag on fish cards; also inserted as {rarity} into catch.success"
+  },
+  "shop.rods": {
+    "text": "الصنارات",
+    "role": "button",
+    "where": "Shop, tab listing fishing rods"
+  },
+  "shop.equip": {
+    "text": "تجهيز",
+    "role": "button",
+    "where": "Shop, button under a rod the player owns"
+  },
+  "shop.equipped": {
+    "text": "مجهّزة",
+    "role": "label",
+    "where": "Shop, label on the rod currently in use"
+  },
+  "shop.free": {
+    "text": "مجانًا",
+    "role": "label",
+    "where": "Shop, price label on the starter rod"
+  },
+  "shop.buy_robux": {
+    "text": "شراء بـ {price} Robux",
+    "role": "button",
+    "where": "Shop, purchase button on a game pass card"
+  },
+  "pass.auto_reel": {
+    "text": "سحب تلقائي",
+    "role": "product name",
+    "where": "Shop, name on the Auto Reel game pass card"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>طُعم الحظ</b> يضاعف فرصتك في صيد الأسماك النادرة!",
+    "role": "item description",
+    "where": "Shop, description on the Lucky Bait game pass card"
+  },
+  "sell.all": {
+    "text": "بيع الكل",
+    "role": "button",
+    "where": "Fish market, button that sells every fish in the backpack"
+  },
+  "sell.done": {
+    "text": "تم البيع! الأسماك: {count}، العملات: {coins}",
+    "role": "toast",
+    "where": "Toast after selling at the fish market"
+  },
+  "sell.prompt": {
+    "text": "اضغط على E للبيع",
+    "role": "prompt",
+    "where": "Proximity prompt at the fish market stall (in the 3D world)"
+  },
+  "ascend.button": {
+    "text": "ارتقاء",
+    "role": "button",
+    "where": "Ascend (prestige) button; exact screen not known"
+  },
+  "ascend.confirm": {
+    "text": "ارتقاء الآن؟ ستبدأ من جديد، لكنك ستصطاد الأسماك النادرة أكثر بنسبة {bonus}%.",
+    "role": "dialog body",
+    "where": "Confirm dialog shown after pressing Ascend"
+  },
+  "weather.storm": {
+    "text": "تقترب عاصفة! الأسماك النادرة تلتقط الطُعم الآن.",
+    "role": "banner",
+    "where": "Server-wide banner during a storm weather event"
+  },
+  "quest.title": {
+    "text": "المهام",
+    "role": "title",
+    "where": "Quests panel title"
+  },
+  "quest.catch_n": {
+    "text": "اصطد السمك في خليج ضوء القمر: {n}",
+    "role": "label",
+    "where": "Quests panel, one quest line"
+  },
+  "quest.claim": {
+    "text": "استلام",
+    "role": "button",
+    "where": "Quests panel, button on a finished quest"
+  },
+  "friends.boost": {
+    "text": "الصيد مع الأصدقاء يزيد حظك بنسبة {percent}%",
+    "role": "label",
+    "where": "Boost panel, info line"
+  },
+  "trade.sent": {
+    "text": "تم إرسال طلب التبادل إلى {player}",
+    "role": "toast",
+    "where": "Toast after you send a trade request"
+  },
+  "trade.accept": {
+    "text": "قبل اللاعب {player} طلب التبادل",
+    "role": "toast",
+    "where": "Toast when the other player accepts your trade request"
+  },
+  "codes.enter": {
+    "text": "أدخل الكود",
+    "role": "text box placeholder",
+    "where": "Codes panel, placeholder in the text box where players type a promo code"
+  },
+  "codes.redeemed": {
+    "text": "تم تفعيل الكود! استمتع بمكافأتك.",
+    "role": "toast",
+    "where": "Toast after a valid promo code is accepted"
+  },
+  "afk.kicked": {
+    "text": "بقيت بلا نشاط لفترة طويلة، فتوقفت عن الصيد.",
+    "role": "popup",
+    "where": "Message after 15 minutes idle; may be a kick message or an in-game popup (not known)"
+  },
+  "settings.back": {
+    "text": "رجوع",
+    "role": "button",
+    "where": "Settings panel, button that closes the panel"
+  },
+  "settings.sfx": {
+    "text": "المؤثرات الصوتية",
+    "role": "label",
+    "where": "Settings panel, row label (likely beside a toggle or slider)"
+  },
+  "event.ends": {
+    "text": "ينتهي بعد {time}",
+    "role": "label",
+    "where": "Label under an event banner (probably the weather.storm banner or a timed event; not known)"
+  },
+  "daily.streak": {
+    "text": "اليوم {day} على التوالي! مكافآت أكثر في انتظارك غدًا.",
+    "role": "popup",
+    "where": "Daily login reward panel, main message"
+  },
+  "tip.night": {
+    "text": "نصيحة: بعض الأسماك لا تلتقط الطُعم إلا ليلًا.",
+    "role": "label",
+    "where": "Loading screen, tip line"
+  },
+  "group.join": {
+    "text": "انضم إلى مجتمعنا واحصل على 50 طُعمًا مجانًا!",
+    "role": "banner",
+    "where": "Banner inviting players to join the studio's Roblox group"
+  },
+  "leaderboard.biggest": {
+    "text": "أثقل سمكة",
+    "role": "title",
+    "where": "Lobby leaderboard title (in-world board)"
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "role": "title",
+    "where": "Loading screen, game title"
+  },
+  "hud.cast": {
+    "text": "เหวี่ยงเบ็ด",
+    "role": "button",
+    "where": "Gameplay HUD, big round action button; probably the same slot that turns into hud.reel when a fish bites"
+  },
+  "hud.reel": {
+    "text": "ดึงเบ็ด",
+    "role": "button",
+    "where": "Gameplay HUD, big round action button shown while a fish bites (replaces hud.cast)"
+  },
+  "hud.bait_left": {
+    "text": "เหยื่อ {count}",
+    "role": "label",
+    "where": "Gameplay HUD, counter of bait the player has left"
+  },
+  "hud.backpack": {
+    "text": "กระเป๋า",
+    "role": "button",
+    "where": "Gameplay HUD, button that opens the inventory of caught fish"
+  },
+  "catch.success": {
+    "text": "ตกได้{fish}ระดับ{rarity}!",
+    "role": "toast",
+    "where": "Toast after a fish is landed"
+  },
+  "catch.escaped": {
+    "text": "ปลาหลุดไปซะแล้ว...",
+    "role": "toast",
+    "where": "Toast when the hooked fish escapes"
+  },
+  "catch.new_record": {
+    "text": "สถิติใหม่! {weight} กก.",
+    "role": "toast",
+    "where": "Toast after catching a record-weight fish"
+  },
+  "fish.golden_carp": {
+    "text": "ปลาคาร์ปทอง",
+    "role": "label",
+    "where": "Fish card in the backpack; also inserted as {fish} into catch.success"
+  },
+  "fish.lantern_eel": {
+    "text": "ปลาไหลตะเกียง",
+    "role": "label",
+    "where": "Fish card in the backpack; also inserted as {fish} into catch.success"
+  },
+  "rarity.mythic": {
+    "text": "เทพ",
+    "role": "label",
+    "where": "Rarity tag on fish cards; also inserted as {rarity} into catch.success"
+  },
+  "shop.rods": {
+    "text": "คันเบ็ด",
+    "role": "button",
+    "where": "Shop, tab listing fishing rods"
+  },
+  "shop.equip": {
+    "text": "ใช้",
+    "role": "button",
+    "where": "Shop, button under a rod the player owns"
+  },
+  "shop.equipped": {
+    "text": "กำลังใช้",
+    "role": "label",
+    "where": "Shop, label on the rod currently in use"
+  },
+  "shop.free": {
+    "text": "ฟรี",
+    "role": "label",
+    "where": "Shop, price label on the starter rod"
+  },
+  "shop.buy_robux": {
+    "text": "ซื้อด้วย {price} Robux",
+    "role": "button",
+    "where": "Shop, purchase button on a game pass card"
+  },
+  "pass.auto_reel": {
+    "text": "ดึงเบ็ดอัตโนมัติ",
+    "role": "product name",
+    "where": "Shop, name on the Auto Reel game pass card"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>เหยื่อนำโชค</b> เพิ่มโอกาสได้ปลาหายากเป็น 2 เท่า!",
+    "role": "item description",
+    "where": "Shop, description on the Lucky Bait game pass card"
+  },
+  "sell.all": {
+    "text": "ขายทั้งหมด",
+    "role": "button",
+    "where": "Fish market, button that sells every fish in the backpack"
+  },
+  "sell.done": {
+    "text": "ขายปลา {count} ตัว ได้ {coins} เหรียญ!",
+    "role": "toast",
+    "where": "Toast after selling at the fish market"
+  },
+  "sell.prompt": {
+    "text": "กด E เพื่อขาย",
+    "role": "prompt",
+    "where": "Proximity prompt at the fish market stall (in the 3D world)"
+  },
+  "ascend.button": {
+    "text": "เลื่อนขั้น",
+    "role": "button",
+    "where": "Ascend (prestige) button; exact screen not known"
+  },
+  "ascend.confirm": {
+    "text": "เลื่อนขั้นเลยไหม? จะต้องเริ่มใหม่ แต่จะตกปลาหายากได้บ่อยขึ้น {bonus}%",
+    "role": "dialog body",
+    "where": "Confirm dialog shown after pressing Ascend"
+  },
+  "weather.storm": {
+    "text": "พายุกำลังมา! ปลาหายากออกมากินเหยื่อแล้ว",
+    "role": "banner",
+    "where": "Server-wide banner during a storm weather event"
+  },
+  "quest.title": {
+    "text": "เควสต์",
+    "role": "title",
+    "where": "Quests panel title"
+  },
+  "quest.catch_n": {
+    "text": "ตกปลา {n} ตัวที่อ่าวแสงจันทร์",
+    "role": "label",
+    "where": "Quests panel, one quest line"
+  },
+  "quest.claim": {
+    "text": "รับรางวัล",
+    "role": "button",
+    "where": "Quests panel, button on a finished quest"
+  },
+  "friends.boost": {
+    "text": "ตกปลากับเพื่อน ได้โชค +{percent}%",
+    "role": "label",
+    "where": "Boost panel, info line"
+  },
+  "trade.sent": {
+    "text": "ส่งคำขอเทรดให้ {player} แล้ว",
+    "role": "toast",
+    "where": "Toast after you send a trade request"
+  },
+  "trade.accept": {
+    "text": "{player} ตอบรับคำขอเทรดแล้ว",
+    "role": "toast",
+    "where": "Toast when the other player accepts your trade request"
+  },
+  "codes.enter": {
+    "text": "ใส่โค้ด",
+    "role": "text box placeholder",
+    "where": "Codes panel, placeholder in the text box where players type a promo code"
+  },
+  "codes.redeemed": {
+    "text": "แลกโค้ดสำเร็จ! รับรางวัลไปเลย",
+    "role": "toast",
+    "where": "Toast after a valid promo code is accepted"
+  },
+  "afk.kicked": {
+    "text": "ไม่ได้ขยับตัวนานเกินไป เลยหยุดตกปลาแล้ว",
+    "role": "popup",
+    "where": "Message after 15 minutes idle; may be a kick message or an in-game popup (not known)"
+  },
+  "settings.back": {
+    "text": "กลับ",
+    "role": "button",
+    "where": "Settings panel, button that closes the panel"
+  },
+  "settings.sfx": {
+    "text": "เสียงเอฟเฟกต์",
+    "role": "label",
+    "where": "Settings panel, row label (likely beside a toggle or slider)"
+  },
+  "event.ends": {
+    "text": "จบใน {time}",
+    "role": "label",
+    "where": "Label under an event banner (probably the weather.storm banner or a timed event; not known)"
+  },
+  "daily.streak": {
+    "text": "ล็อกอินต่อเนื่อง วันที่ {day}! พรุ่งนี้กลับมารับรางวัลอีกนะ",
+    "role": "popup",
+    "where": "Daily login reward panel, main message"
+  },
+  "tip.night": {
+    "text": "เคล็ดลับ: ปลาบางชนิดกินเหยื่อแค่ตอนกลางคืน",
+    "role": "label",
+    "where": "Loading screen, tip line"
+  },
+  "group.join": {
+    "text": "เข้าร่วมกลุ่มของเรา รับเหยื่อฟรี 50 ชิ้น!",
+    "role": "banner",
+    "where": "Banner inviting players to join the studio's Roblox group"
+  },
+  "leaderboard.biggest": {
+    "text": "ปลาหนักที่สุด",
+    "role": "title",
+    "where": "Lobby leaderboard title (in-world board)"
+  }
+}

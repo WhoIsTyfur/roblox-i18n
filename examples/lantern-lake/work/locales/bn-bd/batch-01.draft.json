@@ -1,0 +1,199 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "keep": true,
+    "note": "Game title, glossary keep; Bangladeshi players search and talk about Roblox games by their English names."
+  },
+  "hud.cast": {
+    "text": "ছিপ ফেলো",
+    "confidence": "high",
+    "note": "Angling idiom 'ছিপ ফেলা' (cast the rod), not a spell or throw in general. 8 of 8 by lint: check the round button in Studio; 'ফেলো' alone (4) is the fallback."
+  },
+  "hud.reel": {
+    "text": "টানো",
+    "confidence": "high",
+    "note": "'Pull!' -- what a Bengali angler does when a fish bites. Same verb as the pass অটো টান. Not 'রিল', which reads as Facebook/Instagram Reels in Bangladesh."
+  },
+  "hud.bait_left": {
+    "text": "{count} টোপ",
+    "confidence": "high",
+    "note": "টোপ = fishing bait. Bengali nouns don't change after a number, so this reads right for 0, 1 and 12 (guide pattern '{count} কয়েন')."
+  },
+  "hud.backpack": {
+    "text": "ব্যাগ",
+    "confidence": "high",
+    "note": "Guide vocabulary: inventory/backpack = ব্যাগ."
+  },
+  "catch.success": {
+    "text": "তুমি {rarity} {fish} ধরেছ!",
+    "confidence": "high",
+    "note": "Bengali adjectives are uninflected and go before the noun, so '{rarity} {fish}' works for every tier and fish (e.g. 'তুমি দুর্লভ সোনালি কার্প ধরেছ!'); no article problem. 'ধরেছ' (have caught) avoids the 'if' reading of 'ধরলে'."
+  },
+  "catch.escaped": {
+    "text": "মাছটা ছুটে গেল...",
+    "confidence": "high",
+    "note": "'It' made explicit with the generic word for fish, as context allows; 'ছুটে গেল' = slipped free, the angler's phrase. Spoken টা classifier for a toast."
+  },
+  "catch.new_record": {
+    "text": "নতুন রেকর্ড! {weight} কেজি",
+    "confidence": "high",
+    "note": "কেজি is how Bangladesh writes kg in everyday text. The game's '12.4' (Latin digits, decimal point) reads fine here."
+  },
+  "fish.golden_carp": {
+    "text": "সোনালি কার্প",
+    "confidence": "high",
+    "note": "কার্প is the familiar Bangladeshi fish word (গ্রাস কার্প, সিলভার কার্প are market fish); সোনালি = golden. Base form, works inserted into catch.success."
+  },
+  "fish.lantern_eel": {
+    "text": "লণ্ঠন বাইম",
+    "confidence": "medium",
+    "note": "Translated per glossary: লণ্ঠন (lantern) keeps the glowing-lantern idea; বাইম is the eel Bangladeshi kids know from the market (বান মাছ is the zoological true eel, a possible alternative). Spelling লণ্ঠন vs লন্ঠন: both are seen; check with a native reviewer."
+  },
+  "rarity.mythic": {
+    "text": "মিথিক",
+    "confidence": "medium",
+    "note": "Transliterated to match the guide's লেজেন্ডারি for Legendary; Mobile Legends (big in Bangladesh) ranks Mythic above Legend, so gamers read it as the higher tier. 'পৌরাণিক' is bookish. Ordering by kids unverified."
+  },
+  "shop.rods": {
+    "text": "ছিপ",
+    "confidence": "high",
+    "note": "ছিপ = fishing rod. Not 'রড', which in Bangladesh means steel construction rod; not 'বড়শি' (hook). No plural needed for a tab label."
+  },
+  "shop.equip": {
+    "text": "হাতে নাও",
+    "confidence": "medium",
+    "note": "'Take it in hand' -- natural for a rod and pairs with the label হাতে আছে. 'ব্যবহার করো' (use) is 10 of 10 if a reviewer prefers it; 'ইকুইপ করো' is gamer English."
+  },
+  "shop.equipped": {
+    "text": "হাতে আছে",
+    "confidence": "medium",
+    "note": "State label 'in hand (now)', pairs with the button হাতে নাও. No gender agreement in Bengali. Avoided 'ব্যবহৃত', which means second-hand."
+  },
+  "shop.free": {
+    "text": "ফ্রি",
+    "confidence": "high",
+    "note": "Guide: free = ফ্রি, never মুক্ত (liberated)."
+  },
+  "shop.buy_robux": {
+    "text": "{price} Robux-এ কিনে নাও",
+    "confidence": "high"
+  },
+  "pass.auto_reel": {
+    "text": "অটো টান",
+    "confidence": "medium",
+    "note": "'Auto Pull': অটো is a common loan, টান is the noun of টানো (hud.reel), so the same verb as glossary asks. Not 'অটো রিল' (Reels). Store name in Creator Hub should match."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>লাকি টোপ</b> তোমার দুর্লভ মাছ ধরার সম্ভাবনা দ্বিগুণ করে!",
+    "confidence": "high",
+    "note": "লাকি follows the guide's 'লাকি পোশন' and the term লাক (luck); টোপ = Bait. 'ধরার সম্ভাবনা' = chance of catching. Tags kept around the pass name."
+  },
+  "sell.all": {
+    "text": "সব বিক্রি করো",
+    "confidence": "high",
+    "note": "12 of 12 by lint; check in Studio. 'সব বেচো' (7) is a shorter, more colloquial fallback."
+  },
+  "sell.done": {
+    "text": "{count}টি মাছ বিক্রি করে {coins} কয়েন পেয়েছ!",
+    "confidence": "high",
+    "note": "Restructured: 'sold {count} fish and got {coins} coins'. টি classifier never changes with the number and currency takes none, so 1 reads right. 'পেয়েছ' rather than 'পেলে' (could read as 'if you get')."
+  },
+  "sell.prompt": {
+    "text": "বিক্রি করতে E চাপো",
+    "confidence": "high"
+  },
+  "ascend.button": {
+    "text": "অ্যাসেন্ড",
+    "confidence": "medium",
+    "note": "Transliterated like the guide's রিবার্থ for Rebirth: the guide bans religious words for prestige, and native 'আরোহণ' means climbing, 'উত্তরণ' is bookish. Kids learn its meaning from ascend.confirm. Player familiarity unverified."
+  },
+  "ascend.confirm": {
+    "text": "এখনই অ্যাসেন্ড করবে? আবার প্রথম থেকে শুরু করতে হবে, কিন্তু দুর্লভ মাছ {bonus}% বেশি ধরা পড়বে।",
+    "confidence": "high",
+    "note": "'start over' = 'you'll have to start again from the beginning'; '{bonus}% more often' rendered as rare fish 'get caught {bonus}% more', the natural Bengali way to say it. Percent attached to the number."
+  },
+  "weather.storm": {
+    "text": "ঝড় আসছে! দুর্লভ মাছ টোপ খাচ্ছে।",
+    "confidence": "high",
+    "note": "'টোপ খাচ্ছে' = taking the bait, the fishing sense of 'biting' (not biting people)."
+  },
+  "quest.title": {
+    "text": "মিশন",
+    "confidence": "high",
+    "note": "Guide vocabulary: quest = মিশন, one term per game. Bengali titles need no plural."
+  },
+  "quest.catch_n": {
+    "text": "চাঁদনি উপসাগরে {n}টি মাছ ধরো",
+    "confidence": "medium",
+    "note": "Moonlit Bay translated per glossary: চাঁদনি = moonlit, উপসাগর = bay (kids know it from বঙ্গোপসাগর, Bay of Bengal). '-এ' locative attaches to the Bengali word. 'চাঁদনি খাঁড়ি' (cove) fits a lake better if a native reviewer prefers. {n}টি works for 1."
+  },
+  "quest.claim": {
+    "text": "নিয়ে নাও",
+    "confidence": "high"
+  },
+  "friends.boost": {
+    "text": "বন্ধুদের সাথে মাছ ধরলে +{percent}% লাক পাবে",
+    "confidence": "high",
+    "note": "Statement as a condition: 'if you fish with friends you get +{percent}% luck'. লাক is the everyday Bangladeshi loan, matching লাকি টোপ; 'ভাগ্য' is the native option if the reviewer prefers."
+  },
+  "trade.sent": {
+    "text": "{player}-কে ট্রেডের অনুরোধ পাঠানো হলো",
+    "confidence": "high",
+    "note": "The -কে suffix never changes with the name, so it is safe after {player}; hyphenated per the guide. ট্রেড per guide."
+  },
+  "trade.accept": {
+    "text": "{player} তোমার ট্রেডে রাজি হয়েছে",
+    "confidence": "high",
+    "note": "'agreed to your trade' -- spoken toast wording; ordinary third person, no gender. 'তোমার ট্রেডের অনুরোধ গ্রহণ করেছে' (30) is the literal alternative."
+  },
+  "codes.enter": {
+    "text": "কোড লেখো",
+    "confidence": "high"
+  },
+  "codes.redeemed": {
+    "text": "কোড রিডিম হয়েছে! পুরস্কার উপভোগ করো।",
+    "confidence": "medium",
+    "note": "রিডিম is the word Bangladeshi kids know from Free Fire redeem codes (familiarity unverified); 'কোড কাজ করেছে!' (the code worked) is the plain-native fallback."
+  },
+  "afk.kicked": {
+    "text": "তুমি অনেকক্ষণ ধরে কিছু করোনি, তাই তোমার মাছ ধরা বন্ধ হয়ে গেছে।",
+    "confidence": "high",
+    "note": "'idle' = 'did nothing for a long while'; avoided 'অলস' (lazy), which judges. No mention of being kicked, as the source has none."
+  },
+  "settings.back": {
+    "text": "ফিরে যাও",
+    "confidence": "high",
+    "note": "Standard Back wording (Bengali Android uses ফিরে যান; তুমি form here). 8 of 8 by lint; check in Studio."
+  },
+  "settings.sfx": {
+    "text": "সাউন্ড ইফেক্ট",
+    "confidence": "high",
+    "note": "Loanword, as the guide renders Music as মিউজিক; 'শব্দ প্রভাব' would be a calque."
+  },
+  "event.ends": {
+    "text": "শেষ হতে বাকি {time}",
+    "confidence": "high",
+    "note": "For the developer: {time} arrives as '2d 4h' with English unit letters, which Bengali readers won't parse well. Per the guide, format it as '2 দিন 4 ঘণ্টা' for bn-bd, or use a bare 02:15:30 timer. 13 of 14."
+  },
+  "daily.streak": {
+    "text": "টানা {day} দিনের স্ট্রিক! আরও পুরস্কার পেতে কাল আবার এসো।",
+    "confidence": "medium",
+    "note": "স্ট্রিক (from Snapchat/Duolingo) is glossed by টানা 'in a row' for kids who don't know it; no plural, so day 1 reads right. 'for more' = more rewards. Familiarity of স্ট্রিক unverified."
+  },
+  "tip.night": {
+    "text": "টিপস: কিছু মাছ শুধু রাতেই টোপ খায়।",
+    "confidence": "high",
+    "note": "টিপস is the common Bangladeshi label for a tip, even singular. 'টোপ খায়' = take the bait (fishing sense of 'bite')."
+  },
+  "group.join": {
+    "text": "আমাদের গ্রুপে যোগ দিয়ে ফ্রিতে 50টি টোপ নাও!",
+    "confidence": "high",
+    "note": "'the group' made 'আমাদের গ্রুপ' (our group), as the guide's group reward line does, so it reads as the studio's group. 'ফ্রিতে' = for free, colloquial. 50 kept."
+  },
+  "leaderboard.biggest": {
+    "text": "সবচেয়ে ভারী মাছ",
+    "confidence": "high",
+    "note": "'Heaviest fish', since the board ranks by weight; 'সবচেয়ে বড়' would suggest size."
+  }
+}

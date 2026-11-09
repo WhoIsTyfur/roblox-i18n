@@ -1,0 +1,319 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept byte-identical (glossary: keep, brand).",
+    "blind_remark": "left in English, not translated"
+  },
+  "hud.cast": {
+    "text": "Lancer",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "blind_remark": "on its own 'Lancer' can also read as 'Launch' or 'Start'"
+  },
+  "hud.reel": {
+    "text": "Mouliner",
+    "confidence": "medium",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'Mouliner' is the fishing verb for turning the reel (moulinet) to bring the line in; matches the pass name 'Moulinet auto'. Exactly 8. Plainer fallback: 'Remonter'."
+  },
+  "hud.bait_left": {
+    "text": "Appâts : {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label-colon form: count can be 0 or 1, and '1 appâts' would be wrong."
+  },
+  "hud.backpack": {
+    "text": "Sac à dos",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Tu as pêché un poisson {rarity} : {fish}!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "{rarity} follows the fixed masculine noun 'poisson', so every tier agrees whatever the fish's gender (Carpe and Anguille are feminine); no article before {fish}. The tier shows capitalized mid-sentence, as a tier name."
+  },
+  "catch.escaped": {
+    "text": "Le poisson s'est échappé…",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'It' made explicit with the generic 'poisson', as the context allows; single ellipsis character per the fr-ca guide."
+  },
+  "catch.new_record": {
+    "text": "Nouveau record! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {weight} arrives as '12.4'; fr-ca writes '12,4 kg' (decimal comma), so the game should format it for fr-ca."
+  },
+  "fish.golden_carp": {
+    "text": "Carpe dorée",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "Anguille-lanterne",
+    "confidence": "high",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Modeled on the real French 'poisson-lanterne' (lanternfish); keeps the glowing-lantern idea. 17 of 18."
+  },
+  "rarity.mythic": {
+    "text": "Mythique",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.rods": {
+    "text": "Cannes",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "'Cannes à pêche' is 14, over the 10 budget; in a fishing shop tab 'Cannes' reads as fishing rods.",
+    "blind_remark": "bare 'Cannes' without 'a peche' can also read as canes or walking sticks, or the city of Cannes"
+  },
+  "shop.equip": {
+    "text": "Équiper",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equipped": {
+    "text": "Équipée",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State label; feminine to agree with 'canne' (the rod it sits on), as the context asks."
+  },
+  "shop.free": {
+    "text": "Gratuit",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": [],
+    "note": "Invariable price-tag form, as French stores show it."
+  },
+  "shop.buy_robux": {
+    "text": "Acheter ({price} Robux)",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Fr-ca guide's pattern for pass buttons; 'Acheter pour {price} Robux' also fits (19) but runs long with 4-digit prices."
+  },
+  "pass.auto_reel": {
+    "text": "Moulinet auto",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "'Automatic reel', built on the same root as hud.reel 'Mouliner'. 13 of 14. The Creator Hub pass name should match."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Appât de chance</b> double tes chances de pêcher des poissons rares!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "'Appât de chance' follows the guide's 'Potion de chance' pattern (luck = chance, Bait = appât).",
+    "blind_remark": "name reads literally 'bait of luck', a little stiff; 'chance' then 'chances' repeats"
+  },
+  "sell.all": {
+    "text": "Tout vendre",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Vendu! Poissons : {count}, pièces gagnées : {coins}",
+    "confidence": "medium",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Label-colon form because count and coins can each be 1 ('1 poissons', '1 pièces' would be wrong). For the developer: coins of 1000+ need a no-break-space thousands separator for fr-ca ('1 250')."
+  },
+  "sell.prompt": {
+    "text": "Touche E pour vendre",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "'Appuie sur E pour vendre' is 24, over 21; 'Touche E pour...' is the fr-ca guide's short prompt form. E kept.",
+    "blind_remark": "ambiguous: 'Touche' reads as either the noun 'key' or the verb 'touch', so also 'Touch E to sell'"
+  },
+  "ascend.button": {
+    "text": "Ascension",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Noun button, as French UI allows; the usual French name for this prestige mechanic. In a fishing game it reads as rising up, not religious."
+  },
+  "ascend.confirm": {
+    "text": "Faire l'ascension maintenant? Tu recommenceras à zéro, mais tu pêcheras des poissons rares {bonus} % plus souvent.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Same 'ascension' as the button. 'Faire l'ascension' can also mean climbing a mountain, but right after pressing Ascension it reads as the mechanic. No-break space before %."
+  },
+  "weather.storm": {
+    "text": "Une tempête approche! Les poissons rares mordent.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'Mordre' is the fishing sense of 'bite'. Second sentence ends with a period: the fr-ca guide allows at most one '!' per string."
+  },
+  "quest.title": {
+    "text": "Quêtes",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Poissons à pêcher, baie Clair-de-Lune : {n}",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Label-colon form: n can be 1 ('Pêche 1 poissons' would be wrong). Exactly 40. The fuller 'Poissons à pêcher à la baie Clair-de-Lune : {n}' is 44 if the line has room. Generic 'baie' lowercase in running text, Quebec toponymy style.",
+    "blind_remark": "terse, form-like wording"
+  },
+  "quest.claim": {
+    "text": "Récupérer",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Not 'Réclamer' (calque meaning to demand)."
+  },
+  "friends.boost": {
+    "text": "Pêcher avec tes amis donne +{percent} % de chance",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "No-break space before %, as fr-ca writes it.",
+    "blind_remark": "'chance' can mean luck or odds; does not say odds of what"
+  },
+  "trade.sent": {
+    "text": "Demande d'échange envoyée à {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "'envoyée' agrees with 'demande', not with {player}."
+  },
+  "trade.accept": {
+    "text": "{player} a accepté ta demande d'échange",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "'avoir' past tense, so nothing agrees with the player's unknown gender; 'your trade' made explicit as the request, per context. 31 of 33."
+  },
+  "codes.enter": {
+    "text": "Entre un code",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Code activé! Profite de ta récompense.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": []
+  },
+  "afk.kicked": {
+    "text": "Tu as été AFK trop longtemps, alors ta pêche s'est arrêtée.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "AFK per the fr-ca guide: 'Tu es resté inactif' would need a gendered participle. 'ta pêche s'est arrêtée' = your fishing stopped, per context; no kick mentioned.",
+    "blind_remark": "keeps the English acronym AFK"
+  },
+  "settings.back": {
+    "text": "Retour",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Effets sonores",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Fin dans {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {time} arrives as '2d 4h'; fr-ca needs '2 j 4 h' (no-break spaces), so the game should format it for fr-ca."
+  },
+  "daily.streak": {
+    "text": "Jour {day} de ta série! Reviens demain pour d'autres récompenses.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'Jour {day}' needs no plural, so day = 1 is safe. 'for more' made explicit as more rewards, per context."
+  },
+  "tip.night": {
+    "text": "Astuce : certains poissons ne mordent que la nuit.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": []
+  },
+  "group.join": {
+    "text": "Rejoins notre communauté pour 50 appâts gratuits!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "Roblox calls player groups 'communautés' in French (fr-ca guide); 'notre' as in the guide's reference line."
+  },
+  "leaderboard.biggest": {
+    "text": "Plus grosse prise",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "Fishing idiom for the heaviest fish caught; 'La plus grosse prise' is 20, over 18."
+  }
+}

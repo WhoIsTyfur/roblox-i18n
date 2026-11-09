@@ -1,0 +1,327 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept in Latin (glossary keep); Sri Lankan players see Roblox titles in English.",
+    "blind_remark": "not translated; left in English in Latin script"
+  },
+  "hud.cast": {
+    "text": "බිලී දාන්න",
+    "confidence": "medium",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "'Put the line in', from බිලී (fishing line and hook, as in බිලී බානවා 'to angle') + දාන්න. Fishing-specific; plain විසි කරන්න ('throw') would not say what is thrown."
+  },
+  "hud.reel": {
+    "text": "ඇදගන්න",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'Pull it in'. Same root ඇද- as the pass name ස්වයං ඇදීම."
+  },
+  "hud.bait_left": {
+    "text": "ඇම {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Noun before number, the guide's කාසි {count} pattern; reads right for 0, 1 and many. ඇම is fishing bait."
+  },
+  "hud.backpack": {
+    "text": "බෑගය",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's word for backpack/inventory."
+  },
+  "catch.success": {
+    "text": "ඔබට {rarity} {fish} අහු වුණා!",
+    "confidence": "medium",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Spoken experiencer pattern 'a fish got caught to you' (like මට මාළුවෙක් අහු වුණා), so {fish} is a bare subject with no ending and the verb has no agreement. The base fish forms are definite, so it reads 'you caught the Rare Golden Carp', which is natural here. Fixes the English 'a {rarity}' issue too."
+  },
+  "catch.escaped": {
+    "text": "මාළුවා ගැලවිලා ගියා...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "Sinhala needs a subject, so 'it' is the generic මාළුවා (the fish); ගැලවිලා ගියා = 'slipped off and got away'. Trailing ... kept."
+  },
+  "catch.new_record": {
+    "text": "අලුත් වාර්තාවක්! කිලෝ {weight}",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "වාර්තාව is the sports 'record' (ලෝක වාර්තාව = world record). Unit before number per CLDR si and everyday speech (කිලෝ 5); කිලෝ is friendlier than the abbreviation කි.ග්‍රෑ. The decimal point in {weight} is correct for si."
+  },
+  "fish.golden_carp": {
+    "text": "රන් කාප් මාළුවා",
+    "confidence": "medium",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "රන් ('golden', as in රන් මාළුවා) + කාප් (the name Sri Lankan inland fisheries use for carp) + මාළුවා so kids know it is a fish. Not රන් මාළුවා alone, which means goldfish. Base form, works as the bare subject in catch.success."
+  },
+  "fish.lantern_eel": {
+    "text": "ලන්තෑරුම් ආඳා",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "ලන්තෑරුම (lantern, the everyday word) keeps the glowing-lantern idea; ආඳා = eel. The Latin title no longer echoes 'Lantern' for Sinhala readers."
+  },
+  "rarity.mythic": {
+    "text": "අද්භූත",
+    "confidence": "low",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "'Supernatural, otherworldly', chosen to read above Legendary = පුරාවෘත්ත (guide). Avoided මිථ්‍යා: it also means 'false' and is the Buddhist term for wrong view. No Sinhala game convention for rarity tiers exists to copy; native check wanted.",
+    "blind_remark": "also reads as supernatural or eerie; the word does not by itself suggest a rarity rank"
+  },
+  "shop.rods": {
+    "text": "බිලී පිති",
+    "confidence": "medium",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "Plural of බිලී පිත්ත, fishing rod (dictionary word; not verified against current usage). Not කූරු or පොලු (sticks, poles)."
+  },
+  "shop.equip": {
+    "text": "භාවිත කරන්න",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Use' as a button (verb + න්න). Sinhala has no gaming 'equip' word; සන්නද්ධ කරන්න is military 'arm'. Pairs with the state label භාවිතයේ."
+  },
+  "shop.equipped": {
+    "text": "භාවිතයේ",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "'In use', a state label, the context's suggested wording. No agreement issue in Sinhala."
+  },
+  "shop.free": {
+    "text": "නොමිලේ",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": [],
+    "note": "Price 'free of charge' (guide, Google Play's word)."
+  },
+  "shop.buy_robux": {
+    "text": "Robux {price}කට මිලදී ගන්න",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern: Sinhala price order (like රුපියල් 100කට); -කට fuses to the digits, which is safe.",
+    "blind_remark": "Robux left in Latin script"
+  },
+  "pass.auto_reel": {
+    "text": "ස්වයං ඇදීම",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "'Self-pulling': ස්වයං as in ස්වයංක්‍රීය (automatic) + ඇදීම, the noun of the hud.reel verb ඇදගන්න. The Creator Hub pass name should match."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>වාසනා ඇම</b> එක්ක ඔබට දුර්ලභ මාළු අහු වෙන ඉඩ දෙගුණ වෙනවා!",
+    "confidence": "medium",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Restructured: 'with Lucky Bait, your chance of catching rare fish doubles', since a thing as the subject of 'doubles' reads translated in Sinhala. වාසනා ඇම = luck + bait (glossary); ඉඩ = spoken 'chance'. Bold kept on the pass name."
+  },
+  "sell.all": {
+    "text": "සියල්ල විකුණන්න",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": [],
+    "note": "'Sell all'; සියල්ල is the UI word (Android's සියල්ල තෝරන්න). Spoken ඔක්කොම විකුණන්න is the warmer alternative at the same length."
+  },
+  "sell.done": {
+    "text": "මාළු {count}ක් කාසි {coins}කට විකුණුවා!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Sinhala quantity order (noun then number) with -ක් and -කට fused to the digits, the guide's Robux {price}කට pattern; right for 1 and for many. Subject dropped, spoken past."
+  },
+  "sell.prompt": {
+    "text": "විකිණීමට E ඔබන්න",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern විවෘත කිරීමට E ඔබන්න. For the developer: phone and console players have no E key; ProximityPrompt ActionText 'Sell' (විකුණන්න) would serve everyone."
+  },
+  "ascend.button": {
+    "text": "උසස් වෙන්න",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "උසස් වීම = rising in rank (a promotion, an advanced grade): the prestige sense, neither climbing (නගින්න) nor religious (ආරෝහණය). Latin 'Ascend කරන්න' like the guide's Rebirth was the alternative; the glossary says translate. Same word in ascend.confirm.",
+    "blind_remark": "the everyday sense is getting promoted, as in a job or rank"
+  },
+  "ascend.confirm": {
+    "text": "දැන් උසස් වෙනවාද? ඔබ මුල ඉඳන් පටන් ගන්නවා, නමුත් දුර්ලභ මාළු {bonus}%ක් වැඩියෙන් අහු වෙනවා.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "'Ascend now? You start from the beginning, but rare fish get caught {bonus}% more.' Yes/no question with ද. Percent with no space and -ක් fused to it, as Sinhala news writes 25%ක්."
+  },
+  "weather.storm": {
+    "text": "කුණාටුවක් එනවා! දුර්ලභ මාළු ඇම කනවා.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "ඇම කනවා = 'are taking the bait', the fishing sense of 'biting'."
+  },
+  "quest.title": {
+    "text": "අභියෝග",
+    "confidence": "medium",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": [],
+    "note": "Plural of අභියෝගය ('challenge'), the guide's quest word (marked unverified there). Not මෙහෙයුම (military operation)."
+  },
+  "quest.catch_n": {
+    "text": "සඳ එළි බොක්කේදී මාළු {n}ක් අල්ලන්න",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Moonlit Bay translated as සඳ එළි බොක්ක ('moonlight bay'; බොක්ක as in බෙංගාල බොක්ක); -ේදී marks 'at' so it cannot read as 'the bay's fish'. If in-world signs show English 'Moonlit Bay', they will not match. -ක් on the digit is right for 1."
+  },
+  "quest.claim": {
+    "text": "ලබා ගන්න",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's reward.claim: 'receive (the reward)'."
+  },
+  "friends.boost": {
+    "text": "මිතුරන් එක්ක මාළු අල්ලද්දී ඔබේ වාසනාවට +{percent}%ක් එකතු වෙනවා",
+    "confidence": "medium",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "'While fishing with friends, +{percent}% is added to your luck': a statement, and 'added' keeps the '+' meaningful. මිතුරන් per guide; percent with no space."
+  },
+  "trade.sent": {
+    "text": "{player} වෙත හුවමාරු ඉල්ලීමක් යැව්වා",
+    "confidence": "medium",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "'Sent a trade request to {player}'. වෙත is a separate postposition, so no case ending touches the name ({player}ට would look broken); spoken verb has no gender."
+  },
+  "trade.accept": {
+    "text": "{player} ඔබේ හුවමාරු ඉල්ලීම පිළිගත්තා",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "'{player} accepted your trade request'; {player} is a bare subject and spoken පිළිගත්තා has no gender."
+  },
+  "codes.enter": {
+    "text": "කේතය ඇතුළත් කරන්න",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's codes.placeholder wording."
+  },
+  "codes.redeemed": {
+    "text": "කේතය සාර්ථකයි! ඔබේ තෑග්ග භුක්ති විඳින්න.",
+    "confidence": "medium",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'Code successful! Enjoy your gift.' Sinhala has no casual 'redeemed'; සාර්ථකයි says it worked. භුක්ති විඳින්න is the usual 'enjoy' of Sinhala ads. තෑග්ග, not ත්‍යාගය (also a lottery prize), per guide."
+  },
+  "afk.kicked": {
+    "text": "ඔබ වැඩි වෙලාවක් කිසිම දෙයක් නොකර හිටියා, ඒ නිසා මාළු ඇල්ලීම නැවතුණා.",
+    "confidence": "medium",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "'You stayed too long without doing anything, so fishing stopped.' Idle rendered as 'doing nothing' rather than technical අක්‍රිය. No removal from the server added."
+  },
+  "settings.back": {
+    "text": "ආපසු",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": [],
+    "note": "Android's Sinhala 'Back' navigation label."
+  },
+  "settings.sfx": {
+    "text": "ශබ්ද ප්‍රයෝග",
+    "confidence": "medium",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": [],
+    "note": "The standard Sinhala term for sound effects (film and TV credits). Kids may also say සවුන්ඩ්; this keeps it distinct from music (සංගීතය)."
+  },
+  "event.ends": {
+    "text": "ඉවර වෙන්න තව {time}",
+    "confidence": "medium",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's event.ends_in without 'Event එක', which the source does not say; no ending on {time}. For the developer: '2d 4h' with English letters reads foreign; Sinhala puts the unit first (දින 2 පැය 4, CLDR si)."
+  },
+  "daily.streak": {
+    "text": "දිගටම {day} වැනි දවස! තවත් තෑගි ගන්න හෙට ආයෙත් එන්න.",
+    "confidence": "medium",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'Day {day} in a row! Come back tomorrow to get more gifts.' The ordinal ({day} වැනි) reads right for day 1 and avoids a plural; 'for more' made explicit as more gifts (තෑගි), as the context says."
+  },
+  "tip.night": {
+    "text": "ඉඟිය: සමහර මාළු ඇම කන්නේ රෑට විතරයි.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "ඉඟිය = tip/hint label; emphatic -න්නේ ... විතරයි is the natural 'only at night'; ඇම කනවා = bite, same as weather.storm."
+  },
+  "group.join": {
+    "text": "ප්‍රජාවට එකතු වෙලා නොමිලේ ඇම 50ක් ගන්න!",
+    "confidence": "medium",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "'Join the community and get 50 bait free!' ප්‍රජාව matches Roblox's English 'Community' that Sri Lankan kids see (glossary: Roblox's own UI word); the guide allows කණ්ඩායම if the game's UI says group elsewhere. 50 kept, noun before number."
+  },
+  "leaderboard.biggest": {
+    "text": "බරම මාළුවා",
+    "confidence": "medium",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'The heaviest fish': context says biggest = heaviest by weight, so not ලොකුම (largest). Calque 'biggest catch' (විශාලතම ඇල්ලීම) avoided."
+  }
+}

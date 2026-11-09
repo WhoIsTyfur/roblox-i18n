@@ -1,0 +1,324 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Glossary keep: brand title; Italian players name Roblox games by their English titles.",
+    "blind_remark": "left in English, not translated"
+  },
+  "hud.cast": {
+    "text": "Lancia",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Tu-imperative of 'lanciare (la lenza)', the fishing sense of cast."
+  },
+  "hud.reel": {
+    "text": "Recupera",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'Recuperare la lenza' is the angling verb for reeling in; same verb as the Auto Reel pass (Autorecupero). Exactly 8, at budget.",
+    "blind_remark": "literally \"Retrieve/Recover\"; a generic verb whose fishing sense comes only from context"
+  },
+  "hud.bait_left": {
+    "text": "Esche: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so count 0 or 1 stays correct ('1 esche' would be wrong)."
+  },
+  "hud.backpack": {
+    "text": "Zaino",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Hai preso un pesce {rarity}: {fish}!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Rarity tags are masculine (Raro, Mitico) and agree with 'pesce'; the fish name follows a colon, so feminine names (Carpa dorata, Anguilla lanterna) need no agreement. The inserted tag keeps its capital ('un pesce Raro'), as in the guide's egg.hatched pattern. 'Un pesce' also removes the English a/an problem.",
+    "blind_remark": "with rarity.mythic inserted it reads \"un pesce Mitico\", the adjective capitalized mid-sentence"
+  },
+  "catch.escaped": {
+    "text": "Il pesce è scappato...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "Generic 'il pesce' as the subject so the masculine participle is right for any species."
+  },
+  "catch.new_record": {
+    "text": "Nuovo record! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {weight} arrives as '12.4'; Italian writes '12,4'. Please format the number with a decimal comma for it-it."
+  },
+  "fish.golden_carp": {
+    "text": "Carpa dorata",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "Anguilla lanterna",
+    "confidence": "high",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Noun-plus-noun apposition like the real 'pesce lanterna' and 'pesce palla'; keeps the glowing-lantern idea. 17 of 18."
+  },
+  "rarity.mythic": {
+    "text": "Mitico",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Masculine, per the guide's rarity set (Raro, Leggendario, Mitico), so it agrees with 'pesce' in catch.success. Reads above Leggendario."
+  },
+  "shop.rods": {
+    "text": "Canne",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "'Canne da pesca' (14) is over 10; in a fishing shop tab 'Canne' alone is the normal label.",
+    "blind_remark": "bare \"canne\" also means reeds or canes and is slang for joints; \"fishing rods\" is clear only from context"
+  },
+  "shop.equip": {
+    "text": "Equipaggia",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "Standard Italian game button (tu-imperative). Exactly 10, at budget."
+  },
+  "shop.equipped": {
+    "text": "In uso",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State label; 'Equipaggiata' (12) is over 11 and gendered, 'In uso' is neither."
+  },
+  "shop.free": {
+    "text": "Gratis",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": [],
+    "note": "Invariable, unlike 'Gratuito/Gratuita'."
+  },
+  "shop.buy_robux": {
+    "text": "Compra a {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "'a' is the idiomatic price preposition, as in the guide's pass.buy_price."
+  },
+  "pass.auto_reel": {
+    "text": "Autorecupero",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Coined compound from the hud.reel verb (recuperare), like 'autoscatto'. 'Recupero automatico' (19) is over 14; 'Recupero auto' would read as 'car recovery'. The Creator Hub store name should match.",
+    "blind_remark": "literally \"auto-retrieve/auto-recovery\"; coined compound that could read as a generic auto-recovery feature"
+  },
+  "pass.lucky_bait": {
+    "text": "L'<b>Esca della fortuna</b> raddoppia le tue probabilità di prendere pesci rari!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "'Esca della fortuna' follows the guide's 'Pozione della fortuna' pattern ('Esca fortunata' is a calque). The elided article L' sits outside the bold so the tag still wraps only the pass name."
+  },
+  "sell.all": {
+    "text": "Vendi tutto",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Pesci venduti: {count}. Monete: +{coins}!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so count = 1 and coins = 1 stay correct ('1 pesci', '1 monete' would be wrong). '+' marks the coins as earned."
+  },
+  "sell.prompt": {
+    "text": "Premi E per vendere",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "E kept per glossary; 'Premi E per...' is the guide's prompt pattern."
+  },
+  "ascend.button": {
+    "text": "Ascendi",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Tu-imperative of 'ascendere' (rise to a higher rank). 'Ascensione' avoided: it is the religious Ascension. 'Prestigio' is the other common Italian name for this mechanic if the developer prefers it.",
+    "blind_remark": "formal, literary-sounding verb, uncommon in everyday Italian"
+  },
+  "ascend.confirm": {
+    "text": "Vuoi ascendere ora? Ricominci da capo, ma prendi pesci rari più spesso (+{bonus}%).",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Present tense, as the guide advises for game rules. '+{bonus}%' in parentheses avoids 'il {bonus}%', which needs 'l'' before 8, 11, 80. Same Ascend verb as ascend.button."
+  },
+  "weather.storm": {
+    "text": "Arriva una tempesta! I pesci rari abboccano.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'Abboccare' is the fishing verb for taking the bait. 44 of 60."
+  },
+  "quest.title": {
+    "text": "Missioni",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Pesci da prendere alla Baia della Luna: {n}",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so n = 1 stays correct ('Prendi 1 pesci' would be wrong). Exactly 40, at budget; shorter fallback: 'Prendi pesci alla Baia della Luna: {n}' (35). Moonlit Bay translated per glossary as 'Baia della Luna'; in-world signs should match."
+  },
+  "quest.claim": {
+    "text": "Riscuoti",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's Claim button; not 'Riscatta', which is kept for codes."
+  },
+  "friends.boost": {
+    "text": "Pescare con gli amici ti dà +{percent}% di fortuna",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Statement with an infinitive subject, not an order. '+{percent}% di fortuna' follows the guide's '+{percent}% di bonus' pattern."
+  },
+  "trade.sent": {
+    "text": "Richiesta di scambio inviata a {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "'inviata' agrees with 'richiesta', not with the player. 31 of 33."
+  },
+  "trade.accept": {
+    "text": "{player} ha accettato lo scambio",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "'avere' verb, so no gender agreement with {player}. 'lo scambio' instead of 'la tua richiesta di scambio', which is over 33."
+  },
+  "codes.enter": {
+    "text": "Inserisci un codice",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Codice riscattato! Goditi il premio.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'Riscattare' is the guide's word for codes; 'premio' per the guide's daily reward vocabulary."
+  },
+  "afk.kicked": {
+    "text": "Troppo tempo senza fare nulla: la pesca si è fermata.",
+    "confidence": "medium",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "Restructured: 'Sei stato inattivo troppo a lungo' assumes a boy (inattivo/inattiva). 'Senza fare nulla' is the idle meaning; no mention of leaving the server, as in the source."
+  },
+  "settings.back": {
+    "text": "Indietro",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": [],
+    "note": "Standard Italian back button. Exactly 8, at budget."
+  },
+  "settings.sfx": {
+    "text": "Effetti sonori",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Finisce tra {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "'Fine evento tra' (16) is over 14. For the developer: {time} arrives as '2d 4h'; 'd' means nothing in Italian, please format it as '2g 4h' for it-it."
+  },
+  "daily.streak": {
+    "text": "Serie: giorno {day}! Torna domani per altri premi.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so day = 1 stays correct. 'for more' made explicit as 'altri premi' (more rewards), as context says.",
+    "blind_remark": "bare \"Serie\" literally means \"series\"; the streak sense is clear only from context"
+  },
+  "tip.night": {
+    "text": "Consiglio: alcuni pesci abboccano solo di notte.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "'Consiglio:' is the usual Italian tip label; 'abboccare' is the fishing sense of bite."
+  },
+  "group.join": {
+    "text": "Unisciti alla community per 50 esche gratis!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "'community' is Roblox's Italian UI word for groups, as in the guide's social.group_reward. 50 is fixed, so the plural 'esche' is safe."
+  },
+  "leaderboard.biggest": {
+    "text": "Pesce più pesante",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "Heaviest by weight, per context; 'più grosso' would also suggest size."
+  }
+}

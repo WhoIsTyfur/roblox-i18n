@@ -1,0 +1,202 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "role": "title",
+    "where": "Loading screen, game title"
+  },
+  "hud.cast": {
+    "text": "Cast",
+    "role": "button",
+    "where": "Gameplay HUD, big round action button; probably the same slot that turns into hud.reel when a fish bites"
+  },
+  "hud.reel": {
+    "text": "Reel",
+    "role": "button",
+    "where": "Gameplay HUD, big round action button shown while a fish bites (replaces hud.cast)"
+  },
+  "hud.bait_left": {
+    "text": "{count} Bait",
+    "role": "label",
+    "where": "Gameplay HUD, counter of bait the player has left"
+  },
+  "hud.backpack": {
+    "text": "Backpack",
+    "role": "button",
+    "where": "Gameplay HUD, button that opens the inventory of caught fish"
+  },
+  "catch.success": {
+    "text": "You caught: {rarity} {fish}!",
+    "role": "toast",
+    "where": "Toast after a fish is landed"
+  },
+  "catch.escaped": {
+    "text": "It got away...",
+    "role": "toast",
+    "where": "Toast when the hooked fish escapes"
+  },
+  "catch.new_record": {
+    "text": "New record! {weight} kg",
+    "role": "toast",
+    "where": "Toast after catching a record-weight fish"
+  },
+  "fish.golden_carp": {
+    "text": "Golden Carp",
+    "role": "label",
+    "where": "Fish card in the backpack; also inserted as {fish} into catch.success"
+  },
+  "fish.lantern_eel": {
+    "text": "Lantern Eel",
+    "role": "label",
+    "where": "Fish card in the backpack; also inserted as {fish} into catch.success"
+  },
+  "rarity.mythic": {
+    "text": "Mythic",
+    "role": "label",
+    "where": "Rarity tag on fish cards; also inserted as {rarity} into catch.success"
+  },
+  "shop.rods": {
+    "text": "Rods",
+    "role": "button",
+    "where": "Shop, tab listing fishing rods"
+  },
+  "shop.equip": {
+    "text": "Equip",
+    "role": "button",
+    "where": "Shop, button under a rod the player owns"
+  },
+  "shop.equipped": {
+    "text": "Equipped",
+    "role": "label",
+    "where": "Shop, label on the rod currently in use"
+  },
+  "shop.free": {
+    "text": "Free",
+    "role": "label",
+    "where": "Shop, price label on the starter rod"
+  },
+  "shop.buy_robux": {
+    "text": "Buy for {price} Robux",
+    "role": "button",
+    "where": "Shop, purchase button on a game pass card"
+  },
+  "pass.auto_reel": {
+    "text": "Auto Reel",
+    "role": "product name",
+    "where": "Shop, name on the Auto Reel game pass card"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Lucky Bait</b> doubles your rare fish chance!",
+    "role": "item description",
+    "where": "Shop, description on the Lucky Bait game pass card"
+  },
+  "sell.all": {
+    "text": "Sell All",
+    "role": "button",
+    "where": "Fish market, button that sells every fish in the backpack"
+  },
+  "sell.done": {
+    "text": "Sold {count} fish! Coins earned: {coins}",
+    "role": "toast",
+    "where": "Toast after selling at the fish market"
+  },
+  "sell.prompt": {
+    "text": "Press E to sell",
+    "role": "prompt",
+    "where": "Proximity prompt at the fish market stall (in the 3D world)"
+  },
+  "ascend.button": {
+    "text": "Ascend",
+    "role": "button",
+    "where": "Ascend (prestige) button; exact screen not known"
+  },
+  "ascend.confirm": {
+    "text": "Ascend now? You will start again but catch rare fish {bonus}% more often.",
+    "role": "dialog body",
+    "where": "Confirm dialog shown after pressing Ascend"
+  },
+  "weather.storm": {
+    "text": "A storm is coming! Rare fish are biting.",
+    "role": "banner",
+    "where": "Server-wide banner during a storm weather event"
+  },
+  "quest.title": {
+    "text": "Quests",
+    "role": "title",
+    "where": "Quests panel title"
+  },
+  "quest.catch_n": {
+    "text": "Catch {n} fish at Moonlit Bay",
+    "role": "label",
+    "where": "Quests panel, one quest line"
+  },
+  "quest.claim": {
+    "text": "Claim",
+    "role": "button",
+    "where": "Quests panel, button on a finished quest"
+  },
+  "friends.boost": {
+    "text": "Fishing with friends gives +{percent}% luck",
+    "role": "label",
+    "where": "Boost panel, info line"
+  },
+  "trade.sent": {
+    "text": "Trade request sent to {player}",
+    "role": "toast",
+    "where": "Toast after you send a trade request"
+  },
+  "trade.accept": {
+    "text": "{player} accepted your trade",
+    "role": "toast",
+    "where": "Toast when the other player accepts your trade request"
+  },
+  "codes.enter": {
+    "text": "Enter a code",
+    "role": "text box placeholder",
+    "where": "Codes panel, placeholder in the text box where players type a promo code"
+  },
+  "codes.redeemed": {
+    "text": "Code redeemed! Enjoy your reward.",
+    "role": "toast",
+    "where": "Toast after a valid promo code is accepted"
+  },
+  "afk.kicked": {
+    "text": "You were idle for too long and stopped fishing.",
+    "role": "popup",
+    "where": "Message after 15 minutes idle; may be a kick message or an in-game popup (not known)"
+  },
+  "settings.back": {
+    "text": "Back",
+    "role": "button",
+    "where": "Settings panel, button that closes the panel"
+  },
+  "settings.sfx": {
+    "text": "Sound Effects",
+    "role": "label",
+    "where": "Settings panel, row label (likely beside a toggle or slider)"
+  },
+  "event.ends": {
+    "text": "Ends in {time}",
+    "role": "label",
+    "where": "Label under an event banner (probably the weather.storm banner or a timed event; not known)"
+  },
+  "daily.streak": {
+    "text": "Day {day} streak! Come back tomorrow for more.",
+    "role": "popup",
+    "where": "Daily login reward panel, main message"
+  },
+  "tip.night": {
+    "text": "Tip: some fish only bite at night.",
+    "role": "label",
+    "where": "Loading screen, tip line"
+  },
+  "group.join": {
+    "text": "Join our community for 50 free bait!",
+    "role": "banner",
+    "where": "Banner inviting players to join the studio's Roblox group"
+  },
+  "leaderboard.biggest": {
+    "text": "Biggest Catch",
+    "role": "title",
+    "where": "Lobby leaderboard title (in-world board)"
+  }
+}

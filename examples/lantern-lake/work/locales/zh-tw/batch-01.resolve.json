@@ -1,0 +1,7 @@
+{
+  "settings.sfx": {
+    "accept": false,
+    "text": "音效",
+    "reason": "Lint false positive, not a text error. 音 is the same character in Simplified and Traditional (Taiwan writes 音效, 音樂, 聲音), and scripts/i18n.py lists it in both SIMPLIFIED_ONLY and TRADITIONAL_ONLY, as it does 盾 and 魂. 音效 is the standard Taiwan game-settings label for sound effects, paired with 音樂 for music. Every 音-free option is worse for a Taiwan player: 聲效 reads as Hong Kong/Mainland usage and 效果聲 is not a settings term. Keep 音效 via decisions.json and drop 音, 盾 and 魂 from both lint sets."
+  }
+}

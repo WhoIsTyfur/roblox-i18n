@@ -1,0 +1,202 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "role": "title",
+    "where": "Loading screen, game title"
+  },
+  "hud.cast": {
+    "text": "Lontar",
+    "role": "button",
+    "where": "Gameplay HUD, big round action button; probably the same slot that turns into hud.reel when a fish bites"
+  },
+  "hud.reel": {
+    "text": "Tarik",
+    "role": "button",
+    "where": "Gameplay HUD, big round action button shown while a fish bites (replaces hud.cast)"
+  },
+  "hud.bait_left": {
+    "text": "{count} Umpan",
+    "role": "label",
+    "where": "Gameplay HUD, counter of bait the player has left"
+  },
+  "hud.backpack": {
+    "text": "Beg",
+    "role": "button",
+    "where": "Gameplay HUD, button that opens the inventory of caught fish"
+  },
+  "catch.success": {
+    "text": "Anda menangkap {fish} {rarity}!",
+    "role": "toast",
+    "where": "Toast after a fish is landed"
+  },
+  "catch.escaped": {
+    "text": "Ikan itu terlepas...",
+    "role": "toast",
+    "where": "Toast when the hooked fish escapes"
+  },
+  "catch.new_record": {
+    "text": "Rekod baharu! {weight} kg",
+    "role": "toast",
+    "where": "Toast after catching a record-weight fish"
+  },
+  "fish.golden_carp": {
+    "text": "Ikan Kap Emas",
+    "role": "label",
+    "where": "Fish card in the backpack; also inserted as {fish} into catch.success"
+  },
+  "fish.lantern_eel": {
+    "text": "Belut Tanglung",
+    "role": "label",
+    "where": "Fish card in the backpack; also inserted as {fish} into catch.success"
+  },
+  "rarity.mythic": {
+    "text": "Mitos",
+    "role": "label",
+    "where": "Rarity tag on fish cards; also inserted as {rarity} into catch.success"
+  },
+  "shop.rods": {
+    "text": "Joran",
+    "role": "button",
+    "where": "Shop, tab listing fishing rods"
+  },
+  "shop.equip": {
+    "text": "Guna",
+    "role": "button",
+    "where": "Shop, button under a rod the player owns"
+  },
+  "shop.equipped": {
+    "text": "Digunakan",
+    "role": "label",
+    "where": "Shop, label on the rod currently in use"
+  },
+  "shop.free": {
+    "text": "Percuma",
+    "role": "label",
+    "where": "Shop, price label on the starter rod"
+  },
+  "shop.buy_robux": {
+    "text": "Beli: {price} Robux",
+    "role": "button",
+    "where": "Shop, purchase button on a game pass card"
+  },
+  "pass.auto_reel": {
+    "text": "Tarik Auto",
+    "role": "product name",
+    "where": "Shop, name on the Auto Reel game pass card"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Umpan Bertuah</b> menggandakan peluang anda menangkap ikan nadir!",
+    "role": "item description",
+    "where": "Shop, description on the Lucky Bait game pass card"
+  },
+  "sell.all": {
+    "text": "Jual Semua",
+    "role": "button",
+    "where": "Fish market, button that sells every fish in the backpack"
+  },
+  "sell.done": {
+    "text": "Anda menjual {count} ikan dan dapat {coins} syiling!",
+    "role": "toast",
+    "where": "Toast after selling at the fish market"
+  },
+  "sell.prompt": {
+    "text": "Tekan E untuk menjual",
+    "role": "prompt",
+    "where": "Proximity prompt at the fish market stall (in the 3D world)"
+  },
+  "ascend.button": {
+    "text": "Bangkit",
+    "role": "button",
+    "where": "Ascend (prestige) button; exact screen not known"
+  },
+  "ascend.confirm": {
+    "text": "Bangkit sekarang? Anda akan mula semula, tetapi akan menangkap ikan nadir {bonus}% lebih kerap.",
+    "role": "dialog body",
+    "where": "Confirm dialog shown after pressing Ascend"
+  },
+  "weather.storm": {
+    "text": "Ribut akan melanda! Ikan nadir sedang makan umpan.",
+    "role": "banner",
+    "where": "Server-wide banner during a storm weather event"
+  },
+  "quest.title": {
+    "text": "Misi",
+    "role": "title",
+    "where": "Quests panel title"
+  },
+  "quest.catch_n": {
+    "text": "Tangkap {n} ikan di Teluk Cahaya Bulan",
+    "role": "label",
+    "where": "Quests panel, one quest line"
+  },
+  "quest.claim": {
+    "text": "Tuntut",
+    "role": "button",
+    "where": "Quests panel, button on a finished quest"
+  },
+  "friends.boost": {
+    "text": "Memancing bersama rakan memberi +{percent}% tuah",
+    "role": "label",
+    "where": "Boost panel, info line"
+  },
+  "trade.sent": {
+    "text": "Permintaan tukar dihantar kepada {player}",
+    "role": "toast",
+    "where": "Toast after you send a trade request"
+  },
+  "trade.accept": {
+    "text": "{player} menerima permintaan tukar anda",
+    "role": "toast",
+    "where": "Toast when the other player accepts your trade request"
+  },
+  "codes.enter": {
+    "text": "Masukkan kod",
+    "role": "text box placeholder",
+    "where": "Codes panel, placeholder in the text box where players type a promo code"
+  },
+  "codes.redeemed": {
+    "text": "Kod berjaya ditebus! Nikmati ganjaran anda.",
+    "role": "toast",
+    "where": "Toast after a valid promo code is accepted"
+  },
+  "afk.kicked": {
+    "text": "Anda terlalu lama tidak aktif dan berhenti memancing.",
+    "role": "popup",
+    "where": "Message after 15 minutes idle; may be a kick message or an in-game popup (not known)"
+  },
+  "settings.back": {
+    "text": "Kembali",
+    "role": "button",
+    "where": "Settings panel, button that closes the panel"
+  },
+  "settings.sfx": {
+    "text": "Kesan Bunyi",
+    "role": "label",
+    "where": "Settings panel, row label (likely beside a toggle or slider)"
+  },
+  "event.ends": {
+    "text": "Tamat dalam {time}",
+    "role": "label",
+    "where": "Label under an event banner (probably the weather.storm banner or a timed event; not known)"
+  },
+  "daily.streak": {
+    "text": "Hari berturut-turut: {day}! Kembali esok untuk ganjaran lagi.",
+    "role": "popup",
+    "where": "Daily login reward panel, main message"
+  },
+  "tip.night": {
+    "text": "Petua: Sesetengah ikan hanya makan umpan pada waktu malam.",
+    "role": "label",
+    "where": "Loading screen, tip line"
+  },
+  "group.join": {
+    "text": "Sertai komuniti kami dan dapat 50 umpan percuma!",
+    "role": "banner",
+    "where": "Banner inviting players to join the studio's Roblox group"
+  },
+  "leaderboard.biggest": {
+    "text": "Ikan Terberat",
+    "role": "title",
+    "where": "Lobby leaderboard title (in-world board)"
+  }
+}

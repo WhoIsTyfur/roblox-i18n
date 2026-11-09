@@ -1,0 +1,189 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "keep": true,
+    "note": "Game title, kept byte-identical per the glossary (brand, no official French title)."
+  },
+  "hud.cast": {
+    "text": "Lancer",
+    "confidence": "high"
+  },
+  "hud.reel": {
+    "text": "Remonter",
+    "confidence": "medium",
+    "note": "Fishing sense: 'remonter la ligne / le poisson'; 8/8. 'Mouliner' is the angler's word but younger kids may not know it; 'Ferrer' means setting the hook, not reeling in. Same verb as the pass 'Remontée auto'."
+  },
+  "hud.bait_left": {
+    "text": "Appâts : {count}",
+    "confidence": "high",
+    "note": "Label form, correct for 0, 1 and more (French would need '1 appât' vs '2 appâts')."
+  },
+  "hud.backpack": {
+    "text": "Sac",
+    "confidence": "high",
+    "note": "Guide vocabulary (inventaire / sac). 'Sac à dos' (9) also fits, but the short label reads cleaner on a HUD button."
+  },
+  "catch.success": {
+    "text": "Tu as pêché : {fish} ({rarity}) !",
+    "confidence": "high",
+    "note": "Colon and parentheses so no article or adjective has to agree with the inserted fish (Carpe dorée and Anguille-lanterne are feminine); rarity tags Rare / Légendaire / Mythique are epicene. 19/30 without params; filled: 'Tu as pêché : Carpe dorée (Rare) !'."
+  },
+  "catch.escaped": {
+    "text": "Le poisson s'est échappé...",
+    "confidence": "high",
+    "note": "Names the generic 'poisson' (m.) rather than 'Il', since the species on the line may be feminine (carpe, anguille)."
+  },
+  "catch.new_record": {
+    "text": "Nouveau record ! {weight} kg",
+    "confidence": "high",
+    "note": "Developer: {weight} arrives as '12.4'; French writes '12,4'. Format the number per locale if possible."
+  },
+  "fish.golden_carp": {
+    "text": "Carpe dorée",
+    "confidence": "high"
+  },
+  "fish.lantern_eel": {
+    "text": "Anguille-lanterne",
+    "confidence": "high",
+    "note": "Modeled on the real French name 'poisson-lanterne' (lanternfish), keeping the glowing-lantern idea; 17/18. Feminine, but no string puts an article or adjective next to it."
+  },
+  "rarity.mythic": {
+    "text": "Mythique",
+    "confidence": "high"
+  },
+  "shop.rods": {
+    "text": "Cannes",
+    "confidence": "high",
+    "note": "'Cannes à pêche' (14) is over 10; in a fishing shop tab 'Cannes' alone is unambiguous."
+  },
+  "shop.equip": {
+    "text": "Équiper",
+    "confidence": "high"
+  },
+  "shop.equipped": {
+    "text": "Équipée",
+    "confidence": "high",
+    "note": "State label, feminine to agree with 'canne', the only item it marks."
+  },
+  "shop.free": {
+    "text": "Gratuit",
+    "confidence": "high"
+  },
+  "shop.buy_robux": {
+    "text": "Acheter pour {price} Robux",
+    "confidence": "high",
+    "note": "19/20 without {price}. If 4-digit prices overflow, 'Payer {price} Robux' is the shorter fallback. Developer: French writes thousands as '1 000', not '1,000'."
+  },
+  "pass.auto_reel": {
+    "text": "Remontée auto",
+    "confidence": "medium",
+    "note": "Same verb as hud.reel (Remonter); 13/14. 'Moulinet auto' is the alternative if the developer prefers the reel-device image. The Creator Hub pass name should match."
+  },
+  "pass.lucky_bait": {
+    "text": "L'<b>Appât de chance</b> double tes chances de pêcher des poissons rares !",
+    "confidence": "high",
+    "note": "Pass name from the glossary words chance (luck) + appât (bait), like the guide's 'Potion de chance'; the elided article stays outside the bold tag."
+  },
+  "sell.all": {
+    "text": "Tout vendre",
+    "confidence": "high"
+  },
+  "sell.done": {
+    "text": "Poissons vendus : {count}. Pièces gagnées : {coins} !",
+    "confidence": "high",
+    "note": "Two label forms so 1 fish or 1 coin reads right (no '1 poissons', '1 pièces'). 39/40 without numbers."
+  },
+  "sell.prompt": {
+    "text": "E pour vendre",
+    "confidence": "high",
+    "note": "'Appuie sur E pour vendre' is 24 > 21; same pattern as the guide's 'E pour ouvrir'. E sits in the same place on AZERTY. Source-side: phone and console players have no E key; ActionText 'Vendre' alone would serve everyone."
+  },
+  "ascend.button": {
+    "text": "Ascension",
+    "confidence": "medium",
+    "note": "No natural French infinitive for this prestige reset ('S'élever' reads spiritual or like climbing), so the noun names the mechanic, 9/10. 'Prestige' is the alternative if the developer prefers it."
+  },
+  "ascend.confirm": {
+    "text": "Lancer l'ascension maintenant ? Tu repartiras de zéro, mais tu pêcheras des poissons rares {bonus} % plus souvent.",
+    "confidence": "high",
+    "note": "Same word as the button; lowercase in the sentence so it reads as the game action, not the religious feast (l'Ascension). 'repartir de zéro' = start over."
+  },
+  "weather.storm": {
+    "text": "Une tempête approche ! Les poissons rares mordent.",
+    "confidence": "high"
+  },
+  "quest.title": {
+    "text": "Quêtes",
+    "confidence": "high"
+  },
+  "quest.catch_n": {
+    "text": "Poissons à pêcher, Baie Clair-de-Lune : {n}",
+    "confidence": "medium",
+    "note": "Label form so n = 1 reads right (no '1 poissons'); 40/40. Moonlit Bay -> 'Baie Clair-de-Lune' (moonlight, place-name style). The more fluent 'Poissons à pêcher à la Baie Clair-de-Lune : {n}' is 44 if the line has room."
+  },
+  "quest.claim": {
+    "text": "Récupérer",
+    "confidence": "high",
+    "note": "Not 'Réclamer' (= complain, demand)."
+  },
+  "friends.boost": {
+    "text": "Pêcher avec tes amis donne +{percent} % de chance",
+    "confidence": "high"
+  },
+  "trade.sent": {
+    "text": "Demande d'échange envoyée à {player}",
+    "confidence": "high"
+  },
+  "trade.accept": {
+    "text": "{player} a accepté ton échange",
+    "confidence": "high",
+    "note": "avoir-participle, so no agreement with the player's unknown gender; 'ton échange' = your trade request."
+  },
+  "codes.enter": {
+    "text": "Entre un code",
+    "confidence": "high"
+  },
+  "codes.redeemed": {
+    "text": "Code validé ! Profite de ta récompense.",
+    "confidence": "high",
+    "note": "'Code validé' is the usual French game wording for a redeemed code."
+  },
+  "afk.kicked": {
+    "text": "Tu as été AFK trop longtemps, alors ta pêche s'est arrêtée.",
+    "confidence": "high",
+    "note": "AFK (kept per guide) instead of 'inactif / inactive', which would need the player's gender; 'as été' takes no agreement. No mention of being removed from the server, as in the source."
+  },
+  "settings.back": {
+    "text": "Retour",
+    "confidence": "high"
+  },
+  "settings.sfx": {
+    "text": "Effets sonores",
+    "confidence": "high"
+  },
+  "event.ends": {
+    "text": "Fin dans {time}",
+    "confidence": "high",
+    "note": "Developer: {time} arrives as '2d 4h'; French expects '2 j 4 h'. Format durations per locale if possible."
+  },
+  "daily.streak": {
+    "text": "Jour {day} de ta série ! Reviens demain pour d'autres récompenses.",
+    "confidence": "high",
+    "note": "'Jour {day} de ta série' avoids a plural for day = 1; 'série' is the usual French word for a login streak. 'for more' made explicit as rewards, per context. 60/62."
+  },
+  "tip.night": {
+    "text": "Astuce : certains poissons ne mordent que la nuit.",
+    "confidence": "high"
+  },
+  "group.join": {
+    "text": "Rejoins la communauté : 50 appâts offerts !",
+    "confidence": "high",
+    "note": "Roblox calls groups 'communautés'; 'offerts' is the French promo word for free (guide: '... offerte !')."
+  },
+  "leaderboard.biggest": {
+    "text": "Plus grosse prise",
+    "confidence": "high",
+    "note": "'gros' = heavy for a fish, 'prise' = a catch (noun); 17/18."
+  }
+}

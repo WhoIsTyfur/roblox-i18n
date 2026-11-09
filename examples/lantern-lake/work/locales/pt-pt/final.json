@@ -1,0 +1,324 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, glossary keep; the guide keeps English game titles unless the developer supplies a Portuguese one.",
+    "blind_remark": "left in English, not translated"
+  },
+  "hud.cast": {
+    "text": "Lançar",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Infinitive button, as pt-PT buttons are; 'lançar (a linha)' is the fishing sense."
+  },
+  "hud.reel": {
+    "text": "Recolher",
+    "confidence": "medium",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'Recolher (a linha)' is the pt-PT fishing verb for reeling in; 8 of 8. 'Puxar' is shorter and plainer for kids, but it has no usable noun for the pass name Auto Reel (glossary: same verb).",
+    "blind_remark": "on its own the verb means pull in / retract / collect; reads as reeling in only because it replaces Cast during a bite"
+  },
+  "hud.bait_left": {
+    "text": "Isco: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so 0, 1 and 12 all read correctly. 'Isco' is the Portugal word for fishing bait; 'isca' is the Brazilian one."
+  },
+  "hud.backpack": {
+    "text": "Mochila",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Pescaste um peixe {rarity}: {fish}!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern ('Novo pet {rarity}: {pet}!'): the masculine rarity agrees with 'peixe', so feminine fish names (Carpa, Enguia) stay correct; avoids the source's 'a {rarity}' problem. 21 visible; 44 with Lendário + Enguia-Lanterna."
+  },
+  "catch.escaped": {
+    "text": "O peixe fugiu...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "Names the generic 'peixe' so the subject is clear in a toast; keeps the trailing '...'."
+  },
+  "catch.new_record": {
+    "text": "Novo recorde! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "Developer: {weight} arrives as '12.4'; pt-PT writes a decimal comma ('12,4'), so the period reads foreign. Format it per locale in code."
+  },
+  "fish.golden_carp": {
+    "text": "Carpa Dourada",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "Item-name capitalization per the guide (nouns and adjectives capitalized, like 'Poção da Sorte')."
+  },
+  "fish.lantern_eel": {
+    "text": "Enguia-Lanterna",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Translated per glossary, keeping the lantern idea; hyphenated noun-noun species name the way Portuguese forms them (peixe-lanterna, peixe-espada). Feminine noun; safe in catch.success because the rarity agrees with 'peixe'."
+  },
+  "rarity.mythic": {
+    "text": "Mítico",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Masculine to agree with 'peixe' in catch.success; reads above Lendário (terms.json)."
+  },
+  "shop.rods": {
+    "text": "Canas",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "'Cana de pesca' is the Portugal term; 'vara' is Brazilian."
+  },
+  "shop.equip": {
+    "text": "Equipar",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equipped": {
+    "text": "Equipada",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State label; feminine to agree with the rod it sits on ('a cana')."
+  },
+  "shop.free": {
+    "text": "Grátis",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Comprar por {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": []
+  },
+  "pass.auto_reel": {
+    "text": "Autorrecolha",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Noun of hud.reel's 'Recolher', as the glossary asks. 'Recolha automática' (18) is clearer but over the 14 budget; 'autorrecolha' follows the 1990 spelling rule (auto + r doubles, as in autorretrato). The Creator Hub pass name should match.",
+    "blind_remark": "coined compound; the noun 'recolha' usually means collection or pickup, so it can read as 'Auto-collect'"
+  },
+  "pass.lucky_bait": {
+    "text": "O <b>Isco da Sorte</b> duplica as tuas hipóteses de pescar peixes raros!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Article 'O' sits outside the bold so the tag still wraps only the pass name. 'Hipóteses' is the pt-PT word for chances; 'raros' matches the Raro tier."
+  },
+  "sell.all": {
+    "text": "Vender tudo",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Peixes vendidos: {count}. Moedas ganhas: {coins}!",
+    "confidence": "medium",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Two label forms so count = 1 and coins = 1 stay correct ('1 moedas' would break). 35 visible. Developer: if the game formats coins as '1,250', pt-PT reads it as 1.25; send 1250 or '1 250'."
+  },
+  "sell.prompt": {
+    "text": "Prime E para vender",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Tu imperative of premir, per the guide ('Prime E para abrir')."
+  },
+  "ascend.button": {
+    "text": "Ascender",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "'Ascender' means rising or moving up a rank, not religious; same verb in ascend.confirm. Native check welcome: 'Prestígio' is the other option some games use."
+  },
+  "ascend.confirm": {
+    "text": "Ascender agora? Vais recomeçar do zero, mas passas a pescar peixes raros {bonus}% mais vezes.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "'Passas a pescar' = from then on, carrying the permanent bonus; percent written with no space, per CLDR pt-PT."
+  },
+  "weather.storm": {
+    "text": "Tempestade a caminho! Os peixes raros estão a morder o isco.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'Morder o isco' keeps the fishing sense explicit, as the context asks; 'Vem aí uma tempestade!' would put it at 61 of 60. Exactly 60."
+  },
+  "quest.title": {
+    "text": "Missões",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Peixes a pescar na Baía do Luar: {n}",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form ('Fish to catch at Moonlit Bay: 10') so n = 1 stays correct; 'Pesca {n} peixes' breaks at 1. Baía do Luar per terms.json (developer chose translate); in-world signs should match.",
+    "blind_remark": "stiff, form-like phrasing; unclear whether {n} is the total goal or how many remain"
+  },
+  "quest.claim": {
+    "text": "Receber",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide: never 'Reclamar' (= complain)."
+  },
+  "friends.boost": {
+    "text": "Pescar com amigos dá +{percent}% de sorte",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": []
+  },
+  "trade.sent": {
+    "text": "Pedido de troca enviado a {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "No article before the display name, so gender is never guessed."
+  },
+  "trade.accept": {
+    "text": "{player} aceitou o teu pedido de troca",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "'Your trade' rendered as the trade request, per context; no gendered word describes {player}. 30 of 33."
+  },
+  "codes.enter": {
+    "text": "Introduz um código",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": [],
+    "note": "Tu imperative fits here (18 of 20); 'Inserir código' (14) is the shorter infinitive fallback the guide uses for a tighter box."
+  },
+  "codes.redeemed": {
+    "text": "Código resgatado! Aproveita a recompensa.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'Resgatar' is the guide's word for redeeming codes; 'a recompensa' instead of 'a tua recompensa' keeps it at 41 of 45."
+  },
+  "afk.kicked": {
+    "text": "Estiveste demasiado tempo sem te mexer, por isso a pesca parou.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "Reworded to avoid 'inativo/inativa', which would need the player's gender. No server removal mentioned, as in the source.",
+    "blind_remark": "says only that fishing stopped; nothing about being removed from the server"
+  },
+  "settings.back": {
+    "text": "Voltar",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Efeitos sonoros",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": [],
+    "note": "Sentence case per the guide's house rule."
+  },
+  "event.ends": {
+    "text": "Termina em {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Developer: {time} arrives as '2d 4h'; pt-PT writes '2 d 4 h', and a minutes 'm' would read as meters. Format durations per locale in code.",
+    "blind_remark": "can also read as 'ends on/at {time}' if {time} is a date or clock time"
+  },
+  "daily.streak": {
+    "text": "Dias seguidos: {day}! Volta amanhã para mais recompensas.",
+    "confidence": "medium",
+    "source_hash": "2162d0628c39",
+    "status": "fixed",
+    "flags": [
+      "review:minor:locale"
+    ],
+    "note": "Ordinal ('3.º dia seguido') is how Portuguese says a day streak and is correct for every day value, unlike 'sequência de {day} dias' at 1. 'For more' made explicit as 'mais recompensas'. 51 of 62.",
+    "review_reason": "The ordinal indicator in \"{day}.º\" fails lint as a non-Latin letter and is a glyph risk in custom fonts; the label form uses terms.json \"dias seguidos\" and stays correct at day 1 (52 of 62)."
+  },
+  "tip.night": {
+    "text": "Dica: alguns peixes só mordem o isco à noite.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "'Morder o isco' for the fishing sense of bite, same as weather.storm."
+  },
+  "group.join": {
+    "text": "Junta-te à nossa comunidade e ganha 50 iscos grátis!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "'Comunidade' is Roblox's own pt word for groups (guide). 'Nossa' because it is the studio's group, as in the guide's reference line. 'For 50 bait' folded into 'e ganha'. 53 of 60."
+  },
+  "leaderboard.biggest": {
+    "text": "Peixe mais pesado",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Biggest' is the heaviest by weight, so 'pesado' says it outright; 'Maior captura' could read as longest. 17 of 18."
+  }
+}

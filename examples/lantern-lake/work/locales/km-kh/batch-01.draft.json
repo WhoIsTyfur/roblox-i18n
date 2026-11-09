@@ -1,0 +1,202 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "keep": true,
+    "note": "Game title, glossary keep; the guide keeps Latin brand and title names and adds no Khmer title without the owner's OK."
+  },
+  "hud.cast": {
+    "text": "បោះសន្ទូច",
+    "confidence": "high",
+    "note": "'Throw the line', the angler's phrase (សន្ទូច = hook and line), not a spell. 7 of 8 by lint, 9 code points in one run: check the round button; បោះ alone is the fallback."
+  },
+  "hud.reel": {
+    "text": "ទាញ",
+    "confidence": "high",
+    "note": "'Pull!' -- what you do when a fish bites; same verb as the pass ទាញស្វ័យប្រវត្តិ."
+  },
+  "hud.bait_left": {
+    "text": "នុយ៖ {count}",
+    "confidence": "high",
+    "note": "Label form 'Bait: {count}' with the Khmer colon ៖; reads right for 0, 1 and 12. នុយ = fishing bait."
+  },
+  "hud.backpack": {
+    "text": "កាបូប",
+    "confidence": "high",
+    "note": "Guide vocabulary: backpack / inventory = កាបូប (bag)."
+  },
+  "catch.success": {
+    "text": "ស្ទូចបានហើយ! {fish}ថ្នាក់{rarity}!",
+    "confidence": "medium",
+    "note": "'Caught it! A {rarity}-class {fish}!' -- guide pattern {pet}ថ្នាក់{rarity}, e.g. ត្រីកាបមាសថ្នាក់កម្រ. Split into two exclamations so the long space-free run gets a break after !; អ្នក dropped."
+  },
+  "catch.escaped": {
+    "text": "ត្រីរបូតបាត់ហើយ...",
+    "confidence": "high",
+    "note": "'The fish slipped away...' -- uses the generic ត្រី as the context allows; របូត = slip out of a hold."
+  },
+  "catch.new_record": {
+    "text": "កំណត់ត្រាថ្មី! {weight} គីឡូក្រាម",
+    "confidence": "medium",
+    "note": "កំណត់ត្រា = record (as in បំបែកកំណត់ត្រា, break a record). kg written out in Khmer as គីឡូក្រាម; Latin 'kg' or the spoken គីឡូ are the alternatives."
+  },
+  "fish.golden_carp": {
+    "text": "ត្រីកាបមាស",
+    "confidence": "medium",
+    "note": "ត្រីកាប = carp (the Khmer fish-farming name) + មាស 'gold', modifier after the noun; reads ត្រីកាបមាសថ្នាក់កម្រ in catch.success. Unverified how well kids know ត្រីកាប."
+  },
+  "fish.lantern_eel": {
+    "text": "អន្ទង់ចង្កៀង",
+    "confidence": "medium",
+    "note": "អន្ទង់ = eel, ចង្កៀង = lamp / lantern: 'lamp eel' keeps the glowing-lantern idea. គោម (paper lantern) is closer to 'lantern' but says 'light' less clearly. Base form, no classifier."
+  },
+  "rarity.mythic": {
+    "text": "ទេវកថា",
+    "confidence": "medium",
+    "note": "'Myth' (stories of gods), one tier above Legendary = រឿងព្រេង ('legend, folktale'), so gods outrank folk legends. Reads អន្ទង់ចង្កៀងថ្នាក់ទេវកថា in catch.success. Unverified whether kids read it as higher; ទិព្វ ('divine') is a shorter alternative."
+  },
+  "shop.rods": {
+    "text": "ដងសន្ទូច",
+    "confidence": "high",
+    "note": "Fishing rod (ដង = pole, សន្ទូច = hook and line); Khmer needs no plural on a tab."
+  },
+  "shop.equip": {
+    "text": "ប្រើ",
+    "confidence": "high",
+    "note": "'Use' -- a rod is held, not worn (ពាក់), so the bare verb ប្រើ; pairs with the label កំពុងប្រើ."
+  },
+  "shop.equipped": {
+    "text": "កំពុងប្រើ",
+    "confidence": "high",
+    "note": "'In use' (aspect marker កំពុង): a state, paired with the ប្រើ button."
+  },
+  "shop.free": {
+    "text": "ឥតគិតថ្លៃ",
+    "confidence": "high",
+    "note": "Guide vocabulary: free = ឥតគិតថ្លៃ. 7 of 8 by lint."
+  },
+  "shop.buy_robux": {
+    "text": "ទិញដោយ {price} Robux",
+    "confidence": "high",
+    "note": "Guide reference pass.buy_price; ដោយ ('with') stops it reading as 'buy {price} Robux'."
+  },
+  "pass.auto_reel": {
+    "text": "ទាញស្វ័យប្រវត្តិ",
+    "confidence": "medium",
+    "note": "'Pull automatically', same verb as hud.reel; ស្វ័យប្រវត្តិ is the everyday word for automatic. 11 of 14 by lint but 16 code points with no space: check the card width. The Creator Hub pass name should match."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>នុយសំណាង</b> បង្កើនឱកាសស្ទូចបានត្រីកម្រ ទ្វេដង!",
+    "confidence": "high",
+    "note": "'Lucky Bait doubles the chance of catching rare fish' (ទ្វេដង = twofold); 'your' dropped. Khmer bold likely does not show (guide), so the pass name must read fine unbolded."
+  },
+  "sell.all": {
+    "text": "លក់ទាំងអស់",
+    "confidence": "high"
+  },
+  "sell.done": {
+    "text": "លក់ត្រី {count} ក្បាល បាន {coins} កាក់!",
+    "confidence": "high",
+    "note": "'Sold {count} fish, got {coins} coins!' -- fish counted with the classifier ក្បាល; Khmer has no plural forms, so it reads right for 1."
+  },
+  "sell.prompt": {
+    "text": "ចុច E ដើម្បីលក់",
+    "confidence": "high",
+    "note": "Guide pattern ចុច E ដើម្បី...; E kept Latin. Source-side: ActionText 'Sell' would serve phone and console players too."
+  },
+  "ascend.button": {
+    "text": "ឡើងឋានៈ",
+    "confidence": "medium",
+    "note": "'Rise in rank' -- the prestige sense, not religious and not climbing. Avoids ឡើងថ្នាក់ (ថ្នាក់ is the house rarity word) and ឡើងកម្រិត (level up). Same word in ascend.confirm."
+  },
+  "ascend.confirm": {
+    "text": "ចង់ឡើងឋានៈឥឡូវនេះទេ? អ្នកនឹងចាប់ផ្ដើមពីដំបូងវិញ ប៉ុន្តែនឹងស្ទូចបានត្រីកម្រ ញឹកញាប់ជាងមុន {bonus}%។",
+    "confidence": "high",
+    "note": "Modeled on the guide's rebirth.confirm ('Want to ... now?'); 'start over' = start again from the beginning; '{bonus}% more often' = ញឹកញាប់ជាងមុន {bonus}%. No 'permanently' added, as the source has none."
+  },
+  "weather.storm": {
+    "text": "ព្យុះកំពុងមកដល់! ត្រីកម្រកំពុងស៊ីនុយ!",
+    "confidence": "high",
+    "note": "'biting' = ស៊ីនុយ 'taking the bait', the fishing sense. The second sentence ends in ! instead of ។ to keep the banner excited, as the guide allows."
+  },
+  "quest.title": {
+    "text": "បេសកកម្ម",
+    "confidence": "high",
+    "note": "Guide vocabulary: quest = បេសកកម្ម; no plural needed."
+  },
+  "quest.catch_n": {
+    "text": "ស្ទូចត្រីឲ្យបាន {n} ក្បាល នៅឈូងពន្លឺខែ",
+    "confidence": "medium",
+    "note": "'Fish until you have {n} at Moonlight Bay'; classifier ក្បាល, fine for 1. Moonlit Bay = ឈូងពន្លឺខែ ('moonlight bay', terms.json), a coined place name; English in-world signs would not match it."
+  },
+  "quest.claim": {
+    "text": "ទទួលយក",
+    "confidence": "high",
+    "note": "Guide reference reward.claim: 'take it'; never ទាមទារ (legal claim)."
+  },
+  "friends.boost": {
+    "text": "ស្ទូចត្រីជាមួយមិត្តភក្តិ បានសំណាង +{percent}%",
+    "confidence": "medium",
+    "note": "'Fish with friends, get +{percent}% luck' -- a statement, so no ដើម្បី; + kept and % attached as in Khmer number style."
+  },
+  "trade.sent": {
+    "text": "បានផ្ញើសំណើដោះដូរទៅ {player}",
+    "confidence": "high",
+    "note": "'Sent a trade request to {player}'; no ។ because the English has no final period."
+  },
+  "trade.accept": {
+    "text": "{player} បានយល់ព្រមដោះដូរជាមួយអ្នក",
+    "confidence": "high",
+    "note": "'{player} agreed to trade with you' -- the request was accepted; Khmer has no gender to agree."
+  },
+  "codes.enter": {
+    "text": "បញ្ចូលកូដ",
+    "confidence": "high",
+    "note": "Guide reference codes.placeholder; never លេខសម្ងាត់ (password)."
+  },
+  "codes.redeemed": {
+    "text": "ប្រើកូដបានជោគជ័យ! រីករាយជាមួយរង្វាន់។",
+    "confidence": "medium",
+    "note": "'Code used successfully! Enjoy the reward.' -- avoids បានប្រើកូដហើយ, which can read as the error 'code already used'; possessive dropped; ។ for the English period."
+  },
+  "afk.kicked": {
+    "text": "អ្នកនៅស្ងៀមយូរពេក ដូច្នេះបានឈប់ស្ទូចត្រីហើយ។",
+    "confidence": "medium",
+    "note": "'You stayed idle too long, so fishing has stopped'; ដូច្នេះ ('so') states the cause. No mention of leaving the server, as in the source."
+  },
+  "settings.back": {
+    "text": "ត្រឡប់",
+    "confidence": "high",
+    "note": "'Return' -- closes the panel; ត្រឡប់ក្រោយ also works but is 8 of 8 by lint and 11 code points."
+  },
+  "settings.sfx": {
+    "text": "បែបផែនសំឡេង",
+    "confidence": "medium",
+    "note": "'Sound effects' (effect + sound), the counterpart of តន្ត្រី (music) on the same panel; dictionary spelling សំឡេង."
+  },
+  "event.ends": {
+    "text": "ចប់ក្នុង {time} ទៀត",
+    "confidence": "high",
+    "note": "Guide pattern 'in {time}' -> ក្នុង {time} ទៀត. For the developer: {time} arrives as '2d 4h' with English unit letters; Khmer players need '2 ថ្ងៃ 4 ម៉ោង' (CLDR)."
+  },
+  "daily.streak": {
+    "text": "ចូលលេងជាប់គ្នាថ្ងៃទី {day}! ត្រឡប់មកវិញថ្ងៃស្អែក ដើម្បីបានរង្វាន់ថែមទៀត។",
+    "confidence": "medium",
+    "note": "'Playing in a row, day {day}!' -- the ordinal ថ្ងៃទី {day} reads right for 1; 'for more' made explicit as more rewards; ។ for the English period."
+  },
+  "tip.night": {
+    "text": "គន្លឹះ៖ ត្រីខ្លះស៊ីនុយ តែពេលយប់ប៉ុណ្ណោះ។",
+    "confidence": "high",
+    "note": "គន្លឹះ = tip; ស៊ីនុយ = bite (take the bait); space before តែ gives a wrap point."
+  },
+  "group.join": {
+    "text": "ចូលរួមក្រុម ដើម្បីបាននុយ 50 ឥតគិតថ្លៃ!",
+    "confidence": "high",
+    "note": "Guide pattern social.group_reward; ក្រុម = Roblox group. Bait counted bare like a currency, no classifier."
+  },
+  "leaderboard.biggest": {
+    "text": "ត្រីធ្ងន់ជាងគេ",
+    "confidence": "high",
+    "note": "'Heaviest fish' -- the board ranks by weight, so ធ្ងន់ (heavy) rather than ធំ (big)."
+  }
+}

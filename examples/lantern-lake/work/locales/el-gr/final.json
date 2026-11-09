@@ -1,0 +1,327 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept as branded (glossary: keep); Greek kids read Latin-script titles.",
+    "blind_remark": "left in English, not translated"
+  },
+  "hud.cast": {
+    "text": "Ρίξε",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Imperative of ρίχνω, the everyday fishing verb for casting (ρίχνω πετονιά / καλάμι)."
+  },
+  "hud.reel": {
+    "text": "Μάζεψε",
+    "confidence": "medium",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "Reel in = μαζεύω την πετονιά; same root as the pass name Αυτόματο μάζεμα. Τράβα (pull!) is the other natural option for the bite moment but has no short noun for the pass.",
+    "blind_remark": "on its own reads as \"Collect\" or \"Gather up\"; only the fishing context makes it mean reeling in"
+  },
+  "hud.bait_left": {
+    "text": "Δολώματα: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so 0 and 1 read correctly (guide pattern Κέρματα: {count}); 10/10."
+  },
+  "hud.backpack": {
+    "text": "Σακίδιο",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Έπιασες: {fish} ({rarity})!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Colon and brackets avoid case and gender agreement with inserted words (guide pattern); rarity tags are neuter like ψάρι."
+  },
+  "catch.escaped": {
+    "text": "Σου ξέφυγε…",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "Idiomatic 'it got away from you'; single ellipsis character per the Greek guide."
+  },
+  "catch.new_record": {
+    "text": "Νέο ρεκόρ! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "Greek writes the SI symbol kg in Latin. Developer: {weight} arrives as 12.4; Greek uses a decimal comma (12,4), so format it per locale in code."
+  },
+  "fish.golden_carp": {
+    "text": "Χρυσός κυπρίνος",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "Base nominative, sentence case; also inserted as {fish}."
+  },
+  "fish.lantern_eel": {
+    "text": "Χέλι-φανάρι",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Invented name: eel + lantern as a noun-noun compound like λέξη-κλειδί; keeps the glowing-lantern idea. Both nouns neuter; base form for {fish}."
+  },
+  "rarity.mythic": {
+    "text": "Μυθικό",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Neuter tier tag, matching Θρυλικό (Legendary) and Σπάνιο (Rare) and the implied ψάρι."
+  },
+  "shop.rods": {
+    "text": "Καλάμια",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "Everyday word for fishing rods (καλάμι ψαρέματος)."
+  },
+  "shop.equip": {
+    "text": "Χρήση",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "Verbal noun 'use', paired with the state label Σε χρήση; matches the noun-style shop button Αγορά."
+  },
+  "shop.equipped": {
+    "text": "Σε χρήση",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "'In use': a state, and needs no gender agreement with the rod."
+  },
+  "shop.free": {
+    "text": "Δωρεάν",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Αγορά με {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Verbal-noun button as in the guide's reference translation."
+  },
+  "pass.auto_reel": {
+    "text": "Αυτόματο μάζεμα",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "15 vs estimated budget 14: shortest natural wording that keeps the Reel verb (μαζεύω); no shorter Greek noun exists. The Creator Hub pass name should match.",
+    "blind_remark": "could read as \"Auto Collect\"; only the fishing context makes it mean reeling in"
+  },
+  "pass.lucky_bait": {
+    "text": "Το <b>Τυχερό δόλωμα</b> διπλασιάζει τις πιθανότητές σου για σπάνια ψάρια!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Greek needs the article before the subject; it sits outside the bold tag so the tag wraps only the pass name. 'Your chances' is idiomatic plural; double accent before σου."
+  },
+  "sell.all": {
+    "text": "Πούλα τα όλα",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": [],
+    "note": "'Sell them all', the natural colloquial button; 12/12."
+  },
+  "sell.done": {
+    "text": "Πούλησες ψάρια: {count}. Κέρδισες κέρματα: {coins}!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Label forms after a colon so count and coins read correctly at 1 (guide pattern).",
+    "blind_remark": "two \"label: number\" phrases in a row; clear but stiff"
+  },
+  "sell.prompt": {
+    "text": "Πάτα E για πώληση",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Latin E (U+0045), as in the guide's reference 'Πάτα E για άνοιγμα'. Source-side: phone and console players have no E key."
+  },
+  "ascend.button": {
+    "text": "Άνοδος",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Neutral 'rise/ascent' for the prestige mechanic; avoids Ανάληψη (the religious Ascension) and Ανάβαση (climbing). Same word in ascend.confirm.",
+    "blind_remark": "bare noun meaning \"ascent\" or \"rise\"; vague as a button label on its own"
+  },
+  "ascend.confirm": {
+    "text": "Άνοδος τώρα; Θα ξεκινήσεις από την αρχή, αλλά θα πιάνεις τα σπάνια ψάρια {bonus}% πιο συχνά.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Greek question mark ';'. Article 'τα' keeps σπάνια an adjective; without it 'πιάνεις σπάνια' could read as 'you rarely catch'. Imperfective θα πιάνεις = from now on."
+  },
+  "weather.storm": {
+    "text": "Έρχεται καταιγίδα! Τα σπάνια ψάρια τσιμπάνε.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "τσιμπάω is the fishing verb for biting. Article keeps σπάνια an adjective, not the adverb 'rarely'."
+  },
+  "quest.title": {
+    "text": "Αποστολές",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Πιάσε ψάρια στον Φεγγαρόλουστο Κόλπο: {n}",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Count after a colon so n = 1 reads correctly. Moonlit Bay rendered as Φεγγαρόλουστος Κόλπος, declined here to the accusative after 'στον'. 38/40.",
+    "blind_remark": "number tacked on after a colon; reads like a form label, and it is unclear whether {n} is a target or progress"
+  },
+  "quest.claim": {
+    "text": "Πάρε το",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "'Take it' (the reward), the guide's reference for claim; matches the imperative quest line."
+  },
+  "friends.boost": {
+    "text": "Το ψάρεμα με φίλους δίνει +{percent}% τύχη",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Statement, not an order; percent with no space as in Greek."
+  },
+  "trade.sent": {
+    "text": "Στάλθηκε αίτημα ανταλλαγής προς: {player}",
+    "confidence": "medium",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "Name after a colon so no gendered article (στον/στην) is needed, the guide's 'Ανταλλαγή με: {player}' device; 'προς' makes clear the request went to the player. 33/33.",
+    "blind_remark": "colon right after the preposition \"to\" is a little unnatural"
+  },
+  "trade.accept": {
+    "text": "{player} δέχτηκε την ανταλλαγή σου",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "Bare name as subject; past verbs carry no gender."
+  },
+  "codes.enter": {
+    "text": "Γράψε κωδικό",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": [],
+    "note": "'Type a code', the guide's placeholder; 'Enter' means type in.",
+    "blind_remark": "the word for \"code\" also commonly means \"password\" in Greek; in a text box this could read as \"Enter password\""
+  },
+  "codes.redeemed": {
+    "text": "Ο κωδικός εξαργυρώθηκε! Απόλαυσε το δώρο σου.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "Redeem = εξαργύρωση and reward = δώρο per the guide; 45/45."
+  },
+  "afk.kicked": {
+    "text": "Έμεινες πάρα πολλή ώρα χωρίς να παίζεις, οπότε το ψάρεμα σταμάτησε.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "'You stayed too long without playing, so fishing stopped': avoids gendered adjectives like ανενεργός/ανενεργή; no mention of removal, as in the source."
+  },
+  "settings.back": {
+    "text": "Πίσω",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Ηχητικά εφέ",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": [],
+    "note": "Usual Greek settings term."
+  },
+  "event.ends": {
+    "text": "Λήγει σε {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Developer: {time} arrives as '2d 4h' with English unit letters; Greek reads '2 ημέρες 4 ώ.' (CLDR short units), so format it per locale in code."
+  },
+  "daily.streak": {
+    "text": "Σερί: μέρα {day}! Έλα ξανά αύριο για κι άλλα δώρα.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form 'Streak: day {day}' so day = 1 needs no plural; σερί is the everyday word for a run of consecutive days. 'For more' made explicit as more rewards (δώρα), per the context note."
+  },
+  "tip.night": {
+    "text": "Συμβουλή: κάποια ψάρια τσιμπάνε μόνο τη νύχτα.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "Συμβουλή: is the usual tip label; τσιμπάω = bite in the fishing sense."
+  },
+  "group.join": {
+    "text": "Μπες στην κοινότητά μας και πάρε 50 δωρεάν δολώματα!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "Roblox now calls groups Communities; κοινότητα per the guide ('ομάδα' means team). 'μας' (our) makes 'the group' clear as the studio's; double accent before μας."
+  },
+  "leaderboard.biggest": {
+    "text": "Βαρύτερο ψάρι",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Heaviest fish': weight, not length; ψαριά (catch) can mean a whole day's haul."
+  }
+}

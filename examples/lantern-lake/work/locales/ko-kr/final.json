@@ -1,0 +1,319 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept byte-identical (glossary keep); Roblox's Korean game pages show most titles in English.",
+    "blind_remark": "not translated; still in English, Latin script"
+  },
+  "hud.cast": {
+    "text": "던지기",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "-기 button form: throw (the line). Fishing sense, not 캐스팅."
+  },
+  "hud.reel": {
+    "text": "당기기",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'Pull (it in)'. Chose over 감기 (wind the reel), which also means 'a cold'; 릴 감기 is the fuller fishing term if the button has room. Same verb as the pass 자동 당기기."
+  },
+  "hud.bait_left": {
+    "text": "미끼 {count}개",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Counter 개 after the number; no plural form, correct for 0, 1 and more."
+  },
+  "hud.backpack": {
+    "text": "가방",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "{rarity} {fish} 낚기 성공!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Rephrased to a noun phrase + 낚기 성공! (like 부화 성공!) so no particle follows {fish}; reads 희귀 황금잉어 낚기 성공!. Rarities are bare nouns (희귀, 전설, 신화)."
+  },
+  "catch.escaped": {
+    "text": "물고기가 도망갔어요...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'It' made explicit as the generic 물고기 (Korean needs a subject here); trailing ... kept."
+  },
+  "catch.new_record": {
+    "text": "신기록! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "Latin unit with a space per the guide (100 Robux style); decimal point reads fine in Korean."
+  },
+  "fish.golden_carp": {
+    "text": "황금잉어",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "Written as one word like a species name."
+  },
+  "fish.lantern_eel": {
+    "text": "랜턴장어",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Loanword 랜턴 keeps the lantern idea and echoes the English title; one word like a species name. Native alternative: 초롱장어 (초롱 = traditional lantern, as in the real fish 초롱아귀), more poetic but less obvious to kids."
+  },
+  "rarity.mythic": {
+    "text": "신화",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Standard Korean tier ladder ... 희귀 < 영웅 < 전설 < 신화; bare noun so {rarity} {fish} reads 신화 랜턴장어."
+  },
+  "shop.rods": {
+    "text": "낚싯대",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equip": {
+    "text": "장착",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equipped": {
+    "text": "장착 중",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State label 'in use', distinct from the 장착 button."
+  },
+  "shop.free": {
+    "text": "무료",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "{price} Robux에 구매",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern; Robux kept Latin, read 로벅스 so 에 is correct.",
+    "blind_remark": "the name \"Robux\" is kept in Latin letters inside Korean text"
+  },
+  "pass.auto_reel": {
+    "text": "자동 당기기",
+    "confidence": "high",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as hud.reel. The pass name in Creator Hub should be set to match."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>행운의 미끼</b>로 희귀 물고기를 낚을 확률이 2배가 돼요!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Particle 로 right after </b> per the guide; 'your rare fish chance' = the chance of catching rare fish."
+  },
+  "sell.all": {
+    "text": "모두 판매",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "물고기 {count}마리를 {coins} 코인에 팔았어요!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Counter 마리 for fish, so no particle lands on the number; correct for 1."
+  },
+  "sell.prompt": {
+    "text": "E 키를 눌러 판매",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide key pattern (E 키를 눌러 ...). Developer: phone and console players have no E key; ProximityPrompt ActionText 판매 alone would serve everyone."
+  },
+  "ascend.button": {
+    "text": "초월",
+    "confidence": "high",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "초월 (transcend) is a common Korean game term for a prestige step; avoids religious 승천 and climbing words, and stays distinct from 환생 (Rebirth)."
+  },
+  "ascend.confirm": {
+    "text": "지금 초월할까요? 처음부터 다시 시작하지만 희귀 물고기를 {bonus}% 더 자주 낚을 수 있어요.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Same 초월 as the button; 'permanent' not added since the source does not say it."
+  },
+  "weather.storm": {
+    "text": "폭풍이 몰려와요! 희귀 물고기가 잘 물어요!",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "잘 물어요 is the everyday fishing phrase for fish biting well; second sentence ends with ! to keep the excited banner tone."
+  },
+  "quest.title": {
+    "text": "퀘스트",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "달빛 만에서 물고기 {n}마리 낚기",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "resolved",
+    "flags": [
+      "review:major:fluency"
+    ],
+    "note": "Quest-line noun form (-기). Moonlit Bay = 달빛만, written like real bay names (영일만); 만 is neutral for a bay of a lake or the sea. Alternatives if 만 reads unclear to kids: 달빛 포구 (sea harbor) or 달빛 물가 (waterside, loses 'bay').",
+    "review_reason": "Unspaced 달빛만 (native 달빛 + Sino 만 bay) reads first as 달빛 + the particle 만 \"only\", so kids can take the quest as \"catch fish only in moonlight\" (the back-translator did, and tip.night primes it); a space makes 만 a noun like game place names such as 폭풍의 만, and terms.json Moonlit Bay plus any in-world sign should change to 달빛 만 to match."
+  },
+  "quest.claim": {
+    "text": "받기",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "친구와 함께 낚시하면 행운 +{percent}%",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Stat-line ending with the + kept; statement, not an order."
+  },
+  "trade.sent": {
+    "text": "{player} 님에게 거래 요청을 보냈어요",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "님 after the name fixes the particle for any name."
+  },
+  "trade.accept": {
+    "text": "{player} 님이 거래 요청을 수락했어요",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "'your trade' = your trade request, as context says; 님 fixes the particle."
+  },
+  "codes.enter": {
+    "text": "코드 입력",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": [],
+    "note": "Placeholder noun form, as in the guide's codes.placeholder."
+  },
+  "codes.redeemed": {
+    "text": "코드 사용 완료! 보상을 받았어요!",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'Enjoy your reward' as 보상을 받았어요 (you got your reward): 보상을 즐기세요 is a calque Korean games do not use."
+  },
+  "afk.kicked": {
+    "text": "너무 오래 자리를 비워서 낚시가 중단됐어요.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "'idle' as 자리를 비우다 (the guide's AFK wording); no removal from the server added."
+  },
+  "settings.back": {
+    "text": "뒤로",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "효과음",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "종료까지 {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern (이벤트 종료까지 {time}) shortened for the label. Developer: {time} as 2d 4h looks unfinished in Korean; format it as 2일 4시간."
+  },
+  "daily.streak": {
+    "text": "연속 출석 {day}일째! 내일 또 오면 보상을 더 받을 수 있어요!",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "Label-like 연속 출석 {day}일째 works for day 1; 'for more' made explicit as more rewards."
+  },
+  "tip.night": {
+    "text": "팁: 밤에만 미끼를 무는 물고기도 있어요.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "Restructured to the natural Korean 'there are fish that...' form; 팁: is the usual loading-tip label."
+  },
+  "group.join": {
+    "text": "그룹에 가입하고 무료 미끼 50개를 받으세요!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "그룹 / 가입하다 as in Roblox's Korean UI; 50 kept."
+  },
+  "leaderboard.biggest": {
+    "text": "가장 무거운 물고기",
+    "confidence": "medium",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Biggest' = heaviest, so 무거운 rather than 큰; exactly at the 18 budget. Shorter option: 최고 무게 기록 (14). 월척 is the fishing idiom but many kids would not know it."
+  }
+}

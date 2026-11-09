@@ -24,4 +24,8 @@ wrong register, mixes scripts or regional variants, or contains a word you
 do not recognize, add it after the meaning in square brackets, for example
 `"Buy it! [very formal for a game button]"`.
 
+Robux, Roblox, brand names, keyboard keys and promo codes are meant to stay
+in Latin script; don't remark on that. The bracketed remarks go to a native
+reviewer as a "look here first" list, so make each one count.
+
 Return one line: how many strings, how many with bracketed remarks.

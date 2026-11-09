@@ -1,0 +1,202 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "role": "title",
+    "where": "Loading screen, game title"
+  },
+  "hud.cast": {
+    "text": "Iemest",
+    "role": "button",
+    "where": "Gameplay HUD, big round action button; probably the same slot that turns into hud.reel when a fish bites"
+  },
+  "hud.reel": {
+    "text": "Vilkt",
+    "role": "button",
+    "where": "Gameplay HUD, big round action button shown while a fish bites (replaces hud.cast)"
+  },
+  "hud.bait_left": {
+    "text": "Ēsma: {count}",
+    "role": "label",
+    "where": "Gameplay HUD, counter of bait the player has left"
+  },
+  "hud.backpack": {
+    "text": "Mugursoma",
+    "role": "button",
+    "where": "Gameplay HUD, button that opens the inventory of caught fish"
+  },
+  "catch.success": {
+    "text": "Tavs loms: {fish} ({rarity})!",
+    "role": "toast",
+    "where": "Toast after a fish is landed"
+  },
+  "catch.escaped": {
+    "text": "Zivs norāvās no āķa...",
+    "role": "toast",
+    "where": "Toast when the hooked fish escapes"
+  },
+  "catch.new_record": {
+    "text": "Jauns rekords! {weight} kg",
+    "role": "toast",
+    "where": "Toast after catching a record-weight fish"
+  },
+  "fish.golden_carp": {
+    "text": "Zelta karpa",
+    "role": "label",
+    "where": "Fish card in the backpack; also inserted as {fish} into catch.success"
+  },
+  "fish.lantern_eel": {
+    "text": "Laternzutis",
+    "role": "label",
+    "where": "Fish card in the backpack; also inserted as {fish} into catch.success"
+  },
+  "rarity.mythic": {
+    "text": "Mītisks",
+    "role": "label",
+    "where": "Rarity tag on fish cards; also inserted as {rarity} into catch.success"
+  },
+  "shop.rods": {
+    "text": "Makšķeres",
+    "role": "button",
+    "where": "Shop, tab listing fishing rods"
+  },
+  "shop.equip": {
+    "text": "Lietot",
+    "role": "button",
+    "where": "Shop, button under a rod the player owns"
+  },
+  "shop.equipped": {
+    "text": "Lietošanā",
+    "role": "label",
+    "where": "Shop, label on the rod currently in use"
+  },
+  "shop.free": {
+    "text": "Bezmaksas",
+    "role": "label",
+    "where": "Shop, price label on the starter rod"
+  },
+  "shop.buy_robux": {
+    "text": "Pirkt par {price} Robux",
+    "role": "button",
+    "where": "Shop, purchase button on a game pass card"
+  },
+  "pass.auto_reel": {
+    "text": "Autovilkšana",
+    "role": "product name",
+    "where": "Shop, name on the Auto Reel game pass card"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Veiksmes ēsma</b> divkāršo iespēju noķert retas zivis!",
+    "role": "item description",
+    "where": "Shop, description on the Lucky Bait game pass card"
+  },
+  "sell.all": {
+    "text": "Pārdot visu",
+    "role": "button",
+    "where": "Fish market, button that sells every fish in the backpack"
+  },
+  "sell.done": {
+    "text": "Pārdots! Zivis: {count}, monētas: +{coins}",
+    "role": "toast",
+    "where": "Toast after selling at the fish market"
+  },
+  "sell.prompt": {
+    "text": "Spied E, lai pārdotu",
+    "role": "prompt",
+    "where": "Proximity prompt at the fish market stall (in the 3D world)"
+  },
+  "ascend.button": {
+    "text": "Pacelties",
+    "role": "button",
+    "where": "Ascend (prestige) button; exact screen not known"
+  },
+  "ascend.confirm": {
+    "text": "Vai pacelties tagad? Tu sāksi no jauna, bet retas zivis ķersi par {bonus}% biežāk.",
+    "role": "dialog body",
+    "where": "Confirm dialog shown after pressing Ascend"
+  },
+  "weather.storm": {
+    "text": "Tuvojas vētra! Ķeras retas zivis.",
+    "role": "banner",
+    "where": "Server-wide banner during a storm weather event"
+  },
+  "quest.title": {
+    "text": "Uzdevumi",
+    "role": "title",
+    "where": "Quests panel title"
+  },
+  "quest.catch_n": {
+    "text": "Noķer zivis Mēnessgaismas līcī: {n}",
+    "role": "label",
+    "where": "Quests panel, one quest line"
+  },
+  "quest.claim": {
+    "text": "Saņemt",
+    "role": "button",
+    "where": "Quests panel, button on a finished quest"
+  },
+  "friends.boost": {
+    "text": "Makšķerēšana kopā ar draugiem: veiksme +{percent}%",
+    "role": "label",
+    "where": "Boost panel, info line"
+  },
+  "trade.sent": {
+    "text": "Maiņas piedāvājums nosūtīts: {player}",
+    "role": "toast",
+    "where": "Toast after you send a trade request"
+  },
+  "trade.accept": {
+    "text": "{player} pieņēma maiņas piedāvājumu",
+    "role": "toast",
+    "where": "Toast when the other player accepts your trade request"
+  },
+  "codes.enter": {
+    "text": "Ievadi kodu",
+    "role": "text box placeholder",
+    "where": "Codes panel, placeholder in the text box where players type a promo code"
+  },
+  "codes.redeemed": {
+    "text": "Kods aktivizēts! Izbaudi balvu.",
+    "role": "toast",
+    "where": "Toast after a valid promo code is accepted"
+  },
+  "afk.kicked": {
+    "text": "Tu pārāk ilgi neko nedarīji, tāpēc makšķerēšana apstājās.",
+    "role": "popup",
+    "where": "Message after 15 minutes idle; may be a kick message or an in-game popup (not known)"
+  },
+  "settings.back": {
+    "text": "Atpakaļ",
+    "role": "button",
+    "where": "Settings panel, button that closes the panel"
+  },
+  "settings.sfx": {
+    "text": "Skaņas efekti",
+    "role": "label",
+    "where": "Settings panel, row label (likely beside a toggle or slider)"
+  },
+  "event.ends": {
+    "text": "Beidzas pēc {time}",
+    "role": "label",
+    "where": "Label under an event banner (probably the weather.storm banner or a timed event; not known)"
+  },
+  "daily.streak": {
+    "text": "{day}. diena pēc kārtas! Nāc rīt atkal, lai saņemtu vēl.",
+    "role": "popup",
+    "where": "Daily login reward panel, main message"
+  },
+  "tip.night": {
+    "text": "Padoms: dažas zivis ķeras tikai naktī.",
+    "role": "label",
+    "where": "Loading screen, tip line"
+  },
+  "group.join": {
+    "text": "Pievienojies mūsu kopienai un saņem 50 ēsmas bez maksas!",
+    "role": "banner",
+    "where": "Banner inviting players to join the studio's Roblox group"
+  },
+  "leaderboard.biggest": {
+    "text": "Lielākā zivs",
+    "role": "title",
+    "where": "Lobby leaderboard title (in-world board)"
+  }
+}

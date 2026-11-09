@@ -1,0 +1,324 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept byte-identical (glossary: keep); Polish players see English Roblox titles as is.",
+    "blind_remark": "left in English, not translated into Polish"
+  },
+  "hud.cast": {
+    "text": "Zarzuć",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Angler's verb for casting (zarzucić wędkę)."
+  },
+  "hud.reel": {
+    "text": "Zwijaj",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "Imperfective 'keep reeling' (zwijać żyłkę); perfective 'Zwiń' avoided because it is the UI word for Collapse. Same verb as the pass Autozwijanie."
+  },
+  "hud.bait_left": {
+    "text": "Przynęty: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so 0, 1, 2-4 and 5+ all read correctly (1 przynęta, 2 przynęty, 5 przynęt). Exactly 10 visible characters."
+  },
+  "hud.backpack": {
+    "text": "Plecak",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Jest! {rarity} okaz: {fish}!",
+    "confidence": "medium",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "'Jest!' is the Polish angler's shout when a fish is landed and replaces gendered 'Złowiłeś/Złowiłaś'. Masculine head noun 'okaz' agrees with the masculine rarity tiers (Rzadki, Mityczny), so the fish name stays in the nominative whatever its gender. Relies on every rarity.* key being the masculine nominative form."
+  },
+  "catch.escaped": {
+    "text": "Ryba się zerwała...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "Fishing idiom for a fish slipping off the line; past tense agrees with 'ryba', not the player."
+  },
+  "catch.new_record": {
+    "text": "Nowy rekord! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {weight} arrives as '12.4'; Polish writes decimals with a comma ('12,4 kg'). Format it per locale in game code."
+  },
+  "fish.golden_carp": {
+    "text": "Złoty karp",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "Węgorz latarniowy",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Species-style name (noun + classifying adjective, like real Polish fish names); 'latarniowy' keeps the lantern idea. 17 of 18.",
+    "blind_remark": "the adjective 'latarniowy' is rare and could also read as 'lighthouse' or 'streetlamp' eel"
+  },
+  "rarity.mythic": {
+    "text": "Mityczny",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Masculine nominative, per the guide's rarity rule, so it agrees with 'okaz' in catch.success; reads above Legendarny."
+  },
+  "shop.rods": {
+    "text": "Wędki",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equip": {
+    "text": "Użyj",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "Paired with the state label 'W użyciu'; avoids 'Wyposaż', which sounds like gear menus in RPGs, and any participle agreement."
+  },
+  "shop.equipped": {
+    "text": "W użyciu",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "'In use' state label; no gender agreement needed."
+  },
+  "shop.free": {
+    "text": "Za darmo",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Kup: {price} Robux",
+    "confidence": "medium",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Glossary keeps 'Robux' byte-identical, so the inflected forms the guide prefers ('Kup za Robuxy: {price}', 'Robuxów') are not allowed. Price-tag form 'Kup: 99 Robux' reads like '99 PLN' rather than an ungrammatical 'za 99 Robux'. If the developer allows inflection, use 'Kup za Robuxy: {price}'."
+  },
+  "pass.auto_reel": {
+    "text": "Autozwijanie",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as hud.reel (zwijać); 'auto' written together as Polish does (autozapis, autoodtwarzanie). Store name in Creator Hub should match."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Przynęta szczęścia</b> podwaja szansę na rzadkie ryby!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Pass name built from the glossary words: przynęta (Bait) + szczęście (luck), head noun first as Polish compounds go. 'rzadkie' is the Rare tier word."
+  },
+  "sell.all": {
+    "text": "Sprzedaj ryby",
+    "confidence": "medium",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": [],
+    "note": "13 vs est. 12. 'Sprzedaj wszystko' (17) is the literal; 'Sprzedaj ryby' (sell the fish) means all of them in Polish and is the shortest natural wording. Use 'Sprzedaj wszystko' if the button has room."
+  },
+  "sell.done": {
+    "text": "Sprzedane ryby: {count}. Monety: +{coins}!",
+    "confidence": "medium",
+    "source_hash": "447be5b25a82",
+    "status": "fixed",
+    "flags": [
+      "review:minor:fluency"
+    ],
+    "note": "Two label forms so count = 1 and coins = 1 stay grammatical (1 ryba/12 ryb, 1 moneta/340 monet). Present 'Dostajesz' avoids gendered past 'Sprzedałeś/Sprzedałaś'.",
+    "review_reason": "\"Dostajesz monety: {coins}!\" chains a verb onto a label form and reads like a form; \"Monety: +{coins}!\" is the plural-safe reward readout players know from games."
+  },
+  "sell.prompt": {
+    "text": "Wciśnij E i sprzedaj",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "20 of 21; 'Wciśnij E, by sprzedać' (22) would overflow by one."
+  },
+  "ascend.button": {
+    "text": "Prestiż",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Prestige mechanic word Polish gamers know (Call of Duty PL); 'Wznieś się' reads like flying or spiritual rising. Noun as button, like the guide's 'Rebirth'."
+  },
+  "ascend.confirm": {
+    "text": "Zdobyć prestiż teraz? Zaczniesz od nowa, ale będziesz łowić rzadkie ryby o {bonus}% częściej.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Infinitive yes/no question as Roblox writes them; 'zdobyć prestiż' is a natural collocation and repeats the button word. 'Zaczniesz' and 'będziesz łowić' have no gender."
+  },
+  "weather.storm": {
+    "text": "Nadciąga burza! Rzadkie ryby biorą.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'Ryby biorą' is the standard Polish phrase for fish biting."
+  },
+  "quest.title": {
+    "text": "Zadania",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Złów ryby w Księżycowej Zatoce: {n}",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so n = 1 works (1 rybę, 5 ryb). Moonlit Bay translated (glossary) as 'Księżycowa Zatoka', here in the locative."
+  },
+  "quest.claim": {
+    "text": "Odbierz",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "Łowienie ze znajomymi daje +{percent}% do szczęścia",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "'+10% do szczęścia' is the usual Polish stat-bonus phrasing ('+5 do siły'); no plural issue after %."
+  },
+  "trade.sent": {
+    "text": "Wysłano prośbę o wymianę: {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "fixed",
+    "flags": [
+      "review:minor:accuracy"
+    ],
+    "note": "Restructured so {player} is the subject in the nominative; 'wysłano prośbę do gracza {player}' is 35 and over budget, 'do {player}' would need the genitive.",
+    "review_reason": "The sender's confirmation became third-person narration (\"{player} is getting a trade request\") that no longer says you sent it; impersonal \"Wysłano\" keeps \"sent\", has no gender and leaves {player} in the nominative label slot (26 of 33)."
+  },
+  "trade.accept": {
+    "text": "{player} zgadza się na wymianę",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "Present tense as a live announcement; past 'zaakceptował/zaakceptowała' would assume a gender."
+  },
+  "codes.enter": {
+    "text": "Wpisz kod",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Kod zrealizowany! Ciesz się nagrodą.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'Zrealizować kod' is the standard redeem verb in Polish stores (Steam, Xbox)."
+  },
+  "afk.kicked": {
+    "text": "Zbyt długo bez aktywności, więc łowienie zostało przerwane.",
+    "confidence": "medium",
+    "source_hash": "6e924547dc32",
+    "status": "fixed",
+    "flags": [
+      "review:minor:fluency"
+    ],
+    "note": "Noun phrase avoids gendered 'Byłeś nieaktywny/Byłaś nieaktywna'; fishing stopping is impersonal. No mention of a kick, as in the source.",
+    "review_reason": "\"łowienie się zatrzymało\" treats the player's fishing like a machine stopping on its own; \"łowienie zostało przerwane\" is the natural way to say the game stopped it."
+  },
+  "settings.back": {
+    "text": "Wróć",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Efekty dźwiękowe",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Koniec za {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: '2d 4h' is readable in Polish, but Polish writes '2 d 4 h' and minutes must be 'min', never 'm' (metres)."
+  },
+  "daily.streak": {
+    "text": "Seria: dzień {day}! Wróć jutro po więcej.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form 'Seria: dzień 3' works for day 1; 'seria' is the streak word Polish apps use (Duolingo)."
+  },
+  "tip.night": {
+    "text": "Wskazówka: niektóre ryby biorą tylko w nocy.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": []
+  },
+  "group.join": {
+    "text": "Dołącz do społeczności i odbierz 50 darmowych przynęt!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "'społeczność' per Roblox's Groups -> Communities rename in its Polish UI. Fixed 50 takes the genitive plural 'przynęt'."
+  },
+  "leaderboard.biggest": {
+    "text": "Największe okazy",
+    "confidence": "medium",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Okaz' is the angler's word for a trophy fish and matches catch.success; plural because the board ranks many players' best fish. 'Najcięższe ryby' (heaviest fish) if the weight sense must be explicit."
+  }
+}

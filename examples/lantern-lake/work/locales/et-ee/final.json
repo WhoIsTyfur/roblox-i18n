@@ -1,0 +1,326 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title; glossary keep, byte-identical.",
+    "blind_remark": "left in English, not translated into Estonian"
+  },
+  "hud.cast": {
+    "text": "Viska",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Fishing sense of 'õnge viskama' (cast the line); imperative like the guide's buttons."
+  },
+  "hud.reel": {
+    "text": "Keri",
+    "confidence": "medium",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "kerima = reel the line in; matches the pass name Autokerimine. 'Tõmba' (pull) is the plainer alternative but has no good pass-name form."
+  },
+  "hud.bait_left": {
+    "text": "Sööt: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so 0, 1 and 12 all read correctly (no numeral agreement)."
+  },
+  "hud.backpack": {
+    "text": "Seljakott",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Sinu saak: {rarity} {fish}!",
+    "confidence": "medium",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "'Püüdsid ...' would need the genitive of both inserted words; after a colon rarity and fish stay nominative and agree for every pair. Capitals mid-line read as item tags (guide accepts this for egg.hatched).",
+    "blind_remark": "with the inserted names this reads e.g. \"Müütiline Kuldne karpkala\", with a capital letter on both words mid-phrase"
+  },
+  "catch.escaped": {
+    "text": "Kala pääses minema...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'It' made explicit as the generic 'kala' (fish)."
+  },
+  "catch.new_record": {
+    "text": "Uus rekord! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {weight} arrives as 12.4; Estonian writes 12,4 (decimal comma). Fix in the game's number formatting."
+  },
+  "fish.golden_carp": {
+    "text": "Kuldne karpkala",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "Follows Minecraft's Estonian 'Kuldne õun' pattern; nominative base form for {fish}."
+  },
+  "fish.lantern_eel": {
+    "text": "Laternangerjas",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Coined compound latern + angerjas (lantern eel), keeps the lantern idea. Genitive-stem 'Laternaangerjas' is also correct but the double a reads clumsily."
+  },
+  "rarity.mythic": {
+    "text": "Müütiline",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Tier above Legendaarne; nominative adjective so it fits before any {fish}."
+  },
+  "shop.rods": {
+    "text": "Õnged",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "õng = fishing rod (never 'varras', a metal rod)."
+  },
+  "shop.equip": {
+    "text": "Kasuta",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "Pairs with the state label Kasutusel; 'Varusta' sounds like supplying gear."
+  },
+  "shop.equipped": {
+    "text": "Kasutusel",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State 'in use', no agreement needed."
+  },
+  "shop.free": {
+    "text": "Tasuta",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Osta {price} Robuxi eest",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "decided",
+    "flags": [],
+    "note": "Genitive after 'eest' is correct for every price; Robuxi declined without apostrophe per EKI.",
+    "decision_reason": "Draft was right: the et-ee guide and EKI decline brand names plainly (Robuxi); the dispute came from the keep-term lint rejecting case endings, now fixed."
+  },
+  "pass.auto_reel": {
+    "text": "Autokerimine",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as hud.reel (Keri); auto- prefix as in 'autosalvestus'. 'Automaatkerimine' (16) is clearer but over the 14 budget.",
+    "blind_remark": "the \"auto-\" prefix in Estonian compounds usually means \"car\", so it can also read as \"car reeling\""
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Õnnesööt</b> kahekordistab võimaluse püüda haruldasi kalu!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Õnnesööt built like 'õnnejook' from õnn (luck) + sööt (bait). Restructured to 'doubles the chance to catch rare fish'."
+  },
+  "sell.all": {
+    "text": "Müü kõik",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Müüsid {count} kala {coins} mündi eest!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "'kala' is the same form for 1 and for many; genitive 'mündi eest' is correct for 1 and 340 alike."
+  },
+  "sell.prompt": {
+    "text": "Vajuta E, et müüa",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern 'Vajuta E, et avada'."
+  },
+  "ascend.button": {
+    "text": "Ülendus",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "ülendus = promotion in rank, the prestige sense without religion or climbing; noun label like the guide's 'Taassünd'. 'Tõus' (rise) was rejected: it also means getting up.",
+    "blind_remark": "a noun (\"elevation/exaltation/promotion\"), not a verb; uncommon, bookish word for a button"
+  },
+  "ascend.confirm": {
+    "text": "Kas oled ülenduseks valmis? Alustad otsast peale, kuid püüad haruldasi kalu {bonus}% sagedamini.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "fixed",
+    "flags": [
+      "review:minor:fluency"
+    ],
+    "note": "Same Ülendus term as the button. 'Alustad otsast peale' = start over. Percent with no space, per guide.",
+    "review_reason": "\"Kas soovid kohe ülendust?\" reads like asking for a job promotion rather than confirming an action; \"Kas oled ülenduseks valmis?\" is the natural game confirm, keeps the Ülendus term, and the dialog itself carries the \"now\"."
+  },
+  "weather.storm": {
+    "text": "Torm on tulekul! Haruldased kalad näkkavad.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "näkkama = the fishing sense of biting (fish taking the bait)."
+  },
+  "quest.title": {
+    "text": "Ülesanded",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Püüa {n} kala Kuuvalguse lahes",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "'kala' is identical in nominative and partitive, so it reads right for n = 1 and more. Moonlit Bay translated as Kuuvalguse laht (like Tallinna laht), inessive 'lahes'."
+  },
+  "quest.claim": {
+    "text": "Võta vastu",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's claim button; exactly 10 of 10. Never 'Nõua'.",
+    "blind_remark": "can also read as \"Accept\", as in accepting a new task, rather than collecting a reward"
+  },
+  "friends.boost": {
+    "text": "Sõpradega koos kalastades saad +{percent}% õnne",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Statement, not an order; partitive 'õnne' after the percent, like the guide's '+{percent}% boonust'."
+  },
+  "trade.sent": {
+    "text": "Pakkusid mängijale {player} vahetust",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "Spoken toast 'You offered {player} a trade'; declined head noun 'mängijale' keeps the name nominative. 'Vahetuspakkumine saadetud mängijale {player}' is 37, over 33."
+  },
+  "trade.accept": {
+    "text": "{player} nõustus vahetusega",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "Name as subject in the nominative; no gender in Estonian. 'your trade' left implicit."
+  },
+  "codes.enter": {
+    "text": "Sisesta kood",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Kood lunastatud! Auhind on sinu.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'Enjoy your reward' rendered as 'the reward is yours'; 'Naudi oma auhinda' reads translated."
+  },
+  "afk.kicked": {
+    "text": "Olid liiga kaua tegevuseta ja kalastamine peatus.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "Says only that fishing stopped, no removal from the server, as in the source."
+  },
+  "settings.back": {
+    "text": "Tagasi",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Heliefektid",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Lõpeb {time} pärast",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {time} arrives as '2d 4h' with English unit letters; Estonian writes '2 p 4 t'. Fix in the game's time formatting.",
+    "blind_remark": "grammatical only if {time} is in the genitive case, e.g. \"5 minuti\"; a plain number-plus-unit value may read wrong"
+  },
+  "daily.streak": {
+    "text": "{day}. päev järjest! Tule homme tagasi ja saa veel auhindu!",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "Ordinal '{day}. päev järjest' (day N in a row) avoids numeral agreement and is how Estonian says a streak. 'for more' made explicit as more rewards, per context."
+  },
+  "tip.night": {
+    "text": "Vihje: mõned kalad näkkavad ainult öösel.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "'Vihje:' is the usual tip label; lowercase after the colon; näkkama = fishing bite."
+  },
+  "group.join": {
+    "text": "Liitu meie kogukonnaga ja saa 50 sööta tasuta!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "kogukond matches Roblox's Community name (guide); 'meie' as in the guide's group reference line."
+  },
+  "leaderboard.biggest": {
+    "text": "Raskeim kala",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "Heaviest single fish, the usual Estonian fishing-contest category; 'Suurim saak' could read as the biggest total haul."
+  }
+}

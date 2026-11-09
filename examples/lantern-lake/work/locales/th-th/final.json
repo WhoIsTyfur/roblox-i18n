@@ -1,0 +1,312 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept in English (glossary: keep, brand). Roblox may auto-translate titles on its Thai pages; ask the owner whether to set an official Thai title",
+    "blind_remark": "not translated; the whole string is still in English"
+  },
+  "hud.cast": {
+    "text": "เหวี่ยงเบ็ด",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "เหวี่ยงเบ็ด = swing out the rod, the everyday Thai for casting. 10 code points but 2 are zero-width marks; about 7 wide, so it fits the round button"
+  },
+  "hud.reel": {
+    "text": "ดึงเบ็ด",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "ดึงเบ็ด = pull the line in; pairs with เหวี่ยงเบ็ด on the same button slot. The angler's word กรอสาย is less known to kids. Same verb in pass.auto_reel"
+  },
+  "hud.bait_left": {
+    "text": "เหยื่อ {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form (Bait 12): no classifier or plural needed, reads right for 0 and 1"
+  },
+  "hud.backpack": {
+    "text": "กระเป๋า",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "ตกได้{fish}ระดับ{rarity}!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern: fish first, then ระดับ + rarity (ตกได้ปลาคาร์ปทองระดับหายาก!). Params attach with no space because they always hold Thai words. The English 'a/an' problem does not exist in Thai"
+  },
+  "catch.escaped": {
+    "text": "ปลาหลุดไปซะแล้ว...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "Subject ปลา (generic fish) added because Thai needs one; หลุด = slipped off the hook; ซะแล้ว gives the light 'oh no' tone"
+  },
+  "catch.new_record": {
+    "text": "สถิติใหม่! {weight} กก.",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "kg written กก., the standard Thai abbreviation (its period is part of the abbreviation). A decimal point (12.4) reads right in Thai"
+  },
+  "fish.golden_carp": {
+    "text": "ปลาคาร์ปทอง",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "Golden carp; deliberately not ปลาทอง, which is goldfish"
+  },
+  "fish.lantern_eel": {
+    "text": "ปลาไหลตะเกียง",
+    "confidence": "high",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "ตะเกียง = lantern/lamp, keeps the glowing idea; echoes ปลาตะเกียง, the Thai name for lanternfish. The title stays English, so the echo of Lantern Lake is lost"
+  },
+  "rarity.mythic": {
+    "text": "เทพ",
+    "confidence": "medium",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "No settled Thai tier word for Mythic. Legendary is ตำนาน (guide), and the Thai word for myth overlaps it, so เทพ (god-tier; ระดับเทพ is everyday kid speech for top level) is used to read clearly above ตำนาน. Alternatives: loanword มิธิค (known from Mobile Legends ranks), เหนือตำนาน ('beyond legend'), ปกรณัม (too bookish). Native check wanted"
+  },
+  "shop.rods": {
+    "text": "คันเบ็ด",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equip": {
+    "text": "ใช้",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Use'. Thai games' usual สวมใส่ means wear, wrong for a rod. Pairs with กำลังใช้ on shop.equipped"
+  },
+  "shop.equipped": {
+    "text": "กำลังใช้",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State label 'in use', not the action"
+  },
+  "shop.free": {
+    "text": "ฟรี",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "ซื้อด้วย {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": []
+  },
+  "pass.auto_reel": {
+    "text": "ดึงเบ็ดอัตโนมัติ",
+    "confidence": "high",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as hud.reel. 15 code points but about 10 wide (marks take no width). Gamer loanword ดึงเบ็ดออโต้ is a shorter, slangier option. Match the Creator Hub pass name"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>เหยื่อนำโชค</b> เพิ่มโอกาสได้ปลาหายากเป็น 2 เท่า!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "นำโชค = brings luck (as in ของนำโชค, lucky charm), built from โชค. เป็น 2 เท่า = up to twice, unambiguous for 'doubles'. 'your' dropped. Thai inside <b> likely renders regular weight (guide)"
+  },
+  "sell.all": {
+    "text": "ขายทั้งหมด",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "ขายปลา {count} ตัว ได้ {coins} เหรียญ!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "ตัว is the classifier for fish; no plural in Thai, so it reads right for 1"
+  },
+  "sell.prompt": {
+    "text": "กด E เพื่อขาย",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": []
+  },
+  "ascend.button": {
+    "text": "เลื่อนขั้น",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "เลื่อนขั้น = rank up, the word Thai players know from Ascension in Genshin Impact; not religious, not climbing. Thai has no fixed word for prestige, and rank up does not hint at the reset; ascend.confirm explains it"
+  },
+  "ascend.confirm": {
+    "text": "เลื่อนขั้นเลยไหม? จะต้องเริ่มใหม่ แต่จะตกปลาหายากได้บ่อยขึ้น {bonus}%",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "ไหม question per guide; space instead of comma before แต่; percent attached to the number; no final period"
+  },
+  "weather.storm": {
+    "text": "พายุกำลังมา! ปลาหายากออกมากินเหยื่อแล้ว",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "กินเหยื่อ = take the bait (fishing sense); ออกมา...แล้ว ('have come out to feed') is how Thai anglers say fish are biting"
+  },
+  "quest.title": {
+    "text": "เควสต์",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "ตกปลา {n} ตัวที่อ่าวแสงจันทร์",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Moonlit Bay translated (อ่าวแสงจันทร์ = moonlight bay) per glossary; in-world signs that show the English name will no longer match. ตัว classifier works for 1"
+  },
+  "quest.claim": {
+    "text": "รับรางวัล",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "ตกปลากับเพื่อน ได้โชค +{percent}%",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Statement 'fish with friends, get luck +10%'; the space before ได้ gives a wrap point"
+  },
+  "trade.sent": {
+    "text": "ส่งคำขอเทรดให้ {player} แล้ว",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": []
+  },
+  "trade.accept": {
+    "text": "{player} ตอบรับคำขอเทรดแล้ว",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "'your trade' = the trade request; 'your' dropped as Thai omits it"
+  },
+  "codes.enter": {
+    "text": "ใส่โค้ด",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "แลกโค้ดสำเร็จ! รับรางวัลไปเลย",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'Enjoy your reward' rendered as the natural Thai cheer 'go take your reward'; literal ขอให้สนุกกับรางวัล reads translated"
+  },
+  "afk.kicked": {
+    "text": "ไม่ได้ขยับตัวนานเกินไป เลยหยุดตกปลาแล้ว",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "idle = did not move (ขยับตัว, as in the guide's AFK line); no removal from the server mentioned",
+    "blind_remark": "no stated subject; it says only that fishing stopped, not that the player was removed from the game"
+  },
+  "settings.back": {
+    "text": "กลับ",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "เสียงเอฟเฟกต์",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "จบใน {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {time} arrives as '2d 4h' with English unit letters; readable, but Thai players expect 2 วัน 4 ชม. (guide), so format it per locale if possible"
+  },
+  "daily.streak": {
+    "text": "ล็อกอินต่อเนื่อง วันที่ {day}! พรุ่งนี้กลับมารับรางวัลอีกนะ",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "ล็อกอินต่อเนื่อง is the usual Thai game-event phrase for a login streak; 'day {day}' label form works for 1. The space before วันที่ gives a wrap point. 'for more' = more rewards"
+  },
+  "tip.night": {
+    "text": "เคล็ดลับ: ปลาบางชนิดกินเหยื่อแค่ตอนกลางคืน",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": []
+  },
+  "group.join": {
+    "text": "เข้าร่วมกลุ่มของเรา รับเหยื่อฟรี 50 ชิ้น!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "ของเรา ('our') says whose group, as in the guide's reference line; ชิ้น is the classifier for the bait"
+  },
+  "leaderboard.biggest": {
+    "text": "ปลาหนักที่สุด",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Heaviest fish': หนัก = by weight, per context (ใหญ่ could mean length). 'Catch' is clear from the board"
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept byte-identical (glossary: keep); no Indonesian title supplied by the developer.",
+    "blind_remark": "left in English, not translated, while place names elsewhere are translated"
+  },
+  "hud.cast": {
+    "text": "Lempar",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Fishing sense: 'lempar kail/umpan' is how Indonesians say casting the line. Bare verb, as Indonesian buttons are."
+  },
+  "hud.reel": {
+    "text": "Tarik",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'Tarik!' is what anglers say when a fish bites (pull the line in); 'Gulung' (wind the reel) is literal but less natural as a shout. Same verb as the pass Tarik Otomatis."
+  },
+  "hud.bait_left": {
+    "text": "Umpan: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form, correct for 0, 1 and more (Indonesian nouns never change after a number anyway). 'umpan' is the everyday word for fishing bait."
+  },
+  "hud.backpack": {
+    "text": "Tas",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide: 'tas' alone when short. Roblox's own Backpack label 'Tas Ransel' fits exactly 10 if the developer prefers it."
+  },
+  "catch.success": {
+    "text": "Kamu dapat {fish} ({rarity})!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "'dapat ikan' is the spoken fishing phrase for landing a fish. Rarity in parentheses so a noun-like tag such as Mitos does not read as part of the fish name (Belut Lentera (Mitos)); Indonesian has no article or agreement, so the English 'a/an' problem disappears."
+  },
+  "catch.escaped": {
+    "text": "Ikannya lepas...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'It' made explicit as 'ikannya' (the fish); 'lepas' = slipped off the hook, the usual fishing word. Trailing '...' kept."
+  },
+  "catch.new_record": {
+    "text": "Rekor baru! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: Indonesian uses a decimal comma and a period for thousands, so '12.4 kg' reads oddly here; format {weight} for id-id as '12,4'."
+  },
+  "fish.golden_carp": {
+    "text": "Ikan Mas",
+    "confidence": "medium",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "'Ikan mas' is the real Indonesian name for carp and literally means 'gold fish' (mas = emas), usually golden in color, so it carries 'Golden' natively. If the game ever adds a plain Carp, switch this to 'Karper Emas' so the two stay distinct.",
+    "blind_remark": "ikan mas is the everyday name for the common carp; literally 'gold fish', and some players may picture an ornamental goldfish"
+  },
+  "fish.lantern_eel": {
+    "text": "Belut Lentera",
+    "confidence": "high",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "belut = eel, lentera = lantern; noun first as Indonesian modifiers follow the noun. Keeps the glowing-lantern idea."
+  },
+  "rarity.mythic": {
+    "text": "Mitos",
+    "confidence": "medium",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Common rendering of the Mythic tier in Indonesian game text; reads above Legendaris (Indonesian MLBB players know Legend < Mythic). The adjective 'mitis' is correct but obscure; many players also keep English 'Mythic'. Used as a tag and in parentheses in catch.success.",
+    "blind_remark": "a noun, 'myth', not the adjective 'mythic'; reads a little odd as a rarity tag"
+  },
+  "shop.rods": {
+    "text": "Joran",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "'joran' is the standard word for a fishing rod ('joran pancing'); no plural form needed for a tab."
+  },
+  "shop.equip": {
+    "text": "Pakai",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "Usual Indonesian game button for Equip (use/wear)."
+  },
+  "shop.equipped": {
+    "text": "Dipakai",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State label 'in use', the passive of the button verb Pakai."
+  },
+  "shop.free": {
+    "text": "Gratis",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Beli: {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern: the colon stops 'Beli 99 Robux' reading as buying Robux."
+  },
+  "pass.auto_reel": {
+    "text": "Tarik Otomatis",
+    "confidence": "high",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as the Tarik button; modifier after the noun. Exactly 14 of 14; 'Auto Tarik' (10) is a shorter gamer-style fallback. The Creator Hub pass name should match."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Umpan Hoki</b> menggandakan peluangmu menangkap ikan langka!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Umpan Hoki built from the terms umpan (bait) and hoki (luck, the guide's everyday word, as in Ramuan Hoki). 'langka' matches the Rare tier."
+  },
+  "sell.all": {
+    "text": "Jual Semua",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "{count} ikan terjual seharga {coins} koin!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Correct for 1 and any number: Indonesian nouns do not change after a number."
+  },
+  "sell.prompt": {
+    "text": "Tekan E untuk menjual",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "E kept. Exactly 21 of 21, same pattern as the guide's 'Tekan E untuk membuka'."
+  },
+  "ascend.button": {
+    "text": "Bangkit",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "'Bangkit' = rise up / come back stronger; not religious (that would be 'Kenaikan') and not climbing ('Naik', which would clash with 'naik level'). 'Naik Tingkat' is 12, over budget. Keeping English 'Ascend', as players keep 'Rebirth', is the alternative.",
+    "blind_remark": "bangkit means rise up / get up / revive; on its own it does not suggest a prestige reset"
+  },
+  "ascend.confirm": {
+    "text": "Bangkit sekarang? Kamu akan mulai dari awal, tapi ikan langka jadi {bonus}% lebih sering tertangkap.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Short question without 'apakah', as the guide's 'Rebirth sekarang?'. 'start over' = 'mulai dari awal'. Medium only because it depends on the Bangkit term."
+  },
+  "weather.storm": {
+    "text": "Badai datang! Ikan langka sedang menyambar umpan.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'biting' rendered with the fishing verb 'menyambar umpan' (fish striking the bait).",
+    "blind_remark": "badai datang can mean either 'a storm is coming' or 'the storm has arrived'"
+  },
+  "quest.title": {
+    "text": "Misi",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Tangkap {n} ikan di Teluk Cahaya Bulan",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Moonlit Bay translated as Teluk Cahaya Bulan (Moonlight Bay), per the developer's translate decision; works for n = 1."
+  },
+  "quest.claim": {
+    "text": "Klaim",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "Memancing bersama teman memberi +{percent}% hoki",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Statement kept; '+' kept and percent written with no space, as Indonesian does."
+  },
+  "trade.sent": {
+    "text": "Ajakan tukar terkirim ke {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "'ajakan tukar' (invitation to trade) is the casual way to say trade request; 'Permintaan tukar' also works."
+  },
+  "trade.accept": {
+    "text": "{player} setuju bertukar denganmu",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "Restructured to 'agreed to trade with you', same pattern as the guide's '{player} ingin bertukar denganmu'. No gender in Indonesian."
+  },
+  "codes.enter": {
+    "text": "Masukkan kode",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Kode berhasil ditukarkan! Nikmati hadiahmu.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'menukarkan kode' is the usual Indonesian for redeeming a code. 43 of 45."
+  },
+  "afk.kicked": {
+    "text": "Kamu terlalu lama AFK, jadi kamu berhenti memancing.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "fixed",
+    "flags": [
+      "review:minor:fluency"
+    ],
+    "note": "'idle' rendered as AFK, which the guide keeps as the everyday word; nothing added about being kicked.",
+    "review_reason": "With the subject dropped, \"jadi berhenti memancing\" is unclear about who stopped (the blind back-translation read it three ways, even as an order to stop); repeating \"kamu\" makes it plainly \"so you stopped fishing\" without adding a kick."
+  },
+  "settings.back": {
+    "text": "Kembali",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Efek Suara",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Selesai dalam {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "'Berakhir dalam' is 16, over the 14 budget; 'Selesai dalam' is exactly 14. For the developer: an English {time} like '2d 4h' reads wrong here, since 'h' suggests 'hari' (days); format it for id-id as '2 hr 4 j'.",
+    "blind_remark": "selesai means 'done/finished', so it can also read as 'finished within {time}'"
+  },
+  "daily.streak": {
+    "text": "{day} hari beruntun! Datang lagi besok untuk hadiah berikutnya.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'beruntun' = in a row (as in 'menang beruntun'); '{day} hari' is correct for 1 and up. 'for more' made concrete as the next reward."
+  },
+  "tip.night": {
+    "text": "Tips: ada ikan yang cuma menyambar umpan di malam hari.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "'Tips:' is the label Indonesian games use, even for one tip. 'bite' = 'menyambar umpan', as in weather.storm."
+  },
+  "group.join": {
+    "text": "Gabung komunitas kami dan dapatkan 50 umpan gratis!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "'komunitas' per Roblox's Indonesian rename of groups; 'kami' (our) added because Indonesian names the owner here, as in the guide's 'Gabung komunitas kami'.",
+    "blind_remark": "vague: 'community' does not say it is a Roblox group"
+  },
+  "leaderboard.biggest": {
+    "text": "Ikan Terberat",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Biggest' = heaviest: 'ikan terberat' is the term Indonesian fishing competitions use for this category. 'Tangkapan Terberat' (18 of 18) also works."
+  }
+}

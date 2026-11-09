@@ -1,0 +1,319 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title stays in English (glossary keep; the guide keeps game titles).",
+    "blind_remark": "left untranslated, in English"
+  },
+  "hud.cast": {
+    "text": "Kast",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": []
+  },
+  "hud.reel": {
+    "text": "Sveiv inn",
+    "confidence": "medium",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'sveive inn' is the Norwegian angling verb for reeling in. 9 chars vs the estimated 8; it can wrap at the space on a round button. Shortest fallback: 'Sveiv' (5). Same verb as the pass Autosveiv."
+  },
+  "hud.bait_left": {
+    "text": "Agn: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form. 'agn' also has an invariant plural, so it reads right for 0, 1 and more."
+  },
+  "hud.backpack": {
+    "text": "Ryggsekk",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Ny fangst: {fish} ({rarity})!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Restructured as 'New catch: ...' so no article or adjective has to agree with the inserted fish name or rarity (the guide's egg.hatched pattern)."
+  },
+  "catch.escaped": {
+    "text": "Fisken slapp unna...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'Fisken' (the fish) instead of a bare 'Den', since the toast has no antecedent."
+  },
+  "catch.new_record": {
+    "text": "Ny rekord! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "Developer: {weight} arrives as '12.4'; Norwegian writes a decimal comma ('12,4'), so format it by LocaleId."
+  },
+  "fish.golden_carp": {
+    "text": "Gullkarpe",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "Lanterneål",
+    "confidence": "high",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Closed compound lanterne + ål (eel); keeps the glowing-lantern idea and the echo of the title."
+  },
+  "rarity.mythic": {
+    "text": "Mytisk",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Tier above Legendarisk. An -isk adjective does not change in the neuter, so the tag never has to agree with a fish."
+  },
+  "shop.rods": {
+    "text": "Fiskestenger",
+    "confidence": "medium",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "12 chars vs the estimated 10. Bare 'Stenger' would also read as the verb 'closes' on a shop tab, so the full compound is the shortest clear word. It cannot wrap; check at phone size."
+  },
+  "shop.equip": {
+    "text": "Bruk",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Use', paired with the state label 'I bruk' (In use); avoids a participle that would have to agree with fiskestang."
+  },
+  "shop.equipped": {
+    "text": "I bruk",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "'In use' as the context allows; the matching button is 'Bruk'."
+  },
+  "shop.free": {
+    "text": "Gratis",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Kjøp for {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": []
+  },
+  "pass.auto_reel": {
+    "text": "Autosveiv",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Built from 'sveive inn' (hud.reel) with the closed prefix auto- (as in autolagring). The pass's Creator Hub store name should match.",
+    "blind_remark": "coined compound, literally 'auto-crank'; understandable next to 'reel in'"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Lykkeagn</b> dobler sjansen din for sjeldne fisker!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Lykkeagn = lykke (luck) + agn (bait), like the guide's Lykkedrikk. Plural 'sjeldne fisker' because singular 'sjelden fisk' can also read as 'rarely fish'."
+  },
+  "sell.all": {
+    "text": "Selg alt",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Solgte {count} fisk! Mynter: +{coins}",
+    "confidence": "medium",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "'fisk' stays uninflected after a number in fishing talk ('fikk 12 fisk'), so it is right for 1 and for 12. Coins as a label with '+' because '{coins} mynter' breaks at 1."
+  },
+  "sell.prompt": {
+    "text": "Trykk E for å selge",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "'Trykk på E for å selge' (22) is over the 21 budget; the guide accepts the shorter 'Trykk E'."
+  },
+  "ascend.button": {
+    "text": "Stig opp",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "'stige opp' = rise up a level. No Norwegian Roblox standard exists for prestige; avoided 'Oppstigning' (religious or mountaineering) and English 'Ascend', which kids may not know.",
+    "blind_remark": "literally 'rise up' or 'climb up'; a bit lofty, could read as physically going up"
+  },
+  "ascend.confirm": {
+    "text": "Vil du stige opp nå? Du starter på nytt, men fanger sjeldne fisker {bonus} % oftere.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as ascend.button. Percent with a space (CLDR). 'sjeldne fisker' because 'fanger sjelden fisk' would read as 'rarely catch fish'."
+  },
+  "weather.storm": {
+    "text": "En storm er på vei! Sjeldne fisker biter nå.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'biter' is the angling sense (take the bait); 'nå' carries the English progressive 'are biting'.",
+    "blind_remark": "says the storm is approaching, not that it is already here"
+  },
+  "quest.title": {
+    "text": "Oppdrag",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Fang {n} fisk i Månelysbukten",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Moonlit Bay -> Månelysbukten (månelys = moonlight, bukt = bay; -en form per the guide). 'fisk' uninflected after a number, as in sell.done, so n = 1 and n = 10 both read right. 'i' is the natural preposition for fishing in a bay."
+  },
+  "quest.claim": {
+    "text": "Hent",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide: Claim -> Hent, never 'Krev'."
+  },
+  "friends.boost": {
+    "text": "Fisking med venner gir +{percent} % lykke",
+    "confidence": "medium",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "'lykke' is the luck stat, the same word as in Lykkeagn; the more casual 'flaks' is the alternative if 'lykke' reads too much like happiness. Percent with a space (CLDR)."
+  },
+  "trade.sent": {
+    "text": "Bytteforespørsel sendt til {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "Formed like 'venneforespørsel' (friend request); 'bytte' is the guide's trade word."
+  },
+  "trade.accept": {
+    "text": "{player} godtok bytteforespørselen din",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "fixed",
+    "flags": [
+      "review:minor:terminology"
+    ],
+    "review_reason": "'byttet' also means prey or catch, an easy misreading in a fishing game; 'bytteforespørselen' names the same request as trade.sent (30/33)."
+  },
+  "codes.enter": {
+    "text": "Skriv inn kode",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Koden er løst inn! Kos deg med belønningen.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'løse inn' is Roblox's own Norwegian verb for redeeming; 'Kos deg med' is the idiomatic 'Enjoy'."
+  },
+  "afk.kicked": {
+    "text": "Du var inaktiv for lenge, så fiskingen stoppet.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "'the fishing stopped' rather than 'du sluttet å fiske', which would sound like the player chose to quit."
+  },
+  "settings.back": {
+    "text": "Tilbake",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Lydeffekter",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Slutter om {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "'om' for a point ahead. Developer: {time} arrives as '2d 4h'; Norwegian writes '2 d 4 t' (CLDR short form), so format durations by LocaleId."
+  },
+  "daily.streak": {
+    "text": "{day}. dag på rad! Kom tilbake i morgen for flere belønninger.",
+    "confidence": "medium",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'{day}. dag på rad' = 'day N in a row' with the Norwegian digit-plus-period ordinal, correct for every value. terms.json renders streak as 'rekke' for noun uses; here 'på rad' is the idiom. 'for more' made explicit as 'flere belønninger' (more rewards)."
+  },
+  "tip.night": {
+    "text": "Tips: Noen fisker biter bare om natten.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "'Tips:' is the Norwegian label; capital after the colon because a full sentence follows."
+  },
+  "group.join": {
+    "text": "Bli med i gruppen og få 50 gratis agn!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "'gruppe' as the guide advises (Roblox's English UI now says Communities). 'agn' is invariant, so '50 gratis agn' is correct."
+  },
+  "leaderboard.biggest": {
+    "text": "Største fangst",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "Usual Norwegian fishing-contest wording; 'fangst' is the catch (noun)."
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, glossary keep; the guide keeps the English title unless the owner gives a Japanese one.",
+    "blind_remark": "left in English; not translated or transliterated into Japanese"
+  },
+  "hud.cast": {
+    "text": "投げる",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Fishing cast = throw the line. 投げる (3rd-grade kanji) is clearer for kids than キャスト."
+  },
+  "hud.reel": {
+    "text": "巻く",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "Fishing sense of リールを巻く (reel the line in); same verb as the pass name 自動巻き."
+  },
+  "hud.bait_left": {
+    "text": "エサ×{count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Item-count form Japanese games use (エサ×12); no plural needed and reads right for 0 and 1. エサ in katakana because 餌 is hard kanji."
+  },
+  "hud.backpack": {
+    "text": "バックパック",
+    "confidence": "medium",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide and Roblox's ja UI say バックパック. Lint width 12 vs the estimated 10; in pixels 6 kana are about 4.2 x TextSize, close to 'Backpack' in a wide Latin font. If it is cut off, バッグ (Pokemon's word for the bag) fits in 6."
+  },
+  "catch.success": {
+    "text": "【{rarity}】{fish}をつりあげた！",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's tag-bracket pattern keeps the rarity word from needing の/な before the fish name; plain form + ！ for the player's own result. つりあげる in kana (釣 is a junior-high kanji)."
+  },
+  "catch.escaped": {
+    "text": "にげられちゃった...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'It got away (from me)'; ～ちゃった carries the light disappointment. In kana because 逃 is a junior-high kanji; no fish word needed."
+  },
+  "catch.new_record": {
+    "text": "新記録！{weight}kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "Japanese writes kg straight after the number with no space (12.4kg). Japan uses the decimal point, so the game's 12.4 reads correctly."
+  },
+  "fish.golden_carp": {
+    "text": "金色のコイ",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "'Golden-colored carp'; species names go in katakana (コイ) as in Japanese field guides and fishing games."
+  },
+  "fish.lantern_eel": {
+    "text": "ランタンウナギ",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Invented name, translated per glossary: ランタン keeps the glowing-lantern idea and echoes the kept title Lantern Lake. Alternative チョウチンウナギ (like the real チョウチンアンコウ, anglerfish) sounds more like a real species but loses the echo."
+  },
+  "rarity.mythic": {
+    "text": "ミシック",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Katakana tier name used in Japanese game UIs (Fortnite's ja rarity set: レア < エピック < レジェンダリー < ミシック), so it reads as the tier above レジェンダリー. 神話 would break the katakana tier set.",
+    "blind_remark": "katakana spelling of the English word \"mythic\"; a gaming loanword, not an everyday Japanese word"
+  },
+  "shop.rods": {
+    "text": "つりざお",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "Fishing rods only; in kana as Animal Crossing writes it (竿 is not a standard school kanji)."
+  },
+  "shop.equip": {
+    "text": "装備",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equipped": {
+    "text": "装備中",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.free": {
+    "text": "無料",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "{price} Robuxで購入",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": []
+  },
+  "pass.auto_reel": {
+    "text": "自動巻き",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "'Automatic reeling', built on the button verb 巻く as the glossary asks. オート巻き is the other natural option; オートリール would name the reel device, not the action."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>幸運のエサ</b>でレアな魚がつれる確率が2倍に！",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Pass name 幸運のエサ shares 運 with the luck stat (friends.boost), per the glossary. 'Doubles your rare fish chance' = 'the chance of catching rare fish becomes 2x', the usual Japanese game phrasing; bold tags kept on the name."
+  },
+  "sell.all": {
+    "text": "すべて売る",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "魚を{count}匹売って、{coins}コインゲット！",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Counter 匹 must stay in kanji: its kana reading changes with the number (1ぴき, 2ひき, 3びき). Works for count 1. ゲット per the guide instead of 獲得."
+  },
+  "sell.prompt": {
+    "text": "Eキーで売る",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "blind_remark": "names the E key in the text itself (Latin letter in Japanese text); untrue for touch or gamepad players"
+  },
+  "ascend.button": {
+    "text": "転生",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "The guide's standard Japanese game term for a reset-for-bonus prestige; a literal 'ascend' (上昇, 昇天) means climbing or dying, and アセンション is new-age spiritual. If the game later adds a separate Rebirth, Ascend could become 覚醒."
+  },
+  "ascend.confirm": {
+    "text": "転生しますか？最初からやり直しになりますが、レアな魚がつれる確率が{bonus}%アップします。",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Polite form for a confirmation, per the guide. 'now' dropped as filler. 'More often' = 確率が{bonus}%アップ, standard game phrasing. ずっと (permanent) not added because the source does not say it."
+  },
+  "weather.storm": {
+    "text": "あらしが来るぞ！レアな魚が食いついてくる！",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "食いつく is the fishing 'bite' (take the bait). あらし in kana because 嵐 is a junior-high kanji. ぞ gives the excited banner energy."
+  },
+  "quest.title": {
+    "text": "クエスト",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "月夜の入り江で魚を{n}匹つる",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Dictionary form, the way Japanese quest lists word objectives. Moonlit Bay -> 月夜の入り江 ('inlet of the moonlit night'); 江 is a junior-high kanji but common in place names, alternative 月夜の湾. 匹 in kanji for the same reason as sell.done.",
+    "blind_remark": "can read as a named place or as \"in a cove on a moonlit night\""
+  },
+  "quest.claim": {
+    "text": "受け取る",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "友達といっしょにつりをすると運+{percent}%",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Statement with a label-style ending 運+{percent}%, keeping the '+'. 友達 is Roblox's ja word; 運 is the luck stat."
+  },
+  "trade.sent": {
+    "text": "{player}さんにトレードを申しこみました",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "申しこむ ('propose/request') instead of トレードリクエストを送りました, which is 36 wide against the 33 budget. Polite form as a system notice, matching trade.accept; さん after another player's name per the guide."
+  },
+  "trade.accept": {
+    "text": "{player}さんがトレードを受け入れました",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "'your trade' = the request, understood without あなたの. Polite system notice like the guide's trade.request; さん after the other player's name."
+  },
+  "codes.enter": {
+    "text": "コードを入力",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "コードを使った！報酬をどうぞ！",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'Enjoy your reward' as 報酬をどうぞ ('here is your reward'); 楽しんでね would be a calque. Code itself is never in the text.",
+    "blind_remark": "first half is casual and has no subject, so it can read like \"I used the code!\"; second half is polite"
+  },
+  "afk.kicked": {
+    "text": "放置しすぎたので、つりが止まりました。",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "放置 is the guide's word for idling; polite system notice. No mention of leaving the server, as in the source."
+  },
+  "settings.back": {
+    "text": "戻る",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": [],
+    "note": "戻 is a junior-high kanji, but 戻る is the Back button across Roblox's ja UI and Japanese games, so kids know it by sight (the guide's 購入/報酬 reasoning). もどる if the game wants kana."
+  },
+  "settings.sfx": {
+    "text": "効果音",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "終了まであと{time}",
+    "confidence": "medium",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Developer: {time} arrives as '2d 4h', which looks foreign in Japanese. A ja build should format it as 2日4時間 (no spaces); the text reads correctly either way."
+  },
+  "daily.streak": {
+    "text": "連続ログイン{day}日目！明日も来て、もっと報酬をもらおう！",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "Streak = 連続ログイン, the Japanese game term for consecutive-day logins; '{day}日目' works from day 1. 'for more' made explicit as more rewards (もっと報酬), per the context; ～しよう call to action per the guide."
+  },
+  "tip.night": {
+    "text": "ヒント：夜にしか食いつかない魚もいるよ。",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "ヒント： is the usual loading-tip label. 食いつく = fishing 'bite'; friendly ～よ for a kids' tip."
+  },
+  "group.join": {
+    "text": "コミュニティに参加して、無料でエサ50個をゲットしよう！",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "Roblox renamed groups to communities; its ja UI says コミュニティ. 公式 not added since the source just says 'the group'. 50 kept; counter 個 for bait."
+  },
+  "leaderboard.biggest": {
+    "text": "大物ランキング",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "大物 is the Japanese fishing word for a big (heavy) catch; ランキング is the guide's word for a leaderboard and makes the board's purpose clear. Literal 最大の獲物 is stiff and uses a hard kanji."
+  }
+}

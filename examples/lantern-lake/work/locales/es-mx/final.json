@@ -6,7 +6,8 @@
     "status": "ok",
     "flags": [],
     "keep": true,
-    "note": "Game title kept byte-identical (glossary: keep); no Spanish title given."
+    "note": "Game title kept byte-identical (glossary: keep); no Spanish title given.",
+    "blind_remark": "left in English, not translated"
   },
   "hud.cast": {
     "text": "Lanzar",
@@ -22,7 +23,8 @@
     "source_hash": "65eaf7af45ec",
     "status": "ok",
     "flags": [],
-    "note": "Recoger (el sedal) = reel in; same verb as the pass name Autorrecogida. Avoided jalar (slang in some countries)."
+    "note": "Recoger (el sedal) = reel in; same verb as the pass name Autorrecogida. Avoided jalar (slang in some countries).",
+    "blind_remark": "on its own \"Recoger\" usually means \"pick up\" or \"collect\"; it reads as \"reel in\" only from the fishing context"
   },
   "hud.bait_left": {
     "text": "Carnada: {count}",
@@ -83,7 +85,8 @@
     "source_hash": "21b68e8ea782",
     "status": "ok",
     "flags": [],
-    "note": "Standalone tier tag in the masculine, as the guide sets for rarity tags (Legendario, Mítico); reads as above Legendario."
+    "note": "Standalone tier tag in the masculine, as the guide sets for rarity tags (Legendario, Mítico); reads as above Legendario.",
+    "blind_remark": "masculine form; beside feminine fish names such as \"Carpa dorada\" or \"Anguila farol\" in catch.success it may read as a gender mismatch"
   },
   "shop.rods": {
     "text": "Cañas",
@@ -129,7 +132,8 @@
     "source_hash": "ddb006177f24",
     "status": "ok",
     "flags": [],
-    "note": "auto- + recogida, same verb as hud.reel (Recoger). Recogida automática (19) is clearer but over the 14 budget. Creator Hub pass name should match."
+    "note": "auto- + recogida, same verb as hud.reel (Recoger). Recogida automática (19) is clearer but over the 14 budget. Creator Hub pass name should match.",
+    "blind_remark": "coined compound \"Autorrecogida\"; reads as auto-pickup/auto-collect rather than clearly auto-reel"
   },
   "pass.lucky_bait": {
     "text": "¡La <b>Carnada de la suerte</b> duplica tus probabilidades de atrapar peces raros!",
@@ -257,7 +261,8 @@
     "source_hash": "6e924547dc32",
     "status": "ok",
     "flags": [],
-    "note": "idle -> AFK, which the guide keeps and kids use; inactivo would put a masculine adjective on a player of unknown gender. Nothing about being kicked added."
+    "note": "idle -> AFK, which the guide keeps and kids use; inactivo would put a masculine adjective on a player of unknown gender. Nothing about being kicked added.",
+    "blind_remark": "phrased as if you stopped fishing yourself; does not say you were kicked or disconnected"
   },
   "settings.back": {
     "text": "Volver",

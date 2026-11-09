@@ -1,0 +1,323 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept per glossary (brand); Vietnamese press and code guides keep English Roblox titles.",
+    "blind_remark": "not translated; still in English"
+  },
+  "hud.cast": {
+    "text": "Thả câu",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Thả câu\" is the everyday Vietnamese phrase for casting a fishing line; 7/8."
+  },
+  "hud.reel": {
+    "text": "Kéo cần",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "fixed",
+    "flags": [
+      "review:minor:accuracy"
+    ],
+    "note": "\"Kéo\" = pull the fish in, the fishing sense; same verb as the pass Kéo Tự Động. \"Kéo cần\" (7) is the longer option if testers find bare \"Kéo\" too terse.",
+    "review_reason": "Bare \"Kéo\" does not say what is pulled and can read as the noun \"scissors\"; \"Kéo cần\" (7/8) names the reel-in action, pairs with \"Thả câu\" and keeps the Kéo verb of the pass Kéo Tự Động."
+  },
+  "hud.bait_left": {
+    "text": "{count} mồi",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Vietnamese nouns never inflect, so \"{count} mồi\" is correct for 0, 1 and more, like the guide's \"{count} xu\"."
+  },
+  "hud.backpack": {
+    "text": "Ba lô",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": [],
+    "note": "Dictionary spelling of backpack; Roblox's own UI writes \"Balo\"."
+  },
+  "catch.success": {
+    "text": "Bạn câu được {fish} {rarity}!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Order flipped: Vietnamese puts the modifier after the noun (\"Cá Chép Vàng Hiếm\"). No classifier or article, so any fish name fits; tier names are capitalized so they read as a tag."
+  },
+  "catch.escaped": {
+    "text": "Cá tuột mất rồi...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "\"tuột mất\" = slipped off the hook; names the generic \"cá\" instead of \"it\", as context allows."
+  },
+  "catch.new_record": {
+    "text": "Kỷ lục mới! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: vi-vn uses a comma for decimals and a period for thousands, so \"12.4 kg\" can read wrong; send \"12,4\" for this locale."
+  },
+  "fish.golden_carp": {
+    "text": "Cá Chép Vàng",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "Cá Chình Đèn Lồng",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Invented name, translated as glossary says: \"cá chình\" (eel) + \"đèn lồng\" (lantern), 17/18. \"Lươn Đèn Lồng\" is shorter and cuter, but \"lươn\" is teen slang for a sneaky person, a poor fit for the mascot."
+  },
+  "rarity.mythic": {
+    "text": "Thần Thoại",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Standard Vietnamese tier above Huyền Thoại (Legendary), as in Blox Fruits guides; 10/10."
+  },
+  "shop.rods": {
+    "text": "Cần câu",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equip": {
+    "text": "Trang bị",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equipped": {
+    "text": "Đang dùng",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State label \"in use\", distinct from the button \"Trang bị\"; \"Đã trang bị\" (11/11) is the alternative."
+  },
+  "shop.free": {
+    "text": "Miễn phí",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Mua bằng {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern: \"bằng\" = paying with; \"Mua với\" would be a calque."
+  },
+  "pass.auto_reel": {
+    "text": "Kéo Tự Động",
+    "confidence": "high",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as hud.reel (Kéo), modifier after the noun; title case as a pass name. The Creator Hub store name should match."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Mồi May Mắn</b> nhân đôi cơ hội câu được cá hiếm!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Pass name built from Mồi (Bait) + may mắn (luck); \"cá hiếm\" matches the Rare tier Hiếm."
+  },
+  "sell.all": {
+    "text": "Bán hết",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Đã bán {count} con cá được {coins} xu!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "\"con\" is the classifier for fish; nouns never inflect, so count = 1 and coins = 1 both read correctly."
+  },
+  "sell.prompt": {
+    "text": "Nhấn E để bán",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Roblox's own pattern (\"Nhấn {KEY_NAME} để...\"). Source-side: phone and console players have no E key; ActionText \"Bán\" would serve everyone."
+  },
+  "ascend.button": {
+    "text": "Thăng hạng",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Thăng hạng\" = rise a rank, fitting a prestige level; 10/10. Avoided \"Phi thăng\" (Taoist ascension, religious), \"Tái sinh\" (that is Rebirth) and \"Thăng cấp\" (too close to level-up). \"Đột phá\" (Genshin's word for Ascension) is the alternative."
+  },
+  "ascend.confirm": {
+    "text": "Thăng hạng ngay? Bạn sẽ chơi lại từ đầu, nhưng tỉ lệ câu được cá hiếm tăng {bonus}%.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "fixed",
+    "flags": [
+      "review:minor:fluency"
+    ],
+    "note": "Same Ascend word as ascend.button. \"chơi lại từ đầu\" = start over; \"thường xuyên hơn {bonus}%\" = {bonus}% more often. Percent with no space, per the guide.",
+    "review_reason": "\"thường xuyên hơn {bonus}%\" calques \"more often\"; Vietnamese puts a percent increase on the rate (\"tỉ lệ ... tăng {bonus}%\"), same meaning."
+  },
+  "weather.storm": {
+    "text": "Bão sắp tới! Cá hiếm đang cắn câu.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "\"cắn câu\" = take the bait, the fishing sense of biting."
+  },
+  "quest.title": {
+    "text": "Nhiệm vụ",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Câu {n} con cá ở Vịnh Ánh Trăng",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Moonlit Bay translated per glossary as Vịnh Ánh Trăng; in-world signs and map labels should match. No plural, so n = 1 is fine."
+  },
+  "quest.claim": {
+    "text": "Nhận",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "Câu cá cùng bạn bè được +{percent}% may mắn",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "\"được\" = you get; keeps the + and writes the percent with no space. \"bạn bè\", not Roblox's \"người quen\"."
+  },
+  "trade.sent": {
+    "text": "Đã gửi lời mời giao dịch cho {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "\"lời mời giao dịch\" (trade invitation) is how Vietnamese games word a trade request; gender-free."
+  },
+  "trade.accept": {
+    "text": "{player} đã đồng ý giao dịch với bạn",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "\"your trade\" rendered as \"giao dịch với bạn\"; verbs never change for gender, so any {player} fits."
+  },
+  "codes.enter": {
+    "text": "Nhập code",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": [],
+    "note": "Players say \"nhập code\"; \"Nhập mã\" is the formal alternative.",
+    "blind_remark": "uses the English loanword 'code' rather than Vietnamese 'ma'; casual gamer usage"
+  },
+  "codes.redeemed": {
+    "text": "Nhập code thành công! Tận hưởng phần quà nhé!",
+    "confidence": "medium",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Nhập code thành công\" is the usual Vietnamese wording for a redeemed code, matching codes.enter; 45/45, at budget. \"nhé\" adds the friendly tone.",
+    "blind_remark": "uses the English loanword 'code'; casual gamer usage"
+  },
+  "afk.kicked": {
+    "text": "Bạn AFK quá lâu nên đã dừng câu cá.",
+    "confidence": "medium",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "\"AFK\" is how Vietnamese players say idle (the guide's own afk.warning uses it). \"Bạn đứng yên quá lâu...\" is the no-slang alternative. No removal from the server added.",
+    "blind_remark": "unclear who stopped it: reads as either 'you stopped fishing' or 'fishing was stopped'; says nothing about being removed from the game; keeps the English abbreviation 'AFK'"
+  },
+  "settings.back": {
+    "text": "Quay lại",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Hiệu ứng âm thanh",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Kết thúc sau {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "13/14. For the developer: {time} arrives as \"2d 4h\"; \"h\" reads as giờ but \"d\" is not Vietnamese (ngày). Send \"2 ngày 4 giờ\" or a countdown like \"2:04:00:00\" for vi-vn."
+  },
+  "daily.streak": {
+    "text": "Chuỗi {day} ngày! Ngày mai quay lại để nhận thêm quà nhé!",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Chuỗi {day} ngày\" = a {day}-day streak; no plural, so day = 1 is fine. \"for more\" made explicit as more gifts (quà). \"Điểm danh\" (check-in) is a common alternative label."
+  },
+  "tip.night": {
+    "text": "Mẹo: Có loài cá chỉ cắn câu vào ban đêm.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": []
+  },
+  "group.join": {
+    "text": "Tham gia cộng đồng của chúng mình để nhận 50 mồi miễn phí!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "\"cộng đồng\" per Roblox's Groups -> Communities rename in its Vietnamese UI; \"của chúng mình\" (our) makes clear it is the studio's group. Near the 60 budget: drop \"của chúng mình\" if the banner is tight."
+  },
+  "leaderboard.biggest": {
+    "text": "Cá nặng nhất",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "Biggest = heaviest by weight, so \"nặng nhất\"; sentence case per the guide."
+  }
+}

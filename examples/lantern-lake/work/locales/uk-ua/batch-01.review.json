@@ -1,0 +1,126 @@
+{
+  "title": {
+    "verdict": "ok"
+  },
+  "hud.cast": {
+    "verdict": "ok"
+  },
+  "hud.reel": {
+    "verdict": "ok"
+  },
+  "hud.bait_left": {
+    "verdict": "ok"
+  },
+  "hud.backpack": {
+    "verdict": "ok"
+  },
+  "catch.success": {
+    "verdict": "ok"
+  },
+  "catch.escaped": {
+    "verdict": "ok"
+  },
+  "catch.new_record": {
+    "verdict": "ok"
+  },
+  "fish.golden_carp": {
+    "verdict": "ok"
+  },
+  "fish.lantern_eel": {
+    "verdict": "ok"
+  },
+  "rarity.mythic": {
+    "verdict": "ok"
+  },
+  "shop.rods": {
+    "verdict": "ok"
+  },
+  "shop.equip": {
+    "verdict": "ok"
+  },
+  "shop.equipped": {
+    "verdict": "ok"
+  },
+  "shop.free": {
+    "verdict": "ok"
+  },
+  "shop.buy_robux": {
+    "verdict": "ok"
+  },
+  "pass.auto_reel": {
+    "verdict": "ok"
+  },
+  "pass.lucky_bait": {
+    "verdict": "ok"
+  },
+  "sell.all": {
+    "verdict": "ok"
+  },
+  "sell.done": {
+    "verdict": "ok"
+  },
+  "sell.prompt": {
+    "verdict": "ok"
+  },
+  "ascend.button": {
+    "verdict": "ok"
+  },
+  "ascend.confirm": {
+    "verdict": "ok"
+  },
+  "weather.storm": {
+    "verdict": "ok"
+  },
+  "quest.title": {
+    "verdict": "ok"
+  },
+  "quest.catch_n": {
+    "verdict": "ok"
+  },
+  "quest.claim": {
+    "verdict": "ok"
+  },
+  "friends.boost": {
+    "verdict": "ok"
+  },
+  "trade.sent": {
+    "verdict": "ok"
+  },
+  "trade.accept": {
+    "verdict": "ok"
+  },
+  "codes.enter": {
+    "verdict": "ok"
+  },
+  "codes.redeemed": {
+    "verdict": "ok"
+  },
+  "afk.kicked": {
+    "verdict": "ok"
+  },
+  "settings.back": {
+    "verdict": "ok"
+  },
+  "settings.sfx": {
+    "verdict": "ok"
+  },
+  "event.ends": {
+    "verdict": "ok"
+  },
+  "daily.streak": {
+    "verdict": "ok"
+  },
+  "tip.night": {
+    "verdict": "ok"
+  },
+  "group.join": {
+    "verdict": "fix",
+    "text": "Вступи до групи й отримай 50 наживок безплатно!",
+    "category": "terminology",
+    "severity": "minor",
+    "reason": "shop.free says \"Безплатно\" (chosen to fit its tight price label), so the banner uses the same word for free instead of \"безкоштовно\"; both are standard, but one game should use one."
+  },
+  "leaderboard.biggest": {
+    "verdict": "ok"
+  }
+}

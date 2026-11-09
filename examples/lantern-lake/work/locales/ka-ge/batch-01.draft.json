@@ -1,0 +1,195 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "keep": true,
+    "note": "Game title; glossary keep (brand), Latin as the guide keeps game names."
+  },
+  "hud.cast": {
+    "text": "ჩაგდება",
+    "confidence": "medium",
+    "note": "Masdar button per the guide: 'throwing (the line) in'. 'გადაგდება' (casting out) is 9/8, over budget; 'სროლა' would read as shooting."
+  },
+  "hud.reel": {
+    "text": "ამოქაჩვა",
+    "confidence": "medium",
+    "note": "Masdar 'pulling (the fish) out', 8/8; same verb as pass.auto_reel. Alternative 'ამოთრევა' (dragging out), also 8."
+  },
+  "hud.bait_left": {
+    "text": "{count} სატყუარა",
+    "confidence": "high",
+    "note": "Noun after a numeral stays singular in Georgian, so one form fits 0, 1 and any count."
+  },
+  "hud.backpack": {
+    "text": "ზურგჩანთა",
+    "confidence": "high"
+  },
+  "catch.success": {
+    "text": "შენ დაიჭირე {rarity} {fish}!",
+    "confidence": "high",
+    "note": "Aorist object is nominative, so the inserted rarity and fish names stay in base form. 'შენ' marks it as a result: bare 'დაიჭირე' is also the imperative 'Catch!'."
+  },
+  "catch.escaped": {
+    "text": "თევზი გაგექცა...",
+    "confidence": "high",
+    "note": "'The fish got away from you...'; names the generic 'fish' because Georgian needs a subject here."
+  },
+  "catch.new_record": {
+    "text": "ახალი რეკორდი! {weight} კგ",
+    "confidence": "high",
+    "note": "For the developer: Georgian uses a decimal comma ('12,4 კგ'); '12.4' from the game will look wrong. Format {weight} per locale if possible."
+  },
+  "fish.golden_carp": {
+    "text": "ოქროს კობრი",
+    "confidence": "high",
+    "note": "'Carp of gold', the same pattern as 'ოქროს თევზი' (goldfish); base nominative form for insertion into catch.success."
+  },
+  "fish.lantern_eel": {
+    "text": "ფარნის გველთევზა",
+    "confidence": "medium",
+    "note": "'Lantern eel' as genitive + noun (like the guide's 'იღბლის ელექსირი'), keeping the lantern idea from the title. 16/18."
+  },
+  "rarity.mythic": {
+    "text": "მითიური",
+    "confidence": "high",
+    "note": "Tier above 'ლეგენდარული' (Legendary)."
+  },
+  "shop.rods": {
+    "text": "ანკესები",
+    "confidence": "high"
+  },
+  "shop.equip": {
+    "text": "არჩევა",
+    "confidence": "medium",
+    "note": "'Select' as the button, paired with 'არჩეულია' (selected) for shop.equipped. 'აღჭურვა' (equip) is stiff, and its participle describes the player, not the rod; 'გამოყენებული' would read as 'secondhand'."
+  },
+  "shop.equipped": {
+    "text": "არჩეულია",
+    "confidence": "medium",
+    "note": "State label 'is selected', the pair of shop.equip ('არჩევა'); a full predicate, no gender to agree."
+  },
+  "shop.free": {
+    "text": "უფასო",
+    "confidence": "high"
+  },
+  "shop.buy_robux": {
+    "text": "ყიდვა {price} Robux-ად",
+    "confidence": "high",
+    "note": "Guide pattern: masdar button + adverbial '-ად' (for) after a hyphen on Robux."
+  },
+  "pass.auto_reel": {
+    "text": "ავტო-ამოქაჩვა",
+    "confidence": "medium",
+    "note": "Same verb as hud.reel with a hyphenated 'ავტო-' prefix (guide: hyphen compounds); 13/14. 'ავტომატური ამოქაჩვა' (20) is over budget. The Creator Hub store name should match."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>იღბლის სატყუარა</b> აორმაგებს იშვიათი თევზის დაჭერის შანსს!",
+    "confidence": "high",
+    "note": "'doubles the chance of catching rare fish'; 'your' dropped as the guide advises. Pass name built from the glossary renderings of luck and Bait."
+  },
+  "sell.all": {
+    "text": "გაყიდე ყველა",
+    "confidence": "medium",
+    "note": "Imperative 'sell all', 12/12. The guide's masdar form 'ყველას გაყიდვა' is 14, over the 12 budget; use it if the button has room."
+  },
+  "sell.done": {
+    "text": "გაიყიდა {count} თევზი {coins} მონეტად!",
+    "confidence": "high",
+    "note": "Intransitive 'sold' avoids 'გაყიდე', which also reads as the command 'Sell!'. Singular noun and verb after a numeral fit count and coins of 1. For the developer: if {coins} arrives grouped as '1,250', Georgian reads that as a decimal; pass plain digits or a no-break space."
+  },
+  "sell.prompt": {
+    "text": "გასაყიდად დააჭირე E-ს",
+    "confidence": "high",
+    "note": "'To sell, press E' (guide's 'გასახსნელად დააჭირე E-ს' order), 21/21; E kept, dative suffix after a hyphen. Source-side: phone and console players have no E key."
+  },
+  "ascend.button": {
+    "text": "აღზევება",
+    "confidence": "medium",
+    "note": "'Rise (to a higher standing)', 8/10. Avoids 'ამაღლება' (also the religious Ascension) and 'ასვლა'/'აღმასვლა' (climbing); kept distinct from the guide's rebirth word 'აღორძინება'. Somewhat literary; native review should confirm kids read it as a prestige step."
+  },
+  "ascend.confirm": {
+    "text": "ახლავე გინდა აღზევება? თავიდან დაიწყებ, მაგრამ იშვიათ თევზს {bonus}%-ით უფრო ხშირად დაიჭერ.",
+    "confidence": "high",
+    "note": "Mirrors the guide's rebirth confirm; same Ascend word as ascend.button. '{bonus}%-ით' = 'by 25%'; the adjective drops '-ი' before the dative 'თევზს'."
+  },
+  "weather.storm": {
+    "text": "ქარიშხალი მოდის! იშვიათი თევზი სატყუარას ეტანება.",
+    "confidence": "medium",
+    "note": "'biting' rendered as 'goes for the bait' (fishing sense); the same idiom is used in tip.night. Singular 'თევზი' is the generic collective."
+  },
+  "quest.title": {
+    "text": "მისიები",
+    "confidence": "high"
+  },
+  "quest.catch_n": {
+    "text": "დაიჭირე {n} თევზი მთვარიან ყურეში",
+    "confidence": "high",
+    "note": "Moonlit Bay translated as 'მთვარიანი ყურე' (terms.json); the adjective drops '-ი' before '-ში'. Singular after {n} fits 1."
+  },
+  "quest.claim": {
+    "text": "მიღება",
+    "confidence": "high"
+  },
+  "friends.boost": {
+    "text": "მეგობრებთან ერთად თევზაობა +{percent}% იღბალს გაძლევს",
+    "confidence": "high",
+    "note": "Statement 'fishing together with friends gives you +10% luck'; verb last, '+' kept."
+  },
+  "trade.sent": {
+    "text": "გაცვლის მოთხოვნა გაეგზავნა {player}-ს",
+    "confidence": "high",
+    "note": "'Trade request was sent to {player}'; dative '-ს' after a hyphen is safe on any name and needs no gender."
+  },
+  "trade.accept": {
+    "text": "{player} დაგთანხმდა გაცვლაზე",
+    "confidence": "high",
+    "note": "'{player} agreed to the trade with you': intransitive verb keeps the name in nominative, avoiding ergative '-მა'."
+  },
+  "codes.enter": {
+    "text": "შეიყვანე კოდი",
+    "confidence": "high"
+  },
+  "codes.redeemed": {
+    "text": "კოდი გააქტიურდა! ისიამოვნე ჯილდოთი.",
+    "confidence": "high",
+    "note": "Redeem = 'გააქტიურება' per the guide; 'got activated' as the result."
+  },
+  "afk.kicked": {
+    "text": "ძალიან დიდხანს არაფერს აკეთებდი, ამიტომ თევზაობა შეწყდა.",
+    "confidence": "high",
+    "note": "'You did nothing for too long, so fishing stopped.' 'შეწყდა' (stopped) avoids 'შეწყვიტე', which also reads as the command 'Stop!'. No kick added."
+  },
+  "settings.back": {
+    "text": "უკან",
+    "confidence": "high"
+  },
+  "settings.sfx": {
+    "text": "ხმის ეფექტები",
+    "confidence": "high"
+  },
+  "event.ends": {
+    "text": "დასრულებამდე: {time}",
+    "confidence": "high",
+    "note": "'Until the end: {time}', 14/14; the colon keeps a suffix off {time}. If it clips, 'დარჩა: {time}' (left) is 7. For the developer: '2d 4h' in English letters; Georgian writes '2 დღე 4 სთ'."
+  },
+  "daily.streak": {
+    "text": "სერია: {day} დღე ზედიზედ! დაბრუნდი ხვალ მეტი ჯილდოსთვის.",
+    "confidence": "medium",
+    "note": "Label form 'Streak: {day} days in a row' avoids irregular ordinals ('მე-3 დღე'); singular after the numeral fits day 1. 'for more' made explicit as 'for more rewards', as the context says."
+  },
+  "tip.night": {
+    "text": "რჩევა: ზოგი თევზი სატყუარას მხოლოდ ღამით ეტანება.",
+    "confidence": "medium",
+    "note": "'Tip' = 'რჩევა' (Microsoft's label); 'bite' as 'goes for the bait', same idiom as weather.storm."
+  },
+  "group.join": {
+    "text": "შემოგვიერთდი ჯგუფში და მიიღე 50 უფასო სატყუარა!",
+    "confidence": "high",
+    "note": "Guide pattern 'join us in the group'; 50 kept, singular after the numeral."
+  },
+  "leaderboard.biggest": {
+    "text": "უმძიმესი თევზი",
+    "confidence": "high",
+    "note": "'Heaviest fish', since the board ranks by weight; 'ყველაზე დიდი თევზი' (18/18) reads as size."
+  }
+}

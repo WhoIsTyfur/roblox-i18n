@@ -1,0 +1,337 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept byte-identical (glossary: keep); no Filipino title supplied by the developer.",
+    "blind_remark": "left entirely in English"
+  },
+  "hud.cast": {
+    "text": "Ihagis",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "'ihagis' = throw (the line) out, the everyday Tagalog verb for casting; object-focus form because the button acts on the line. 'I-cast' would be the gamer-Taglish alternative."
+  },
+  "hud.reel": {
+    "text": "Hilahin",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'hilahin' = pull (the line) in, what you shout when a fish bites. Same root 'hila' as the pass name Auto Hila."
+  },
+  "hud.bait_left": {
+    "text": "Pain: {count}",
+    "confidence": "medium",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form, correct for 0, 1 and more and keeps the Filipino noun out of the slot after the number (guide). 'pain' is the everyday Tagalog word for fishing bait; it is an English homograph, but beside the cast button the fishing sense is clear. Same word in group.join and Pain ng Swerte."
+  },
+  "hud.backpack": {
+    "text": "Backpack",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Kept English per the guide's vocabulary table (inventory/backpack/bag; 'Imbentaryo' reads like a textbook) and its reference 'Puno na ang backpack mo!'. 'Bag' (3) is the alternative if a shorter label is wanted.",
+    "blind_remark": "English word, not translated"
+  },
+  "catch.success": {
+    "text": "Nakahuli ka ng {fish} ({rarity})!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "'nakahuli' = managed to catch. Rarity moved into parentheses as the context suggests: an English tier word glued before a Filipino fish name (Rare Gintong Karpa) would need a linker, and this also removes the English a/an problem. 19 visible + e.g. 'Gintong Karpa' + 'Rare' = 36 rendered."
+  },
+  "catch.escaped": {
+    "text": "Nakawala ang isda...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'It' made explicit with the generic word for fish, as the context allows; 'nakawala' = got loose / slipped away. Trailing '...' kept."
+  },
+  "catch.new_record": {
+    "text": "Bagong record! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "'Bagong record' is everyday Taglish (sports and games); 'kg' stays as in Latin-script locales. {weight} with a decimal point matches Filipino number format."
+  },
+  "fish.golden_carp": {
+    "text": "Gintong Karpa",
+    "confidence": "medium",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "'karpa' is the Filipino name for carp (from Spanish) used in local fish farming; 'gintong' = golden. Some kids may know the fish only as koi or 'carp'; native reviewer may prefer 'Gintong Carp'. Base form, reads correctly inside catch.success."
+  },
+  "fish.lantern_eel": {
+    "text": "Igat-Parol",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Developer chose translate. 'igat' = eel; 'parol' = lantern (the glowing Filipino lantern), keeping the glowing-lantern idea. Head-first hyphenated noun compound like 'bahay-kubo'; both parts capitalized as a name (the guide's hyphen rule covers affixed verbs like Mag-rebirth). Echo of the English title Lantern Lake is lost, as in any translation.",
+    "blind_remark": "literally \"Eel-Lantern\"; \"parol\" usually means the star-shaped Filipino Christmas lantern"
+  },
+  "rarity.mythic": {
+    "text": "Mythic",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Guide keeps rarity tiers in English (Common ... Legendary, Mythic): players know the English tiers and English words need no linker when inserted. Glossary says translate, but the locale guide outranks it; 'Mitikal'/'Maalamat' are bookish and would need a linker in catch.success. Reads above Legendary as in other games.",
+    "blind_remark": "English word, not translated"
+  },
+  "shop.rods": {
+    "text": "Pamingwit",
+    "confidence": "medium",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "'pamingwit' = fishing rod, unambiguous (never a metal rod). Tab label without 'mga', as category tabs usually are; 'Mga Pamingwit' (13) is over budget. Gamer-Taglish alternative: 'Mga Rod' (7).",
+    "blind_remark": "singular; no plural marker, so it reads as one rod rather than a tab of rods"
+  },
+  "shop.equip": {
+    "text": "Gamitin",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "'gamitin' = use (this rod). Pairs with the state label 'Ginagamit' (in use). 'I-equip' (7) is the gamer-Taglish alternative."
+  },
+  "shop.equipped": {
+    "text": "Ginagamit",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "'ginagamit' = currently in use: a state, not an action, built on the same root as the button 'Gamitin'."
+  },
+  "shop.free": {
+    "text": "Libre",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Bilhin sa {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference pattern: 'sa' marks the price, so it cannot read as buying Robux."
+  },
+  "pass.auto_reel": {
+    "text": "Auto Hila",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Developer chose translate; same root as the Hilahin button. 'Auto' is everyday Taglish (naka-auto, auto-save). The pass name in Creator Hub should match. 'Kusang Hila' is a pure-Tagalog option but reads odd as a product name.",
+    "blind_remark": "mixes English \"Auto\" with Filipino \"Hila\" (pull)"
+  },
+  "pass.lucky_bait": {
+    "text": "Sa <b>Pain ng Swerte</b>, doble ang tsansa mong makahuli ng rare na isda!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Restructured: 'With Lucky Bait, your chance to catch rare fish is double!'. Pass name follows the guide's 'Potion ng Swerte' pattern and the glossary words luck (swerte) and Bait (pain). 'rare' is the English tier word, lowercase in prose as in the source; bold tag stays around the pass name."
+  },
+  "sell.all": {
+    "text": "Ibenta Lahat",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": [],
+    "note": "Object-focus 'Ibenta' (sell these). 12 of 12."
+  },
+  "sell.done": {
+    "text": "Naibenta mo ang isda (x{count})! Coins: +{coins}",
+    "confidence": "medium",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Both numbers can be 1: 'x{count}' and 'Coins: +{coins}' avoid '1 coins' and the number linker on 'isda' (guide). The '+' marks coins earned, standing in for 'for'. 34 visible.",
+    "blind_remark": "\"Coins\" left in English"
+  },
+  "sell.prompt": {
+    "text": "Ibenta gamit ang E",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern 'Buksan gamit ang E' (sell using E); 'Pindutin ang E para magbenta' is 28, over 21. Source-side: phone and console players have no E key; ActionText 'Ibenta' alone would serve everyone.",
+    "blind_remark": "reads \"using E\" rather than \"press E\"; slightly stiff"
+  },
+  "ascend.button": {
+    "text": "Mag-ascend",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Prestige term kept as an English root with the mag- prefix, like the guide's Mag-rebirth; Tagalog 'umangat'/'umakyat' read as climbing or rising, which the glossary rules out. 10 of 10; 'Ascend' (6) is the fallback if the button is tight.",
+    "blind_remark": "English verb \"ascend\" with the Filipino prefix \"mag-\"; the English word may be unfamiliar to many players"
+  },
+  "ascend.confirm": {
+    "text": "Mag-ascend na? Babalik ka sa simula, pero {bonus}% mas madalas kang makakahuli ng rare na isda.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "'Babalik ka sa simula' = you go back to the start (rods and coins reset). '{bonus}% mas madalas' follows the common Filipino '50% mas mura' pattern, no linker needed after the percent.",
+    "blind_remark": "uses the English verb \"ascend\" with \"mag-\""
+  },
+  "weather.storm": {
+    "text": "May bagyong paparating! Kumakagat ang mga rare na isda.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'bagyo' is the everyday word for a storm; 'kumakagat' is the fishing sense of biting (kumagat na ang isda). Period kept from the source.",
+    "blind_remark": "\"bagyo\" usually means a typhoon, so this can read as a typhoon warning"
+  },
+  "quest.title": {
+    "text": "Mga Quest",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide: keep 'quest'; 'mga' plus the singular English noun, as in Microsoft's 'Mga file'."
+  },
+  "quest.catch_n": {
+    "text": "Manghuli ng isda sa Look ng Buwan: {n}",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "n can be 1, so the count goes in label position instead of before 'isda' (guide: no Filipino noun after {count}). 'Look ng Buwan' = Bay of the Moon, the developer chose translate; 'look' = bay as in 'Look ng Maynila'. If in-world signs keep 'Moonlit Bay', they will not match.",
+    "blind_remark": "\"Look ng Buwan\" is literally \"Bay of the Moon\"; \"Look\" (bay) can be misread at a glance as the English word \"look\""
+  },
+  "quest.claim": {
+    "text": "Kunin",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference for claiming a reward; 'I-claim' is equally natural."
+  },
+  "friends.boost": {
+    "text": "+{percent}% swerte kapag nangingisda ka kasama ang mga kaibigan mo",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Statement, not an order: '+10% luck when you fish with your friends'. 'swerte' = luck, same word as in Pain ng Swerte. Percent with no space (guide). 57 of 57; dropping the final 'mo' gives 54 if needed."
+  },
+  "trade.sent": {
+    "text": "Naipadala ang trade request kay {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "'kay' is the personal marker for 'to' before a name (guide); works for any name. 'trade request' kept as gamer Taglish. 32 of 33."
+  },
+  "trade.accept": {
+    "text": "Tinanggap ni {player} ang trade mo",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "'ni' marks {player} as the actor (guide: never drop the personal marker); no gender in Filipino verbs."
+  },
+  "codes.enter": {
+    "text": "Ilagay ang code",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference wording."
+  },
+  "codes.redeemed": {
+    "text": "Na-redeem ang code! I-enjoy ang reward mo.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide vocabulary 'i-redeem ang code'; 'I-enjoy' is the everyday Taglish verb, warmer than formal 'Masiyahan ka'. Period kept from the source.",
+    "blind_remark": "heavy Taglish: \"redeem\", \"enjoy\" and \"reward\" are English words with Filipino prefixes"
+  },
+  "afk.kicked": {
+    "text": "Masyadong matagal kang AFK, kaya natigil ang pangingisda mo.",
+    "confidence": "medium",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "'idle' rendered with AFK, the word Filipino kids use for an idle player (guide vocabulary). 'natigil' = got stopped, since the game stopped the fishing. No mention of removal from the server, as the context asks."
+  },
+  "settings.back": {
+    "text": "Bumalik",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Mga Tunog",
+    "confidence": "medium",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": [],
+    "note": "'Mga Tunog' (sounds) reads as sound effects beside 'Musika'. If the game also has a master Sound row, use 'Sound Effects' (kept English, common Taglish) instead."
+  },
+  "event.ends": {
+    "text": "Matatapos sa {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Future aspect 'matatapos' (will end), not 'tapos na' (already over), per the guide's tense warning. 13 of 14. {time} arrives as '2d 4h', which matches the guide's compact default.",
+    "blind_remark": "ambiguous: \"sa {time}\" can mean \"in {time}\" (countdown) or \"at {time}\" (clock time)"
+  },
+  "daily.streak": {
+    "text": "Araw {day} ng streak mo! Balik ka bukas para sa dagdag na reward.",
+    "confidence": "medium",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'Araw {day}' (Day 3) is a label form that works for 1. 'streak' kept as the gamer word (win streak, TikTok streak); glossary says translate, but 'sunod-sunod na araw' would need a number linker. 'for more' made 'para sa dagdag na reward', as the context explains; period kept."
+  },
+  "tip.night": {
+    "text": "Tip: may mga isdang sa gabi lang kumakagat.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "'Tip:' is the usual Taglish label ('Payo:' reads formal). 'kumakagat' = bite in the fishing sense, as in weather.storm."
+  },
+  "group.join": {
+    "text": "Sumali sa community namin para sa 50 libreng pain!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide: Roblox's English UI says Communities, and 'namin' (our, not the player's) is the studio's group. Bait = 'pain', number 50 kept."
+  },
+  "leaderboard.biggest": {
+    "text": "Pinakamalaking Huli",
+    "confidence": "medium",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'huli' = catch (noun); 'pinakamalaki' covers size and weight for fish. 19 of an estimated 18: no shorter natural title ('Pinakamabigat na Huli' is 21; 'Pinakamabigat' alone loses the catch). In-world board likely has room; check in Studio."
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, glossary keep; German players see Roblox titles in English.",
+    "blind_remark": "not translated; still in English"
+  },
+  "hud.cast": {
+    "text": "Werfen",
+    "confidence": "medium",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "The full angling verb is \"Auswerfen\" (9), one over the 8 budget of the round button; \"Werfen\" is clear next to the fishing line. Use \"Auswerfen\" if the button fits 9.",
+    "blind_remark": "generic verb \"throw\"; not the usual fishing word for casting a line, which is \"Auswerfen\""
+  },
+  "hud.reel": {
+    "text": "Einholen",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "\"die Schnur einholen\" = pull the line in; same verb as the pass Auto-Einholen. Exactly 8."
+  },
+  "hud.bait_left": {
+    "text": "Köder: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form; \"Köder\" is the same in singular and plural, so 0, 1 and 12 all read right."
+  },
+  "hud.backpack": {
+    "text": "Rucksack",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": [],
+    "note": "Roblox's own German backpack word."
+  },
+  "catch.success": {
+    "text": "Gefangen: {fish} ({rarity})!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Restructured: German cannot inflect the bare tier label before a fish of unknown gender (\"ein Selten Goldkarpfen\"). Params reordered; reads \"Gefangen: Goldkarpfen (Selten)!\"."
+  },
+  "catch.escaped": {
+    "text": "Der Fisch ist dir entwischt...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "\"It\" made explicit as the generic \"der Fisch\"; \"dir entwischt\" is the natural German for a fish slipping away."
+  },
+  "catch.new_record": {
+    "text": "Neuer Rekord! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {weight} arrives as \"12.4\"; German writes \"12,4\". Format it by the player's LocaleId."
+  },
+  "fish.golden_carp": {
+    "text": "Goldkarpfen",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "One compound noun, so it needs no adjective ending when inserted into catch.success."
+  },
+  "fish.lantern_eel": {
+    "text": "Laternenaal",
+    "confidence": "high",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Compound keeps the glowing-lantern idea and echoes the title's \"Lantern\". der Aal = eel."
+  },
+  "rarity.mythic": {
+    "text": "Mythisch",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "German games list tiers as Selten, Episch, Legendär, Mythisch; Mythisch reads as above Legendär."
+  },
+  "shop.rods": {
+    "text": "Angelruten",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "Unambiguous fishing rods (\"Angeln\" would also read as the verb \"to fish\"). Exactly 10."
+  },
+  "shop.equip": {
+    "text": "Ausrüsten",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equipped": {
+    "text": "Ausgerüstet",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State participle, no agreement needed after a noun-less label. Exactly 11."
+  },
+  "shop.free": {
+    "text": "Gratis",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Kostenlos\" (9) is over the 8 budget; \"Gratis\" is the usual short price label. Not \"Frei\"."
+  },
+  "shop.buy_robux": {
+    "text": "Für {price} Robux kaufen",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Robux is invariant, so 1 and 99 both read right."
+  },
+  "pass.auto_reel": {
+    "text": "Auto-Einholen",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as hud.reel, hyphenated with \"Auto\" as German compounds with a foreign part are. Marketing name: match it in Creator Hub."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Glücksköder</b> verdoppelt deine Chance auf seltene Fische!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Glücksköder = Glück (luck) + Köder (bait), as glossary asks; \"seltene\" matches the tier Selten."
+  },
+  "sell.all": {
+    "text": "Alle verkaufen",
+    "confidence": "medium",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "resolved",
+    "flags": [
+      "review:major:length"
+    ],
+    "note": "14, over the 12 budget; no shorter natural German for Sell All. Two words, so it can wrap at the space onto two lines.",
+    "review_reason": "14 chars against an estimated 12 and no shorter natural German exists (\"Verkaufen\" loses \"all\"); unknown whether the button wraps at the space or is wide enough, so check it in Studio with de-de or widen the button."
+  },
+  "sell.done": {
+    "text": "Verkauft! Fische: {count}, Münzen: +{coins}",
+    "confidence": "medium",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form because count and coins can be 1 (\"1 Fische\", \"1 Münzen\" would be wrong). The \"+\" marks the coins as earned, so the number is not read as the balance."
+  },
+  "sell.prompt": {
+    "text": "Drück E zum Verkaufen",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Short spoken imperative \"Drück\" so it fits 21 exactly (\"Drücke\" is 22). Source-side: the ProximityPrompt shows the key itself, so ActionText \"Verkaufen\" alone would serve phone and console players."
+  },
+  "ascend.button": {
+    "text": "Aufsteigen",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Prestige as rising a rank (Genshin's German calls ascension \"Aufstieg\"); not religious. Exactly 10. \"Prestige\" was the alternative but has no natural verb.",
+    "blind_remark": "on its own can also read as \"move up a rank\" or \"climb on/mount\""
+  },
+  "ascend.confirm": {
+    "text": "Jetzt aufsteigen? Du beginnst von vorn, fängst aber {bonus} % öfter seltene Fische.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "\"beginnst von vorn\" avoids a second \"fängst\" (\"fängst ... an\"). Space before % is U+00A0, as German writes percent."
+  },
+  "weather.storm": {
+    "text": "Ein Sturm zieht auf! Jetzt beißen seltene Fische.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Jetzt\" carries the English progressive \"are biting\"; \"beißen\" in the fishing sense."
+  },
+  "quest.title": {
+    "text": "Aufgaben",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide: \"Aufgabe\" is clearer for young players than \"Quest\"; use it everywhere."
+  },
+  "quest.catch_n": {
+    "text": "Fische in der Mondscheinbucht fangen: {n}",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Task-list label form because n can be 1 (\"Fange 1 Fische\" is wrong). Moonlit Bay translated as Mondscheinbucht."
+  },
+  "quest.claim": {
+    "text": "Abholen",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Not \"Beanspruchen\" (a legal claim)."
+  },
+  "friends.boost": {
+    "text": "Angeln mit Freunden bringt +{percent} % Glück",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Space before % is U+00A0. Generic masculine \"Freunden\", as Roblox's own German."
+  },
+  "trade.sent": {
+    "text": "Tauschanfrage an {player} gesendet",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "{player} after \"an\" needs no inflection."
+  },
+  "trade.accept": {
+    "text": "{player} hat deinen Tausch angenommen",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "\"deine Tauschanfrage\" would run to 34, over 33; \"Tausch\" keeps the same word family as trade.sent. Nothing describes {player}, so gender does not matter."
+  },
+  "codes.enter": {
+    "text": "Code eingeben",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Code eingelöst! Viel Spaß mit der Belohnung.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "\"der\" instead of \"deiner\" keeps it at 44, under the 45 budget."
+  },
+  "afk.kicked": {
+    "text": "Du warst zu lange inaktiv, deshalb wurde das Angeln beendet.",
+    "confidence": "medium",
+    "source_hash": "6e924547dc32",
+    "status": "resolved",
+    "flags": [
+      "review:minor:fluency"
+    ],
+    "note": "States the result (fishing has stopped) without implying the player chose to stop or was removed from the server.",
+    "review_reason": "\"deshalb angelst du nicht mehr\" reads like a habit (\"you don't fish anymore\"); \"wurde das Angeln beendet\" is the natural system-message wording and still doesn't imply removal from the server."
+  },
+  "settings.back": {
+    "text": "Zurück",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Soundeffekte",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": [],
+    "note": "Usual German game-settings word, beside \"Musik\"."
+  },
+  "event.ends": {
+    "text": "Endet in {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {time} arrives as \"2d 4h\"; German writes \"2 Tg. 4 Std.\". Format it by the player's LocaleId."
+  },
+  "daily.streak": {
+    "text": "Serie: Tag {day}! Komm morgen wieder, dann gibt's mehr.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form \"Serie: Tag 3\" works for day 1. \"dann gibt's mehr\" carries \"for more\" as German would say it."
+  },
+  "tip.night": {
+    "text": "Tipp: Manche Fische beißen nur nachts.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": []
+  },
+  "group.join": {
+    "text": "Tritt unserer Community bei und hol dir gratis 50 Köder!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "Roblox renamed groups to \"Community\"; \"unserer\" is how German addresses a studio's own group. \"gratis\" stands before the number as an adverb."
+  },
+  "leaderboard.biggest": {
+    "text": "Schwerster Fang",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Schwerster\" (heaviest) because the board ranks by weight; \"Größter Fang\" could read as longest."
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title is a brand; glossary decision keep, no Malay title supplied.",
+    "blind_remark": "left in English, not translated"
+  },
+  "hud.cast": {
+    "text": "Lontar",
+    "confidence": "medium",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "'lontar' is the angler's word for a cast (a cast = 'lontaran'); plain 'Baling' (throw) also works. Not 'Buang' (throw away)."
+  },
+  "hud.reel": {
+    "text": "Tarik",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'pull (the line in)'; same verb as the pass name Tarik Auto. Angler slang 'karau' is less known to kids."
+  },
+  "hud.bait_left": {
+    "text": "{count} Umpan",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Malay nouns never change after a number, so this is right for 0, 1 and more (guide: '{count} Syiling')."
+  },
+  "hud.backpack": {
+    "text": "Beg",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Anda menangkap {fish} {rarity}!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Malay puts the modifier after the noun, so {rarity} follows {fish} ('Ikan Kap Emas Nadir', like the guide's 'Naga Legenda'); no agreement or article to break."
+  },
+  "catch.escaped": {
+    "text": "Ikan itu terlepas...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'That fish slipped loose...'; names the fish generically because 'Ia terlepas' reads stiff for an object."
+  },
+  "catch.new_record": {
+    "text": "Rekod baharu! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "DBP spelling 'baharu'; 'kg' unchanged and Malaysia uses the decimal point, so '12.4' reads right."
+  },
+  "fish.golden_carp": {
+    "text": "Ikan Kap Emas",
+    "confidence": "medium",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "'ikan kap' = carp (as in 'kap rumput', grass carp). 'Ikan Emas' alone means goldfish in Malaysia, so 'Kap' keeps it a carp; 'Ikan' kept so 'Kap' is not read as lampshade or stamp."
+  },
+  "fish.lantern_eel": {
+    "text": "Belut Tanglung",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "'belut' = eel; 'tanglung' is the Malaysian word for a glowing lantern (Pesta Tanglung), keeping the glowing-lantern idea. 'Belut Pelita' (oil lamp) is the alternative."
+  },
+  "rarity.mythic": {
+    "text": "Mitos",
+    "confidence": "medium",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Noun tier label, parallel to 'Legenda' (guide's Legendary). Malaysian kids know Legend < Mythic from Mobile Legends ranks, so it reads as the higher tier; a native should confirm."
+  },
+  "shop.rods": {
+    "text": "Joran",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "'joran' = fishing rod (batang pancing); never 'rod' or 'batang' alone."
+  },
+  "shop.equip": {
+    "text": "Guna",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Use' is how Malay game UI says equip for a tool; literal 'Lengkapkan' is stiff."
+  },
+  "shop.equipped": {
+    "text": "Digunakan",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State label 'in use', the passive of the 'Guna' button."
+  },
+  "shop.free": {
+    "text": "Percuma",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Beli: {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern: the colon stops it reading as 'buy {price} Robux'."
+  },
+  "pass.auto_reel": {
+    "text": "Tarik Auto",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as the Tarik button; 'auto' follows the noun as in Malaysian 'kereta auto'. 'Tarik Automatik' is 15 of 14. Store name in Creator Hub should match.",
+    "blind_remark": "'Auto' is an English clipping; informal, though common in games"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Umpan Bertuah</b> menggandakan peluang anda menangkap ikan nadir!",
+    "confidence": "medium",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Rare = 'nadir' (Kamus Dewan: seldom found; 'spesies nadir'), used for both the tier and 'rare fish'. 'Jarang' is commoner but 'ikan jarang' reads as 'sparse fish'; Indonesian 'langka' avoided. Native check on 'nadir' for kids."
+  },
+  "sell.all": {
+    "text": "Jual Semua",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Anda menjual {count} ikan dan dapat {coins} syiling!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "'You sold {count} fish and got {coins} coins!'; Malay nouns do not change for 1, and 'untuk' for a price would be a calque. 38 of 40."
+  },
+  "sell.prompt": {
+    "text": "Tekan E untuk menjual",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "21 of 21, same pattern as the guide's 'Tekan E untuk membuka'."
+  },
+  "ascend.button": {
+    "text": "Bangkit",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "'Rise up', the everyday sense (as in 'bangkit semula'), not religious or climbing. 'Naik Darjat' (rise in status) is more exact but 11 of 10.",
+    "blind_remark": "'Bangkit' can mean rise up, get up or rise again; ambiguous on its own as a button"
+  },
+  "ascend.confirm": {
+    "text": "Bangkit sekarang? Anda akan mula semula, tetapi akan menangkap ikan nadir {bonus}% lebih kerap.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Short question without 'Adakah' per the guide; 'mula semula' = start over; percent with no space."
+  },
+  "weather.storm": {
+    "text": "Ribut akan melanda! Ikan nadir sedang makan umpan.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'A storm will strike!' is the natural Malay alarm; 'makan umpan' = take the bait (fishing sense of biting). 'ribut', not Indonesian 'badai'."
+  },
+  "quest.title": {
+    "text": "Misi",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Tangkap {n} ikan di Teluk Cahaya Bulan",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Moonlit Bay = 'Teluk Cahaya Bulan' (moonlight bay); 'Terang Bulan' avoided for its anthem association. 35 of 40."
+  },
+  "quest.claim": {
+    "text": "Tuntut",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "Memancing bersama rakan memberi +{percent}% tuah",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": []
+  },
+  "trade.sent": {
+    "text": "Permintaan tukar dihantar kepada {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "33 of 33. 'kepada' because {player} is a person; 'dihantar', not Indonesian 'dikirim'."
+  },
+  "trade.accept": {
+    "text": "{player} menerima permintaan tukar anda",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "'your trade' made 'your trade request', matching trade.sent.",
+    "blind_remark": "'menerima' means both 'received' and 'accepted'; can read as {player} only got the request"
+  },
+  "codes.enter": {
+    "text": "Masukkan kod",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Kod berjaya ditebus! Nikmati ganjaran anda.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'berjaya ditebus' (successfully redeemed) is the usual Malay success-message pattern. 43 of 45."
+  },
+  "afk.kicked": {
+    "text": "Anda terlalu lama tidak aktif dan berhenti memancing.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "blind_remark": "reads as if you stopped fishing yourself; does not say you were removed or that the game stopped you"
+  },
+  "settings.back": {
+    "text": "Kembali",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Kesan Bunyi",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Tamat dalam {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Developer: {time} like '2d 4h' reads wrong in Malay, where 'h' means hari (days). Format it for ms-my as '2 h 4 j' (CLDR) or '2 hari 4 jam'."
+  },
+  "daily.streak": {
+    "text": "Hari berturut-turut: {day}! Kembali esok untuk ganjaran lagi.",
+    "confidence": "medium",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form 'Days in a row: {day}!' so day = 1 reads right; 'Hari ke-{day}' breaks at 1 (should be 'pertama'). 'Rentetan' (as in 'rentetan kemenangan') is the alternative for streak. 56 of 62."
+  },
+  "tip.night": {
+    "text": "Petua: Sesetengah ikan hanya makan umpan pada waktu malam.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "'Petua' is the Malaysian word for a tip or hint; 'makan umpan' = bite in the fishing sense. 58 of 60."
+  },
+  "group.join": {
+    "text": "Sertai komuniti kami dan dapat 50 umpan percuma!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "'komuniti' per Roblox's Communities rename (guide); switch to 'kumpulan' if the game's own UI says group. 'kami' (our) added as Malay needs an owner for the community."
+  },
+  "leaderboard.biggest": {
+    "text": "Ikan Terberat",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Heaviest Fish', since the board ranks by weight; 'Tangkapan Terberat' is 19 of 18."
+  }
+}

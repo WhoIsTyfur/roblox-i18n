@@ -1,0 +1,312 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept byte-identical (glossary: keep); Swedish players see English Roblox titles.",
+    "blind_remark": "left in English, not translated"
+  },
+  "hud.cast": {
+    "text": "Kasta",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": []
+  },
+  "hud.reel": {
+    "text": "Veva in",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Veva in\" (crank the reel in) is the everyday Swedish angling verb; same verb as the pass name Autoveva. \"Dra in\" (6) is the plainer fallback."
+  },
+  "hud.bait_left": {
+    "text": "Bete: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so 0, 1 and 12 all read correctly."
+  },
+  "hud.backpack": {
+    "text": "Ryggsäck",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Ny fångst: {fish} ({rarity})!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "\"New catch: X (tier)!\" -- a label form, so no article or adjective has to agree with an unseen fish name (en/ett) and the tier stays in its tag form."
+  },
+  "catch.escaped": {
+    "text": "Fisken slet sig...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "\"slita sig\" is the Swedish angling idiom for a fish breaking off the hook; \"It\" becomes the generic \"Fisken\"."
+  },
+  "catch.new_record": {
+    "text": "Nytt rekord! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "Developer: {weight} arrives as \"12.4\"; Swedish writes \"12,4\". Format by LocaleId if possible."
+  },
+  "fish.golden_carp": {
+    "text": "Guldkarp",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "Lyktål",
+    "confidence": "high",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "lykta (lantern) + ål (eel), compounded like \"lyktstolpe\"; keeps the glowing-lantern idea. \"Lanternål\" is the alternative."
+  },
+  "rarity.mythic": {
+    "text": "Mytisk",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.rods": {
+    "text": "Fiskespön",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Fiskespön\" rather than bare \"Spön\" so it cannot read as sticks or canes; 9/10."
+  },
+  "shop.equip": {
+    "text": "Utrusta",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equipped": {
+    "text": "Används",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "\"In use\": avoids agreeing a participle with the neuter noun spö (\"utrustat\"), and is the usual Swedish UI state label."
+  },
+  "shop.free": {
+    "text": "Gratis",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Köp för {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": []
+  },
+  "pass.auto_reel": {
+    "text": "Autoveva",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "auto + veva, built like \"autospara\"; same verb as hud.reel \"Veva in\". Store name in Creator Hub should match.",
+    "blind_remark": "coined compound, literally 'auto-crank'"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Turbete</b> fördubblar chansen att fånga sällsynta fiskar!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Turbete = tur (luck) + bete (bait), patterned on Minecraft's \"Turbrygd\". Possessive \"your\" dropped as Swedish does."
+  },
+  "sell.all": {
+    "text": "Sälj allt",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Sålda fiskar: {count}. Du fick {coins} mynt!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "\"fisk\" has plural \"fiskar\", so \"{count} fiskar\" breaks at 1; label form for count. \"mynt\" is invariant, so {coins} is safe. 30/40."
+  },
+  "sell.prompt": {
+    "text": "Tryck E för att sälja",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Short spoken form \"Tryck E\" (guide); \"Tryck på E\" would be 24/21. Exactly 21/21. Source-side: phone and console players have no E key; ActionText \"Sälj\" would serve everyone."
+  },
+  "ascend.button": {
+    "text": "Avancera",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Prestige verb: \"advance\", neither religious nor climbing (\"Stig upp\" would be both). Same word in ascend.confirm.",
+    "blind_remark": "means advance or move up; on its own it does not suggest a reset or prestige"
+  },
+  "ascend.confirm": {
+    "text": "Vill du avancera nu? Du börjar om från början, men du fångar sällsynta fiskar {bonus} % oftare.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Full question for a decision (guide); space before % is the Swedish norm."
+  },
+  "weather.storm": {
+    "text": "En storm är på väg! Sällsynta fiskar nappar.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "\"nappa\" is the Swedish verb for fish taking the bait."
+  },
+  "quest.title": {
+    "text": "Uppdrag",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Fånga fisk i Månskensviken: {n}",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Fånga {n} fiskar\" breaks at n = 1, so mass noun \"fisk\" plus a count label. \"i\" (in the bay) is the natural preposition for fishing a bay. 28/40."
+  },
+  "quest.claim": {
+    "text": "Hämta",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "blind_remark": "literally 'fetch'; with no object it is also the usual word for 'Get' or 'Download'"
+  },
+  "friends.boost": {
+    "text": "Fiske med vänner ger +{percent} % tur",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Statement with the noun \"Fiske\" (fishing); space before % per Swedish convention."
+  },
+  "trade.sent": {
+    "text": "Bytesförfrågan skickad till {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": []
+  },
+  "trade.accept": {
+    "text": "{player} godkände din bytesförfrågan",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "\"ditt byte\" alone could read as \"your prey\" in a fishing game, so \"bytesförfrågan\" (trade request), matching trade.sent. 28/33."
+  },
+  "codes.enter": {
+    "text": "Ange kod",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Koden är inlöst! Njut av belöningen.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": []
+  },
+  "afk.kicked": {
+    "text": "Du var inaktiv för länge, så fisket stoppades.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "\"so your fishing was stopped\": \"slutade fiska\" would sound like the player chose to stop."
+  },
+  "settings.back": {
+    "text": "Tillbaka",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": [],
+    "note": "Standard Swedish Back button; exactly 8/8. \"Bakåt\" (5) if it clips."
+  },
+  "settings.sfx": {
+    "text": "Ljudeffekter",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Slutar om {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "\"om\" for a point ahead. {time} as \"2d 4h\" matches CLDR's narrow Swedish units, so it reads fine."
+  },
+  "daily.streak": {
+    "text": "Dagar i rad: {day}! Kom tillbaka i morgon för fler belöningar.",
+    "confidence": "medium",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Days in a row: {day}!\" label form, since \"{day} dagar i rad\" breaks at 1. \"for more\" made explicit as \"fler belöningar\" (more rewards). 57/62."
+  },
+  "tip.night": {
+    "text": "Tips: vissa fiskar nappar bara på natten.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": []
+  },
+  "group.join": {
+    "text": "Gå med i gruppen och få 50 beten gratis!",
+    "confidence": "medium",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "\"beten\" is the plural of \"ett bete\"; native check that 50 counted baits reads naturally. \"Gå med i\" and \"grupp\" as Roblox's Swedish listing."
+  },
+  "leaderboard.biggest": {
+    "text": "Tyngsta fångsten",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Heaviest catch\": the board ranks by weight, and \"tyngsta\" says so. \"Största fångsten\" (16) also works."
+  }
+}

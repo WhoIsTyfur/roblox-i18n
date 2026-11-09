@@ -1,0 +1,130 @@
+{
+  "title": {
+    "verdict": "ok"
+  },
+  "hud.cast": {
+    "verdict": "ok"
+  },
+  "hud.reel": {
+    "verdict": "ok"
+  },
+  "hud.bait_left": {
+    "verdict": "ok"
+  },
+  "hud.backpack": {
+    "verdict": "ok"
+  },
+  "catch.success": {
+    "verdict": "ok"
+  },
+  "catch.escaped": {
+    "verdict": "ok"
+  },
+  "catch.new_record": {
+    "verdict": "ok"
+  },
+  "fish.golden_carp": {
+    "verdict": "ok"
+  },
+  "fish.lantern_eel": {
+    "verdict": "fix",
+    "text": "Svjetleća jegulja",
+    "category": "fluency",
+    "severity": "minor",
+    "reason": "\"Fenjer-jegulja\" keeps the English modifier-first noun stack (the guide turns these into adjective + noun, and the back-translator also read it as a calque); \"Svjetleća jegulja\" (17/18) keeps the glow idea, and since the title stays English the lantern echo is lost anyway -- update terms.json \"Lantern Eel\" to match."
+  },
+  "rarity.mythic": {
+    "verdict": "ok"
+  },
+  "shop.rods": {
+    "verdict": "ok"
+  },
+  "shop.equip": {
+    "verdict": "ok"
+  },
+  "shop.equipped": {
+    "verdict": "ok"
+  },
+  "shop.free": {
+    "verdict": "ok"
+  },
+  "shop.buy_robux": {
+    "verdict": "ok"
+  },
+  "pass.auto_reel": {
+    "verdict": "ok"
+  },
+  "pass.lucky_bait": {
+    "verdict": "ok"
+  },
+  "sell.all": {
+    "verdict": "ok"
+  },
+  "sell.done": {
+    "verdict": "ok"
+  },
+  "sell.prompt": {
+    "verdict": "ok"
+  },
+  "ascend.button": {
+    "verdict": "ok"
+  },
+  "ascend.confirm": {
+    "verdict": "ok"
+  },
+  "weather.storm": {
+    "verdict": "ok"
+  },
+  "quest.title": {
+    "verdict": "ok"
+  },
+  "quest.catch_n": {
+    "verdict": "fix",
+    "text": "Ulovi ribe u Uvali mjesečine (cilj: {n})",
+    "category": "accuracy",
+    "severity": "minor",
+    "reason": "A bare \": {n}\" right after the place name can read as a progress counter or a number tied to the bay (the blind back-translation could not tell); \"(cilj: {n})\" makes it the target and still avoids number agreement, 37/40."
+  },
+  "quest.claim": {
+    "verdict": "ok"
+  },
+  "friends.boost": {
+    "verdict": "ok"
+  },
+  "trade.sent": {
+    "verdict": "ok"
+  },
+  "trade.accept": {
+    "verdict": "ok"
+  },
+  "codes.enter": {
+    "verdict": "ok"
+  },
+  "codes.redeemed": {
+    "verdict": "ok"
+  },
+  "afk.kicked": {
+    "verdict": "ok"
+  },
+  "settings.back": {
+    "verdict": "ok"
+  },
+  "settings.sfx": {
+    "verdict": "ok"
+  },
+  "event.ends": {
+    "verdict": "ok"
+  },
+  "daily.streak": {
+    "verdict": "ok"
+  },
+  "tip.night": {
+    "verdict": "ok"
+  },
+  "group.join": {
+    "verdict": "ok"
+  },
+  "leaderboard.biggest": {
+    "verdict": "ok"
+  }
+}

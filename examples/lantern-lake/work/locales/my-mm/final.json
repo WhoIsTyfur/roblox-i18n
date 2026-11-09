@@ -1,0 +1,332 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, kept byte-identical per the glossary (brand).",
+    "blind_remark": "left in English; not translated into Burmese"
+  },
+  "hud.cast": {
+    "text": "ပစ်ချရန်",
+    "confidence": "medium",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "ပစ်ချ = throw (the line) down into the water; pairs with ဆွဲတင် (pull up) on hud.reel. Button form verb + ရန်. If ပစ်ချ reads as 'throw away' to a native, ချိတ်ချရန် ('lower the hook', 7 chars) is the alternative.",
+    "blind_remark": "literally 'to throw down / drop'; a generic verb, out of context it could read as 'throw away'"
+  },
+  "hud.reel": {
+    "text": "ဆွဲတင်ရန်",
+    "confidence": "medium",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "ဆွဲတင် = pull up / haul in, the fishing sense of Reel; same verb as the pass name pass.auto_reel."
+  },
+  "hud.bait_left": {
+    "text": "ငါးစာ {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form 'Bait {count}', correct for 0, 1 and more; classifier dropped to fit the HUD counter, as the guide allows."
+  },
+  "hud.backpack": {
+    "text": "ကျောပိုးအိတ်",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "{rarity} {fish} မိပြီ!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "'Caught {rarity} {fish}!' with no 'you'; rarity is a noun-like modifier before the fish name (ရှားပါး ရွှေငါးကြင်း မိပြီ!). No article, so the English a/an issue does not arise."
+  },
+  "catch.escaped": {
+    "text": "ငါး လွတ်သွားပြီ...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'The fish got away...'; 'it' made explicit with the generic word ငါး (fish), as the context allows."
+  },
+  "catch.new_record": {
+    "text": "စံချိန်သစ်! {weight} ကီလို",
+    "confidence": "medium",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "kg written ကီလို, the everyday Burmese word for kilogram; Latin kg would also be understood. {weight} with a decimal point (12.4) reads fine in Burmese."
+  },
+  "fish.golden_carp": {
+    "text": "ရွှေငါးကြင်း",
+    "confidence": "medium",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "ရွှေ (golden) + ငါးကြင်း (carp), built like ရွှေငါး (goldfish). Native check that ငါးကြင်း is the carp players know."
+  },
+  "fish.lantern_eel": {
+    "text": "မီးအိမ်ငါးရှဉ့်",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "မီးအိမ် (lantern) + ငါးရှဉ့် (eel), translated per the glossary decision; keeps the glowing-lantern idea. Closed compound per the guide."
+  },
+  "rarity.mythic": {
+    "text": "နတ်ဒဏ္ဍာရီ",
+    "confidence": "low",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Burmese for 'mythology' (myths of the nats); it builds on ဒဏ္ဍာရီ (Legendary) so it reads as the tier above. Native check: if it feels too folk-religious, Mythic in Latin (as in Mobile Legends ranks, where Mythic is above Legend) is the fallback.",
+    "blind_remark": "a noun, not an adjective like 'mythic'; it contains the word for 'legend', so it may be hard to tell apart from a Legendary tier"
+  },
+  "shop.rods": {
+    "text": "ငါးမျှားတံ",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "Fishing rod; tab label as a bare noun, no plural marker, as Burmese tabs write it."
+  },
+  "shop.equip": {
+    "text": "သုံးရန်",
+    "confidence": "medium",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Use' (သုံး) + button ရန်; plainer for kids than တပ်ဆင်ရန် (install/fit). Pairs with shop.equipped သုံးနေဆဲ."
+  },
+  "shop.equipped": {
+    "text": "သုံးနေဆဲ",
+    "confidence": "medium",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State label 'in use' (ဆဲ = still / in progress, as in status labels); distinct from the shop.equip button."
+  },
+  "shop.free": {
+    "text": "အခမဲ့",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "{price} Robux ဖြင့် ဝယ်ရန်",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference pattern: verb last, literary ဖြင့် to match the ရန် button form."
+  },
+  "pass.auto_reel": {
+    "text": "အလိုအလျောက် ဆွဲတင်",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "'Automatic pull-up', same verb ဆွဲတင် as hud.reel. Auto in Latin (Auto ဆွဲတင်) is common gamer speech but fails the lint script check. The Creator Hub store name should match."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>ကံကောင်းငါးစာ</b> က ရှားပါးငါး မိနိုင်ခြေကို နှစ်ဆ တိုးပေးတယ်!",
+    "confidence": "medium",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "'Lucky Bait doubles the chance of catching rare fish'; 'your' dropped, chance rendered as မိနိုင်ခြေ (likelihood of catching). Pass name built from ကံ (luck) and ငါးစာ (Bait)."
+  },
+  "sell.all": {
+    "text": "အကုန်ရောင်းရန်",
+    "confidence": "medium",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": [],
+    "note": "'Sell all' with everyday အကုန် (all) to fit 12; the Android-style အားလုံး ရောင်းရန် is 13."
+  },
+  "sell.done": {
+    "text": "ငါး {count} ကောင် ရောင်းပြီး ဒင်္ဂါး {coins} ပြား ရပြီ!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "'Sold {count} fish and got {coins} coins!' Classifiers ကောင် (animals) and ပြား (coins) are correct for 1 and for any number."
+  },
+  "sell.prompt": {
+    "text": "ရောင်းရန် E နှိပ်ပါ",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern 'to sell, press E'; E kept. Developer: phone and console players have no E key; ProximityPrompt ActionText alone would serve them."
+  },
+  "ascend.button": {
+    "text": "အဆင့်မြှင့်ရန်",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "အဆင့်မြှင့် = raise your rank, a non-religious, non-climbing word for prestige (ကြွ is the religious 'ascend'). If players read it as a plain upgrade, the guide's Rebirth precedent suggests Ascend in Latin + လုပ် as the fallback.",
+    "blind_remark": "literally 'raise the level/rank'; the everyday word for an upgrade, nothing in it suggests a reset"
+  },
+  "ascend.confirm": {
+    "text": "အခု အဆင့်မြှင့်မလား။ အစကနေ ပြန်စရမယ်၊ ဒါပေမယ့် ရှားပါးငါးတွေ {bonus}% ပိုမိမယ်။",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "'Ascend now? You start again from the beginning, but you catch rare fish {bonus}% more.' 'more often' rendered as ပိုမိ (catch more), the same rate. Question with လား + ။ per the guide; same Ascend word as the button."
+  },
+  "weather.storm": {
+    "text": "မုန်တိုင်း လာနေပြီ! ရှားပါးငါးတွေ စာဟပ်နေပြီ။",
+    "confidence": "medium",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "စာဟပ် = fish snap at the bait (fishing sense of 'biting'), also used in tip.night. Alternative: ငါးစာ ကိုက်နေပြီ."
+  },
+  "quest.title": {
+    "text": "မစ်ရှင်",
+    "confidence": "medium",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide vocabulary for quest (marked unverified there); bare noun for the panel title, no plural marker."
+  },
+  "quest.catch_n": {
+    "text": "လရောင်ကမ်းကွေ့မှာ ငါး {n} ကောင် ဖမ်းပါ",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Moonlit Bay translated per the glossary as လရောင်ကမ်းကွေ့ ('Moonlight Cove'; ကမ်းကွေ့ = curve of the shore, a lake bay rather than a sea gulf). Classifier ကောင် works for n = 1. Quest line is a label, so no ။.",
+    "blind_remark": "Burmese has no capitals, so it is unclear whether this is a named place or just 'the moonlit bend of the shore'"
+  },
+  "quest.claim": {
+    "text": "ရယူရန်",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "'Receive', the guide's Claim; never တောင်းဆို."
+  },
+  "friends.boost": {
+    "text": "သူငယ်ချင်းတွေနဲ့ ငါးမျှားရင် ကံ +{percent}% ရမယ်",
+    "confidence": "medium",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "'If you fish with friends you get luck +{percent}%', a statement; ကံ = luck, the same word inside ကံကောင်းငါးစာ (Lucky Bait). Info line, so no ။."
+  },
+  "trade.sent": {
+    "text": "{player} ကို လဲလှယ်ဖို့ တောင်းဆိုလိုက်ပြီ",
+    "confidence": "medium",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "'Asked {player} to trade', the natural Burmese for a sent request; no gender. ကို after the name with a space (house rule)."
+  },
+  "trade.accept": {
+    "text": "{player} က လဲလှယ်မှုကို လက်ခံလိုက်ပြီ",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "'{player} accepted the trade'; 'your' dropped, no gender agreement exists."
+  },
+  "codes.enter": {
+    "text": "ကုဒ် ထည့်ပါ",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "ကုဒ် သုံးတာ အောင်မြင်ပြီ! ဆုလာဘ်နဲ့ ပျော်ပါစေ။",
+    "confidence": "medium",
+    "source_hash": "386d814f7012",
+    "status": "fixed",
+    "flags": [
+      "review:minor:fluency"
+    ],
+    "note": "'Code worked! Have fun with your reward.' Avoids ကုဒ် သုံးပြီးပြီ, which would read as the error 'code already used'.",
+    "review_reason": "ကုဒ် အောင်မြင်ပြီ says the code itself succeeded, which reads oddly; success toasts name the action, so ကုဒ် သုံးတာ အောင်မြင်ပြီ (using the code worked) is the natural form and still cannot be read as the already-used error."
+  },
+  "afk.kicked": {
+    "text": "အကြာကြီး မလှုပ်ရှားဘဲ နေလို့ ငါးမျှားတာ ရပ်သွားပြီ။",
+    "confidence": "medium",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "'You stayed a long time without moving, so fishing stopped.' Idle rendered as not moving (as in the guide's AFK line); no mention of being removed from the server."
+  },
+  "settings.back": {
+    "text": "နောက်သို့",
+    "confidence": "medium",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": [],
+    "note": "The usual app Back label; ပိတ်ရန် (Close) also fits if the button closes the panel.",
+    "blind_remark": "formal wording; the root word also means 'next / later', so it could be misread as 'Next'"
+  },
+  "settings.sfx": {
+    "text": "အသံ",
+    "confidence": "medium",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": [],
+    "note": "'Sound', the usual Burmese game-settings label for effects beside ဂီတ (Music); a literal 'sound effects' phrase is long and stiff.",
+    "blind_remark": "generic 'sound / voice'; does not say sound effects as opposed to music"
+  },
+  "event.ends": {
+    "text": "ပြီးဖို့ {time} ကျန်တယ်",
+    "confidence": "medium",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "'{time} left until it ends', the guide's countdown pattern. Developer: {time} arrives as '2d 4h'; for this locale format it as '2 ရက် 4 နာရီ' (CLDR units).",
+    "blind_remark": "no subject; could read as time left for you to finish something rather than the event ending"
+  },
+  "daily.streak": {
+    "text": "ဆက်တိုက် {day} ရက်မြောက်! ဆုလာဘ် ထပ်ယူဖို့ မနက်ဖြန် ပြန်လာခဲ့နော်!",
+    "confidence": "medium",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'Day {day} in a row!' as an ordinal (ရက်မြောက် = the nth day), correct for day 1. 'for more' made explicit as more rewards (ဆုလာဘ်); နော် is the friendly 'okay?' from the guide."
+  },
+  "tip.night": {
+    "text": "အကြံပြုချက် : တချို့ ငါးတွေက ညဘက်မှပဲ စာဟပ်တယ်။",
+    "confidence": "medium",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "Tip label အကြံပြုချက် with a space before the colon (Microsoft style). စာဟပ် = take the bait, as in weather.storm."
+  },
+  "group.join": {
+    "text": "Community ထဲ ဝင်ပြီး ငါးစာ 50 ခု အခမဲ့ ရယူပါ!",
+    "confidence": "medium",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "group rendered Community, the English name players see in Roblox (no Burmese Roblox UI), per the guide; အဖွဲ့ if the game's other UI says group. ခု = classifier for the bait units.",
+    "blind_remark": "the word 'Community' is left in English, in Latin script, mid-sentence"
+  },
+  "leaderboard.biggest": {
+    "text": "အလေးဆုံးငါး",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Heaviest fish', since the board ranks by weight; အကြီးဆုံး (biggest) could be read as length."
+  }
+}

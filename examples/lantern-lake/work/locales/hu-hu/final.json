@@ -1,0 +1,328 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, glossary keep; the guide keeps game titles in English because players search the English title.",
+    "blind_remark": "not translated; still English"
+  },
+  "hud.cast": {
+    "text": "Bedobás",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Verbal-noun button, as the guide asks for one-word buttons; \"bedobás\" is the anglers' word for casting the line in. 7/8."
+  },
+  "hud.reel": {
+    "text": "Behúzás",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "Verbal noun of \"behúz\" (pull the line and fish in); same word inside the pass name Autobehúzás. Anglers also say \"orsózás\", less clear to kids. 7/8."
+  },
+  "hud.bait_left": {
+    "text": "Csali: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form, so 0, 1 and 12 all read right; \"csali\" is the everyday angler word for bait."
+  },
+  "hud.backpack": {
+    "text": "Hátizsák",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Kifogtál egy halat: {rarity} {fish}!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Restructured: no suffix can attach to {fish}, so the accusative sits on the generic \"halat\" and the inserted words follow a colon in the nominative: \"Kifogtál egy halat: Ritka Aranyponty!\". The tier label's capital mid-sentence is the guide's accepted item-name style."
+  },
+  "catch.escaped": {
+    "text": "Elszökött a hal...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "\"It\" made explicit as the generic \"a hal\"; \"elszökött\" = got away. Trailing ellipsis kept."
+  },
+  "catch.new_record": {
+    "text": "Új rekord! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {weight} arrives as \"12.4\"; Hungarian writes a decimal comma, \"12,4 kg\", and may read \"12.4\" as a date. Format the number per locale in code."
+  },
+  "fish.golden_carp": {
+    "text": "Aranyponty",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "One-word compound like \"aranyhal\" (goldfish); ponty = carp. Nominative base form, so it also works inserted into catch.success."
+  },
+  "fish.lantern_eel": {
+    "text": "Lámpásangolna",
+    "confidence": "high",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "lámpás (lantern) + angolna (eel) as one word, after the real Hungarian \"lámpáshal\" (lanternfish); keeps the glowing-lantern idea. 13/18."
+  },
+  "rarity.mythic": {
+    "text": "Mitikus",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Tier ladder Ritka < Legendás < Mitikus, the usual game tier words; adjective form that also reads right before a fish name in catch.success."
+  },
+  "shop.rods": {
+    "text": "Botok",
+    "confidence": "medium",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "Short form of the term \"Horgászbotok\" (12), which is over the 10 budget. Anglers call rods \"bot\" every day and the tab sits in a fishing shop; but gamers also say \"botok\" for bots, so use \"Horgászbotok\" if the tab fits 12.",
+    "blind_remark": "bare 'bot' also just means 'stick'; reads as fishing rods only from the shop context"
+  },
+  "shop.equip": {
+    "text": "Használat",
+    "confidence": "medium",
+    "source_hash": "965ae4ed708e",
+    "status": "fixed",
+    "flags": [
+      "review:minor:accuracy"
+    ],
+    "note": "Verbal-noun button with the same root as the label \"Felszerelve\". 11 is one over the estimated 10; if it clips, \"Használat\" (9, \"Use\") is the fallback.",
+    "review_reason": "A bare \"Felszerelés\" reads first as the noun gear/equipment (the blind back-translation gave \"Equipment\"), all the more in a fishing game where \"horgászfelszerelés\" is the gear, and it is 11 against the estimated 10; \"Használat\" (9) is the verbal-noun Use button Minecraft Bedrock players know and still pairs clearly with the label \"Felszerelve\"."
+  },
+  "shop.equipped": {
+    "text": "Felszerelve",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State form (adverbial participle) of the button's verb, so button and label differ as the context asks; Hungarian has no agreement to worry about. 11/11."
+  },
+  "shop.free": {
+    "text": "Ingyenes",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": [],
+    "note": "Price-label adjective \"free of charge\". 8/8; \"Ingyen\" (6) also works."
+  },
+  "shop.buy_robux": {
+    "text": "Vedd meg {price} Robuxért",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's reference pattern: te-imperative because the button carries a price; Robux kept with -ért attached directly, no suffix on {price}. 18/20."
+  },
+  "pass.auto_reel": {
+    "text": "Autobehúzás",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as hud.reel (Behúzás) with the joined prefix auto-, as in Microsoft's \"Automentés\"; \"Automatikus behúzás\" (19) is over 14. The pass name in Creator Hub should match.",
+    "blind_remark": "coined compound; understandable but not a standard word"
+  },
+  "pass.lucky_bait": {
+    "text": "A <b>Szerencsecsalival</b> dupla eséllyel fogsz ritka halat!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Pass name built like the guide's \"Szerencsebájital\" (szerencse = luck, csali = Bait). Restructured to \"With Lucky Bait you catch rare fish at double the chance\"; the -val suffix sits inside the bold tag, fine for a fixed item name. \"ritka\" is the same word as the tier Ritka."
+  },
+  "sell.all": {
+    "text": "Add el mindet",
+    "confidence": "medium",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": [],
+    "note": "Te-imperative because the button carries an object (guide); the verbal-noun form \"Összes eladása\" (14) is longer. 13 is one over the estimated 12 and nothing shorter keeps \"all\"."
+  },
+  "sell.done": {
+    "text": "Eladtál {count} halat {coins} érméért!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Nouns after numbers stay singular in Hungarian, so 1 and 12 both read right; suffixes sit on the nouns (\"halat\", \"érméért\"), never on the params."
+  },
+  "sell.prompt": {
+    "text": "E: eladás",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Key plus verbal noun, the guide's prompt pattern; a sentence like \"Nyomd meg az E-t\" breaks if the key changes. For the developer: phones and consoles have no E key; ProximityPrompt ActionText \"Eladás\" with the built-in key hint would serve everyone."
+  },
+  "ascend.button": {
+    "text": "Felemelkedés",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "resolved",
+    "flags": [
+      "review:major:length"
+    ],
+    "note": "\"Felemelkedés\" = rise in the figurative sense, the natural word for Ascend; not religious (the Ascension is \"mennybemenetel\") and not climbing. 12 is over the estimated 10; if the button cannot grow, \"Rangemelés\" (10, rank-up) is the fallback, and ascend.confirm must change with it.",
+    "review_reason": "A single unbreakable 12-character word against an estimated 10 on a button whose screen and size are unknown, so it may clip; check it in Studio with hu-hu, and if the button cannot grow or scale, switch the term to \"Rangemelés\" (10) in ascend.button, ascend.confirm and terms.json together."
+  },
+  "ascend.confirm": {
+    "text": "Jöhet a felemelkedés? Elölről kezded, de {bonus}%-kal gyakrabban fogsz ritka halat.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Jöhet a felemelkedés?\" (ready to ascend?) mirrors the guide's rebirth line; \"now\" dropped as filler. \"%-kal\" is right for any number because the suffix follows the spoken \"százalék\". Medium only because it carries the Ascend term choice."
+  },
+  "weather.storm": {
+    "text": "Jön a vihar! Ritka halak kapnak a csalira!",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Kap a csalira\" is the anglers' verb for biting; \"harap\" would be a calque. \"a csalira\" added so kids don't read \"kapnak\" as \"they receive\"."
+  },
+  "quest.title": {
+    "text": "Küldetések",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Fogj {n} halat a Holdfényes-öbölben",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Moonlit Bay -> \"Holdfényes-öböl\", spelled like Hungarian bay names (\"Finn-öböl\"); locative \"-öbölben\". \"{n} halat\": the noun stays singular after any number, so n = 1 reads right."
+  },
+  "quest.claim": {
+    "text": "Begyűjtés",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's claim word; never \"Igénylés\". 9/10."
+  },
+  "friends.boost": {
+    "text": "Ha a barátaiddal horgászol, +{percent}% szerencsét kapsz",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Statement as a \"ha\" (if/when) clause, not an order; no space before %, and the suffix sits on \"szerencsét\", not on the param."
+  },
+  "trade.sent": {
+    "text": "Cserekérést küldtél {player} játékosnak",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "No suffix can attach to {player}, so the dative sits on the fixed noun \"játékosnak\" (the guide's trick). 31/33."
+  },
+  "trade.accept": {
+    "text": "{player} elfogadta a cserekérésedet",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "{player} is the subject, so no suffix and no gender; \"cserekérésedet\" = your trade request, same word as trade.sent."
+  },
+  "codes.enter": {
+    "text": "Írd be a kódot",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's reference placeholder; the definite \"a kódot\" is how Hungarian placeholders read. 14/20."
+  },
+  "codes.redeemed": {
+    "text": "Kód beváltva! Élvezd a jutalmadat!",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": []
+  },
+  "afk.kicked": {
+    "text": "Túl sokáig voltál inaktív, ezért leállt a horgászás.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "Says only that fishing stopped, as the source does; no removal from the server added. \"inaktív\" is the common gaming word for idle."
+  },
+  "settings.back": {
+    "text": "Vissza",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Hangeffektusok",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": [],
+    "note": "Usual game-settings term; \"Hanghatások\" (11) is also used. 14/18."
+  },
+  "event.ends": {
+    "text": "Vége {time} múlva",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's reference; postposition \"múlva\", no suffix on {time}. For the developer: {time} arrives as \"2d 4h\", letters that mean nothing in Hungarian; send \"2 nap 4 ó\" (CLDR short forms nap, ó, p, mp)."
+  },
+  "daily.streak": {
+    "text": "Sorozat: {day}. nap! Gyere vissza holnap még több jutalomért!",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form \"Streak: day {day}\" with an ordinal period, so day 1 reads right and no article sits before the number. \"for more\" made explicit as \"more rewards\"."
+  },
+  "tip.night": {
+    "text": "Tipp: néhány hal csak éjjel kap a csalira.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Tipp:\" is the Hungarian spelling, lowercase after the colon; \"kap a csalira\" (bite) as in weather.storm."
+  },
+  "group.join": {
+    "text": "Lépj be a csoportunkba 50 ingyenes csaliért!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "\"a csoportunkba\" (our group), as the guide writes it; 50 kept, and the noun stays singular after the number."
+  },
+  "leaderboard.biggest": {
+    "text": "Legnagyobb fogás",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "The anglers' idiom; the board lists weights, so it reads as heaviest. \"Legnehezebb fogás\" (17) could also read as \"hardest catch\"."
+  }
+}

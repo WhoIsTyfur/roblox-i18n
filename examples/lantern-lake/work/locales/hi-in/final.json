@@ -1,0 +1,331 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept in Latin (glossary keep); Roblox's Hindi pages keep game titles in Latin too.",
+    "blind_remark": "left in English, Latin script; not translated"
+  },
+  "hud.cast": {
+    "text": "फेंकें",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "'Throw', the polite imperative of काँटा फेंकना (to cast the line). Avoided transliterated कास्ट, which reads as 'caste'."
+  },
+  "hud.reel": {
+    "text": "खींचें",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'Pull (it) in'. Transliterated रील now reads as Instagram Reels, so the Hindi verb is used; same verb in pass.auto_reel."
+  },
+  "hud.bait_left": {
+    "text": "चारा: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so 0, 1 and many all read right; चारा is the everyday word for fishing bait."
+  },
+  "hud.backpack": {
+    "text": "बैग",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": [],
+    "note": "Kids call a backpack बैग (guide); बस्ता feels dated."
+  },
+  "catch.success": {
+    "text": "आपने पकड़ा: {rarity} {fish}!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Colon keeps the verb clear of the fish name's gender, as the guide's egg.hatched pattern does. Loan rarity words (रेयर, मिथिक) do not inflect before the name."
+  },
+  "catch.escaped": {
+    "text": "मछली भाग गई...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "Hindi needs a subject, so 'it' becomes the generic मछली (fish); 'ran off' is how a kid would say it."
+  },
+  "catch.new_record": {
+    "text": "नया रिकॉर्ड! {weight} किलो",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "kg written as किलो, the everyday Hindi unit word; the decimal point in {weight} is correct for hi-in."
+  },
+  "fish.golden_carp": {
+    "text": "सुनहरी कार्प",
+    "confidence": "medium",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "'Golden carp'; कार्प is the usual Hindi name for the species. Not सुनहरी मछली, which means goldfish. Some kids may not know कार्प."
+  },
+  "fish.lantern_eel": {
+    "text": "लालटेन ईल",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "लालटेन (lantern) keeps the glowing-lantern idea; ईल is the word Hindi uses for eel (इलेक्ट्रिक ईल). The Latin title no longer echoes it for Hindi readers."
+  },
+  "rarity.mythic": {
+    "text": "मिथिक",
+    "confidence": "medium",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Transliterated like the guide's लेजेंडरी and रेयर: Hinglish gamer rarity words that never inflect. Hindi पौराणिक reads textbook and religious. Ranks above लेजेंडरी by gamer convention.",
+    "blind_remark": "English word 'mythic' spelled out in Devanagari, not a Hindi word; players who don't know the English term may not understand it"
+  },
+  "shop.rods": {
+    "text": "रॉड",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "Fishing rod is रॉड in everyday Hindi; plural form is the same. बंसी is old-fashioned and also means flute."
+  },
+  "shop.equip": {
+    "text": "इस्तेमाल करें",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Use' as the action, paired with shop.equipped 'in use'. Exactly at the 10 budget as the lint counts; letters render wider, so check the button in Studio."
+  },
+  "shop.equipped": {
+    "text": "इस्तेमाल में",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "'In use': a state label with no gender agreement."
+  },
+  "shop.free": {
+    "text": "फ़्री",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "{price} Robux में खरीदें",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference pattern; SOV order puts the price first.",
+    "blind_remark": "Robux kept in Latin script inside Devanagari text"
+  },
+  "pass.auto_reel": {
+    "text": "ऑटो-खींचें",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as hud.reel with the ऑटो- prefix Hindi phone UIs use (ऑटो-प्ले). Hyphen kept so it does not read as 'pull the auto-rickshaw'. Rejected: ऑटो रील (reads as Instagram Reels) and अपने-आप खींचें (can read as 'pull it yourself'). The Creator Hub pass name should match.",
+    "blind_remark": "awkward as a product name: English 'auto' in Devanagari plus a polite command form of 'pull', so it reads like an instruction rather than a name"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>लकी चारा</b> रेयर मछली पकड़ने का चांस दोगुना कर देता है!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "चांस is the everyday Hinglish word for odds (मौका also works); 'your' dropped as Hindi implies it. Developer: Hindi falls back to Regular-weight Noto, so check the bold actually shows.",
+    "blind_remark": "casual Hinglish: 'lucky', 'rare' and 'chance' are English words written in Devanagari"
+  },
+  "sell.all": {
+    "text": "सब बेचें",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "बेची गई मछलियाँ: {count}. कमाई: {coins} कॉइन!",
+    "confidence": "medium",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form: a sentence verb would agree with the counts and break at 1 (1 मछली बेची / 5 मछलियाँ बेचीं, 1 कॉइन मिला / 5 कॉइन मिले). Reads 'Fish sold: 12. Earned: 340 coins!'."
+  },
+  "sell.prompt": {
+    "text": "बेचने के लिए E दबाएँ",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "blind_remark": "key letter E in Latin script inside Devanagari text"
+  },
+  "ascend.button": {
+    "text": "असेंड",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Transliterated like the guide's रीबर्थ; Hindi words (उत्थान, आरोहण) read religious or like climbing. Kids may know the word less well than रीबर्थ.",
+    "blind_remark": "English word 'ascend' spelled out in Devanagari, not a Hindi word; most Hindi players will not know what it means"
+  },
+  "ascend.confirm": {
+    "text": "अभी असेंड करें? आपको फिर से शुरू करना होगा, लेकिन रेयर मछली {bonus}% ज़्यादा बार मिलेगी.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "को-construction keeps the reader's gender out; 'catch rare fish more often' becomes 'you will get rare fish more often'.",
+    "blind_remark": "'ascend' is English in Devanagari and likely not understood"
+  },
+  "weather.storm": {
+    "text": "तूफ़ान आ रहा है! रेयर मछलियाँ चारा खा रही हैं.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'biting' rendered as 'taking the bait' (चारा खाना), the fishing sense."
+  },
+  "quest.title": {
+    "text": "मिशन",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide term for quests (Roblox's Hindi Play Store text uses मिशन)."
+  },
+  "quest.catch_n": {
+    "text": "चाँदनी खाड़ी में {n} बार मछली पकड़ें",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "fixed",
+    "flags": [
+      "review:minor:accuracy"
+    ],
+    "note": "Label form for n: मछली changes to मछलियाँ for more than one, so '{n} मछली' would be wrong for most values. चाँदनी खाड़ी = Moonlit Bay (glossary translate).",
+    "review_reason": "The trailing label \": {n}\" reads like a progress count rather than the target (the blind back-translation could not tell which); \"{n} बार\" (n times) puts the number in the instruction and stays correct for n = 1 because बार never changes form."
+  },
+  "quest.claim": {
+    "text": "क्लेम करें",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide term; never दावा करें (a legal claim)."
+  },
+  "friends.boost": {
+    "text": "दोस्तों के साथ मछली पकड़ने पर +{percent}% लक मिलता है",
+    "confidence": "medium",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "लक (luck) is the Hinglish word that matches लकी in Lucky Bait, as the glossary asks for one word; किस्मत is the pure-Hindi alternative."
+  },
+  "trade.sent": {
+    "text": "{player} को ट्रेड रिक्वेस्ट भेजी गई",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "Passive agrees with रिक्वेस्ट (feminine), so the player's gender never shows."
+  },
+  "trade.accept": {
+    "text": "{player} ने आपकी ट्रेड रिक्वेस्ट मान ली",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "ने-construction: the verb agrees with रिक्वेस्ट, not the player, so it works for any gender. 'your trade' made explicit as 'your trade request' per context."
+  },
+  "codes.enter": {
+    "text": "कोड डालें",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference for typing a code in."
+  },
+  "codes.redeemed": {
+    "text": "कोड रिडीम हो गया! अपने इनाम का मज़ा लें.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": []
+  },
+  "afk.kicked": {
+    "text": "आपने बहुत देर तक कुछ नहीं किया, इसलिए मछली पकड़ना रुक गया.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "'You did nothing for too long': the ने-construction avoids the reader-gendered थे/थीं that 'you were idle' would need. No mention of removal, as in the source."
+  },
+  "settings.back": {
+    "text": "वापस",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "साउंड इफ़ेक्ट्स",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": [],
+    "note": "Usual game-settings term; ध्वनि प्रभाव reads textbook."
+  },
+  "event.ends": {
+    "text": "{time} में खत्म होगा",
+    "confidence": "medium",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "होगा agrees with the implied इवेंट or तूफ़ान (both masculine). Developer: {time} arrives as '2d 4h'; Hindi players expect '2 दिन 4 घं' (CLDR narrow), so format it per locale if possible."
+  },
+  "daily.streak": {
+    "text": "लगातार {day} दिन की स्ट्रीक! और इनाम के लिए कल फिर आएँ.",
+    "confidence": "medium",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "स्ट्रीक is the Snapchat/Duolingo word; लगातार ('in a row') makes it clear to kids who don't know it. '{day} दिन' is correct for 1 and many. 'for more' made explicit as more rewards (इनाम).",
+    "blind_remark": "'streak' is English in Devanagari and redundant with the Hindi word for 'consecutive' before it"
+  },
+  "tip.night": {
+    "text": "टिप: कुछ मछलियाँ सिर्फ़ रात में चारा खाती हैं.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "टिप: is the casual label; सुझाव/युक्ति read formal. 'bite' rendered as 'take the bait', as in weather.storm."
+  },
+  "group.join": {
+    "text": "हमारी कम्यूनिटी जॉइन करें और 50 फ़्री चारे पाएँ!",
+    "confidence": "medium",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "कम्यूनिटी is Roblox's Hindi word for groups; हमारी ('our') is how Hindi says 'the studio's group', as in the guide's reference. चारे is the counted plural of चारा, right for the fixed 50.",
+    "blind_remark": "heavy Hinglish: 'community', 'join' and 'free' are English words in Devanagari; the plural 'chaare' treats bait as countable, slightly odd"
+  },
+  "leaderboard.biggest": {
+    "text": "सबसे भारी मछली",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Heaviest fish', since the board ranks by weight; सबसे बड़ी पकड़ reads like a police seizure in news Hindi."
+  }
+}

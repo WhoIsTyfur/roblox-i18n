@@ -163,6 +163,9 @@ class KeepTermTest(unittest.TestCase):
         self.assertEqual(e, [])
         e, _ = i18n.lint_string("k", "Press E to sell", "Pulsa para vender", es, {}, {}, ["E"], False)
         self.assertIn("keep-term 'E' missing", e)
+        et = {"id": "et-ee", "code": "et", "script": "Latn"}
+        e, _ = i18n.lint_string("k", "Buy for {price} Robux", "Osta {price} Robuxi eest", et, {}, {}, ["Robux"], False)
+        self.assertEqual(e, [])
         ja = {"id": "ja-jp", "code": "ja", "script": "Jpan"}
         e, _ = i18n.lint_string("k", "Buy for {price} Robux", "{price} Robuxで購入", ja, {}, {}, ["Robux"], False)
         self.assertEqual(e, [])
@@ -177,6 +180,9 @@ class KeepTermTest(unittest.TestCase):
         ka = {"id": "ka-ge", "code": "ka", "script": "Geor"}
         e, _ = i18n.lint_string("k", "Shop", "ᲘᲐᲦᲐᲨᲘ", ka, {}, {}, [], False)
         self.assertTrue(any("Mtavruli" in m for m in e))
+
+    def test_chinese_sets_disjoint(self):
+        self.assertEqual(i18n.SIMPLIFIED_ONLY & i18n.TRADITIONAL_ONLY, set())
 
     def test_width_counts_spacing_marks(self):
         self.assertEqual(i18n.width("खरीदें"), 4)

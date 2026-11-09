@@ -24,11 +24,11 @@ PARAM_RE = re.compile(r"\{[^{}]*\}")
 TAG_RE = re.compile(r"<\s*(/?)\s*([A-Za-z]+)[^<>]*?(/?)>")
 
 SIMPLIFIED_ONLY = set(
-    "这个们时间级买卖宠币奖励设关开让说请进还选择输码无过满宝龙点击战斗剑欢组队务动线经验场东车门问题页钱头发现实体机会来对从张长号数当双获胜败赢购礼积为与"
-    "听见觉认识读写语话谁吗应该网络连续标图钥锁宽岛乐园鸟鱼马鸡猪声音乐边远运输赛团结终胜爱灵魂护盾药剂炼铁铜银钻杀杂级")
+    "这个们时间级买卖宠币奖励设关开让说请进还选择输码无过满宝龙点击战剑欢组队务动线经验场东车门问题页钱头发现实体机会来对从张长号数当双获胜败赢购礼积为与"
+    "听见觉认识读写语话谁吗应该网络连续标图钥锁宽岛乐园鸟鱼马鸡猪声乐边远运输赛团结终胜爱灵护药剂炼铁铜银钻杀杂级")
 TRADITIONAL_ONLY = set(
     "這個們時間級買賣寵幣獎勵設關開讓說請進還選擇輸碼無過滿寶龍點擊戰鬥劍歡組隊務動線經驗場東車門問題頁錢頭發現實體機會來對從張長號數當雙獲勝敗贏購禮積為與"
-    "聽見覺認識讀寫語話誰嗎應該網絡連續標圖鑰鎖寬島樂園鳥魚馬雞豬聲音邊遠運輸賽團結終愛靈魂護盾藥劑煉鐵銅銀鑽殺雜")
+    "聽見覺認識讀寫語話誰嗎應該網絡連續標圖鑰鎖寬島樂園鳥魚馬雞豬聲邊遠運輸賽團結終愛靈護藥劑煉鐵銅銀鑽殺雜")
 SCRIPT_NAMES = {
     "Latn": ("LATIN",),
     "Cyrl": ("CYRILLIC",),
@@ -411,13 +411,14 @@ def tags(text):
     return sorted((m.group(1) + m.group(2).lower()) for m in TAG_RE.finditer(text))
 
 
-def term_re(term):
+def term_re(term, suffix=False):
     # Latin-only boundaries: \b would fail on "Robuxで" because CJK counts as a word character.
-    return re.compile(r"(?<![A-Za-z0-9])" + re.escape(term) + r"(?![A-Za-z0-9])")
+    tail = "" if suffix else r"(?![A-Za-z0-9])"
+    return re.compile(r"(?<![A-Za-z0-9])" + re.escape(term) + tail)
 
 
-def has_term(text, term):
-    return bool(term_re(term).search(text))
+def has_term(text, term, suffix=False):
+    return bool(term_re(term, suffix).search(text))
 
 
 def lint_string(key, source, text, loc, item, ctx, keep_terms, src_lang_same, latin_terms=()):
@@ -434,7 +435,8 @@ def lint_string(key, source, text, loc, item, ctx, keep_terms, src_lang_same, la
     if text == source and not item.get("keep") and not src_lang_same:
         errors.append("identical to source without keep:true")
     for term in keep_terms:
-        if has_term(source, term) and not has_term(text, term):
+        # Case endings are allowed on the translation side (Estonian "Robuxi", Finnish "Robuxilla").
+        if has_term(source, term) and not has_term(text, term, suffix=True):
             errors.append("keep-term %r missing" % term)
     stripped = visible(text)
     for term in list(keep_terms) + list(latin_terms):
@@ -540,6 +542,7 @@ def cmd_apply(a):
         draft = read_json(work.batch(a.locale, n, "draft"))
         review = read_json(work.batch(a.locale, n, "review"))
         resolve = read_json(work.batch(a.locale, n, "resolve"), {}) if a.resolve else {}
+        back = read_json(work.batch(a.locale, n, "back"), {})
         for k in todo["keys"]:
             if k not in draft:
                 raise Fail("%s batch %d: draft is missing key %s" % (a.locale, n, k))
@@ -552,6 +555,9 @@ def cmd_apply(a):
                 item["keep"] = True
             if d.get("note"):
                 item["note"] = d["note"]
+            remark = re.search(r"\[([^\[\]]+)\]\s*$", str(back.get(k, "")))
+            if remark and r.get("verdict") != "fix":
+                item["blind_remark"] = remark.group(1)
             if r.get("verdict") == "fix":
                 item["text"] = r.get("text") or item["text"]
                 item["status"] = "fixed"
@@ -562,7 +568,11 @@ def cmd_apply(a):
                     need_resolve.append(k)
             if k in resolve:
                 res = resolve[k]
-                if res.get("accept"):
+                if r.get("verdict") != "fix":
+                    # Lint-only resolve: no reviewer text to dispute, so the translator's answer stands.
+                    item["text"] = res.get("text") or item["text"]
+                    item["status"] = "resolved"
+                elif res.get("accept"):
                     item["status"] = "resolved"
                 else:
                     item["status"] = "disputed"
@@ -950,17 +960,26 @@ def cmd_report(a):
         loc = lbi[l]
         flagged = [k for k, i in fin.items() if i.get("status") in ("disputed", "needs_native")
                    or i.get("confidence") == "low"]
+        second = [k for k, i in fin.items() if i.get("blind_remark") and k not in flagged
+                  and not i.get("keep")]
         lines.append("| %s | %d | %d | %d | %d | %d/%d/%d | %s | %s |" % (
             l, len(fin), st.count("fixed") + st.count("resolved"),
             st.count("disputed") + st.count("needs_native"), errs,
             conf.count("high"), conf.count("medium"), conf.count("low"),
             loc.get("native_review", "?"), loc.get("render_risk", "?")))
-        if flagged:
+        if flagged or second:
             detail.append("## %s -- for a native speaker" % l)
             for k in flagged:
                 i = fin[k]
                 detail.append("- `%s`: %s -> %s (%s)" % (k, src.get(k, {}).get("source", ""), i.get("text"),
                                                        i.get("status") + (", " + i.get("review_reason", "") if i.get("review_reason") else "")))
+            if second:
+                detail.append("")
+                detail.append("Flagged by the blind back-translator, passed by the reviewer:")
+                for k in second:
+                    i = fin[k]
+                    detail.append("- `%s`: %s -> %s -- %s" % (k, src.get(k, {}).get("source", ""), i.get("text"),
+                                                            i["blind_remark"]))
             detail.append("")
     text = "\n".join(lines + [""] + detail)
     write_text(work.p("report.md"), text)

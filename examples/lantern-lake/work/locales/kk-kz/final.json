@@ -1,0 +1,329 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, glossary keep; the guide keeps English game titles.",
+    "blind_remark": "left in English, not translated"
+  },
+  "hud.cast": {
+    "text": "Лақтыру",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Infinitive button form ('throw'). The fishing idiom 'қармақ салу' is 11 > max 8; on a fishing button 'Лақтыру' reads as casting the line.",
+    "blind_remark": "verbal noun 'throwing'; generic 'throw', the casting sense comes only from context"
+  },
+  "hud.reel": {
+    "text": "Тарту",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "blind_remark": "verbal noun 'pulling'; generic 'pull/draw', the reeling-in sense comes only from context"
+  },
+  "hud.bait_left": {
+    "text": "{count} жем",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Noun stays singular after a number, so it is correct for 0, 1 and any count."
+  },
+  "hud.backpack": {
+    "text": "Сөмке",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": [],
+    "note": "'bag', the guide's inventory/backpack word; 'Арқа сөмке' (backpack) is 10/10 and adds nothing on a button."
+  },
+  "catch.success": {
+    "text": "{rarity} {fish} ұстадың!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Kazakh adjectives never change form and an indefinite object stays nominative, so no suffix touches either placeholder. A capitalized fish name mid-sentence ('Сирек Алтын тұқы ұстадың!') is acceptable."
+  },
+  "catch.escaped": {
+    "text": "Балық қашып кетті...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'The fish got away...'; generic word for fish as the context allows, since a bare 'Қашып кетті' has no subject."
+  },
+  "catch.new_record": {
+    "text": "Жаңа рекорд! {weight} кг",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "Developer: {weight} arrives as '12.4'; Kazakh writes the decimal comma '12,4' (CLDR). Cyrillic 'кг' is the Kazakh unit."
+  },
+  "fish.golden_carp": {
+    "text": "Алтын тұқы",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "тұқы = carp ('сазан' is the wild-carp word, also Kazakh)."
+  },
+  "fish.lantern_eel": {
+    "text": "Шам жыланбалық",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "шам = lamp/lantern (everyday word), жыланбалық = eel. Keeps the glowing-lantern idea. Alternative 'Шырақ жыланбалық' (more poetic 'light, lamp'); 'Шамшырақ жыланбалық' is 19 > 18.",
+    "blind_remark": "literally 'lamp eel'; 'шам' means lamp or candle; bare noun-noun compound reads slightly unusual"
+  },
+  "rarity.mythic": {
+    "text": "Мифтік",
+    "confidence": "medium",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Pairs with the guide's Legendary = 'Легендарлы', the same loan pattern kids know from Russian-sphere games, so it reads as the next tier up. Native 'Аңыздық' would clash: аңыз means both legend and myth."
+  },
+  "shop.rods": {
+    "text": "Қармақтар",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "blind_remark": "the word 'қармақ' can mean either fishing hook or fishing rod"
+  },
+  "shop.equip": {
+    "text": "Қолдану",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Use' as an infinitive button; pairs with shop.equipped 'Қолданыста' (in use). 'Жабдықтау' (equip) is formal and 9 chars.",
+    "blind_remark": "means 'use/apply', not specifically 'equip'"
+  },
+  "shop.equipped": {
+    "text": "Қолданыста",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.free": {
+    "text": "Тегін",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "{price} Robux-қа алу",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's reference form: dative after a hyphen on Robux, short 'алу' for buy since the price sits in the button. 'сатып алу' would be 19/20 and leave no room.",
+    "blind_remark": "mixes scripts: Latin 'Robux' with a Cyrillic case suffix '-қа'; 'алу' is literally 'get/take', read as 'buy' here"
+  },
+  "pass.auto_reel": {
+    "text": "Автотарту",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "авто- + the hud.reel verb тарту, written as one word like автокөлік. 'Автоматты тарту' is 15 > 14. Creator Hub pass name should match.",
+    "blind_remark": "coined compound; 'тарту' is generic 'pull'"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Сәтті жем</b> сирек балық ұстау мүмкіндігін екі есе арттырады!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "'Lucky Bait doubles the chance of catching rare fish'; 'your' dropped per the guide. Сәтті follows the guide's 'Сәтті ішірткі' (Lucky Potion)."
+  },
+  "sell.all": {
+    "text": "Бәрін сату",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "{count} балық {coins} монетаға сатылды!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Passive 'were sold'; nouns stay singular after numbers, so 1 works. Suffix is on монета, not on {coins}. Developer: if {coins} arrives with comma thousands ('1,250') it reads as a decimal in Kazakh; '1 250' is the local form."
+  },
+  "sell.prompt": {
+    "text": "Сату үшін E-ні бас",
+    "confidence": "medium",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's prompt pattern; Microsoft's 'E пернесін бас' makes it 24 > 21. 'E-ні' is marked unverified with players in the guide. Developer: phone and console players have no E key; ProximityPrompt ActionText 'Сату' alone would serve everyone.",
+    "blind_remark": "mixes scripts: Latin key letter 'E' with a Cyrillic suffix '-ні'"
+  },
+  "ascend.button": {
+    "text": "Өрлеу",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "өрлеу = to rise to a higher level (not climbing, not religious). Kept distinct from the guide's rebirth word 'Қайта туу' because the game names its prestige Ascend. Native check welcome."
+  },
+  "ascend.confirm": {
+    "text": "Қазір өрлейсің бе? Басынан бастайсың, бірақ сирек балықтарды {bonus}%-ға жиірек ұстайсың.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "fixed",
+    "flags": [
+      "review:minor:fluency"
+    ],
+    "note": "Same Ascend verb as the button. 'Басынан бастайсың' = you start from the beginning. Particle бе written separately. Percent with no space.",
+    "review_reason": "A comparative with an amount takes the dative in Kazakh (\"25%-ға жиірек\", as in \"10%-ға өсті\"); the suffix sits on % (always read \"пайыз\"), not on {bonus}, so it holds for every value."
+  },
+  "weather.storm": {
+    "text": "Дауыл келеді! Сирек балықтар жем қауып жатыр!",
+    "confidence": "medium",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'жем қабу' = fish take the bait (Kazakh fishing idiom 'балық қабады'); 'жем' added so it cannot read as biting people. Second '!' matches the excited banner.",
+    "blind_remark": "says the storm is approaching, not that it is already here"
+  },
+  "quest.title": {
+    "text": "Тапсырмалар",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Айлы шығанақта {n} балық аула",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Moonlit Bay translated (glossary) as 'Айлы шығанақ', locative on the place name, not on {n}. Singular after the number works for 1.",
+    "blind_remark": "place name translated as 'Айлы шығанақ', literally 'moonlit bay'; only the first word is capitalized, so it could read as a generic 'a moonlit bay'"
+  },
+  "quest.claim": {
+    "text": "Алу",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "blind_remark": "generic 'take/get'; the same verb is used for 'buy' in the shop"
+  },
+  "friends.boost": {
+    "text": "Достармен бірге балық аулау +{percent}% сәттілік береді",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": []
+  },
+  "trade.sent": {
+    "text": "Айырбас ұсынысы жіберілді: {player}",
+    "confidence": "medium",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so no suffix lands on {player}; the guide's 'деген ойыншыға' pattern makes it 42 > 33. 'Айырбас ұсынысы' (trade offer) is the natural Kazakh for a trade request."
+  },
+  "trade.accept": {
+    "text": "{player} айырбасқа келісті",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "'{player} agreed to the trade'; {player} stays nominative as subject, no gender in Kazakh."
+  },
+  "codes.enter": {
+    "text": "Кодты енгіз",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Код қабылданды! Сыйлығың құтты болсын!",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'Enjoy your reward' rendered with the Kazakh congratulation idiom 'құтты болсын' said over a new gift.",
+    "blind_remark": "second sentence is the traditional congratulation formula, literally 'may your gift be blessed'"
+  },
+  "afk.kicked": {
+    "text": "Тым ұзақ қозғалмай тұрдың, сондықтан балық аулау тоқтады.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "'You stood still too long, so fishing stopped.' No mention of leaving the server, as in the source."
+  },
+  "settings.back": {
+    "text": "Артқа",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Дыбыс әсерлері",
+    "confidence": "medium",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": [],
+    "note": "Native 'әсер' for effect; 'Дыбыс эффектілері' (17/18) is the loan form, 'Дыбыстар' (sounds) the short one if the row sits beside a music row."
+  },
+  "event.ends": {
+    "text": "Бітуіне: {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Colon form from the guide, so no suffix on {time}; 'Іс-шара бітуіне:' is 16 > 14. Developer: {time} arrives as '2d 4h'; Kazakh reads '2 күн 4 сағ'."
+  },
+  "daily.streak": {
+    "text": "Қатарынан {day}-күн! Тағы сыйлық алу үшін ертең қайта кел.",
+    "confidence": "medium",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'Day {day} in a row!' with the hyphen ordinal, safe for every integer. 'for more' made explicit as more rewards, per the context notes."
+  },
+  "tip.night": {
+    "text": "Кеңес: кейбір балықтар тек түнде жем қабады.",
+    "confidence": "medium",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "Same 'жем қабу' (take the bait) idiom as weather.storm. Lowercase after the colon per the guide."
+  },
+  "group.join": {
+    "text": "Біздің топқа қосылып, 50 тегін жем ал!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's group pattern ('Біздің топқа қосылып, ... ал!'); 'our group' makes clear it is the studio's group."
+  },
+  "leaderboard.biggest": {
+    "text": "Ең ауыр балық",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Heaviest fish', since the board ranks by weight; 'Ең ірі балық' (biggest fish) also natural."
+  }
+}

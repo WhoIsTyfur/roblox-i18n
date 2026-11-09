@@ -1,0 +1,333 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, glossary keep (brand). Arabic players see Latin titles as the developer ships them; the string is all Latin, so its LTR direction is correct.",
+    "blind_remark": "not translated: the whole title is still English in Latin script"
+  },
+  "hud.cast": {
+    "text": "رمي",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Verbal noun, the button style of Roblox's Arabic UI (guide); casting the line is رمي الصنارة. Pairs with سحب on hud.reel.",
+    "blind_remark": "bare verbal noun 'throwing'; does not mention the line or rod, so the fishing sense comes only from context"
+  },
+  "hud.reel": {
+    "text": "سحب",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "Verbal noun 'pulling (the line) in'; same word as the pass name سحب تلقائي.",
+    "blind_remark": "bare verbal noun 'pulling'; the same word commonly means 'withdraw' (money) or 'draw' (as in a lottery or gacha draw)"
+  },
+  "hud.bait_left": {
+    "text": "الطُعم: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form: '{count} طعم' would need a different noun form for 1, 2, 3-10 and 11+. Damma on طُعم so it cannot be read as طَعم (taste)."
+  },
+  "hud.backpack": {
+    "text": "الحقيبة",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "اصطدت سمكة: {fish} ({rarity})!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Rarity as a tag in parentheses (guide pattern): an adjective after {fish} cannot agree with a fish name of unknown gender. The colon keeps {fish} standalone, so indefinite names like شبوط ذهبي need no accusative alif. اصطدت is gender-neutral in writing."
+  },
+  "catch.escaped": {
+    "text": "هربت السمكة...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'It' made explicit as the generic السمكة (the fish), as the context allows."
+  },
+  "catch.new_record": {
+    "text": "رقم قياسي جديد! {weight} كغ",
+    "confidence": "medium",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "كغ is the standard Arabic abbreviation for kg (Levant, Iraq, North Africa); Egypt and Saudi Arabia usually write كجم. Developer: {weight} keeps its decimal point (12.4), which Arabic readers accept."
+  },
+  "fish.golden_carp": {
+    "text": "شبوط ذهبي",
+    "confidence": "medium",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "شبوط is the MSA word for carp; many kids know it as كارب (Levant, Gulf) or مبروك (Egypt). A native reviewer should pick the most widely known one. Indefinite base form, as the guide does for item names."
+  },
+  "fish.lantern_eel": {
+    "text": "أنقليس الفانوس",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Translated per glossary, keeping the lantern idea (الفانوس). أنقليس is the standard word for eel; the folk name ثعبان البحر (sea snake) was avoided because the fish lives in a lake and ثعبان alone reads as snake."
+  },
+  "rarity.mythic": {
+    "text": "خرافي",
+    "confidence": "medium",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Legendary is أسطوري (guide), so Mythic takes خرافي (mythical), the usual pairing in Arabic game rarity tiers (unverified for Roblox). Arabic does not rank the two words by itself; the tier order and color must show that خرافي is above أسطوري. Masculine tag form."
+  },
+  "shop.rods": {
+    "text": "الصنارات",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "صنارة = fishing rod (also spelled سنارة in some regions); the regular plural is easier for kids than صنانير.",
+    "blind_remark": "the word can mean fishing rods or fish hooks"
+  },
+  "shop.equip": {
+    "text": "تجهيز",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "Verbal noun button, like شراء and استلام."
+  },
+  "shop.equipped": {
+    "text": "مجهّزة",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "Feminine participle agreeing with صنارة (rod). If this label is ever reused for masculine items, it needs its own key."
+  },
+  "shop.free": {
+    "text": "مجانًا",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": [],
+    "note": "Adverb 'for free', the usual Arabic price tag; needs no agreement with the item."
+  },
+  "shop.buy_robux": {
+    "text": "شراء بـ {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference wording; بـ with tatweel and a space before the number.",
+    "blind_remark": "Robux left in Latin script inside Arabic text; likely intended"
+  },
+  "pass.auto_reel": {
+    "text": "سحب تلقائي",
+    "confidence": "high",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as hud.reel. The Creator Hub pass name should match.",
+    "blind_remark": "can also read as 'automatic withdrawal', the usual banking term, or 'auto draw'"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>طُعم الحظ</b> يضاعف فرصتك في صيد الأسماك النادرة!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Pass name first, as on the card; it starts with an Arabic word so the line is RTL. Developer: test the <b> span in Studio (guide, Rendering); if the pieces land out of order, bold the whole line. Damma on طُعم keeps 'bait of luck' from reading as 'taste of luck'.",
+    "blind_remark": "the verb usually means 'doubles' but can loosely mean 'multiplies'"
+  },
+  "sell.all": {
+    "text": "بيع الكل",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "تم البيع! الأسماك: {count}، العملات: {coins}",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Restructured into labels: '{count} سمكة' and '{coins} عملة' break for 1, 2 and 3-10. Reads 'Sold! Fish: 12, coins: 340'."
+  },
+  "sell.prompt": {
+    "text": "اضغط على E للبيع",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern (اضغط على E للفتح). Agreeing with the source-side issue: as a ProximityPrompt, ActionText بيع alone would serve phone and console players too.",
+    "blind_remark": "Latin key letter 'E' in Arabic text; likely intended"
+  },
+  "ascend.button": {
+    "text": "ارتقاء",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "ارتقاء = rising to a higher level, a common word for prestige or upgrading, with no religious or climbing sense (صعود and معراج avoided). Not the guide's rebirth term ميلاد جديد, so Ascend stays its own mechanic. No settled Arabic Roblox term found."
+  },
+  "ascend.confirm": {
+    "text": "ارتقاء الآن؟ ستبدأ من جديد، لكنك ستصطاد الأسماك النادرة أكثر بنسبة {bonus}%.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Built like the guide's rebirth.confirm. 'more often' rendered as أكثر بنسبة {bonus}% (25% more); ASCII % right after the number.",
+    "blind_remark": "opens with a bare noun, 'Ascension now?', which is a little stiff"
+  },
+  "weather.storm": {
+    "text": "تقترب عاصفة! الأسماك النادرة تلتقط الطُعم الآن.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'biting' = taking the bait (تلتقط الطُعم), the fishing sense. الآن carries the English progressive 'are biting'."
+  },
+  "quest.title": {
+    "text": "المهام",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "اصطد السمك في خليج ضوء القمر: {n}",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "'Catch {n} fish' cannot take a counted noun after the number in Arabic (1, 2, 3-10 and 11+ all differ), so {n} goes last as a target count and السمك is the number-neutral collective. Developer: if the quest line also shows progress like 3/10, check the two numbers do not read as one."
+  },
+  "quest.claim": {
+    "text": "استلام",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "الصيد مع الأصدقاء يزيد حظك بنسبة {percent}%",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "The '+' is dropped on purpose: the guide says a leading + shows on the wrong side in an RTL line ('10%+'), so يزيد (raises) carries it. Statement, not an order."
+  },
+  "trade.sent": {
+    "text": "تم إرسال طلب التبادل إلى {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "Starts in Arabic; إلى before the name, never a joined لـ."
+  },
+  "trade.accept": {
+    "text": "وافق اللاعب {player} على طلب التبادل",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "fixed",
+    "flags": [
+      "review:minor:fluency"
+    ],
+    "note": "The verb agrees with اللاعب (the player), a fixed-gender noun, so it is correct for any {player} (guide pattern). 'your trade' = the trade request, the only one in play.",
+    "review_reason": "Unvoweled sentence-initial قبل reads first as the preposition \"before\" (and طلب as \"requested\"), so the toast can parse as \"Before player X requested the trade\"; وافق ... على is unambiguous, keeps the fixed-gender اللاعب subject and fits (28/33)."
+  },
+  "codes.enter": {
+    "text": "أدخل الكود",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference; hamza on alef (type in)."
+  },
+  "codes.redeemed": {
+    "text": "تم تفعيل الكود! استمتع بمكافأتك.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "تفعيل الكود (code activated) is how Arab kids talk about codes; Roblox's Redeem button word استرداد reads as 'refund' or 'recover' in a sentence."
+  },
+  "afk.kicked": {
+    "text": "بقيت بلا نشاط لفترة طويلة، فتوقفت عن الصيد.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "بلا نشاط (without activity) instead of غير نشط keeps it gender-neutral in writing; no removal from the server is added.",
+    "blind_remark": "says the player stopped fishing, not that the game stopped or removed them; the unvoweled verbs can also be read as 'I'"
+  },
+  "settings.back": {
+    "text": "رجوع",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": [],
+    "note": "Roblox's own Back button."
+  },
+  "settings.sfx": {
+    "text": "المؤثرات الصوتية",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "ينتهي بعد {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Implied subject is the event (masculine). Developer: {time} arrives as Latin '2d 4h', which renders correctly but reads foreign; the guide asks for Roblox's Arabic style '2 يوم 4 س' if the game formats time per locale.",
+    "blind_remark": "verb is masculine, 'it ends', so it agrees with a masculine noun like 'event' but not a feminine one like 'storm'"
+  },
+  "daily.streak": {
+    "text": "اليوم {day} على التوالي! مكافآت أكثر في انتظارك غدًا.",
+    "confidence": "medium",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'Day {day} streak' as 'day {day} in a row', the natural Arabic for a streak; no counted noun after the number. 'Come back tomorrow for more' rephrased as 'more rewards await you tomorrow' to avoid a gendered imperative. On day 1 it reads a little odd, as the English does.",
+    "blind_remark": "the word for 'the day' also means 'today', so it can read 'Today {day} in a row'; an ordinal would read more naturally"
+  },
+  "tip.night": {
+    "text": "نصيحة: بعض الأسماك لا تلتقط الطُعم إلا ليلًا.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "'bite' = take the bait, same phrase as weather.storm."
+  },
+  "group.join": {
+    "text": "انضم إلى مجتمعنا واحصل على 50 طُعمًا مجانًا!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "مجتمع is Roblox's Arabic word for groups (Communities); 'our community' is the guide's wording for a studio group. 50 takes a singular accusative noun (طُعمًا), correct for this fixed number."
+  },
+  "leaderboard.biggest": {
+    "text": "أثقل سمكة",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Biggest Catch' = heaviest fish, so أثقل (heaviest) rather than أكبر (largest), as the context asks."
+  }
+}

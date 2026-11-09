@@ -1,0 +1,311 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, glossary keep: brand with no localized title.",
+    "blind_remark": "not translated; left in English"
+  },
+  "hud.cast": {
+    "text": "Zabaci",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": []
+  },
+  "hud.reel": {
+    "text": "Izvuci",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'Izvuci' (pull the fish out) rather than literal 'Namotaj' (wind the reel): clearer for kids on a big action button. Same verb as the pass Autoizvlačenje."
+  },
+  "hud.bait_left": {
+    "text": "Mamci: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form: count can be 0, 1 or more and Bosnian has three plural forms."
+  },
+  "hud.backpack": {
+    "text": "Ranac",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Ulovljeno: {fish} ({rarity})!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "'Caught: {fish} ({rarity})!' -- neuter participle avoids the gendered 'Ulovio/Ulovila si', and the colon keeps {fish} in the nominative with no adjective agreement (guide pattern 'Kupljeno: {item}')."
+  },
+  "catch.escaped": {
+    "text": "Riba je pobjegla...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'It' made explicit as the generic 'riba' (fish); the feminine past agrees with it for any species."
+  },
+  "catch.new_record": {
+    "text": "Novi rekord! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {weight} arrives as '12.4'; Bosnian writes a decimal comma ('12,4'), so format it per locale in code."
+  },
+  "fish.golden_carp": {
+    "text": "Zlatni šaran",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "Jegulja-fenjer",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Head-first hyphenated name like 'čovjek-pauk'; 'fenjer' (lantern) is the everyday BiH word and keeps the lantern idea. Alternative if a reviewer prefers: 'Svjetleća jegulja' (17)."
+  },
+  "rarity.mythic": {
+    "text": "Mitski",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Masculine tier label, matching 'Legendarni' and 'Rijetki' (guide: rarity tags in the masculine; implied noun 'ulov').",
+    "blind_remark": "masculine adjective form; agrees with a masculine fish noun like \"saran\" but not with a feminine one like \"jegulja\" (eel), so it reads off next to the eel"
+  },
+  "shop.rods": {
+    "text": "Štapovi",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equip": {
+    "text": "Opremi",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equipped": {
+    "text": "Opremljen",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State label; masculine agrees with 'štap' (rod). Pairs with the button 'Opremi'."
+  },
+  "shop.free": {
+    "text": "Gratis",
+    "confidence": "medium",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": [],
+    "note": "Fits the 8-char budget; common in BiH shops. 'Besplatno' (9) is the more neutral word if the label has one more character of room."
+  },
+  "shop.buy_robux": {
+    "text": "Kupi za {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": []
+  },
+  "pass.auto_reel": {
+    "text": "Autoizvlačenje",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as hud.reel (izvući); 'auto' written together like 'autopilot', 'autofokus'. 14/14; hyphenated 'Auto-izvlačenje' would be 15.",
+    "blind_remark": "coined compound; \"izvlacenje\" on its own just means pulling out or extracting, so the fishing sense depends on context"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Mamac sreće</b> udvostručuje šansu za rijetke ribe!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "'Mamac sreće' built from the terms for bait and luck, like the guide's 'Napitak sreće'; 'your' dropped as Bosnian UI does."
+  },
+  "sell.all": {
+    "text": "Prodaj sve",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Prodato! Ribe: {count}, novčići: {coins}",
+    "confidence": "medium",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Label pairs because count and coins can each be 1 ('1 riba', '2 ribe', '5 riba'). 'Prodato' and 'Prodano' are both standard Bosnian."
+  },
+  "sell.prompt": {
+    "text": "Pritisni E da prodaš",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": []
+  },
+  "ascend.button": {
+    "text": "Uzdigni se",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "'Rise up' to a higher level: not religious (that would be 'uzašašće') and not climbing ('penjati se'). 10/10. 'Prestiž' would also be understood but reads as social status."
+  },
+  "ascend.confirm": {
+    "text": "Uzdići se sada? Krenut ćeš ispočetka, ali ćeš rijetke ribe loviti {bonus}% češće.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as ascend.button; future tense avoids gendered past; no space before % (CLDR)."
+  },
+  "weather.storm": {
+    "text": "Stiže oluja! Rijetke ribe grizu.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'grizu' is the fishing sense ('riba grize' = the fish are biting)."
+  },
+  "quest.title": {
+    "text": "Zadaci",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Ulovi ribe u Mjesečevoj uvali: {n}",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "{n} moved to a label slot: 'ribu/ribe/riba' would change with n. Moonlit Bay = 'Mjesečeva uvala' (terms.json), here in the locative; 'uvala' (cove) suits a fishing spot on a lake."
+  },
+  "quest.claim": {
+    "text": "Pokupi",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "Pecanje s prijateljima daje +{percent}% sreće",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": []
+  },
+  "trade.sent": {
+    "text": "Razmjena ponuđena igraču {player}",
+    "confidence": "medium",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "'Trade offered to player {player}': 'igraču' carries the dative so the name stays undeclined; 'nuditi razmjenu' matches the guide. Literal 'Zahtjev za razmjenu poslan igraču {player}' is 34/33."
+  },
+  "trade.accept": {
+    "text": "Igrač {player} je prihvatio razmjenu",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "Fixed head noun 'Igrač' carries the masculine past, so it is correct for any player; 'your' dropped to fit 33.",
+    "blind_remark": "verb is masculine; assumes the other player is male"
+  },
+  "codes.enter": {
+    "text": "Unesi kod",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Kod iskorišten! Uživaj u nagradi.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "redeem = 'iskoristiti' (guide); 'iskorišćen' is the equally Bosnian variant."
+  },
+  "afk.kicked": {
+    "text": "Predugo si AFK, pa je pecanje stalo.",
+    "confidence": "medium",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "'AFK si' (guide) avoids the gendered 'bio si neaktivan / bila si neaktivna'. Says only that fishing stopped, no kick, as in the source."
+  },
+  "settings.back": {
+    "text": "Nazad",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Zvučni efekti",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Traje još {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "'Still lasts {time}', the guide's event countdown wording ('ističe' fits offers). For the developer: {time} arrives as '2d 4h'; Bosnian short form is '2 d. 4 h'."
+  },
+  "daily.streak": {
+    "text": "{day}. dan zaredom! Vrati se sutra po još nagrada.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "Streak as an ordinal ('3. dan zaredom' = 3rd day in a row): correct for every value with no plural forms. 'for more' made explicit as more rewards."
+  },
+  "tip.night": {
+    "text": "Savjet: neke ribe grizu samo noću.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": []
+  },
+  "group.join": {
+    "text": "Pridruži se grupi i dobij 50 besplatnih mamaca!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": []
+  },
+  "leaderboard.biggest": {
+    "text": "Najveći ulov",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "The usual fishing phrase for the heaviest catch; 'Najteži ulov' could also read as 'hardest catch'."
+  }
+}

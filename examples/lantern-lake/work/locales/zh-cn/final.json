@@ -1,0 +1,308 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept byte-identical (glossary keep; no official Chinese title). The guide says keep the English title rather than half-translate it.",
+    "blind_remark": "left in English, not translated"
+  },
+  "hud.cast": {
+    "text": "抛竿",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": []
+  },
+  "hud.reel": {
+    "text": "收竿",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "blind_remark": "literally 'take the rod in'; also commonly means packing up the rod / done fishing for the day"
+  },
+  "hud.bait_left": {
+    "text": "鱼饵：{count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form 'Bait: {count}' as context suggests; avoids needing a classifier before the number. No space after the full-width colon."
+  },
+  "hud.backpack": {
+    "text": "背包",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "你钓到了{rarity}{fish}！",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern for inserted rarity + name: no classifier, no space or 的 between the Chinese params (renders 你钓到了稀有金鲤鱼！). Chinese has no a/an, so the English vowel issue does not arise."
+  },
+  "catch.escaped": {
+    "text": "鱼溜走了...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'It' made explicit as the generic word 鱼 (fish); 溜走 = slipped away, light tone. Trailing ASCII ... kept per the guide.",
+    "blind_remark": "uses three ASCII periods instead of the Chinese ellipsis"
+  },
+  "catch.new_record": {
+    "text": "新纪录！{weight} 公斤",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "kg written as 公斤, the everyday mainland word kids use; 'kg' would also be understood. The game's decimal point (12.4) is correct for zh-cn."
+  },
+  "fish.golden_carp": {
+    "text": "金鲤鱼",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "灯笼鳗",
+    "confidence": "high",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Coined name: 灯笼 (lantern) + 鳗 (eel), keeps the glowing-lantern idea and echoes the title. Natural as a cute creature name."
+  },
+  "rarity.mythic": {
+    "text": "神话",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide tier set 普通, 稀有, 史诗, 传说, 神话: 神话 sits above 传说 (Legendary)."
+  },
+  "shop.rods": {
+    "text": "鱼竿",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equip": {
+    "text": "装备",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equipped": {
+    "text": "已装备",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.free": {
+    "text": "免费",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "{price} Robux 购买",
+    "confidence": "medium",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's compact price-first shop button (as in 60 钻石购买); the guide asks for a native check. Chattier alternative: 花 {price} Robux 购买."
+  },
+  "pass.auto_reel": {
+    "text": "自动收竿",
+    "confidence": "high",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": []
+  },
+  "pass.lucky_bait": {
+    "text": "<b>幸运鱼饵</b>让你钓到稀有鱼的几率翻倍！",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.all": {
+    "text": "全部出售",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "卖出 {count} 条鱼，赚了 {coins} 金币！",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "条 is the classifier for fish; reads correctly for 1 or any number. 'for {coins} coins' rendered as 赚了 (earned), spoken toast tone; currency takes no classifier per the guide."
+  },
+  "sell.prompt": {
+    "text": "按 E 卖鱼",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "'to sell' given its object 卖鱼 (sell fish) since Chinese wants one here; no 键 after a single key letter, per the guide."
+  },
+  "ascend.button": {
+    "text": "晋升",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Ascend as 晋升 (rise in rank): neutral, not religious, not climbing. Rejected 飞升 (idle-game prestige word but Daoist immortal-ascension flavor) and 重生 (the guide's word for Rebirth, which would erase the distinct name). Native check welcome.",
+    "blind_remark": "means a promotion in rank, as in a job or military rank; does not suggest a reset or prestige"
+  },
+  "ascend.confirm": {
+    "text": "确定要现在晋升吗？你将从头开始，但钓到稀有鱼的几率会永久提高 {bonus}%。",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's 确定要...吗？ confirm pattern. 'start over' = 从头开始 (did not add rods/coins, which the source does not name). '{bonus}% more often' rendered as chance of catching rare fish permanently raised by {bonus}%. Medium only because of the 晋升 term choice."
+  },
+  "weather.storm": {
+    "text": "暴风雨来袭！稀有鱼开始咬钩了！",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "来袭 is the usual banner wording for an arriving storm. 'are biting' = 咬钩 (taking the bait). Second sentence ends in ！ instead of a period to carry the excited banner tone the context asks for."
+  },
+  "quest.title": {
+    "text": "任务",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "在月光湾钓到 {n} 条鱼",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.claim": {
+    "text": "领取",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "和好友一起钓鱼，获得 +{percent}% 幸运加成",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Statement form 'fish with friends, get +{percent}% luck bonus'; 加成 is the guide's word for a bonus, 幸运 matches 幸运鱼饵. 好友, not 朋友 or 联系人."
+  },
+  "trade.sent": {
+    "text": "已向“{player}”发送交易请求",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": []
+  },
+  "trade.accept": {
+    "text": "“{player}”接受了你的交易请求",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.enter": {
+    "text": "输入兑换码",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "兑换成功！好好享受奖励吧！",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'Code redeemed!' as 兑换成功！, the standard Chinese redemption toast. One sentence-final particle (吧)."
+  },
+  "afk.kicked": {
+    "text": "你太久没有操作，已停止钓鱼。",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "'idle' as 太久没有操作 (no input for too long), plainer for kids than 闲置; no server removal added."
+  },
+  "settings.back": {
+    "text": "返回",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "音效",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "resolved",
+    "flags": [],
+    "note": "音效 is the standard Simplified game-settings term. Lint flags 音 as Traditional-only, but 音 is identical in both scripts (only 聲/声 differ): a false positive in TRADITIONAL_ONLY in scripts/i18n.py, not an error in the text."
+  },
+  "event.ends": {
+    "text": "{time} 后结束",
+    "confidence": "medium",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Time phrase moved before the verb. For the developer: {time} arrives as '2d 4h' with English unit letters, which shows as '2d 4h 后结束'; readable for gamers but a Chinese formatter (2天4小时) or a clock format would read better."
+  },
+  "daily.streak": {
+    "text": "连续登录第 {day} 天！明天再来领取更多奖励吧！",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "Ordinal day form works for day = 1. 'for more' made explicit as 更多奖励 (more rewards), as the context says."
+  },
+  "tip.night": {
+    "text": "提示：有些鱼只在晚上咬钩。",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": []
+  },
+  "group.join": {
+    "text": "加入群组，免费领取 50 个鱼饵！",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "群组 per the guide's Roblox vocabulary; 社区 would match the renamed Communities page if the developer prefers. 个 classifier added before bait as Chinese needs one."
+  },
+  "leaderboard.biggest": {
+    "text": "最重渔获榜",
+    "confidence": "medium",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Biggest' as 最重 (heaviest) per context; 渔获 = a catch; 榜 marks it as a leaderboard. Plainer alternative if 渔获 feels too technical for kids: 最重鱼排行榜."
+  }
+}

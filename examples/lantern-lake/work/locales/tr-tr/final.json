@@ -1,0 +1,323 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, glossary keep; Turkish players search the English title (guide).",
+    "blind_remark": "left in English, not translated"
+  },
+  "hud.cast": {
+    "text": "Olta At",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Fishing idiom \"olta atmak\" (cast a line); a bare \"At\" would also read as \"horse\". 7/8."
+  },
+  "hud.reel": {
+    "text": "Çek",
+    "confidence": "medium",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Çek!\" (pull) is what you call out when a fish bites; same verb as the pass Otomatik Çekme. \"Sar\" (wind in) is the alternative if a native reviewer prefers the reel sense."
+  },
+  "hud.bait_left": {
+    "text": "Yem: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form; a Turkish noun after a number stays singular anyway, so 0, 1 and 12 all read right."
+  },
+  "hud.backpack": {
+    "text": "Çanta",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": [],
+    "note": "Roblox's own \"Sırt Çantası\" is 12, over the 10 budget; plain \"Çanta\" per the guide."
+  },
+  "catch.success": {
+    "text": "{rarity} {fish} yakaladın!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Both params stay bare: the fish is an indefinite object, so it takes no case suffix, and Turkish adjectives never agree. Reads \"Nadir Altın Sazan yakaladın!\". No \"bir\", per the guide's egg.hatched pattern."
+  },
+  "catch.escaped": {
+    "text": "Balık kaçtı...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "\"It\" made explicit as the generic \"balık\" (fish), per context."
+  },
+  "catch.new_record": {
+    "text": "Yeni rekor! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {weight} arrives as \"12.4\"; Turkish (TDK) writes \"12,4\" and uses the period as the thousands separator, so format the number for tr."
+  },
+  "fish.golden_carp": {
+    "text": "Altın Sazan",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "sazan = carp. \"altın\" is also the coin word, but as an adjective before a fish it plainly means golden."
+  },
+  "fish.lantern_eel": {
+    "text": "Fener Yılan Balığı",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "fener = lantern, yılan balığı = eel (TDK writes it as two words); follows the real \"fener balığı\" (anglerfish) naming. Exactly 18/18; fallback \"Fener Yılanbalığı\" (17) if the card is tight."
+  },
+  "rarity.mythic": {
+    "text": "Mitik",
+    "confidence": "medium",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Mitik\" is the usual game word (Brawl Stars TR); Legendary = \"Efsanevi\". Brawl Stars ranks Mitik below Efsanevi, so this game's tier order and colors must show it as higher. \"Mitolojik\" is the alternative."
+  },
+  "shop.rods": {
+    "text": "Oltalar",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equip": {
+    "text": "Kuşan",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Kuşan\" is the common game-UI word for Equip in Turkish; \"Kullan\" (use) would also work for a rod."
+  },
+  "shop.equipped": {
+    "text": "Kuşanıldı",
+    "confidence": "medium",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State label paired with the button \"Kuşan\". \"Kullanılıyor\" (in use) is plainer but 12, over 11."
+  },
+  "shop.free": {
+    "text": "Ücretsiz",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": [],
+    "note": "8/8; \"Bedava\" (6) is the casual fallback if the label font runs wide."
+  },
+  "shop.buy_robux": {
+    "text": "{price} Robux'a Satın Al",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Price in the dative as Roblox writes it (\"Robux'a\"), per the guide. 17/20 without the price."
+  },
+  "pass.auto_reel": {
+    "text": "Otomatik Çekme",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as hud.reel (Çek) as a noun phrase, 14/14. \"Oto Çekme\" (9) if it must be shorter, though the guide avoids abbreviations in titles. Match the Creator Hub pass name."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Şanslı Yem</b> nadir balık yakalama şansını ikiye katlar!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Lucky Bait = Şanslı Yem (luck = şans, Bait = yem). \"şansını\" carries \"your\"; \"yakalama\" (catching) added because Turkish needs it for \"rare fish chance\". Tags kept on the pass name."
+  },
+  "sell.all": {
+    "text": "Hepsini Sat",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "{count} balık sattın, {coins} altın kazandın!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Two clauses keep both numbers bare before singular nouns, so 1 reads right. If the game formats thousands as \"1,250\" it should be \"1.250\" for tr."
+  },
+  "sell.prompt": {
+    "text": "Satmak için E'ye bas",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern \"E'ye bas\" (E read as the letter); \"E tuşuna bas\" makes 24, over 21. Source-side issue stands: touch and console players have no E key."
+  },
+  "ascend.button": {
+    "text": "Yüksel",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Yüksel\" = rise up, as in rising in rank; not climbing (\"tırman\") and not religious. Same verb in ascend.confirm. Some Turkish players know \"Prestij\" from shooters; native check suggested."
+  },
+  "ascend.confirm": {
+    "text": "Şimdi yükselmek ister misin? Baştan başlarsın ama nadir balıkları %{bonus} daha sık yakalarsın.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as ascend.button; percent sign before the number (\"%25\"), per TDK. \"Baştan başlarsın\" = you start over (rods and coins reset)."
+  },
+  "weather.storm": {
+    "text": "Fırtına yaklaşıyor! Nadir balıklar oltaya geliyor.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "\"oltaya gelmek\" is the fishing idiom for biting; same phrase as tip.night. \"yaklaşıyor\" (approaching) avoids repeating \"geliyor\"."
+  },
+  "quest.title": {
+    "text": "Görevler",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Ay Işığı Koyu'nda {n} balık yakala",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Moonlit Bay = \"Ay Işığı Koyu\" (built like \"Ay Işığı Sonatı\"); a fixed place name, so the suffix follows an apostrophe per TDK (\"Ağrı Dağı'nda\"). In-world signs should match. {n} stays bare before a singular noun."
+  },
+  "quest.claim": {
+    "text": "Topla",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide: Claim -> \"Topla\", never \"Talep Et\"."
+  },
+  "friends.boost": {
+    "text": "Arkadaşlarınla balık tutmak +%{percent} şans verir",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Statement, not an order; percent sign before the number per TDK, \"+\" kept."
+  },
+  "trade.sent": {
+    "text": "Takas isteği gönderildi: {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "Name after a colon so it takes no suffix (guide pattern).",
+    "blind_remark": "{player} is only implied to be the recipient by the colon"
+  },
+  "trade.accept": {
+    "text": "{player} takas isteğini kabul etti",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "{player} is the subject, no suffix; \"isteğini\" = your request, matching \"Takas isteği\" in trade.sent."
+  },
+  "codes.enter": {
+    "text": "Kodu gir",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's placeholder wording."
+  },
+  "codes.redeemed": {
+    "text": "Kod kullanıldı! Ödülünün keyfini çıkar.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "\"keyfini çıkar\" = enjoy; \"kullanıldı\" matches the guide's redeem word \"Kullan\"."
+  },
+  "afk.kicked": {
+    "text": "Çok uzun süre hareketsiz kaldığın için balık tutman durdu.",
+    "confidence": "medium",
+    "source_hash": "6e924547dc32",
+    "status": "fixed",
+    "flags": [
+      "review:minor:fluency"
+    ],
+    "note": "\"balık tutma durdu\" = your fishing stopped, as the source says; no mention of leaving the server. \"balık tutmayı bıraktın\" would sound as if the player chose to stop.",
+    "review_reason": "\"balık tutma durdu\" drops the possessive and reads like a status label spliced onto a sen-clause; \"kaldığın için ... balık tutman durdu\" makes it the player's fishing and states the cause naturally."
+  },
+  "settings.back": {
+    "text": "Geri",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Ses Efektleri",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Kalan süre: {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Kalan süre\" (time left) keeps {time} after a colon; \"Etkinlik bitiyor: {time}\" is 17, over 14. For the developer: {time} arrives as \"2d 4h\"; \"d\" and \"h\" mean nothing in Turkish, which wants \"2g 4sa\"."
+  },
+  "daily.streak": {
+    "text": "{day} günlük seri! Daha fazla ödül için yarın yine gel.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "\"{day} günlük seri\" = a {day}-day streak; the suffix sits on \"gün\", so 1 reads right. \"for more\" made explicit as \"daha fazla ödül\" (more rewards), per context."
+  },
+  "tip.night": {
+    "text": "İpucu: Bazı balıklar sadece geceleri oltaya gelir.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "\"oltaya gelmek\" = bite (fishing sense), as in weather.storm. Capital after the colon because a full sentence follows (TDK)."
+  },
+  "group.join": {
+    "text": "Grubumuza katıl, 50 ücretsiz yem kazan!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Grubumuza\" (our group): it is the studio's group, as in the guide's reference. \"kazan\" (get) added because Turkish needs a verb for \"for 50 free bait\"."
+  },
+  "leaderboard.biggest": {
+    "text": "En Ağır Balık",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "Ranked by weight, so \"En Ağır Balık\" (heaviest fish) rather than the vaguer \"En Büyük Av\" (biggest catch)."
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "title": {
+    "verdict": "ok"
+  },
+  "hud.cast": {
+    "verdict": "ok"
+  },
+  "hud.reel": {
+    "verdict": "fix",
+    "text": "Kéo cần",
+    "category": "accuracy",
+    "severity": "minor",
+    "reason": "Bare \"Kéo\" does not say what is pulled and can read as the noun \"scissors\"; \"Kéo cần\" (7/8) names the reel-in action, pairs with \"Thả câu\" and keeps the Kéo verb of the pass Kéo Tự Động."
+  },
+  "hud.bait_left": {
+    "verdict": "ok"
+  },
+  "hud.backpack": {
+    "verdict": "ok"
+  },
+  "catch.success": {
+    "verdict": "ok"
+  },
+  "catch.escaped": {
+    "verdict": "ok"
+  },
+  "catch.new_record": {
+    "verdict": "ok"
+  },
+  "fish.golden_carp": {
+    "verdict": "ok"
+  },
+  "fish.lantern_eel": {
+    "verdict": "ok"
+  },
+  "rarity.mythic": {
+    "verdict": "ok"
+  },
+  "shop.rods": {
+    "verdict": "ok"
+  },
+  "shop.equip": {
+    "verdict": "ok"
+  },
+  "shop.equipped": {
+    "verdict": "ok"
+  },
+  "shop.free": {
+    "verdict": "ok"
+  },
+  "shop.buy_robux": {
+    "verdict": "ok"
+  },
+  "pass.auto_reel": {
+    "verdict": "ok"
+  },
+  "pass.lucky_bait": {
+    "verdict": "ok"
+  },
+  "sell.all": {
+    "verdict": "ok"
+  },
+  "sell.done": {
+    "verdict": "ok"
+  },
+  "sell.prompt": {
+    "verdict": "ok"
+  },
+  "ascend.button": {
+    "verdict": "ok"
+  },
+  "ascend.confirm": {
+    "verdict": "fix",
+    "text": "Thăng hạng ngay? Bạn sẽ chơi lại từ đầu, nhưng tỉ lệ câu được cá hiếm tăng {bonus}%.",
+    "category": "fluency",
+    "severity": "minor",
+    "reason": "\"thường xuyên hơn {bonus}%\" calques \"more often\"; Vietnamese puts a percent increase on the rate (\"tỉ lệ ... tăng {bonus}%\"), same meaning."
+  },
+  "weather.storm": {
+    "verdict": "ok"
+  },
+  "quest.title": {
+    "verdict": "ok"
+  },
+  "quest.catch_n": {
+    "verdict": "ok"
+  },
+  "quest.claim": {
+    "verdict": "ok"
+  },
+  "friends.boost": {
+    "verdict": "ok"
+  },
+  "trade.sent": {
+    "verdict": "ok"
+  },
+  "trade.accept": {
+    "verdict": "ok"
+  },
+  "codes.enter": {
+    "verdict": "ok"
+  },
+  "codes.redeemed": {
+    "verdict": "ok"
+  },
+  "afk.kicked": {
+    "verdict": "ok"
+  },
+  "settings.back": {
+    "verdict": "ok"
+  },
+  "settings.sfx": {
+    "verdict": "ok"
+  },
+  "event.ends": {
+    "verdict": "ok"
+  },
+  "daily.streak": {
+    "verdict": "ok"
+  },
+  "tip.night": {
+    "verdict": "ok"
+  },
+  "group.join": {
+    "verdict": "ok"
+  },
+  "leaderboard.biggest": {
+    "verdict": "ok"
+  }
+}

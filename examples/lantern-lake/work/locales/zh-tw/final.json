@@ -1,0 +1,311 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, glossary keep: no official Chinese title given, so it stays English.",
+    "blind_remark": "left in English, not translated"
+  },
+  "hud.cast": {
+    "text": "拋竿",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": []
+  },
+  "hud.reel": {
+    "text": "收線",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "收線 = reel the line in; same verb as the pass name 自動收線."
+  },
+  "hud.bait_left": {
+    "text": "魚餌：{count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form, as the context suggests; reads right for 0, 1 and any count."
+  },
+  "hud.backpack": {
+    "text": "背包",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "你釣到了{rarity}{fish}！",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Han params joined with no space or classifier (你釣到了稀有黃金鯉魚！), like the guide's egg.hatched pattern; no agreement problems in Chinese."
+  },
+  "catch.escaped": {
+    "text": "魚溜走了……",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "Chinese needs a subject, so 'It' becomes the generic 魚; 溜走 = slipped away. Ellipsis written as …… per the guide."
+  },
+  "catch.new_record": {
+    "text": "新紀錄！{weight} 公斤",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "kg written 公斤, the everyday Taiwan unit word; {weight} with a decimal point (12.4) reads correctly."
+  },
+  "fish.golden_carp": {
+    "text": "黃金鯉魚",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "黃金鯉 is a known golden carp/koi name in Taiwan; 魚 added so the base form reads as a fish when inserted into catch.success."
+  },
+  "fish.lantern_eel": {
+    "text": "燈籠鰻",
+    "confidence": "high",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Glossary translate: 燈籠 (lantern) keeps the glowing-lantern idea and the echo of Lantern Lake; 鰻 = eel."
+  },
+  "rarity.mythic": {
+    "text": "神話",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide's rarity set: 神話 ranks above 傳說 (Legendary)."
+  },
+  "shop.rods": {
+    "text": "釣竿",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equip": {
+    "text": "裝備",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "blind_remark": "the same word is also the noun \"equipment\"; on a button it reads as \"Equip\""
+  },
+  "shop.equipped": {
+    "text": "已裝備",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.free": {
+    "text": "免費",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "用 {price} Robux 購買",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": []
+  },
+  "pass.auto_reel": {
+    "text": "自動收線",
+    "confidence": "high",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": []
+  },
+  "pass.lucky_bait": {
+    "text": "<b>幸運魚餌</b>讓你釣到稀有魚的機率加倍！",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.all": {
+    "text": "全部賣出",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "賣出 {count} 條魚，賺到 {coins} 金幣！",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "條 is the classifier for fish; no plurals in Chinese, so count and coins read right at 1. 賺到 (earned) is the natural verb for selling for coins."
+  },
+  "sell.prompt": {
+    "text": "按 E 出售",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": []
+  },
+  "ascend.button": {
+    "text": "晉升",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Prestige reset for a permanent bonus: 晉升 (advance a rank) avoids 轉生, which the guide reserves for Rebirth, and avoids 飛升 (cultivation/spiritual ascension) and climbing words. Worth a native check.",
+    "blind_remark": "the word means a promotion in rank, as at work or in the military; nothing suggests starting over"
+  },
+  "ascend.confirm": {
+    "text": "要現在晉升嗎？你會從頭開始，但之後釣到稀有魚的機率會提高 {bonus}%。",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "'catch rare fish {bonus}% more often' rendered as the chance of catching rare fish rising by {bonus}%; 之後 (from then on) carries the future sense without adding 'permanent', which the source does not say."
+  },
+  "weather.storm": {
+    "text": "暴風雨要來了！稀有魚紛紛上鉤！",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'are biting' = 紛紛上鉤 (taking the hook one after another); second sentence takes ！ for the excited banner tone.",
+    "blind_remark": "says the storm is still coming, not that it is here now"
+  },
+  "quest.title": {
+    "text": "任務",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "在月光灣釣到 {n} 條魚",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Moonlit Bay translated per glossary as 月光灣; 條 is the fish classifier, correct for n = 1."
+  },
+  "quest.claim": {
+    "text": "領取",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "和好友一起釣魚，幸運值 +{percent}%",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Stat-line form; luck as the stat 幸運值 (shares 幸運 with 幸運魚餌). '+' and % kept, no space before %."
+  },
+  "trade.sent": {
+    "text": "已向 {player} 送出交易請求",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": []
+  },
+  "trade.accept": {
+    "text": "{player} 接受了你的交易請求",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "'your trade' = your trade request, per context; no pronoun refers to {player}."
+  },
+  "codes.enter": {
+    "text": "輸入兌換碼",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "兌換成功！好好享受你的獎勵吧！",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'Code redeemed' rendered as 兌換成功 (redeemed successfully), the usual Chinese UI wording; friendly 吧 instead of a stiff 請."
+  },
+  "afk.kicked": {
+    "text": "你閒置太久，已停止釣魚。",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "閒置 (idle) matches Roblox's own zh-tw idle text; no mention of leaving the server, as in the source."
+  },
+  "settings.back": {
+    "text": "返回",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "音效",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "resolved",
+    "flags": [],
+    "note": "音效 is the standard Taiwan settings term. Lint flags 音 as Simplified-only, a false positive: 音 is identical in both scripts and sits in both SIMPLIFIED_ONLY and TRADITIONAL_ONLY in scripts/i18n.py (so do 盾 and 魂); fix the lint sets, not this text."
+  },
+  "event.ends": {
+    "text": "{time} 後結束",
+    "confidence": "medium",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Developer: {time} arrives as '2d 4h' with English unit letters, which looks foreign to Taiwan players; localized 2 天 4 小時 would read better (then the space before 後 should go). Translated as is per the guide."
+  },
+  "daily.streak": {
+    "text": "連續登入第 {day} 天！明天再來領更多獎勵吧！",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'Day {day} streak' = logged in {day} days in a row (連續登入第 N 天), fine for day 1; 'for more' made explicit as 更多獎勵 (more rewards)."
+  },
+  "tip.night": {
+    "text": "小提示：有些魚只有晚上才會上鉤。",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "小提示 is the friendly tip label; 'bite' = 上鉤, same word as weather.storm."
+  },
+  "group.join": {
+    "text": "加入群組，免費領取 50 個魚餌！",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "群組 is Roblox's zh-tw word for groups; 個 classifier added for the count of bait."
+  },
+  "leaderboard.biggest": {
+    "text": "最重漁獲",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Biggest' = heaviest per context, so 最重 (heaviest) rather than 最大; 漁獲 = a catch (noun)."
+  }
+}

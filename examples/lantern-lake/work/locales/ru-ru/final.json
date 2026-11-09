@@ -1,0 +1,326 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, glossary keep; the Russian guide keeps game titles in English because players search for the English name.",
+    "blind_remark": "not translated: left in English, Latin script"
+  },
+  "hud.cast": {
+    "text": "Закинуть",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Infinitive, the Russian button norm; everyday angling phrase \"закинуть удочку\". \"Забросить\" (9) is more standard but one over the 8 budget; noun \"Заброс\" (6) works if a noun is preferred."
+  },
+  "hud.reel": {
+    "text": "Тянуть",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "Infinitive \"pull (the line/fish) in\", pairs with \"Закинуть\" in the same slot. Same root as the pass name \"Автовытягивание\"."
+  },
+  "hud.bait_left": {
+    "text": "Наживка: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form avoids number agreement (0, 1, 12 all read right). \"Наживка\" is the angling word for bait on the hook. 9/10."
+  },
+  "hud.backpack": {
+    "text": "Рюкзак",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": [],
+    "note": "Roblox's own Russian UI word for Backpack (CoreScript: \"Рюкзак\", \"Закрыть рюкзак\")."
+  },
+  "catch.success": {
+    "text": "{rarity} улов: {fish}!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Restructured as \"[Rare] catch: [Golden Carp]!\": the masculine rarity label agrees with the fixed noun \"улов\" (catch), never with the unseen fish. \"You caught\" dropped to avoid a gendered past verb (\"поймал/поймала\"). Every rarity tier must be translated in the masculine (Редкий, Легендарный, Мифический)."
+  },
+  "catch.escaped": {
+    "text": "Рыба сорвалась…",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "\"It\" made explicit as the generic \"рыба\"; \"сорвалась\" is the angling verb for a fish coming off the hook. Single ellipsis character per the guide; use it (not three periods) in every Russian string of this game."
+  },
+  "catch.new_record": {
+    "text": "Новый рекорд! {weight} кг",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {weight} arrives as \"12.4\"; Russian writes a decimal comma (\"12,4\"). Format the number per locale in code."
+  },
+  "fish.golden_carp": {
+    "text": "Золотой карп",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "Угорь-фонарик",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Invented name, built like the Russian species pattern рыба-клоун / рыба-меч; the diminutive \"фонарик\" keeps the glowing lantern and the cozy tone. Masculine nominative. Alternative: \"Фонарный угорь\" (14).",
+    "blind_remark": "\"фонарик\" is the everyday word for a flashlight, so it can read as \"flashlight eel\""
+  },
+  "rarity.mythic": {
+    "text": "Мифический",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Masculine tier label (agrees with \"улов\" in catch.success); reads above \"Легендарный\". 10/10."
+  },
+  "shop.rods": {
+    "text": "Удочки",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equip": {
+    "text": "Выбрать",
+    "confidence": "medium",
+    "source_hash": "965ae4ed708e",
+    "status": "fixed",
+    "flags": [
+      "review:minor:accuracy"
+    ],
+    "note": "\"Take (in hand)\", paired with the state label \"В руках\". \"Экипировать\" (11) is over budget and stiff; \"Выбрать\" / \"Выбрана\" is the plainer UI pair if the reviewer prefers it.",
+    "review_reason": "On a shop card \"Взять\" reads as \"take/get this item\" (acquire), not equip; \"Выбрать\" is the standard select-owned-item button and still pairs with the label \"В руках\"."
+  },
+  "shop.equipped": {
+    "text": "В руках",
+    "confidence": "medium",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "\"In hand\": a state, not an action, and needs no gender agreement with \"удочка\". Alternative: \"Выбрана\" (7, feminine, agrees with удочка)."
+  },
+  "shop.free": {
+    "text": "Бесплатно",
+    "confidence": "medium",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": [],
+    "note": "The standard Russian price word; 9 vs the estimated 8. If the label really holds only 8, use \"Даром\" (5), which is shorter but more colloquial."
+  },
+  "shop.buy_robux": {
+    "text": "Купить за {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Robux stays Latin and undeclined, as in Roblox's Russian UI.",
+    "blind_remark": "currency name \"Robux\" kept in Latin script inside Cyrillic text"
+  },
+  "pass.auto_reel": {
+    "text": "Автовытягивание",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Built like the common UI word \"автосохранение\"; same root as hud.reel \"Тянуть\". 15 vs the estimated 14. Must match the pass name set in Creator Hub.",
+    "blind_remark": "coined compound noun, long and a bit clunky; literally \"automatic pulling out\""
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Наживка удачи</b> удваивает шанс поймать редкую рыбу!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Pass name from the glossary words luck (удача) and Bait (наживка), patterned on \"Зелье удачи\". \"your\" dropped, as Russian does."
+  },
+  "sell.all": {
+    "text": "Продать всё",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Продано рыб: {count}. Получено монет: {coins}!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form avoids plural agreement (1 рыба / 2 рыбы / 5 рыб; 1 монета / 2 монеты / 5 монет). For the developer: format large coin values with a space as thousands separator for Russian."
+  },
+  "sell.prompt": {
+    "text": "Жми E, чтобы продать",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Latin E. \"Нажми E, чтобы продать\" is 22, one over the 21 budget; \"Жми\" is the common, natural game-prompt imperative. For the developer: a ProximityPrompt ActionText \"Продать\" would also serve phone and console players."
+  },
+  "ascend.button": {
+    "text": "Возвышение",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Term choice for Ascend: \"Вознесение\" is the religious Ascension and \"Восхождение\" reads as climbing, both excluded by the glossary; \"Возвышение\" (rise in rank) is neither. Noun on a button, as with \"Перерождение\". 10/10. \"Престиж\" (7) is the fallback if players should see the generic prestige word.",
+    "blind_remark": "lofty, bookish noun meaning a rise to higher rank; can also mean a raised spot or hill; a noun, not an action, on a button"
+  },
+  "ascend.confirm": {
+    "text": "Возвыситься сейчас? Ты начнёшь заново, но будешь ловить редкую рыбу на {bonus}% чаще.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Verb of the same root as the button \"Возвышение\"; change both together if the term changes. Future tense keeps the player ungendered."
+  },
+  "weather.storm": {
+    "text": "Надвигается шторм! Клюёт редкая рыба.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Клюёт\" is the angling verb for fish biting; word order puts \"rare fish\" last, where Russian puts new information."
+  },
+  "quest.title": {
+    "text": "Задания",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Поймай рыбу в Лунной бухте: {n} шт.",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "\"шт.\" after the number avoids plural agreement (1 рыбу / 2 рыбы / 5 рыб). Moonlit Bay = \"Лунная бухта\" (terms), declined here; any in-world sign should read \"Лунная бухта\".",
+    "blind_remark": "\"шт.\" (pieces) is a shop or inventory unit; reads dry for a quest line"
+  },
+  "quest.claim": {
+    "text": "Забрать",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "Рыбалка с друзьями даёт +{percent}% к удаче",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "\"+N% к удаче\" is the standard Russian stat-bonus phrasing."
+  },
+  "trade.sent": {
+    "text": "Игроку {player} отправлен запрос на обмен",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "Fixed noun head \"Игроку\" keeps the name undeclined and the sentence ungendered. 33/33."
+  },
+  "trade.accept": {
+    "text": "Игрок {player} принял запрос на обмен",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "\"принял\" agrees with the fixed noun \"Игрок\", so it is correct for any player gender; \"your trade\" rendered as the trade request, matching trade.sent."
+  },
+  "codes.enter": {
+    "text": "Введи код",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Код активирован! Держи награду.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Enjoy your reward\" rendered as the friendly \"here's your reward\" (\"Держи награду\"); a literal \"Наслаждайся наградой\" reads as a calque. \"активирован\" is the Russian redeem verb for codes."
+  },
+  "afk.kicked": {
+    "text": "Тебя слишком долго не было, и рыбалка остановилась.",
+    "confidence": "medium",
+    "source_hash": "6e924547dc32",
+    "status": "fixed",
+    "flags": [
+      "review:minor:register"
+    ],
+    "note": "Restructured around the cause because \"Ты бездействовал(а)\" would be gendered; Roblox's Russian UI also words idle kicks as \"из-за неактивности\". Adds no server removal.",
+    "review_reason": "Passive plus a verbal-noun chain (\"остановлена из-за слишком долгого бездействия\") reads like a bureaucratic system notice in a cozy ты-game; the impersonal \"Тебя не было\" keeps ты and stays ungendered."
+  },
+  "settings.back": {
+    "text": "Назад",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Звуковые эффекты",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Осталось: {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Standard Russian countdown label (\"remaining\"). For the developer: {time} arrives as \"2d 4h\"; Russian expects \"2 д 4 ч\". Format durations per locale in code."
+  },
+  "daily.streak": {
+    "text": "{day}-й день подряд! Заходи завтра за новой наградой.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "\"Nth day in a row\" is how Russian says a login streak; the masculine ordinal suffix \"-й\" is right for every number. Glossary streak = \"серия\", which this sentence does not need. \"for more\" = the next daily reward."
+  },
+  "tip.night": {
+    "text": "Совет: некоторые рыбы клюют только ночью.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": []
+  },
+  "group.join": {
+    "text": "Вступи в нашу группу и получи 50 наживок бесплатно!",
+    "confidence": "medium",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "\"группа\" is Roblox's Russian word for groups; \"нашу\" added because a bare \"the group\" is unclear in Russian. \"50 наживок\" counts bait as units, matching the HUD counter; \"наживка x50\" is the alternative if that reads odd."
+  },
+  "leaderboard.biggest": {
+    "text": "Самая крупная рыба",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "The standard name of the heaviest-fish prize in Russian fishing contests; \"крупная\" means big by weight. 18/18."
+  }
+}

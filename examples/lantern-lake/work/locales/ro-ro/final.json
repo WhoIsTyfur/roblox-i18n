@@ -1,0 +1,324 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Glossary keep: brand title; players search Roblox games by their English title (guide: game titles stay English).",
+    "blind_remark": "not translated; left in English"
+  },
+  "hud.cast": {
+    "text": "Aruncă",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Tu-imperative of 'a arunca (undița)', the angling sense of cast."
+  },
+  "hud.reel": {
+    "text": "Trage",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "What a Romanian angler says when a fish bites ('trage!'). The technical verb 'Mulinează' (from mulinetă, the reel) is 9 chars, over the 8 budget. Same verb as the Auto Reel pass (Trage automat)."
+  },
+  "hud.bait_left": {
+    "text": "Momeală: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so 0, 1 and 20+ all read correctly ('1 momeli', '20 momeli' would be wrong)."
+  },
+  "hud.backpack": {
+    "text": "Rucsac",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Ai prins un pește {rarity}: {fish}!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Rarity tags are masculine singular (Rar, Legendar, Mitic) and agree with neuter/masculine 'un pește'; the fish name follows a colon, so feminine names (Anghilă-felinar) need no agreement. Mid-sentence capital on the tag reads as a tier label, as in the guide's egg.hatched pattern. 'Un pește' also removes the English a/an problem.",
+    "blind_remark": "with rarity.mythic inserted it reads 'un peste Mitic', a capitalized adjective mid-sentence"
+  },
+  "catch.escaped": {
+    "text": "Peștele a scăpat…",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "Generic 'peștele' as subject, valid for any species. Single ellipsis character per the Romanian guide instead of three dots."
+  },
+  "catch.new_record": {
+    "text": "Record nou! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {weight} arrives as '12.4'; Romanian writes '12,4' (decimal comma). Please format the number per locale."
+  },
+  "fish.golden_carp": {
+    "text": "Crap auriu",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "Golden-colored carp; base form, masculine singular, no article."
+  },
+  "fish.lantern_eel": {
+    "text": "Anghilă-felinar",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Anghilă = eel, felinar = lantern; hyphenated compound like Romanian fish names pește-spadă, rechin-ciocan. Keeps the glowing-lantern idea. Feminine noun, but it only appears alone or after a colon, so no agreement issue."
+  },
+  "rarity.mythic": {
+    "text": "Mitic",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Masculine singular tier label, agreeing with 'pește' in catch.success; ranks above Legendar as myth above legend."
+  },
+  "shop.rods": {
+    "text": "Undițe",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "Plural of undiță, the fishing rod."
+  },
+  "shop.equip": {
+    "text": "Echipează",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equipped": {
+    "text": "Echipată",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State label; feminine participle agreeing with 'undiță' (rod). Button is the imperative Echipează."
+  },
+  "shop.free": {
+    "text": "Gratis",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": [],
+    "note": "'Gratis' never inflects (guide), unlike 'gratuit/gratuită'."
+  },
+  "shop.buy_robux": {
+    "text": "Cumpără: {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Price-label style from the guide: avoids 'cu 99 de Robux' agreement at 20+."
+  },
+  "pass.auto_reel": {
+    "text": "Trage automat",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as hud.reel ('Trage'), as the glossary asks. The noun form 'Tragere automată' is 16 (over 14) and 'tragere' also suggests shooting or a lottery draw. The Creator Hub pass name should match.",
+    "blind_remark": "a verb phrase rather than a product-style name; out of the fishing HUD context 'trage automat' can also read as 'fires automatically'"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Momeala de noroc</b> îți dublează șansa de a prinde pești rari!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Pass name 'Momeală de noroc' follows the guide's 'Poțiune de noroc' (Lucky Potion) pattern and uses the glossary words luck (noroc) and Bait (momeală). As the sentence subject it takes the definite article (Momeala). 'pești rari' uses the Rare tier word."
+  },
+  "sell.all": {
+    "text": "Vinde tot",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Pești vânduți: {count}. Monede primite: {coins}!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form for both numbers: '{count} pești' and '{coins} monede' break at 1 and need 'de' at 20+ (e.g. '340 de monede'). Literally 'Fish sold: 12. Coins received: 340!'."
+  },
+  "sell.prompt": {
+    "text": "Apasă E ca să vinzi",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern 'Apasă E ca să ...'; 19/21. Source-side issue stands: phone and console players have no E key."
+  },
+  "ascend.button": {
+    "text": "Ascensiune",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Noun as the mechanic name (10/10); Romanian has no everyday verb for 'ascend' that is neither religious ('Înălțare' is the Ascension feast) nor climbing ('Urcă'). 'Ascensiune' is the secular word for a rise. Same word in ascend.confirm."
+  },
+  "ascend.confirm": {
+    "text": "Vrei să faci ascensiunea acum? O iei de la capăt, dar prinzi pești rari cu {bonus} % mai des.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "fixed",
+    "flags": [
+      "review:minor:fluency"
+    ],
+    "note": "'Faci ascensiunea' uses the same Ascensiune word as the button. 'O iei de la capăt' = start over. Non-breaking space before % per the guide (CLDR ro).",
+    "review_reason": "Bare \"Faci ascensiunea acum?\" reads as a question about plans (and \"a face ascensiunea\" is the mountain-climbing collocation); a confirm dialog asks with \"Vrei să...?\" as the guide and its rebirth.confirm reference do."
+  },
+  "weather.storm": {
+    "text": "Vine furtuna! Peștii rari mușcă momeala.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'A mușca momeala' is the angling phrase for fish taking the bait; naming the bait keeps it from reading as fish biting people. 'Rari' matches the Rare tier word."
+  },
+  "quest.title": {
+    "text": "Misiuni",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Prinde pești în Golful Lunii: {n}",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Count after a colon because '{n} pești' breaks at 1 ('1 pești') and at 20+ ('20 de pești'). Moonlit Bay translated as 'Golful Lunii' (Moon's Bay) per the developer's translate decision; in-world signs should match."
+  },
+  "quest.claim": {
+    "text": "Primește",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide: 'Revendică' is stiff for kids; 'Primește' (receive) is the claim-reward button."
+  },
+  "friends.boost": {
+    "text": "Pescuitul cu prietenii aduce +{percent} % noroc",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "'Aduce noroc' (brings luck) is the natural collocation for luck. Non-breaking space before % per the guide."
+  },
+  "trade.sent": {
+    "text": "Cerere de schimb trimisă lui {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "'lui {player}' works for any name and gender (guide); the participle agrees with 'cerere', not the player."
+  },
+  "trade.accept": {
+    "text": "{player} a acceptat schimbul",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "Perfect compus is gender-neutral. 'your trade' rendered as 'schimbul' (the trade); 'cererea ta de schimb' would be 32/33 and stiffer."
+  },
+  "codes.enter": {
+    "text": "Introdu codul",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference wording for the code box placeholder."
+  },
+  "codes.redeemed": {
+    "text": "Cod activat! Bucură-te de recompensă.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'Cod folosit!' could read as the error 'code already used', so 'activat'. 'your' dropped per the guide."
+  },
+  "afk.kicked": {
+    "text": "Ai fost AFK prea mult timp, așa că nu mai pescuiești.",
+    "confidence": "medium",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "'Idle' as AFK: the natural Romanian adjective 'inactiv' is masculine and would exclude girls ('Ai fost inactiv'); AFK never inflects and is the word Roblox players use. Does not mention removal from the server, as the source doesn't.",
+    "blind_remark": "vague: does not say you were kicked or disconnected"
+  },
+  "settings.back": {
+    "text": "Înapoi",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Efecte sonore",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Timp rămas: {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "'Se termină peste {time}' is 17, over the 14 budget; 'Timp rămas' (time left) is the usual countdown label. For the developer: {time} arrives as '2d 4h', but day in Romanian is 'zi', so 'd' reads wrong; Romanian short form is '2 z 4 h'."
+  },
+  "daily.streak": {
+    "text": "Ziua {day} din serie! Revino mâine pentru alte recompense.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'Ziua {day}' with a cardinal works for every day number (no ordinal agreement). 'for more' made explicit as 'alte recompense' (more rewards), as the context says."
+  },
+  "tip.night": {
+    "text": "Sfat: unii pești mușcă momeala doar noaptea.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "Same angling phrase as weather.storm ('mușcă momeala')."
+  },
+  "group.join": {
+    "text": "Alătură-te grupului pentru 50 de momeli gratis!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "'Alătură-te' matches Roblox's Romanian listing ('Alătură-te unui Grup'). '50 de momeli' needs 'de' at 20+; 'gratis' never inflects."
+  },
+  "leaderboard.biggest": {
+    "text": "Cel mai greu pește",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Biggest' = heaviest per context, so 'cel mai greu pește' (heaviest fish); 18/18. 'Cea mai mare captură' is 20 and suggests size, not weight."
+  }
+}

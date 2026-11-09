@@ -1,0 +1,321 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept in English per glossary (keep); players search the English title.",
+    "blind_remark": "not translated: left in English, in Latin script"
+  },
+  "hud.cast": {
+    "text": "Закинути",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Infinitive on buttons (guide); 'закинути вудку' is the fishing verb. 8/8."
+  },
+  "hud.reel": {
+    "text": "Витягти",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'Pull (the fish) out', perfective infinitive like Закинути; same verb as the pass name Автовитягування. 'Тягнути' (7) also fits if the action is a long hold."
+  },
+  "hud.bait_left": {
+    "text": "Наживка: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form avoids the plural forms (1 наживка / 2 наживки / 5 наживок)."
+  },
+  "hud.backpack": {
+    "text": "Рюкзак",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "{rarity} улов: {fish}!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "'Rare catch: Golden Carp!'. Rarity tiers are masculine (Рідкісний, Міфічний) and agree with 'улов', never with the fish name, so any fish gender works; 'You caught' is folded into 'улов', which also avoids gendered past 'зловив/зловила'."
+  },
+  "catch.escaped": {
+    "text": "Риба зірвалася з гачка…",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'The fish slipped off the hook', the usual angler's phrase; generic 'риба' since any species can escape. Single ellipsis character per guide."
+  },
+  "catch.new_record": {
+    "text": "Новий рекорд! {weight} кг",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {weight} arrives as '12.4'; Ukrainian writes '12,4' (decimal comma), so format it per locale in code."
+  },
+  "fish.golden_carp": {
+    "text": "Золотий короп",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "'короп' is the Ukrainian word for carp; 'карп' is the Russian form."
+  },
+  "fish.lantern_eel": {
+    "text": "Вугор-ліхтар",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Invented name built on the Ukrainian fish-name pattern 'риба-ліхтар', 'риба-меч'; keeps the lantern idea. Masculine nominative, so it fits catch.success. Literal 'Ліхтарний вугор' (15) reads like 'lamppost eel'."
+  },
+  "rarity.mythic": {
+    "text": "Міфічний",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Masculine tier form like Легендарний / Рідкісний; agrees with 'улов' in catch.success. Reads as the tier above Легендарний, as in other games."
+  },
+  "shop.rods": {
+    "text": "Вудки",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equip": {
+    "text": "Взяти",
+    "confidence": "medium",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Take (this rod)'; 'Екіпірувати' (11) is over budget and stiff for kids. 'Обрати' / 'Обрано' is the alternative pair if a reviewer prefers a select wording.",
+    "blind_remark": "\"Взяти\" literally means \"take\"; on a shop card it could read as taking or getting the rod rather than equipping it"
+  },
+  "shop.equipped": {
+    "text": "У руках",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "'In hand' = in use: a state, not an action, and it needs no gender agreement with the rod."
+  },
+  "shop.free": {
+    "text": "Безплатно",
+    "confidence": "medium",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": [],
+    "note": "9/8 est.: the shortest natural price word ('Безкоштовно' is 11). 'Даром' (5) fits but sounds like market slang; widen the label by one character if it clips."
+  },
+  "shop.buy_robux": {
+    "text": "Купити за {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Robux stays Latin and undeclined (guide).",
+    "blind_remark": "the word \"Robux\" is left in Latin script"
+  },
+  "pass.auto_reel": {
+    "text": "Автовитягування",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "15/14 est.: built like 'автозбереження' from the same verb as Витягти (hud.reel). Shorter options lose the shared verb ('Автоулов', 8, = auto catch). Match the pass name in Creator Hub."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Наживка удачі</b> подвоює шанс зловити рідкісну рибу!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Pass name built like the guide's 'Зілля удачі'; 'your' dropped (guide)."
+  },
+  "sell.all": {
+    "text": "Продати все",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "Продано риб: {count}. Отримано монет: {coins}!",
+    "confidence": "high",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Two label forms with colons avoid plural agreement for count and coins (1 риба / 2 риби / 5 риб)."
+  },
+  "sell.prompt": {
+    "text": "Тисни E, щоб продати",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Latin E; 'Тисни' as in the guide's prompt example, since 'Натисни E, щоб продати' is 22/21. For the developer: phone and console players have no E key; ProximityPrompt ActionText 'Продати' would serve everyone."
+  },
+  "ascend.button": {
+    "text": "Престиж",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Prestige: the gaming word Ukrainian players know for this mechanic. Avoids religious 'Вознесіння' and climbing 'Піднятися'; kept distinct from rebirth 'Переродження'."
+  },
+  "ascend.confirm": {
+    "text": "Отримати престиж зараз? Ти почнеш усе спочатку, але ловитимеш рідкісну рибу на {bonus}% частіше.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Same term Престиж as the button. Future tense 'почнеш', 'ловитимеш' is gender-neutral; 'усе' after a consonant per euphony rule."
+  },
+  "weather.storm": {
+    "text": "Насувається буря! Клює рідкісна риба!",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'клює' is the fishing sense of 'biting'. 'буря' rather than 'шторм' (a sea storm), since the game is on a lake."
+  },
+  "quest.title": {
+    "text": "Завдання",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Злови рибу в Місячній затоці: {n}",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Count after a colon avoids plural forms for n = 1. Moonlit Bay = 'Місячна затока', generic word lowercase as in 'Чорне море'; locative case here."
+  },
+  "quest.claim": {
+    "text": "Забрати",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": []
+  },
+  "friends.boost": {
+    "text": "Риболовля з друзями дає +{percent}% до удачі",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "'+10% до удачі' is the usual game phrasing for a stat bonus."
+  },
+  "trade.sent": {
+    "text": "Запит на обмін надіслано гравцю {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "Impersonal 'надіслано' and the fixed noun 'гравцю' keep it gender-neutral; Latin names do not decline. 32/33."
+  },
+  "trade.accept": {
+    "text": "Гравець {player} прийняв твій обмін",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "Fixed masculine noun head 'Гравець' carries the past-tense agreement, the guide's pattern for any-gender names."
+  },
+  "codes.enter": {
+    "text": "Введи код",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Код активовано! Нагорода вже твоя!",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'Enjoy your reward' becomes 'The reward is yours!', the friendly Ukrainian equivalent; 'Насолоджуйся нагородою' reads translated. 'активувати' for redeem (guide)."
+  },
+  "afk.kicked": {
+    "text": "Ти надто довго нічого не робиш, тому риболовлю зупинено.",
+    "confidence": "medium",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "Present 'не робиш' (have been doing nothing) avoids gendered past 'був/була неактивний'; no mention of leaving the server, as in the source."
+  },
+  "settings.back": {
+    "text": "Назад",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Звукові ефекти",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "До кінця: {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form ('Until the end: ...'); 'До кінця події' (16) is over budget. For the developer: {time} arrives as '2d 4h'; Ukrainian needs '2 дн. 4 год', so format it per locale in code."
+  },
+  "daily.streak": {
+    "text": "{day}-й день поспіль! Повертайся завтра по нові нагороди!",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'{day}-й день' is correct for every number because 'день' is masculine; 'поспіль' (in a row) is how Ukrainian says the streak in a sentence (terms.json keeps 'серія' for labels). 'for more' = more rewards; 'по + accusative' as in the guide."
+  },
+  "tip.night": {
+    "text": "Порада: деякі риби клюють лише вночі.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "'клюють' = bite in the fishing sense."
+  },
+  "group.join": {
+    "text": "Вступи до групи й отримай 50 наживок безплатно!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "fixed",
+    "flags": [
+      "review:minor:terminology"
+    ],
+    "note": "Fixed number 50 takes the genitive plural 'наживок'; 'й' between vowels (guide).",
+    "review_reason": "shop.free says \"Безплатно\" (chosen to fit its tight price label), so the banner uses the same word for free instead of \"безкоштовно\"; both are standard, but one game should use one."
+  },
+  "leaderboard.biggest": {
+    "text": "Найважча риба",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Heaviest fish': 'Найбільший улов' would read as the biggest total haul, and the board ranks one fish by weight."
+  }
+}

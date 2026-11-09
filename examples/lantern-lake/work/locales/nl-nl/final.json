@@ -1,0 +1,332 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, glossary keep; the guide says game titles stay English for Dutch players.",
+    "blind_remark": "left in English, not translated"
+  },
+  "hud.cast": {
+    "text": "Werpen",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Angling verb for casting the line, infinitive as Dutch buttons write it. 'Ingooien' (8/8) is the more colloquial alternative if a plainer word is wanted."
+  },
+  "hud.reel": {
+    "text": "Inhalen",
+    "confidence": "medium",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'De lijn inhalen' = haul in the line (nautical/angling). Everyday 'inhalen' also means overtake, but on the bite button it reads as reeling. 'Binnenhalen' is clearer but 11 chars, over the 8 budget. Same verb as the pass Auto-inhalen.",
+    "blind_remark": "bare 'inhalen' most commonly means 'overtake' or 'catch up'; the fishing sense relies on context"
+  },
+  "hud.bait_left": {
+    "text": "Aas: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so 0, 1 and more all read right. 'Aas' is the standard Dutch word for fishing bait (mass noun, no plural)."
+  },
+  "hud.backpack": {
+    "text": "Rugzak",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "Gevangen: {fish} ({rarity})!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern ('Uitgebroed: {pet} ({rarity})!'): avoids de/het and the -e adjective ending that 'een {rarity} {fish}' would get wrong for half the fish."
+  },
+  "catch.escaped": {
+    "text": "De vis is ontsnapt...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'It' made explicit with the generic 'de vis' so it works for any species; a bare 'Hij is ontsnapt...' would also be correct."
+  },
+  "catch.new_record": {
+    "text": "Nieuw record! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "Developer: Dutch writes decimals with a comma (12,4 kg). The game sends 12.4; format {weight} by the player's LocaleId."
+  },
+  "fish.golden_carp": {
+    "text": "Goudkarper",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "One-word compound as Dutch fish names are written (cf. goudvis); de-word, never put after de/het in other strings."
+  },
+  "fish.lantern_eel": {
+    "text": "Lantaarnaal",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "lantaarn + aal keeps the glowing lantern idea; Dutch already names lanternfish 'lantaarnvis' and an electric eel 'sidderaal'. Alternative with the everyday eel word: 'Lantaarnpaling' (14). Mascot name: confirm the developer is fine with a non-English name in thumbnails."
+  },
+  "rarity.mythic": {
+    "text": "Mythisch",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide rarity ladder: ... Legendarisch, Mythisch. Bare tag form."
+  },
+  "shop.rods": {
+    "text": "Hengels",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "Hengel = fishing rod; never 'staven' (metal rods)."
+  },
+  "shop.equip": {
+    "text": "Uitrusten",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "Infinitive button, the usual Dutch game word for equip; pairs with the state label 'Uitgerust'.",
+    "blind_remark": "ambiguous: 'uitrusten' also commonly means 'to rest' or 'take a break'"
+  },
+  "shop.equipped": {
+    "text": "Uitgerust",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "Participle as a state label; 'In gebruik' (10) also fits if the developer prefers it.",
+    "blind_remark": "ambiguous: 'uitgerust' also commonly means 'rested'"
+  },
+  "shop.free": {
+    "text": "Gratis",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Kopen voor {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference wording. Prices of 1000+ should arrive as 1.000 for Dutch."
+  },
+  "pass.auto_reel": {
+    "text": "Automatisch inhalen",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "fixed",
+    "flags": [
+      "review:minor:fluency"
+    ],
+    "note": "Same verb as hud.reel. 'Auto-' as the automatic prefix, like Dutch Office's AutoHerstel; hyphen for the o-i vowel clash. Small risk a kid reads 'auto' as car. 'Automatisch inhalen' (19) is unambiguous if the card fits it. Match the store name in Creator Hub.",
+    "review_reason": "\"Auto-inhalen\" reads as \"een auto inhalen\" (overtake a car), as the blind back-translation did; \"Automatisch inhalen\" keeps the Reel verb without that reading, at 19 against an estimated 14, so the card name should wrap or scale."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Geluksaas</b> verdubbelt je kans op zeldzame vissen!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Geluksaas = geluk + aas, built from the glossary words luck and Bait like 'geluksdrankje'. 'zeldzame' matches the tier name Zeldzaam."
+  },
+  "sell.all": {
+    "text": "Alles verkopen",
+    "confidence": "medium",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": [],
+    "note": "14 chars, 2 over the estimated 12. It is the natural Dutch button; no shorter natural wording exists ('Verkoop alles' is 13 and imperative)."
+  },
+  "sell.done": {
+    "text": "Vissen verkocht: {count}. Munten verdiend: {coins}!",
+    "confidence": "medium",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Two label forms so count or coins = 1 never gives '1 vissen' or '1 munten'. Reads as a tally rather than one spoken sentence; that is the price of plural safety."
+  },
+  "sell.prompt": {
+    "text": "Druk op E om te verkopen",
+    "confidence": "medium",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "24 chars, 3 over the estimated 21; this is the natural Dutch prompt (the guide's 'Druk op E om te openen' is 22). Default ProximityPrompt UI widens to its text. If it must fit: 'Druk op E: verkopen' (19). Source-side: ActionText 'Verkopen' alone would serve phone and console too."
+  },
+  "ascend.button": {
+    "text": "Opstijgen",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Rise up to a higher level; neither religious ('Hemelvaart') nor climbing ('klimmen'). Can also mean take off (aircraft, sky lanterns), which suits the lantern theme. No established Dutch prestige verb; if Dutch players expect English like 'rebirth', keeping 'Ascend' is the fallback.",
+    "blind_remark": "everyday sense is 'rise' or 'take off' (as a plane does); no reset/prestige meaning comes through on its own"
+  },
+  "ascend.confirm": {
+    "text": "Nu opstijgen? Je begint opnieuw, maar vangt voortaan {bonus}% vaker zeldzame vissen.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Same Ascend word as the button. 'voortaan' (from now on) carries the permanence the context describes. Dutch percent has no space: 25%."
+  },
+  "weather.storm": {
+    "text": "Er komt storm aan! Zeldzame vissen bijten nu.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'bijten' is the normal Dutch angling verb for fish taking the bait; 'nu' renders the English progressive."
+  },
+  "quest.title": {
+    "text": "Opdrachten",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide: 'opdracht' is clearest for young players."
+  },
+  "quest.catch_n": {
+    "text": "Vang {n} keer een vis in de Maanlichtbaai",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "'keer' never changes after a number, so n = 1 stays correct ('1 vissen' would not). Moonlit Bay -> Maanlichtbaai; place names of this kind take 'de'. In-world signs must use the same name."
+  },
+  "quest.claim": {
+    "text": "Ophalen",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide: Claim = Ophalen, never 'Opeisen'."
+  },
+  "friends.boost": {
+    "text": "Met vrienden vissen geeft +{percent}% geluk",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Word order 'met vrienden vissen' makes 'vissen' read as the verb (fishing), not the plural fish. No space before %."
+  },
+  "trade.sent": {
+    "text": "Ruilverzoek verstuurd naar {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "'ruilen/ruilverzoek' as in Roblox's Dutch trade UI; never 'handelen'."
+  },
+  "trade.accept": {
+    "text": "{player} heeft je ruilverzoek geaccepteerd",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "34 chars, 1 over the estimated 33. 'Accepteren' is Roblox's Dutch trade word; no gendered form describes {player}. Shorter if needed: '{player} accepteert je ruilverzoek' (26)."
+  },
+  "codes.enter": {
+    "text": "Code invoeren",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference; infinitive placeholder, 'Enter' as type in."
+  },
+  "codes.redeemed": {
+    "text": "Code verzilverd! Geniet van je beloning.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "'verzilveren' is Roblox's Dutch word for redeeming codes. 'Veel plezier met je beloning' would be 46, one over 45."
+  },
+  "afk.kicked": {
+    "text": "Je was te lang inactief, dus het vissen is gestopt.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "fixed",
+    "flags": [
+      "review:minor:accuracy"
+    ],
+    "note": "Says only what the source says; no mention of leaving the server.",
+    "review_reason": "\"Je bent gestopt met vissen\" reads like quitting a habit (\"gestopt met roken\"), as if the player chose to stop; the context says the game stopped the fishing."
+  },
+  "settings.back": {
+    "text": "Terug",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Geluidseffecten",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": [],
+    "note": "One compound, sentence case."
+  },
+  "event.ends": {
+    "text": "Eindigt over {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Future 'in' is 'over' in Dutch. Developer: {time} arrives as '2d 4h'; 'h' looks untranslated to Dutch players, who expect '2 d 4 u' or '2 dagen 4 uur'. Format it per locale."
+  },
+  "daily.streak": {
+    "text": "Dag {day} van je reeks! Kom morgen terug voor meer beloningen.",
+    "confidence": "medium",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'Dag {day} van je reeks' stays correct for day = 1 ('{day} dagen op rij' would not). 'reeks' is the Dutch streak word (Duolingo-style); kids also say 'streak'. 'meer beloningen' spells out 'for more' as the context defines it."
+  },
+  "tip.night": {
+    "text": "Tip: sommige vissen bijten alleen 's nachts.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "'Tip:' is the Dutch label too; 'bijten' in the angling sense."
+  },
+  "group.join": {
+    "text": "Word lid van onze community voor 50 gratis aas!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "Roblox renamed groups to communities; Dutch help says 'lid worden van een community'. 'onze' is the natural Dutch for the studio's own group. '50 aas' counts game units the way Dutch games say '100 goud'.",
+    "blind_remark": "counting an uncountable noun ('50 aas') is slightly awkward"
+  },
+  "leaderboard.biggest": {
+    "text": "Zwaarste vangst",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Zwaarste' (heaviest) because the board ranks by weight; 'Grootste vangst' is the idiom but could be read as longest or most fish."
+  }
+}

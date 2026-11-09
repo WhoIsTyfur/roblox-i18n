@@ -1,0 +1,196 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "keep": true,
+    "note": "Game title kept byte-identical (glossary: keep); Slovenian players see and search the English Roblox title."
+  },
+  "hud.cast": {
+    "text": "Vrzi",
+    "confidence": "high",
+    "note": "2sg imperative of vreči (throw the line in); 4/8."
+  },
+  "hud.reel": {
+    "text": "Navij",
+    "confidence": "medium",
+    "note": "Perfective imperative of naviti (wind the line onto the reel), the angler's verb; not imperfective 'Navijaj', which also reads as 'cheer'. Same root as the pass Samonavijanje. 5/8. 'Potegni' (pull) is clearer to non-anglers but cannot share a root with the Auto Reel pass name."
+  },
+  "hud.bait_left": {
+    "text": "Vabe: {count}",
+    "confidence": "high",
+    "note": "Label form so 0, 1, 2, 3 and 5+ all read right (1 vaba, 2 vabi, 3 vabe, 5 vab). 6/10."
+  },
+  "hud.backpack": {
+    "text": "Nahrbtnik",
+    "confidence": "high"
+  },
+  "catch.success": {
+    "text": "{rarity} ulov: {fish}!",
+    "confidence": "medium",
+    "note": "Guide pattern '{rarity} ljubljenček izvaljen: {pet}!' with ulov (catch, m.) as head noun: avoids gendered 'Ujel si' / 'Ujela si' and keeps {fish} in the nominative after the colon, so the fish's gender never matters. Every rarity.* key must be masculine nominative (Redki, Legendarni, Mitski) to agree with ulov. 'Mitski ulov: Svetleča jegulja!' is 30 chars."
+  },
+  "catch.escaped": {
+    "text": "Riba je ušla ...",
+    "confidence": "high",
+    "note": "Generic riba (fish) as context allows; the past participle agrees with riba (f.), not the player. Space before the ellipsis per the guide."
+  },
+  "catch.new_record": {
+    "text": "Nov rekord! {weight} kg",
+    "confidence": "high",
+    "note": "Code issue for the developer: {weight} arrives as '12.4'; Slovenian writes the decimal comma '12,4' and uses the period as the group separator, so format the number per locale."
+  },
+  "fish.golden_carp": {
+    "text": "Zlati krap",
+    "confidence": "high",
+    "note": "Definite 'zlati' as a fixed species name; krap is the Slovenian carp (not 'zlata ribica', which is goldfish)."
+  },
+  "fish.lantern_eel": {
+    "text": "Svetleča jegulja",
+    "confidence": "medium",
+    "note": "'Glowing eel', keeping the glowing-lantern idea: an adjective from svetilka/laterna is unnatural, and 'Lampijonska jegulja' (paper lantern) is 19 > 18. 'Svetleča' matches the guide's 'svetleči krog'. 'Jegulja svetilka' (16) would keep 'lantern' literally if the owner wants it. 16/18."
+  },
+  "rarity.mythic": {
+    "text": "Mitski",
+    "confidence": "high",
+    "note": "Masculine definite tier label, standard Slovenian 'mitski' (mitska bitja); agrees with 'ulov' in catch.success like Legendarni and Redki. Ranks above Legendarni by the same game convention as English. 6/10."
+  },
+  "shop.rods": {
+    "text": "Palice",
+    "confidence": "high",
+    "note": "Fishing rods (ribiška palica); 'Ribiške palice' is 14 > 10, and in a fishing shop tab 'Palice' reads only as rods."
+  },
+  "shop.equip": {
+    "text": "Uporabi",
+    "confidence": "high",
+    "note": "'Use' as the button, paired with the state label 'V uporabi'; avoids calque 'Opremi', which takes the player, not the rod, as object. 7/10."
+  },
+  "shop.equipped": {
+    "text": "V uporabi",
+    "confidence": "high",
+    "note": "'In use': a state that needs no gender agreement with palica, as the context allows. 9/11."
+  },
+  "shop.free": {
+    "text": "Zastonj",
+    "confidence": "high",
+    "note": "'Brezplačno' is 10 > 8; 'zastonj' is standard Slovenian (no charge) and friendly for a kids' shop. 7/8."
+  },
+  "shop.buy_robux": {
+    "text": "Kupi za {price} Robux",
+    "confidence": "high"
+  },
+  "pass.auto_reel": {
+    "text": "Samonavijanje",
+    "confidence": "medium",
+    "note": "'Self-reeling', built like samopostrežba and samonavijalna ura; same root as hud.reel 'Navij'. 'Samodejno navijanje' is 19 > 14. 13/14. Creator Hub pass name should match."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Vaba sreče</b> podvoji možnost, da ujameš redko ribo!",
+    "confidence": "high",
+    "note": "Pass name follows the guide's 'Napoj sreče' (Lucky Potion) pattern from the glossary words vaba and sreča. Possessive 'your' dropped; present 'ujameš' is gender-free. 'redko' shares the Redki stem."
+  },
+  "sell.all": {
+    "text": "Prodaj vse",
+    "confidence": "high"
+  },
+  "sell.done": {
+    "text": "Prodano! Ribe: {count}, kovanci: +{coins}",
+    "confidence": "medium",
+    "note": "Label form for both numbers: 'Prodal si 12 rib za 340 kovancev' would be gendered and break for 1-4 (1 riba, 2 ribi, 3 ribe; 1 kovanec, 2 kovanca, 3 kovanci). The '+' carries the source's 'for {coins} coins' (coins earned). 27/40, 32 with the samples."
+  },
+  "sell.prompt": {
+    "text": "Pritisni E, da prodaš",
+    "confidence": "high",
+    "note": "Guide pattern 'Pritisni E, da odpreš'. 21/21, no margin; 'Prodaj s tipko E' (16) if it clips. E kept (glossary)."
+  },
+  "ascend.button": {
+    "text": "Vzpon",
+    "confidence": "medium",
+    "note": "Mechanic name as a noun, like the guide's 'Prerod' button; 'rise', as in a rise in rank. Avoids religious 'Vnebohod' and the climbing imperative 'Povzpni se', though 'vzpon' can also mean a mountain ascent. 'Napredovanje' is 12 > 10. 5/10."
+  },
+  "ascend.confirm": {
+    "text": "Vzpon zdaj? Začneš znova, redke ribe pa odslej ujameš za {bonus} % pogosteje.",
+    "confidence": "high",
+    "note": "Built like the guide's 'Prerod zdaj? Izgubiš kovance, dobiš pa ...'. Present tense avoids gendered 'boš ujel'; 'odslej' (from now on) carries the English future and the permanent bonus. 'za 25 % pogosteje' is the Slovenian way to say 'by 25% more often'. No-break space before % (CLDR); use a plain space if the font lacks U+00A0."
+  },
+  "weather.storm": {
+    "text": "Prihaja nevihta! Redke ribe zdaj prijemajo.",
+    "confidence": "high",
+    "note": "'prijemati' is the angler's verb for fish taking the bait (prijem = a bite), so it cannot be read as biting people; 'zdaj' renders the English progressive. 43/60."
+  },
+  "quest.title": {
+    "text": "Naloge",
+    "confidence": "high"
+  },
+  "quest.catch_n": {
+    "text": "Ujemi ribe v Mesečinskem zalivu: {n}",
+    "confidence": "medium",
+    "note": "Count after a colon because 'Ujemi {n} rib' breaks for 1-4 (1 ribo, 2 ribi, 3 ribe, 5 rib). Moonlit Bay as 'Mesečinski zaliv', named like real bays (Piranski zaliv), here in the locative. If in-world signs show the English name, they will not match (glossary: developer chose translate). 33/40."
+  },
+  "quest.claim": {
+    "text": "Prevzemi",
+    "confidence": "high",
+    "note": "Guide's Claim; never 'Zahtevaj' (demand). 8/10."
+  },
+  "friends.boost": {
+    "text": "Ribolov s prijatelji prinese +{percent} % sreče",
+    "confidence": "high",
+    "note": "Statement, not an order. Keeps '+'; no-break space before % (CLDR); use a plain space if the font lacks U+00A0. 'ribolov' is standard Slovenian (SSKJ)."
+  },
+  "trade.sent": {
+    "text": "Menjava ponujena igralcu {player}",
+    "confidence": "medium",
+    "note": "Head noun igralcu takes the dative so {player} is never declined, and 'ponujena' agrees with menjava, not the sender; generic masculine 'igralcu' is the guide's pattern. 'Prošnja za menjavo poslana igralcu' is 35 > 33, and the colon form '... poslana: {player}' could read as if {player} sent it. 25/33."
+  },
+  "trade.accept": {
+    "text": "{player} se strinja z menjavo",
+    "confidence": "medium",
+    "note": "Present 'se strinja' (agrees to) avoids gendered 'je sprejel' / 'je sprejela'; possessive 'your' dropped per the guide. Alternative 'Menjava sprejeta: {player}' (19). 21/33."
+  },
+  "codes.enter": {
+    "text": "Vnesi kodo",
+    "confidence": "high"
+  },
+  "codes.redeemed": {
+    "text": "Koda unovčena! Uživaj v nagradi.",
+    "confidence": "high",
+    "note": "Guide's 'unovči kodo' for redeem; possessive 'your' dropped. 32/45."
+  },
+  "afk.kicked": {
+    "text": "Predolgo te ni bilo, zato se je ribolov ustavil.",
+    "confidence": "medium",
+    "note": "Every 2sg past form (bil si nedejaven/nedejavna, nisi naredil/naredila) is gendered, so this uses impersonal 'te ni bilo' ('you were away'); 'se je ustavil' agrees with ribolov. Plainer alternative: 'Zaradi predolgega mirovanja se je ribolov ustavil.' No mention of removal from the server, as the source has none."
+  },
+  "settings.back": {
+    "text": "Nazaj",
+    "confidence": "high"
+  },
+  "settings.sfx": {
+    "text": "Zvočni učinki",
+    "confidence": "high"
+  },
+  "event.ends": {
+    "text": "Konec čez {time}",
+    "confidence": "high",
+    "note": "Guide's 'Konec dogodka čez {time}' is 20 > 14, and the banner above names the event. 10/14. {time} like '2d 4h' reads fine in Slovenian (d, h); if minutes are ever shown, ask the developer for 'min', since 'm' is the metre."
+  },
+  "daily.streak": {
+    "text": "{day}. dan zapored! Vrni se jutri po še več nagrad.",
+    "confidence": "high",
+    "note": "Ordinal '{day}. dan zapored' (day N in a row) is correct for every value, including 1, and carries the streak without a cryptic 'Niz'. 'for more' rendered as 'more rewards'. 46/62."
+  },
+  "tip.night": {
+    "text": "Namig: nekatere ribe prijemajo samo ponoči.",
+    "confidence": "high",
+    "note": "'Namig:' is the usual Slovenian tip label; same angling verb 'prijemati' as weather.storm. 43/60."
+  },
+  "group.join": {
+    "text": "Pridruži se naši skupini in dobi 50 brezplačnih vab!",
+    "confidence": "high",
+    "note": "Guide's 'Pridruži se naši skupini' (the studio's own group). 50 is fixed, so genitive plural 'vab' is always right. Contains č and ž: needs a font that has them (not Fredoka One). 52/60."
+  },
+  "leaderboard.biggest": {
+    "text": "Najtežji ulov",
+    "confidence": "high",
+    "note": "'Heaviest catch', since the board ranks by weight; 'Največji ulov' (13) is equally natural if the owner prefers. 13/18."
+  }
+}

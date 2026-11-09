@@ -1,0 +1,319 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title kept byte-identical (glossary: keep); Czech players search and see the English Roblox title.",
+    "blind_remark": "not translated; still in English"
+  },
+  "hud.cast": {
+    "text": "Nahodit",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Angler's verb for casting (nahodit prut); infinitive, the Czech button norm. 7/8."
+  },
+  "hud.reel": {
+    "text": "Navíjet",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "Angler's verb for reeling in (navíjet vlasec); imperfective fits the ongoing action while the fish bites. Same root as the pass Autonavíjení. 7/8."
+  },
+  "hud.bait_left": {
+    "text": "Návnady: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so 0, 1, 2-4 and 5+ all read correctly (1 návnada, 2 návnady, 5 návnad). 9/10."
+  },
+  "hud.backpack": {
+    "text": "Batoh",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "{rarity} úlovek: {fish}!",
+    "confidence": "medium",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern '{rarity} mazlíček: {pet}!' with úlovek (catch) as head noun: avoids gendered 'Chytil jsi' and keeps {fish} in the nominative. Masculine úlovek agrees with masculine rarity tags (Vzácný, Mýtický; Legendární is the same for every gender), so every rarity.* key must be the masculine nominative."
+  },
+  "catch.escaped": {
+    "text": "Ryba ti utekla…",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "Generic ryba as the context allows; past tense agrees with ryba, not the player. Trailing ellipsis kept for the disappointed tone the context asks for, as the single character the guide uses."
+  },
+  "catch.new_record": {
+    "text": "Nový rekord! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "No-break space before kg. For the developer: {weight} arrives as 12.4, but Czech writes 12,4; format it with a decimal comma for cs-cz."
+  },
+  "fish.golden_carp": {
+    "text": "Zlatý kapr",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "Lucernový úhoř",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Invented name: lucerna (lantern) keeps the glowing-lantern idea and reads like a Czech species name. Alternative: Světélkující úhoř (glowing eel), which loses the lantern echo. 14/18."
+  },
+  "rarity.mythic": {
+    "text": "Mýtický",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Masculine tier form, per the guide's rarity rule and agreeing with úlovek in catch.success; Czech gamers read Mýtický as above Legendární."
+  },
+  "shop.rods": {
+    "text": "Pruty",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "Prut is the angler's word for a fishing rod (not tyč, a metal rod)."
+  },
+  "shop.equip": {
+    "text": "Vybavit",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "Standard Czech game verb for equip; pairs with the status label Vybaveno."
+  },
+  "shop.equipped": {
+    "text": "Vybaveno",
+    "confidence": "medium",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "Impersonal neuter status form, like Zakoupeno or Odemčeno in Czech UI: agrees with neither the rod nor the player's gender. Alternative: Používáš (you're using it)."
+  },
+  "shop.free": {
+    "text": "Zdarma",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Koupit za {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference wording; Robux undeclined after the number."
+  },
+  "pass.auto_reel": {
+    "text": "Autonavíjení",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Built from navíjet (hud.reel) with the solid auto- prefix, as in autopilot; Automatické navíjení (20) is over the budget. 12/14. The Creator Hub pass name should match."
+  },
+  "pass.lucky_bait": {
+    "text": "<b>Návnada štěstí</b> zdvojnásobí šanci na vzácné ryby!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Pass name follows the guide's Lucky Potion -> Lektvar štěstí pattern (návnada + štěstí). 'your' dropped; vzácné matches the Rare tier Vzácný."
+  },
+  "sell.all": {
+    "text": "Prodat vše",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": [],
+    "note": "10/12; Prodat všechno is 14."
+  },
+  "sell.done": {
+    "text": "Prodáno! Ryby: {count}, mince: +{coins}",
+    "confidence": "medium",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so count and coins of 1 still read correctly (no noun after a number); Prodáno is impersonal, so no gender. The + marks coins earned, standing in for 'for {coins} coins'."
+  },
+  "sell.prompt": {
+    "text": "Prodej klávesou E",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern 'Otevři klávesou E'; avoids the calque 'pro prodej'. 17/21.",
+    "blind_remark": "ambiguous: \"Prodej\" can also read as the noun \"Sale\" (\"Sale with the E key\"); also names the E key, which does not fit touch or gamepad players"
+  },
+  "ascend.button": {
+    "text": "Vzestup",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Vzestup = rise, ascent in the figurative sense (no religious or climbing reading). Noun on the button per the Czech button norm. Alternative: Prestiž, which Czech gamers know from shooters but loses the Ascend image."
+  },
+  "ascend.confirm": {
+    "text": "Provést vzestup teď? Začneš od začátku, ale vzácné ryby budeš chytat o {bonus} % častěji.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Infinitive question as in the guide's rebirth.confirm; future tense (Začneš, budeš chytat) avoids gender. Space before % because it is a quantity (o 25 % častěji). No-break spaces after the preposition o and before %."
+  },
+  "weather.storm": {
+    "text": "Blíží se bouřka! Vzácné ryby berou.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'Ryby berou' is the Czech angler's idiom for fish biting."
+  },
+  "quest.title": {
+    "text": "Úkoly",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Chyť ryby v Měsíční zátoce: {n}",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Count after a colon so n = 1 also works (1 rybu / 2 ryby / 5 ryb otherwise). Moonlit Bay -> Měsíční zátoka (terms.json), here in the locative. Alternative if the label reads odd: 'Chyť rybu v Měsíční zátoce ({n}×)'."
+  },
+  "quest.claim": {
+    "text": "Získat",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide: Claim -> Získat, never nárokovat."
+  },
+  "friends.boost": {
+    "text": "Rybaření s kamarády ti dává +{percent} % ke štěstí",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Statement, not an order. kamarády per the guide (přátelé can read as boyfriends). Space before % because it is a quantity of luck (+10 % ke štěstí), unlike the adjectival '+10% bonus' in the guide."
+  },
+  "trade.sent": {
+    "text": "Žádost o výměnu odeslána hráči {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "Head noun hráči (dative) carries the case, so {player} is never declined; odeslána agrees with žádost. 32/33, tight."
+  },
+  "trade.accept": {
+    "text": "{player} souhlasí s výměnou",
+    "confidence": "medium",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "Present tense, as the guide advises, avoids gendered přijal/přijala for {player}; 'agrees to the trade' is how a Czech notification would say it. 'your' dropped. Alternative: 'Hráč {player} přijal výměnu' (head-noun pattern)."
+  },
+  "codes.enter": {
+    "text": "Zadej kód",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference; ty-imperative."
+  },
+  "codes.redeemed": {
+    "text": "Kód uplatněn! Užij si odměnu.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "Redeem = uplatnit (guide); uplatněn agrees with kód."
+  },
+  "afk.kicked": {
+    "text": "Už moc dlouho nic neděláš, takže se rybaření zastavilo.",
+    "confidence": "medium",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "Present tense for the idling (still true when the message shows) avoids gendered 'byl jsi nečinný / přestal jsi'; zastavilo agrees with rybaření. No kick added."
+  },
+  "settings.back": {
+    "text": "Zpět",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Zvukové efekty",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Končí za {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {time} arrives as '2d 4h'; Czech writes '2 d 4 h' with spaces (d and h stay valid)."
+  },
+  "daily.streak": {
+    "text": "Série: {day}. den! Vrať se zítra pro další odměnu.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form with the ordinal period (3. den) works for every day, including 1. 'for more' as one more daily reward, as in the guide's reward.come_back."
+  },
+  "tip.night": {
+    "text": "Tip: některé ryby berou jen v noci.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "'berou' is the angler's word for biting. Lowercase after the colon, the Czech default. No-break space after v."
+  },
+  "group.join": {
+    "text": "Vstup do skupiny a získej 50 návnad zdarma!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide wording for groups; 50 is a fixed number, so the genitive plural návnad is correct. No-break space after a."
+  },
+  "leaderboard.biggest": {
+    "text": "Nejtěžší úlovek",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "Nejtěžší (heaviest) states the weight ranking the context asks for; Největší úlovek is the looser angler phrase."
+  }
+}

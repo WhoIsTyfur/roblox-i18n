@@ -1,0 +1,202 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "role": "title",
+    "where": "Loading screen, game title"
+  },
+  "hud.cast": {
+    "text": "ပစ်ချရန်",
+    "role": "button",
+    "where": "Gameplay HUD, big round action button; probably the same slot that turns into hud.reel when a fish bites"
+  },
+  "hud.reel": {
+    "text": "ဆွဲတင်ရန်",
+    "role": "button",
+    "where": "Gameplay HUD, big round action button shown while a fish bites (replaces hud.cast)"
+  },
+  "hud.bait_left": {
+    "text": "ငါးစာ {count}",
+    "role": "label",
+    "where": "Gameplay HUD, counter of bait the player has left"
+  },
+  "hud.backpack": {
+    "text": "ကျောပိုးအိတ်",
+    "role": "button",
+    "where": "Gameplay HUD, button that opens the inventory of caught fish"
+  },
+  "catch.success": {
+    "text": "{rarity} {fish} မိပြီ!",
+    "role": "toast",
+    "where": "Toast after a fish is landed"
+  },
+  "catch.escaped": {
+    "text": "ငါး လွတ်သွားပြီ...",
+    "role": "toast",
+    "where": "Toast when the hooked fish escapes"
+  },
+  "catch.new_record": {
+    "text": "စံချိန်သစ်! {weight} ကီလို",
+    "role": "toast",
+    "where": "Toast after catching a record-weight fish"
+  },
+  "fish.golden_carp": {
+    "text": "ရွှေငါးကြင်း",
+    "role": "label",
+    "where": "Fish card in the backpack; also inserted as {fish} into catch.success"
+  },
+  "fish.lantern_eel": {
+    "text": "မီးအိမ်ငါးရှဉ့်",
+    "role": "label",
+    "where": "Fish card in the backpack; also inserted as {fish} into catch.success"
+  },
+  "rarity.mythic": {
+    "text": "နတ်ဒဏ္ဍာရီ",
+    "role": "label",
+    "where": "Rarity tag on fish cards; also inserted as {rarity} into catch.success"
+  },
+  "shop.rods": {
+    "text": "ငါးမျှားတံ",
+    "role": "button",
+    "where": "Shop, tab listing fishing rods"
+  },
+  "shop.equip": {
+    "text": "သုံးရန်",
+    "role": "button",
+    "where": "Shop, button under a rod the player owns"
+  },
+  "shop.equipped": {
+    "text": "သုံးနေဆဲ",
+    "role": "label",
+    "where": "Shop, label on the rod currently in use"
+  },
+  "shop.free": {
+    "text": "အခမဲ့",
+    "role": "label",
+    "where": "Shop, price label on the starter rod"
+  },
+  "shop.buy_robux": {
+    "text": "{price} Robux ဖြင့် ဝယ်ရန်",
+    "role": "button",
+    "where": "Shop, purchase button on a game pass card"
+  },
+  "pass.auto_reel": {
+    "text": "အလိုအလျောက် ဆွဲတင်",
+    "role": "product name",
+    "where": "Shop, name on the Auto Reel game pass card"
+  },
+  "pass.lucky_bait": {
+    "text": "<b>ကံကောင်းငါးစာ</b> က ရှားပါးငါး မိနိုင်ခြေကို နှစ်ဆ တိုးပေးတယ်!",
+    "role": "item description",
+    "where": "Shop, description on the Lucky Bait game pass card"
+  },
+  "sell.all": {
+    "text": "အကုန်ရောင်းရန်",
+    "role": "button",
+    "where": "Fish market, button that sells every fish in the backpack"
+  },
+  "sell.done": {
+    "text": "ငါး {count} ကောင် ရောင်းပြီး ဒင်္ဂါး {coins} ပြား ရပြီ!",
+    "role": "toast",
+    "where": "Toast after selling at the fish market"
+  },
+  "sell.prompt": {
+    "text": "ရောင်းရန် E နှိပ်ပါ",
+    "role": "prompt",
+    "where": "Proximity prompt at the fish market stall (in the 3D world)"
+  },
+  "ascend.button": {
+    "text": "အဆင့်မြှင့်ရန်",
+    "role": "button",
+    "where": "Ascend (prestige) button; exact screen not known"
+  },
+  "ascend.confirm": {
+    "text": "အခု အဆင့်မြှင့်မလား။ အစကနေ ပြန်စရမယ်၊ ဒါပေမယ့် ရှားပါးငါးတွေ {bonus}% ပိုမိမယ်။",
+    "role": "dialog body",
+    "where": "Confirm dialog shown after pressing Ascend"
+  },
+  "weather.storm": {
+    "text": "မုန်တိုင်း လာနေပြီ! ရှားပါးငါးတွေ စာဟပ်နေပြီ။",
+    "role": "banner",
+    "where": "Server-wide banner during a storm weather event"
+  },
+  "quest.title": {
+    "text": "မစ်ရှင်",
+    "role": "title",
+    "where": "Quests panel title"
+  },
+  "quest.catch_n": {
+    "text": "လရောင်ကမ်းကွေ့မှာ ငါး {n} ကောင် ဖမ်းပါ",
+    "role": "label",
+    "where": "Quests panel, one quest line"
+  },
+  "quest.claim": {
+    "text": "ရယူရန်",
+    "role": "button",
+    "where": "Quests panel, button on a finished quest"
+  },
+  "friends.boost": {
+    "text": "သူငယ်ချင်းတွေနဲ့ ငါးမျှားရင် ကံ +{percent}% ရမယ်",
+    "role": "label",
+    "where": "Boost panel, info line"
+  },
+  "trade.sent": {
+    "text": "{player} ကို လဲလှယ်ဖို့ တောင်းဆိုလိုက်ပြီ",
+    "role": "toast",
+    "where": "Toast after you send a trade request"
+  },
+  "trade.accept": {
+    "text": "{player} က လဲလှယ်မှုကို လက်ခံလိုက်ပြီ",
+    "role": "toast",
+    "where": "Toast when the other player accepts your trade request"
+  },
+  "codes.enter": {
+    "text": "ကုဒ် ထည့်ပါ",
+    "role": "text box placeholder",
+    "where": "Codes panel, placeholder in the text box where players type a promo code"
+  },
+  "codes.redeemed": {
+    "text": "ကုဒ် အောင်မြင်ပြီ! ဆုလာဘ်နဲ့ ပျော်ပါစေ။",
+    "role": "toast",
+    "where": "Toast after a valid promo code is accepted"
+  },
+  "afk.kicked": {
+    "text": "အကြာကြီး မလှုပ်ရှားဘဲ နေလို့ ငါးမျှားတာ ရပ်သွားပြီ။",
+    "role": "popup",
+    "where": "Message after 15 minutes idle; may be a kick message or an in-game popup (not known)"
+  },
+  "settings.back": {
+    "text": "နောက်သို့",
+    "role": "button",
+    "where": "Settings panel, button that closes the panel"
+  },
+  "settings.sfx": {
+    "text": "အသံ",
+    "role": "label",
+    "where": "Settings panel, row label (likely beside a toggle or slider)"
+  },
+  "event.ends": {
+    "text": "ပြီးဖို့ {time} ကျန်တယ်",
+    "role": "label",
+    "where": "Label under an event banner (probably the weather.storm banner or a timed event; not known)"
+  },
+  "daily.streak": {
+    "text": "ဆက်တိုက် {day} ရက်မြောက်! ဆုလာဘ် ထပ်ယူဖို့ မနက်ဖြန် ပြန်လာခဲ့နော်!",
+    "role": "popup",
+    "where": "Daily login reward panel, main message"
+  },
+  "tip.night": {
+    "text": "အကြံပြုချက် : တချို့ ငါးတွေက ညဘက်မှပဲ စာဟပ်တယ်။",
+    "role": "label",
+    "where": "Loading screen, tip line"
+  },
+  "group.join": {
+    "text": "Community ထဲ ဝင်ပြီး ငါးစာ 50 ခု အခမဲ့ ရယူပါ!",
+    "role": "banner",
+    "where": "Banner inviting players to join the studio's Roblox group"
+  },
+  "leaderboard.biggest": {
+    "text": "အလေးဆုံးငါး",
+    "role": "title",
+    "where": "Lobby leaderboard title (in-world board)"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "title": {
+    "verdict": "ok"
+  },
+  "hud.cast": {
+    "verdict": "ok"
+  },
+  "hud.reel": {
+    "verdict": "ok"
+  },
+  "hud.bait_left": {
+    "verdict": "ok"
+  },
+  "hud.backpack": {
+    "verdict": "ok"
+  },
+  "catch.success": {
+    "verdict": "ok"
+  },
+  "catch.escaped": {
+    "verdict": "ok"
+  },
+  "catch.new_record": {
+    "verdict": "ok"
+  },
+  "fish.golden_carp": {
+    "verdict": "ok"
+  },
+  "fish.lantern_eel": {
+    "verdict": "ok"
+  },
+  "rarity.mythic": {
+    "verdict": "ok"
+  },
+  "shop.rods": {
+    "verdict": "ok"
+  },
+  "shop.equip": {
+    "verdict": "ok"
+  },
+  "shop.equipped": {
+    "verdict": "ok"
+  },
+  "shop.free": {
+    "verdict": "ok"
+  },
+  "shop.buy_robux": {
+    "verdict": "ok"
+  },
+  "pass.auto_reel": {
+    "verdict": "ok"
+  },
+  "pass.lucky_bait": {
+    "verdict": "ok"
+  },
+  "sell.all": {
+    "verdict": "ok"
+  },
+  "sell.done": {
+    "verdict": "fix",
+    "text": "Sprzedane ryby: {count}. Monety: +{coins}!",
+    "category": "fluency",
+    "severity": "minor",
+    "reason": "\"Dostajesz monety: {coins}!\" chains a verb onto a label form and reads like a form; \"Monety: +{coins}!\" is the plural-safe reward readout players know from games."
+  },
+  "sell.prompt": {
+    "verdict": "ok"
+  },
+  "ascend.button": {
+    "verdict": "ok"
+  },
+  "ascend.confirm": {
+    "verdict": "ok"
+  },
+  "weather.storm": {
+    "verdict": "ok"
+  },
+  "quest.title": {
+    "verdict": "ok"
+  },
+  "quest.catch_n": {
+    "verdict": "ok"
+  },
+  "quest.claim": {
+    "verdict": "ok"
+  },
+  "friends.boost": {
+    "verdict": "ok"
+  },
+  "trade.sent": {
+    "verdict": "fix",
+    "text": "Wysłano prośbę o wymianę: {player}",
+    "category": "accuracy",
+    "severity": "minor",
+    "reason": "The sender's confirmation became third-person narration (\"{player} is getting a trade request\") that no longer says you sent it; impersonal \"Wysłano\" keeps \"sent\", has no gender and leaves {player} in the nominative label slot (26 of 33)."
+  },
+  "trade.accept": {
+    "verdict": "ok"
+  },
+  "codes.enter": {
+    "verdict": "ok"
+  },
+  "codes.redeemed": {
+    "verdict": "ok"
+  },
+  "afk.kicked": {
+    "verdict": "fix",
+    "text": "Zbyt długo bez aktywności, więc łowienie zostało przerwane.",
+    "category": "fluency",
+    "severity": "minor",
+    "reason": "\"łowienie się zatrzymało\" treats the player's fishing like a machine stopping on its own; \"łowienie zostało przerwane\" is the natural way to say the game stopped it."
+  },
+  "settings.back": {
+    "verdict": "ok"
+  },
+  "settings.sfx": {
+    "verdict": "ok"
+  },
+  "event.ends": {
+    "verdict": "ok"
+  },
+  "daily.streak": {
+    "verdict": "ok"
+  },
+  "tip.night": {
+    "verdict": "ok"
+  },
+  "group.join": {
+    "verdict": "ok"
+  },
+  "leaderboard.biggest": {
+    "verdict": "ok"
+  }
+}

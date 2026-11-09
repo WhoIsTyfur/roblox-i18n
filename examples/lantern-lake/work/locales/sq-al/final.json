@@ -1,0 +1,327 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Glossary keep: brand title, no Albanian title given; the guide keeps game titles as listed.",
+    "blind_remark": "left in English, not translated"
+  },
+  "hud.cast": {
+    "text": "Hidh",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": [],
+    "note": "Imperative of 'hedh' (throw), the angling verb in 'hidh grepin' (cast the hook); next to Tërhiq the fishing sense is clear."
+  },
+  "hud.reel": {
+    "text": "Tërhiq",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "'Tërhiq' = pull (the fish) in; same verb as the Auto Reel pass (Autotërheqje)."
+  },
+  "hud.bait_left": {
+    "text": "Karrem: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so 0, 1 and 12 all read right; 'karrem' (fishing bait) used as a mass noun, like 'Bait: 12'."
+  },
+  "hud.backpack": {
+    "text": "Çanta",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide vocabulary: inventory/backpack = çanta; the short form fits the 10-char button."
+  },
+  "catch.success": {
+    "text": "Kape: {fish} ({rarity})!",
+    "confidence": "medium",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern 'Çele: {pet} ({rarity})': 'Kape' = you caught (aorist). The colon keeps {fish} out of the accusative ('Krap i artë' would have to become 'Krap të artë'), brackets keep {rarity} out of agreement. 'Kape' can also read as the imperative 'catch it', but after a landed fish the past sense is the natural one. Fixes the English a/an issue too.",
+    "blind_remark": "\"Kape\" can also be read as the command \"Catch it!\""
+  },
+  "catch.escaped": {
+    "text": "Të iku peshku…",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'The fish got away from you' with the ethical dative 'të', the everyday way to say it; names the generic 'peshku'. Single ellipsis character per the guide."
+  },
+  "catch.new_record": {
+    "text": "Rekord i ri! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "For the developer: {weight} arrives as '12.4'; Albanian writes '12,4' (decimal comma). Please format it per Player.LocaleId."
+  },
+  "fish.golden_carp": {
+    "text": "Krap i artë",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": [],
+    "note": "'krap' is the real carp; base form (indefinite nominative), sentence case per the guide."
+  },
+  "fish.lantern_eel": {
+    "text": "Ngjalë fener",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "'Ngjalë' (eel) + appositive 'fener' (lantern), keeping the glowing-lantern idea; base form, sentence case. Invented name, so a native should confirm it sounds like a creature name; 'Ngjalë me fener' (15) is the alternative."
+  },
+  "rarity.mythic": {
+    "text": "Mitik",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide rarity tags use the masculine dictionary form (Legjendar, Epik, Mitik); reads above Legjendar.",
+    "blind_remark": "masculine form; does not agree with a feminine fish name such as \"Ngjalë fener\" when inserted beside it"
+  },
+  "shop.rods": {
+    "text": "Kallamat",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "'kallam peshkimi' = fishing rod; definite plural as a tab label, in a fishing shop the bare word is unambiguous."
+  },
+  "shop.equip": {
+    "text": "Përdore",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": [],
+    "note": "'Use it' (imperative + clitic, like the guide's 'Merre'); Albanian has no natural 'equip' button verb. Pairs with the state label 'Në përdorim'."
+  },
+  "shop.equipped": {
+    "text": "Në përdorim",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "'In use': a state, not an action, and needs no agreement with the rod. Exactly 11, at budget."
+  },
+  "shop.free": {
+    "text": "Falas",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Bli për {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference string. For the developer: a price of 1000+ should arrive as '1000' or '12 500', not '1,000'."
+  },
+  "pass.auto_reel": {
+    "text": "Autotërheqje",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "auto- compound of 'tërheqje' (the noun of Tërhiq), like 'autokorrigjim'; 'Tërheqje automatike' (19) is over 14. The Creator Hub pass name should match.",
+    "blind_remark": "coined compound; \"auto-\" often means \"car\" in Albanian and \"tërheqje\" also means towing or withdrawal, so it can read as \"car towing\""
+  },
+  "pass.lucky_bait": {
+    "text": "Me <b>Karrem fati</b>, shansi yt për peshq të rrallë dyfishohet!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Restructured ('With Lucky Bait, your chance of rare fish doubles') so the pass name stays in its base form inside the bold tags. 'Karrem fati' follows the guide's 'Eliksir fati' pattern; 'të rrallë' matches Rare."
+  },
+  "sell.all": {
+    "text": "Shit çdo gjë",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": [],
+    "note": "'Sell everything' (12, at budget); 'Shiti të gjithë' (15) and 'Shit gjithçka' (13) are over 12."
+  },
+  "sell.done": {
+    "text": "Peshq të shitur: {count}. Fitove monedha: {coins}!",
+    "confidence": "medium",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Two label parts so count = 1 or coins = 1 stay correct ('1 peshq', '1 monedha' would be wrong). For the developer: coins of 1000+ should arrive as '1250' / '12 500', not '1,250'."
+  },
+  "sell.prompt": {
+    "text": "Shtyp E për të shitur",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern 'Shtyp E për ta hapur'; 21, at budget. Source-side: touch and console players have no E key."
+  },
+  "ascend.button": {
+    "text": "Avanco",
+    "confidence": "medium",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "'Advance (in rank)': 'avancoj' is the everyday word for moving up a rank, with no religious or climbing sense ('Ngjitu' = climb, 'Lartësohu' sounds spiritual). Kept distinct from the guide's rebirth word 'Rilindu'."
+  },
+  "ascend.confirm": {
+    "text": "Avancon tani? Do të nisësh nga e para, por do të kapësh peshq të rrallë {bonus}% më shpesh.",
+    "confidence": "medium",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "Same verb as ascend.button, as a present-tense question ('Avancon tani?'), the natural way to offer a choice. 'nga e para' = from scratch. Percent with no space, per the guide."
+  },
+  "weather.storm": {
+    "text": "Po vjen një stuhi! Peshqit e rrallë po hanë karremin.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'po hanë karremin' = are taking the bait, the angling idiom for biting; 'e rrallë' matches Rare."
+  },
+  "quest.title": {
+    "text": "Misionet",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide: quest = mision ('detyrë' sounds like homework)."
+  },
+  "quest.catch_n": {
+    "text": "Kap peshq në Gjirin e Hënës: {n}",
+    "confidence": "high",
+    "source_hash": "01c4d913ec16",
+    "status": "ok",
+    "flags": [],
+    "note": "Generic plural + colon so n = 1 is correct ('1 peshq' would be wrong). Moonlit Bay = 'Gjiri i Hënës', inflected to 'Gjirin e Hënës' after 'në' as Albanian grammar requires; geographic names capitalize every word but the article ('Mali i Zi')."
+  },
+  "quest.claim": {
+    "text": "Merre",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide reference for Claim ('take it'); never 'Kërko' or 'Pretendo'."
+  },
+  "friends.boost": {
+    "text": "Peshkimi me miqtë të jep +{percent}% fat",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "'Fishing with friends gives you +10% luck'; 'të jep' (gives you) is the natural verb. 'fat' = luck, same word as in 'Karrem fati'."
+  },
+  "trade.sent": {
+    "text": "Ftesa për shkëmbim u dërgua te {player}",
+    "confidence": "medium",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "'Ftesa' (invite) instead of 'Kërkesa' (request): the 'Kërkesa' version is 34, over 33. 'te' takes the nominative, so {player} needs no ending."
+  },
+  "trade.accept": {
+    "text": "{player} e pranoi shkëmbimin",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "Past tense, no gender marking; clitic 'e' doubles the definite object as Albanian requires. 'your' is implied and dropped."
+  },
+  "codes.enter": {
+    "text": "Shkruaj kodin",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "Kodi u aktivizua! Gëzoje shpërblimin.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide: redeem = 'Aktivizo'. 'Gëzoje shpërblimin' = enjoy the reward."
+  },
+  "afk.kicked": {
+    "text": "Qëndrove pa lëvizur tepër gjatë, ndaj peshkimi u ndal.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "fixed",
+    "flags": [
+      "review:minor:fluency"
+    ],
+    "note": "'tepër gjatë' = too long; no mention of removal from the server, matching the source.",
+    "review_reason": "'Ishe joaktiv' puts a masculine adjective on the player (a girl would be 'joaktive'); the guide says use verbs, and 'peshkimi u ndal' says the fishing was stopped, as the context note intends."
+  },
+  "settings.back": {
+    "text": "Kthehu",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": [],
+    "note": "'Go back', the usual Albanian back-button imperative."
+  },
+  "settings.sfx": {
+    "text": "Efektet zanore",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Mbaron pas {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Guide pattern. For the developer: {time} arrives as '2d 4h'; 'd' and 'h' are not Albanian abbreviations. Please format it as '2 ditë 4 orë'."
+  },
+  "daily.streak": {
+    "text": "{day} ditë me radhë! Kthehu nesër për më shumë shpërblime.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'{day} days in a row!': 'ditë' has the same form in singular and plural, so day = 1 is correct. 'for more' made explicit as 'more rewards' (the panel's meaning)."
+  },
+  "tip.night": {
+    "text": "Këshillë: disa peshq e hanë karremin vetëm natën.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "'e hanë karremin' = take the bait (fishing sense of bite); lowercase after the colon per the guide."
+  },
+  "group.join": {
+    "text": "Bashkohu me grupin tonë dhe merr falas 50 copë karrem!",
+    "confidence": "medium",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "'50 copë karrem' (50 pieces of bait) avoids the plural of 'karrem', whose form I am unsure of. 'grup' per the guide (Roblox has no Albanian UI; 'komuniteti' would match the English 'Communities'). 'grupin tonë' as in the guide's reference string."
+  },
+  "leaderboard.biggest": {
+    "text": "Peshku më i rëndë",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "'The heaviest fish': biggest by weight, as the board ranks."
+  }
+}
