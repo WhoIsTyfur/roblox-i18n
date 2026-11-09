@@ -19,9 +19,10 @@ elsewhere, pass `--work <folder>` before the command:
 An agent's brief is the text below the `---` line of its file in
 `references/agents/`, with the placeholders filled in: `{SKILL}` is
 `<skill>`, `{WORK}` the work folder, `{LOCALE}` a locale id (`es-mx`),
-`{LOCALE_NAME}` its name from `data/locales.json`, and `{NN}` the batch
-number with two digits (`01`, as in `batch-01.draft.json`). Commands take
-the batch as a plain number (`backpack es-mx 1`).
+`{LOCALE_NAME}` its name from `data/locales.json`, `{NN}` the batch number
+and `{PART}` a context analyst's part number, each with two digits (`01`,
+as in `batch-01.draft.json`). Commands take the batch as a plain number
+(`backpack es-mx 1`).
 
 ## Modes
 | Ask | Command arg | Targets |
@@ -47,9 +48,9 @@ user means? Ask once; default `single` for one named language.
 2. **Plan the run.** `i18n.py plan <mode> [target]` picks what needs work:
    new strings, strings whose source changed, missing locales. Existing human
    translations are kept (`--retranslate` to redo, `--audit` to review them
-   instead). It prints locales, batches (150 strings each) and agent runs.
-   For `main` or `all`, tell the user the agent count and get a yes before
-   step 5.
+   instead). It prints locales, batches (150 strings each) and agent runs,
+   and writes the context analysts' input files for step 4. For `main` or
+   `all`, tell the user the agent count and get a yes before step 5.
 
 3. **Localizability audit.** Read the strings and, when the game source is
    available, the code that shows them. Write `.roblox-i18n/audit.md`:
@@ -73,23 +74,40 @@ user means? Ask once; default `single` for one named language.
    - text baked into images or decals.
    Report only; change game code only if the user asks.
 
-4. **Context, glossary, tone.** Spawn one agent with
-   `references/agents/context-analyst.md`. It writes `context.json` (where
-   each string shows, UI role, length budget, parameter meanings and sample
-   values, strings on the same screen) and `glossary.json` (every game term
-   with a translate / keep / transliterate decision and reason). Rules:
-   `references/context-and-dnt.md`. When both files exist from an earlier
-   run, the analyst only adds the strings and terms that are new.
-   **Checkpoint:** show the user the tone line, the keep-list and any term
-   whose decision was a judgment call; apply their edits. Skip only if they
-   said not to ask; then every `"ask": true` term keeps the analyst's
-   proposed decision, set `ask` to false, and list those terms in the final
-   summary. A wrong glossary entry repeats in every language.
-   Then `i18n.py pack`: it stops if a string has no context or a glossary
-   decision is invalid, and writes each batch's translator input
-   (`batch-NN.in.json`: only that batch's strings, with their context and
-   how the strings next to them already read in that locale). Run it again
-   after any edit to `context.json`.
+4. **Context, glossary, tone.** `plan` wrote one input file per context
+   analyst, `context/part-NN.in.json`: up to 150 strings that have no
+   context entry yet, with strings that share a key prefix or a captured
+   location kept together. A small table has one part, a large one several;
+   with none, every string is already described, so go straight to `pack`.
+   When `plan` says no analyst will see the whole table, describe the game
+   yourself first, from the audit, the game's code and what the user told
+   you: save `{"game": {"title", "genre", "core_loop", "audience", "tone"},
+   "strings": {}}` as `context.json`, then run `i18n.py contextpack` so
+   every part carries it.
+   Spawn one agent per part with `references/agents/context-analyst.md`,
+   all at once. Each writes `part-NN.context.json` (where each of its
+   strings shows, UI role, length budget, parameter meanings and sample
+   values, strings on the same screen) and `part-NN.glossary.json` (the
+   game terms it found, each with a translate / keep / transliterate
+   decision and reason). Rules: `references/context-and-dnt.md`. If an
+   analyst cannot finish a part, `i18n.py contextpack --part <n>` splits
+   again with at most `<n>` strings each.
+   Then `i18n.py pack`: it merges the parts into `context.json` and
+   `glossary.json` (entries from earlier runs stay as they are), and
+   writes each batch's translator input (`batch-NN.in.json`: only that
+   batch's strings, with their context and how the strings next to them
+   already read in that locale). It stops if a part is unfinished, a
+   string has no context, the game is not described, a glossary decision is
+   invalid, or two analysts decided the same term differently.
+   **Checkpoint:** show the user the tone line, the keep-list, any term
+   whose decision was a judgment call (`"ask": true`) and any term with a
+   `conflict` (it quotes each analyst's decision); apply their edits to
+   `glossary.json`, and delete `conflict` from a term once it is settled.
+   Skip only if they said not to ask; then every `"ask": true` term keeps
+   its proposed decision (for a `conflict`, pick the one
+   `context-and-dnt.md` supports), set `ask` to false, and list those
+   terms in the final summary. A wrong glossary entry repeats in every
+   language. Run `pack` again after any edit to either file.
 
 5. **Translate, per locale.** Waves of up to 8 locales at a time. For each
    locale and batch, three separate agents, in order:
@@ -110,8 +128,8 @@ user means? Ask once; default `single` for one named language.
    Then `i18n.py apply <locale>` builds `final.json` and lints it. When a
    command rejects an agent's file, fix a JSON syntax slip yourself; for
    missing or wrong content, run that agent again with the error. If the
-   run stops midway, `i18n.py status` shows which files each batch has;
-   continue from the first missing one.
+   run stops midway, `i18n.py status` shows which files each batch (and
+   each unmerged analyst part) has; continue from the first missing one.
    **Resolve round** (only if the reviewer marked a major issue, or lint
    failed): a fresh translator agent gets the draft, review and lint output
    and answers each disputed key (`references/agents/translator.md`,

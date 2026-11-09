@@ -45,8 +45,9 @@ Swedish and Ukrainian.
         |
    1. ingest + plan ........ only new or changed strings; human work is never overwritten
    2. localizability audit . concatenated sentences, dynamic text, plural traps
-   3. context analyst ...... where each string shows, its length budget, what each {param} holds
+   3. context analysts ..... where each string shows, its length budget, what each {param} holds
                              + glossary: translate / keep / transliterate, with reasons
+                             (one analyst per 150 strings; the tool merges their parts)
    4. you approve .......... the glossary and keep-list (one mistake there repeats in 49 languages)
         |
    5. per locale, in waves:
@@ -62,9 +63,15 @@ Swedish and Ukrainian.
 
 Translators, back-translators and reviewers each read a small file the tool
 builds for their batch, never the whole table, so a batch costs the same
-context in a large game as in a small one. The tool also checks each file
-an agent writes before the next agent starts, and names the file and the
-problem when one is broken.
+context in a large game as in a small one. Context analysts work the same
+way: the tool splits the strings that have no context yet into parts of up
+to 150, keeps strings that share a key prefix or a captured location in one
+part, and merges what the analysts write into `context.json` and
+`glossary.json`. Entries from earlier runs are never rewritten, a term two
+analysts decided differently goes to you instead of into the glossary
+unseen, and when no single analyst sees the whole table the orchestrating
+agent describes the game (title, audience, tone) for all of them. The tool also checks each file an agent writes before the next
+agent starts, and names the file and the problem when one is broken.
 
 ### The language guides
 
@@ -205,8 +212,9 @@ every string a native speaker should look at.
 
 ## Cost
 
-Three agent runs per locale per 150 strings, plus one context analyst, plus
-a resolve round where a reviewer found a major problem.
+Three agent runs per locale per 150 strings, plus one context analyst per
+150 strings that are new to the tool, plus a resolve round where a reviewer
+found a major problem.
 
 | Mode | Locales | Agent runs (150 strings) |
 |---|---|---|
@@ -233,11 +241,12 @@ report.
 - The run also found and fixed three bugs in the tool itself.
 
 The example is a record of that run, so its batch files show the layout of
-the day: agents read `context.json` directly, and the back-translators'
-input was keyed by the real keys. Today's runs add `batch-NN.in.json` and
-`batch-NN.reviewin.json` and hide the keys from the back-translator. The
-tests replay the example through the current tool and expect the same
-`translated.csv`.
+the day: one analyst wrote `context.json` and `glossary.json` whole, agents
+read `context.json` directly, and the back-translators' input was keyed by
+the real keys. Today's runs give each analyst a part file, add
+`batch-NN.in.json` and `batch-NN.reviewin.json`, and hide the keys from the
+back-translator. The tests replay the example through the current tool and
+expect the same `translated.csv`.
 
 ## Limits
 
@@ -252,9 +261,9 @@ tests replay the example through the current tool and expect the same
   columns; if an upload rejects them, `export csv --columns language` writes
   one column per language.
 - Roblox has no plural or gender selection; the skill phrases around it.
-- One context analyst describes every string. That is tested at 40 strings;
-  a table of many hundreds needs the analyst run in parts, which the skill
-  does not automate yet.
+- Context analysis in parts is tested on a made-up table of 300 strings
+  (two analysts, 150 strings each). Larger tables use the same split and
+  merge, but none has been run end to end yet.
 
 ## Tool reference
 
@@ -263,6 +272,7 @@ python scripts/i18n.py locales <single|main|all> [target]
 python scripts/i18n.py ingest csv <file> [--rojo] [--source en-us]
 python scripts/i18n.py ingest studio <dump.json ...>
 python scripts/i18n.py plan <mode> [target] [--retranslate] [--audit] [--batch 150]
+python scripts/i18n.py contextpack [--part 150]
 python scripts/i18n.py pack
 python scripts/i18n.py backpack <locale> <batch>
 python scripts/i18n.py reviewpack <locale> <batch>

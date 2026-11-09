@@ -12,9 +12,14 @@ Context, because Roblox identifies such an entry by Source plus Context.
   existing.json          translations already in the table
   state.json             what this tool translated, with the source hash used
   audit.md               localizability findings (step 3)
-  context.json           per-string context (context analyst)
-  glossary.json          game terms and decisions (context analyst)
+  context.json           per-string context (merged from the analysts' parts by `pack`)
+  glossary.json          game terms and decisions (merged the same way)
   plan.json              locales and batches for this run
+  context/
+    part-01.in.json      one analyst's strings (written by `plan`)
+    part-01.context.json that analyst's context entries
+    part-01.glossary.json the terms that analyst proposes
+    history/NNN/         merged or replaced parts (moved there by `pack` and `contextpack`)
   locales/<locale>/
     terms.json           this locale's renderings of glossary terms
     batch-01.todo.json   keys of the batch (written by `plan`)
@@ -75,7 +80,45 @@ Every string needs `where` and `role`.
 `decision`: `translate`, `keep` (byte-identical in every locale) or
 `transliterate` (write it in the target script, e.g. katakana; same sound).
 A locale guide can override `translate` -> `keep` for gaming words its
-players keep in English; it can never override `keep`.
+players keep in English; it can never override `keep`. `"ask": true` marks
+a judgment call for the user checkpoint. `conflict` is written by `pack`
+when two analysts decided one term differently: it quotes each decision,
+and `pack` stops until the term is settled and `conflict` deleted.
+
+## context/part-NN.in.json (written by `plan`)
+```json
+{"part": 1, "parts": 2, "game": {"title": "...", "tone": "..."},
+ "strings": {"shop.buy": {"source": "Buy", "example": "under each item"}}}
+```
+The planned strings that have no entry in `context.json`, in parts of at
+most 150, evenly loaded. Strings whose keys share the text before the first
+`.`, `_`, `:`, `/` or `-`, and keyless strings captured from the same
+top-level object (`StarterGui.Shop`), stay in one part; only a group larger
+than a part is cut. Each string carries its `source` and the table's
+`context`, `example` and `location` columns where they are filled. `game`
+is copied from `context.json` when it has one.
+`i18n.py contextpack --part <n>` splits again with another size. `plan`
+and a plain `contextpack` keep a split as long as it still covers the
+strings that need context, and only refresh `game` in it.
+
+## part-NN.context.json and part-NN.glossary.json (context analyst)
+The formats of `context.json` and `glossary.json` above, holding only the
+part's own strings and the terms the analyst proposes. `pack` merges them
+once every part is complete, and merges nothing while one is missing an
+entry or fails a check:
+- strings are added to `context.json`; an entry that is already there is
+  never replaced;
+- `game` stays as it is. Only a single part that holds the whole table
+  may supply it. Otherwise no analyst saw the whole game, and `pack` stops
+  until the orchestrator has written `game` to `context.json`;
+- terms are added to `glossary.json` by `term`. A term the glossary already
+  has keeps its entry. When two parts give one term different decisions,
+  the first part's entry is kept with `"ask": true` and a `conflict` text.
+  Terms match by exact spelling: a promo code `STARFALL` and the word
+  `Starfall` are two terms.
+
+The merged part files move to `context/history/NNN/`, so a later `pack`
+never overwrites an edit made to the merged files.
 
 ## batch-NN.todo.json (written by `plan`)
 ```json
@@ -155,5 +198,8 @@ reason. `apply --resolve` keeps accepted fixes, writes the rest to
   its batches can run in parallel after batch 1 has written `terms.json`.
 - Agent runs per batch: 3 (2 for an audit batch), plus 1 if a resolve round
   runs.
+- Context analysts: one per part of up to 150 strings with no context
+  entry yet, all at the same time. A table of 400 new strings has 3 parts;
+  a later run that adds 5 strings has one small part.
 - Run up to 8 locales at once. If a run stops, `i18n.py status` shows which
   batch files exist; resume from the first missing one.

@@ -14,6 +14,8 @@ import unicodedata
 SKILL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LOCALES_FILE = os.path.join(SKILL_DIR, "data", "locales.json")
 BATCH_SIZE = 150
+# One analyst writes about 460 bytes of context per string, all in one file.
+CONTEXT_PART = 150
 CSV_MAX_CHANGED = 1000
 CSV_MAX_ENTRIES = 10000
 CSV_MAX_BYTES = 2 * 1024 * 1024
@@ -211,18 +213,23 @@ class Work:
         return read_json(self.p("glossary.json"), {"terms": []})
 
     def batches(self, locale):
-        d = self.loc(locale)
-        if not os.path.isdir(d):
-            return []
-        nums = []
-        for name in os.listdir(d):
-            m = re.match(r"batch-(\d+)\.todo\.json$", name)
-            if m:
-                nums.append(int(m.group(1)))
-        return sorted(nums)
+        return numbered(self.loc(locale), r"batch-(\d+)\.todo\.json$")
 
     def batch(self, locale, n, kind):
         return self.loc(locale, "batch-%02d.%s.json" % (n, kind))
+
+    def parts(self):
+        return numbered(self.p("context"), r"part-(\d+)\.in\.json$")
+
+    def part(self, n, kind):
+        return self.p("context", "part-%02d.%s.json" % (n, kind))
+
+
+def numbered(folder, pattern):
+    if not os.path.isdir(folder):
+        return []
+    found = (re.match(pattern, name) for name in os.listdir(folder))
+    return sorted(int(m.group(1)) for m in found if m)
 
 
 def shash(source, context):
@@ -365,12 +372,11 @@ def existing_for(existing_vals, loc, locales_by_id):
     return None
 
 
-def archive_batches(work, locale):
-    """Move a finished or abandoned run's batch files to history/NNN so apply never re-reads them."""
-    d = work.loc(locale)
+def archive(d, prefix):
+    """Move a finished or abandoned run's files to history/NNN so no later command re-reads them."""
     if not os.path.isdir(d):
         return
-    files = [f for f in os.listdir(d) if f.startswith("batch-")]
+    files = [f for f in os.listdir(d) if f.startswith(prefix)]
     if not files:
         return
     n = 1
@@ -427,7 +433,7 @@ def cmd_plan(a):
                                   "keys": keys[i:i + a.batch], "mode": mode})
         old = [read_json(work.batch(loc["id"], m, "todo")) for m in work.batches(loc["id"])]
         if old != new_todos:
-            archive_batches(work, loc["id"])
+            archive(work.loc(loc["id"]), "batch-")
             for t in new_todos:
                 write_json(work.batch(loc["id"], t["batch"], "todo"), t)
                 if t["mode"] == "audit":
@@ -441,17 +447,220 @@ def cmd_plan(a):
             runs += 3 if t["mode"] == "translate" else 2
             planned.update(t["keys"])
     write_json(work.p("plan.json"), plan)
-    ctx = work.context().get("strings", {})
-    no_context = [k for k in planned if k not in ctx]
-    runs += 1 if no_context else 0
+    parts = write_parts(work)
+    runs += len(parts)
     busy = [l for l in plan["locales"] if plan["batches"][l]]
     out("mode %s: %d locales, %d need work, %d batches" % (a.mode, len(targets), len(busy), total_batches))
     for l in busy:
         out("  %-7s %d batch(es)" % (l, plan["batches"][l]))
     out("agent runs: about %d (translator, back-translator, reviewer per batch; audit batches skip the "
         "translator; +1 per batch that needs a resolve round)" % runs)
-    if no_context:
-        out("context analyst needed: %d string(s) have no context entry yet (counted above)" % len(no_context))
+    if parts:
+        out("context analyst needed: %d string(s) have no context entry yet, in %d part(s) (counted above)"
+            % (sum(parts.values()), len(parts)))
+    report_parts(work, parts)
+
+
+def planned_keys(work):
+    plan = read_json(work.p("plan.json"))
+    keys = []
+    for l in plan["locales"]:
+        for n in work.batches(l):
+            keys += read_json(work.batch(l, n, "todo"))["keys"]
+    return list(dict.fromkeys(keys))
+
+
+def context_group(s):
+    # One screen's strings should reach one analyst: same key prefix, or same captured object.
+    if not is_keyless(s):
+        return "key", re.split(r"[._:/-]", s["key"], maxsplit=1)[0]
+    place = s.get("location") or s.get("context")
+    return ("place", ".".join(place.split(".")[:2])) if place else ("alone", s["key"])
+
+
+def split_context(strings, size):
+    """Analyst parts of at most `size` keys, evenly loaded. A group that fits in one part is never cut."""
+    if not strings:
+        return []
+    groups = {}
+    for s in strings:
+        groups.setdefault(context_group(s), []).append(s["key"])
+    count = -(-len(strings) // size)
+    target = -(-len(strings) // count)
+    parts = []
+    for g in groups.values():
+        step = target if len(g) > size else len(g)
+        for i in range(0, len(g), step):
+            piece = g[i:i + step]
+            home = next((p for p in parts if len(p) < target and len(p) + len(piece) <= size), None)
+            if home is None:
+                home = []
+                parts.append(home)
+            home.extend(piece)
+    return parts
+
+
+def write_parts(work, size=None):
+    """Analyst inputs for the planned strings that lack context. Returns {part number: string count}."""
+    if size is not None and size < 1:
+        raise Fail("--part must be 1 or more")
+    planned = set(planned_keys(work))
+    ctx = json_object(work.p("context.json"), {"strings": {}})
+    have = ctx.get("strings") if isinstance(ctx.get("strings"), dict) else {}
+    todo = [s for s in work.source()["strings"] if s["key"] in planned and not isinstance(have.get(s["key"]), dict)]
+    old = {n: read_json(work.part(n, "in")) for n in work.parts()}
+    held = [list(p["strings"]) for p in old.values()]
+    # Planning again must not throw away a split the analysts are already working on.
+    if size is None and sorted(k for keys in held for k in keys) == sorted(s["key"] for s in todo):
+        split = held
+    else:
+        split = split_context(todo, size or CONTEXT_PART)
+    by_key = {s["key"]: s for s in todo}
+    new = {}
+    for n, keys in enumerate(split, 1):
+        new[n] = {"part": n, "parts": len(split)}
+        if isinstance(ctx.get("game"), dict) and ctx["game"]:
+            new[n]["game"] = ctx["game"]
+        new[n]["strings"] = {k: {f: by_key[k][f] for f in ("source", "context", "example", "location")
+                                 if by_key[k].get(f)} for k in keys}
+    if new != old:
+        if split != held:
+            archive(work.p("context"), "part-")
+        for n, part in new.items():
+            write_json(work.part(n, "in"), part)
+    return {n: len(p["strings"]) for n, p in new.items()}
+
+
+def whole_table_part(work):
+    """True when one part holds every string, so its analyst can describe the game."""
+    nums = work.parts()
+    return len(nums) == 1 and len(read_json(work.part(nums[0], "in"))["strings"]) == len(work.source()["strings"])
+
+
+def report_parts(work, parts):
+    if parts and not whole_table_part(work) and not json_object(work.p("context.json"), {}).get("game"):
+        out("no analyst will see the whole table: write the game block to context.json first, "
+            "then run contextpack (SKILL.md step 4)")
+
+
+def cmd_contextpack(a):
+    work = Work(a.work)
+    parts = write_parts(work, a.part)
+    for n, count in parts.items():
+        out("%s (%d strings)" % (work.part(n, "in"), count))
+    out("contextpack: %d part(s), %d string(s) with no context entry yet" % (len(parts), sum(parts.values())))
+    report_parts(work, parts)
+
+
+def context_problems(key, c):
+    found = []
+    if not c.get("where") or not c.get("role"):
+        found.append("%s: context needs both where and role" % key)
+    mx = c.get("max")
+    if mx is not None and (isinstance(mx, bool) or not isinstance(mx, (int, float)) or mx <= 0):
+        found.append("%s: max must be a positive number or null, got %r" % (key, mx))
+    return found
+
+
+def term_problem(t):
+    if not isinstance(t, dict) or not isinstance(t.get("term"), str) or not t["term"].strip():
+        return "glossary entry without a term: %r" % (t,)
+    if t.get("decision") not in DECISIONS:
+        return "glossary term %r: decision must be translate, keep or transliterate" % t["term"]
+    return None
+
+
+def merge_terms(existing, proposals):
+    """Add the parts' terms to the glossary. An existing term wins; parts that disagree are left to the user."""
+    terms = list(existing)
+    known = {t["term"] for t in terms if not term_problem(t)}
+    added, views = {}, {}
+    # Terms match by exact spelling: a promo code STARFALL and the word Starfall are two terms.
+    for n, t in proposals:
+        t = dict(t, term=t["term"].strip())
+        if t["term"] in known:
+            continue
+        views.setdefault(t["term"], []).append((n, t))
+        if t["term"] not in added:
+            added[t["term"]] = t
+            terms.append(t)
+    conflicts = []
+    for name, t in added.items():
+        if len({v["decision"] for _, v in views[name]}) > 1:
+            t["ask"] = True
+            t["conflict"] = "; ".join(
+                "part %d: %s%s" % (n, v["decision"], " (%s)" % v["reason"] if v.get("reason") else "")
+                for n, v in views[name])
+            conflicts.append(t)
+    return terms, list(added.values()), conflicts
+
+
+def merge_parts(work):
+    """Fold the analysts' part files into context.json and glossary.json. Returns what stops it, if anything."""
+    nums = work.parts()
+    if not nums:
+        return []
+    ctx = json_object(work.p("context.json"), {"strings": {}})
+    if not isinstance(ctx.get("strings"), dict):
+        raise Fail('context.json needs a "strings" object keyed by string key')
+    glossary = json_object(work.p("glossary.json"), {"terms": []})
+    if not isinstance(glossary.get("terms"), list):
+        raise Fail('glossary.json needs a "terms" list')
+    problems, strings, proposals, game, merged = [], {}, [], None, 0
+    for n in nums:
+        keys = [k for k in read_json(work.part(n, "in"))["strings"] if not isinstance(ctx["strings"].get(k), dict)]
+        if not keys:
+            continue
+        merged += 1
+        cpath, gpath = work.part(n, "context"), work.part(n, "glossary")
+        missing = [p for p in (cpath, gpath) if not os.path.exists(p)]
+        if missing:
+            problems.append("part %d: no %s yet: run the context analyst first" % (n, " or ".join(missing)))
+            continue
+        data = json_object(cpath)
+        got = data.get("strings")
+        if not isinstance(got, dict):
+            problems.append('%s needs a "strings" object keyed by string key' % cpath)
+            continue
+        lacking = [k for k in keys if not isinstance(got.get(k), dict)]
+        if lacking:
+            problems.append("%s: %d string(s) have no context entry: %s" % (cpath, len(lacking), preview(lacking)))
+        for k in keys:
+            if isinstance(got.get(k), dict):
+                problems += ["%s: %s" % (cpath, m) for m in context_problems(k, got[k])]
+                strings[k] = got[k]
+        if game is None and isinstance(data.get("game"), dict) and data["game"]:
+            game = data["game"]
+        terms = json_object(gpath).get("terms")
+        if not isinstance(terms, list):
+            problems.append('%s needs a "terms" list' % gpath)
+            continue
+        for t in terms:
+            m = term_problem(t)
+            if m:
+                problems.append("%s: %s" % (gpath, m))
+            else:
+                proposals.append((n, t))
+    if merged and not ctx.get("game") and not whole_table_part(work):
+        # An analyst who read a slice of the table cannot say what the game is.
+        problems.append("context.json has no game block, and no analyst saw the whole table: write it there "
+                        "(title, genre, core_loop, audience, tone), then run pack again")
+    elif merged and not ctx.get("game") and not game:
+        problems.append("%s has no game block (title, genre, core_loop, audience, tone)"
+                        % work.part(nums[0], "context"))
+    if problems:
+        return problems
+    if merged:
+        terms, added, conflicts = merge_terms(glossary["terms"], proposals)
+        ctx["strings"].update(strings)
+        ctx["game"] = ctx.get("game") or game
+        write_json(work.p("context.json"), dict({"game": ctx["game"]}, **ctx))
+        write_json(work.p("glossary.json"), dict(glossary, terms=terms))
+        out("context: merged %d part(s): %d string(s), %d new glossary term(s)" % (merged, len(strings), len(added)))
+        for t in conflicts:
+            out("conflict %s: %s. Kept the first, marked ask" % (t["term"], t["conflict"]))
+    archive(work.p("context"), "part-")
+    return []
 
 
 def param_names(text):
@@ -480,11 +689,7 @@ def check_inputs(work, keys):
         c = strings.get(k)
         if not isinstance(c, dict):
             continue
-        if not c.get("where") or not c.get("role"):
-            errors.append("%s: context needs both where and role" % k)
-        mx = c.get("max")
-        if mx is not None and (isinstance(mx, bool) or not isinstance(mx, (int, float)) or mx <= 0):
-            errors.append("%s: max must be a positive number or null, got %r" % (k, mx))
+        errors += context_problems(k, c)
         params = c.get("params") if isinstance(c.get("params"), dict) else {}
         unknown = sorted(n for n in set(param_names(src[k]["source"])) if n not in params)
         if unknown:
@@ -493,10 +698,12 @@ def check_inputs(work, keys):
     if not isinstance(terms, list):
         raise Fail('glossary.json needs a "terms" list')
     for t in terms:
-        if not isinstance(t, dict) or not isinstance(t.get("term"), str) or not t["term"].strip():
-            errors.append("glossary entry without a term: %r" % (t,))
-        elif t.get("decision") not in DECISIONS:
-            errors.append("glossary term %r: decision must be translate, keep or transliterate" % t["term"])
+        m = term_problem(t)
+        if m:
+            errors.append(m)
+        elif t.get("conflict"):
+            errors.append('glossary term %r: analysts disagreed (%s); settle its decision and delete "conflict"'
+                          % (t["term"], t["conflict"]))
     asks = [t["term"] for t in terms if isinstance(t, dict) and t.get("ask")]
     if asks:
         warns.append("%d glossary term(s) still marked ask (checkpoint not done?): %s" % (len(asks), preview(asks)))
@@ -563,17 +770,20 @@ def cmd_pack(a):
     work = Work(a.work)
     plan = read_json(work.p("plan.json"))
     locs = [l for l in plan["locales"] if work.batches(l)]
-    keys = []
-    for l in locs:
-        for n in work.batches(l):
-            keys += read_json(work.batch(l, n, "todo"))["keys"]
-    keys = list(dict.fromkeys(keys))
+    keys = planned_keys(work)
     known = {s["key"] for s in work.source()["strings"]}
+    unmerged = merge_parts(work)
+    for m in unmerged:
+        out("ERROR " + m)
+    if unmerged and not os.path.exists(work.p("context.json")):
+        raise Fail("fix what is named above, then run pack again")
     errors, warns = check_inputs(work, [k for k in keys if k in known])
     for m in warns:
         out("warn  " + m)
     for m in errors:
         out("ERROR " + m)
+    if unmerged:
+        raise Fail("fix what is named above, then run pack again")
     if errors:
         raise Fail("fix context.json or glossary.json, then run pack again")
     ctx = work.context()
@@ -1341,6 +1551,10 @@ def cmd_status(a):
     plan = read_json(work.p("plan.json"), {})
     if not plan:
         return
+    parts = ["p%d:%s" % (n, "+".join(k for k in ("in", "context", "glossary") if os.path.exists(work.part(n, k))))
+             for n in work.parts()]
+    if parts:
+        out("  context %s (pack merges them)" % " ".join(parts))
     for l in plan["locales"]:
         row = []
         for n in work.batches(l):
@@ -1492,7 +1706,12 @@ def main(argv=None):
     s.add_argument("--batch", type=int, default=BATCH_SIZE)
     s.set_defaults(fn=cmd_plan)
 
-    s = sub.add_parser("pack", help="check context.json and glossary.json, then write each batch's translator input")
+    s = sub.add_parser("contextpack", help="split the strings with no context into analyst parts (plan does it too)")
+    s.add_argument("--part", type=int, help="strings per part (default %d)" % CONTEXT_PART)
+    s.set_defaults(fn=cmd_contextpack)
+
+    s = sub.add_parser("pack", help="merge the analysts' parts, check context.json and glossary.json, "
+                                    "then write each batch's translator input")
     s.set_defaults(fn=cmd_pack)
 
     s = sub.add_parser("backpack", help="write the blind input for the back-translator")

@@ -220,6 +220,224 @@ class PackTest(Base):
                           {"key": "title", "source": "Pet Hatch Tycoon"}])
 
 
+BIG = [("hud", 40), ("shop", 90), ("pet", 100), ("quest", 70)]
+
+
+class ContextPartsTest(Base):
+    def setUp(self):
+        super().setUp()
+        self.ingest()
+
+    def part(self, n, kind):
+        return os.path.join(self.work, "context", "part-%02d.%s.json" % (n, kind))
+
+    def parts(self):
+        folder = os.path.join(self.work, "context")
+        return sorted(f for f in os.listdir(folder) if f.endswith(".in.json")) if os.path.isdir(folder) else []
+
+    def big_table(self):
+        # Prefixes alternate row by row, so the split has to gather each one.
+        rows = sorted(((i, p) for p, n in BIG for i in range(n)), key=lambda r: r[0])
+        with open(self.csv, "w", encoding="utf-8", newline="") as f:
+            f.write("Key,Source,Context,Example,Location\r\n")
+            for i, p in rows:
+                f.write("%s.%03d,%s text %d,,shown in %s,\r\n" % (p, i, p, i, p))
+            for i in range(20):
+                f.write(",Menu text %d,,,StarterGui.Menu.Frame%d.Label\r\n" % (i, i % 3))
+        self.ingest()
+
+    def analyst(self, n, terms=(), game=None, **over):
+        """Stands in for the analyst of part n."""
+        strings = {k: {"where": "screen of part %d" % n, "role": "label", "max": None}
+                   for k in read(self.part(n, "in"))["strings"]}
+        strings.update(over)
+        write(self.part(n, "context"), {"game": game or {"title": "Game %d" % n, "tone": "upbeat"},
+                                        "strings": {k: v for k, v in strings.items() if v is not None}})
+        write(self.part(n, "glossary"), {"terms": list(terms)})
+
+    def describe_game(self):
+        """Stands in for the orchestrator, who writes the game block when the analysts each see a slice."""
+        write(os.path.join(self.work, "context.json"), {"game": {"title": "Pet Hatch Tycoon"}, "strings": {}})
+
+    def test_split_keeps_groups_together(self):
+        self.big_table()
+        code, out = run(self.work, "plan", "single", "es-mx")
+        self.assertEqual(code, 0, out)
+        # 3 batches of 3 agents, 3 analysts.
+        self.assertIn("agent runs: about 12", out)
+        self.assertIn("context analyst needed: 320 string(s) have no context entry yet, in 3 part(s)", out)
+        self.assertIn("no analyst will see the whole table: write the game block", out)
+        parts = [read(self.part(n, "in")) for n in (1, 2, 3)]
+        keys = [k for p in parts for k in p["strings"]]
+        self.assertEqual((len(keys), len(set(keys))), (320, 320))
+        self.assertLessEqual(max(len(p["strings"]) for p in parts), 150)
+        for prefix, count in BIG + [("Menu text", 20)]:
+            homes = [sum(k.startswith(prefix) for k in p["strings"]) for p in parts]
+            self.assertEqual(sorted(homes), [0, 0, count], prefix)
+        self.assertEqual((parts[0]["part"], parts[0]["parts"]), (1, 3))
+        self.assertEqual(parts[0]["strings"]["hud.000"], {"source": "hud text 0", "example": "shown in hud"})
+        self.assertIn("location", parts[1]["strings"]["Menu text 0"])
+        self.assertNotIn("game", parts[0])
+        code, out = run(self.work, "status")
+        self.assertIn("context p1:in p2:in p3:in", out)
+
+    def test_resplit_smaller_and_plan_keeps_it(self):
+        self.big_table()
+        run(self.work, "plan", "single", "es-mx")
+        code, out = run(self.work, "contextpack", "--part", "100")
+        self.assertEqual(code, 0, out)
+        self.assertIn("contextpack: 4 part(s), 320 string(s)", out)
+        self.assertLessEqual(max(len(read(self.part(n, "in"))["strings"]) for n in (1, 2, 3, 4)), 100)
+        self.assertTrue(os.path.exists(os.path.join(self.work, "context", "history", "001", "part-03.in.json")))
+        code, out = run(self.work, "plan", "single", "es-mx")
+        self.assertIn("in 4 part(s)", out)
+        self.assertEqual(len(self.parts()), 4)
+
+    def test_split_cuts_only_a_group_too_big_for_one_part(self):
+        strings = [{"key": "item.%03d" % i, "source": "x", "keyless": False} for i in range(400)]
+        self.assertEqual([len(p) for p in i18n.split_context(strings, 150)], [134, 134, 132])
+        strings = [{"key": "%s.%d" % (p, i), "source": "x", "keyless": False}
+                   for p, n in (("a", 149), ("b", 2), ("c", 149)) for i in range(n)]
+        self.assertEqual([len(p) for p in i18n.split_context(strings, 150)], [149, 2, 149])
+        self.assertEqual(i18n.split_context([], 150), [])
+
+    def test_small_table_is_one_part(self):
+        code, out = run(self.work, "plan", "single", "es-es")
+        self.assertIn("context analyst needed: 6 string(s) have no context entry yet, in 1 part(s)", out)
+        self.assertNotIn("no analyst will see the whole table", out)
+        self.assertEqual(self.parts(), ["part-01.in.json"])
+        self.analyst(1, terms=[{"term": "Pet Hatch Tycoon", "decision": "keep"}])
+        code, out = run(self.work, "pack")
+        self.assertEqual(code, 0, out)
+        self.assertEqual(read(os.path.join(self.work, "context.json"))["game"]["title"], "Game 1")
+        self.assertEqual(read(self.loc("es-es", "batch-01.in.json"))["strings"]["title"]["where"], "screen of part 1")
+
+    def test_merge_keeps_earlier_entries(self):
+        earlier = {"where": "under each shop item", "role": "button", "max": 8}
+        write(os.path.join(self.work, "context.json"),
+              {"game": {"title": "Pet Hatch Tycoon", "tone": "cozy"}, "strings": {"shop.buy": earlier}})
+        write(os.path.join(self.work, "glossary.json"),
+              {"terms": [{"term": "Pet Hatch Tycoon", "decision": "keep"}, {"term": "Coins", "decision": "translate"}]})
+        run(self.work, "plan", "single", "es-es")
+        code, out = run(self.work, "contextpack", "--part", "3")
+        self.assertIn("contextpack: 2 part(s), 5 string(s)", out)
+        first = read(self.part(1, "in"))
+        self.assertEqual(first["game"]["tone"], "cozy")
+        self.assertNotIn("shop.buy", list(first["strings"]) + list(read(self.part(2, "in"))["strings"]))
+        potion = {"term": "Lucky Potion", "meaning": "boost item", "decision": "translate", "reason": "ordinary words"}
+        self.analyst(1, terms=[potion, {"term": "Coins", "decision": "keep"}],
+                     **{"shop.buy": {"where": "somewhere else", "role": "label"}})
+        self.analyst(2, terms=[dict(potion, meaning="a potion"), {"term": "Robux", "decision": "keep", "ask": True}])
+        code, out = run(self.work, "pack")
+        self.assertEqual(code, 0, out)
+        self.assertIn("context: merged 2 part(s): 5 string(s), 2 new glossary term(s)", out)
+        self.assertNotIn("conflict", out)
+        ctx = read(os.path.join(self.work, "context.json"))
+        self.assertEqual(ctx["game"], {"title": "Pet Hatch Tycoon", "tone": "cozy"})
+        self.assertEqual(sorted(ctx["strings"]), sorted(KEYS))
+        self.assertEqual(ctx["strings"]["shop.buy"], earlier)
+        terms = read(os.path.join(self.work, "glossary.json"))["terms"]
+        self.assertEqual([(t["term"], t["decision"]) for t in terms],
+                         [("Pet Hatch Tycoon", "keep"), ("Coins", "translate"), ("Lucky Potion", "translate"),
+                          ("Robux", "keep")])
+        self.assertEqual(terms[2]["meaning"], "boost item")
+        self.assertTrue(terms[3]["ask"])
+        # Merged parts leave the folder, so a later pack cannot undo an edit made at the checkpoint.
+        self.assertEqual(self.parts(), [])
+        self.assertTrue(os.path.exists(os.path.join(self.work, "context", "history", "002", "part-02.glossary.json")))
+        terms[2]["decision"] = "keep"
+        write(os.path.join(self.work, "glossary.json"), {"terms": terms})
+        code, out = run(self.work, "pack")
+        self.assertEqual(code, 0, out)
+        self.assertEqual(read(os.path.join(self.work, "glossary.json"))["terms"][2]["decision"], "keep")
+        self.assertEqual(read(os.path.join(self.work, "context.json")), ctx)
+        # A later run asks only for what is new, and hands the analyst the game block.
+        with open(self.csv, "a", encoding="utf-8") as f:
+            f.write("shop.sell,Sell,,,\r\n")
+        self.ingest()
+        code, out = run(self.work, "plan", "single", "es-es")
+        self.assertIn("context analyst needed: 1 string(s) have no context entry yet, in 1 part(s)", out)
+        later = read(self.part(1, "in"))
+        self.assertEqual((list(later["strings"]), later["game"]["tone"]), (["shop.sell"], "cozy"))
+
+    def test_sliced_table_needs_a_game_block_from_the_orchestrator(self):
+        run(self.work, "plan", "single", "es-es")
+        code, out = run(self.work, "contextpack", "--part", "3")
+        self.assertIn("no analyst will see the whole table: write the game block", out)
+        self.analyst(1)
+        self.analyst(2)
+        code, out = run(self.work, "pack")
+        self.assertEqual(code, 2, out)
+        self.assertIn("context.json has no game block, and no analyst saw the whole table", out)
+        self.assertEqual(len(self.parts()), 2)
+        self.describe_game()
+        # Splitting again only hands the block to each part; the analysts' files stay.
+        code, out = run(self.work, "contextpack")
+        self.assertNotIn("no analyst will see the whole table", out)
+        self.assertEqual(read(self.part(2, "in"))["game"], {"title": "Pet Hatch Tycoon"})
+        self.assertTrue(os.path.exists(self.part(2, "context")))
+        code, out = run(self.work, "pack")
+        self.assertEqual(code, 0, out)
+        ctx = read(os.path.join(self.work, "context.json"))
+        self.assertEqual(ctx["game"], {"title": "Pet Hatch Tycoon"})
+        self.assertEqual(sorted(ctx["strings"]), sorted(KEYS))
+
+    def test_glossary_conflict_goes_to_the_user(self):
+        self.describe_game()
+        run(self.work, "plan", "single", "es-es")
+        run(self.work, "contextpack", "--part", "3")
+        # HATCH (a promo code) and Hatch (the verb) are two terms, not one term decided twice.
+        self.analyst(1, terms=[{"term": "Lucky Potion", "decision": "translate", "reason": "ordinary words"},
+                               {"term": "HATCH", "decision": "keep", "reason": "promo code"}])
+        self.analyst(2, terms=[{"term": "Lucky Potion", "decision": "keep", "reason": "product name"},
+                               {"term": "Hatch", "decision": "translate"}])
+        code, out = run(self.work, "pack")
+        self.assertEqual(code, 2, out)
+        self.assertIn("conflict Lucky Potion: part 1: translate (ordinary words); part 2: keep (product name)", out)
+        self.assertIn("ERROR glossary term 'Lucky Potion': analysts disagreed", out)
+        self.assertFalse(os.path.exists(self.loc("es-es", "batch-01.in.json")))
+        self.assertEqual(read(os.path.join(self.work, "context.json"))["game"], {"title": "Pet Hatch Tycoon"})
+        path = os.path.join(self.work, "glossary.json")
+        terms = read(path)["terms"]
+        self.assertEqual([(t["term"], t["decision"], t.get("ask")) for t in terms],
+                         [("Lucky Potion", "translate", True), ("HATCH", "keep", None), ("Hatch", "translate", None)])
+        self.assertIn("part 2: keep (product name)", terms[0]["conflict"])
+        self.assertNotIn("conflict", terms[1])
+        # The conflict stays an error on every pack until someone settles it.
+        self.assertEqual(run(self.work, "pack")[0], 2)
+        del terms[0]["conflict"]
+        terms[0]["ask"] = False
+        write(path, {"terms": terms})
+        code, out = run(self.work, "pack")
+        self.assertEqual(code, 0, out)
+        self.assertTrue(os.path.exists(self.loc("es-es", "batch-01.in.json")))
+
+    def test_unfinished_part_merges_nothing(self):
+        self.describe_game()
+        run(self.work, "plan", "single", "es-es")
+        run(self.work, "contextpack", "--part", "3")
+        self.analyst(1)
+        code, out = run(self.work, "pack")
+        self.assertEqual(code, 2, out)
+        self.assertIn("ERROR part 2: no", out)
+        self.assertIn("run the context analyst first", out)
+        second = list(read(self.part(2, "in"))["strings"])
+        self.analyst(2, terms=[{"term": "Gems", "decision": "maybe"}],
+                     **{second[0]: None, second[1]: {"where": "shop"}})
+        code, out = run(self.work, "pack")
+        self.assertEqual(code, 2, out)
+        self.assertIn("part-02.context.json: 1 string(s) have no context entry: " + second[0], out)
+        self.assertIn("part-02.context.json: %s: context needs both where and role" % second[1], out)
+        self.assertIn("part-02.glossary.json: glossary term 'Gems': decision must be", out)
+        self.assertEqual(read(os.path.join(self.work, "context.json"))["strings"], {})
+        self.assertFalse(os.path.exists(os.path.join(self.work, "glossary.json")))
+        self.assertEqual(len(self.parts()), 2)
+        self.analyst(2)
+        code, out = run(self.work, "pack")
+        self.assertEqual(code, 0, out)
+        self.assertEqual(sorted(read(os.path.join(self.work, "context.json"))["strings"]), sorted(KEYS))
+
+
 KEYLESS_CSV = (
     "Key,Source,Context,Example,Location\r\n"
     ",Play,,,StarterGui.Menu.PlayButton\r\n"
