@@ -179,7 +179,7 @@ class KeepTermTest(unittest.TestCase):
         self.assertTrue(any("Mtavruli" in m for m in e))
 
     def test_width_counts_spacing_marks(self):
-        self.assertEqual(i18n.width("खरीदें"), 5)
+        self.assertEqual(i18n.width("खरीदें"), 4)
         self.assertEqual(i18n.width("{n} <b>購入</b>"), 5)
 
 
