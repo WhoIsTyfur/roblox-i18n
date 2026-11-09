@@ -167,6 +167,21 @@ class KeepTermTest(unittest.TestCase):
         e, _ = i18n.lint_string("k", "Buy for {price} Robux", "{price} Robuxで購入", ja, {}, {}, ["Robux"], False)
         self.assertEqual(e, [])
 
+    def test_locale_latin_terms_and_georgian(self):
+        my = {"id": "my-mm", "code": "my", "script": "Mymr"}
+        src, txt = "Rebirth Boost Event", "Rebirth Boost Event ရပ်"
+        e, _ = i18n.lint_string("k", src, txt, my, {}, {}, [], False)
+        self.assertTrue(any("mostly not in Mymr" in m for m in e))
+        e, _ = i18n.lint_string("k", src, txt, my, {}, {}, [], False, ["Rebirth", "Boost", "Event"])
+        self.assertEqual(e, [])
+        ka = {"id": "ka-ge", "code": "ka", "script": "Geor"}
+        e, _ = i18n.lint_string("k", "Shop", "ᲘᲐᲦᲐᲨᲘ", ka, {}, {}, [], False)
+        self.assertTrue(any("Mtavruli" in m for m in e))
+
+    def test_width_counts_spacing_marks(self):
+        self.assertEqual(i18n.width("खरीदें"), 5)
+        self.assertEqual(i18n.width("{n} <b>購入</b>"), 5)
+
 
 class ApplyLintTest(Base):
     def setUp(self):

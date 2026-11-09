@@ -40,8 +40,12 @@ For each string:
   than guess. If a name lands where your language inflects it, restructure
   so it doesn't.
 - Keep rich-text tags around the words they belong to.
-- Stay within the length budget. If you cannot, use the shortest natural
-  wording and say so in `note`.
+- Stay within the length budget. `max` counts visible characters without
+  `{params}` and tags, so leave room for the inserted values. If you
+  cannot fit, use the shortest natural wording and say so in `note`.
+- Numbers, durations and units inside `{params}` arrive formatted by the
+  game; never work around them in the text. If they will read wrong in
+  this locale, say so in `note` for the developer.
 - Leave a string identical to the source only when that is what players
   of this locale expect (VIP, OK, a title); set `"keep": true` and say why.
 - Never add content, jokes, or emojis that are not in the source; never

@@ -392,8 +392,9 @@ def visible(text):
 
 
 def width(text):
+    # Mn/Me marks take no space; Mc (Indic spacing vowel signs) does.
     return sum(2 if unicodedata.east_asian_width(c) in ("W", "F") else 1
-               for c in visible(text) if not unicodedata.combining(c))
+               for c in visible(text) if unicodedata.category(c) not in ("Mn", "Me", "Cf"))
 
 
 def tags(text):
@@ -409,7 +410,7 @@ def has_term(text, term):
     return bool(term_re(term).search(text))
 
 
-def lint_string(key, source, text, loc, item, ctx, keep_terms, src_lang_same):
+def lint_string(key, source, text, loc, item, ctx, keep_terms, src_lang_same, latin_terms=()):
     errors, warns = [], []
     if text is None or not str(text).strip():
         return ["empty translation"], []
@@ -426,7 +427,7 @@ def lint_string(key, source, text, loc, item, ctx, keep_terms, src_lang_same):
         if has_term(source, term) and not has_term(text, term):
             errors.append("keep-term %r missing" % term)
     stripped = visible(text)
-    for term in keep_terms:
+    for term in list(keep_terms) + list(latin_terms):
         stripped = term_re(term).sub("", stripped)
     letters = [c for c in stripped if unicodedata.category(c).startswith("L")]
     want = SCRIPT_NAMES.get(loc.get("script", "Latn"), ("LATIN",))
@@ -450,6 +451,8 @@ def lint_string(key, source, text, loc, item, ctx, keep_terms, src_lang_same):
         errors.append("looks like Zawgyi encoding; Burmese must be Unicode")
     if loc["id"] == "ro-ro" and re.search("[ŞşŢţ]", text):
         errors.append("cedilla s/t; Romanian uses comma-below ș ț")
+    if loc["id"] == "ka-ge" and re.search("[Ა-Ჿ]", text):
+        errors.append("Mtavruli capitals; Georgian UI text uses Mkhedruli only")
     if (source[:1].isspace() != text[:1].isspace()) or (source[-1:].isspace() != text[-1:].isspace()):
         warns.append("leading/trailing whitespace differs from source")
     if "  " in text and "  " not in source:
@@ -474,6 +477,8 @@ def lint_locale(work, locale, stage="final", quiet=False):
     keep_terms = [t["term"] for t in work.glossary().get("terms", []) if t.get("decision") == "keep"]
     src_locale = work.source()["source_locale"]
     same = locales.get(src_locale, {}).get("code") == loc["code"]
+    terms = read_json(work.loc(locale, "terms.json"), {})
+    latin_terms = [t for t, r in terms.items() if r == t]
     if stage == "final":
         items = read_json(work.loc(locale, "final.json"), {})
     else:
@@ -485,7 +490,8 @@ def lint_locale(work, locale, stage="final", quiet=False):
         if k not in src:
             report[k] = (["key not in source.json"], [])
             continue
-        e, w = lint_string(k, src[k]["source"], item.get("text"), loc, item, ctx.get(k, {}), keep_terms, same)
+        e, w = lint_string(k, src[k]["source"], item.get("text"), loc, item, ctx.get(k, {}), keep_terms, same,
+                           latin_terms)
         if e or w:
             report[k] = (e, w)
     if not quiet:

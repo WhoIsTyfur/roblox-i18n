@@ -124,6 +124,15 @@ user means? Ask once; default `single` for one named language.
 - Locales marked "native review" in `data/locales.json` or the report should
   get a native speaker's pass before a big launch. Roblox lets you add
   translators in Creator Hub.
+- Numbers, times and units: the table only fills `{params}`; values the
+  code formats (`1,250`, `12.4`, `3h 20m`) stay English. Recommend making
+  each format a key (`time.hm` = `{h}h {m}m`, translated like any string)
+  and grouping digits per locale (each guide's "Typography" section gives
+  the separators). Change game code only if the user asks.
+- Fonts: many Roblox display fonts (Builder Sans, Fredoka One, Luckiest
+  Guy) have no Cyrillic, Greek or Asian glyphs, so Roblox falls back to
+  another face. `render_risk` in `data/locales.json` and each guide say what
+  to check.
 - Rendering: open a test in Studio with the Player Emulator set to a risky
   script (Burmese, Khmer, Sinhala, Thai, Arabic) and look at long strings.
   Ask before opening Play; it takes over the screen.
