@@ -166,13 +166,13 @@ Asian glyphs). The same data is in `data/locales.json`.
 Claude Code (macOS / Linux):
 
 ```bash
-git clone https://github.com/WhoIsTyfur/roblox-i18n ~/.claude/skills/roblox-i18n
+git clone https://github.com/WhoIsTyfur/roblox-i18n-skill ~/.claude/skills/roblox-i18n
 ```
 
 Claude Code (Windows PowerShell):
 
 ```powershell
-git clone https://github.com/WhoIsTyfur/roblox-i18n "$env:USERPROFILE\.claude\skills\roblox-i18n"
+git clone https://github.com/WhoIsTyfur/roblox-i18n-skill "$env:USERPROFILE\.claude\skills\roblox-i18n"
 ```
 
 Other agents: put the folder wherever your agent loads skills from, or tell
