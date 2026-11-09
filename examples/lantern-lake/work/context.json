@@ -1,0 +1,358 @@
+{
+  "game": {
+    "title": "Lantern Lake Fishing",
+    "genre": "Casual fishing simulator with collection and prestige progression",
+    "core_loop": "Cast and reel to catch fish of rising rarity, sell them for coins, buy better rods, then Ascend (prestige) for a permanent luck bonus.",
+    "audience": "Roblox players, mostly kids and young teens; casual, many on phones",
+    "tone": "Friendly, upbeat and cozy; short exclamations, casual second person",
+    "notes": "No game source in this example: context is inferred from keys, the Example column (developer notes) and audit.md. Every max is an estimate from the element's role, not a measurement, and counts characters excluding {params}, the way lint measures it."
+  },
+  "strings": {
+    "title": {
+      "where": "Loading screen, game title",
+      "role": "title",
+      "max": 28,
+      "params": {},
+      "neighbors": ["tip.night"],
+      "notes": "Game title, kept byte-identical (glossary: keep); mark keep:true. max est."
+    },
+    "hud.cast": {
+      "where": "Gameplay HUD, big round action button; probably the same slot that turns into hud.reel when a fish bites",
+      "role": "button",
+      "max": 8,
+      "params": {},
+      "neighbors": ["hud.reel", "hud.bait_left", "hud.backpack"],
+      "notes": "Imperative verb: throw the fishing line into the water (glossary: Cast). Not a spell cast, a movie cast or casting to a TV. One short word. max est. (round HUD button, about 8 chars)."
+    },
+    "hud.reel": {
+      "where": "Gameplay HUD, big round action button shown while a fish bites (replaces hud.cast)",
+      "role": "button",
+      "max": 8,
+      "params": {},
+      "neighbors": ["hud.cast", "hud.bait_left", "hud.backpack", "catch.success", "catch.escaped"],
+      "notes": "Imperative verb: pull the line in to land the fish (glossary: Reel). Not a film reel or the reel itself (noun). Use the same verb as in the pass name Auto Reel. One short word. max est. (round HUD button, about 8 chars)."
+    },
+    "hud.bait_left": {
+      "where": "Gameplay HUD, counter of bait the player has left",
+      "role": "label",
+      "max": 10,
+      "params": {
+        "count": {"meaning": "bait the player has left; integer, can be 0, 1 or more", "sample": "12"}
+      },
+      "neighbors": ["hud.cast", "hud.reel", "hud.backpack"],
+      "notes": "Counter. count can be 0 or 1, so use plural-neutral wording; a label form like 'Bait: {count}' is fine. Bait is the consumable you fish with (glossary). max est. (small HUD counter), excludes {count}."
+    },
+    "hud.backpack": {
+      "where": "Gameplay HUD, button that opens the inventory of caught fish",
+      "role": "button",
+      "max": 10,
+      "params": {},
+      "neighbors": ["hud.cast", "hud.reel", "hud.bait_left", "fish.golden_carp", "fish.lantern_eel", "rarity.mythic"],
+      "notes": "Noun as a button label: the bag that holds your caught fish, i.e. the inventory (glossary: Backpack). max est. (small HUD button)."
+    },
+    "catch.success": {
+      "where": "Toast after a fish is landed",
+      "role": "toast",
+      "max": 30,
+      "params": {
+        "rarity": {"meaning": "rarity tier, already translated from the rarity.* keys (Rare, Legendary, Mythic...)", "sample": "Rare"},
+        "fish": {"meaning": "fish name, already translated from the fish.* keys", "sample": "Golden Carp"}
+      },
+      "neighbors": ["catch.escaped", "catch.new_record", "hud.reel", "rarity.mythic", "fish.golden_carp", "fish.lantern_eel"],
+      "notes": "Two separately translated words are inserted, so an adjective or article cannot agree in gender or number with a fish name you cannot see, and word order may differ. Phrase around it, e.g. 'You caught: {fish} ({rarity})!'. Source-side issue for the game: English 'a {rarity}' breaks if a tier starts with a vowel (Epic, Uncommon). max est.: toast about 45 chars minus about 15 for the inserted words."
+    },
+    "catch.escaped": {
+      "where": "Toast when the hooked fish escapes",
+      "role": "toast",
+      "max": 45,
+      "params": {},
+      "neighbors": ["catch.success", "catch.new_record", "hud.reel"],
+      "notes": "'It' is the fish that was on the line; it slipped off the hook. Light, disappointed tone; keep the trailing '...'. Any species, so if you name it, use the generic word for fish. max est. (toast about 45)."
+    },
+    "catch.new_record": {
+      "where": "Toast after catching a record-weight fish",
+      "role": "toast",
+      "max": 40,
+      "params": {
+        "weight": {"meaning": "weight of the fish just caught in kilograms, one decimal, formatted by the game with a decimal point", "sample": "12.4"}
+      },
+      "neighbors": ["catch.success", "catch.escaped", "leaderboard.biggest"],
+      "notes": "Probably the player's personal best weight (exact scope not known). Write the unit kg the way your language writes it (Latin-script languages keep kg). {weight} arrives pre-formatted by the game; you cannot change its decimal mark here. max est.: toast about 45 minus the number."
+    },
+    "fish.golden_carp": {
+      "where": "Fish card in the backpack; also inserted as {fish} into catch.success",
+      "role": "label",
+      "max": 18,
+      "params": {},
+      "neighbors": ["fish.lantern_eel", "rarity.mythic", "hud.backpack", "catch.success"],
+      "notes": "Fish species: a golden-colored carp, a real ornamental fish (glossary: translate). Shown alone and inserted into a sentence, so use the base form (singular, nominative, no article). max est. (card name line)."
+    },
+    "fish.lantern_eel": {
+      "where": "Fish card in the backpack; also inserted as {fish} into catch.success",
+      "role": "label",
+      "max": 18,
+      "params": {},
+      "neighbors": ["fish.golden_carp", "rarity.mythic", "hud.backpack", "catch.success"],
+      "notes": "Invented glowing eel, the game's mascot; 'Lantern' echoes the title Lantern Lake. Glossary ask: translate the meaning or keep the English name. Base form (singular, nominative, no article). max est. (card name line)."
+    },
+    "rarity.mythic": {
+      "where": "Rarity tag on fish cards; also inserted as {rarity} into catch.success",
+      "role": "label",
+      "max": 10,
+      "params": {},
+      "neighbors": ["fish.golden_carp", "fish.lantern_eel", "catch.success"],
+      "notes": "Rarity tier above Legendary, the highest one known (glossary: Mythic). Must read as higher than your Legendary. It is a tier label, not an adjective agreeing with one fish: use the form your language uses for rarity tiers in games. max est. (small tag)."
+    },
+    "shop.rods": {
+      "where": "Shop, tab listing fishing rods",
+      "role": "button",
+      "max": 10,
+      "params": {},
+      "neighbors": ["shop.equip", "shop.equipped", "shop.free", "shop.buy_robux", "pass.auto_reel", "pass.lucky_bait"],
+      "notes": "Plural noun: fishing rods (glossary: Rods). Not metal rods, poles or curtain rods. Tab label. max est. (tab, above 1.4x source)."
+    },
+    "shop.equip": {
+      "where": "Shop, button under a rod the player owns",
+      "role": "button",
+      "max": 10,
+      "params": {},
+      "neighbors": ["shop.equipped", "shop.free", "shop.rods"],
+      "notes": "Action: use this rod now. Pairs with shop.equipped (a state label); many languages need different forms for the button and the label. max est."
+    },
+    "shop.equipped": {
+      "where": "Shop, label on the rod currently in use",
+      "role": "label",
+      "max": 11,
+      "params": {},
+      "neighbors": ["shop.equip", "shop.free", "shop.rods"],
+      "notes": "State, not action: this rod is the one in use. If your language agrees a participle with its noun, it describes a rod (glossary: Rods); 'In use' wording also works. max est."
+    },
+    "shop.free": {
+      "where": "Shop, price label on the starter rod",
+      "role": "label",
+      "max": 8,
+      "params": {},
+      "neighbors": ["shop.equip", "shop.equipped", "shop.rods"],
+      "notes": "Price: costs nothing, shown where a price would be. Not 'set free', 'available' or 'empty slot'. max est."
+    },
+    "shop.buy_robux": {
+      "where": "Shop, purchase button on a game pass card",
+      "role": "button",
+      "max": 20,
+      "params": {
+        "price": {"meaning": "game pass price in Robux, integer", "sample": "99"}
+      },
+      "neighbors": ["pass.auto_reel", "pass.lucky_bait", "shop.rods"],
+      "notes": "Robux stays exactly 'Robux' (glossary: keep); keep {price} next to it, order may change. max est., excludes {price}."
+    },
+    "pass.auto_reel": {
+      "where": "Shop, name on the Auto Reel game pass card",
+      "role": "product name",
+      "max": 14,
+      "params": {},
+      "neighbors": ["pass.lucky_bait", "shop.buy_robux", "shop.rods"],
+      "notes": "Game pass that reels hooked fish in automatically. Glossary ask: translate (default) or keep for marketing. Use the same verb as hud.reel. The pass name on the Roblox store page and purchase prompt is set separately in Creator Hub. max est."
+    },
+    "pass.lucky_bait": {
+      "where": "Shop, description on the Lucky Bait game pass card",
+      "role": "item description",
+      "max": null,
+      "params": {},
+      "neighbors": ["pass.auto_reel", "shop.buy_robux", "shop.rods"],
+      "notes": "Keep the <b></b> tags around the pass name. Lucky Bait is a game pass (glossary ask) built from the glossary words luck and Bait. 'doubles your rare fish chance' = twice the chance of catching rare (higher-tier) fish; 'rare' matches glossary Rare. Description wraps; no hard budget."
+    },
+    "sell.all": {
+      "where": "Fish market, button that sells every fish in the backpack",
+      "role": "button",
+      "max": 12,
+      "params": {},
+      "neighbors": ["sell.done", "sell.prompt"],
+      "notes": "Action: sell all your caught fish at once. max est."
+    },
+    "sell.done": {
+      "where": "Toast after selling at the fish market",
+      "role": "toast",
+      "max": 40,
+      "params": {
+        "count": {"meaning": "number of fish sold, integer, can be 1", "sample": "12"},
+        "coins": {"meaning": "coins earned, integer, can be 1", "sample": "340"}
+      },
+      "neighbors": ["sell.all", "sell.prompt"],
+      "notes": "count and coins can each be 1: use plural-neutral wording per your locale guide (a label form works). coins is the soft currency (glossary). max est.: toast about 45 minus the numbers."
+    },
+    "sell.prompt": {
+      "where": "Proximity prompt at the fish market stall (in the 3D world)",
+      "role": "prompt",
+      "max": 21,
+      "params": {},
+      "neighbors": ["sell.all", "sell.done"],
+      "notes": "E is the keyboard key: keep it exactly (glossary: keep) and translate the words around it. Imperative: press the key to sell your fish. Source-side issue: phone and console players have no E key; Roblox ProximityPrompt already shows the right key, so ActionText 'Sell' would serve everyone. max est."
+    },
+    "ascend.button": {
+      "where": "Ascend (prestige) button; exact screen not known",
+      "role": "button",
+      "max": 10,
+      "params": {},
+      "neighbors": ["ascend.confirm"],
+      "notes": "Prestige mechanic: resets rods and coins, keeps a permanent luck bonus (glossary: Ascend). Not religious or spiritual, not climbing. Same word as in ascend.confirm. max est."
+    },
+    "ascend.confirm": {
+      "where": "Confirm dialog shown after pressing Ascend",
+      "role": "dialog body",
+      "max": null,
+      "params": {
+        "bonus": {"meaning": "permanent bonus to rare-fish chance, integer percent", "sample": "25"}
+      },
+      "neighbors": ["ascend.button"],
+      "notes": "Question before Ascending. 'start over' = rods and coins reset to the beginning. '{bonus}% more often' = rare fish are caught that much more often, permanently. Write the percent as your language does. Same Ascend word as ascend.button. Free text; no hard budget."
+    },
+    "weather.storm": {
+      "where": "Server-wide banner during a storm weather event",
+      "role": "banner",
+      "max": 60,
+      "params": {},
+      "neighbors": ["event.ends"],
+      "notes": "Two short sentences, excited. 'biting' = fish are taking the bait (fishing sense), not animals biting people; 'rare' matches glossary Rare. max est. (banner about 60)."
+    },
+    "quest.title": {
+      "where": "Quests panel title",
+      "role": "title",
+      "max": 12,
+      "params": {},
+      "neighbors": ["quest.catch_n", "quest.claim"],
+      "notes": "Plural noun: the list of tasks that give rewards (glossary: Quests). max est."
+    },
+    "quest.catch_n": {
+      "where": "Quests panel, one quest line",
+      "role": "label",
+      "max": 40,
+      "params": {
+        "n": {"meaning": "number of fish to catch, integer, can be 1", "sample": "10"}
+      },
+      "neighbors": ["quest.title", "quest.claim"],
+      "notes": "Instruction: catch n fish at the fishing spot Moonlit Bay (glossary ask; if kept, byte-identical). n can be 1: plural-neutral wording. max est., excludes {n}."
+    },
+    "quest.claim": {
+      "where": "Quests panel, button on a finished quest",
+      "role": "button",
+      "max": 10,
+      "params": {},
+      "neighbors": ["quest.title", "quest.catch_n"],
+      "notes": "Action: collect the quest's reward. Not 'claim land' or 'make a claim'. max est."
+    },
+    "friends.boost": {
+      "where": "Boost panel, info line",
+      "role": "label",
+      "max": 57,
+      "params": {
+        "percent": {"meaning": "luck bonus for fishing in the same server as friends, integer percent", "sample": "10"}
+      },
+      "neighbors": [],
+      "notes": "Statement, not an order: fishing alongside friends raises your luck (glossary) by {percent} percent. Keep the '+' and write the percent as your language does. max est."
+    },
+    "trade.sent": {
+      "where": "Toast after you send a trade request",
+      "role": "toast",
+      "max": 33,
+      "params": {
+        "player": {"meaning": "Roblox display name of the other player; any gender, up to 20 characters", "sample": "FishyFinn"}
+      },
+      "neighbors": ["trade.accept"],
+      "notes": "Trade = player-to-player trade (glossary). {player} gender unknown: use your locale guide's neutral pattern. max est.: toast about 45 minus a typical name."
+    },
+    "trade.accept": {
+      "where": "Toast when the other player accepts your trade request",
+      "role": "toast",
+      "max": 33,
+      "params": {
+        "player": {"meaning": "Roblox display name of the other player; any gender, up to 20 characters", "sample": "FishyFinn"}
+      },
+      "neighbors": ["trade.sent"],
+      "notes": "{player} is the subject; gender unknown, so avoid gendered forms that describe {player}. 'your trade' = your trade request. max est.: toast about 45 minus a typical name."
+    },
+    "codes.enter": {
+      "where": "Codes panel, placeholder in the text box where players type a promo code",
+      "role": "text box placeholder",
+      "max": 20,
+      "params": {},
+      "neighbors": ["codes.redeemed"],
+      "notes": "Instruction to type a promo code (glossary: code), like SPRINGTIDE. 'Enter' = type in, not the Enter key. Codes themselves are never translated. max est."
+    },
+    "codes.redeemed": {
+      "where": "Toast after a valid promo code is accepted",
+      "role": "toast",
+      "max": 45,
+      "params": {},
+      "neighbors": ["codes.enter"],
+      "notes": "'redeemed' = the code was used and its reward granted. Friendly tone. max est. (toast about 45)."
+    },
+    "afk.kicked": {
+      "where": "Message after 15 minutes idle; may be a kick message or an in-game popup (not known)",
+      "role": "popup",
+      "max": null,
+      "params": {},
+      "neighbors": [],
+      "notes": "Translate what the text says: you were inactive too long, so your fishing stopped. The key says 'kicked' but the text does not mention removal from the server; don't add it. Free text; no hard budget."
+    },
+    "settings.back": {
+      "where": "Settings panel, button that closes the panel",
+      "role": "button",
+      "max": 8,
+      "params": {},
+      "neighbors": ["settings.sfx"],
+      "notes": "Navigation: go back / close the panel. Not the body part. max est."
+    },
+    "settings.sfx": {
+      "where": "Settings panel, row label (likely beside a toggle or slider)",
+      "role": "label",
+      "max": 18,
+      "params": {},
+      "neighbors": ["settings.back"],
+      "notes": "Sound effects, as opposed to music. Use the usual game-settings term in your language. max est."
+    },
+    "event.ends": {
+      "where": "Label under an event banner (probably the weather.storm banner or a timed event; not known)",
+      "role": "label",
+      "max": 14,
+      "params": {
+        "time": {"meaning": "time left until the event ends, pre-formatted by the game with English unit letters", "sample": "2d 4h"}
+      },
+      "neighbors": ["weather.storm"],
+      "notes": "Countdown: the event ends in {time}. {time} comes pre-formatted from the game; you cannot change its units here. max est., excludes {time}."
+    },
+    "daily.streak": {
+      "where": "Daily login reward panel, main message",
+      "role": "popup",
+      "max": 62,
+      "params": {
+        "day": {"meaning": "consecutive days the player has logged in, integer from 1", "sample": "3"}
+      },
+      "neighbors": [],
+      "notes": "'Day {day} streak' = you have logged in {day} days in a row (glossary: streak). day can be 1: prefer a label form ('Streak: day {day}') over one that needs a plural. 'for more' = more rewards. max est."
+    },
+    "tip.night": {
+      "where": "Loading screen, tip line",
+      "role": "label",
+      "max": 60,
+      "params": {},
+      "neighbors": ["title"],
+      "notes": "Gameplay hint. 'bite' = take the bait (fishing sense). Use the 'Tip:' label form your language uses. max est."
+    },
+    "group.join": {
+      "where": "Banner inviting players to join the studio's Roblox group",
+      "role": "banner",
+      "max": 60,
+      "params": {},
+      "neighbors": [],
+      "notes": "group = the Roblox group feature (glossary): use the word Roblox's own UI uses in your language. Reward is 50 units of bait (glossary: Bait); keep the number 50. max est. (banner about 60)."
+    },
+    "leaderboard.biggest": {
+      "where": "Lobby leaderboard title (in-world board)",
+      "role": "title",
+      "max": 18,
+      "params": {},
+      "neighbors": [],
+      "notes": "Ranks players by the heaviest single fish caught. 'Biggest' = heaviest by weight, not longest; 'Catch' = a fish caught (noun). max est."
+    }
+  }
+}

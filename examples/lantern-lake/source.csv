@@ -1,0 +1,41 @@
+Key,Source,Context,Example
+title,Lantern Lake Fishing,,Game title shown on the loading screen
+hud.cast,Cast,,Big round button: throw the fishing line into the water
+hud.reel,Reel,,Big round button shown while a fish bites: pull the line in
+hud.bait_left,{count} Bait,,"HUD counter, count can be 0, 1 or more"
+hud.backpack,Backpack,,HUD button that opens your caught fish
+catch.success,You caught a {rarity} {fish}!,,"Toast. rarity and fish are already translated words, e.g. Rare / Golden Carp"
+catch.escaped,It got away...,,Toast when the fish escapes
+catch.new_record,New record! {weight} kg,,"Toast, weight like 12.4"
+fish.golden_carp,Golden Carp,,Fish name on its card
+fish.lantern_eel,Lantern Eel,,"Invented glowing fish, the game's mascot"
+rarity.mythic,Mythic,,Rarity tag above Legendary
+shop.rods,Rods,,Shop tab: fishing rods
+shop.equip,Equip,,Button under an owned rod
+shop.equipped,Equipped,,Label on the rod you are using now
+shop.free,Free,,Price label on the starter rod (costs nothing)
+shop.buy_robux,Buy for {price} Robux,,Button on a game pass
+pass.auto_reel,Auto Reel,,Game pass name: reels fish in automatically
+pass.lucky_bait,<b>Lucky Bait</b> doubles your rare fish chance!,,Game pass description
+sell.all,Sell All,,Button at the fish market
+sell.done,Sold {count} fish for {coins} coins!,,"Toast, count and coins are integers, can be 1"
+sell.prompt,Press E to sell,,Proximity prompt at the market stall; E is the keyboard key
+ascend.button,Ascend,,"Prestige mechanic: reset rods and coins, keep a permanent luck bonus"
+ascend.confirm,Ascend now? You will start over but catch rare fish {bonus}% more often.,,Confirm dialog
+weather.storm,A storm is coming! Rare fish are biting.,,Server-wide banner during a weather event
+quest.title,Quests,,Panel title
+quest.catch_n,Catch {n} fish at Moonlit Bay,,"Quest line, n is an integer; Moonlit Bay is a fishing spot in the game"
+quest.claim,Claim,,Button that takes a finished quest's reward
+friends.boost,Fishing with friends gives +{percent}% luck,,Info line in the boost panel
+trade.sent,Trade request sent to {player},,"Toast, player is a Roblox display name"
+trade.accept,{player} accepted your trade,,"Toast, player is a Roblox display name"
+codes.enter,Enter a code,,Text box placeholder; players type promo codes like SPRINGTIDE
+codes.redeemed,Code redeemed! Enjoy your reward.,,Toast
+afk.kicked,You were idle for too long and stopped fishing.,,Message after 15 minutes idle
+settings.back,Back,,Button that closes the settings panel
+settings.sfx,Sound Effects,,Settings row
+event.ends,Ends in {time},,"Label under the event banner, time like 2d 4h"
+daily.streak,Day {day} streak! Come back tomorrow for more.,,Daily login reward panel
+tip.night,Tip: some fish only bite at night.,,Loading screen tip
+group.join,Join the group for 50 free bait!,,"Banner; the group is the studio's Roblox group"
+leaderboard.biggest,Biggest Catch,,Lobby leaderboard title: heaviest fish caught

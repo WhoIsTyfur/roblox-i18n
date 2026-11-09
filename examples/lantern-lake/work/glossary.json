@@ -1,0 +1,183 @@
+{
+  "terms": [
+    {
+      "term": "Lantern Lake Fishing",
+      "meaning": "game title",
+      "decision": "keep",
+      "reason": "brand; no official localized title given",
+      "notes": "Translators mark keep:true on the title key."
+    },
+    {
+      "term": "Robux",
+      "meaning": "Roblox's premium currency",
+      "decision": "keep",
+      "reason": "Roblox keeps it in every language",
+      "notes": "Never translated or replaced with a symbol."
+    },
+    {
+      "term": "E",
+      "meaning": "keyboard key in sell.prompt",
+      "decision": "keep",
+      "reason": "keyboard keys are never translated",
+      "notes": "Translate the words around it."
+    },
+    {
+      "term": "SPRINGTIDE",
+      "meaning": "example promo code players type in the codes box",
+      "decision": "keep",
+      "reason": "players must type codes exactly",
+      "notes": "Not in the table text; it appears only in the developer note for codes.enter. No promo code is ever translated."
+    },
+    {
+      "term": "Lantern Eel",
+      "meaning": "invented glowing eel, the game's mascot fish",
+      "decision": "translate",
+      "reason": "ordinary words that tell players what the fish is; but as the mascot it may appear in thumbnails and ads, where an English name keeps the brand",
+      "notes": "If translated, keep the idea of a glowing lantern. Non-Latin locales that keep it follow their guide on transliteration. Checkpoint: developer chose translate.",
+      "ask": false
+    },
+    {
+      "term": "Moonlit Bay",
+      "meaning": "a fishing spot in the game, named in a quest",
+      "decision": "translate",
+      "reason": "descriptive place name players should understand; but in-world signs or map labels may show the English name, which a translation would no longer match",
+      "notes": "If kept, it must be byte-identical in quest.catch_n. Checkpoint: developer chose translate.",
+      "ask": false
+    },
+    {
+      "term": "Golden Carp",
+      "meaning": "fish species, a golden-colored carp (a real ornamental fish)",
+      "decision": "translate",
+      "reason": "ordinary words for a real fish",
+      "notes": "Base form (singular, no article); also inserted as {fish} into catch.success."
+    },
+    {
+      "term": "Mythic",
+      "meaning": "rarity tier above Legendary, the highest known",
+      "decision": "translate",
+      "reason": "rarity names that are ordinary words are translated",
+      "notes": "Must read as higher than Legendary; also inserted as {rarity} into catch.success."
+    },
+    {
+      "term": "Legendary",
+      "meaning": "rarity tier just below Mythic",
+      "decision": "translate",
+      "reason": "rarity names that are ordinary words are translated",
+      "notes": "Not in this table; listed so Mythic is rendered as the tier above it."
+    },
+    {
+      "term": "Rare",
+      "meaning": "rarity tier; also the adjective in 'rare fish' (pass.lucky_bait, ascend.confirm, weather.storm)",
+      "decision": "translate",
+      "reason": "rarity names that are ordinary words are translated",
+      "notes": "Use the same word for the tier and for 'rare fish'."
+    },
+    {
+      "term": "Ascend",
+      "meaning": "prestige: reset rods and coins for a permanent luck bonus",
+      "decision": "translate",
+      "reason": "core mechanic; players read it in their language",
+      "notes": "Not religious and not climbing. Same word in ascend.button and ascend.confirm."
+    },
+    {
+      "term": "Bait",
+      "meaning": "consumable used to fish; counted on the HUD and given as a reward",
+      "decision": "translate",
+      "reason": "game resource players should understand",
+      "notes": "Same word in hud.bait_left, group.join and the pass name Lucky Bait."
+    },
+    {
+      "term": "coins",
+      "meaning": "soft currency earned by selling fish",
+      "decision": "translate",
+      "reason": "currency word players should understand",
+      "notes": ""
+    },
+    {
+      "term": "luck",
+      "meaning": "stat that raises the chance of rare fish; boosted by friends, Ascend and Lucky Bait",
+      "decision": "translate",
+      "reason": "stat players should understand",
+      "notes": "Same word in friends.boost and inside Lucky Bait."
+    },
+    {
+      "term": "Rods",
+      "meaning": "fishing rods, bought and equipped in the shop",
+      "decision": "translate",
+      "reason": "item category",
+      "notes": "Fishing rods only, not metal rods or poles."
+    },
+    {
+      "term": "Cast",
+      "meaning": "HUD action: throw the fishing line into the water",
+      "decision": "translate",
+      "reason": "core action",
+      "notes": "Fishing sense, not a spell or a movie cast."
+    },
+    {
+      "term": "Reel",
+      "meaning": "HUD action: pull the line in while a fish bites",
+      "decision": "translate",
+      "reason": "core action",
+      "notes": "Same verb in the pass name Auto Reel."
+    },
+    {
+      "term": "Backpack",
+      "meaning": "inventory of caught fish, opened from the HUD",
+      "decision": "translate",
+      "reason": "UI concept players should understand",
+      "notes": ""
+    },
+    {
+      "term": "Quests",
+      "meaning": "tasks that give rewards when claimed",
+      "decision": "translate",
+      "reason": "mechanic",
+      "notes": ""
+    },
+    {
+      "term": "Trade",
+      "meaning": "player-to-player exchange of fish or items",
+      "decision": "translate",
+      "reason": "mechanic",
+      "notes": "Use the word players in your language use for trading on Roblox; same word in trade.sent and trade.accept."
+    },
+    {
+      "term": "code",
+      "meaning": "promo code typed in the codes box for a reward",
+      "decision": "translate",
+      "reason": "UI word players should understand",
+      "notes": "Translate the word 'code', never the code itself."
+    },
+    {
+      "term": "group",
+      "meaning": "the studio's Roblox group (platform feature)",
+      "decision": "translate",
+      "reason": "Roblox platform term",
+      "notes": "Use the word Roblox's own UI uses for groups in your language."
+    },
+    {
+      "term": "streak",
+      "meaning": "consecutive days of daily login",
+      "decision": "translate",
+      "reason": "mechanic",
+      "notes": ""
+    },
+    {
+      "term": "Auto Reel",
+      "meaning": "game pass that reels hooked fish in automatically",
+      "decision": "translate",
+      "reason": "pass names that describe what they do are translated, unless the owner wants them identical for marketing",
+      "notes": "Same verb as Reel. The pass's store name is set separately in Creator Hub and should match. Checkpoint: developer chose translate.",
+      "ask": false
+    },
+    {
+      "term": "Lucky Bait",
+      "meaning": "game pass that doubles the chance of rare fish",
+      "decision": "translate",
+      "reason": "pass names that describe what they do are translated, unless the owner wants them identical for marketing",
+      "notes": "Built from the glossary words luck and Bait. Shown in bold inside pass.lucky_bait. Same answer as Auto Reel. Checkpoint: developer chose translate.",
+      "ask": false
+    }
+  ]
+}

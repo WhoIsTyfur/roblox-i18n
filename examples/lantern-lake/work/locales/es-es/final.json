@@ -1,0 +1,314 @@
+{
+  "title": {
+    "text": "Lantern Lake Fishing",
+    "confidence": "high",
+    "source_hash": "a47ac73bd210",
+    "status": "ok",
+    "flags": [],
+    "keep": true,
+    "note": "Game title, glossary keep; no Spanish title given."
+  },
+  "hud.cast": {
+    "text": "Lanzar",
+    "confidence": "high",
+    "source_hash": "300d6b606355",
+    "status": "ok",
+    "flags": []
+  },
+  "hud.reel": {
+    "text": "Recoger",
+    "confidence": "high",
+    "source_hash": "65eaf7af45ec",
+    "status": "ok",
+    "flags": [],
+    "note": "Fishing sense, as in 'recoger el sedal' (reel the line in); same verb as the pass name Autorrecogida."
+  },
+  "hud.bait_left": {
+    "text": "Cebo: {count}",
+    "confidence": "high",
+    "source_hash": "e601d66eaa75",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form so 0 and 1 read correctly."
+  },
+  "hud.backpack": {
+    "text": "Mochila",
+    "confidence": "high",
+    "source_hash": "5ba3d4acb41b",
+    "status": "ok",
+    "flags": []
+  },
+  "catch.success": {
+    "text": "¡Has pescado: {fish} ({rarity})!",
+    "confidence": "high",
+    "source_hash": "272febdd796b",
+    "status": "ok",
+    "flags": [],
+    "note": "Colon and parentheses keep articles and adjectives from agreeing with the inserted names (Carpa dorada and Anguila farol are feminine; rarity tags use the masculine standalone form, per the guide)."
+  },
+  "catch.escaped": {
+    "text": "Se te ha escapado...",
+    "confidence": "high",
+    "source_hash": "e739c7cfdaa0",
+    "status": "ok",
+    "flags": [],
+    "note": "'It slipped away from you'; present perfect, the Spain form for something that just happened."
+  },
+  "catch.new_record": {
+    "text": "¡Nuevo récord! {weight} kg",
+    "confidence": "high",
+    "source_hash": "ebc49aba7ab1",
+    "status": "ok",
+    "flags": [],
+    "note": "Source-side issue: {weight} arrives as '12.4'; Spain writes '12,4'. The game code should format the decimal comma; the translation cannot fix it."
+  },
+  "fish.golden_carp": {
+    "text": "Carpa dorada",
+    "confidence": "high",
+    "source_hash": "f1067ff78aa6",
+    "status": "ok",
+    "flags": []
+  },
+  "fish.lantern_eel": {
+    "text": "Anguila farol",
+    "confidence": "medium",
+    "source_hash": "250b95f652da",
+    "status": "ok",
+    "flags": [],
+    "note": "Invented name: 'farol' is the old-style lantern, keeping the glowing-lantern idea. 'Anguila linterna' (after the real 'pez linterna') also fits in 16, but 'linterna' reads as a flashlight in Spain."
+  },
+  "rarity.mythic": {
+    "text": "Mítico",
+    "confidence": "high",
+    "source_hash": "21b68e8ea782",
+    "status": "ok",
+    "flags": [],
+    "note": "Masculine standalone tier tag (Raro, Épico, Legendario, Mítico) per the guide; ranks above Legendario."
+  },
+  "shop.rods": {
+    "text": "Cañas",
+    "confidence": "high",
+    "source_hash": "bd4eb6ca21cc",
+    "status": "ok",
+    "flags": [],
+    "note": "Short for 'cañas de pescar' (15, over budget); the fishing shop makes the sense clear."
+  },
+  "shop.equip": {
+    "text": "Equipar",
+    "confidence": "high",
+    "source_hash": "965ae4ed708e",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.equipped": {
+    "text": "Equipada",
+    "confidence": "high",
+    "source_hash": "bc4dc0e649e4",
+    "status": "ok",
+    "flags": [],
+    "note": "State label agreeing with 'caña' (fem.), since it only shows on rods. If the label is ever reused on other items, 'En uso' is neutral."
+  },
+  "shop.free": {
+    "text": "Gratis",
+    "confidence": "high",
+    "source_hash": "32e70de4fd57",
+    "status": "ok",
+    "flags": []
+  },
+  "shop.buy_robux": {
+    "text": "Comprar por {price} Robux",
+    "confidence": "high",
+    "source_hash": "e6b548db246d",
+    "status": "ok",
+    "flags": []
+  },
+  "pass.auto_reel": {
+    "text": "Autorrecogida",
+    "confidence": "medium",
+    "source_hash": "ddb006177f24",
+    "status": "ok",
+    "flags": [],
+    "note": "Noun from the Reel verb 'recoger' with the auto- prefix (like 'autoguardado'). 'Recogida automática' is clearer but 19, over the 14 budget; 'Recoger auto' would read as 'pick up the car'. The Creator Hub pass name should match."
+  },
+  "pass.lucky_bait": {
+    "text": "¡El <b>Cebo de la suerte</b> duplica tus probabilidades de sacar peces raros!",
+    "confidence": "high",
+    "source_hash": "4d56eca8a741",
+    "status": "ok",
+    "flags": [],
+    "note": "Article 'El' stays outside the bold pass name. 'sacar' = land a fish, avoiding the clunky 'pescar peces'; 'raros' matches the Raro tier."
+  },
+  "sell.all": {
+    "text": "Vender todo",
+    "confidence": "high",
+    "source_hash": "2c12f2dcb3d9",
+    "status": "ok",
+    "flags": []
+  },
+  "sell.done": {
+    "text": "¡Vendido! Peces: {count}, monedas: {coins}",
+    "confidence": "medium",
+    "source_hash": "447be5b25a82",
+    "status": "ok",
+    "flags": [],
+    "note": "Label form because count and coins can each be 1 ('1 peces', '1 monedas' would be wrong). Less flowing than the English sentence; a native may prefer another plural-safe wording."
+  },
+  "sell.prompt": {
+    "text": "Pulsa E para vender",
+    "confidence": "high",
+    "source_hash": "68d065047eb1",
+    "status": "ok",
+    "flags": [],
+    "note": "Keeps E; 'Pulsa' is the Spain verb. Source-side issue: phone and console players have no E key; ActionText 'Vender' would serve everyone."
+  },
+  "ascend.button": {
+    "text": "Ascender",
+    "confidence": "high",
+    "source_hash": "9948c553f174",
+    "status": "ok",
+    "flags": [],
+    "note": "Promotion/rank-up sense, not climbing or religious; same word as in ascend.confirm."
+  },
+  "ascend.confirm": {
+    "text": "¿Ascender ahora? Empezarás de cero, pero pescarás peces raros un {bonus} % más a menudo.",
+    "confidence": "high",
+    "source_hash": "0beff856ae53",
+    "status": "ok",
+    "flags": [],
+    "note": "'Empezarás de cero' = start over (rods and coins reset). Space before % per the guide."
+  },
+  "weather.storm": {
+    "text": "¡Se acerca una tormenta! Los peces raros están picando.",
+    "confidence": "high",
+    "source_hash": "5d9b5b777d82",
+    "status": "ok",
+    "flags": [],
+    "note": "'picar' = fish taking the bait, the fishing sense of 'biting'."
+  },
+  "quest.title": {
+    "text": "Misiones",
+    "confidence": "high",
+    "source_hash": "a55ca4ac0e7d",
+    "status": "ok",
+    "flags": []
+  },
+  "quest.catch_n": {
+    "text": "Captura peces en Bahía Lunar. Meta: {n}",
+    "confidence": "medium",
+    "source_hash": "01c4d913ec16",
+    "status": "fixed",
+    "flags": [
+      "review:minor:accuracy"
+    ],
+    "note": "Count after a colon because n can be 1 ('1 peces' would be wrong). 'Bahía Lunar' is the translated Moonlit Bay (terms.json); in-world signs must use the same name. 'Captura' avoids the clunky 'Pesca peces'.",
+    "review_reason": "A bare number after a colon reads as a progress counter (the back-translator could not tell target from progress); labeling it Meta makes {n} the goal and stays plural-safe for n = 1, 36 of 40."
+  },
+  "quest.claim": {
+    "text": "Reclamar",
+    "confidence": "high",
+    "source_hash": "1a7c2eef6c94",
+    "status": "ok",
+    "flags": [],
+    "note": "Collect the reward, per the guide's reward.claim reference."
+  },
+  "friends.boost": {
+    "text": "Pescar con amigos te da +{percent} % de suerte",
+    "confidence": "high",
+    "source_hash": "8225f2d8369f",
+    "status": "ok",
+    "flags": [],
+    "note": "Statement, not an order. Space before % per the guide."
+  },
+  "trade.sent": {
+    "text": "Has propuesto un intercambio a {player}",
+    "confidence": "high",
+    "source_hash": "2eff2898d327",
+    "status": "ok",
+    "flags": [],
+    "note": "Restructured as 'You proposed a trade to {player}': 'Solicitud de intercambio enviada a' is 35, over the 33 budget. Neutral for any gender of {player}."
+  },
+  "trade.accept": {
+    "text": "{player} ha aceptado tu intercambio",
+    "confidence": "high",
+    "source_hash": "bd94713015ad",
+    "status": "ok",
+    "flags": [],
+    "note": "'ha aceptado' never changes form, so it is safe for any gender of {player}."
+  },
+  "codes.enter": {
+    "text": "Introduce un código",
+    "confidence": "high",
+    "source_hash": "617a26123bcd",
+    "status": "ok",
+    "flags": []
+  },
+  "codes.redeemed": {
+    "text": "¡Código canjeado! Disfruta de tu recompensa.",
+    "confidence": "high",
+    "source_hash": "386d814f7012",
+    "status": "ok",
+    "flags": []
+  },
+  "afk.kicked": {
+    "text": "Has estado demasiado tiempo sin moverte, así que has dejado de pescar.",
+    "confidence": "high",
+    "source_hash": "6e924547dc32",
+    "status": "ok",
+    "flags": [],
+    "note": "'sin moverte' instead of 'inactivo', which would agree with the player's gender. 'así que' makes the cause explicit, as the context describes it; no mention of leaving the server."
+  },
+  "settings.back": {
+    "text": "Volver",
+    "confidence": "high",
+    "source_hash": "39198ad26b77",
+    "status": "ok",
+    "flags": []
+  },
+  "settings.sfx": {
+    "text": "Efectos de sonido",
+    "confidence": "high",
+    "source_hash": "6f0e0bf0a019",
+    "status": "ok",
+    "flags": []
+  },
+  "event.ends": {
+    "text": "Acaba en {time}",
+    "confidence": "high",
+    "source_hash": "7767949a234d",
+    "status": "ok",
+    "flags": [],
+    "note": "Source-side issue: {time} arrives as '2d 4h'; Spain writes '2 d 4 h', and minutes must be 'min' (m = meters). d and h read fine meanwhile."
+  },
+  "daily.streak": {
+    "text": "¡Día {day} de racha! Vuelve mañana a por más.",
+    "confidence": "high",
+    "source_hash": "2162d0628c39",
+    "status": "ok",
+    "flags": [],
+    "note": "'Día {day} de racha' works for day 1. 'a por más' is everyday Spain Spanish for 'to get more'."
+  },
+  "tip.night": {
+    "text": "Consejo: algunos peces solo pican de noche.",
+    "confidence": "high",
+    "source_hash": "af99914c0987",
+    "status": "ok",
+    "flags": [],
+    "note": "'picar' = take the bait."
+  },
+  "group.join": {
+    "text": "¡Únete a nuestra comunidad y llévate 50 cebos gratis!",
+    "confidence": "high",
+    "source_hash": "fee66917dd6d",
+    "status": "ok",
+    "flags": [],
+    "note": "'comunidad' follows Roblox's Groups -> Communities rename (guide). 'nuestra' makes clear it is the studio's group, which bare 'la comunidad' would not."
+  },
+  "leaderboard.biggest": {
+    "text": "Mayor captura",
+    "confidence": "high",
+    "source_hash": "350febf9649e",
+    "status": "ok",
+    "flags": [],
+    "note": "Board title for the heaviest single fish; the weights on the board make the sense clear. 'Pez más pesado' (14) is the explicit alternative."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "mode": "single",
+  "target": "spanish",
+  "source_locale": "en-us",
+  "locales": [
+    "es-es",
+    "es-mx"
+  ],
+  "batches": {
+    "es-es": 1,
+    "es-mx": 1
+  }
+}
