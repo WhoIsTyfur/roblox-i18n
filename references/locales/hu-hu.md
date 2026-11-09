@@ -1,4 +1,4 @@
-# Hungarian (hu-hu) -- translation guide
+# Hungarian (hu-hu) translation guide
 
 ## At a glance
 | | |
@@ -7,15 +7,15 @@
 | Script, direction | Latin plus á é í ó ö ő ú ü ű, LTR |
 | Address the player as | informal singular "te" (tegezés): "Írd be", "Lépj be"; never "Ön"/"maga" forms ("Adja meg", "Kérjük") |
 | Text expansion vs English | about +20-35% for sentences (unverified rule of thumb); this guide's reference set came out +11% while fitted to budgets; fewer but much longer words ("kisállataidat" = "your pets" as object) |
-| Plural categories (CLDR) | cardinal: one, other -- but a noun after a number is always singular, so one string fits every count; ordinal: one (1, 5), other -- that split only approximates the "az"/"a" article ("az 5.", "a 2."; but also "az 50.", "az 1000."), not a word change |
-| Model confidence | medium -- grammar is well documented, but models glue suffixes to {params}, pick the wrong a/az, mix definite and indefinite verbs, and Roblox has no Hungarian UI to anchor terms |
+| Plural categories (CLDR) | cardinal: one, other (a noun after a number is always singular, so one string fits every count); ordinal: one (1, 5), other (that split only approximates the "az"/"a" article ("az 5.", "a 2."; but also "az 50.", "az 1000."), not a word change) |
+| Model confidence | medium: grammar is well documented, but models glue suffixes to {params}, pick the wrong a/az, mix definite and indefinite verbs, and Roblox has no Hungarian UI to anchor terms |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
 - Roblox's own app and site are not in Hungarian: the Roblox locale API flags `hu_hu` for in-game content only (not full experience, not signup), checked 2026-11-08, and the Hungarian App Store listing names 15 app languages without Hungarian. Kids see Robux, Premium, Friends and Groups in English. Roblox does not auto-translate Hungarian either, so every empty key shows English.
-- Reach: `Player.LocaleId` is the account's locale (Roblox API docs), which Hungarian kids likely cannot set. The documented route is the in-game Settings menu language switcher, which lists the languages the game itself supports -- so add Hungarian under Supported Languages in the Creator Dashboard. Whether that switcher offers Hungarian is unverified (needs a real account); the Player Emulator only previews the column.
+- Reach: `Player.LocaleId` is the account's locale (Roblox API docs), which Hungarian kids likely cannot set. The documented route is the in-game Settings menu language switcher, which lists the languages the game itself supports, so add Hungarian under Supported Languages in the Creator Dashboard. Whether that switcher offers Hungarian is unverified (needs a real account); the Player Emulator only previews the column.
 - Write neutral standard Hungarian for readers in Hungary and the neighboring minorities: no forint prices, no Hungary-only holidays or town names.
-- Address one player with "te" in every string. Microsoft's Hungarian guide uses "Ön" for software (while asking for a playful tone in games); Minecraft's Hungarian UI, which these kids know, uses "te": "Nyisd meg az eszköztárad", "Add meg a csatlakozási kódot". Never mix: "Írd be a kódot, és kapsz egy jutalmat!" -- not "Írja be a kódot, és kapsz...".
+- Address one player with "te" in every string. Microsoft's Hungarian guide uses "Ön" for software (while asking for a playful tone in games); Minecraft's Hungarian UI, which these kids know, uses "te": "Nyisd meg az eszköztárad", "Add meg a csatlakozási kódot". Never mix: "Írd be a kódot, és kapsz egy jutalmat!", not "Írja be a kódot, és kapsz...".
 - One-word buttons, tabs, toggles: a verbal noun, as Microsoft ("Mentés") and Minecraft Bedrock do ("Játék" for Play, "Vásárlás", "Begyűjtés", "Beváltás", "Feloldás"). Sentences and calls to action, including buttons that carry an object or price: te-imperative, as Bedrock's "Játssz most" and "Vásárolj Minecraft-érméket": "Lájkold a játékot!", "Vedd meg 100 Robuxért". One style per element type.
 - Plain, everyday words (Microsoft): "ha" not "amennyiben", "megpróbál" not "megkísérel", "szeretne" not "kíván". A suffix beats a heavy phrase: "a csoportunkkal" not "a csoportunk segítségével".
 - Natural hype: "Szuper!", "Király!", "Hűha!", "Gratulálunk!", "Ne hagyd ki!". Microsoft notes "Oops" is too informal for Hungarian product text; in a kids' game "Hoppá!" is fine (Minecraft Bedrock: "Hoppá, hiba történt.").
@@ -83,13 +83,13 @@
 ## Typography and formatting
 - No space before ! ? : ; and one after.
 - Quotation marks: „...” (low opening, high closing), »...« inside (Microsoft, AkH). Never English "..." pairs or a mix.
-- Numbers (CLDR): comma for decimals, a no-break space for thousands: "1,5", "1 250". A {count} preformatted as "1,250" reads as 1.25, and a multiplier "1.5" should be "1,5" -- flag both to the developer.
+- Numbers (CLDR): comma for decimals, a no-break space for thousands: "1,5", "1 250". A {count} preformatted as "1,250" reads as 1.25, and a multiplier "1.5" should be "1,5". Flag both to the developer.
 - Percent (CLDR, AkH): no space: "25%", "+25%"; suffix with a hyphen: "25%-os".
 - Dashes (Microsoft): never an em dash. Ranges take an unspaced en dash: "3–5"; minus is a spaced en dash. In short UI text prefer a colon or a new sentence to a parenthetical dash.
 - Ellipsis: three periods, no space before (Microsoft): "Betöltés...".
 - Periods end full sentences; fragments get none (Microsoft). Hungarian grammar wants "!" after imperatives, but Microsoft keeps plain instructions on a period: hype gets "!", tutorial steps may end in ".".
 - Durations, CLDR short forms: nap, óra "ó", perc "p", másodperc "mp": "2 nap 5 ó", "3 ó 20 p", "45 mp". Minecraft Bedrock uses the same spaced "%s ó", "%s p" (and "%s n" for days). The unspaced "3ó 20p" has no source behind it; use no-break spaces instead so the pair never wraps apart. Clock time "10:35".
-- Roblox has no localized duration formatter: {time} comes from the developer's own code, so code that outputs "3h 20m" shows letters that mean nothing in Hungarian -- flag it and give the developer the forms above.
+- Roblox has no localized duration formatter: {time} comes from the developer's own code, so code that outputs "3h 20m" shows letters that mean nothing in Hungarian. Flag it and give the developer the forms above.
 - Keys stay Latin capitals, but article and suffix follow the letter's name: "az E-t" (é), "az F-et" (ef), "a Q-t" (kú). Safest is key plus verbal noun, as Bedrock's interact hints pair the key icon with "Kinyitás": "E: megnyitás" works for any key.
 - Never drop accents ("Vasarlas" for "Vásárlás") and never swap ő ű for õ û or ô (old Latin-1 fonts did this): "Kőtojás", not "Kõtojás".
 - Agglutination builds long words ("Szerencsebájitalért", "kisállataidat"); Roblox doesn't hyphenate, so enable TextWrapped and test the longest strings.
@@ -106,7 +106,7 @@
 ## Rendering on Roblox
 - Hungarian needs á é í ó ö ú ü (Latin-1) plus ő ű Ő Ű (U+0151 U+0171 U+0150 U+0170, Latin Extended-A). The double-acute letters are the ones decorative fonts lack.
 - Font files in a local Studio install (content/fonts, cmap check, 2026-11-08): FredokaOne, Creepster, DenkOne, PermanentMarker, Balthazar, RomanAntique (Antique), AccanthisADF (Fantasy) and HWYGOTH (Highway) have no ő ű Ő Ű. Builder Sans/Extended/Mono, Luckiest Guy, Bangers, Montserrat, Nunito, Press Start 2P, Source Sans Pro, Roboto, Oswald, Arimo and Ubuntu cover every Hungarian letter.
-- Rendered in Studio 2026-11-08: Roblox draws the missing ő ű from a fallback sans in a thin regular weight -- never a box -- so "Kőtojás" in Fredoka One shows a mismatched letter mid-word. Fredoka One is a favorite simulator font, so this is the main Hungarian risk: switch Hungarian text to a covering font such as Luckiest Guy or Builder Sans.
+- Rendered in Studio 2026-11-08: Roblox draws the missing ő ű from a fallback sans in a thin regular weight (never a box), so "Kőtojás" in Fredoka One shows a mismatched letter mid-word. Fredoka One is a favorite simulator font, so this is the main Hungarian risk: switch Hungarian text to a covering font such as Luckiest Guy or Builder Sans.
 - Accents on capitals (Á É Ő Ű) may clip at the top of tight TextScaled labels (unverified).
 - Luau's string.upper/lower are byte-wise ASCII (checked in Studio 2026-11-08): string.upper("érme őr") gives "éRME őR". Store all-caps text as written; never auto-case Hungarian.
 - Verify in Studio: Player Emulator set to Hungarian; paste the test phrase "Árvíztűrő tükörfúrógép" and "ÁRVÍZTŰRŐ TÜKÖRFÚRÓGÉP" into every font face used; open the panels with the longest strings.
@@ -136,7 +136,7 @@
 | rebirth.button | Rebirth | "Újjászületés" is 12 > max 10; players' word (unverified) |
 | rebirth.confirm | Jöhet a rebirth? Elveszíted az érméidet, de kapsz egy állandó {multiplier}x bónuszt. | no suffix on "rebirth" or after "x"; "állandó" = permanent ("végleges" means final); multiplier must arrive as "1,5" |
 | coins.need_more | Még {amount} érme kell! | singular noun works for 1; no suffix on the number |
-| coins.count | {count} érme | lowercase noun; "1,250" must be "1 250" -- code issue |
+| coins.count | {count} érme | lowercase noun; "1,250" must be "1 250" (code issue) |
 | egg.hatched | Kikelt egy {rarity} {pet}! | intransitive verb keeps both params nominative; "egy" avoids a/az; the labels' capitals ("Legendás Sárkány") are accepted item style |
 | rarity.legendary | Legendás | |
 | pet.name.dragon | Sárkány | |

@@ -1,4 +1,4 @@
-# Danish (da-dk) -- translation guide
+# Danish (da-dk) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "du" (din/dit/dine, dig); never "De/Dem/Deres", never plural "I" in UI |
 | Text expansion vs English | +15-30% for sentences; compounds make single words long ("Daily Reward" -> "Daglig belønning") (rule of thumb, unverified) |
 | Plural categories (CLDR) | one, other (one = 1, plus any 0,x or 1,x with a nonzero decimal: "1 mønt", "1,5 dag", "0,5 dag"; other: "0 mønter", "2 mønter", "2,5 dage") |
-| Model confidence | medium -- grammar is well covered, but Norwegian/Swedish bleed, en/et gender and calques are common, and player slang is unverified |
+| Model confidence | medium: grammar is well covered, but Norwegian/Swedish bleed, en/et gender and calques are common, and player slang is unverified |
 | Native review before shipping | recommended |
 
 ## Audience and register
@@ -19,7 +19,7 @@
 - Questions in dialogs: Microsoft prefers "Vil du ...?" over a bare "Fortsæt?" and keeps "Er du sikker på, at ...?" for real data loss. "Rebirth now?" -> "Vil du lave rebirth nu?".
 - Danish hype is understated. One "!" per sentence, short words: "Sejt!", "Tillykke!", "Nyt level!". Stacked superlatives ("Fantastisk utrolig mega-belønning!!!") read as a translated ad. Microsoft: don't overuse exclamation marks; pick stronger words.
 - Spoken, light forms are fine: "Det her sværd" (spoken) rather than "Dette sværd" (written, stiffer). Avoid adult slang and swearing ("fedt" is fine, "pisse" is not).
-- People: Danish role nouns are mostly neutral ("spiller", "vinder", "ven"). Never refer back to {player} with "han" or "hun"; repeat {player} or rephrase. Microsoft's "vedkommende" is correct but sounds like a letter from the council -- avoid it in a kids' game.
+- People: Danish role nouns are mostly neutral ("spiller", "vinder", "ven"). Never refer back to {player} with "han" or "hun"; repeat {player} or rephrase. Microsoft's "vedkommende" is correct but sounds like a letter from the council; avoid it in a kids' game.
 - Write Danish, not Norwegian or Swedish: "Køb" (not "Kjøp"/"Köp"), "spil" (not "spill"), "ven" (not "venn"), "ikke" (not "ikkje"/"inte").
 
 ## Roblox and gaming vocabulary

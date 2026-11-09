@@ -1,4 +1,4 @@
-# Russian (ru-ru) -- translation guide
+# Russian (ru-ru) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "ты" everywhere, as Roblox's own Russian UI does; never "вы", never capitalized "Вы" |
 | Text expansion vs English | measured on the reference set below: sentences -13% to +26% (+11% overall, helped by colon rewrites); short buttons and labels +20-100% ("Buy" -> "Купить", "Daily Reward" -> "Ежедневная награда"). Budget +30% for free text |
 | Plural categories (CLDR) | one, few, many, other |
-| Model confidence | high -- well-resourced language, and Roblox's own Russian UI confirms the register; the real risks are gender and plural agreement around placeholders and gamer slang |
+| Model confidence | high: well-resourced language, and Roblox's own Russian UI confirms the register; the real risks are gender and plural agreement around placeholders and gamer slang |
 | Native review before shipping | recommended |
 
 ## Audience and register
@@ -58,7 +58,7 @@
 | friends | друзья | Roblox renamed Connections back to Friends in April 2026; its Russian UI shows "Друзья", "Добавить друга" (a few leftover strings still say "контакт"). Game text: друзья; never "связи" or "контакты". |
 
 ## Grammar traps in UI strings
-- Plurals: four CLDR forms -- one (1, 21: монета), few (2-4, 22-24: монеты), many (0, 5-20, 11-14, 25: монет), other (1,5: монеты). One string per key, so never put {count} right before a countable noun.
+- Plurals: four CLDR forms: one (1, 21: монета), few (2-4, 22-24: монеты), many (0, 5-20, 11-14, 25: монет), other (1,5: монеты). One string per key, so never put {count} right before a countable noun.
   - Bad: "{amount} монет" -> "1 монет", "2 монет". Good: "Монеты: {count}", "Нужно ещё монет: {amount}" (Roblox itself writes "Ещё Robux: {robux}").
   - Undeclinable units are safe after a number: "{price} Robux", "{percent}%", "x{multiplier}", "{n} шт.".
 - Gender: past-tense verbs and short adjectives agree with the subject. {player} can be any gender, so:
@@ -130,8 +130,8 @@
 | rebirth.button | Переродись | 10/10. Use "Перерождение" (12) if the button allows 12; imperative only because "Переродиться" (12) doesn't fit; no slang spellings |
 | rebirth.confirm | Переродиться сейчас? Ты потеряешь монеты, но получишь буст x{multiplier} навсегда. | x before the number; "навсегда" for permanent ("вечный" sounds odd) |
 | coins.need_more | Нужно ещё монет: {amount}! | colon avoids plural forms |
-| coins.count | Монеты: {count} | "1,250" should be "1 250" for Russian -- code issue, not the translator's |
-| egg.hatched | {rarity} питомец: {pet}! | rarity must be masculine and leads, so its capital fits; "You hatched" dropped to avoid a gendered verb -- the toast follows the egg opening |
+| coins.count | Монеты: {count} | "1,250" should be "1 250" for Russian (code issue, not the translator's) |
+| egg.hatched | {rarity} питомец: {pet}! | rarity must be masculine and leads, so its capital fits; "You hatched" dropped to avoid a gendered verb, since the toast follows the egg opening |
 | rarity.legendary | Легендарный | masculine, agrees with "питомец" |
 | pet.name.dragon | Дракон | |
 | chat.player_joined | {player} заходит в игру | present tense avoids gender |

@@ -1,4 +1,4 @@
-# Slovak (sk-sk) -- translation guide
+# Slovak (sk-sk) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "ty" (tykanie) everywhere; never "vy" or capitalized "Vy" |
 | Text expansion vs English | about +5% overall on this guide's references; sentences -20% to +30%; short buttons +50-100% ("Buy" -> "Kúpiť", "On" -> "Zap.") |
 | Plural categories (CLDR) | one, few, many, other |
-| Model confidence | medium -- grammar is well documented and Slovak Minecraft shows real kids'-game wording, but Roblox has no Slovak UI to copy platform terms from, and Slovak kid gamer slang is barely documented online |
+| Model confidence | medium: grammar is well documented and Slovak Minecraft shows real kids'-game wording, but Roblox has no Slovak UI to copy platform terms from, and Slovak kid gamer slang is barely documented online |
 | Native review before shipping | strongly recommended (six cases, gender agreement on every adjective, constant risk of Czech bleed) |
 
 ## Audience and register
@@ -74,7 +74,7 @@
 - No space before ! ? : ; and one space after, as in English.
 - Quotes: „takto“ (low-high), nested ‚takto‘. Microsoft says never English "..." in Slovak and quote much less than English does; don't quote item names.
 - Dashes: en dash with spaces as a sentence dash ("Si AFK – pohni sa!") and in ranges ("2017 – 2021" per Microsoft); never the em dash; hyphen without spaces inside compounds ("2-násobný").
-- Numbers: decimal comma ("1,5"), thousands separated by a no-break space ("1 250"). The canonical {count} arrives as "1,250", which a Slovak player reads as 1.25 -- flag it to the developer; same for a multiplier "1.5".
+- Numbers: decimal comma ("1,5"), thousands separated by a no-break space ("1 250"). The canonical {count} arrives as "1,250", which a Slovak player reads as 1.25, so flag it to the developer; same for a multiplier "1.5".
 - Percent: a no-break space before % (Microsoft, CLDR "#,##0 %"): "Šanca: 10 %", "+10 % bonus". The space stays in adjectival use too ("15 % zľava", per STN 01 6910 as cited by Slovak Wikipedia); the word form "10-percentný" is also correct. Czech drops the space there, and so do one Slovak handbook and Slovak Minecraft, but spaced is the norm. In this guide these spaces are real U+00A0; reproduce them.
 - Multiplier: "2×" (U+00D7) after the number, no space; players type a Latin "2x".
 - Time: compact timers "3 h 20 min", "45 s", "2 d. 5 h". CLDR's narrow Slovak units are "h", "min", "s" without periods but "d." with one, and Slovak Minecraft also shows "d."; Microsoft and Minecraft use "hod." and "min." too. Never "m" for minutes: m is meters. If code outputs "3h 20m" or "2d 5h", flag it.

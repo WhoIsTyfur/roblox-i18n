@@ -1,4 +1,4 @@
-# Croatian (hr-hr) -- translation guide
+# Croatian (hr-hr) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "ti" everywhere; never "vi"/"Vi" |
 | Text expansion vs English | about +10-30% for sentences (the reference set below averages +9%, written tight); one-word buttons and titles up to 2x ("Shop" -> "Trgovina") |
 | Plural categories (CLDR) | one, few, other |
-| Model confidence | medium -- LLMs drift into Serbian/Bosnian forms (ekavian, "da li", "muzika") and miss gender and case agreement |
+| Model confidence | medium: LLMs drift into Serbian/Bosnian forms (ekavian, "da li", "muzika") and miss gender and case agreement |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
@@ -76,7 +76,7 @@
 - No space before ! ? : ; and one space after: "Bravo! Nova razina!".
 - Quotation marks „...” (Microsoft: U+201E opening, U+201D closing); Minecraft's Croatian closes with “ (U+201C). Pick one per game. Never '...'. Don't quote button names.
 - Dash: en dash with spaces " – " ("Ovaj mač – ludo jak!"); Croatian has no em dash (Microsoft). Ranges: "10 – 15".
-- Numbers: group separator period, decimal comma (CLDR): "1.250", "1,5". A {count} preformatted as "1,250" reads as 1,25 (one and a quarter) to a Croatian player, and "x1.5" looks English -- flag both to the developer; only code can fix them.
+- Numbers: group separator period, decimal comma (CLDR): "1.250", "1,5". A {count} preformatted as "1,250" reads as 1,25 (one and a quarter) to a Croatian player, and "x1.5" looks English. Flag both to the developer; only code can fix them.
 - Percent: no-break space (U+00A0) before % (Microsoft, CLDR "#,##0 %"): "+10 %". In this guide that space is a real U+00A0; reproduce it. This repo's pipeline keeps it (UTF-8, no normalization), and in Studio it renders as wide as a space and never breaks, Fredoka One included (measured for the French guide, 2026-11-08). Whether a CSV upload to the localization portal keeps it is unverified.
 - Multiplier: Latin x: "x2", "Novčići x2". Never the Cyrillic "х".
 - Durations (CLDR short): "3 h 20 min", "45 s", "2 dana"; narrow: "2 d. 5 h", "20 m". Code-formatted "3h 20m" is readable; ask the developer for the spaced CLDR form.
@@ -93,7 +93,7 @@
 - Key names (E, Q, Shift) stay Latin.
 - Descriptive item names translate ("Lucky Potion" -> "Napitak sreće", Minecraft's Croatian name for the Potion of Luck); brand-like invented names may stay English.
 - Established loanwords keep their Croatian spelling ("lajk", "bonus", "avatar", "server"); don't invent phonetic ones ("pet simjulejtor").
-- Script and variant: Latin only. Serbian also uses Cyrillic, and Serbian and Bosnian text is not Croatian even when readable -- never copy the `sr-rs` or `bs-ba` column into `hr-hr`.
+- Script and variant: Latin only. Serbian also uses Cyrillic, and Serbian and Bosnian text is not Croatian even when readable. Never copy the `sr-rs` or `bs-ba` column into `hr-hr`.
 
 ## Rendering on Roblox
 - Croatian needs Latin Extended-A: č ć đ š ž and Č Ć Đ Š Ž (U+010C-010D, U+0106-0107, U+0110-0111, U+0160-0161, U+017D-017E). š ž are also in Windows-1252, so a font can have them and still lack č ć đ.
@@ -126,9 +126,9 @@
 | shop.buy | Kupi | |
 | reward.claim | Preuzmi | "Uzmi" also fine; not "Zatraži" |
 | rebirth.button | Preporod | |
-| rebirth.confirm | Preporod sada? Izgubit ćeš novčiće, ali dobit ćeš trajno pojačanje x{multiplier}. | "1.5" must reach the player as "1,5" -- code issue |
+| rebirth.confirm | Preporod sada? Izgubit ćeš novčiće, ali dobit ćeš trajno pojačanje x{multiplier}. | "1.5" must reach the player as "1,5" (code issue) |
 | coins.need_more | Treba ti još novčića: {amount}! | colon avoids "1 novčića" |
-| coins.count | Novčići: {count} | "1,250" should be "1.250" -- code issue |
+| coins.count | Novčići: {count} | "1,250" should be "1.250" (code issue) |
 | egg.hatched | {rarity} ljubimac se izlegao: {pet}! | verb and rarity agree with "ljubimac", so the pet's gender doesn't matter; 37/40 with Legendarni + Zmaj |
 | rarity.legendary | Legendarni | masculine, agrees with implied "ljubimac" |
 | pet.name.dragon | Zmaj | masculine |

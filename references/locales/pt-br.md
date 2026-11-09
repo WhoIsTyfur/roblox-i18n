@@ -1,4 +1,4 @@
-# Portuguese (Brazil) (pt-br) -- translation guide
+# Portuguese (Brazil) (pt-br) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | "você" with third-person verbs ("Você tem", "Volte amanhã"); never "tu", "o senhor" or "vós" |
 | Text expansion vs English | about +15-35% on sentences (+17% over the reference set below; no published Roblox figure); short buttons can double ("Buy" -> "Comprar", "Claim" -> "Resgatar") |
 | Plural categories (CLDR) | one (integer part 0 or 1: 0, 1, 1,5), many (exact millions, compact forms), other; ordinals: other only |
-| Model confidence | high -- big, well-documented language; the real risks are Portugal-Portuguese leakage and stiff, textbook register |
+| Model confidence | high: big, well-documented language; the real risks are Portugal-Portuguese leakage and stiff, textbook register |
 | Native review before shipping | recommended |
 
 ## Audience and register
@@ -29,14 +29,14 @@ Brazil is one of Roblox's biggest player bases, and the `pt` fallback also reach
 | developer product | produto | Creator docs: "Produtos do desenvolvedor"; in game UI just name the item |
 | experience / game | jogo | Roblox UI says "experiência"; players and in-game text say "jogo" |
 | obby, tycoon, simulator | obby, tycoon, simulator | Kept in game titles; in prose "jogo de obby", "simulador" |
-| rebirth | Rebirth (o rebirth) | Players keep the English word, "fazer rebirth" (not confirmed from a Brazilian community source); "Renascer" is the translated option -- pick one per game |
+| rebirth | Rebirth (o rebirth) | Players keep the English word, "fazer rebirth" (not confirmed from a Brazilian community source); "Renascer" is the translated option; pick one per game |
 | pet | pet (o pet, os pets) | Masculine; players never say "animal de estimação" in games |
 | egg / hatch | ovo / chocar (abrir) | "Ovo Lendário"; players often say "abrir ovo"; never "eclodir" in UI |
 | coins / gems | moedas / gemas | "Poção de moedas", "gemas"; avoid "joias" for gems |
 | boost | bônus (o boost) | Roblox UI: "Bônus de 10%"; "boost" is understood but keep one term |
 | multiplier | multiplicador | "Multiplicador 2x" |
 | XP | XP (o XP) | Never "PE" or "pontos de experiência" on a HUD |
-| level up | subir de nível | "Subiu de nível!"; players say "upar" -- fine in flavor text, not in system messages |
+| level up | subir de nível | "Subiu de nível!"; players say "upar", fine in flavor text, not in system messages |
 | quest | missão | "Missões diárias" |
 | leaderboard | ranking / classificação | Roblox's player list: "Classificação"; in-game boards: "Ranking", "Top jogadores" |
 | AFK, noob, OP, GG | AFK, noob, OP, GG | Kept in English, uppercase acronyms |
@@ -66,12 +66,12 @@ Brazil is one of Roblox's biggest player bases, and the `pt` fallback also reach
 ## Typography and formatting
 - No space before ! ? : ; (unlike French). No inverted marks.
 - Quotation marks: double quotes "..." ("aspas"); never French-style guillemets, which read Portugal-Portuguese.
-- Numbers: period for thousands, comma for decimals: "1.250 moedas", "1,5x". English-formatted "1,250" from game code reads as one-and-a-quarter in Brazil -- flag it to the developer rather than working around it in the string. The skill's audit lists such pre-formatted values; it does not reformat numbers in game code.
+- Numbers: period for thousands, comma for decimals: "1.250 moedas", "1,5x". English-formatted "1,250" from game code reads as one-and-a-quarter in Brazil; flag it to the developer rather than working around it in the string. The skill's audit lists such pre-formatted values; it does not reformat numbers in game code.
 - Percent: no space: "10%", "+25% de bônus" (Roblox UI: "Bônus de 10%").
 - Durations: "3h 20min", "2d 5h", "45s"; "min" not "m" (m is meters), no period, no plural s. {time} arrives as game code formats it ("3h 20m"); the fix is in code, not in the string.
 - Ordinals: "1º lugar", "2ª temporada" (º masculine, ª feminine).
 - Ellipsis: three periods, as Roblox does: "Carregando...". Gerund, not the Portugal form "A carregar...".
-- Keys: the key letter stays. Roblox's client says "Pressione {tecla}"; "Aperte E" is the casual form, also natural -- one per game. "Shift", "Enter" stay; Space -> "Espaço" (as in Roblox's client). Mobile copy says "Toque", PC copy "Clique".
+- Keys: the key letter stays. Roblox's client says "Pressione {tecla}"; "Aperte E" is the casual form, also natural; use one per game. "Shift", "Enter" stay; Space -> "Espaço" (as in Roblox's client). Mobile copy says "Toque", PC copy "Clique".
 - Dates: dd/mm/aaaa ("25/12"). Real money uses "R$", but Roblox prices are always "Robux" after the number.
 
 ## Do not translate / keep as is
@@ -140,19 +140,19 @@ Brazil is one of Roblox's biggest player bases, and the `pt` fallback also reach
 | friends.boost | +{percent}% de bônus para cada amigo no seu servidor | |
 
 ## Sources
-1. Microsoft Portuguese (Brazil) Localization Style Guide -- https://download.microsoft.com/download/8/e/3/8e349e32-9eb9-4b63-9909-7586b94a24dd/por-bra-StyleGuide.pdf
-2. Unicode CLDR language plural rules chart -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-3. Roblox client CoreScript translations, pt-br column (ExtraContent/translations/CoreScriptLocalization.csv, Roblox build of 2026-11-05) -- local file from the Roblox install
-4. Roblox newsroom (pt-BR), age-based communication and "Amigos" -> "Conexões" -- https://about.roblox.com/pt-br/newsroom/2025/07/advancing-safety-on-roblox-with-age-based-communication
-5. Roblox Creator docs (pt-BR), passes -- https://create.roblox.com/docs/pt-br/production/monetization/game-passes
-6. DevForum, Introducing Roblox Communities (Groups renamed) -- https://devforum.roblox.com/t/introducing-roblox-communities/3268307
-7. Critical Hits, Tap Simulator Reborn codes (Brazilian code-guide wording) -- https://criticalhits.com.br/dicas/tap-simulator-reborn-codigos-outubro-2026/
-8. Critical Hits, Adopt Me rarest eggs (pets, rarity words, English egg names) -- https://criticalhits.com.br/games/roblox-adopt-me-ovos-mais-raros/
-9. Esports.net Brasil, gamer slang (OP, AFK, nerfar, dropar, noob) -- https://www.esports.net/br/guias/girias-gamers/
-10. ExitLag blog, "Como dar like no jogo do Roblox" -- https://www.exitlag.com/blog/pt/como-dar-like-no-jogo-do-roblox-em-qualquer-plataforma/
-11. NoPing blog, "Como favoritar jogos no Roblox" -- https://noping.com/pt/blog/como-favoritar-jogos-no-roblox
-12. creation.dev Portuguese glossary, "Rebirth" kept as the term -- https://www.creation.dev/pt/glossary/rebirth
-13. DevForum, font coverage complaints (non-Latin scripts) -- https://devforum.roblox.com/t/theres-no-font-which-can-fullfill-all-my-use-cases-and-fit-game-style/3051353
-14. Roblox Creator docs, size modifiers (AutomaticSize for localized text) -- https://create.roblox.com/docs/en-us/ui/size-modifiers
-15. Roblox Creator docs (pt-BR), groups page pointing to "Comunidades" -- https://create.roblox.com/docs/pt-br/projects/groups
-16. Minecraft Java pt_br.json (options.on "Sim", options.off "Não") -- https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.4/assets/minecraft/lang/pt_br.json
+1. Microsoft Portuguese (Brazil) Localization Style Guide: https://download.microsoft.com/download/8/e/3/8e349e32-9eb9-4b63-9909-7586b94a24dd/por-bra-StyleGuide.pdf
+2. Unicode CLDR language plural rules chart: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+3. Roblox client CoreScript translations, pt-br column (ExtraContent/translations/CoreScriptLocalization.csv, Roblox build of 2026-11-05): local file from the Roblox install
+4. Roblox newsroom (pt-BR), age-based communication and "Amigos" -> "Conexões": https://about.roblox.com/pt-br/newsroom/2025/07/advancing-safety-on-roblox-with-age-based-communication
+5. Roblox Creator docs (pt-BR), passes: https://create.roblox.com/docs/pt-br/production/monetization/game-passes
+6. DevForum, Introducing Roblox Communities (Groups renamed): https://devforum.roblox.com/t/introducing-roblox-communities/3268307
+7. Critical Hits, Tap Simulator Reborn codes (Brazilian code-guide wording): https://criticalhits.com.br/dicas/tap-simulator-reborn-codigos-outubro-2026/
+8. Critical Hits, Adopt Me rarest eggs (pets, rarity words, English egg names): https://criticalhits.com.br/games/roblox-adopt-me-ovos-mais-raros/
+9. Esports.net Brasil, gamer slang (OP, AFK, nerfar, dropar, noob): https://www.esports.net/br/guias/girias-gamers/
+10. ExitLag blog, "Como dar like no jogo do Roblox": https://www.exitlag.com/blog/pt/como-dar-like-no-jogo-do-roblox-em-qualquer-plataforma/
+11. NoPing blog, "Como favoritar jogos no Roblox": https://noping.com/pt/blog/como-favoritar-jogos-no-roblox
+12. creation.dev Portuguese glossary, "Rebirth" kept as the term: https://www.creation.dev/pt/glossary/rebirth
+13. DevForum, font coverage complaints (non-Latin scripts): https://devforum.roblox.com/t/theres-no-font-which-can-fullfill-all-my-use-cases-and-fit-game-style/3051353
+14. Roblox Creator docs, size modifiers (AutomaticSize for localized text): https://create.roblox.com/docs/en-us/ui/size-modifiers
+15. Roblox Creator docs (pt-BR), groups page pointing to "Comunidades": https://create.roblox.com/docs/pt-br/projects/groups
+16. Minecraft Java pt_br.json (options.on "Sim", options.off "Não"): https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.4/assets/minecraft/lang/pt_br.json

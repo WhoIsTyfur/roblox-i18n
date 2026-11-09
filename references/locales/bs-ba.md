@@ -1,4 +1,4 @@
-# Bosnian (bs-ba) -- translation guide
+# Bosnian (bs-ba) translation guide
 
 **Script decision: write Latin (latinica), never Cyrillic.** Roblox's language codes page labels Bosnian "босански" (its locale API: "Босански"), but that is only a display label: Microsoft publishes its Bosnian guide for Latin only, CLDR expands `bs` (and `und-BA`) to `bs-Latn-BA`, Minecraft's Bosnian (`bs_ba`) is Latin, and Latin is the everyday script of the Federation of BiH, where the Bosnian-speaking kids live. Cyrillic in BiH belongs mostly to Republika Srpska and Serbian.
 
@@ -10,12 +10,12 @@
 | Address the player as | informal singular "ti" ("Pritisni", "Kupi"); never "vi"/"Vi" |
 | Text expansion vs English | about +10% over this guide's reference set (sentences -15% to +40%); one-word labels up to +150% ("Shop" -> "Prodavnica") |
 | Plural categories (CLDR) | one, few, other |
-| Model confidence | medium -- low-resource language; models drift into Croatian or Serbian forms and mix them, and kid gaming slang could not be confirmed |
+| Model confidence | medium: low-resource language; models drift into Croatian or Serbian forms and mix them, and kid gaming slang could not be confirmed |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
 - Readers: Bosniak kids in the Federation of BiH and the diaspora. Bosnian Croats and Serbs mostly set Croatian or Serbian. Everyone also understands Croatian and Serbian, but a polished game stays consistently Bosnian.
-- Roblox has no Bosnian app UI: its locale service enables `bs_ba` for in-experience content only, not for the full app. Players see Roblox's own menus in English (or another language), so they know platform terms in English. How a player ends up with `LocaleId` = `bs-ba` is unverified -- test with Studio's Player Emulator.
+- Roblox has no Bosnian app UI: its locale service enables `bs_ba` for in-experience content only, not for the full app. Players see Roblox's own menus in English (or another language), so they know platform terms in English. How a player ends up with `LocaleId` = `bs-ba` is unverified; test with Studio's Player Emulator.
 - Use "ti" in every string. Microsoft addresses adults with "vi"; for 9-16 year olds that reads like a bank or a school notice. Minecraft's Bosnian uses ti ("Pritisni %s", "Otvori svoj inventar", "Umro si!"). Never mix: "Pritisni E i pokupi nagradu", not "Pritisnite E i pokupi nagradu".
 - Buttons: 2nd-person singular imperative, the BCS software norm (Microsoft's own button label "Otkaži"): "Igraj", "Kupi", "Pokupi", "Otvori". Titles and tabs: nouns ("Prodavnica", "Dnevna nagrada").
 - Sentences: short ti-imperatives: "Prodaj ljubimce", "Vrati se sutra". Prefer an infinitive after modal verbs, as Microsoft prescribes for Bosnian: "Trebaš prodati ljubimce", not the Serbian "Treba da prodaš ljubimce".

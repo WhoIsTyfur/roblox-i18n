@@ -1,4 +1,4 @@
-# Turkish (tr-tr) -- translation guide
+# Turkish (tr-tr) translation guide
 
 ## At a glance
 | | |
@@ -7,14 +7,14 @@
 | Script, direction | Latin plus ç ğ ı İ ö ş ü, LTR |
 | Address the player as | informal singular "sen" everywhere; never "siz", never the polite "-iniz" forms ("giriniz") |
 | Text expansion vs English | +10-30%: the reference set below runs +9% for sentences, +14% for short labels; fewer but longer words, and a short button can double ("Buy" -> "Satın Al") |
-| Plural categories (CLDR) | one, other -- but a noun after a number is always singular, so one string fits every count |
-| Model confidence | medium -- grammar is well covered; the risks are suffixes after {params}, i/İ casing, number formats and unconfirmed player slang (rebirth, pet, coin) |
+| Plural categories (CLDR) | one, other, but a noun after a number is always singular, so one string fits every count |
+| Model confidence | medium: grammar is well covered; the risks are suffixes after {params}, i/İ casing, number formats and unconfirmed player slang (rebirth, pet, coin) |
 | Native review before shipping | recommended |
 
 ## Audience and register
 - Platform status: Roblox has been blocked in Turkey by court order since 2024-08-07 (child-safety grounds). Roblox registered a Turkish company on 2025-05-13, but Turkish Wikipedia, revised 2026-10-31, still says access is blocked; no report of a lift was found. Players in Turkey reach it through VPNs, and Turkish-speaking kids also play from Germany, the Netherlands, Austria and Northern Cyprus: write neutral standard Turkish, no lira prices or Turkey-only holidays.
 - Use "sen" in every string. Microsoft's Turkish guide defaults to "siz" for software but allows "sen" for a younger audience and calls to action. Roblox's in-game Turkish UI uses sen throughout ("Bu deneyime katılmak için iznin yok", "Lütfen daha sonra tekrar dene"), as do roblox.com/tr buttons ("Şimdi Katıl", "Favorile"); only its newsroom uses siz.
-- Never mix: "Satın al, hemen kazan!" -- not "Satın alın, hemen kazanırsın!".
+- Never mix: "Satın al, hemen kazan!", not "Satın alın, hemen kazanırsın!".
 - Buttons, tabs, toggles: sen-imperative or a noun, as in Roblox's Turkish UI ("Satın Al", "Arkadaş Ekle", "Envanter"): "Oyna", "Topla", "Mağaza". Not infinitives ("Oynamak") and not polite forms ("Oynayınız"), which read like a government form.
 - Simple tenses and short verbs (Microsoft): "Seviye atladın!" not "Seviye atlamış bulunmaktasın".
 - Natural hype: "Harika!", "Süper!", "Yaşasın!", "Kaçırma!", "Hemen dene!". Microsoft notes Turkish uses "!" less than English: keep it on rewards and toasts, drop it from neutral labels and instructions.
@@ -82,7 +82,7 @@
 - No space before ! ? : ; and one space after.
 - Quotation marks: straight "..." in UI strings (Microsoft); don't mix with curly ones in one game.
 - Em dash: Microsoft says Turkish doesn't use it; rewrite with a comma, colon or parentheses. Ranges and minus take no spaces: "3-5", "-5".
-- Numbers (TDK): period for thousands, comma for decimals: "1.250", "1,5". A {count} preformatted as "1,250" reads as 1.25, and multiplier "1.5" should be "1,5" -- flag both to the developer.
+- Numbers (TDK): period for thousands, comma for decimals: "1.250", "1,5". A {count} preformatted as "1,250" reads as 1.25, and multiplier "1.5" should be "1,5"; flag both to the developer.
 - Percent: the sign goes before the number, no space (TDK, Microsoft): "%10", "+%25 bonus". Never "10%".
 - Multiplier: keep the source shape "2x Altın"; "2 kat" in prose.
 - Durations: CLDR short forms are "gün", "sa.", "dk.", "sn." (Microsoft: "25 dk."); compact timers drop the periods: "3sa 20dk", "2g 5sa" (g for gün; game usage unverified). If code outputs "3h 20m", flag it: "h" and "m" mean nothing in Turkish.
@@ -135,7 +135,7 @@
 | rebirth.button | Rebirth | "Yeniden Doğuş" is 13 > max 10; players' word (unverified) |
 | rebirth.confirm | Şimdi rebirth yapmak ister misin? Altınlarını kaybedersin ama kalıcı {multiplier}x bonus kazanırsın. | multiplier must arrive as "1,5", not "1.5" |
 | coins.need_more | {amount} altın daha lazım! | singular noun works for 1 |
-| coins.count | {count} Altın | "1,250" must be "1.250" -- code issue |
+| coins.count | {count} Altın | "1,250" must be "1.250" (code issue) |
 | egg.hatched | Yumurtadan {rarity} {pet} çıktı! | params stay nominative, no suffix |
 | rarity.legendary | Efsanevi | |
 | pet.name.dragon | Ejderha | |

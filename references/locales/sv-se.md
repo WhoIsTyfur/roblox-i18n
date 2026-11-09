@@ -1,4 +1,4 @@
-# Swedish (sv-se) -- translation guide
+# Swedish (sv-se) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "du" (dig, din/ditt/dina); never "Ni", never generic "man" |
 | Text expansion vs English | about +9% over the reference set below (measured); short buttons often shrink ("Buy" -> "Köp"), but compounds grow ("Settings" -> "Inställningar") and cannot wrap |
 | Plural categories (CLDR) | cardinal one, other (one = exactly 1: "1 diamant", "0 diamanter", "1,5 diamanter"); ordinal one (1:a, 2:a, 21:a, 22:a) and other (3:e, 11:e, 12:e) |
-| Model confidence | high -- well-resourced language; the risks are Norwegian/Danish leaks, split compounds, English Title Case, stiff office words and unverified player slang |
+| Model confidence | high: well-resourced language; the risks are Norwegian/Danish leaks, split compounds, English Title Case, stiff office words and unverified player slang |
 | Native review before shipping | recommended |
 
 ## Audience and register

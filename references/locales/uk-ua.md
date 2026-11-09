@@ -1,4 +1,4 @@
-# Ukrainian (uk-ua) -- translation guide
+# Ukrainian (uk-ua) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "ти" everywhere; never "ви", never capitalized "Ви" |
 | Text expansion vs English | sentences +5-30% (the reference set below measures +6%, written tight on purpose); short labels +20% on average, single words up to +75% ("Shop" -> "Магазин", "Rebirth" -> "Переродження") |
 | Plural categories (CLDR) | one, few, many, other |
-| Model confidence | medium -- grammar is well covered, but models leak Russian words, letters and calques into Ukrainian, and kid gaming slang is thinly documented |
+| Model confidence | medium: grammar is well covered, but models leak Russian words, letters and calques into Ukrainian, and kid gaming slang is thinly documented |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
@@ -59,7 +59,7 @@
 | event | подія; івент | "івент" with і, not "ивент". |
 
 ## Grammar traps in UI strings
-- Plurals: four CLDR forms -- one (1, 21, 101: монета), few (2-4, 22-24: монети), many (0, 5-20, 25, 100: монет), other (fractions: 1,5 монети). One string per key, so never put {count} right before a countable noun.
+- Plurals: four CLDR forms: one (1, 21, 101: монета), few (2-4, 22-24: монети), many (0, 5-20, 25, 100: монет), other (fractions: 1,5 монети). One string per key, so never put {count} right before a countable noun.
   - Bad: "{amount} монет" -> "1 монет", "2 монет". Good: "Монети: {count}", "Бракує монет: {amount}". Microsoft's guide uses the same colon trick ("...кількість користувачів: %d").
   - Undeclinable units are safe after a number: "{price} Robux", "{percent}%", "x{multiplier}", "{n} шт.".
 - Gender: past-tense verbs and short adjectives agree with the subject. {player} can be any gender, so use present tense ("{player} приєднується до гри"), a fixed noun head ("Гравець {player} вийшов", agrees with "гравець") or a colon ("Переможець: {player}").
@@ -77,7 +77,7 @@
 - Dash between words with spaces: " — " ("Цей меч — імба!"); Microsoft uses the en dash " – " in software, so pick one per game. Hyphen without spaces in compounds ("VIP-сервер"); en dash without spaces in ranges ("10–20").
 - Quotes: «ялинки» in game text, nested „лапки“; Microsoft uses straight "" in software UI. Never English curly quotes or single quotes.
 - The apostrophe is part of the word: "м’яч", "п’ять", "зв’язок", "обов’язково". Use ’ (U+2019, Microsoft's choice) in every string. Every Roblox client font checked has U+2019; ʼ (U+02BC) is missing from Fredoka One, Luckiest Guy, Bangers, Press Start 2P and other display fonts, so avoid it. Straight ' renders too, but don't mix. Never drop it ("пять"), never Russian ъ ("объект" -> "об’єкт").
-- Numbers (CLDR): thousands separator a no-break space U+00A0 ("1 250"), decimal comma ("1,5"). The canonical {count} arrives as "1,250", which a Ukrainian reader takes as 1.25 -- flag it to the developer; same for multiplier "1.5".
+- Numbers (CLDR): thousands separator a no-break space U+00A0 ("1 250"), decimal comma ("1,5"). The canonical {count} arrives as "1,250", which a Ukrainian reader takes as 1.25; flag it to the developer; same for multiplier "1.5".
 - Percent: keep "{percent}%" attached as in the source.
 - Multiplier: Latin x before the number: "x2", "Монети x2", "буст x{multiplier}". Never Cyrillic "х2".
 - Time: Microsoft's list has "год." (hour), "хв." (minute), "с" (second) for running text. Compact timers use CLDR's short forms, no period except days: "3 год 20 хв", "45 с", "2 дн. 5 год". Not "д" alone (CLDR narrow, too cryptic) and not Russian "ч", "мин". If game code outputs "3h 20m", flag it.
@@ -127,10 +127,10 @@
 | shop.title | Магазин | |
 | shop.buy | Купити | |
 | reward.claim | Забрати | "Отримати" (8) also fine |
-| rebirth.button | Переродись | 10/10; imperative only because "Переродження" and "Переродитися" (12) don't fit -- use "Переродження" if the button allows 12; no slang "ребірт" |
+| rebirth.button | Переродись | 10/10; imperative only because "Переродження" and "Переродитися" (12) don't fit; use "Переродження" if the button allows 12; no slang "ребірт" |
 | rebirth.confirm | Переродитися зараз? Ти втратиш монети, але отримаєш постійний буст x{multiplier}. | multiplier moved before the number |
 | coins.need_more | Бракує монет: {amount}! | colon avoids plural forms; not "не хватає" |
-| coins.count | Монети: {count} | "1,250" should be "1 250" -- code issue |
+| coins.count | Монети: {count} | "1,250" should be "1 250" (code issue) |
 | egg.hatched | {rarity} улюбленець: {pet}! | 31/40 with Легендарний + Дракон; "You hatched" dropped: "У тебе вилупився..." runs 48 |
 | rarity.legendary | Легендарний | masculine, agrees with "улюбленець" |
 | pet.name.dragon | Дракон | |

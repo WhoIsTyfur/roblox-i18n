@@ -1,4 +1,4 @@
-# Georgian (ka-ge) -- translation guide
+# Georgian (ka-ge) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "შენ" (2nd singular verbs: "იყიდე", "გახსენი", "დაბრუნდი"); never mix in formal "თქვენ" ("გსურთ", "სცადეთ") |
 | Text expansion vs English | +12% in characters on this guide's reference set (sentences +8%, buttons/labels/titles +19%, single words up to +50%: "Play" -> "თამაში"); rendered width unverified, measure in Studio |
 | Plural categories (CLDR) | cardinal: one, other; ordinal: one, many, other. Nouns after numerals stay singular, so one string fits every count |
-| Model confidence | low -- low-resource language with complex verb agreement; no Roblox Georgian UI to anchor terms; slang is unverified |
+| Model confidence | low: low-resource language with complex verb agreement; no Roblox Georgian UI to anchor terms; slang is unverified |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
@@ -74,7 +74,7 @@
 - Commas (Microsoft): before "რომ" clauses ("იმოძრავე, რომ შოვნა გააგრძელო"), after "გთხოვთ", never before "და", before "ან" only between two clauses.
 
 ## Typography and formatting
-- No space before ! ? : ; -- same as English: "AFK ხარ!", "დარჩა: {time}".
+- No space before ! ? : ; (same as English): "AFK ხარ!", "დარჩა: {time}".
 - Quotes: „ “ (U+201E open, U+201C close): „იღბლის ელექსირი“. Straight quotes only inside code or markup.
 - Numbers (CLDR, Microsoft): decimal comma, no-break-space grouping: "1 250", "1,5x". English "1,250" reads as one and a quarter to a Georgian player, and "1.5" looks wrong. Flag it to the developer: game code must format {count}, {amount}, {multiplier} and {price} per locale (or pass plain "1250"); the translation cannot fix it. Short forms: "1,2 ათ." (thousand), "3 მლნ." (million); "1.2K" style in games is unverified.
 - Percent: no space, "+10%" (CLDR "#,##0%").

@@ -1,4 +1,4 @@
-# Malay (ms-my) -- translation guide
+# Malay (ms-my) translation guide
 
 ## At a glance
 | | |
@@ -7,8 +7,8 @@
 | Script, direction | Latin (Rumi), LTR; standard Malaysian spelling (DBP) uses the 26 basic letters, no diacritics. Never Jawi |
 | Address the player as | "anda", lowercase mid-sentence; not "kamu"/"-mu" (familiar, and the pronoun of Indonesian UI), never spoken "awak", "kau", "hang" |
 | Text expansion vs English | about +20% overall (+18% measured on the reference set); toasts and banners +20-35%; short buttons 0-33% ("Main", "Beli") |
-| Plural categories (CLDR) | cardinal: other only; ordinal: one (1st, "pertama") and other ("ke-2") -- nouns never change after a number |
-| Model confidence | medium -- grammar is reliable, but models drift into Indonesian, and Roblox itself has no Malay UI to anchor platform terms |
+| Plural categories (CLDR) | cardinal: other only; ordinal: one (1st, "pertama") and other ("ke-2"); nouns never change after a number |
+| Model confidence | medium: grammar is reliable, but models drift into Indonesian, and Roblox itself has no Malay UI to anchor platform terms |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
@@ -141,18 +141,18 @@
 | friends.boost | Boost +{percent}% untuk setiap rakan dalam server ini | "your server" = the server you are in |
 
 ## Sources
-1. Microsoft Malay (Malaysia) Localization Style Guide -- https://download.microsoft.com/download/97c8474f-dd92-459b-9349-07993da9166a/may-mys-StyleGuide.pdf
-2. Unicode CLDR language plural rules chart -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-3. CLDR JSON, Malay numbers, units, quotation marks and date/time formats -- https://github.com/unicode-org/cldr-json/tree/main/cldr-json (main/ms: numbers.json, units.json, delimiters.json, ca-gregorian.json)
-4. Roblox locale API (ms_my enabled for in-game content only, not the full app) -- https://locale.roblox.com/v1/locales?displayValueLocale=en_us
-5. Roblox Creator docs, language codes (Malay = ms / ms-my) -- https://create.roblox.com/docs/production/localization/language-codes
-6. Roblox Creator docs, localization overview (account-level translation setting) -- https://create.roblox.com/docs/production/localization
-7. roblox.com in Malay (redirects to the English page) -- https://www.roblox.com/ms/games/920587237/Adopt-Me
-8. Roblox on Google Play requested in Malay for Malaysia (serves the Indonesian description) -- https://play.google.com/store/apps/details?id=com.roblox.client&hl=ms&gl=MY
-9. Malay Wikipedia, Roblox ("pengalaman" for Experience, "pelayan", "mata wang maya") -- https://ms.wikipedia.org/wiki/Roblox
-10. Minecraft Java Edition 26.3 ms_my language file (community translation: "anda", "Rakan", "Inventori", "Muzik", "percuma", "tidak sah", "tamat tempoh", "Memuatkan") -- Mojang asset index, https://resources.download.minecraft.net
-11. DBP PRPM dictionary (Kamus Dewan): butuh, gampang, legenda, legendaris, syiling, ganjaran, pengganda, anda, kamu, awak, percuma, bulatan, tuntut -- https://prpm.dbp.gov.my/Cari1?keyword=butuh
-12. Android (AOSP) Malay strings, values-ms: "Hidup"/"Mati" states, "Ketik untuk ...", "anda" -- https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/packages/SystemUI/res/values-ms/strings.xml
-13. Google Play Help in Malay, redeem a gift card or code ("Tebus", "Masukkan kod anda") -- https://support.google.com/googleplay/answer/3422659?hl=ms
-14. Roblox client core UI string table, ExtraContent/translations/CoreScriptLocalization.csv (no Malay column; "Experience Language" setting, "Community Emblem", Indonesian "Ketuk") -- shipped with every Roblox Player install
-15. Roblox Creator docs, groups (still "group"; Communities is the player-facing surface) -- https://create.roblox.com/docs/projects/groups
+1. Microsoft Malay (Malaysia) Localization Style Guide: https://download.microsoft.com/download/97c8474f-dd92-459b-9349-07993da9166a/may-mys-StyleGuide.pdf
+2. Unicode CLDR language plural rules chart: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+3. CLDR JSON, Malay numbers, units, quotation marks and date/time formats: https://github.com/unicode-org/cldr-json/tree/main/cldr-json (main/ms: numbers.json, units.json, delimiters.json, ca-gregorian.json)
+4. Roblox locale API (ms_my enabled for in-game content only, not the full app): https://locale.roblox.com/v1/locales?displayValueLocale=en_us
+5. Roblox Creator docs, language codes (Malay = ms / ms-my): https://create.roblox.com/docs/production/localization/language-codes
+6. Roblox Creator docs, localization overview (account-level translation setting): https://create.roblox.com/docs/production/localization
+7. roblox.com in Malay (redirects to the English page): https://www.roblox.com/ms/games/920587237/Adopt-Me
+8. Roblox on Google Play requested in Malay for Malaysia (serves the Indonesian description): https://play.google.com/store/apps/details?id=com.roblox.client&hl=ms&gl=MY
+9. Malay Wikipedia, Roblox ("pengalaman" for Experience, "pelayan", "mata wang maya"): https://ms.wikipedia.org/wiki/Roblox
+10. Minecraft Java Edition 26.3 ms_my language file (community translation: "anda", "Rakan", "Inventori", "Muzik", "percuma", "tidak sah", "tamat tempoh", "Memuatkan"): Mojang asset index, https://resources.download.minecraft.net
+11. DBP PRPM dictionary (Kamus Dewan): butuh, gampang, legenda, legendaris, syiling, ganjaran, pengganda, anda, kamu, awak, percuma, bulatan, tuntut: https://prpm.dbp.gov.my/Cari1?keyword=butuh
+12. Android (AOSP) Malay strings, values-ms: "Hidup"/"Mati" states, "Ketik untuk ...", "anda": https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/packages/SystemUI/res/values-ms/strings.xml
+13. Google Play Help in Malay, redeem a gift card or code ("Tebus", "Masukkan kod anda"): https://support.google.com/googleplay/answer/3422659?hl=ms
+14. Roblox client core UI string table, ExtraContent/translations/CoreScriptLocalization.csv (no Malay column; "Experience Language" setting, "Community Emblem", Indonesian "Ketuk"): shipped with every Roblox Player install
+15. Roblox Creator docs, groups (still "group"; Communities is the player-facing surface): https://create.roblox.com/docs/projects/groups

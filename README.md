@@ -1,9 +1,9 @@
 # roblox-i18n
 
 An agent skill that translates a Roblox game into one language, Roblox's 18
-main languages, or all 50 locales Roblox supports -- written for native
-players, not converted word by word, and checked by independent reviewer
-agents before anything ships.
+main languages, or all 50 locales Roblox supports. The text is written for
+native players instead of converted word by word, and independent reviewer
+agents check it before anything ships.
 
 Works with Claude Code and any agent that reads `SKILL.md` skills and can
 start subagents.
@@ -264,7 +264,3 @@ The most valuable contribution is a native speaker improving a guide in
 `references/locales/`: a gaming word players really use, a wrong rule, a
 better reference translation. Open a pull request with the change and, if
 you can, a source.
-
-## License
-
-MIT. See [LICENSE](LICENSE).

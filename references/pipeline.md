@@ -41,7 +41,7 @@ next run only translates what changed. The rest can be ignored by git.
 `hash` = first 12 hex chars of SHA-1 over `source + "\x1f" + context`.
 
 ## existing.json
-`{"shop.buy": {"es": "Comprar", "fr-fr": "Acheter"}}` -- column names as found.
+`{"shop.buy": {"es": "Comprar", "fr-fr": "Acheter"}}`, with column names as found.
 
 ## context.json
 ```json
@@ -73,7 +73,7 @@ players keep in English; it can never override `keep`.
 only the back-translator and reviewer run).
 
 ## terms.json (translator, first batch only)
-`{"Rebirth": "Renacer", "Pet Hatch Tycoon": "Pet Hatch Tycoon"}` -- later
+`{"Rebirth": "Renacer", "Pet Hatch Tycoon": "Pet Hatch Tycoon"}`. Later
 batches and the reviewer reuse it unchanged.
 
 ## batch-NN.draft.json (translator)
@@ -97,7 +97,7 @@ source. `note` explains any non-literal choice.
 Categories and severities: `quality-rubric.md`.
 
 ## batch-NN.resolve.json (resolve round)
-`{"egg.hatched": {"accept": false, "text": "...", "reason": "..."}}` --
+`{"egg.hatched": {"accept": false, "text": "...", "reason": "..."}}`.
 `accept: true` takes the reviewer's text; `false` proposes `text` with a
 reason. `apply --resolve` keeps accepted fixes, writes the rest to
 `disputes.json` for the orchestrator.

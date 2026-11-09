@@ -1,4 +1,4 @@
-# Spanish (Mexico) (es-mx) -- translation guide
+# Spanish (Mexico) (es-mx) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal "tú" (`Vende`, `Vuelve`); "ustedes" for a group (`¡Únanse!`). Never "usted", "vos" or "vosotros". |
 | Text expansion vs English | about +20-30%: this guide's reference set measures +22% after trimming; one-word buttons far more: Buy -> Comprar (+133%) |
 | Plural categories (CLDR) | one, many, other (`many` = exact and compact millions: "1 millón de monedas", "1 M de monedas"; 0 is `other`) |
-| Model confidence | high -- huge corpus; the real risks are Spain forms leaking in and country slang |
+| Model confidence | high: huge corpus; the real risks are Spain forms leaking in and country slang |
 | Native review before shipping | recommended, ideally by a reviewer from outside Mexico to catch Mexicanisms |
 
 ## Audience and register
@@ -141,22 +141,22 @@
 | `friends.boost` | +{percent}% de bonificación por cada amigo en tu servidor | No space before `%`; Roblox says `amigos` again. |
 
 ## Sources
-1. Microsoft Spanish (Neutral) Localization Style Guide -- https://aka.ms/spanish-neutral-styleguide
-2. Microsoft Spanish (Mexico) Localization Style Guide -- https://aka.ms/spanish-mexico-styleguide
-3. CLDR plural rules -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-4. CLDR number data for es-MX, es-419, es-AR, es-PE, es-CR, es-CO, es-US -- https://github.com/unicode-org/cldr-json/tree/main/cldr-json/cldr-numbers-full/main
-5. Roblox language codes -- https://create.roblox.com/docs/production/localization/language-codes
-6. Roblox Spanish web UI strings (localization bundles loaded by roblox.com/es game pages, read 2026-11-08) -- https://www.roblox.com/es/games/11901437921/Tapping-Fantasy-Simulator
-7. Roblox Help (es), Experiencias en Roblox -- https://en.help.roblox.com/hc/es/articles/115004734603
-8. Roblox Help (es), Pases de Experiencias -- https://en.help.roblox.com/hc/es/articles/203314040
-9. Roblox Help (es), Intercambio en Roblox -- https://en.help.roblox.com/hc/es/articles/203313310
-10. Roblox Help (es), marking an experience as a favorite -- https://en.help.roblox.com/hc/es/articles/203313670
-11. Roblox Help (es), Suscripción a Roblox Premium -- https://en.help.roblox.com/hc/es/articles/360024256251
-12. Roblox Help (es), adding trusted friends -- https://en.help.roblox.com/hc/es/articles/46158344285204
-13. Roblox Newsroom (es), Conexiones renamed back to Amigos -- https://about.roblox.com/es/newsroom/2026/04/expanding-trusted-friends
-14. XboxPlay (es), rebirth guide for Pet Simulator 99 -- https://xboxplay.games/es/news/como-renacer-en-roblox-pet-simulator-99-48017
-15. El Comercio (Ecuador), gamer slang glossary -- https://www.elcomercio.com/games/farmear-campear-npc-y-afk-guia-de-lenguaje-para-entender-a-los-gamers/
-16. Red Bull (Spain), gaming glossary, used for the Spain contrast -- https://www.redbull.com/es-es/gaming-diccionario-terminos-jerga
-17. Roblox Creator Docs (es), Productos de desarrollador -- https://create.roblox.com/docs/es-es/production/monetization/developer-products
-18. Roblox Newsroom, Roblox Plus launch and end of new Premium sign-ups -- https://about.roblox.com/newsroom/2026/04/introducing-roblox-plus-subscription
-19. Roblox on the Mexican App Store (Spanish copy: juegos, amigos, grupo, tú) -- https://apps.apple.com/mx/app/roblox/id431946152?l=es-MX
+1. Microsoft Spanish (Neutral) Localization Style Guide: https://aka.ms/spanish-neutral-styleguide
+2. Microsoft Spanish (Mexico) Localization Style Guide: https://aka.ms/spanish-mexico-styleguide
+3. CLDR plural rules: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+4. CLDR number data for es-MX, es-419, es-AR, es-PE, es-CR, es-CO, es-US: https://github.com/unicode-org/cldr-json/tree/main/cldr-json/cldr-numbers-full/main
+5. Roblox language codes: https://create.roblox.com/docs/production/localization/language-codes
+6. Roblox Spanish web UI strings (localization bundles loaded by roblox.com/es game pages, read 2026-11-08): https://www.roblox.com/es/games/11901437921/Tapping-Fantasy-Simulator
+7. Roblox Help (es), Experiencias en Roblox: https://en.help.roblox.com/hc/es/articles/115004734603
+8. Roblox Help (es), Pases de Experiencias: https://en.help.roblox.com/hc/es/articles/203314040
+9. Roblox Help (es), Intercambio en Roblox: https://en.help.roblox.com/hc/es/articles/203313310
+10. Roblox Help (es), marking an experience as a favorite: https://en.help.roblox.com/hc/es/articles/203313670
+11. Roblox Help (es), Suscripción a Roblox Premium: https://en.help.roblox.com/hc/es/articles/360024256251
+12. Roblox Help (es), adding trusted friends: https://en.help.roblox.com/hc/es/articles/46158344285204
+13. Roblox Newsroom (es), Conexiones renamed back to Amigos: https://about.roblox.com/es/newsroom/2026/04/expanding-trusted-friends
+14. XboxPlay (es), rebirth guide for Pet Simulator 99: https://xboxplay.games/es/news/como-renacer-en-roblox-pet-simulator-99-48017
+15. El Comercio (Ecuador), gamer slang glossary: https://www.elcomercio.com/games/farmear-campear-npc-y-afk-guia-de-lenguaje-para-entender-a-los-gamers/
+16. Red Bull (Spain), gaming glossary, used for the Spain contrast: https://www.redbull.com/es-es/gaming-diccionario-terminos-jerga
+17. Roblox Creator Docs (es), Productos de desarrollador: https://create.roblox.com/docs/es-es/production/monetization/developer-products
+18. Roblox Newsroom, Roblox Plus launch and end of new Premium sign-ups: https://about.roblox.com/newsroom/2026/04/introducing-roblox-plus-subscription
+19. Roblox on the Mexican App Store (Spanish copy: juegos, amigos, grupo, tú): https://apps.apple.com/mx/app/roblox/id431946152?l=es-MX

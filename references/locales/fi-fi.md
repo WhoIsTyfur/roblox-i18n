@@ -1,4 +1,4 @@
-# Finnish (fi-fi) -- translation guide
+# Finnish (fi-fi) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | singular "sinä", shown by verb endings ("Osta", "Sait", "Olet"); never plural "te" |
 | Text expansion vs English | about +10-20% for sentences (measured on the reference set below); short labels +25-70% ("Legendary" -> "Legendaarinen", "Top Players" -> "Parhaat pelaajat"); long compounds have no space to break at |
 | Plural categories (CLDR) | one, other (ordinals: other only) |
-| Model confidence | medium -- grammar is well documented, but models glue endings onto placeholders, calque "to do X" and miss how Finnish kids talk |
+| Model confidence | medium: grammar is well documented, but models glue endings onto placeholders, calque "to do X" and miss how Finnish kids talk |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register

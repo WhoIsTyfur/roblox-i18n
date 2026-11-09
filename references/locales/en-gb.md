@@ -1,4 +1,4 @@
-# English (United Kingdom) (en-gb) -- translation guide
+# English (United Kingdom) (en-gb) translation guide
 
 ## At a glance
 | | |
@@ -7,8 +7,8 @@
 | Script, direction | Latin, LTR |
 | Address the player as | "you", with contractions, exactly as the US source does |
 | Text expansion vs English | 0-3%; a few swaps add 1-3 letters (colour, favourite, trousers) |
-| Plural categories (CLDR) | one, other (ordinals: one, two, few, other) -- same as US |
-| Model confidence | high -- the risk is over- or under-Britishising, not comprehension |
+| Plural categories (CLDR) | one, other (ordinals: one, two, few, other), same as US |
+| Model confidence | high: the risk is over- or under-Britishising, not comprehension |
 | Native review before shipping | optional; have a UK speaker skim jokes, food, clothes and school words |
 
 ## Audience and register
@@ -159,20 +159,20 @@ All 34 match the `en-us` guide's column word for word: none has a US spelling, U
 | friends.boost | +{percent}% boost for each friend in your server | "friend" is Roblox's current term again |
 
 ## Sources
-1. Microsoft Localization Style Guides index -- https://learn.microsoft.com/en-us/globalization/reference/microsoft-style-guides
-2. Microsoft English (United Kingdom) Style Guide, 2024 PDF -- https://download.microsoft.com/download/9/8/8/98834e3c-f0be-40c9-af56-35a0cc1ab65f/eng-gbr-StyleGuide.pdf
-3. Unicode CLDR language plural rules -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-4. Wikipedia, American and British English spelling differences -- https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences
-5. Roblox DevForum, Locale Support for Translations (2025-11-24) -- https://devforum.roblox.com/t/locale-support-for-translations/4095306
-6. Roblox DevForum, Incorrect LocaleIds reported in game -- https://devforum.roblox.com/t/incorrect-localeids-reported-in-game/2935500
-7. Roblox DevForum, Localization API update for the in-experience language switcher -- https://devforum.roblox.com/t/localization-api-update-for-upcoming-in-experience-language-switcher/1974795
-8. Roblox DevForum, Friends Are Back (2026-04-02) -- https://devforum.roblox.com/t/friends-are-back-expanding-trusted-friends-for-a-new-way-to-chat-and-play/4554217
-9. Roblox DevForum, Introducing Roblox Communities (Nov 2024) -- https://devforum.roblox.com/t/introducing-roblox-communities/3268307
-10. Roblox Creator Hub, Passes -- https://create.roblox.com/docs/production/monetization/game-passes
-11. Roblox Creator Hub, Language codes -- https://create.roblox.com/docs/production/localization/language-codes
-12. HSBC UK, Gaming Jargon Buster (2025) -- https://www.hsbc.co.uk/content/dam/hsbc/gb/pdf/financial-education/gaming-jargon-buster.pdf
-13. GOV.UK A to Z style guide (Mr/Dr without full stops, -ise, 5:30pm, day-month dates) -- https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/style-guides/a-to-z-style-guide/
-14. Roblox locale API (en_gb: enabled for in-game text, not the app) -- https://locale.roblox.com/v1/locales/supported-locales-for-creators
-15. Roblox Creator Hub, LocalizationService (RobloxLocaleId is the CoreGui locale) -- https://create.roblox.com/docs/reference/engine/classes/LocalizationService
-16. Roblox Creator Hub, Localize with scripting (TranslationHelper fallback) -- https://create.roblox.com/docs/production/localization/localize-with-scripting
-17. Roblox Newsroom, Introducing Roblox Plus (2026-04) -- https://about.roblox.com/newsroom/2026/04/introducing-roblox-plus-subscription
+1. Microsoft Localization Style Guides index: https://learn.microsoft.com/en-us/globalization/reference/microsoft-style-guides
+2. Microsoft English (United Kingdom) Style Guide, 2024 PDF: https://download.microsoft.com/download/9/8/8/98834e3c-f0be-40c9-af56-35a0cc1ab65f/eng-gbr-StyleGuide.pdf
+3. Unicode CLDR language plural rules: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+4. Wikipedia, American and British English spelling differences: https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences
+5. Roblox DevForum, Locale Support for Translations (2025-11-24): https://devforum.roblox.com/t/locale-support-for-translations/4095306
+6. Roblox DevForum, Incorrect LocaleIds reported in game: https://devforum.roblox.com/t/incorrect-localeids-reported-in-game/2935500
+7. Roblox DevForum, Localization API update for the in-experience language switcher: https://devforum.roblox.com/t/localization-api-update-for-upcoming-in-experience-language-switcher/1974795
+8. Roblox DevForum, Friends Are Back (2026-04-02): https://devforum.roblox.com/t/friends-are-back-expanding-trusted-friends-for-a-new-way-to-chat-and-play/4554217
+9. Roblox DevForum, Introducing Roblox Communities (Nov 2024): https://devforum.roblox.com/t/introducing-roblox-communities/3268307
+10. Roblox Creator Hub, Passes: https://create.roblox.com/docs/production/monetization/game-passes
+11. Roblox Creator Hub, Language codes: https://create.roblox.com/docs/production/localization/language-codes
+12. HSBC UK, Gaming Jargon Buster (2025): https://www.hsbc.co.uk/content/dam/hsbc/gb/pdf/financial-education/gaming-jargon-buster.pdf
+13. GOV.UK A to Z style guide (Mr/Dr without full stops, -ise, 5:30pm, day-month dates): https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/style-guides/a-to-z-style-guide/
+14. Roblox locale API (en_gb: enabled for in-game text, not the app): https://locale.roblox.com/v1/locales/supported-locales-for-creators
+15. Roblox Creator Hub, LocalizationService (RobloxLocaleId is the CoreGui locale): https://create.roblox.com/docs/reference/engine/classes/LocalizationService
+16. Roblox Creator Hub, Localize with scripting (TranslationHelper fallback): https://create.roblox.com/docs/production/localization/localize-with-scripting
+17. Roblox Newsroom, Introducing Roblox Plus (2026-04): https://about.roblox.com/newsroom/2026/04/introducing-roblox-plus-subscription

@@ -1,4 +1,4 @@
-# Albanian (sq-al) -- translation guide
+# Albanian (sq-al) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "ti" (2nd person singular verbs: "Luaj", "Bli"); never "ju" or 2nd plural "Luani", "Blini" |
 | Text expansion vs English | about +15-35% for sentences (unverified rule of thumb; this guide's reference set came out +16% while fitted to budgets); short titles up to +70% ("Top Players" -> "Lojtarët më të mirë") |
 | Plural categories (CLDR) | cardinal: one, other; ordinal: one, many, other |
-| Model confidence | medium -- mid-resource language with no Roblox Albanian UI to anchor terms; models slip on ë/ç, clitics, agreement and Gheg forms |
+| Model confidence | medium: mid-resource language with no Roblox Albanian UI to anchor terms; models slip on ë/ç, clitics, agreement and Gheg forms |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
@@ -117,7 +117,7 @@
 | rebirth.button | Rilindu | imperative of rilindem, like "Luaj"; the noun "Rilindje" for titles and counters ("Rilindje: 3") |
 | rebirth.confirm | Rilindje tani? Do t'i humbasësh monedhat, por do të marrësh një bonus të përhershëm x{multiplier}. | "x" moved before the number; "1.5" should arrive as "1,5" (code) |
 | coins.need_more | Të duhen edhe monedha: {amount}! | generic plural + colon; works when amount is 1 |
-| coins.count | Monedha: {count} | "1,250" should be "1250" for Albanian -- code issue |
+| coins.count | Monedha: {count} | "1,250" should be "1250" for Albanian (code issue) |
 | egg.hatched | Nga veza doli: {pet} ({rarity})! | "out of the egg came"; natural and needs no "you" form. Rarity in brackets avoids gender agreement. "Çele: {pet}" is a valid shorter option |
 | rarity.legendary | Legjendar | masculine dictionary form for every tag, whatever the pet's gender; pet names mix genders ("Dragua", "Mace"), so no one form agrees with all |
 | pet.name.dragon | Dragua | not "Kuçedër" (a folklore monster) |

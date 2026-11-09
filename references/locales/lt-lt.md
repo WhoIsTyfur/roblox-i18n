@@ -1,4 +1,4 @@
-# Lithuanian (lt-lt) -- translation guide
+# Lithuanian (lt-lt) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "tu" ("Spausk", "Grįžk", "Gausi"); never "jūs"/"Jūs" except to the whole server |
 | Text expansion vs English | about +10-30% on sentences (this file's reference set: +10% after compressing); short words double ("Buy" -> "Pirkti", "On" -> "Įjungta", so 5-char slots need "Įj.") |
 | Plural categories (CLDR) | one (1, 21, 31, 101; not 11), few (2-9, 22-29; not 12-19), many (fractions only: 1,5), other (0, 10-20, 30, 100) |
-| Model confidence | medium -- smaller language; models break case endings around {params}, use gendered participles for "you", and calque English; no Lithuanian Roblox UI to copy terms from |
+| Model confidence | medium: smaller language; models break case endings around {params}, use gendered participles for "you", and calque English; no Lithuanian Roblox UI to copy terms from |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register

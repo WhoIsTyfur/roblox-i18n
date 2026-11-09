@@ -1,4 +1,4 @@
-# Kazakh (kk-kz) -- translation guide
+# Kazakh (kk-kz) translation guide
 
 ## At a glance
 | | |
@@ -8,16 +8,16 @@
 | Address the player as | informal singular "сен" (verbs in -сың/-сің, bare imperative stem); never "сіз", never -ыңыз/-іңіз forms |
 | Text expansion vs English | measured on the reference set: sentences -10% to +35% (about +10% overall), titles up to +40% ("Daily Reward" -> "Күнделікті сыйлық"); some buttons shrink ("Claim" -> "Алу"). The real risk is long agglutinated words ("айырбастасқысы") |
 | Plural categories (CLDR) | cardinal: one, other; ordinal: many, other. Irrelevant in UI: nouns after a number stay singular |
-| Model confidence | medium -- lower-resource language; models slip into Russian words, Russian letters instead of Kazakh ones, and wrong vowel-harmony suffixes |
+| Model confidence | medium: lower-resource language; models slip into Russian words, Russian letters instead of Kazakh ones, and wrong vowel-harmony suffixes |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
 - Script decision: write Cyrillic. Kazakhstan adopted a Latin alphabet in 2021 with a phase-in planned for 2023-2031, but Cyrillic is what kids read at school and on screens today (classroom status in 2026 unverified), and Roblox itself labels the language in Cyrillic. Latin Kazakh ("Qazaq tili") would look like a different language to most 9-16 year olds.
 - Kazakhstan is bilingual: Russian is also official and dominant in many cities, so many kids play Roblox in Russian or English. A player who gets the kk-kz column wants real Kazakh. Never fall back to Russian words when a common Kazakh one exists: "дүкен", not "магазин"; "сыйлық", not "награда"; "айдаһар", not "дракон".
-- Platform status (Roblox locale API, checked 2026-11-08): kk_kz is enabled for in-experience text only, not for the Roblox app, site or sign-up. Kazakh players see Roblox's own UI in Russian or English, so there are no official Roblox Kazakh platform terms; follow the table below. A player can get `LocaleId` = `kk-kz` only by picking Kazakh in the in-experience menu (Roblox icon > Settings > language), and that list shows only languages the creator enabled in the experience's localization settings (DevForum, 2022) -- so enable Kazakh there. Not tested live for kk-kz; check with Studio's Player Emulator. Roblox does not auto-translate Kazakh: every empty key shows the source text.
-- Use "сен" everywhere. The Kazakh Minecraft translation is mixed: its system, server and account messages use сіз ("басыңыз"), but everything about play -- advancements, tutorial hints, the death screen -- uses сен ("Мақсатыңа жеттің!", "Инвентарыңды аш", "Өліп қалдың!"). A game's UI is all play text. Microsoft's guide uses сіз, but that is adult software. Never mix: "E-ні басыңыз, сыйлық аласың" -> "E-ні бас, сыйлық аласың".
+- Platform status (Roblox locale API, checked 2026-11-08): kk_kz is enabled for in-experience text only, not for the Roblox app, site or sign-up. Kazakh players see Roblox's own UI in Russian or English, so there are no official Roblox Kazakh platform terms; follow the table below. A player can get `LocaleId` = `kk-kz` only by picking Kazakh in the in-experience menu (Roblox icon > Settings > language), and that list shows only languages the creator enabled in the experience's localization settings (DevForum, 2022), so enable Kazakh there. Not tested live for kk-kz; check with Studio's Player Emulator. Roblox does not auto-translate Kazakh: every empty key shows the source text.
+- Use "сен" everywhere. The Kazakh Minecraft translation is mixed: its system, server and account messages use сіз ("басыңыз"), but everything about play (advancements, tutorial hints, the death screen) uses сен ("Мақсатыңа жеттің!", "Инвентарыңды аш", "Өліп қалдың!"). A game's UI is all play text. Microsoft's guide uses сіз, but that is adult software. Never mix: "E-ні басыңыз, сыйлық аласың" -> "E-ні бас, сыйлық аласың".
 - Buttons, tabs and toggles: infinitive in -у/-ю or a noun, the Kazakh software norm (Microsoft: "Сақтау"; Minecraft: "Жалғастыру", "Бірге ойнау"): "Ойнау", "Алу", "Дүкен". Sentences and tips: сен-imperative: "Жануарларыңды сат", "Шеңберге кір".
-- Hype that sounds natural: "Жаңа деңгей!", "Керемет!", "Тамаша!", "Жарайсың!", "Жаңа жетістік!". Stiff or adult: "өтінеміз" (please -- Microsoft says never use it), "қажет" in instructions (sounds rude per Microsoft), "жүзеге асыру", "аталмыш".
+- Hype that sounds natural: "Жаңа деңгей!", "Керемет!", "Тамаша!", "Жарайсың!", "Жаңа жетістік!". Stiff or adult: "өтінеміз" (please; Microsoft says never use it), "қажет" in instructions (sounds rude per Microsoft), "жүзеге асыру", "аталмыш".
 - Errors stay neutral, no blame: "Код қате" rather than "Сен қате код енгіздің".
 - Translate "your" only when ownership matters (Microsoft rule): "Сөмке толы!", not "Сенің сөмкең толы!".
 - Kid-safe slang only; no insults or crude words, even in jokes.
@@ -74,7 +74,7 @@
 - No space before ! ? : ; and one space after.
 - Dash: em dash with spaces " — " ("Достық — дертке сеп!", Minecraft); hyphen without spaces in compounds ("іс-шара", "VIP-сервер"); en dash without spaces in ranges ("10–20").
 - Quotes: «» with nested “” (CLDR). Microsoft uses straight quotes in software UI; in game text «» read as native.
-- Numbers: thousands separator is a non-breaking space ("1 250"), decimal separator a comma ("1,5") (CLDR). The canonical {count} arrives as "1,250", which reads as 1.25 -- flag it to the developer. Same for multiplier "1.5".
+- Numbers: thousands separator is a non-breaking space ("1 250"), decimal separator a comma ("1,5") (CLDR). The canonical {count} arrives as "1,250", which reads as 1.25, so flag it to the developer. Same for multiplier "1.5".
 - Percent: no space, "25%" (CLDR pattern).
 - Multiplier: Latin x: "x2", "Монета x2". Never Cyrillic "х2".
 - Durations (CLDR short units): "2 күн", "3 сағ", "20 мин", "5 с"; no periods (Microsoft lists "сек" for seconds; pick one per game). Timers: "2 күн 5 сағ", "3 сағ 20 мин". If game code outputs "3h 20m", flag it.
@@ -127,7 +127,7 @@
 | rebirth.button | Қайта туу | 9/10 |
 | rebirth.confirm | Қазір қайта туасың ба? Монеталарыңды жоғалтасың, бірақ мәңгілік x{multiplier} бонус аласың. | multiplier moved after Latin x; "1.5" should be "1,5" |
 | coins.need_more | Тағы {amount} монета керек! | singular after a number, so every amount works |
-| coins.count | {count} монета | "1,250" should be "1 250" -- code issue |
+| coins.count | {count} монета | "1,250" should be "1 250" (code issue) |
 | egg.hatched | Жұмыртқадан {rarity} {pet} шықты! | no suffix on placeholders; a capitalized rarity mid-sentence is acceptable |
 | rarity.legendary | Легендарлы | native "Аңыздық" (7) is shorter, unverified in games |
 | pet.name.dragon | Айдаһар | not Russian "Дракон" |

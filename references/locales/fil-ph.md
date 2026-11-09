@@ -1,4 +1,4 @@
-# Filipino (fil-ph) -- translation guide
+# Filipino (fil-ph) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal "ka", "mo", "ikaw"; never "kayo", "ninyo", "po" or "opo" for one player |
 | Text expansion vs English | +5-35% on sentences (the reference set averages +14%, kept low by Taglish nouns); one-word buttons often double ("Buy" -> "Bilhin", "Play" -> "Maglaro") |
 | Plural categories (CLDR) | cardinal one, other ("other" = numbers ending in 4, 6 or 9, whose Tagalog words take the linker "na": "apat na"); ordinal one, other |
-| Model confidence | medium -- grammar is solid, but models swing between textbook Tagalog and English with a Tagalog word sprinkled in, and drop "si"/"ni" around names |
+| Model confidence | medium: grammar is solid, but models swing between textbook Tagalog and English with a Tagalog word sprinkled in, and drop "si"/"ni" around names |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
@@ -150,23 +150,23 @@ Roblox shows Filipino players English, so platform terms follow Roblox's English
 | friends.boost | +{percent}% boost sa bawat kaibigan sa server mo | |
 
 ## Sources
-1. Microsoft Localization Style Guides index -- https://learn.microsoft.com/en-us/globalization/reference/microsoft-style-guides
-2. Microsoft Filipino Localization Style Guide (ka/iyo, no po/opo, "paki-" samples, loanword hyphens, capitalization, numbers, punctuation, keys) -- https://download.microsoft.com/download/25b05cb0-c8ad-41f0-be2e-30335c6ceb6a/fil-fil-StyleGuide.pdf
-3. Unicode CLDR language plural rules chart (fil) -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-4. CLDR JSON, Filipino units -- https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-units-full/main/fil/units.json
-5. CLDR JSON, Filipino numbers -- https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-numbers-full/main/fil/numbers.json
-6. Roblox language codes (Filipino, fil, fil-ph) -- https://create.roblox.com/docs/production/localization/language-codes
-7. roblox.com in Filipino, 404 on 2026-11-08 -- https://www.roblox.com/fil/games/920587237/Adopt-Me
-8. Roblox client CoreScript translations, header has no fil column (ExtraContent/translations/CoreScriptLocalization.csv, build version-f0ea5da9412f4e35) -- local file from the Roblox install
-9. Roblox bundled fonts, cmap check for Ñ, accented vowels and U+20B1 (content/fonts, same build) -- local files from the Roblox install
-10. Tagalog Wikipedia, Roblox ("laro", "manlalaro", Robux, developer, server kept) -- https://tl.wikipedia.org/wiki/Roblox
-11. Wikipedia, Taglish (affixes on English roots, register) -- https://en.wikipedia.org/wiki/Taglish
-12. Minecraft Java Edition fil_ph language file (purist examples "Pang-isahang-laro", "SIGE"/"HUWAG", "Naglo-load", "Si %s ay sumali sa laro") -- local asset index 29
-13. Google Play in Filipino ("Mga Laro", "Mga App") -- https://play.google.com/store/apps/details?id=com.roblox.client&hl=fil
-14. Roblox locale API (`fil_ph`: in-game content on, full experience and sign-up off; checked 2026-11-08) -- https://locale.roblox.com/v1/locales?displayValueLocale=en_us
-15. Roblox locale API, the 18 account languages (no fil) -- https://locale.roblox.com/v1/locales/supported-locales
-16. Roblox Creator Hub, Localize with scripting (players switch language in the in-game Settings menu) -- https://create.roblox.com/docs/production/localization/localize-with-scripting
-17. Roblox DevForum, in-experience language switcher lists the languages a game enables -- https://devforum.roblox.com/t/localization-api-update-for-upcoming-in-experience-language-switcher/1974795
-18. Roblox DevForum, Friends Are Back (2026-04-02) -- https://devforum.roblox.com/t/friends-are-back-expanding-trusted-friends-for-a-new-way-to-chat-and-play/4554217
-19. Wiktionary, Tagalog "itlog", "pisa", "astig", "bano" (senses and slang labels) -- https://en.wiktionary.org/wiki/itlog, https://en.wiktionary.org/wiki/pisa, https://en.wiktionary.org/wiki/astig, https://en.wiktionary.org/wiki/bano
-20. Studio test 2026-11-08, TextService:GetTextBoundsAsync with Builder Sans on "Naglo-load", "Mag-rebirth" and phrases (wrap at spaces only) -- local measurement
+1. Microsoft Localization Style Guides index: https://learn.microsoft.com/en-us/globalization/reference/microsoft-style-guides
+2. Microsoft Filipino Localization Style Guide (ka/iyo, no po/opo, "paki-" samples, loanword hyphens, capitalization, numbers, punctuation, keys): https://download.microsoft.com/download/25b05cb0-c8ad-41f0-be2e-30335c6ceb6a/fil-fil-StyleGuide.pdf
+3. Unicode CLDR language plural rules chart (fil): https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+4. CLDR JSON, Filipino units: https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-units-full/main/fil/units.json
+5. CLDR JSON, Filipino numbers: https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-numbers-full/main/fil/numbers.json
+6. Roblox language codes (Filipino, fil, fil-ph): https://create.roblox.com/docs/production/localization/language-codes
+7. roblox.com in Filipino, 404 on 2026-11-08: https://www.roblox.com/fil/games/920587237/Adopt-Me
+8. Roblox client CoreScript translations, header has no fil column (ExtraContent/translations/CoreScriptLocalization.csv, build version-f0ea5da9412f4e35): local file from the Roblox install
+9. Roblox bundled fonts, cmap check for Ñ, accented vowels and U+20B1 (content/fonts, same build): local files from the Roblox install
+10. Tagalog Wikipedia, Roblox ("laro", "manlalaro", Robux, developer, server kept): https://tl.wikipedia.org/wiki/Roblox
+11. Wikipedia, Taglish (affixes on English roots, register): https://en.wikipedia.org/wiki/Taglish
+12. Minecraft Java Edition fil_ph language file (purist examples "Pang-isahang-laro", "SIGE"/"HUWAG", "Naglo-load", "Si %s ay sumali sa laro"): local asset index 29
+13. Google Play in Filipino ("Mga Laro", "Mga App"): https://play.google.com/store/apps/details?id=com.roblox.client&hl=fil
+14. Roblox locale API (`fil_ph`: in-game content on, full experience and sign-up off; checked 2026-11-08): https://locale.roblox.com/v1/locales?displayValueLocale=en_us
+15. Roblox locale API, the 18 account languages (no fil): https://locale.roblox.com/v1/locales/supported-locales
+16. Roblox Creator Hub, Localize with scripting (players switch language in the in-game Settings menu): https://create.roblox.com/docs/production/localization/localize-with-scripting
+17. Roblox DevForum, in-experience language switcher lists the languages a game enables: https://devforum.roblox.com/t/localization-api-update-for-upcoming-in-experience-language-switcher/1974795
+18. Roblox DevForum, Friends Are Back (2026-04-02): https://devforum.roblox.com/t/friends-are-back-expanding-trusted-friends-for-a-new-way-to-chat-and-play/4554217
+19. Wiktionary, Tagalog "itlog", "pisa", "astig", "bano" (senses and slang labels): https://en.wiktionary.org/wiki/itlog, https://en.wiktionary.org/wiki/pisa, https://en.wiktionary.org/wiki/astig, https://en.wiktionary.org/wiki/bano
+20. Studio test 2026-11-08, TextService:GetTextBoundsAsync with Builder Sans on "Naglo-load", "Mag-rebirth" and phrases (wrap at spaces only): local measurement

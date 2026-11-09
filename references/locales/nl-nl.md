@@ -1,4 +1,4 @@
-# Dutch (nl-nl) -- translation guide
+# Dutch (nl-nl) translation guide
 
 ## At a glance
 | | |
@@ -8,8 +8,8 @@
 | Address the player as | informal "je" (stressed "jij"/"jouw" only for emphasis); never "u"/"uw", never Flemish "ge"/"gij" |
 | Text expansion vs English | +20-30% for sentences (Microsoft's Dutch average), short labels up to +50% ("Claim" -> "Ophalen") |
 | Plural categories (CLDR) | one, other (one = exactly integer 1: "1 munt", "2 munten", "1,5 munten") |
-| Model confidence | high -- high-resource language; the risks are u vs je, loanword spelling, adjective endings around placeholders, NL vs BE word choice |
-| Native review before shipping | recommended -- Roblox does not auto-translate games into Dutch, so this column is all players get; ideally one reviewer from NL and one from Flanders |
+| Model confidence | high: high-resource language; the risks are u vs je, loanword spelling, adjective endings around placeholders, NL vs BE word choice |
+| Native review before shipping | recommended: Roblox does not auto-translate games into Dutch, so this column is all players get; ideally one reviewer from NL and one from Flanders |
 
 ## Audience and register
 - Players are mostly 9-16, in the Netherlands and Flanders. Roblox's Dutch app and help talk to them with "je" ("Zo markeer je een plek als favoriet", "kun je ruilen"). Its legal and policy pages still say "u"; that is legal register, not the model.

@@ -1,4 +1,4 @@
-# Slovenian (sl-sl) -- translation guide
+# Slovenian (sl-sl) translation guide
 
 ## At a glance
 | | |
@@ -7,8 +7,8 @@
 | Script, direction | Latin with č š ž (Č Š Ž), LTR. No ć, đ or accented vowels |
 | Address the player as | informal singular "ti" everywhere; never "vi"/"Vi" |
 | Text expansion vs English | +12% over the reference set; sentences -12% to +41%; short labels up to double ("Shop" -> "Trgovina", "On" -> "Vklop") |
-| Plural categories (CLDR) | one, two, few, other -- Slovenian has a living dual (dvojina) |
-| Model confidence | medium -- LLMs slip in Croatian or Slovak words, miss the dual and write gendered past and future forms for "you" |
+| Plural categories (CLDR) | one, two, few, other; Slovenian has a living dual (dvojina) |
+| Model confidence | medium: LLMs slip in Croatian or Slovak words, miss the dual and write gendered past and future forms for "you" |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
@@ -77,10 +77,10 @@
 - Quotation marks »...« (Microsoft, all software text); never "...", '...' or „...“. Don't quote button names in short game text.
 - Ellipsis takes a space before it (Microsoft): "Nalaganje ...", "Povezovanje ...". Minecraft's "Povezovanje na strežnik..." breaks this rule.
 - Dash: en dash with spaces " – " for a break ("Ta meč – noro močan!"); en dash without spaces in ranges ("8–21"); Slovenian has no em dash (Microsoft).
-- Numbers: group separator period, decimal comma (Microsoft, CLDR): "1.250", "1,5". A {count} preformatted as "1,250" reads as one and a quarter, and multiplier "1.5" as fifteen hundred -- flag both to the developer.
+- Numbers: group separator period, decimal comma (Microsoft, CLDR): "1.250", "1,5". A {count} preformatted as "1,250" reads as one and a quarter, and multiplier "1.5" as fifteen hundred; flag both to the developer.
 - Percent: no-break space (U+00A0) before % (CLDR "#,##0 %"): "+10 %". Roblox's bundled Fredoka One, Balthazar and Roman Antique have no U+00A0 glyph; with those fonts use a normal space.
 - Multiplier: Latin x: "x2", "Kovanci x2". Never Cyrillic "х".
-- Durations (CLDR short): "3 h 20 min", "2 d", "45 sek." (narrow form "45 s"). Developer-formatted "3h 20m" is readable, but "m" is the metre symbol -- ask for "min".
+- Durations (CLDR short): "3 h 20 min", "2 d", "45 sek." (narrow form "45 s"). Developer-formatted "3h 20m" is readable, but "m" is the metre symbol, so ask for "min".
 - Ordinal = numeral + period: "5. stopnja", "1. mesto". Abbreviations take a period ("npr.", "št.", "itd."); acronyms don't ("XP", "VIP").
 - Keys stay Latin; key = "tipka": "Pritisni E", "Odpri s tipko E". Space bar = "preslednica", left mouse button = "levi gumb" (Minecraft). "Shift", "Ctrl" unchanged.
 - Words run long ("ljubljenčkov", "Nalaganje"); enable TextWrapped, never hand-hyphenate.
@@ -93,7 +93,7 @@
 - Key names (E, Q, Shift) stay Latin.
 - Descriptive item names translate ("Lucky Potion" -> "Napoj sreče", Minecraft's Slovenian name for the Potion of Luck); brand-like invented names may stay English.
 - Acronyms decline with a hyphen when needed (Microsoft: "PIN-a", "RAM-a"): "brez VIP-a", "z VIP-om".
-- Script: Latin only, letters č š ž. Croatian ć đ, Slovak ä ľ ô ť ň and accented á é í ó ú are never correct in Slovenian UI text -- they mean the model drifted into another language.
+- Script: Latin only, letters č š ž. Croatian ć đ, Slovak ä ľ ô ť ň and accented á é í ó ú are never correct in Slovenian UI text; they mean the model drifted into another language.
 
 ## Rendering on Roblox
 - Slovenian needs only Č č Š š Ž ž (U+010C-010D, U+0160-0161, U+017D-017E) plus » « – … and U+00A0. Š and Ž sit in Windows-1252; Č does not, so č is the letter that goes missing.
@@ -127,9 +127,9 @@ Lengths: `scripts/i18n.py lint` counts visible text without <b> tags or {params}
 | shop.buy | Kupi | |
 | reward.claim | Prevzemi | 8/10; not "Zahtevaj" |
 | rebirth.button | Prerod | 6/10; the dictionaries' unmarked word ("Preporod" is bookish); "Ponovno rojstvo" is 15 |
-| rebirth.confirm | Prerod zdaj? Izgubiš kovance, dobiš pa trajen bonus x{multiplier}. | present tense avoids gendered "izgubil boš"; indefinite "trajen" for "a permanent" (Microsoft); "1.5" must reach the player as "1,5" -- code issue |
+| rebirth.confirm | Prerod zdaj? Izgubiš kovance, dobiš pa trajen bonus x{multiplier}. | present tense avoids gendered "izgubil boš"; indefinite "trajen" for "a permanent" (Microsoft); "1.5" must reach the player as "1,5" (code issue) |
 | coins.need_more | Premalo kovancev! Manjka še: {amount} | colon avoids kovanec/kovanca/kovanci/kovancev; 34/40 with "1.250" |
-| coins.count | Kovanci: {count} | "1,250" should be "1.250" -- code issue |
+| coins.count | Kovanci: {count} | "1,250" should be "1.250" (code issue) |
 | egg.hatched | {rarity} ljubljenček izvaljen: {pet}! | participle and rarity agree with "ljubljenček", so the pet's gender doesn't matter; 38/40 with Legendarni + Zmaj. Headline participle like Minecraft's toasts ("Cilj dosežen!"); {rarity} stays first so its capital is right. "... se je izvalil: ..." is 43, too long |
 | rarity.legendary | Legendarni | masculine definite, agrees with implied "ljubljenček" |
 | pet.name.dragon | Zmaj | masculine |

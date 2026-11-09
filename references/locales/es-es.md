@@ -1,4 +1,4 @@
-# Spanish (Spain) (es-es) -- translation guide
+# Spanish (Spain) (es-es) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal "tú"; a group as "vosotros" (os, vuestro); never "usted", never "ustedes" |
 | Text expansion vs English | about +20-30%, one-word buttons can more than double ("Buy" -> "Comprar") (unverified estimate) |
 | Plural categories (CLDR) | one, many, other ("many" = exact millions: "1.000.000 de monedas") |
-| Model confidence | high -- huge training data; the main risk is drifting into Latin American forms |
+| Model confidence | high: huge training data; the main risk is drifting into Latin American forms |
 | Native review before shipping | recommended |
 
 ## Audience and register
@@ -146,21 +146,21 @@
 | friends.boost | +{percent} % extra por cada amigo en tu servidor | "boost" rendered as "extra"; space before % |
 
 ## Sources
-1. Microsoft Spanish (Spain) Localization Style Guide (via aka.ms/spanish-spain-styleguide) -- https://download.microsoft.com/download/9/a/1/9a19beca-597c-417b-a2c2-0f1ea5a1e6c3/spa-esp-StyleGuide.pdf
-2. Microsoft Localization Style Guides index -- https://learn.microsoft.com/en-us/globalization/reference/microsoft-style-guides
-3. Unicode CLDR language plural rules -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-4. RAE Ortografía, how to write percentages (returned 403 on 2026-11-08; rule matches CLDR's "25 %") -- https://www.rae.es/ortografía/la-expresión-de-los-porcentajes
-5. RAE note on the imperative "iros" / "idos" -- https://aplica.rae.es/clweb/«iros» imperativo.pdf
-6. Roblox, "¿Qué es Roblox?" (Spanish) -- https://about.roblox.com/es/what-is-roblox
-7. Roblox newsroom (Spanish), April 2026, "Conexiones" back to "Amigos" -- https://about.roblox.com/es/newsroom/2026/04/expanding-trusted-friends
-8. Roblox Creator docs (es-es), game passes -- https://create.roblox.com/docs/es-es/production/monetization/game-passes
-9. Roblox Creator docs (es-es), experience notifications -- https://create.roblox.com/docs/es-es/production/promotion/experience-notifications
-10. DevForum, Introducing Roblox Communities -- https://devforum.roblox.com/t/introducing-roblox-communities/3268307
-11. Roblox newsroom (Spanish), April 2026, introducing Roblox Plus -- https://about.roblox.com/es/newsroom/2026/04/introducing-roblox-plus-subscription
-12. DevForum, Builder font and Gotham/Arial deprecation -- https://devforum.roblox.com/t/introducing-builder-font-deprecating-gotham-and-arial/2868222
-13. DevForum, Source Sans missing Cyrillic glyphs (fallback behavior) -- https://devforum.roblox.com/t/source-sans-cyrillic-characters-missing/483144
-14. Hola.com (Spain), gamer slang guide for parents -- https://www.hola.com/padres/20231010351354/guia-jerga-gamer-para-padres-de-adolescentes/
-15. VidaExtra (Spain), Roblox animal games -- https://www.vidaextra.com/guias-y-trucos/roblox-mejores-juegos-animales
-16. EarlyGame ES, Rebirth Champions Ultimate codes guide -- https://earlygame.com/es/guides/codigos/rebirth-champions-ultimate-codigos
-17. Roblox client CoreScript translations, `es` and `es-es` columns (ExtraContent/translations/CoreScriptLocalization.csv, Roblox build of 2026-11-05) -- local file from the Roblox install
-18. ICU 77 / CLDR 47 es-ES number and percent formats, checked with Node `Intl.NumberFormat` -- https://cldr.unicode.org/
+1. Microsoft Spanish (Spain) Localization Style Guide (via aka.ms/spanish-spain-styleguide): https://download.microsoft.com/download/9/a/1/9a19beca-597c-417b-a2c2-0f1ea5a1e6c3/spa-esp-StyleGuide.pdf
+2. Microsoft Localization Style Guides index: https://learn.microsoft.com/en-us/globalization/reference/microsoft-style-guides
+3. Unicode CLDR language plural rules: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+4. RAE Ortografía, how to write percentages (returned 403 on 2026-11-08; rule matches CLDR's "25 %"): https://www.rae.es/ortografía/la-expresión-de-los-porcentajes
+5. RAE note on the imperative "iros" / "idos": https://aplica.rae.es/clweb/«iros» imperativo.pdf
+6. Roblox, "¿Qué es Roblox?" (Spanish): https://about.roblox.com/es/what-is-roblox
+7. Roblox newsroom (Spanish), April 2026, "Conexiones" back to "Amigos": https://about.roblox.com/es/newsroom/2026/04/expanding-trusted-friends
+8. Roblox Creator docs (es-es), game passes: https://create.roblox.com/docs/es-es/production/monetization/game-passes
+9. Roblox Creator docs (es-es), experience notifications: https://create.roblox.com/docs/es-es/production/promotion/experience-notifications
+10. DevForum, Introducing Roblox Communities: https://devforum.roblox.com/t/introducing-roblox-communities/3268307
+11. Roblox newsroom (Spanish), April 2026, introducing Roblox Plus: https://about.roblox.com/es/newsroom/2026/04/introducing-roblox-plus-subscription
+12. DevForum, Builder font and Gotham/Arial deprecation: https://devforum.roblox.com/t/introducing-builder-font-deprecating-gotham-and-arial/2868222
+13. DevForum, Source Sans missing Cyrillic glyphs (fallback behavior): https://devforum.roblox.com/t/source-sans-cyrillic-characters-missing/483144
+14. Hola.com (Spain), gamer slang guide for parents: https://www.hola.com/padres/20231010351354/guia-jerga-gamer-para-padres-de-adolescentes/
+15. VidaExtra (Spain), Roblox animal games: https://www.vidaextra.com/guias-y-trucos/roblox-mejores-juegos-animales
+16. EarlyGame ES, Rebirth Champions Ultimate codes guide: https://earlygame.com/es/guides/codigos/rebirth-champions-ultimate-codigos
+17. Roblox client CoreScript translations, `es` and `es-es` columns (ExtraContent/translations/CoreScriptLocalization.csv, Roblox build of 2026-11-05): local file from the Roblox install
+18. ICU 77 / CLDR 47 es-ES number and percent formats, checked with Node `Intl.NumberFormat`: https://cldr.unicode.org/

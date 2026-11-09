@@ -1,4 +1,4 @@
-# Latvian (lv-lv) -- translation guide
+# Latvian (lv-lv) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "tu" ("Spied E", "Nāc atpakaļ"); never "jūs" ("Spiediet") |
 | Text expansion vs English | about +15-30% for sentences (this file's reference set averages about +20%); short labels often double ("Pet" -> "Mīlulis", "On" -> "Ieslēgts") |
 | Plural categories (CLDR) | zero, one, other (zero = 0, 10-20, 30, 40...; one = 1, 21, 31... but not 11) |
-| Model confidence | medium -- low-resource language; models copy Microsoft's formal "jūs", drop the comma before "lai" and lose long marks |
+| Model confidence | medium: low-resource language; models copy Microsoft's formal "jūs", drop the comma before "lai" and lose long marks |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
@@ -58,7 +58,7 @@
 | friends | draugi | Roblox renamed Connections back to Friends in April 2026. Never "savienojumi" or "kontakti". |
 
 ## Grammar traps in UI strings
-- Plurals (CLDR): one = 1, 21, 31 ("1 monēta", "21 monēta"); other = 2-9, 22-29... ("2 monētas"); zero = 0, 10-20, 30... (CLDR's own patterns use the genitive plural: "10 monētu", "11 dienu"; the nominative "10 monētas" is also common and not an error -- unverified against a grammar authority). The real errors are "1 monētas", "21 monētas", "2 monēta". One string per key, so never put {count} straight before a countable noun.
+- Plurals (CLDR): one = 1, 21, 31 ("1 monēta", "21 monēta"); other = 2-9, 22-29... ("2 monētas"); zero = 0, 10-20, 30... (CLDR's own patterns use the genitive plural: "10 monētu", "11 dienu"; the nominative "10 monētas" is also common and not an error; unverified against a grammar authority). The real errors are "1 monētas", "21 monētas", "2 monēta". One string per key, so never put {count} straight before a countable noun.
   - Bad: "{count} monētas" -> "1 monētas", "21 monētas". Good: "Monētas: {count}", "Vajag vēl {amount}" (number without a noun).
   - Safe after a number: undeclined units: "{price} Robux", "{percent}%", "{multiplier}x", "+{n} XP".
 - Simple past and future do not mark gender; the perfect and predicate adjectives do. Microsoft: use simple past instead of the perfect.
@@ -94,7 +94,7 @@
 ## Rendering on Roblox
 - Latvian needs ā č ē ģ ī ķ ļ ņ š ū ž and Ā Č Ē Ģ Ī Ķ Ļ Ņ Š Ū Ž (Latin Extended-A). Use the precomposed code points (ā U+0101, ģ U+0123, ķ U+0137, ļ U+013C, ņ U+0146), never a letter plus combining mark. Unicode names ķ ļ ņ "with cedilla", but fonts draw a comma below; lowercase ģ has its mark on top.
 - Checked in the font files of the 2026-11-05 client: all 22 letters plus – “ ” „ are in Builder Sans (default), Builder Extended/Mono, Source Sans Pro, Roboto (+Condensed, Mono), Arimo, Montserrat, Nunito, Oswald, Bangers, Luckiest Guy, Titillium Web, Ubuntu, Press Start 2P, Merriweather, Josefin Sans, Amatic SC, Jura, Kalam, Patrick Hand, Michroma, Sarpanch, Special Elite, Fondamento, Grenze Gotisch, Guru and Zekton.
-- Missing letters: **Fredoka One** (no ā ē ī ū č ģ ķ ļ ņ or their capitals -- a simulator UI staple), Comic Neue Angular and Inconsolata (no ā ē ī ū ģ ķ ļ ņ; Inconsolata also no –), Creepster, Permanent Marker, Balthazar, Accanthis ADF Std, Highway Gothic (no ā ē ī ū č ģ ķ ļ ņ), Roman Antique (also no ž), Denk One (no ā č ē ģ ī ļ ņ š ū ž), Indie Flower (no Ī). Rechecked on the same client build 2026-11-08. Tell the developer to swap them for lv (Luckiest Guy or Bangers keep the cartoon look). Whether Roblox falls back per glyph or draws boxes is unverified; either way "Mūzika" would not match its label.
+- Missing letters: **Fredoka One** (no ā ē ī ū č ģ ķ ļ ņ or their capitals; a simulator UI staple), Comic Neue Angular and Inconsolata (no ā ē ī ū ģ ķ ļ ņ; Inconsolata also no –), Creepster, Permanent Marker, Balthazar, Accanthis ADF Std, Highway Gothic (no ā ē ī ū č ģ ķ ļ ņ), Roman Antique (also no ž), Denk One (no ā č ē ģ ī ļ ņ š ū ž), Indie Flower (no Ī). Rechecked on the same client build 2026-11-08. Tell the developer to swap them for lv (Luckiest Guy or Bangers keep the cartoon look). Whether Roblox falls back per glyph or draws boxes is unverified; either way "Mūzika" would not match its label.
 - Gotham is a cloud asset, not in the local fonts folder, so it was not checked (unverified).
 - Luau `string.upper` changes ASCII only: "mūzika" -> "MūZIKA". Write capitals directly in the table ("MŪZIKA").
 - Macrons on capitals (Ā Ē Ī Ū) and commas under Ķ Ļ Ņ Ģ need extra line height; check clipping in tight TextScaled labels (unverified).

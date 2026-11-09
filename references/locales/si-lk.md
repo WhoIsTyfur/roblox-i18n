@@ -1,4 +1,4 @@
-# Sinhala (si-lk) -- translation guide
+# Sinhala (si-lk) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | ඔබ / ඔබේ, or no pronoun; never උඹ, තෝ or නුඹ (rude or intimate), never ඔබතුමා (ceremonious) |
 | Text expansion vs English | about +10% in lint characters on the reference set, but about +45% in pixel width (unshaped estimate); one-word buttons 2-3.5x |
 | Plural categories (CLDR) | one (0 and 1), other; ordinals: other only |
-| Model confidence | low -- low-resource language with sharp spoken/literary diglossia, an invisible ZWJ in common words, and no Roblox Sinhala UI or Microsoft style guide to copy |
+| Model confidence | low: low-resource language with sharp spoken/literary diglossia, an invisible ZWJ in common words, and no Roblox Sinhala UI or Microsoft style guide to copy |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
@@ -147,21 +147,21 @@ Roblox has no Sinhala UI: its locale API marks si_lk as usable for in-game conte
 | friends.boost | සර්වරයේ ඉන්න හැම මිතුරෙක්ම ඔබට +{percent}% Boost එකක් දෙනවා | "every friend in the server gives you"; dative හැම මිතුරෙකුටම reads as the friends getting the boost; ඉන්න because friends are animate |
 
 ## Sources
-1. Roblox locale API (si_lk in-game content only) -- https://locale.roblox.com/v1/locales
-2. Roblox Creator Docs, Language codes -- https://create.roblox.com/docs/production/localization/language-codes
+1. Roblox locale API (si_lk in-game content only): https://locale.roblox.com/v1/locales
+2. Roblox Creator Docs, Language codes: https://create.roblox.com/docs/production/localization/language-codes
 3. Roblox Windows client and Studio installs (content/fonts read with fontTools, RobloxPlayerBeta.exe strings, ExtraContent/translations/CoreScriptLocalization.csv), inspected 2026-11-08
-4. Microsoft Localization Style Guides index (lists no Sinhala guide) -- https://learn.microsoft.com/en-us/globalization/reference/microsoft-style-guides
-5. Unicode CLDR, Language Plural Rules -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-6. CLDR JSON, si numbers -- https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-numbers-full/main/si/numbers.json
-7. CLDR JSON, si units -- https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-units-full/main/si/units.json
-8. CLDR JSON, si delimiters and characters -- https://github.com/unicode-org/cldr-json/tree/main/cldr-json/cldr-misc-full/main/si
-9. Google Play, Roblox listing in Sinhala -- https://play.google.com/store/apps/details?id=com.roblox.client&hl=si&gl=LK
-10. Sinhala Wikipedia, Roblox -- https://si.wikipedia.org/wiki/රොබ්ලොක්ස්
-11. Sinhala Wikipedia, Minecraft and video game articles -- https://si.wikipedia.org/wiki/මයින්ක්‍රාෆ්ට්
-12. Wikipedia, Sinhala script (ZWJ forms, kunddaliya) -- https://en.wikipedia.org/wiki/Sinhala_script
-13. Wikipedia, Sinhala language (diglossia, agreement) -- https://en.wikipedia.org/wiki/Sinhala_language
-14. Wiktionary (කාසිය, බිත්තර, සංගීතය, කඩුව, ඔබ, ඔයා) and Wikipedia langlinks (මැණික්, කඩුව, බිත්තරය) -- https://en.wiktionary.org/wiki/ඔබ
-15. Roblox DevForum, Friends Are Back (April 2026) -- https://devforum.roblox.com/t/friends-are-back-expanding-trusted-friends-for-a-new-way-to-chat-and-play/4554217
-16. Roblox DevForum, Introducing Roblox Communities (Nov 2024) -- https://devforum.roblox.com/t/introducing-roblox-communities/3268307
-17. Android framework Sinhala strings (Loading, ON/OFF, Cancel, Share, ඔබ) -- https://github.com/aosp-mirror/platform_frameworks_base/blob/main/core/res/res/values-si/strings.xml
-18. Madura English-Sinhala dictionary (dragon, pet, potion, legendary, obstacle race, operation, challenge) -- https://www.maduraonline.com/
+4. Microsoft Localization Style Guides index (lists no Sinhala guide): https://learn.microsoft.com/en-us/globalization/reference/microsoft-style-guides
+5. Unicode CLDR, Language Plural Rules: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+6. CLDR JSON, si numbers: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-numbers-full/main/si/numbers.json
+7. CLDR JSON, si units: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-units-full/main/si/units.json
+8. CLDR JSON, si delimiters and characters: https://github.com/unicode-org/cldr-json/tree/main/cldr-json/cldr-misc-full/main/si
+9. Google Play, Roblox listing in Sinhala: https://play.google.com/store/apps/details?id=com.roblox.client&hl=si&gl=LK
+10. Sinhala Wikipedia, Roblox: https://si.wikipedia.org/wiki/රොබ්ලොක්ස්
+11. Sinhala Wikipedia, Minecraft and video game articles: https://si.wikipedia.org/wiki/මයින්ක්‍රාෆ්ට්
+12. Wikipedia, Sinhala script (ZWJ forms, kunddaliya): https://en.wikipedia.org/wiki/Sinhala_script
+13. Wikipedia, Sinhala language (diglossia, agreement): https://en.wikipedia.org/wiki/Sinhala_language
+14. Wiktionary (කාසිය, බිත්තර, සංගීතය, කඩුව, ඔබ, ඔයා) and Wikipedia langlinks (මැණික්, කඩුව, බිත්තරය): https://en.wiktionary.org/wiki/ඔබ
+15. Roblox DevForum, Friends Are Back (April 2026): https://devforum.roblox.com/t/friends-are-back-expanding-trusted-friends-for-a-new-way-to-chat-and-play/4554217
+16. Roblox DevForum, Introducing Roblox Communities (Nov 2024): https://devforum.roblox.com/t/introducing-roblox-communities/3268307
+17. Android framework Sinhala strings (Loading, ON/OFF, Cancel, Share, ඔබ): https://github.com/aosp-mirror/platform_frameworks_base/blob/main/core/res/res/values-si/strings.xml
+18. Madura English-Sinhala dictionary (dragon, pet, potion, legendary, obstacle race, operation, challenge): https://www.maduraonline.com/

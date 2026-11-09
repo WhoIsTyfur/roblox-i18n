@@ -1,4 +1,4 @@
-# Chinese (Simplified) (zh-cn) -- translation guide
+# Chinese (Simplified) (zh-cn) translation guide
 
 ## At a glance
 | | |
@@ -7,8 +7,8 @@
 | Script, direction | Han, Simplified characters, LTR; no spaces between words |
 | Address the player as | 你, never 您 (Roblox's own zh-cn client strings use 你 about 19 times as often as 您) |
 | Text expansion vs English | Fewer characters (often 40-60% of English, estimate), but each glyph is about two Latin letters wide: plan 0.6-1.0x English width; 1-3 letter English buttons can get wider ("Buy" -> 购买) |
-| Plural categories (CLDR) | other (cardinal and ordinal) -- no plural forms at all |
-| Model confidence | high -- high-resource language; the real risks are stiff MT-style phrasing, Traditional/Taiwan leakage and wrong gaming terms |
+| Plural categories (CLDR) | other (cardinal and ordinal); no plural forms at all |
+| Model confidence | high: high-resource language; the real risks are stiff MT-style phrasing, Traditional/Taiwan leakage and wrong gaming terms |
 | Native review before shipping | recommended |
 
 ## Audience and register
@@ -152,17 +152,17 @@
 | friends.boost | 本服务器每有一位好友，就能获得 +{percent}% 加成 | 好友, not 联系人 |
 
 ## Sources
-1. Microsoft Simplified Chinese Localization Style Guide -- https://aka.ms/chinese-simplified-styleguide
-2. Unicode CLDR language plural rules chart -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-3. Roblox client CoreScript translations (zh-cn, zh-tw, zh-cjv columns), mirrored by Roblox-Client-Tracker -- https://github.com/MaximumADHD/Roblox-Client-Tracker/blob/roblox/translations/CoreScriptLocalization.csv
-4. Roblox creator docs, zh-cn passes page -- https://create.roblox.com/docs/zh-cn/production/monetization/passes
-5. Roblox creator docs, zh-cn groups page -- https://create.roblox.com/docs/zh-cn/projects/groups
-6. About Roblox, zh-hans (machine-translated) -- https://about.roblox.com/zh-hans/what-is-roblox
-7. Roblox game name/description API, zh-hans entries for Pet Simulator 99, Adopt Me!, Tower of Hell, Grow a Garden, Brookhaven, Bee Swarm Simulator, MM2, DOORS, Dress to Impress, Steal a Brainrot -- https://gameinternationalization.roblox.com/v1/name-description/games/{universeId}
-8. TapTap Roblox forum, game recommendations thread (player vocabulary) -- https://www.taptap.cn/moment/15209170907170260
-9. DevForum, Broken Foreign Language Text Scaling (2019) -- https://devforum.roblox.com/t/broken-foreign-language-text-scaling/246203
-10. DevForum, Humanoid names do not render with correct CJK glyphs (2020) -- https://devforum.roblox.com/t/humanoid-names-do-not-render-with-correct-cjk-glyphs/674438
-11. DevForum, Fonts in Creator Marketplace + 81 New Fonts (2023) -- https://devforum.roblox.com/t/fonts-in-creator-marketplace-81-new-fonts/2164977
-12. DevForum, Add more CJK fonts request (2026) -- https://devforum.roblox.com/t/add-more-cjk-fonts-as-well-as-different-font-properties-for-each-language/4566304
-13. Roblox Newsroom (zh-hans), Connections renamed back to Friends, 2026-04-02 -- https://about.roblox.com/zh-hans/newsroom/2026/04/expanding-trusted-friends
-14. Roblox Newsroom (zh-hans), Introducing Roblox Plus, 2026-04-10 -- https://about.roblox.com/zh-hans/newsroom/2026/04/introducing-roblox-plus-subscription
+1. Microsoft Simplified Chinese Localization Style Guide: https://aka.ms/chinese-simplified-styleguide
+2. Unicode CLDR language plural rules chart: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+3. Roblox client CoreScript translations (zh-cn, zh-tw, zh-cjv columns), mirrored by Roblox-Client-Tracker: https://github.com/MaximumADHD/Roblox-Client-Tracker/blob/roblox/translations/CoreScriptLocalization.csv
+4. Roblox creator docs, zh-cn passes page: https://create.roblox.com/docs/zh-cn/production/monetization/passes
+5. Roblox creator docs, zh-cn groups page: https://create.roblox.com/docs/zh-cn/projects/groups
+6. About Roblox, zh-hans (machine-translated): https://about.roblox.com/zh-hans/what-is-roblox
+7. Roblox game name/description API, zh-hans entries for Pet Simulator 99, Adopt Me!, Tower of Hell, Grow a Garden, Brookhaven, Bee Swarm Simulator, MM2, DOORS, Dress to Impress, Steal a Brainrot: https://gameinternationalization.roblox.com/v1/name-description/games/{universeId}
+8. TapTap Roblox forum, game recommendations thread (player vocabulary): https://www.taptap.cn/moment/15209170907170260
+9. DevForum, Broken Foreign Language Text Scaling (2019): https://devforum.roblox.com/t/broken-foreign-language-text-scaling/246203
+10. DevForum, Humanoid names do not render with correct CJK glyphs (2020): https://devforum.roblox.com/t/humanoid-names-do-not-render-with-correct-cjk-glyphs/674438
+11. DevForum, Fonts in Creator Marketplace + 81 New Fonts (2023): https://devforum.roblox.com/t/fonts-in-creator-marketplace-81-new-fonts/2164977
+12. DevForum, Add more CJK fonts request (2026): https://devforum.roblox.com/t/add-more-cjk-fonts-as-well-as-different-font-properties-for-each-language/4566304
+13. Roblox Newsroom (zh-hans), Connections renamed back to Friends, 2026-04-02: https://about.roblox.com/zh-hans/newsroom/2026/04/expanding-trusted-friends
+14. Roblox Newsroom (zh-hans), Introducing Roblox Plus, 2026-04-10: https://about.roblox.com/zh-hans/newsroom/2026/04/introducing-roblox-plus-subscription

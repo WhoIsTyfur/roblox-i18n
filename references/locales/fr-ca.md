@@ -1,4 +1,4 @@
-# French (Canada) (fr-ca) -- translation guide
+# French (Canada) (fr-ca) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal "tu" everywhere; never "vous" (Microsoft fr-CA software uses "vous"; a kids' game does not) |
 | Text expansion vs English | about +15-30% (the reference set below runs +22%); one-word buttons can nearly double ("Claim" -> "Récupérer") |
 | Plural categories (CLDR) | one (0 and 1, also 1,5), many (exact millions: "1 000 000 de pièces"), other |
-| Model confidence | medium -- the French is solid, but models drift to France norms: spacing before ! ?, France slang, "shopping", AZERTY keys |
+| Model confidence | medium: the French is solid, but models drift to France norms: spacing before ! ?, France slang, "shopping", AZERTY keys |
 | Native review before shipping | recommended, by a Quebec reviewer (not a France one) |
 
 ## Audience and register
@@ -70,11 +70,11 @@ words Quebec kids keep (pets, tycoon, noob, OP, boost) is unverified: no Quebec 
 ## Typography and formatting
 Every space in this file before a French colon, percent or dollar sign, and inside French numbers and
 durations, is a no-break space (U+00A0). Copy them as is.
-- **No space before ! ? ;** -- unlike France: "Bravo!", "Prêt à jouer?". France style "Bravo !" is wrong here.
+- **No space before ! ? ;** Unlike France: "Bravo!", "Prêt à jouer?". France style "Bravo !" is wrong here.
 - **No-break space before the colon**, normal space after: "Pièces : 250".
 - **Quotes:** « » with a no-break space inside: « Potion de chance ». No quotes around button names (Microsoft fr-CA): "Appuie sur Acheter", not « Acheter ».
 - **Numbers:** no-break space between thousands, comma for decimals: "1 250", "1,5". English "1,250" reads as one and a quarter in French, so game code must format numbers, multipliers and timers for fr-ca before filling {params}; the skill's audit lists every value the code pre-formats in English. Roblox's `{name:int}` and `{name:fixed}` specifiers are not documented to localize separators (the docs' Spanish example prints "$500.00"), so format in code.
-- **Percent and money:** "25 %", "+10 %", "4,99 $" -- no-break space before % and $, symbol after the number.
+- **Percent and money:** "25 %", "+10 %", "4,99 $": no-break space before % and $, symbol after the number.
 - **Time and durations:** 24-hour clock "14 h 30"; durations "3 h 20 min", "2 j 5 h", "45 s". No period after the symbols, never "3h20m". CLDR fr-CA short date: "2026-11-08"; long form "8 novembre 2026".
 - **Ellipsis:** the single character "…", no space before: "Chargement…".
 - **Multipliers:** "x2", "x1,5" with a plain x; same style throughout the game.
@@ -88,7 +88,7 @@ durations, is a no-break space (U+00A0). Copy them as is.
 - Gamer acronyms in flavor text: AFK, XP, GG, OP. Item names DO translate unless they are brand-like: "Lucky Potion" -> "Potion de chance".
 
 ## Rendering on Roblox
-- Builder Sans, the default UI font, maps every French letter (àâçéèêëîïôœùûüÿ and their capitals) plus « » … ’ × and U+00A0 -- checked in the font files of the local Studio install, 2026-11-08.
+- Builder Sans, the default UI font, maps every French letter (àâçéèêëîïôœùûüÿ and their capitals) plus « » … ’ × and U+00A0 (checked in the font files of the local Studio install, 2026-11-08).
 - Builder Sans has no glyph for U+202F (narrow no-break space) or U+2009 (thin space), which France-style CLDR output and some MT tools insert. Use U+00A0 only; it is also what CLDR fr-CA uses.
 - Fredoka One (FredokaOne-Regular.ttf) has no U+00A0 glyph; whether Roblox falls back to another font, leaves a gap or draws a box is unverified. Other common game fonts (Luckiest Guy, Bangers, Source Sans Pro, Montserrat, Press Start 2P, Arimo, Denk One, Creepster, Oswald) have the full French set. With Fredoka One, check "25 %" and "1 250" in Studio; if a box shows, use a plain space in that font.
 - Verify in Studio: accented capitals (É, À) clipped at the top under TextScaled (unverified risk), and long words like "récompense" wrapping in narrow buttons.
@@ -148,20 +148,20 @@ Lengths in notes are rendered text with the sample value shown; the skill's lint
 | friends.boost | +{percent} % de bonus par ami sur ton serveur | no-break space before % |
 
 ## Sources
-1. Microsoft French (Canada) Style Guide -- https://download.microsoft.com/download/5/6/8/568628ff-0646-4740-a052-d8bd97ecdcf8/fra-can-StyleGuide.pdf
-2. CLDR language plural rules -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-3. CLDR 47 fr-CA vs fr-FR number, time, duration formats via ICU 77.1 (Node.js Intl), run 2026-11-08 -- https://cldr.unicode.org/
-4. OQLF, spacing before and after punctuation -- https://vitrinelinguistique.oqlf.gouv.qc.ca/22039/la-typographie/espacement/espacement-avant-et-apres-les-signes-de-ponctuation-et-les-symboles
-5. OQLF GDT, clavardage -- https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/8392463/clavardage
-6. OQLF GDT, tableau de classement -- https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/26529687/tableau-de-classement
-7. Roblox Creator Docs (French), Groups -- https://create.roblox.com/docs/fr-fr/projects/groups
-8. Roblox newsroom (French), Friends are back -- https://about.roblox.com/fr/newsroom/2026/04/expanding-trusted-friends
-9. Roblox Creator Docs (French), Passes -- https://create.roblox.com/docs/fr-fr/production/monetization/game-passes
-10. Roblox language codes -- https://create.roblox.com/docs/production/localization/language-codes
-11. DevForum, Locale support for translations -- https://devforum.roblox.com/t/locale-support-for-translations/4095306
-12. DevForum, Introducing Roblox Communities -- https://devforum.roblox.com/t/introducing-roblox-communities/3268307
-13. DevForum, Introducing Builder Font -- https://devforum.roblox.com/t/introducing-builder-font-deprecating-gotham-and-arial/2868222
+1. Microsoft French (Canada) Style Guide: https://download.microsoft.com/download/5/6/8/568628ff-0646-4740-a052-d8bd97ecdcf8/fra-can-StyleGuide.pdf
+2. CLDR language plural rules: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+3. CLDR 47 fr-CA vs fr-FR number, time, duration formats via ICU 77.1 (Node.js Intl), run 2026-11-08: https://cldr.unicode.org/
+4. OQLF, spacing before and after punctuation: https://vitrinelinguistique.oqlf.gouv.qc.ca/22039/la-typographie/espacement/espacement-avant-et-apres-les-signes-de-ponctuation-et-les-symboles
+5. OQLF GDT, clavardage: https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/8392463/clavardage
+6. OQLF GDT, tableau de classement: https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/26529687/tableau-de-classement
+7. Roblox Creator Docs (French), Groups: https://create.roblox.com/docs/fr-fr/projects/groups
+8. Roblox newsroom (French), Friends are back: https://about.roblox.com/fr/newsroom/2026/04/expanding-trusted-friends
+9. Roblox Creator Docs (French), Passes: https://create.roblox.com/docs/fr-fr/production/monetization/game-passes
+10. Roblox language codes: https://create.roblox.com/docs/production/localization/language-codes
+11. DevForum, Locale support for translations: https://devforum.roblox.com/t/locale-support-for-translations/4095306
+12. DevForum, Introducing Roblox Communities: https://devforum.roblox.com/t/introducing-roblox-communities/3268307
+13. DevForum, Introducing Builder Font: https://devforum.roblox.com/t/introducing-builder-font-deprecating-gotham-and-arial/2868222
 14. Font cmaps read from the local Roblox Studio install (content/fonts: BuilderSans-*.otf and bundled game fonts), 2026-11-08
-15. DevForum, Canadian French translations (magasinage vs shopping) -- https://devforum.roblox.com/t/canadian-french-translations-translation-service-open/442499
-16. Roblox Creator Docs, Localize with scripting (format specifiers) -- https://create.roblox.com/docs/production/localization/localize-with-scripting
-17. Wikipedia (French), Diacritiques utilisés en français (Académie française on accented capitals) -- https://fr.wikipedia.org/wiki/Diacritiques_utilisés_en_français
+15. DevForum, Canadian French translations (magasinage vs shopping): https://devforum.roblox.com/t/canadian-french-translations-translation-service-open/442499
+16. Roblox Creator Docs, Localize with scripting (format specifiers): https://create.roblox.com/docs/production/localization/localize-with-scripting
+17. Wikipedia (French), Diacritiques utilisés en français (Académie française on accented capitals): https://fr.wikipedia.org/wiki/Diacritiques_utilisés_en_français

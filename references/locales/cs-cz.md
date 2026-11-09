@@ -1,4 +1,4 @@
-# Czech (cs-cz) -- translation guide
+# Czech (cs-cz) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "ty" (tykání) everywhere; never "vy" or capitalized "Vy" |
 | Text expansion vs English | sentences about -20% to +25% (no articles; the reference set below is +3% overall); short buttons up to +100% ("Buy" -> "Koupit", "On" -> "Zap.") |
 | Plural categories (CLDR) | one, few, many, other |
-| Model confidence | medium -- grammar is well covered and Minecraft's Czech text is a kids'-game model, but Roblox has no Czech UI to copy platform terms from, and Roblox kid slang is thinly documented |
+| Model confidence | medium: grammar is well covered and Minecraft's Czech text is a kids'-game model, but Roblox has no Czech UI to copy platform terms from, and Roblox kid slang is thinly documented |
 | Native review before shipping | strongly recommended (seven cases plus gender agreement around placeholders) |
 
 ## Audience and register
@@ -77,7 +77,7 @@
 - No space before ! ? : ; and one space after, as in English.
 - Quotes: „takto“ (low-high), nested ‚takto‘. Microsoft drops most quotes around names; never use English "..." in Czech text.
 - Dashes: Czech has no em dash. Use the en dash with spaces as a sentence dash ("Jsi AFK – hýbej se!"), the en dash without spaces in ranges ("3–7"), the hyphen without spaces in compounds.
-- Numbers: decimal comma ("1,5"), thousands separated by a space ("1 250"; a no-break space in code). The canonical {count} arrives as "1,250", which a Czech player reads as 1.25 -- flag it to the developer; same for a multiplier "1.5".
+- Numbers: decimal comma ("1,5"), thousands separated by a space ("1 250"; a no-break space in code). The canonical {count} arrives as "1,250", which a Czech player reads as 1.25; flag it to the developer; same for a multiplier "1.5".
 - Percent (ÚJČ, CLDR): a space before % for a quantity ("Šance: 10 %"); no space when the number works as an adjective ("20%" = "dvacetiprocentní": "+10% bonus", "50% sleva").
 - Multiplier: "2×" (U+00D7) after the number, no space, reads "dvakrát" (ÚJČ); players type a Latin "2x".
 - Time: h, min, s without a period (Microsoft also allows "hod."); compact timers "3 h 20 min", "2 d 5 h" (d is the SI symbol for day; "2 dny 5 h" is plainer if it fits). Never "m" for minutes: m is meters. If code outputs "3h 20m", flag it.
@@ -99,7 +99,7 @@
 ## Rendering on Roblox
 - Czech needs Latin-1 (á é í ó ú ý) plus Latin Extended-A (č ď ě ň ř š ť ů ž).
 - Checked 2026-11-08 against the cmap of the font files in a local Roblox Studio install (build of 2026-11-05): Builder Sans/Extended/Mono, Luckiest Guy (Roblox's file, unlike Google's "latin"-only listing), Bangers, Source Sans Pro, Montserrat, Nunito, Roboto, Oswald, Arimo, Ubuntu, Press Start 2P, Titillium Web, Comic Neue Angular, Patrick Hand, Special Elite and Grenze Gotisch have every Czech letter, both cases, plus „ “ – … ×.
-- Missing letters: **Fredoka One** lacks č ď ě ň ř ť ů and their capitals (it has á é í ó ú ý š ž) -- a simulator favorite, so the main Czech risk. Creepster, Permanent Marker, Highway Gothic, Accanthis ADF Std and Balthazar lack the same seven; Denk One also lacks š ž; Roman Antique also lacks ž. A Studio test with Polish letters (2026-11-08) showed no boxes: the client draws missing letters from a thin sans fallback, so "Hřiště" in Fredoka One would mix two fonts inside one word (not yet tested with Czech letters). Switch cs-cz labels to a covering font (Luckiest Guy, Bangers, Builder Sans).
+- Missing letters: **Fredoka One** lacks č ď ě ň ř ť ů and their capitals (it has á é í ó ú ý š ž). It is a simulator favorite, so the main Czech risk. Creepster, Permanent Marker, Highway Gothic, Accanthis ADF Std and Balthazar lack the same seven; Denk One also lacks š ž; Roman Antique also lacks ž. A Studio test with Polish letters (2026-11-08) showed no boxes: the client draws missing letters from a thin sans fallback, so "Hřiště" in Fredoka One would mix two fonts inside one word (not yet tested with Czech letters). Switch cs-cz labels to a covering font (Luckiest Guy, Bangers, Builder Sans).
 - Capitals with háček, čárka or kroužek (Č Ř Š Ž Ě Ů Á) are taller; in tight TextScaled labels check they aren't clipped (unverified).
 - Luau string.upper changes only ASCII: "získáš" -> "ZíSKáš" (checked in Studio). Write uppercase text directly in the table.
 - Czech letters are 2 bytes in UTF-8 (#"ř" is 2): string.sub and # can split "ř" into a broken glyph; utf8.len and utf8.offset are safe.

@@ -1,4 +1,4 @@
-# French (France) (fr-fr) -- translation guide
+# French (France) (fr-fr) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal "tu" (tu, ton, ta, tes, toi); never "vous" |
 | Text expansion vs English | +19% over the 34 reference strings below (646 -> 770 visible characters); sentences +15-30%; one-word buttons often double ("Buy" -> "Acheter", "Shop" -> "Boutique") |
 | Plural categories (CLDR) | one (0 and 1, also 1,5), many (exact millions), other |
-| Model confidence | high -- huge training corpus; the real risks are "vous", typography, placeholders and key letters |
+| Model confidence | high: huge training corpus; the real risks are "vous", typography, placeholders and key letters |
 | Native review before shipping | recommended |
 
 ## Audience and register
@@ -37,7 +37,7 @@
 | egg / hatch | œuf (m.) / faire éclore | "éclore" has no object: "faire éclore un œuf"; "ouvrir un œuf" is also natural |
 | coins | pièces (f.) | French guides keep "Coins" only when quoting an untranslated English UI |
 | gems | gemmes (f.) | "diamants" only if the icon is a diamond |
-| boost | boost (m.) | "un boost x2"; "bonus" (m.) is equally standard -- one per game |
+| boost | boost (m.) | "un boost x2"; "bonus" (m.) is equally standard; pick one per game |
 | multiplier | multiplicateur (m.) | write it after the noun: "Pièces x2" |
 | XP | XP | "+50 XP"; avoid an article; "points d'expérience" in long text |
 | level up | niveau supérieur | "Niveau 5 atteint !"; players say "level up" aloud, don't write it |

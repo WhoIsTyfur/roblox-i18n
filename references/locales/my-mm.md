@@ -1,4 +1,4 @@
-# Burmese (my-mm) -- translation guide
+# Burmese (my-mm) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | no pronoun; သင် / သင့် only when a sentence breaks without it; never မင်း, နင်, ခင်ဗျား or ရှင် |
 | Text expansion vs English | lint width about 1.0x English (max 1.5x); rendered width median about 1.15x, short buttons and titles up to 2x (Play -> ကစားရန်); ink height about 1.2x Latin (font metrics, unshaped estimate) |
 | Plural categories (CLDR) | other (one form, cardinal and ordinal) |
-| Model confidence | low -- low-resource language, web text mixes Zawgyi with Unicode, and Roblox has no Burmese UI to copy platform terms from |
+| Model confidence | low: low-resource language, web text mixes Zawgyi with Unicode, and Roblox has no Burmese UI to copy platform terms from |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
@@ -83,7 +83,7 @@ Roblox has no Burmese UI: its locale API marks my_mm as usable for in-game conte
 
 ## Do not translate / keep as is
 - Latin, byte-identical: Roblox, Robux, Premium, the game title, VIP, AFK, OP, XP, noob, promo codes (FREEPETS), keys (E), display names. Never transliterate Robux or Roblox into Myanmar script.
-- Latin by this guide's choice (see table): Rebirth, Boost, Event, Pet, Obby, Tycoon, Simulator -- gamer loans whose Burmese is long or misleading (pipeline.md lets a locale guide override translate -> keep). Where a short everyday word exists, translate: Level -> အဆင့်.
+- Latin by this guide's choice (see table): Rebirth, Boost, Event, Pet, Obby, Tycoon, Simulator. These are gamer loans whose Burmese is long or misleading (pipeline.md lets a locale guide override translate -> keep). Where a short everyday word exists, translate: Level -> အဆင့်.
 - Lint: a string that is all Latin (Rebirth, VIP) needs keep:true. The script check counts only Burmese consonants and independent vowels as letters (vowel signs and medials do not count), so a line needs at least as many of those as Latin letters: restructure a Latin-heavy line instead of marking it keep.
 - Language picker label: မြန်မာဘာသာ, as in data/locales.json; it matches CLDR's မြန်မာ and Burmese Wikipedia's မြန်မာဘာသာစကား. Roblox's docs and locale API name it ဗမာစာ, which no other source here uses (native check).
 - Translate ordinary item, pet and rarity words: Dragon -> နဂါး, Lucky Potion -> ကံကောင်းဆေးရည်, Legendary -> ဒဏ္ဍာရီ.
@@ -155,19 +155,19 @@ Roblox has no Burmese UI: its locale API marks my_mm as usable for in-game conte
 | friends.boost | ဆာဗာထဲက သူငယ်ချင်း တစ်ယောက်စီအတွက် Boost +{percent}% | |
 
 ## Sources
-1. Microsoft Burmese Localization Style Guide -- https://aka.ms/burmese-styleguide (mya-MMR-StyleGuide.pdf)
-2. Unicode CLDR, Language Plural Rules -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-3. CLDR JSON, my numbers (default digits, percent) -- https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-numbers-full/main/my/numbers.json
-4. CLDR JSON, my units (duration units) -- https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-units-full/main/my/units.json
-5. Roblox locale API (my_mm not a full-UI locale) -- https://locale.roblox.com/v1/locales
-6. Roblox Creator Docs, Language codes -- https://create.roblox.com/docs/production/localization/language-codes
-7. Unicode, Myanmar Scripts and Languages FAQ (Zawgyi) -- https://www.unicode.org/faq/myanmar.html
-8. Wikipedia, Zawgyi font (U-Day, ကြော့ example) -- https://en.wikipedia.org/wiki/Zawgyi_font
-9. Google myanmar-tools (Zawgyi detector and converter) -- https://github.com/google/myanmar-tools
-10. Burmese Wikipedia, Mobile Legends: Bang Bang (gaming code-mixing) -- https://my.wikipedia.org/wiki/မိုဘိုင်းလက်ဂျန့်စ်:ဘန်းဘန်း
-11. Wikipedia langlinks in Burmese (video game, coin, Burmese language) -- https://en.wikipedia.org/w/api.php?action=query&titles=Video_game|Coin|Burmese_language&prop=langlinks&lllang=my
+1. Microsoft Burmese Localization Style Guide: https://aka.ms/burmese-styleguide (mya-MMR-StyleGuide.pdf)
+2. Unicode CLDR, Language Plural Rules: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+3. CLDR JSON, my numbers (default digits, percent): https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-numbers-full/main/my/numbers.json
+4. CLDR JSON, my units (duration units): https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-units-full/main/my/units.json
+5. Roblox locale API (my_mm not a full-UI locale): https://locale.roblox.com/v1/locales
+6. Roblox Creator Docs, Language codes: https://create.roblox.com/docs/production/localization/language-codes
+7. Unicode, Myanmar Scripts and Languages FAQ (Zawgyi): https://www.unicode.org/faq/myanmar.html
+8. Wikipedia, Zawgyi font (U-Day, ကြော့ example): https://en.wikipedia.org/wiki/Zawgyi_font
+9. Google myanmar-tools (Zawgyi detector and converter): https://github.com/google/myanmar-tools
+10. Burmese Wikipedia, Mobile Legends: Bang Bang (gaming code-mixing): https://my.wikipedia.org/wiki/မိုဘိုင်းလက်ဂျန့်စ်:ဘန်းဘန်း
+11. Wikipedia langlinks in Burmese (video game, coin, Burmese language): https://en.wikipedia.org/w/api.php?action=query&titles=Video_game|Coin|Burmese_language&prop=langlinks&lllang=my
 12. Roblox Windows client and Studio install (content/fonts, RobloxPlayerBeta.exe strings; font tables and metrics read with fontTools against BuilderSans-Regular.otf), inspected 2026-11-08
-13. Roblox DevForum, Friends Are Back (April 2026) -- https://devforum.roblox.com/t/friends-are-back-expanding-trusted-friends-for-a-new-way-to-chat-and-play/4554217
-14. Roblox DevForum, Introducing Roblox Communities (Nov 2024) -- https://devforum.roblox.com/t/introducing-roblox-communities/3268307
-15. Android (AOSP) framework strings in Burmese (button forms, "Loading", question marks, register) -- https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/core/res/res/values-my/strings.xml
-16. CLDR JSON, my language names (မြန်မာ) -- https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-localenames-full/main/my/languages.json
+13. Roblox DevForum, Friends Are Back (April 2026): https://devforum.roblox.com/t/friends-are-back-expanding-trusted-friends-for-a-new-way-to-chat-and-play/4554217
+14. Roblox DevForum, Introducing Roblox Communities (Nov 2024): https://devforum.roblox.com/t/introducing-roblox-communities/3268307
+15. Android (AOSP) framework strings in Burmese (button forms, "Loading", question marks, register): https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/core/res/res/values-my/strings.xml
+16. CLDR JSON, my language names (မြန်မာ): https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-localenames-full/main/my/languages.json

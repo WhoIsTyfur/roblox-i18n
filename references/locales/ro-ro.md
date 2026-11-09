@@ -1,4 +1,4 @@
-# Romanian (ro-ro) -- translation guide
+# Romanian (ro-ro) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "tu" everywhere; never "dumneavoastră", "dvs." or 2nd person plural forms ("Apăsați") |
 | Text expansion vs English | about +15-30% for sentences (this guide's reference set averages +16% after tightening); short labels +25-130% ("Play" -> "Joacă", "Buy" -> "Cumpără", "Daily Reward" -> "Recompensă zilnică") |
 | Plural categories (CLDR) | cardinal: one, few, other (few = 0, 2-19, anything ending in 01-19 above 100, and all decimals; other = 20-99, 100, 120...); ordinal: one, other |
-| Model confidence | medium -- grammar is well covered, but models slip into the formal register, cedilla letters and broken number agreement ("25 monede"); kid gamer slang is barely documented |
+| Model confidence | medium: grammar is well covered, but models slip into the formal register, cedilla letters and broken number agreement ("25 monede"); kid gamer slang is barely documented |
 | Native review before shipping | recommended |
 
 ## Audience and register
@@ -76,15 +76,15 @@
 - Sentence case for titles and buttons ("Recompensă zilnică", "Top jucători"); Microsoft calls English title case an error.
 
 ## Typography and formatting
-- ș ț Ș Ț are comma-below letters (U+0219, U+021B, U+0218, U+021A). The cedilla forms ş ţ (U+015F, U+0163) are Turkish/legacy and count as typos -- even Microsoft's Romanian guide slips one ("încercaţi"). Minecraft's Romanian file uses comma-below only.
+- ș ț Ș Ț are comma-below letters (U+0219, U+021B, U+0218, U+021A). The cedilla forms ş ţ (U+015F, U+0163) are Turkish/legacy and count as typos; even Microsoft's Romanian guide slips one ("încercaţi"). Minecraft's Romanian file uses comma-below only.
 - Post-1993 spelling: "â" inside words, "î" at the start and end ("înapoi", "câștigi", "coborî"); "sunt", "România". Prefixed words keep î: "reîncarcă".
 - No space before ! ? : ; and one space after: "Bravo! Ai câștigat."
 - Quotes: „…” (U+201E opening, U+201D closing), as CLDR and Microsoft say: „Poțiune de noroc”. Not "…" English pairs; «» only inside quotes.
 - Dashes: en dash with spaces " – " as a separator (Microsoft); hyphen without spaces for clitics and loanword endings.
-- Numbers (CLDR): decimal comma, dot for thousands, grouping from 4 digits: "1.250", "1,5". The canonical {count} arrives as "1,250", which a Romanian reads as 1.25 -- flag it to the developer. Same for "1.5" multipliers.
+- Numbers (CLDR): decimal comma, dot for thousands, grouping from 4 digits: "1.250", "1,5". The canonical {count} arrives as "1,250", which a Romanian reads as 1.25, so flag it to the developer. Same for "1.5" multipliers.
 - Percent: non-breaking space before % ("25 %", U+00A0), per CLDR and Microsoft. Kids' games often write "25%"; it is informal, not wrong, so keep the space but don't flag a missing one as an error.
 - Multiplier: Latin x before the number: "x2", "Monede x2".
-- Durations (CLDR narrow): "2 z 5 h", "3 h 20 m"; Microsoft writes minutes as "min" ("3 h 20 min"). English "3h 20m" is passable (same letters); "2d 5h" is not -- day is "zi", so flag the "d" to the developer.
+- Durations (CLDR narrow): "2 z 5 h", "3 h 20 m"; Microsoft writes minutes as "min" ("3 h 20 min"). English "3h 20m" is passable (same letters); "2d 5h" is not: day is "zi", so flag the "d" to the developer.
 - Ellipsis: the single character … with no space before ("Se încarcă…"), as in Minecraft's Romanian file.
 - Exclamation marks: Microsoft limits them in software; in a game, keep the source's count, never add one, and keep error messages calm ("Codul nu e valid sau a expirat.").
 - Keys stay Latin: "Apasă E". Space bar: "Spațiu" (Microsoft: "Tasta Spațiu"); arrows: "Săgeată în sus".
@@ -101,7 +101,7 @@
 ## Rendering on Roblox
 - Glyph check (2026-11-08) of the font files in the local Roblox client (`content/fonts`): full Romanian set (ă â î ș ț in both cases, „ ”, …, en dash) in Builder Sans, Builder Extended, Builder Mono, Arimo, Montserrat, Nunito, Roboto (incl. Condensed, Mono), Source Sans Pro, Oswald, Ubuntu, Merriweather, Titillium Web, Bangers, Amatic SC, Josefin Sans, Kalam, Patrick Hand, Sarpanch, Guru, Grenze Gotisch, Jura, Zekton.
 - No comma-below ș ț: Fredoka One, Luckiest Guy, Denk One, Permanent Marker, Creepster, Press Start 2P, Comic Neue Angular, Special Elite, Fondamento, Inconsolata, Roman Antique, Accanthis, Balthazar, Highway Gothic; Indie Flower lacks ț. Fredoka One, Denk One, Creepster, Permanent Marker, Roman Antique, Accanthis, Balthazar and Highway Gothic also lack ă.
-- Luckiest Guy, Press Start 2P, Comic Neue, Special Elite and Fondamento do have the cedilla ş ţ. Never switch to cedilla to make a font work -- change the font.
+- Luckiest Guy, Press Start 2P, Comic Neue, Special Elite and Fondamento do have the cedilla ş ţ. Never switch to cedilla to make a font work; change the font.
 - Missing glyphs fall back to another font, so one word mixes two faces ("Mișcă" with ș in the fallback). Which fallback Roblox uses today is unverified.
 - Recommendation: for the ro locale, use Bangers (cartoon), Builder Sans, Montserrat or Nunito instead of Fredoka One or Luckiest Guy.
 - Fredoka One, Sarpanch, Balthazar and Roman Antique lack the non-breaking space (U+00A0) used in "25 %"; check how it renders, or use a plain space in those faces.
@@ -134,7 +134,7 @@
 | rebirth.button | Renaște | imperative button; noun "Renaștere" (9) for the panel title |
 | rebirth.confirm | Vrei să renaști acum? Pierzi monedele, dar primești un bonus permanent x{multiplier}. | x before the number; "1.5" should arrive as "1,5" |
 | coins.need_more | Îți mai trebuie monede: {amount}! | colon avoids "1 monede" and "25 monede"; "trebuie" fits singular and plural |
-| coins.count | Monede: {count} | "1,250" should be "1.250" for Romanian -- code issue |
+| coins.count | Monede: {count} | "1,250" should be "1.250" for Romanian (code issue) |
 | egg.hatched | Ai primit un animăluț {rarity}: {pet}! | rarity agrees with neuter "animăluț"; 39/40 with Legendar/Dragon, over with longer words ("Neobișnuit" -> 41): then "Animăluț {rarity}: {pet}!" |
 | rarity.legendary | Legendar | masculine singular, agrees with "animăluț"; capitalized as a tier name |
 | pet.name.dragon | Dragon | same as English, so mark it keep:true; "Balaur" is the folk-tale monster |

@@ -1,4 +1,4 @@
-# Italian (it-it) -- translation guide
+# Italian (it-it) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal "tu" with tu-imperatives ("Compra", "Premi E", "Torna domani"); never "Lei", "voi" or impersonal infinitives ("Premere") |
 | Text expansion vs English | +17% across this guide's reference set; sentences 0-30%, short labels +40-100%: "Buy" -> "Compra", "Claim" -> "Riscuoti", "Daily Reward" -> "Premio giornaliero" |
 | Plural categories (CLDR) | one (exactly 1), many (exact millions: "1.000.000 di monete"), other (0, 2+, decimals); ordinals: many, other |
-| Model confidence | high -- big, well-documented language; the real risks are gendered participles around {player}, register drift to "Lei"/infinitives, and accent typos |
+| Model confidence | high: big, well-documented language; the real risks are gendered participles around {player}, register drift to "Lei"/infinitives, and accent typos |
 | Native review before shipping | recommended |
 
 ## Audience and register
@@ -30,17 +30,17 @@ Italian Roblox players are mostly kids and young teens in Italy. Write the way a
 | developer product | prodotto | Creator docs: "Prodotti per sviluppatori"; in game UI just name the item |
 | experience / game | gioco | Roblox UI says "esperienza"; in-game text and players say "gioco" |
 | obby, tycoon, simulator | obby, tycoon, simulator | Kept in titles; in prose "un simulatore" is fine |
-| rebirth | rebirth (il rebirth) | Kept as the mechanic's name ("fare il rebirth"), like "drop" and "skin" (player usage unverified); "Rinascita" (9) if the game translates every term -- one per game |
+| rebirth | rebirth (il rebirth) | Kept as the mechanic's name ("fare il rebirth"), like "drop" and "skin" (player usage unverified); "Rinascita" (9) if the game translates every term; one per game |
 | pet | pet (il pet, i pet) | Masculine, invariable plural; Italian guides write "Pet leggendari", never "pets" |
 | egg / hatch | uovo, plural le uova / far schiudere | "Uovo leggendario", "far schiudere le uova"; never "covare" (that is the hen sitting on it) |
 | coins / gems | monete / gemme | "Monete x2"; diamonds are "diamanti" |
-| boost | bonus (il bonus) | Roblox UI: "Bonus del 10%"; this guide's strings use "bonus"; "boost" is gamer slang -- one term per game |
+| boost | bonus (il bonus) | Roblox UI: "Bonus del 10%"; this guide's strings use "bonus"; "boost" is gamer slang; use one term per game |
 | multiplier | moltiplicatore | Written "x2" before or after the noun: "Monete x2" |
 | XP | XP | Kept; never "PE" on a HUD |
 | level up | "Level up!" / "Nuovo livello!" | "Sei salito di livello" is gendered (see traps); "livellare", "uppare" are chat slang |
 | quest | missione | "Missioni giornaliere" |
 | leaderboard | classifica | Roblox UI: "Classifica"; board titles also use "Top giocatori" |
-| AFK, noob, OP, GG, pro | AFK, noob, OP, GG, pro | Kept in English; "niubbo" is the Italian slang form -- chat only, not UI |
+| AFK, noob, OP, GG, pro | AFK, noob, OP, GG, pro | Kept in English; "niubbo" is the Italian slang form, for chat only, not UI |
 | VIP | VIP | "Server VIP" in games; Roblox UI says "server privato" |
 | trade | scambio / scambiare | "Richiesta di scambio", "Scambia"; never "commercio" |
 | inventory / backpack | inventario / zaino | Roblox UI: "Inventario", "Zaino" |
@@ -50,7 +50,7 @@ Italian Roblox players are mostly kids and young teens in Italy. Write the way a
 | group | community (la) | Roblox client: "Emblema della community"; Creator docs still say "Gruppi"; "gruppo" is also understood (player usage unverified); Roblox's Italian join-button label is unverified |
 | like / favorite | mi piace / preferiti | "Metti mi piace" (the social-media phrase; Roblox's thumbs-up label in Italian is unverified); client: "Vuoi aggiungere {RBX_NAME} ai preferiti?"; "metti like" is chat slang |
 | server | server (il server, i server) | Invariable |
-| friends / connections | amici | Roblox switched "Connessioni" back to "Amici" in April 2026; some client strings still say "contatto" -- use "amici" |
+| friends / connections | amici | Roblox switched "Connessioni" back to "Amici" in April 2026; some client strings still say "contatto", but use "amici" |
 | badge | badge (il badge) | Roblox is inconsistent: client "Contrassegno conferito", Creator docs "Distintivi"; use the common loanword "badge" in game text (player usage unverified) |
 
 ## Grammar traps in UI strings
@@ -67,11 +67,11 @@ Italian Roblox players are mostly kids and young teens in Italy. Write the way a
 
 ## Typography and formatting
 - No space before ! ? : ; and one space after. No inverted marks.
-- Accents: grave on most final vowels (è, à, ì, ò, ù: "più", "già", "può", "città"), acute on "perché", "poiché", "né", "sé". Capital "È" is a real letter -- never "E'". "Po'" takes an apostrophe, not an accent; "qual è" has none.
+- Accents: grave on most final vowels (è, à, ì, ò, ù: "più", "già", "può", "città"), acute on "perché", "poiché", "né", "sé". Capital "È" is a real letter; never "E'". "Po'" takes an apostrophe, not an accent; "qual è" has none.
 - Quotation marks: straight double quotes "..." in UI, as Roblox's Italian client writes them (`Ora sei nella squadra "{RBX_NAME}".`); avoid single quotes. Print-style caporali «...» are correct Italian but rare in game UI.
-- Numbers: period for thousands, comma for decimals: "1.250 monete", "x1,5". English-formatted "1,250" from game code reads as one-and-a-quarter -- flag it to the developer rather than working around it in the string.
+- Numbers: period for thousands, comma for decimals: "1.250 monete", "x1,5". English-formatted "1,250" from game code reads as one-and-a-quarter; flag it to the developer rather than working around it in the string.
 - Percent: no space, as Roblox writes it: "10%", "+25% di bonus".
-- Durations: "3h 20min", "2g 5h", "45s". Microsoft's list gives h, min and s ("m" is meters, so prefer "min"); it has no day abbreviation, and "g" for giorni is the usual compact timer form (unverified; "gg" is office style). An English "2d" means nothing in Italian; the format inside {time} comes from game code -- flag it.
+- Durations: "3h 20min", "2g 5h", "45s". Microsoft's list gives h, min and s ("m" is meters, so prefer "min"); it has no day abbreviation, and "g" for giorni is the usual compact timer form (unverified; "gg" is office style). An English "2d" means nothing in Italian; the format inside {time} comes from game code, so flag it.
 - Ordinals: "1°" masculine, "1ª" feminine ("1° posto"). Times are 24-hour: "18:30". Dates are dd/mm ("25/12").
 - Ellipsis: keep it for work in progress: "Caricamento...". Roblox once had to cut its own string to "Caricam..." to fit; give labels room instead.
 - Keys: the letter stays: "Premi E per aprire" (Roblox: "Premi {KEY_NAME}"). Named keys go in capitals, as Roblox's Italian client and Microsoft write them: "MAIUSC" (Shift), "BARRA SPAZIATRICE" (Space), "INVIO" (Enter), "TAB", "ESC"; "SPAZIO" is the short form when space is tight (unverified). Mobile copy says "Tocca", PC copy "Clicca" (Roblox: "Tocca per muovere", "Clicca per muovere").
@@ -144,17 +144,17 @@ Lengths count visible characters without <b> tags. The repo's lint (`width()` in
 | friends.boost | +{percent}% di bonus per ogni amico nel tuo server | Avoids "del {percent}%", which needs "dell'" before 8, 11, 80 |
 
 ## Sources
-1. Microsoft Italian Localization Style Guide -- https://download.microsoft.com/download/f/f/7/ff70427c-1f7e-429f-96be-724d2e49cd47/ita-ita-StyleGuide.pdf
-2. Unicode CLDR language plural rules chart -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-3. Roblox client CoreScript translations, `it` column (ExtraContent/translations/CoreScriptLocalization.csv, Roblox build of 2026-11-05) -- local file from the Roblox install
-4. Roblox newsroom (Italian), Amici fidati and "Connessioni" -> "Amici" -- https://about.roblox.com/it/newsroom/2026/04/expanding-trusted-friends
-5. Roblox newsroom (English), same announcement, dated 2026-04-02 -- https://about.roblox.com/newsroom/2026/04/expanding-trusted-friends
-6. Roblox Creator docs (it-it), passes -- https://create.roblox.com/docs/it-it/production/monetization/game-passes
-7. Roblox Creator docs (it-it), groups -- https://create.roblox.com/docs/it-it/projects/groups
-8. Roblox Creator docs, automatic translations (Italian is auto-translated) -- https://create.roblox.com/docs/en-us/production/localization/automatic-translations
-9. Aranzulla, legendary pets in Adopt Me (pet, uova, schiudere, rarity words) -- https://www.aranzulla.it/come-avere-pet-leggendari-su-adopt-me-1282579.html
-10. Focus Junior, gamer slang for kids (AFK, OP, niubbo, nerfare) -- https://www.focusjunior.it/?p=231370
-11. games.gg Italian, Grow a Garden codes ("Riscatta" for codes; "richiedere le ricompense" shows the MT calque for Claim) -- https://games.gg/it/news/grow-a-garden-codes-come-riscattare/
-12. DevForum, font coverage complaints (non-Latin scripts) -- https://devforum.roblox.com/t/theres-no-font-which-can-fullfill-all-my-use-cases-and-fit-game-style/3051353
-13. Roblox Creator docs (it-it), badges ("Distintivi") -- https://create.roblox.com/docs/it-it/production/publishing/badges
-14. Minecraft Wiki (Italian), potions ("Pozione di fortuna" and the "Pozione di X" pattern) -- https://it.minecraft.wiki/w/Pozione
+1. Microsoft Italian Localization Style Guide: https://download.microsoft.com/download/f/f/7/ff70427c-1f7e-429f-96be-724d2e49cd47/ita-ita-StyleGuide.pdf
+2. Unicode CLDR language plural rules chart: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+3. Roblox client CoreScript translations, `it` column (ExtraContent/translations/CoreScriptLocalization.csv, Roblox build of 2026-11-05): local file from the Roblox install
+4. Roblox newsroom (Italian), Amici fidati and "Connessioni" -> "Amici": https://about.roblox.com/it/newsroom/2026/04/expanding-trusted-friends
+5. Roblox newsroom (English), same announcement, dated 2026-04-02: https://about.roblox.com/newsroom/2026/04/expanding-trusted-friends
+6. Roblox Creator docs (it-it), passes: https://create.roblox.com/docs/it-it/production/monetization/game-passes
+7. Roblox Creator docs (it-it), groups: https://create.roblox.com/docs/it-it/projects/groups
+8. Roblox Creator docs, automatic translations (Italian is auto-translated): https://create.roblox.com/docs/en-us/production/localization/automatic-translations
+9. Aranzulla, legendary pets in Adopt Me (pet, uova, schiudere, rarity words): https://www.aranzulla.it/come-avere-pet-leggendari-su-adopt-me-1282579.html
+10. Focus Junior, gamer slang for kids (AFK, OP, niubbo, nerfare): https://www.focusjunior.it/?p=231370
+11. games.gg Italian, Grow a Garden codes ("Riscatta" for codes; "richiedere le ricompense" shows the MT calque for Claim): https://games.gg/it/news/grow-a-garden-codes-come-riscattare/
+12. DevForum, font coverage complaints (non-Latin scripts): https://devforum.roblox.com/t/theres-no-font-which-can-fullfill-all-my-use-cases-and-fit-game-style/3051353
+13. Roblox Creator docs (it-it), badges ("Distintivi"): https://create.roblox.com/docs/it-it/production/publishing/badges
+14. Minecraft Wiki (Italian), potions ("Pozione di fortuna" and the "Pozione di X" pattern): https://it.minecraft.wiki/w/Pozione

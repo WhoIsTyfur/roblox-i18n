@@ -11,10 +11,10 @@ Without it, short strings are guesses:
 | Free | costs nothing; set free a pet; unoccupied slot |
 | Claim | take a reward; claim a plot of land (tycoon); an assertion |
 | Back | go back (button); your back (body) |
-| Rebirth / Prestige | reset with a permanent bonus -- a mechanic, not religion |
+| Rebirth / Prestige | reset with a permanent bonus: a mechanic, not religion |
 | Spin | spin the wheel (gamble-style reward) vs spin attack |
 | Lucky | "luck" stat in RNG games vs good fortune in a sentence |
-| Equip / Equipped | action button vs state label -- different forms in many languages |
+| Equip / Equipped | action button vs state label, with different forms in many languages |
 
 A one-word string whose meaning is not certain from context gets a note in
 `context.json` and, if it matters, a question to the user.

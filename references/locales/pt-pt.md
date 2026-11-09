@@ -1,15 +1,15 @@
-# Portuguese, Portugal (pt-pt) -- translation guide
+# Portuguese, Portugal (pt-pt) translation guide
 
 ## At a glance
 | | |
 |---|---|
-| Roblox locale / column | `pt-pt` (not the bare `pt` column: that belongs to the default variant, Brazilian `pt-br`). Small reach: Roblox has no European Portuguese account language, so players in Portugal are `pt-br` by default -- see Audience |
+| Roblox locale / column | `pt-pt` (not the bare `pt` column: that belongs to the default variant, Brazilian `pt-br`). Small reach: Roblox has no European Portuguese account language, so players in Portugal are `pt-br` by default (see Audience) |
 | Script, direction | Latin, LTR |
 | Address the player as | informal "tu" with 2nd-person verbs (tens, prime, a tua); never "você"; a group is "vocês" |
 | Text expansion vs English | +15-30% for sentences (this guide's reference set: +18%); short buttons can double (Buy -> Comprar) |
-| Plural categories (CLDR) | one, many, other -- "one" is exactly 1; 0 is "other" (0 moedas), unlike pt-BR; "many" is only exact millions ("1 milhão de moedas") |
-| Model confidence | medium -- grammar is easy, but models drift into Brazilian forms (você, gerund, tela, bônus) |
-| Native review before shipping | recommended -- mainly to catch Brazilian words and spellings |
+| Plural categories (CLDR) | one, many, other: "one" is exactly 1; 0 is "other" (0 moedas), unlike pt-BR; "many" is only exact millions ("1 milhão de moedas") |
+| Model confidence | medium: grammar is easy, but models drift into Brazilian forms (você, gerund, tela, bônus) |
+| Native review before shipping | recommended: mainly to catch Brazilian words and spellings |
 
 ## Audience and register
 - Who sees this column: Roblox's locale API (checked 2026-11-08) offers Portuguese accounts only as `pt_br`; `pt_pt` is enabled for creator tables but not for sign-up or the app, and the client's own strings ship only `pt` and `pt-br`. A player in Portugal reading Roblox in Portuguese is therefore `pt-br`, and the exact `pt-br` column wins. `pt-pt` reaches them only if they pick it in the in-game "Idioma da experiência" menu (whether that menu lists `pt-pt`: unverified) or the game's scripts choose it (`GetCountryRegionForPlayerAsync` returns "PT" -> `GetTranslatorForLocaleAsync("pt-pt")`); automatic GUI translation still follows the player's own locale. Ship `pt-br` first. A game with only a `pt-pt` column may serve it to Brazilians as the sibling fallback.
@@ -28,7 +28,7 @@
 |---|---|---|
 | Robux | Robux | never translated, invariable: "100 Robux", "1 Robux" |
 | Premium / Roblox Plus | Premium / Roblox Plus | brand names; Roblox Plus replaced new Premium sign-ups on 2026-04-30 |
-| game pass | passe | "Passe VIP", "Comprar passe"; Roblox's machine-translated pt-BR docs say "pass" -- avoid |
+| game pass | passe | "Passe VIP", "Comprar passe"; Roblox's machine-translated pt-BR docs say "pass"; avoid |
 | developer product | (name the item) | players never see this term; say "Poção da Sorte", not "produto" |
 | experience / game | jogo | "experiência" only for Roblox-platform wording; Portuguese press says "jogos e experiências" |
 | obby | obby | genre word kept; describe as "percurso de obstáculos" if needed (unverified how often PT kids say it) |
@@ -46,10 +46,10 @@
 | VIP | VIP | kept |
 | trade | troca (noun), trocar (verb) | Minecraft pt-PT: "Trocas" |
 | inventory / backpack | inventário / mochila | Minecraft pt-PT: "Inventário" |
-| daily reward | recompensa diária | or "prémio diário" -- prémio, never prêmio |
+| daily reward | recompensa diária | or "prémio diário"; prémio, never prêmio |
 | codes / redeem | códigos / resgatar | "Resgatar código"; the code itself stays as typed |
 | group | comunidade (grupo) | Roblox renamed Groups to Communities; its UI says "comunidade" ("Emblema da comunidade"), which is also pt-PT: "Junta-te à nossa comunidade"; kids still say "grupo", also fine |
-| like / favorite | like, gosto / favoritos | "Dá like"; "Adiciona aos favoritos" -- "favoritar" is Brazilian |
+| like / favorite | like, gosto / favoritos | "Dá like"; "Adiciona aos favoritos"; "favoritar" is Brazilian |
 | server | servidor | |
 | friends | amigos | Roblox renamed friends to "Conexões" in 2025; its 2026-11 client mixes that with newer friends wording ("Amizades", "Novo amigo"); in game text say "amigo(s)"; never "ligações" |
 | chat | chat | Minecraft pt-PT ("Definições do chat") and ZAP keep "chat"; "bate-papo" is Brazilian |
@@ -144,20 +144,20 @@
 | friends.boost | +{percent}% de bónus por cada amigo no teu servidor | |
 
 ## Sources
-1. Microsoft Portuguese (Portugal) localization style guide -- https://aka.ms/portuguese-portugal-styleguide (PDF: https://download.microsoft.com/download/9/9/5/995a8ca6-383c-439d-9db0-cd457c9c2724/por-prt-StyleGuide.pdf)
-2. CLDR language plural rules -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-3. CLDR pt-PT number data -- https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-numbers-full/main/pt-PT/numbers.json
-4. Roblox language codes -- https://create.roblox.com/docs/production/localization/language-codes
-5. Roblox Creator Hub, Passes page in pt-BR (machine-translated) -- https://create.roblox.com/docs/pt-br/production/monetization/game-passes
-6. Roblox on the Portugal App Store (pt-BR developer copy) -- https://apps.apple.com/pt/app/roblox/id431946152
-7. DevForum, "Portuguese ... too ambiguous" -- https://devforum.roblox.com/t/portuguese-on-the-new-game-name-and-description-translations-page-is-too-ambiguous/206088
-8. Minecraft Java pt_pt language file (mirror) -- https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.4/assets/minecraft/lang/pt_pt.json
-9. 4gnews.pt, Roblox parental controls article (pt-PT usage) -- https://4gnews.pt/roblox-anuncia-recurso-esperado-de-controlo-parental-e-recompensas-por-anuncios/
-10. ZAP, "O que é o Roblox" (pt-PT usage) -- https://zap.aeiou.pt/o-que-e-roblox-734832
-11. Priberam dictionary, prémio / prêmio -- https://dicionario.priberam.org/prémio
-12. Wikipedia, Brazilian Portuguese (grammar differences) -- https://en.wikipedia.org/wiki/Brazilian_Portuguese
-13. DevForum, Builder font and Gotham/Arial replacement -- https://devforum.roblox.com/t/introducing-builder-font-deprecating-gotham-and-arial/2868222
-14. Roblox newsroom (pt-BR), "Amigos" renamed "Conexões" -- https://about.roblox.com/pt-br/newsroom/2025/07/advancing-safety-on-roblox-with-age-based-communication
-15. Roblox Plus launch coverage -- https://allthings.how/roblox-plus-launches-april-30-pricing-perks-and-how-it-differs-from-premium/
-16. Roblox locale API, account vs creator locales (`pt_pt` not enabled for sign-up or the full app) -- https://locale.roblox.com/v1/locales and https://locale.roblox.com/v1/locales/supported-locales
-17. Roblox client CoreScript translations (ExtraContent/translations/CoreScriptLocalization.csv, install of 2026-11-08): only `pt` and `pt-br` columns; "Idioma da experiência", "Amizades", "Emblema da comunidade" -- local file from the Roblox install
+1. Microsoft Portuguese (Portugal) localization style guide: https://aka.ms/portuguese-portugal-styleguide (PDF: https://download.microsoft.com/download/9/9/5/995a8ca6-383c-439d-9db0-cd457c9c2724/por-prt-StyleGuide.pdf)
+2. CLDR language plural rules: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+3. CLDR pt-PT number data: https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-numbers-full/main/pt-PT/numbers.json
+4. Roblox language codes: https://create.roblox.com/docs/production/localization/language-codes
+5. Roblox Creator Hub, Passes page in pt-BR (machine-translated): https://create.roblox.com/docs/pt-br/production/monetization/game-passes
+6. Roblox on the Portugal App Store (pt-BR developer copy): https://apps.apple.com/pt/app/roblox/id431946152
+7. DevForum, "Portuguese ... too ambiguous": https://devforum.roblox.com/t/portuguese-on-the-new-game-name-and-description-translations-page-is-too-ambiguous/206088
+8. Minecraft Java pt_pt language file (mirror): https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.4/assets/minecraft/lang/pt_pt.json
+9. 4gnews.pt, Roblox parental controls article (pt-PT usage): https://4gnews.pt/roblox-anuncia-recurso-esperado-de-controlo-parental-e-recompensas-por-anuncios/
+10. ZAP, "O que é o Roblox" (pt-PT usage): https://zap.aeiou.pt/o-que-e-roblox-734832
+11. Priberam dictionary, prémio / prêmio: https://dicionario.priberam.org/prémio
+12. Wikipedia, Brazilian Portuguese (grammar differences): https://en.wikipedia.org/wiki/Brazilian_Portuguese
+13. DevForum, Builder font and Gotham/Arial replacement: https://devforum.roblox.com/t/introducing-builder-font-deprecating-gotham-and-arial/2868222
+14. Roblox newsroom (pt-BR), "Amigos" renamed "Conexões": https://about.roblox.com/pt-br/newsroom/2025/07/advancing-safety-on-roblox-with-age-based-communication
+15. Roblox Plus launch coverage: https://allthings.how/roblox-plus-launches-april-30-pricing-perks-and-how-it-differs-from-premium/
+16. Roblox locale API, account vs creator locales (`pt_pt` not enabled for sign-up or the full app): https://locale.roblox.com/v1/locales and https://locale.roblox.com/v1/locales/supported-locales
+17. Roblox client CoreScript translations (ExtraContent/translations/CoreScriptLocalization.csv, install of 2026-11-08): only `pt` and `pt-br` columns; "Idioma da experiência", "Amizades", "Emblema da comunidade": local file from the Roblox install

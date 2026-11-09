@@ -1,4 +1,4 @@
-# Serbian (sr-rs) -- translation guide
+# Serbian (sr-rs) translation guide
 
 **Script decision: write Cyrillic (ћирилица) in every string, with Latin only for the tokens listed under "Do not translate".** Roblox labels the locale "српски", and Roblox's own Serbian Google Play listing is in Cyrillic, with Roblox and Robux left in Latin. CLDR expands `sr` to `sr-Cyrl-RS` (Latin is the default only for `sr-ME`), Cyrillic is Serbia's constitutional script, and schools teach both scripts (Cyrillic first, unverified), so every Serbian kid reads it. Kids do chat in Latin, and Latin dominates online, but Google Play's Serbian UI is Cyrillic and Minecraft's Latin "Srpski" file has the same keys as its Cyrillic "Српски" and is mostly a transliteration of it (about 80% of strings letter for letter). Cyrillic -> Latin transliteration is one-to-one, so a developer who wants Latin can convert this column mechanically; the reverse is ambiguous ("konjunkcija", "nadživeti"). The repo's locale row (`"script": "Cyrl"`) and lint expect Cyrillic. The cost: most Roblox display fonts have no Cyrillic (see Rendering).
 
@@ -10,13 +10,13 @@
 | Address the player as | informal singular "ти" ("Играј", "Купи"); never "ви"/"Ви" |
 | Text expansion vs English | sentences about 0-30% (this guide's reference set: +5% on average, -33% to +57% per string); one-word labels up to +150% ("Shop" -> "Продавница") |
 | Plural categories (CLDR) | one, few, other |
-| Model confidence | medium -- models leak Russian letters and words, Latin look-alike letters and Croatian/Bosnian forms into Serbian Cyrillic; kid slang unverified |
+| Model confidence | medium: models leak Russian letters and words, Latin look-alike letters and Croatian/Bosnian forms into Serbian Cyrillic; kid slang unverified |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
 - Readers: kids in Serbia, plus Serbs in Republika Srpska (BiH), Montenegro and the diaspora. Bosnian and Croatian players have their own Latin columns.
-- Roblox has no Serbian app UI: its locale service enables `sr_rs` for in-experience content only, not the full app or signup. Players see Roblox menus in English (or another language) and know platform terms from there. How a player ends up with LocaleId `sr-rs` is unverified -- test with Studio's Player Emulator.
-- Use "ти" everywhere. Microsoft's Serbian guide prescribes lowercase "ви" for adults, and Roblox's store listing uses ви imperatives ("Откријте", "Придружите се"); Minecraft's Serbian buttons use ти ("Играј", "Изађи из игре", "Направи нови свет"), though its tooltips slip into ви ("Пријатељи могу видети шта играте") -- do not copy that mix. Never mix in one game: "Притисни E и покупи награду", not "Притисните E и покупи награду".
+- Roblox has no Serbian app UI: its locale service enables `sr_rs` for in-experience content only, not the full app or signup. Players see Roblox menus in English (or another language) and know platform terms from there. How a player ends up with LocaleId `sr-rs` is unverified; test with Studio's Player Emulator.
+- Use "ти" everywhere. Microsoft's Serbian guide prescribes lowercase "ви" for adults, and Roblox's store listing uses ви imperatives ("Откријте", "Придружите се"); Minecraft's Serbian buttons use ти ("Играј", "Изађи из игре", "Направи нови свет"), though its tooltips slip into ви ("Пријатељи могу видети шта играте"); do not copy that mix. Never mix in one game: "Притисни E и покупи награду", not "Притисните E и покупи награду".
 - Buttons: 2nd-person singular imperative ("Играј", "Купи", "Покупи", "Отвори"). Titles and tabs: nouns ("Продавница", "Дневна награда"). Ongoing processes: verbal noun, as Microsoft prescribes ("Учитавање…", not "Учитава").
 - After modal verbs prefer "да + present", the form Microsoft uses ("морате да обновите", "Желите ли да наставите?"): "Мораш да продаш љубимце". The infinitive is correct but reads more Croatian.
 - Hype that sounds natural: "Супер!", "Браво!", "Свака част!", "Лудило!", "Легенда си!", "Нови ниво!". Stiff or adult: "Извршите куповину", "Успешно сте...", "Обавештавамо вас", anything with "од стране" (Microsoft bans it as a calque). Microsoft's plain-word pairs apply: "пронаћи" not "лоцирати", "следеће" not "наредно", "проверити" not "уверити се".

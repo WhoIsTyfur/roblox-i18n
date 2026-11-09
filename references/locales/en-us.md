@@ -1,4 +1,4 @@
-# English (United States) (en-us) -- translation guide
+# English (United States) (en-us) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | "you", with contractions ("You're", "You'll"); never "the player" or "one" |
 | Text expansion vs English | Baseline. Into English from European sources text usually gets shorter. From Chinese, Japanese or Korean the character count grows a lot, but each CJK character is about two Latin letters wide, so on-screen width grows far less (W3C; exact ratio unverified) |
 | Plural categories (CLDR) | Cardinal: one, other. Ordinal: one, two, few, other (1st, 2nd, 3rd, 4th) |
-| Model confidence | high -- the model's strongest language; the risks are UK drift and Roblox renaming platform terms in 2024-2026 |
+| Model confidence | high: the model's strongest language; the risks are UK drift and Roblox renaming platform terms in 2024-2026 |
 | Native review before shipping | optional |
 
 ## Audience and register

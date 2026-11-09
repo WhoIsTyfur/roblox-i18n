@@ -1,4 +1,4 @@
-# Hindi (hi-in) -- translation guide
+# Hindi (hi-in) translation guide
 
 ## At a glance
 | | |
@@ -8,8 +8,8 @@
 | Address the player as | "आप" with polite imperatives (खेलें, खरीदें, जाएँ), as Roblox's own Hindi UI does; never "तू", and never mix in "तुम" forms (खेलो) |
 | Text expansion vs English | as the lint counts (no {params}): sentences -10% to +35%, one-word buttons up to 2x (Buy -> खरीदें, On -> चालू). Marks above and below take no width, but letters are taller and wider than Latin: budget +20-30% rendered width (estimate) |
 | Plural categories (CLDR) | one (0 and 1), other; ordinals one, two, few, many, other |
-| Model confidence | medium -- grammar is solid, but MT drifts into textbook Hindi, translates gamer words that should stay English, and defaults verbs to male |
-| Native review before shipping | strongly recommended -- Hinglish word choices and gender workarounds need a native ear |
+| Model confidence | medium: grammar is solid, but MT drifts into textbook Hindi, translates gamer words that should stay English, and defaults verbs to male |
+| Native review before shipping | strongly recommended: Hinglish word choices and gender workarounds need a native ear |
 
 ## Audience and register
 - Roblox shipped a Hindi interface plus Hindi auto-translation of game strings in mid-2026 (Outlook Respawn, 2026-06-25). A player who sees `hi-in` text has Hindi set as their Roblox language: write Devanagari, never romanized Hinglish.
@@ -67,7 +67,7 @@ Hinglish rule: brands and all-caps acronyms stay Latin; gaming nouns are transli
 - No articles and no capital letters in Devanagari; Latin brands keep their case (VIP, Robux). Title-case rules do not apply.
 
 ## Typography and formatting
-- Sentence end: the Latin period "." -- Roblox's Hindi help, web and Play Store text all use it, and Microsoft requires it. Do not use the danda "।", and never mix the two in one game.
+- Sentence end: the Latin period ".". Roblox's Hindi help, web and Play Store text all use it, and Microsoft requires it. Do not use the danda "।", and never mix the two in one game.
 - "!" and "?" attach with no space: "लेवल अप!" Quotes: Roblox puts straight single quotes around UI names and messages ("एक 'पूरा हो गया' मैसेज"); a period goes after the closing quote, as Microsoft requires.
 - Digits: Western 0-9 (CLDR default for hi; Roblox and Google Play use them). Never Devanagari digits (१,२५०), which Hindi Wikipedia uses.
 - Grouping: CLDR and Indian apps group by lakh: 1,25,000, not 125,000. {count} arrives formatted by game code, so tell the developer rather than editing the string. Big-number words: हज़ार, लाख, करोड़ (CLDR short: हज़ार, लाख, क॰); Latin "1.2K" in a tight HUD (unverified).
@@ -148,25 +148,25 @@ Hinglish rule: brands and all-caps acronyms stay Latin; gaming nouns are transli
 | friends.boost | आपके सर्वर में हर दोस्त के लिए +{percent}% बूस्ट | हर + singular avoids the oblique plural |
 
 ## Sources
-1. Microsoft Hindi Localization Style Guide -- https://aka.ms/hindi-styleguide
-2. CLDR Language Plural Rules -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-3. CLDR JSON, Hindi units and numbers -- https://github.com/unicode-org/cldr-json (cldr-units-full/main/hi/units.json, cldr-numbers-full/main/hi/numbers.json)
-4. Roblox Help (hi), Robux पाने के तरीके -- https://en.help.roblox.com/hc/hi/articles/203313200
-5. Roblox Help (hi), फ़्रेंड्स कैसे बनाएं -- https://en.help.roblox.com/hc/hi/articles/203313580
-6. Roblox Help (hi), एक्सपीरिएंस पासेस -- https://en.help.roblox.com/hc/hi/articles/203314040
-7. Roblox Help (hi), किसी प्लेस को पसंदीदा कैसे बनाएँ -- https://en.help.roblox.com/hc/hi/articles/203313670
-8. Roblox Help (hi), Roblox पर ट्रेड करना -- https://en.help.roblox.com/hc/hi/articles/203313310
-9. Roblox Help (hi), Roblox Premium मेंबरशिप -- https://en.help.roblox.com/hc/hi/articles/360024256251
-10. Roblox Help (hi), community join requirements and in-experience leaderboard -- https://en.help.roblox.com/hc/hi/articles/39978135454228 and https://en.help.roblox.com/hc/hi/articles/204343250
-11. roblox.com in Hindi, charts and a game page -- https://www.roblox.com/hi/charts and https://www.roblox.com/hi/games/920587237/Adopt-Me
-12. Google Play, Roblox listing in Hindi (Roblox's description, player reviews, and the Stumble Guys description shown beside it) -- https://play.google.com/store/apps/details?id=com.roblox.client&hl=hi&gl=IN
-13. Outlook Respawn, Roblox adds Hindi support -- https://respawn.outlookindia.com/gaming/gaming-news/roblox-adds-hindi-support-for-players-and-creators-in-india
-14. Roblox Creator docs, Automatic translations -- https://create.roblox.com/docs/production/localization/automatic-translations
-15. DevForum, "Add Telugu, Tamil and Lao fonts" (2026-04-03) -- https://devforum.roblox.com/t/4555745
-16. DevForum, "Cloud Localization Support Extended to 45 Languages" (2019 reply on Hindi boxes) -- https://devforum.roblox.com/t/337149
-17. DevForum, "Friends Are Back!" (2026-04-02) -- https://devforum.roblox.com/t/friends-are-back-expanding-trusted-friends-for-a-new-way-to-chat-and-play/4554217
-18. Keywords Studios, The rise of Hinglish -- https://www.keywordsstudios.com/en/about-us/news-events/news/the-rise-of-hinglish-localizing-for-the-indian-market/
-19. CurseForge, RR Hinglish Language Pack (Latin-script Hinglish made by players) -- https://www.curseforge.com/minecraft-bedrock/addons/rr-hinglish-language-pack
-20. Hindi Wikipedia, रोब्लॉक्स (formal register for contrast) -- https://hi.wikipedia.org/wiki/रोब्लॉक्स
-21. Roblox Help (hi), प्रोमो कोड कैसे रिडीम करें? -- https://en.help.roblox.com/hc/hi/articles/360029650831
+1. Microsoft Hindi Localization Style Guide: https://aka.ms/hindi-styleguide
+2. CLDR Language Plural Rules: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+3. CLDR JSON, Hindi units and numbers: https://github.com/unicode-org/cldr-json (cldr-units-full/main/hi/units.json, cldr-numbers-full/main/hi/numbers.json)
+4. Roblox Help (hi), Robux पाने के तरीके: https://en.help.roblox.com/hc/hi/articles/203313200
+5. Roblox Help (hi), फ़्रेंड्स कैसे बनाएं: https://en.help.roblox.com/hc/hi/articles/203313580
+6. Roblox Help (hi), एक्सपीरिएंस पासेस: https://en.help.roblox.com/hc/hi/articles/203314040
+7. Roblox Help (hi), किसी प्लेस को पसंदीदा कैसे बनाएँ: https://en.help.roblox.com/hc/hi/articles/203313670
+8. Roblox Help (hi), Roblox पर ट्रेड करना: https://en.help.roblox.com/hc/hi/articles/203313310
+9. Roblox Help (hi), Roblox Premium मेंबरशिप: https://en.help.roblox.com/hc/hi/articles/360024256251
+10. Roblox Help (hi), community join requirements and in-experience leaderboard: https://en.help.roblox.com/hc/hi/articles/39978135454228 and https://en.help.roblox.com/hc/hi/articles/204343250
+11. roblox.com in Hindi, charts and a game page: https://www.roblox.com/hi/charts and https://www.roblox.com/hi/games/920587237/Adopt-Me
+12. Google Play, Roblox listing in Hindi (Roblox's description, player reviews, and the Stumble Guys description shown beside it): https://play.google.com/store/apps/details?id=com.roblox.client&hl=hi&gl=IN
+13. Outlook Respawn, Roblox adds Hindi support: https://respawn.outlookindia.com/gaming/gaming-news/roblox-adds-hindi-support-for-players-and-creators-in-india
+14. Roblox Creator docs, Automatic translations: https://create.roblox.com/docs/production/localization/automatic-translations
+15. DevForum, "Add Telugu, Tamil and Lao fonts" (2026-04-03): https://devforum.roblox.com/t/4555745
+16. DevForum, "Cloud Localization Support Extended to 45 Languages" (2019 reply on Hindi boxes): https://devforum.roblox.com/t/337149
+17. DevForum, "Friends Are Back!" (2026-04-02): https://devforum.roblox.com/t/friends-are-back-expanding-trusted-friends-for-a-new-way-to-chat-and-play/4554217
+18. Keywords Studios, The rise of Hinglish: https://www.keywordsstudios.com/en/about-us/news-events/news/the-rise-of-hinglish-localizing-for-the-indian-market/
+19. CurseForge, RR Hinglish Language Pack (Latin-script Hinglish made by players): https://www.curseforge.com/minecraft-bedrock/addons/rr-hinglish-language-pack
+20. Hindi Wikipedia, रोब्लॉक्स (formal register for contrast): https://hi.wikipedia.org/wiki/रोब्लॉक्स
+21. Roblox Help (hi), प्रोमो कोड कैसे रिडीम करें?: https://en.help.roblox.com/hc/hi/articles/360029650831
 22. Roblox Windows client, content/fonts and content/fonts/families (font files and their cmaps, checked 2026-11-08)

@@ -259,7 +259,7 @@ def ingest_rows(work, source_locale, rows_meta, adapter, path):
             continue
         eid = entry_id(key, source)
         if eid in seen:
-            raise Fail("duplicate entry %r -- Roblox requires unique Key and unique Source+Context" % eid)
+            raise Fail("duplicate entry %r: Roblox requires unique Key and unique Source+Context" % eid)
         seen.add(eid)
         strings.append({"key": eid, "source": source, "context": context, "example": example,
                         "hash": shash(source, context)})
@@ -606,9 +606,9 @@ def cmd_apply(a):
     if todo_resolve and not a.resolve:
         out("resolve round needed for %d key(s): %s" % (len(todo_resolve), ", ".join(todo_resolve)))
     elif todo_resolve:
-        out("still failing after resolve: %s -- decide in decisions.json" % ", ".join(todo_resolve))
+        out("still failing after resolve: %s. Decide in decisions.json" % ", ".join(todo_resolve))
     if disputes:
-        out("%d dispute(s) in disputes.json -- decide each in decisions.json, then apply again" % len(disputes))
+        out("%d dispute(s) in disputes.json. Decide each in decisions.json, then apply again" % len(disputes))
     if not todo_resolve and not disputes:
         out("clean")
 
@@ -726,7 +726,7 @@ def export_csv(work, a, values, src_strings, locales):
     for n, part in enumerate(parts, 1):
         path = outp if len(parts) == 1 else "%s-part%d%s" % (stem, n, ext)
         size = write_csv(path, header, part, bom, newline)
-        warn = " -- over Roblox's 2 MB upload limit, lower --chunk" if size > CSV_MAX_BYTES else ""
+        warn = " (over Roblox's 2 MB upload limit)" if size > CSV_MAX_BYTES else ""
         out("wrote %s: %d changed rows, %d bytes%s" % (path, len(part), size, warn))
     out("upload each file in Creator Hub > Localization > your table > Update/Upload CSV")
 
@@ -968,7 +968,7 @@ def cmd_report(a):
             conf.count("high"), conf.count("medium"), conf.count("low"),
             loc.get("native_review", "?"), loc.get("render_risk", "?")))
         if flagged or second:
-            detail.append("## %s -- for a native speaker" % l)
+            detail.append("## %s: for a native speaker" % l)
             for k in flagged:
                 i = fin[k]
                 detail.append("- `%s`: %s -> %s (%s)" % (k, src.get(k, {}).get("source", ""), i.get("text"),
@@ -978,7 +978,7 @@ def cmd_report(a):
                 detail.append("Flagged by the blind back-translator, passed by the reviewer:")
                 for k in second:
                     i = fin[k]
-                    detail.append("- `%s`: %s -> %s -- %s" % (k, src.get(k, {}).get("source", ""), i.get("text"),
+                    detail.append("- `%s`: %s -> %s (%s)" % (k, src.get(k, {}).get("source", ""), i.get("text"),
                                                             i["blind_remark"]))
             detail.append("")
     text = "\n".join(lines + [""] + detail)

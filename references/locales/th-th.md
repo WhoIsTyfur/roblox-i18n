@@ -1,4 +1,4 @@
-# Thai (th-th) -- translation guide
+# Thai (th-th) translation guide
 
 ## At a glance
 | | |
@@ -8,11 +8,11 @@
 | Address the player as | no pronoun when the sentence works without one; คุณ when it needs one; never ท่าน, เธอ, นาย or แก |
 | Text expansion vs English | measured in Studio on the reference strings: mostly 10-35% narrower than English (mean -13% vs Source Sans, -26% vs Fredoka One); one-word buttons up to +40% (รับรางวัล vs Claim). Layout line height equals Latin; stacked marks may still need padding (unverified) |
 | Plural categories (CLDR) | other (only one form, cardinal and ordinal) |
-| Model confidence | medium -- Thai is well covered, but models add ครับ/ค่ะ, drift formal, misspell loanwords and cannot see line-breaking failures |
+| Model confidence | medium: Thai is well covered, but models add ครับ/ค่ะ, drift formal, misspell loanwords and cannot see line-breaking failures |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
-Thai Roblox players are mostly kids and young teens. Write short, lively, everyday Thai, like a friendly game host -- not a bank, a government form or a school textbook. Microsoft's Thai guide already asks for conversational words over formal ones (พบ, not ประสบ; แต่, not อย่างไรก็ตาม); a kids' game goes one step further.
+Thai Roblox players are mostly kids and young teens. Write short, lively, everyday Thai, like a friendly game host, not a bank, a government form or a school textbook. Microsoft's Thai guide already asks for conversational words over formal ones (พบ, not ประสบ; แต่, not อย่างไรก็ตาม); a kids' game goes one step further.
 - Polite particles: never ครับ or ค่ะ/คะ in buttons, labels, titles, toasts or system text. They mark the speaker's gender (ครับ male, ค่ะ female), so the game would pick a gendered narrator, and written UI Thai leaves them out (Roblox's own Thai UI has none). ซื้อเลยค่ะ -> ซื้อเลย!
 - Exception: dialogue from an NPC with a set gender may end lines with ครับ (male) or ค่ะ / คะ in questions (female). Keep one NPC consistent across every key.
 - Gender-neutral softeners are fine, at most one per string: นะ (friendly nudge), เลย (go ahead, right now), กัน (let's), สิ (come on). กลับมาใหม่นะ! / รับเลย! / มาเล่นกัน!
@@ -78,7 +78,7 @@ Thai Roblox players are mostly kids and young teens. Write short, lively, everyd
 - Quotes and parentheses as in English: "FREEPETS". Ellipsis stays ...: กำลังโหลด...
 - Durations: ask game code to format {time} as 3 ชม. 20 นาที / 2 วัน 5 ชม. / 45 วินาที; 3h 20m is a readable fallback. ชม. is Microsoft's approved short form; never abbreviate วินาที
 - ๆ (mai yamok, repeat): Royal Institute style spaces it (เด็ก ๆ), but Roblox's own Thai UI always attaches it (ใดๆ, ต่างๆ). Attach it (สุดๆ): Roblox breaks lines at a space, so a spaced ๆ can start a line. Avoid ฯลฯ in UI
-- Line breaking -- the big Thai risk. Measured in Studio (TextService, 2026-11-08): Roblox has no Thai word breaking. It breaks at spaces; a space-free run too long for the line is cut at any character, mid-word (วง|กลม, เลี้ย|ง), and a line may start with ! or ๆ. Rules:
+- Line breaking, the big Thai risk. Measured in Studio (TextService, 2026-11-08): Roblox has no Thai word breaking. It breaks at spaces; a space-free run too long for the line is cut at any character, mid-word (วง|กลม, เลี้ย|ง), and a line may start with ! or ๆ. Rules:
   - Put a normal space at every natural clause pause, so the wrap lands there: เดินเข้าไปในวงกลมเรืองแสง เพื่อขายสัตว์เลี้ยง
   - Keep each space-free run short enough to fit one line: about 10 characters on buttons and tags, about 20 in wrapped body text (estimate; check at phone size).
   - Never add a space inside a word, before ! ?, or before a particle or ๆ: that creates a bad break (a line starting with นะ or ๆ).
@@ -156,20 +156,20 @@ Thai Roblox players are mostly kids and young teens. Write short, lively, everyd
 | friends.boost | บูสต์ +{percent}% ต่อเพื่อน 1 คนในเซิร์ฟเวอร์ | |
 
 ## Sources
-1. Microsoft Thai Localization Style Guide -- https://download.microsoft.com/download/3/f/2/3f236167-639e-46f2-8201-554c36bcbf31/tha-tha-StyleGuide.pdf
-2. CLDR Language Plural Rules -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-3. Roblox Creator docs th-th, Passes -- https://create.roblox.com/docs/th-th/production/monetization/passes
-4. Roblox Creator docs th-th, Engagement-based payouts -- https://create.roblox.com/docs/th-th/production/monetization/engagement-based-payouts
-5. Roblox Creator docs th-th, Groups -- https://create.roblox.com/docs/th-th/projects/groups
-6. Roblox game page in Thai (Adopt Me!) -- https://www.roblox.com/th/games/920587237/Adopt-Me
-7. Roblox Creator docs, Automatic translations -- https://create.roblox.com/docs/production/localization/automatic-translations
-8. Thai Wikipedia, โรบล็อกซ์ -- https://th.wikipedia.org/wiki/โรบล็อกซ์
-9. games.gg Thai, Adopt Me! codes (โค้ด, ฟักไข่, สัตว์เลี้ยง) -- https://games.gg/th/news/adopt-me-roblox-codes/
-10. BlueStacks Thai, Catch and Tame codes -- https://www.bluestacks.com/th/blog/redeem-codes/roblox-catch-and-tame-redeem-codes-th.html
-11. DevForum, Thai tone marks clipped in Translator Portal (2023) -- https://devforum.roblox.com/t/bug-with-thai-translation-fonts-via-translator-portal/2397589
-12. DevForum, HarfBuzz typesetter for connected scripts (2018) -- https://devforum.roblox.com/t/support-for-arabic-text-and-other-languages-where-letters-are-connected/116447
-13. Roblox client strings, th-th column of CoreScriptLocalization.csv (build of 2026-11-05) -- %LOCALAPPDATA%/Roblox/Versions/<version>/ExtraContent/translations/
-14. Wikipedia, Thai script (spacing, ๆ, numerals) -- https://en.wikipedia.org/wiki/Thai_script
-15. Wikipedia, Thai language (particles, pronouns, classifiers) -- https://en.wikipedia.org/wiki/Thai_language
-16. games.gg Thai, Steal a Brainrot and Plants vs Brainrots (Rebirth, รีเบิร์ธ, เกิดใหม่, จุติ, ระดับตำนาน) -- https://games.gg/th/steal-a-brainrot/ and https://games.gg/th/plants-vs-brainrots/
-17. Studio measurements with TextService:GetTextSize, 2026-11-08 (wrapping, U+200B, fallback font, bold, width vs English) -- this review
+1. Microsoft Thai Localization Style Guide: https://download.microsoft.com/download/3/f/2/3f236167-639e-46f2-8201-554c36bcbf31/tha-tha-StyleGuide.pdf
+2. CLDR Language Plural Rules: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+3. Roblox Creator docs th-th, Passes: https://create.roblox.com/docs/th-th/production/monetization/passes
+4. Roblox Creator docs th-th, Engagement-based payouts: https://create.roblox.com/docs/th-th/production/monetization/engagement-based-payouts
+5. Roblox Creator docs th-th, Groups: https://create.roblox.com/docs/th-th/projects/groups
+6. Roblox game page in Thai (Adopt Me!): https://www.roblox.com/th/games/920587237/Adopt-Me
+7. Roblox Creator docs, Automatic translations: https://create.roblox.com/docs/production/localization/automatic-translations
+8. Thai Wikipedia, โรบล็อกซ์: https://th.wikipedia.org/wiki/โรบล็อกซ์
+9. games.gg Thai, Adopt Me! codes (โค้ด, ฟักไข่, สัตว์เลี้ยง): https://games.gg/th/news/adopt-me-roblox-codes/
+10. BlueStacks Thai, Catch and Tame codes: https://www.bluestacks.com/th/blog/redeem-codes/roblox-catch-and-tame-redeem-codes-th.html
+11. DevForum, Thai tone marks clipped in Translator Portal (2023): https://devforum.roblox.com/t/bug-with-thai-translation-fonts-via-translator-portal/2397589
+12. DevForum, HarfBuzz typesetter for connected scripts (2018): https://devforum.roblox.com/t/support-for-arabic-text-and-other-languages-where-letters-are-connected/116447
+13. Roblox client strings, th-th column of CoreScriptLocalization.csv (build of 2026-11-05): %LOCALAPPDATA%/Roblox/Versions/<version>/ExtraContent/translations/
+14. Wikipedia, Thai script (spacing, ๆ, numerals): https://en.wikipedia.org/wiki/Thai_script
+15. Wikipedia, Thai language (particles, pronouns, classifiers): https://en.wikipedia.org/wiki/Thai_language
+16. games.gg Thai, Steal a Brainrot and Plants vs Brainrots (Rebirth, รีเบิร์ธ, เกิดใหม่, จุติ, ระดับตำนาน): https://games.gg/th/steal-a-brainrot/ and https://games.gg/th/plants-vs-brainrots/
+17. Studio measurements with TextService:GetTextSize, 2026-11-08 (wrapping, U+200B, fallback font, bold, width vs English) (this review)

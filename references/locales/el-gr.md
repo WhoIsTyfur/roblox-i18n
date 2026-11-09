@@ -1,4 +1,4 @@
-# Greek (el-gr) -- translation guide
+# Greek (el-gr) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "εσύ": "Παίξε", "σου"; never plural/polite "Παίξτε", "σας" |
 | Text expansion vs English | about +20-30% for free sentences (unverified rule of thumb; this guide's reference set came out +16% while fitted to budgets); short titles up to +100% ("Shop" -> "Κατάστημα") |
 | Plural categories (CLDR) | cardinal: one (n = 1), other (0, 2+ and 1,5 take other); ordinal: other only |
-| Model confidence | medium -- solid grammar, but models slip on tonos (capitals, enclitics), the Greek question mark, polite plural and gender agreement; no Greek Roblox UI to anchor terms |
+| Model confidence | medium: solid grammar, but models slip on tonos (capitals, enclitics), the Greek question mark, polite plural and gender agreement; no Greek Roblox UI to anchor terms |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
@@ -119,7 +119,7 @@
 | rebirth.button | Αναγέννηση | exactly 10/10 |
 | rebirth.confirm | Αναγέννηση τώρα; Θα χάσεις τα κέρματά σου, αλλά θα πάρεις ένα μόνιμο μπόνους x{multiplier}. | Greek ";"; "x" before the number to match "Κέρματα x2"; "1.5" should arrive as "1,5" (code) |
 | coins.need_more | Σου λείπουν κέρματα: {amount} | plural noun as subject works when amount is 1; no "!" on a failure |
-| coins.count | Κέρματα: {count} | "1,250" should be "1.250" for Greek -- code issue |
+| coins.count | Κέρματα: {count} | "1,250" should be "1.250" for Greek (code issue) |
 | egg.hatched | Νέο κατοικίδιο: {pet} ({rarity})! | "you hatched" becomes "new pet" ("εκκόλαψες" is textbook); brackets avoid gender agreement; neuter rarity matches "κατοικίδιο" |
 | rarity.legendary | Θρυλικό | neuter, agreeing with κατοικίδιο |
 | pet.name.dragon | Δράκος | masculine |

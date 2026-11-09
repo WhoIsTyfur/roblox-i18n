@@ -1,4 +1,4 @@
-# Chinese (Traditional) (zh-tw) -- translation guide
+# Chinese (Traditional) (zh-tw) translation guide
 
 ## At a glance
 | | |
@@ -7,8 +7,8 @@
 | Script, direction | Traditional Han (Hant) with Taiwan character forms, LTR, horizontal |
 | Address the player as | 你 (informal); never 您, never 妳 |
 | Text expansion vs English | Fewer characters (about 40-60% of English), but each Han glyph is full-width: sentences render at about 0.6-1.0x English width, while 1-4 letter buttons get wider (Play -> 開始遊戲, On -> 開啟) (estimate) |
-| Plural categories (CLDR) | other only (cardinal and ordinal) -- Chinese has no plural forms |
-| Model confidence | high -- high-resource language; the real risks are Mainland vocabulary, Simplified->Traditional conversion errors and a stiff 您 register |
+| Plural categories (CLDR) | other only (cardinal and ordinal); Chinese has no plural forms |
+| Model confidence | high: high-resource language; the real risks are Mainland vocabulary, Simplified->Traditional conversion errors and a stiff 您 register |
 | Native review before shipping | recommended (a Taiwan reader; a Hong Kong reader too if HK players matter) |
 
 ## Audience and register
@@ -63,7 +63,7 @@
 
 ## Grammar traps in UI strings
 - Plurals: none exist, so one string covers 0, 1 and 1,250: "{count} 金幣". Never add 們 to things (寵物們), and never add 一些 next to a number.
-- Classifiers: a number inside a sentence wants a measure word -- 隻 for animals and pets (一隻龍), 顆 for eggs (3 顆蛋), 把 for swords, 位 for people (每位好友), 個 as a fallback (Roblox: {itemCount} 個道具). Currencies (金幣, 寶石, Robux) and HUD counters take none: "還差 {amount} 金幣！", "{count} 金幣".
+- Classifiers: a number inside a sentence wants a measure word: 隻 for animals and pets (一隻龍), 顆 for eggs (3 顆蛋), 把 for swords, 位 for people (每位好友), 個 as a fallback (Roblox: {itemCount} 個道具). Currencies (金幣, 寶石, Robux) and HUD counters take none: "還差 {amount} 金幣！", "{count} 金幣".
 - {player}: verbs do not agree with gender, but 他 / 她 do. Avoid both: repeat {player} or use 對方 ("對方取消了交易").
 - Word order: time and condition go before the verb. "in {time}" -> "{time} 後": "{time} 後再回來". "for each friend" moves to the front: "每位好友提供 +5% 加成".
 - Multipliers: "{multiplier}x" -> "{multiplier} 倍"; "2x Coins" -> "2 倍金幣". "2x" survives only on tiny badges.
@@ -81,7 +81,7 @@
 - List separator 、: 金幣、寶石和寵物.
 - Ellipsis: …… (two U+2026); Roblox uses 正在傳送……. Never 。。。 or a lone "...".
 - No em dash: it looks like 一 (Microsoft guide). Rephrase, or use ： or （）.
-- Digits and Latin letters stay half-width: VIP, 12 -- never ＶＩＰ, １２.
+- Digits and Latin letters stay half-width: VIP, 12, never ＶＩＰ, １２.
 - Numbers: comma thousands (1,250); percent with no space (+25%). Taiwanese count big numbers in 萬 and 億 (1.2萬); K/M abbreviations are understood.
 - Durations read best localized: 3 小時 20 分, 2 天 5 小時, or a clock 03:20:00, as Roblox writes "{RBX_NUMBER} 秒". A raw "3h 20m" looks foreign: flag it to the developer, but translate anyway. The space after {time} follows its last character: "3h 20m 後" but "3 小時 20 分後".
 - Item and rarity tags may use 【】, a Chinese game convention: 獲得【傳說】龍！ (optional).
@@ -155,16 +155,16 @@
 | friends.boost | 伺服器中每位好友提供 +{percent}% 加成 | 中 avoids 裡 / 裏 |
 
 ## Sources
-1. Microsoft Chinese (Traditional, Taiwan) localization style guide -- https://aka.ms/chinese-traditional-styleguide (zho-twn-StyleGuide.pdf)
-2. Unicode CLDR language plural rules -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+1. Microsoft Chinese (Traditional, Taiwan) localization style guide: https://aka.ms/chinese-traditional-styleguide (zho-twn-StyleGuide.pdf)
+2. Unicode CLDR language plural rules: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
 3. Roblox client strings, zh-tw column: `ExtraContent/translations/CoreScriptLocalization.csv` in the Roblox Studio install (build version-f0ea5da9412f4e35, 2026-11-05)
-4. Roblox on the Taiwan App Store (zh-TW listing) -- https://apps.apple.com/tw/app/roblox/id431946152
-5. Roblox newsroom (zh-hant), Connections renamed back to Friends, 2026-04-02 -- https://about.roblox.com/zh-hant/newsroom/2026/04/expanding-trusted-friends
-6. Roblox Creator Docs zh-tw, passes (AI-translated) -- https://create.roblox.com/docs/zh-tw/production/monetization/game-passes
-7. Roblox Creator Docs zh-tw, groups (AI-translated) -- https://create.roblox.com/docs/zh-tw/projects/groups
-8. Wikipedia zh, IT term conversion table (zh-cn / zh-tw / zh-hk) -- https://zh.wikipedia.org/wiki/Module:CGroup/IT
-9. DevForum, CJK glyph variants by locale -- https://devforum.roblox.com/t/humanoid-names-do-not-render-with-correct-cjk-glyphs/674438
-10. DevForum, custom fonts and Traditional Chinese fallback (2026) -- https://devforum.roblox.com/t/add-more-cjk-fonts-as-well-as-different-font-properties-for-each-language/4566304
-11. FlashGet Kids zh-tw Adopt Me guide, used only as an example of Mainland leakage (服務器, 雞蛋) -- https://parental-control.flashget.com/zh-tw/roblox-adopt-me
-12. Roblox Plus page (zh-hant), Premium sales end 2026-04-30 -- https://about.roblox.com/zh-hant/what-is-roblox-plus
+4. Roblox on the Taiwan App Store (zh-TW listing): https://apps.apple.com/tw/app/roblox/id431946152
+5. Roblox newsroom (zh-hant), Connections renamed back to Friends, 2026-04-02: https://about.roblox.com/zh-hant/newsroom/2026/04/expanding-trusted-friends
+6. Roblox Creator Docs zh-tw, passes (AI-translated): https://create.roblox.com/docs/zh-tw/production/monetization/game-passes
+7. Roblox Creator Docs zh-tw, groups (AI-translated): https://create.roblox.com/docs/zh-tw/projects/groups
+8. Wikipedia zh, IT term conversion table (zh-cn / zh-tw / zh-hk): https://zh.wikipedia.org/wiki/Module:CGroup/IT
+9. DevForum, CJK glyph variants by locale: https://devforum.roblox.com/t/humanoid-names-do-not-render-with-correct-cjk-glyphs/674438
+10. DevForum, custom fonts and Traditional Chinese fallback (2026): https://devforum.roblox.com/t/add-more-cjk-fonts-as-well-as-different-font-properties-for-each-language/4566304
+11. FlashGet Kids zh-tw Adopt Me guide, used only as an example of Mainland leakage (服務器, 雞蛋): https://parental-control.flashget.com/zh-tw/roblox-adopt-me
+12. Roblox Plus page (zh-hant), Premium sales end 2026-04-30: https://about.roblox.com/zh-hant/what-is-roblox-plus
 13. Minecraft Java zh_tw language file (`minecraft/lang/zh_tw.json` in the game assets), for kids'-game address form

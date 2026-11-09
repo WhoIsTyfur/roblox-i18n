@@ -1,4 +1,4 @@
-# Estonian (et-ee) -- translation guide
+# Estonian (et-ee) translation guide
 
 ## At a glance
 | | |
@@ -8,12 +8,12 @@
 | Address the player as | informal singular "sina", usually dropped into the verb ("Oled AFK", "Osta", "Tule tagasi"); never plural/formal "teie" |
 | Text expansion vs English | about +5-15% on sentences (measured on the reference set); short buttons and titles +40-100% ("Claim" -> "Võta vastu", "On" -> "Sees") |
 | Plural categories (CLDR) | one (i = 1 and v = 0: "1 münt"), other ("0 münti", "2 münti", "1,5 münti"); ordinals: other only, written "5." |
-| Model confidence | medium -- short strings come out fluent, but models break numeral agreement, split compounds and slip into the formal "teie" register |
+| Model confidence | medium: short strings come out fluent, but models break numeral agreement, split compounds and slip into the formal "teie" register |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
 Estonian is spoken mainly in Estonia; the country also has a large Russian-speaking minority who will usually pick the `ru` column. Roblox's own site and app are not offered in Estonian: Roblox's locale API marks `et_ee` as enabled for in-experience content only, not for the full site or signup. So Estonian kids read Roblox itself in English (or Russian) and meet Estonian only inside your game. Since Estonian cannot be an account language, the route to `et-ee` is presumably an in-experience language choice, but how players pick it is (unverified); expect a small share of Estonian players on this column.
-- Use "sina" forms and drop the pronoun: "Oled AFK", "Kas oled kindel?" -- Minecraft's Estonian text talks to players the same way ("Sa olid liiga kaua eemal!"). Microsoft's running text uses plural "teie" ("Sulgege need rakendused", "valige"), which reads like a bank or a tax form to a 12-year-old. If a pronoun is needed, write it lowercase (Microsoft's rule): "sina/sinu", or reflexive "oma".
+- Use "sina" forms and drop the pronoun: "Oled AFK", "Kas oled kindel?"; Minecraft's Estonian text talks to players the same way ("Sa olid liiga kaua eemal!"). Microsoft's running text uses plural "teie" ("Sulgege need rakendused", "valige"), which reads like a bank or a tax form to a 12-year-old. If a pronoun is needed, write it lowercase (Microsoft's rule): "sina/sinu", or reflexive "oma".
 - Buttons: second person singular imperative, as Microsoft and Minecraft do ("Loobu", "Proovi uuesti", "Välju", "Mängi"): "Osta", "Liitu", "Sulge". Never the dictionary ma-infinitive ("Ostma").
 - Titles: nouns ("Pood", "Seaded", "Edetabel"). Progress labels: -mine nouns ("Laadimine...").
 - Yes/no questions open with "Kas": "Kas soovid jätkata?"; a casual "Oled valmis?" is fine in toasts.
@@ -37,7 +37,7 @@ Estonian is spoken mainly in Estonia; the country also has a large Russian-speak
 | coins / gems | mündid (münt, mündi, münti) / kalliskivid | "teemandid" if the art shows diamonds; players may say "gemid" (unverified) |
 | boost | boonus | "2x boonus"; players also say "boost" (unverified) |
 | multiplier | kordaja | Prefer showing "2x"; "kordaja" in descriptions |
-| XP | XP (XP-d, XP-boonus) | Minecraft: "kogemuspunktid", "kogemustase" -- too long for a HUD |
+| XP | XP (XP-d, XP-boonus) | Minecraft: "kogemuspunktid", "kogemustase", too long for a HUD |
 | level / level up | tase / "Tase tõusis!" | "tasemel 12"; slang "level" in chat only |
 | quest | ülesanne | "Igapäevased ülesanded"; "missioon" for story quests |
 | leaderboard | edetabel | Board title "Tippmängijad" |
@@ -65,10 +65,10 @@ Estonian is spoken mainly in Estonia; the country also has a large Russian-speak
 ## Typography and formatting
 - No space before ! ? : ;. Microsoft ends error messages with a period and keeps "!" for exceptional cases: "See kood on vale või aegunud." In a game, one "!" on rewards and hype is fine.
 - Quotation marks: „...“ (U+201E, U+201C), inner ‚...‘ (CLDR; Microsoft allows straight quotes if used consistently).
-- Numbers: decimal comma ("1,5x"); thousands separator is a non-breaking space, and CLDR does not group four-digit numbers: "1250", "12 500". English "1,250" from game code reads as one and a quarter -- flag it to the developer instead of patching the string.
-- Percent: no space -- EKI, CLDR and Minecraft agree ("+10%", "3,5%", range "5–15%" with the sign once). EKI adds case endings only from the illative on, with a hyphen and no stem vowel ("10%-st", "10%-le"); never "10%-i".
+- Numbers: decimal comma ("1,5x"); thousands separator is a non-breaking space, and CLDR does not group four-digit numbers: "1250", "12 500". English "1,250" from game code reads as one and a quarter; flag it to the developer instead of patching the string.
+- Percent: no space; EKI, CLDR and Minecraft agree ("+10%", "3,5%", range "5–15%" with the sign once). EKI adds case endings only from the illative on, with a hyphen and no stem vowel ("10%-st", "10%-le"); never "10%-i".
 - Durations (CLDR narrow, EKI "1 t 25 min"): "3 t 20 min", "2 p 5 t", "45 s"; "t" = tund, "p" = päev (Microsoft notes "h" in SI contexts). "m" is metres. The {time} format comes from game code.
-- Ordinals are a number plus period: "1. koht", "5. tase" -- never "1st". Avoid ending a sentence on a bare number where "5." could read as "5th": "Uus tase: {level}".
+- Ordinals are a number plus period: "1. koht", "5. tase", never "1st". Avoid ending a sentence on a bare number where "5." could read as "5th": "Uus tase: {level}".
 - Ellipsis without a space: "Laadimine..." (Microsoft). Dashes: spaced en dash in sentences ("Pood – ainult täna!"), unspaced in ranges ("1–3"); no em dash. "&" -> "ja".
 - Dates: "08.11.2026" or "8. november". Clock time: EKI writes "kell 14.30"; the EVS 8 standard and CLDR use "14:30". Both are correct; keep one per game.
 - Keys: letters stay ("Vajuta E", Minecraft "Vajuta %s"); Space is "tühik" (Minecraft) or "tühikuklahv" (Microsoft); "Enter", "Shift" stay. PC "Klõpsa", touch "Puuduta".
@@ -78,7 +78,7 @@ Estonian is spoken mainly in Estonia; the country also has a large Russian-speak
 - Do decline brand names with a plain ending, as EKI prescribes and Microsoft does ("Microsofti kontoga"): "Robloxis", "Robloxi mäng", "Premiumiga", "Robuxi eest". No apostrophe: "Robux'i" and "Roblox'is" are wrong.
 - The game title ("Pet Hatch Tycoon") and promo codes (FREEPETS), same case; usernames and display names.
 - Translate pet, item, egg and area names once and reuse them ("Draakon", "Õnnejook").
-- Never drop or swap diacritics: "Mängi" not "Mangi", "Õnnejook" not "Onnejook" or "Önnejook" -- õ and ö are different letters.
+- Never drop or swap diacritics: "Mängi" not "Mangi", "Õnnejook" not "Onnejook" or "Önnejook"; õ and ö are different letters.
 - Latin script only. Russian belongs in the `ru` column; never mix Russian words into `et-ee`.
 
 ## Rendering on Roblox
@@ -142,16 +142,16 @@ Estonian is spoken mainly in Estonia; the country also has a large Russian-speak
 | friends.boost | +{percent}% boonust iga sõbra eest sinu serveris | Partitive "boonust" after a percent |
 
 ## Sources
-1. Microsoft Estonian Localization Style Guide -- https://download.microsoft.com/download/7/7/3/7734c896-d576-44f6-bf00-66350cb24be9/est-est-StyleGuide.pdf
-2. Unicode CLDR language plural rules chart -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-3. CLDR JSON for et: units, numbers, delimiters -- https://github.com/unicode-org/cldr-json/tree/main/cldr-json (cldr-units-full, cldr-numbers-full, cldr-misc-full, main/et)
-4. Roblox locale API (et_ee: in-experience content only, not full site or signup) -- https://locale.roblox.com/v1/locales
-5. Roblox Creator docs, language codes -- https://create.roblox.com/docs/production/localization/language-codes
-6. Roblox Creator docs, localization overview -- https://create.roblox.com/docs/production/localization
-7. Roblox client CoreScriptLocalization.csv (no Estonian column) and bundled fonts in content/fonts, cmap checked on 2026-11-08 -- local files from the Roblox install
-8. Minecraft Java 1.21.4 Estonian strings (et_ee.json) -- https://assets.mcasset.cloud/1.21.4/assets/minecraft/lang/et_ee.json
-9. Estonian Wikipedia, Roblox ("mängupass", "Premium", "vahetada" for Adopt Me trading) -- https://et.wikipedia.org/wiki/Roblox
-10. Estonian Wiktionary, "noob" and "afk" -- https://et.wiktionary.org/wiki/noob, https://et.wiktionary.org/wiki/afk
-11. EKI teatmik, apostrophe in declined foreign names -- https://teatmik.eki.ee/teatmik/ulakoma/
-12. EKI teatmik, percent sign (no space, case endings) -- https://teatmik.eki.ee/teatmik/muid-marke/
-13. EKI teatmik, spaces (clock "9.00", EVS 8 colon, "1 t 25 min") -- https://teatmik.eki.ee/teatmik/tuhikud/
+1. Microsoft Estonian Localization Style Guide: https://download.microsoft.com/download/7/7/3/7734c896-d576-44f6-bf00-66350cb24be9/est-est-StyleGuide.pdf
+2. Unicode CLDR language plural rules chart: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+3. CLDR JSON for et: units, numbers, delimiters: https://github.com/unicode-org/cldr-json/tree/main/cldr-json (cldr-units-full, cldr-numbers-full, cldr-misc-full, main/et)
+4. Roblox locale API (et_ee: in-experience content only, not full site or signup): https://locale.roblox.com/v1/locales
+5. Roblox Creator docs, language codes: https://create.roblox.com/docs/production/localization/language-codes
+6. Roblox Creator docs, localization overview: https://create.roblox.com/docs/production/localization
+7. Roblox client CoreScriptLocalization.csv (no Estonian column) and bundled fonts in content/fonts, cmap checked on 2026-11-08: local files from the Roblox install
+8. Minecraft Java 1.21.4 Estonian strings (et_ee.json): https://assets.mcasset.cloud/1.21.4/assets/minecraft/lang/et_ee.json
+9. Estonian Wikipedia, Roblox ("mängupass", "Premium", "vahetada" for Adopt Me trading): https://et.wikipedia.org/wiki/Roblox
+10. Estonian Wiktionary, "noob" and "afk": https://et.wiktionary.org/wiki/noob, https://et.wiktionary.org/wiki/afk
+11. EKI teatmik, apostrophe in declined foreign names: https://teatmik.eki.ee/teatmik/ulakoma/
+12. EKI teatmik, percent sign (no space, case endings): https://teatmik.eki.ee/teatmik/muid-marke/
+13. EKI teatmik, spaces (clock "9.00", EVS 8 colon, "1 t 25 min"): https://teatmik.eki.ee/teatmik/tuhikud/

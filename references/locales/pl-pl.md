@@ -1,4 +1,4 @@
-# Polish (pl-pl) -- translation guide
+# Polish (pl-pl) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "ty", usually dropped into the verb ("Masz", "Kup", "Wróć"); lowercase "twój/ciebie" as Roblox's Polish UI writes it; never "Pan/Pani" |
 | Text expansion vs English | about +20-30% on sentences (estimate); short buttons vary ("Buy" -> "Kup" is shorter, "Loading..." -> "Wczytywanie..." is +40%) |
 | Plural categories (CLDR) | one (1), few (2-4, 22-24... but not 12-14), many (0, 5-21, 25-31...), other (fractions); ordinals: other only |
-| Model confidence | medium -- fluent output, but models routinely break gendered past tense, number agreement and case endings around {params} |
+| Model confidence | medium: fluent output, but models routinely break gendered past tense, number agreement and case endings around {params} |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
@@ -66,9 +66,9 @@ Polish players are mostly in Poland, plus Polish-speaking kids abroad (UK, Irela
 ## Typography and formatting
 - No space before ! ? : ; (unlike French). Commas follow Polish rules: none before "i", "lub", "albo"; always before "żeby", "że", "który".
 - Quotation marks: low-high „...” (Microsoft, and Roblox UI: „Kontynuuj”). Period goes outside the closing quote.
-- Numbers: space as thousands separator (non-breaking), comma as decimal: "12 500 monet", "1,5x". English "1,250" from game code reads as "one and a quarter" in Polish -- flag it to the developer instead of patching the string.
+- Numbers: space as thousands separator (non-breaking), comma as decimal: "12 500 monet", "1,5x". English "1,250" from game code reads as "one and a quarter" in Polish; flag it to the developer instead of patching the string.
 - Percent: no space, as Roblox's Polish UI writes "10% premii"; as an adjective with a hyphen: "10-procentowy bonus".
-- Durations: "3 h 20 min", "2 d 5 h", "45 s" -- Roblox writes "{N} min" and "{N} s"; "m" is metres; "godz." is the long abbreviation. Compact "3h 20min" is fine on a tight HUD timer; keep "min", never "3h 20m". The format inside {time} comes from game code.
+- Durations: "3 h 20 min", "2 d 5 h", "45 s". Roblox writes "{N} min" and "{N} s"; "m" is metres; "godz." is the long abbreviation. Compact "3h 20min" is fine on a tight HUD timer; keep "min", never "3h 20m". The format inside {time} comes from game code.
 - Ellipsis: three periods, no space before: "Wczytywanie..." (Roblox UI).
 - Dashes: spaced en dash for a break in a sentence ("Event – tylko dziś!"), unspaced in ranges ("1–3 pety"); hyphen for inflected acronyms ("VIP-a", "SMS-a").
 - Keys: letters stay ("Naciśnij E"); Space is "Spacja" (Roblox UI and Microsoft), "Enter", "Shift" stay English. PC copy "Kliknij", mobile copy "Dotknij" (Roblox: "Dotknij, aby wykonać ruch").
@@ -85,7 +85,7 @@ Polish players are mostly in Poland, plus Polish-speaking kids abroad (UK, Irela
 
 ## Rendering on Roblox
 - Checked against the font files shipped in the Roblox client of 2026-11-05: Builder Sans, Builder Extended, Builder Mono, Source Sans Pro, Montserrat, Roboto, Arimo, Nunito, Luckiest Guy, Bangers, Oswald, Press Start 2P, Comic Neue Angular, Titillium Web, Ubuntu, Fondamento, Grenze Gotisch, Special Elite and every other bundled face not named below contain all of ą ć ę ł ń ó ś ź ż, their capitals, „ ” and – (Inconsolata lacks only –).
-- Missing Polish letters: **Fredoka One** (lacks ą ć ę ń ś ź ż and their capitals; has ł ó -- a staple of simulator UIs), Creepster, Permanent Marker, Denk One, Balthazar, Accanthis ADF Std (Fantasy), Highway Gothic and Roman Antique (Antique; these two also lack ł). Studio check 2026-11-08: no empty boxes -- the client draws the missing letters from a thin sans fallback, so "Żółty" in Fredoka One shows mixed fonts inside one word. For Polish, switch such labels to a full-coverage font (Luckiest Guy, Bangers, Builder Sans).
+- Missing Polish letters: **Fredoka One** (lacks ą ć ę ń ś ź ż and their capitals; has ł ó; a staple of simulator UIs), Creepster, Permanent Marker, Denk One, Balthazar, Accanthis ADF Std (Fantasy), Highway Gothic and Roman Antique (Antique; these two also lack ł). Studio check 2026-11-08: no empty boxes: the client draws the missing letters from a thin sans fallback, so "Żółty" in Fredoka One shows mixed fonts inside one word. For Polish, switch such labels to a full-coverage font (Luckiest Guy, Bangers, Builder Sans).
 - Luau `string.upper` changes only ASCII letters: "żółw" becomes "żółW". Write uppercase text directly in the table ("ŻÓŁW").
 - Accented capitals (Ż Ó Ś Ć Ź) and the ogonek on ą ę reach above and below Latin letters; check for clipping in tight TextScaled labels (unverified).
 - Long words can't wrap ("Wczytywanie...", "społeczności"); with TextScaled the whole label shrinks instead. Give labels AutomaticSize or slack.
@@ -144,14 +144,14 @@ Polish players are mostly in Poland, plus Polish-speaking kids abroad (UK, Irela
 | friends.boost | Bonus +{percent}% za każdego znajomego na serwerze | Leading "Bonus" avoids the genitive after % |
 
 ## Sources
-1. Microsoft Polish Localization Style Guide -- https://download.microsoft.com/download/b/d/c/bdc253ac-dbf3-4261-86a2-ffedfa718425/pol-pol-StyleGuide.pdf
-2. Unicode CLDR language plural rules chart -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-3. Roblox client CoreScript translations, pl column (ExtraContent/translations/CoreScriptLocalization.csv, Roblox build of 2026-11-05) -- local file from the Roblox install
-4. Roblox client bundled fonts (content/fonts, same build), cmap checked for Polish letters and fallback rendered in Studio on 2026-11-08 -- local files from the Roblox install
-5. Roblox Creator docs (pl-pl, AI-translated beta), passes -- https://create.roblox.com/docs/pl-pl/production/monetization/game-passes
-6. android.com.pl, Roblox codes guide ("Odbierz", English game titles kept) -- https://android.com.pl/rozrywka/919529-kody-do-roblox-poradnik-lista/
-7. Miejski Słownik Slangu, "OP" -- https://www.miejski.pl/slowo-Op
-8. Miejski Słownik Slangu, "Afczyć" -- https://www.miejski.pl/slowo-Afczy%C4%87
-9. Miejski Słownik Slangu, "Expić" -- https://www.miejski.pl/slowo-Expi%C4%87
-10. Polish Wikipedia, Roblox (Robux inflected, "experiences" wording) -- https://pl.wikipedia.org/wiki/Roblox
-11. Miejski Słownik Slangu, "Eq" -- https://www.miejski.pl/slowo-Eq
+1. Microsoft Polish Localization Style Guide: https://download.microsoft.com/download/b/d/c/bdc253ac-dbf3-4261-86a2-ffedfa718425/pol-pol-StyleGuide.pdf
+2. Unicode CLDR language plural rules chart: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+3. Roblox client CoreScript translations, pl column (ExtraContent/translations/CoreScriptLocalization.csv, Roblox build of 2026-11-05): local file from the Roblox install
+4. Roblox client bundled fonts (content/fonts, same build), cmap checked for Polish letters and fallback rendered in Studio on 2026-11-08: local files from the Roblox install
+5. Roblox Creator docs (pl-pl, AI-translated beta), passes: https://create.roblox.com/docs/pl-pl/production/monetization/game-passes
+6. android.com.pl, Roblox codes guide ("Odbierz", English game titles kept): https://android.com.pl/rozrywka/919529-kody-do-roblox-poradnik-lista/
+7. Miejski Słownik Slangu, "OP": https://www.miejski.pl/slowo-Op
+8. Miejski Słownik Slangu, "Afczyć": https://www.miejski.pl/slowo-Afczy%C4%87
+9. Miejski Słownik Slangu, "Expić": https://www.miejski.pl/slowo-Expi%C4%87
+10. Polish Wikipedia, Roblox (Robux inflected, "experiences" wording): https://pl.wikipedia.org/wiki/Roblox
+11. Miejski Słownik Slangu, "Eq": https://www.miejski.pl/slowo-Eq

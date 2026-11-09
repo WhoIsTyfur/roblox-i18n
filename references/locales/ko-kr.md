@@ -1,4 +1,4 @@
-# Korean (ko-kr) -- translation guide
+# Korean (ko-kr) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | polite-casual 해요체 (`-아요/-어요`, `-세요`); never 당신, never 반말 or `-하십시오` |
 | Text expansion vs English | -30 to -40% characters; rendered width from 25% narrower to 30% wider, by font and string (measured in Studio, see Rendering) |
 | Plural categories (CLDR) | other (cardinal and ordinal) |
-| Model confidence | high -- well-resourced language; the real risks are particles after `{params}`, register mixing and loanword choice |
+| Model confidence | high: well-resourced language; the real risks are particles after `{params}`, register mixing and loanword choice |
 | Native review before shipping | recommended |
 
 ## Audience and register
@@ -18,7 +18,7 @@
 - Drop "you" and "your". Korean omits pronouns when the meaning is clear; 당신 sounds cold or adult. "Your backpack is full" -> `가방이 가득 찼어요!`
 - Buttons and toggles are nouns or `-기` forms, never full sentences: `구매`, `받기`, `플레이`, `켜짐`. Not `구매해요`.
 - Titles and labels take no period: `일일 보상`. Sentences in toasts end with `.` or `!`.
-- Hype sounds natural with short noun endings and `!`: `레벨 업!`, `부화 성공!`, `전설 등장!`. Avoid stacked `!!!` and crude slang prefixes like 개- (`개사기`) -- kids use them, a polished game does not.
+- Hype sounds natural with short noun endings and `!`: `레벨 업!`, `부화 성공!`, `전설 등장!`. Avoid stacked `!!!` and crude slang prefixes like 개- (`개사기`): kids use them, a polished game does not.
 
 ## Roblox and gaming vocabulary
 | English | Use in Korean | Note |
@@ -149,16 +149,16 @@
 | friends.boost | 같은 서버의 친구 1명당 +{percent}% 부스트 | `친구`, as in Roblox's current Korean client. |
 
 ## Sources
-1. Microsoft Korean Style Guide (PDF, via the style guide index) -- https://download.microsoft.com/download/5/b/6/5b62389f-4e3b-4c77-bc18-94efba2fa7bb/kor-kor-StyleGuide.pdf
-2. Microsoft Localization Style Guides index -- https://learn.microsoft.com/en-us/globalization/reference/microsoft-style-guides
-3. CLDR language plural rules -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-4. Roblox game pages in Korean (즐겨찾기, 상점, 서버, 체험; Adopt Me! title in English) -- https://www.roblox.com/ko/games/1098856813/Split-Screen-Testing-Controls and https://www.roblox.com/ko/games/920587237/Adopt-Me
-5. Roblox Creator Docs, Korean, passes (Robux, 체험, 패스, 개발자 제품) -- https://create.roblox.com/docs/ko-kr/production/monetization/game-passes
-6. Roblox on the Korean App Store (Robux, 친구, ROBLOX PLUS, Roblox Premium) -- https://apps.apple.com/kr/app/roblox/id431946152
-7. Roblox client CoreScript strings with the `ko` column (build 0.727, 2026-06; Robux, 친구/인맥, 님, Premium, 켜기, 불러오는 중, register counts), mirrored by Roblox-Client-Tracker -- https://github.com/MaximumADHD/Roblox-Client-Tracker/blob/roblox/translations/CoreScriptLocalization.csv
-8. Roblox Plus press release, 2026-04 (reported in search results; returned 403 on review) -- https://www.businesswire.com/news/home/20260410099173/en
-9. DevForum, "Add the HTML lang attribute" (Noto Sans CJK in the client) -- https://devforum.roblox.com/t/add-the-html-lang-attribute/444641
-10. DevForum, "Add more CJK fonts..." (2026, CJK fallback to default font) -- https://devforum.roblox.com/t/add-more-cjk-fonts-as-well-as-different-font-properties-for-each-language/4566304
-11. DeskIn Korean blog on AFK in Roblox (AFK, 자리 비움, 잠수, 파밍) -- https://deskin.io/ko/resource/blog/what-does-afk-mean-in-roblox-and-how-players-use-it
-12. BlueStacks Korean Roblox games roundup (입양하세요!, 펫 알, 부화, 펫 시뮬레이터) -- https://www.bluestacks.com/ko/blog/game-guides/roblox/rl-popular-games-details-ko.html
-13. Korean Roblox guide site using 로벅스 in player-facing text -- https://yellowit.co.kr/tag/roblox/
+1. Microsoft Korean Style Guide (PDF, via the style guide index): https://download.microsoft.com/download/5/b/6/5b62389f-4e3b-4c77-bc18-94efba2fa7bb/kor-kor-StyleGuide.pdf
+2. Microsoft Localization Style Guides index: https://learn.microsoft.com/en-us/globalization/reference/microsoft-style-guides
+3. CLDR language plural rules: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+4. Roblox game pages in Korean (즐겨찾기, 상점, 서버, 체험; Adopt Me! title in English): https://www.roblox.com/ko/games/1098856813/Split-Screen-Testing-Controls and https://www.roblox.com/ko/games/920587237/Adopt-Me
+5. Roblox Creator Docs, Korean, passes (Robux, 체험, 패스, 개발자 제품): https://create.roblox.com/docs/ko-kr/production/monetization/game-passes
+6. Roblox on the Korean App Store (Robux, 친구, ROBLOX PLUS, Roblox Premium): https://apps.apple.com/kr/app/roblox/id431946152
+7. Roblox client CoreScript strings with the `ko` column (build 0.727, 2026-06; Robux, 친구/인맥, 님, Premium, 켜기, 불러오는 중, register counts), mirrored by Roblox-Client-Tracker: https://github.com/MaximumADHD/Roblox-Client-Tracker/blob/roblox/translations/CoreScriptLocalization.csv
+8. Roblox Plus press release, 2026-04 (reported in search results; returned 403 on review): https://www.businesswire.com/news/home/20260410099173/en
+9. DevForum, "Add the HTML lang attribute" (Noto Sans CJK in the client): https://devforum.roblox.com/t/add-the-html-lang-attribute/444641
+10. DevForum, "Add more CJK fonts..." (2026, CJK fallback to default font): https://devforum.roblox.com/t/add-more-cjk-fonts-as-well-as-different-font-properties-for-each-language/4566304
+11. DeskIn Korean blog on AFK in Roblox (AFK, 자리 비움, 잠수, 파밍): https://deskin.io/ko/resource/blog/what-does-afk-mean-in-roblox-and-how-players-use-it
+12. BlueStacks Korean Roblox games roundup (입양하세요!, 펫 알, 부화, 펫 시뮬레이터): https://www.bluestacks.com/ko/blog/game-guides/roblox/rl-popular-games-details-ko.html
+13. Korean Roblox guide site using 로벅스 in player-facing text: https://yellowit.co.kr/tag/roblox/

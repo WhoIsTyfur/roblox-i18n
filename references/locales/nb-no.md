@@ -1,4 +1,4 @@
-# Norwegian Bokmal (nb-no) -- translation guide
+# Norwegian Bokmal (nb-no) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "du" (deg, din/ditt/dine); never "De", never "dere" in UI, never generic "man" |
 | Text expansion vs English | +14% over the reference set below (measured with sample values); sentences -21% to +45%, short labels up to +50% ("Shop" -> "Butikk"); closed compounds get long and cannot wrap |
 | Plural categories (CLDR) | one, other (one = exactly 1, also "1,0": "1 mynt", "0 mynter", "2 mynter", "1,5 mynter"); ordinals have one form ("1. plass") |
-| Model confidence | medium -- grammar is well covered, but models slip into Danish, Swedish or Nynorsk forms and split compounds, and Roblox ships no Norwegian app UI to copy terms from |
+| Model confidence | medium: grammar is well covered, but models slip into Danish, Swedish or Nynorsk forms and split compounds, and Roblox ships no Norwegian app UI to copy terms from |
 | Native review before shipping | recommended |
 
 ## Audience and register

@@ -1,4 +1,4 @@
-# Bulgarian (bg-bg) -- translation guide
+# Bulgarian (bg-bg) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "ти" everywhere; never "вие" or capitalized "Вие" |
 | Text expansion vs English | about +15-30% for sentences (unverified rule of thumb); short buttons +40-75% ("Shop" -> "Магазин", "Rebirth" -> "Прераждане") |
 | Plural categories (CLDR) | cardinal: one, other; ordinal: one, two, few, other |
-| Model confidence | medium -- standard Bulgarian is well covered, but models leak Russian words and get the definite article wrong; gamer slang is thinly documented |
+| Model confidence | medium: standard Bulgarian is well covered, but models leak Russian words and get the definite article wrong; gamer slang is thinly documented |
 | Native review before shipping | strongly recommended |
 
 ## Audience and register
@@ -16,7 +16,7 @@
 - Reach is unverified: Roblox's docs do not say how `Player.LocaleId` is chosen, and with `bg_bg` off for the app UI it is likely missing from the account language menu, so a real Bulgarian player may never get `bg-bg` (perhaps only via a Bulgarian device language). The Player Emulator only proves the column renders; test with a real account before promising Bulgarian support.
 - Roblox does not auto-translate Bulgarian: without a `bg-bg` column, players see the source text.
 - Use "ти" in every string: singular imperative ("Купи", "Натисни", "Влез") and 2nd person singular verbs ("Ще получиш"). Bulgarian adults say ти to children and teens say it to each other; вие to a 9-16 player reads like a notice for parents. Counter-evidence: Microsoft's guide uses вие for software (ти only for Copilot prompts); Minecraft's Bulgarian file is mostly вие (about 144 strings vs 9), yet its death screen says "Ти умря!"; Roblox's Play listing used вие. Pick ти and never mix.
-- Bulgarian has no infinitive. Buttons use the short singular imperative: "Играй", "Купи", "Вземи". Panel titles and feature labels use nouns: "Магазин", "Прераждане", "Настройки". Avoid verbal nouns ("Купуване") and the 1st-person command style of Microsoft menus ("Премествам надолу") on game buttons -- both read like office software.
+- Bulgarian has no infinitive. Buttons use the short singular imperative: "Играй", "Купи", "Вземи". Panel titles and feature labels use nouns: "Магазин", "Прераждане", "Настройки". Avoid verbal nouns ("Купуване") and the 1st-person command style of Microsoft menus ("Премествам надолу") on game buttons; both read like office software.
 - Hype is short and natural: "Ура!", "Супер!", "Ново ниво!", "Не го пропускай!". Stiff or adult: "осъществявам", "в случай че", "уважаеми играчо", "данни", "съгласно".
 - Microsoft's Bulgarian guide warns against archaic, bookish words and stacked possessives ("вашия"): write "Раницата е пълна", not "Твоята раница е пълна".
 - Don't blame the player in errors: "Кодът е невалиден", not "Въведе грешен код".
@@ -26,19 +26,19 @@
 | English | Bulgarian | note |
 |---|---|---|
 | Robux | Robux | Latin, undeclined, as in Bulgarian Wikipedia and Roblox's Play listing: "100 Robux", "за 50 Robux". |
-| Premium | Premium | Latin brand. The writer's fetch of the Play listing (2026-11-08) showed "Roblox Plus"; a rename is unverified -- use whatever the current English UI shows. |
+| Premium | Premium | Latin brand. The writer's fetch of the Play listing (2026-11-08) showed "Roblox Plus"; a rename is unverified, so use whatever the current English UI shows. |
 | game pass | пропуск; геймпас (chat) | Roblox UI is English here; in the shop just show the pass name. Both words unverified for Bulgarian players. |
 | developer product | покупка | players never see the term; name the item. |
 | experience / game | игра | never "опит" (= XP). Roblox's listing says "преживявания" in marketing; players say "игра". |
 | obby | паркур; оби (chat, unverified) | |
 | tycoon | Tycoon (titles); тайкун (unverified) | Roblox's Bulgarian listing keeps "Tycoons" in Latin. |
 | simulator | симулатор | as in the Play listing. |
-| rebirth | прераждане; verb "преродя се" | Minecraft uses "Прераждане" for respawn -- pick another word for respawn ("Възкръсни") if the game has both. "Ребърт" slang unverified. |
+| rebirth | прераждане; verb "преродя се" | Minecraft uses "Прераждане" for respawn, so pick another word for respawn ("Възкръсни") if the game has both. "Ребърт" slang unverified. |
 | pet | любимец, любимци | masculine. "Питомец" also correct; "пет/петове" chat slang (unverified). |
 | egg / hatch | яйце / излюпвам | button "Отвори"; "Излюпи дракон!" |
 | coins | монети | feminine: "1 монета", "2 монети". |
 | gems | диаманти | "кристали" if the art shows crystals. |
-| boost | бонус | "буст" is gamer talk, but BGJargon's only sense is a drug/alcohol high -- keep it out of UI. Speed boost: "ускорение". |
+| boost | бонус | "буст" is gamer talk, but BGJargon's only sense is a drug/alcohol high; keep it out of UI. Speed boost: "ускорение". |
 | multiplier | множител; "x2" | Latin x. |
 | XP | опит, XP | Minecraft: "Ниво на опита". Pick one per game. |
 | level up | ново ниво | "Ново ниво!"; never "левъл ъп". |
@@ -47,14 +47,14 @@
 | AFK | AFK | Latin in UI, like other acronyms (Microsoft: don't localize acronyms). "АФК" is used in chat, but BGJargon also records it as a "spaced-out" taunt. |
 | noob | новак (UI); нуб (jokes, unverified) | |
 | OP | имба | BGJargon: "unbeatable, top-tier", from "imbalanced"; how widely Roblox kids use it is unverified. Never Cyrillic "ОП" (BGJargon: a chat operator); "супер силен" is the plain fallback. |
-| VIP | VIP | "VIP сървър" -- no hyphen after an acronym (Microsoft). |
+| VIP | VIP | "VIP сървър", no hyphen after an acronym (Microsoft). |
 | trade | размяна; разменям | "трейд" chat only (unverified). |
 | inventory / backpack | инвентар / раница | Minecraft: "Инвентар". |
 | daily reward | ежедневна награда | "Дневна награда" when short. |
 | codes | кодове | redeem = "Активирай"; placeholder "Въведи код". |
 | group | група | "Присъедини се към групата ни" (listing: "Присъединете се към група"). |
 | like / favorite | Харесай; "Дай лайк" (casual) / любими, "Добави в любими" | |
-| server | сървър; частен сървър | listing: "частни сървъри"; "на сървъра" and "в сървъра" are both heard -- pick one per game. |
+| server | сървър; частен сървър | listing: "частни сървъри"; "на сървъра" and "в сървъра" are both heard; pick one per game. |
 | friends | приятели | Roblox renamed Connections back to Friends in April 2026; Roblox's Bulgarian listing says "приятели". Never "връзки" or "контакти". |
 
 ## Grammar traps in UI strings
@@ -65,10 +65,10 @@
   - Good: "{player} се присъедини към играта", "{player} спечели!" (aorist). Bad: "{player} е спечелил" (masculine).
   - The player has gender too: "Готов ли си?" excludes girls -> "Започваме ли?"; "Неактивен си" -> "AFK си".
 - Inserted item names: adjectives agree with the noun: легендарен дракон, легендарна котка, легендарно зайче. Write standalone rarity tags in the masculine: it agrees with an implied "любимец" or "предмет" (both masculine), so one tag set serves pets and items. Use "{rarity} любимец: {pet}!", never "{rarity} {pet}". If code puts {rarity} right before a feminine or neuter noun ("{rarity} отвара"), ask for separate keys per gender.
-- Nouns have no case, so {pet} and {player} need no declension -- but the definite article is a suffix and cannot attach to a placeholder. Put inserted nouns where Bulgarian needs no article: after a colon or as a bare indefinite noun. Bad: "Купи {pet}-а". Good: "Нов любимец: {pet}".
+- Nouns have no case, so {pet} and {player} need no declension, but the definite article is a suffix and cannot attach to a placeholder. Put inserted nouns where Bulgarian needs no article: after a colon or as a bare indefinite noun. Bad: "Купи {pet}-а". Good: "Нов любимец: {pet}".
 - Masculine full vs short article: the subject takes -ът/-ят, everything else -а/-я. "Кодът е невалиден" (subject) vs "Въведи кода" (object); "в светещия кръг" (after a preposition).
 - Clitics (ти, ми, се, го) never start a sentence: "Трябват ти още монети", never "Ти трябват още монети" (ungrammatical: a clitic cannot open a sentence).
-- Questions take the particle ли after the stressed word: "Искаш ли да се преродиш сега?", "Сигурен ли си?" (gendered -- prefer "Продължаваме ли?").
+- Questions take the particle ли after the stressed word: "Искаш ли да се преродиш сега?", "Сигурен ли си?" (gendered; prefer "Продължаваме ли?").
 - Ordinals change suffix by number (CLDR ordinal one/two/few/other: 1-ви, 2-ри, 3-ти, 5-и). Avoid "{level}-то ниво"; write "ниво {level}".
 - No articles from English: drop "a/the" ("a Rare Dragon" -> "рядък дракон").
 - English noun stacks become "на"/"за" phrases or adjectives: "Coin Boost" -> "бонус за монети", "Pet Storage" -> "хранилище за любимци". Compounds with an acronym stay two words: "VIP сървър", "XP бонус".
@@ -79,7 +79,7 @@
 - No space before ! ? : ; and one space after: "Ура! Ново ниво!".
 - Quotes: „…“ (U+201E opening, U+201C closing): „Отвара на късмета“. Never the English pair that opens with U+201C, and never «».
 - Dashes: en dash with spaces " – " for asides ("Нова награда – само днес!"); Microsoft says the em dash is not used in Bulgarian. Hyphen without spaces in words ("по-добре").
-- Numbers (CLDR): decimal comma ("1,5"), thousands separator a non-breaking space, and 4-digit numbers stay ungrouped: "1250", "12 500". The canonical {count} arrives as "1,250", which a Bulgarian reads as 1.25 -- flag it to the developer. Same for "1.5" multipliers.
+- Numbers (CLDR): decimal comma ("1,5"), thousands separator a non-breaking space, and 4-digit numbers stay ungrouped: "1250", "12 500". The canonical {count} arrives as "1,250", which a Bulgarian reads as 1.25; flag it to the developer. Same for "1.5" multipliers.
 - Percent: no space ("25%"), per both Microsoft and CLDR. Other units take a non-breaking space ("45 км/ч").
 - Multiplier: Latin x, before the number: "x2", "Монети x2". Never Cyrillic "х2".
 - Durations (CLDR short forms, no periods): "2 д 5 ч", "3 ч 20 мин", "45 сек". If game code outputs "3h 20m", flag it.
@@ -96,7 +96,7 @@
 - Promo codes ("FREEPETS"): exactly as given, Latin, same case; translate only the text around them.
 - Key names (E, Q, Shift, Space) stay Latin.
 - Descriptive item names translate ("Lucky Potion" -> "Отвара на късмета", Minecraft's name for the luck potion); keep invented brand-like names Latin only if the game treats them as brands.
-- Script: always Cyrillic. Teens often chat in Latin-letter Bulgarian ("шльокавица") -- never in UI. No Russian letters (ы, э, ё) and no Russian words.
+- Script: always Cyrillic. Teens often chat in Latin-letter Bulgarian ("шльокавица"), never in UI. No Russian letters (ы, э, ё) and no Russian words.
 - Transliterate only established gamer loanwords (имба); acronyms stay Latin (AFK, VIP, XP); don't invent new ones ("лъки поушън").
 
 ## Rendering on Roblox
@@ -133,7 +133,7 @@
 | rebirth.button | Прераждане | 10/10; feature noun. "Прероди се" (10) if a verb is preferred |
 | rebirth.confirm | Искаш ли да се преродиш сега? Ще загубиш монетите си, но ще получиш постоянен бонус x{multiplier}. | "Искаш ли" is the natural ти question; multiplier moved after x; "1.5" should arrive as "1,5" |
 | coins.need_more | Трябват ти още монети: {amount}! | colon avoids "1 монети" |
-| coins.count | Монети: {count} | "1,250" should be "1250" for Bulgarian -- code issue |
+| coins.count | Монети: {count} | "1,250" should be "1250" for Bulgarian (code issue) |
 | egg.hatched | {rarity} любимец: {pet}! | rarity masculine; no article, no agreement with {pet} |
 | rarity.legendary | Легендарен | masculine, agrees with "любимец" |
 | pet.name.dragon | Дракон | |

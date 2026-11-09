@@ -1,4 +1,4 @@
-# Bengali (bn-bd) -- translation guide
+# Bengali (bn-bd) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | `তুমি` with `-ও` imperatives (`খেলো`, `করো`, `এসো`); never `তুই`, and never mix in `আপনি`/`-উন` |
 | Text expansion vs English | about +17% in code points with sample values, +7% as the repo lint counts; one-word buttons can double (`Buy` -> `কিনে নাও`) |
 | Plural categories (CLDR) | cardinal: one (`i = 0 or n = 1`), other; ordinal: one, two, few, many, other |
-| Model confidence | medium -- models drift to West Bengal words, bookish সাধু forms, the formal `আপনি` and literal calques |
+| Model confidence | medium: models drift to West Bengal words, bookish সাধু forms, the formal `আপনি` and literal calques |
 | Native review before shipping | strongly recommended (a Bangladeshi reviewer, not a West Bengal one) |
 
 ## Audience and register
@@ -153,20 +153,20 @@
 | friends.boost | তোমার সার্ভারে থাকা প্রতিটি বন্ধুর জন্য +{percent}% বুস্ট | `বন্ধু`, not Connections. |
 
 ## Sources
-1. Microsoft Bangla (Bangladesh) Style Guide, 2017 (register, dari, pronouns, gender, loanwords, key names) -- https://download.microsoft.com/download/4/5/b/45b699fe-91a3-4405-ab3e-fdae2d196b32/ben-bgd-styleguide.pdf
-2. Microsoft Bangla (India) Style Guide, for comparison -- https://download.microsoft.com/download/3/a/c/3ac7e8b5-a15c-498e-a73e-c824a82b6347/ben-ind-StyleGuide.pdf
-3. Microsoft Localization Style Guides index (lists only Bangla (India) today) -- https://learn.microsoft.com/en-us/globalization/reference/microsoft-style-guides
-4. Mozilla bn-BD localization style guide (আপনি, -উন imperatives, digits, lakh grouping, loanwords) -- https://mozilla-l10n.github.io/styleguides/bn-BD
-5. CLDR language plural rules -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-6. Roblox locale API (`bn_bd`: in-game content on, full experience off) -- https://locale.roblox.com/v1/locales?displayValueLocale=en_us
-7. DevForum, Cloud Localization extended to 45 languages (2019; platform UI vs game content, boxes for some scripts) -- https://devforum.roblox.com/t/cloud-localization-support-extended-to-45-languages/337149
-8. DevForum, Release Notes for 406 (Bengali text support) -- https://devforum.roblox.com/t/release-notes-for-406/369825
-9. DevForum, New fonts are live (reply 106, Oct 2020, asking for Bangla-capable fonts) -- https://devforum.roblox.com/t/new-fonts-are-live/821617
-10. DevForum, Bangladeshi Roblox translator portfolio (register sample) -- https://devforum.roblox.com/t/open-0techy-first-ever-bengalibangla-translator/1035101
-11. Bengali Wikipedia, Roblox (রবলক্স, রবাক্স, ডেভেলপার পণ্য, প্রিমিয়াম) -- https://bn.wikipedia.org/wiki/রবলক্স
-12. Bengali Wikipedia, Garena Free Fire (loanword spellings `সার্ভার`, `ইভেন্ট`, `মোড`, `র‍্যাঙ্ক`) -- https://bn.wikipedia.org/wiki/গেরিনা_ফ্রি_ফায়ার
-13. Bengali Wikipedia, Bangla Academy standard spelling rules -- https://bn.wikipedia.org/wiki/প্রমিত_বাংলা_বানানের_নিয়ম
-14. English Wikipedia, Bengali language (east/west and religious vocabulary pairs) -- https://en.wikipedia.org/wiki/Bengali_language
-15. Kishor Alo, Bangladeshi teen magazine (Bengali digits in Bangladeshi media) -- https://www.kishoralo.com/
-16. CLDR JSON, bn units and numbers (narrow `ঘঃ`/`মিঃ`/`সেঃ`, default Bengali digits, lakh pattern) -- https://github.com/unicode-org/cldr-json/tree/main/cldr-json/cldr-units-full/main/bn
+1. Microsoft Bangla (Bangladesh) Style Guide, 2017 (register, dari, pronouns, gender, loanwords, key names): https://download.microsoft.com/download/4/5/b/45b699fe-91a3-4405-ab3e-fdae2d196b32/ben-bgd-styleguide.pdf
+2. Microsoft Bangla (India) Style Guide, for comparison: https://download.microsoft.com/download/3/a/c/3ac7e8b5-a15c-498e-a73e-c824a82b6347/ben-ind-StyleGuide.pdf
+3. Microsoft Localization Style Guides index (lists only Bangla (India) today): https://learn.microsoft.com/en-us/globalization/reference/microsoft-style-guides
+4. Mozilla bn-BD localization style guide (আপনি, -উন imperatives, digits, lakh grouping, loanwords): https://mozilla-l10n.github.io/styleguides/bn-BD
+5. CLDR language plural rules: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+6. Roblox locale API (`bn_bd`: in-game content on, full experience off): https://locale.roblox.com/v1/locales?displayValueLocale=en_us
+7. DevForum, Cloud Localization extended to 45 languages (2019; platform UI vs game content, boxes for some scripts): https://devforum.roblox.com/t/cloud-localization-support-extended-to-45-languages/337149
+8. DevForum, Release Notes for 406 (Bengali text support): https://devforum.roblox.com/t/release-notes-for-406/369825
+9. DevForum, New fonts are live (reply 106, Oct 2020, asking for Bangla-capable fonts): https://devforum.roblox.com/t/new-fonts-are-live/821617
+10. DevForum, Bangladeshi Roblox translator portfolio (register sample): https://devforum.roblox.com/t/open-0techy-first-ever-bengalibangla-translator/1035101
+11. Bengali Wikipedia, Roblox (রবলক্স, রবাক্স, ডেভেলপার পণ্য, প্রিমিয়াম): https://bn.wikipedia.org/wiki/রবলক্স
+12. Bengali Wikipedia, Garena Free Fire (loanword spellings `সার্ভার`, `ইভেন্ট`, `মোড`, `র‍্যাঙ্ক`): https://bn.wikipedia.org/wiki/গেরিনা_ফ্রি_ফায়ার
+13. Bengali Wikipedia, Bangla Academy standard spelling rules: https://bn.wikipedia.org/wiki/প্রমিত_বাংলা_বানানের_নিয়ম
+14. English Wikipedia, Bengali language (east/west and religious vocabulary pairs): https://en.wikipedia.org/wiki/Bengali_language
+15. Kishor Alo, Bangladeshi teen magazine (Bengali digits in Bangladeshi media): https://www.kishoralo.com/
+16. CLDR JSON, bn units and numbers (narrow `ঘঃ`/`মিঃ`/`সেঃ`, default Bengali digits, lakh pattern): https://github.com/unicode-org/cldr-json/tree/main/cldr-json/cldr-units-full/main/bn
 17. Roblox client files, `content/fonts/NotoSansBengaliUI-Regular.ttf` and `BuilderSans-Regular.otf` (cmap, tables, line metrics read from a local install, 2026-11-08)

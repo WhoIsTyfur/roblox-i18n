@@ -1,4 +1,4 @@
-# Vietnamese (vi-vn) -- translation guide
+# Vietnamese (vi-vn) translation guide
 
 ## At a glance
 | | |
@@ -8,8 +8,8 @@
 | Address the player as | "bạn", often dropped ("Cần thêm 50 xu!"); never "mày", "ngươi", "quý khách" |
 | Text expansion vs English | about +5-15% in characters (+7% on the reference set, +10% on its sentences); one-word labels can double ("Shop" -> "Cửa hàng"); stacked tone marks also make lines taller |
 | Plural categories (CLDR) | CLDR 49 and later: one (i = 0 or n = 1), other; CLDR 48 and earlier: other only. Ordinals: one ("thứ nhất"), other. Nouns never inflect, so neither split changes a Roblox string |
-| Model confidence | medium -- solid general Vietnamese, but tone-mark slips, stiff Sino-Vietnamese register and gamer vocabulary are frequent misses |
-| Native review before shipping | strongly recommended -- one wrong tone mark silently changes the word ("Mua" buy, "Múa" dance, "Mưa" rain) |
+| Model confidence | medium: solid general Vietnamese, but tone-mark slips, stiff Sino-Vietnamese register and gamer vocabulary are frequent misses |
+| Native review before shipping | strongly recommended: one wrong tone mark silently changes the word ("Mua" buy, "Múa" dance, "Mưa" rain) |
 
 ## Audience and register
 Vietnamese players are mostly teens on Roblox VNG, the local edition VNGGames has published since 13 August 2024. It has a 12+ age limit, and Vietnamese Wikipedia reports roblox.com blocked in Vietnam since May 2026. Overseas Vietnamese on the global client read the same column. "Roblox UI" below means the global client's vi strings; whether VNG shows the same wording is (unverified). Write like a cheerful Vietnamese mobile game talking to a 12-year-old: short, warm, a little hyped.
@@ -147,17 +147,17 @@ Vietnamese players are mostly teens on Roblox VNG, the local edition VNGGames ha
 | friends.boost | +{percent}% thưởng cho mỗi người bạn cùng máy chủ | "người bạn", not "người quen" |
 
 ## Sources
-1. Microsoft Vietnamese Localization Style Guide (via aka.ms/vietnamese-styleguide) -- https://download.microsoft.com/download/b/f/e/bfecb1b4-21ab-48fd-a48c-c2471b026f8f/vie-vnm-StyleGuide.pdf
-2. Unicode CLDR language plural rules chart -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-3. CLDR plurals.xml, release-48 (vi: other only) vs release-49 (vi: one, other) -- https://github.com/unicode-org/cldr/blob/release-49/common/supplemental/plurals.xml
-4. Roblox client CoreScript translations, vi column (ExtraContent/translations/CoreScriptLocalization.csv, Roblox build of 2026-11-05) -- local file from the Roblox install
-5. Roblox client font files (content/fonts, build of 2026-11-05), Vietnamese glyph coverage checked with fontTools -- local files from the Roblox install
-6. Roblox Creator docs (vi-vn, AI-translated), passes -- https://create.roblox.com/docs/vi-vn/production/monetization/game-passes
-7. Wikipedia tiếng Việt, Roblox (Roblox VNG, 12+ limit, Premium, 2026 block) -- https://vi.wikipedia.org/wiki/Roblox
-8. GameK, Roblox tag page (Vietnamese gaming press wording) -- https://gamek.vn/roblox.htm
-9. Sforum (CellphoneS), Pet Simulator 99 codes (thú cưng, mở trứng, giao dịch) -- https://cellphones.com.vn/sforum/code-pet-simulator-99
-10. Sforum, Blox Fruit codes (nhập code, x2 EXP, level, server, hết hạn) -- https://cellphones.com.vn/sforum/code-blox-fruit
-11. Sforum, Grow a Garden codes (English item names kept, Pet, Exp) -- https://cellphones.com.vn/sforum/code-grow-a-garden
-12. Sforum, "AFK là gì" -- https://cellphones.com.vn/sforum/afk-la-gi
-13. Sforum, "Noob là gì" (noob, newbie, feed) -- https://cellphones.com.vn/sforum/noob-la-gi
-14. DevForum, Source Sans missing Cyrillic glyphs (per-character Arial fallback, 2020) -- https://devforum.roblox.com/t/source-sans-cyrillic-characters-missing/483144
+1. Microsoft Vietnamese Localization Style Guide (via aka.ms/vietnamese-styleguide): https://download.microsoft.com/download/b/f/e/bfecb1b4-21ab-48fd-a48c-c2471b026f8f/vie-vnm-StyleGuide.pdf
+2. Unicode CLDR language plural rules chart: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+3. CLDR plurals.xml, release-48 (vi: other only) vs release-49 (vi: one, other): https://github.com/unicode-org/cldr/blob/release-49/common/supplemental/plurals.xml
+4. Roblox client CoreScript translations, vi column (ExtraContent/translations/CoreScriptLocalization.csv, Roblox build of 2026-11-05): local file from the Roblox install
+5. Roblox client font files (content/fonts, build of 2026-11-05), Vietnamese glyph coverage checked with fontTools: local files from the Roblox install
+6. Roblox Creator docs (vi-vn, AI-translated), passes: https://create.roblox.com/docs/vi-vn/production/monetization/game-passes
+7. Wikipedia tiếng Việt, Roblox (Roblox VNG, 12+ limit, Premium, 2026 block): https://vi.wikipedia.org/wiki/Roblox
+8. GameK, Roblox tag page (Vietnamese gaming press wording): https://gamek.vn/roblox.htm
+9. Sforum (CellphoneS), Pet Simulator 99 codes (thú cưng, mở trứng, giao dịch): https://cellphones.com.vn/sforum/code-pet-simulator-99
+10. Sforum, Blox Fruit codes (nhập code, x2 EXP, level, server, hết hạn): https://cellphones.com.vn/sforum/code-blox-fruit
+11. Sforum, Grow a Garden codes (English item names kept, Pet, Exp): https://cellphones.com.vn/sforum/code-grow-a-garden
+12. Sforum, "AFK là gì": https://cellphones.com.vn/sforum/afk-la-gi
+13. Sforum, "Noob là gì" (noob, newbie, feed): https://cellphones.com.vn/sforum/noob-la-gi
+14. DevForum, Source Sans missing Cyrillic glyphs (per-character Arial fallback, 2020): https://devforum.roblox.com/t/source-sans-cyrillic-characters-missing/483144

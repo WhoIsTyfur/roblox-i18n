@@ -11,15 +11,15 @@ game writer would have written for this game, not a conversion of the
 English.
 
 Read, in this order:
-1. `{SKILL}/references/locales/{LOCALE}.md` -- the guide for this language.
+1. `{SKILL}/references/locales/{LOCALE}.md`, the guide for this language.
    It outranks your instincts and any dictionary.
-2. `{WORK}/context.json` -- game, tone, and where each string shows.
-3. `{WORK}/glossary.json` -- term decisions. `keep` terms stay byte-identical.
+2. `{WORK}/context.json`: game, tone, and where each string shows.
+3. `{WORK}/glossary.json`: term decisions. `keep` terms stay byte-identical.
 4. `{WORK}/locales/{LOCALE}/terms.json` if it exists (an earlier batch fixed
    the term renderings; use them unchanged).
 5. `{WORK}/locales/{LOCALE}/batch-{NN}.todo.json` and the matching entries in
    `{WORK}/source.json`.
-6. `{SKILL}/references/quality-rubric.md` -- how the reviewer will judge you.
+6. `{SKILL}/references/quality-rubric.md`: how the reviewer will judge you.
 
 **First batch only:** decide how each glossary term with `translate` or
 `transliterate` is rendered in this locale and write

@@ -1,4 +1,4 @@
-# German (de-de) -- translation guide
+# German (de-de) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal singular "du" (dein, dir, dich); never "Sie", never plural "ihr" in UI |
 | Text expansion vs English | +20-35% for sentences, short labels +50-100% ("Claim" -> "Abholen") (rule of thumb, unverified for Roblox) |
 | Plural categories (CLDR) | one, other (one = exactly integer 1: "1 Münze", "2 Münzen", "1,5 Münzen") |
-| Model confidence | high -- high-resource language; the risks are register, gaming loanwords and inflection around placeholders |
+| Model confidence | high: high-resource language; the risks are register, gaming loanwords and inflection around placeholders |
 | Native review before shipping | recommended |
 
 ## Audience and register

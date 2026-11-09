@@ -1,4 +1,4 @@
-# Indonesian (id-id) -- translation guide
+# Indonesian (id-id) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | informal "kamu" and the suffix "-mu"; never "Anda", never Jakarta slang "lo/gue" |
 | Text expansion vs English | about +15-30% (estimate); affixed verbs make long single words ("menetaskan", "kedaluwarsa"), but core buttons stay short ("Main", "Beli", "Toko") |
 | Plural categories (CLDR) | other only (cardinal and ordinal); nouns never change after a number |
-| Model confidence | medium -- grammar is reliable, but models default to stiff "Anda", leak Malay words and keep English adjective order |
+| Model confidence | medium: grammar is reliable, but models default to stiff "Anda", leak Malay words and keep English adjective order |
 | Native review before shipping | recommended |
 
 ## Audience and register
@@ -133,17 +133,17 @@
 | friends.boost | Bonus +{percent}% untuk setiap teman di server ini | "your server" = the server you are in; avoids "server-mu" |
 
 ## Sources
-1. Microsoft Indonesian Localization Style Guide -- https://download.microsoft.com/download/c/2/8/c2804555-f6ed-4db9-9e3b-ddf754159bd3/ind-idn-StyleGuide.pdf
-2. Unicode CLDR language plural rules chart -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-3. CLDR JSON, Indonesian units, numbers, quotation marks and date/time formats -- https://github.com/unicode-org/cldr-json/tree/main/cldr-json (main/id: units.json, numbers.json, delimiters.json, ca-gregorian.json)
-4. Roblox client CoreScript translations, id column (ExtraContent/translations/CoreScriptLocalization.csv, Roblox build of 2026-11-05) -- local file from the Roblox install
-5. Roblox Help (id), account safety (older "Anda" style) -- https://en.help.roblox.com/hc/id/articles/203313380-Menjaga-Keamanan-Akun-Anda
-6. Roblox Help (id), redeeming gift cards ("kamu", "me-redeem") -- https://en.help.roblox.com/hc/id/articles/115005566223-Cara-me-redeem-dan-menggunakan-Gift-Card
-7. roblox.com game page in Indonesian, Adopt Me ("Favorit", "Toko", "Teratas", "pas", "pengalaman virtual", "hewan peliharaan") -- https://www.roblox.com/id/games/920587237/Adopt-Me
-8. Roblox Creator docs (id-id, AI-translated), Passes -- https://create.roblox.com/docs/id-id/production/monetization/passes
-9. EYD V, capital letters (titles, "Anda") -- https://ejaan.kemendikdasmen.go.id/eyd/penggunaan-huruf/huruf-kapital/
-10. Duniagames, Pet Simulator 99 rank-up guide (kept English terms, "kamu") -- https://duniagames.co.id/amp/discover/article/rank-up-cepat-pet-simulator-99-roblox/en
-11. Duniagames, what a Roblox Gamepass is ("Gamepass", "XP ganda") -- https://duniagames.co.id/amp/discover/article/apa-itu-gamepass-roblox-ini-fungsi-dan-cara-membuatnya
-12. IDN Times Duniaku, Roblox for beginners ("teman", "koneksi", "komunitas", "item") -- https://duniaku.idntimes.com/game/mobile/cara-bermain-roblox-untuk-pemula-v3z02-00-b8vrp-xxl3b0
-13. KBBI entries "hoki", "percuma", "ganjaran" -- https://kbbi.kemendikdasmen.go.id/entri/hoki (same path for the others)
-14. EYD V, hyphen with affixes on foreign words ("mem-back up") -- https://ejaan.kemendikdasmen.go.id/eyd/penggunaan-tanda-baca/tanda-hubung/
+1. Microsoft Indonesian Localization Style Guide: https://download.microsoft.com/download/c/2/8/c2804555-f6ed-4db9-9e3b-ddf754159bd3/ind-idn-StyleGuide.pdf
+2. Unicode CLDR language plural rules chart: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+3. CLDR JSON, Indonesian units, numbers, quotation marks and date/time formats: https://github.com/unicode-org/cldr-json/tree/main/cldr-json (main/id: units.json, numbers.json, delimiters.json, ca-gregorian.json)
+4. Roblox client CoreScript translations, id column (ExtraContent/translations/CoreScriptLocalization.csv, Roblox build of 2026-11-05): local file from the Roblox install
+5. Roblox Help (id), account safety (older "Anda" style): https://en.help.roblox.com/hc/id/articles/203313380-Menjaga-Keamanan-Akun-Anda
+6. Roblox Help (id), redeeming gift cards ("kamu", "me-redeem"): https://en.help.roblox.com/hc/id/articles/115005566223-Cara-me-redeem-dan-menggunakan-Gift-Card
+7. roblox.com game page in Indonesian, Adopt Me ("Favorit", "Toko", "Teratas", "pas", "pengalaman virtual", "hewan peliharaan"): https://www.roblox.com/id/games/920587237/Adopt-Me
+8. Roblox Creator docs (id-id, AI-translated), Passes: https://create.roblox.com/docs/id-id/production/monetization/passes
+9. EYD V, capital letters (titles, "Anda"): https://ejaan.kemendikdasmen.go.id/eyd/penggunaan-huruf/huruf-kapital/
+10. Duniagames, Pet Simulator 99 rank-up guide (kept English terms, "kamu"): https://duniagames.co.id/amp/discover/article/rank-up-cepat-pet-simulator-99-roblox/en
+11. Duniagames, what a Roblox Gamepass is ("Gamepass", "XP ganda"): https://duniagames.co.id/amp/discover/article/apa-itu-gamepass-roblox-ini-fungsi-dan-cara-membuatnya
+12. IDN Times Duniaku, Roblox for beginners ("teman", "koneksi", "komunitas", "item"): https://duniaku.idntimes.com/game/mobile/cara-bermain-roblox-untuk-pemula-v3z02-00-b8vrp-xxl3b0
+13. KBBI entries "hoki", "percuma", "ganjaran": https://kbbi.kemendikdasmen.go.id/entri/hoki (same path for the others)
+14. EYD V, hyphen with affixes on foreign words ("mem-back up"): https://ejaan.kemendikdasmen.go.id/eyd/penggunaan-tanda-baca/tanda-hubung/

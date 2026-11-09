@@ -11,8 +11,8 @@ mistakes; find them. Do not rewrite what is already right: a different
 correct wording is not a fix.
 
 Read:
-1. `{SKILL}/references/locales/{LOCALE}.md` -- the language guide.
-2. `{SKILL}/references/quality-rubric.md` -- categories, severities, pass bar.
+1. `{SKILL}/references/locales/{LOCALE}.md`: the language guide.
+2. `{SKILL}/references/quality-rubric.md`: categories, severities, pass bar.
 3. `{WORK}/context.json`, `{WORK}/glossary.json`,
    `{WORK}/locales/{LOCALE}/terms.json`.
 4. For the keys in `batch-{NN}.todo.json`: the source in `source.json`, the

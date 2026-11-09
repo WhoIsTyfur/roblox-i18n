@@ -1,12 +1,13 @@
-# <Language name> (<locale-id>) -- translation guide
+# <Language name> (<locale-id>) translation guide
 
 <!--
 Template for every locale guide. Keep the headings exactly. Target 120-180 lines.
 Write for a translator agent that is fluent but has never shipped a Roblox game
 in this language. Every rule must be specific and actionable; no filler, no
 general advice that holds for every language. Cite sources in the last section.
-ASCII punctuation in English prose (--, ->, straight quotes); the language's own
-characters in examples, always with its real accents and script.
+English prose: straight quotes, no dashes (rephrase with a comma, colon or
+parentheses). Examples use the language's own characters, always with its
+real accents and script.
 -->
 
 ## At a glance
@@ -17,7 +18,7 @@ characters in examples, always with its real accents and script.
 | Address the player as | <e.g. informal "tu"; never "vous"> |
 | Text expansion vs English | <e.g. +20-35%, buttons up to +50%> |
 | Plural categories (CLDR) | <e.g. one, many, other> |
-| Model confidence | <high / medium / low> -- <one line why> |
+| Model confidence | <high / medium / low>: <one line why> |
 | Native review before shipping | <recommended / strongly recommended / optional> |
 
 ## Audience and register
@@ -32,7 +33,7 @@ pass, developer product, experience/game, obby, tycoon, simulator, rebirth,
 pet, egg/hatch, coins, gems, boost, multiplier, XP, level up, quest,
 leaderboard, AFK, noob, OP, VIP, trade, inventory/backpack, daily reward,
 codes, group, like/favorite, server, friends (Roblox renamed friends to
-"connections" in some UI -- say what this locale's Roblox UI shows). Say which
+"connections" in some UI; say what this locale's Roblox UI shows). Say which
 stay in English (and in which script), which translate, and which are written
 both ways by real players. Prefer what Roblox's own UI in this language uses
 for platform terms.>

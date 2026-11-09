@@ -1,4 +1,4 @@
-# Japanese (ja-jp) -- translation guide
+# Japanese (ja-jp) translation guide
 
 ## At a glance
 | | |
@@ -8,7 +8,7 @@
 | Address the player as | no pronoun at all; not あなた (stiff, though Roblox's system text uses it), never 君 or お客様 |
 | Text expansion vs English | 40-60% of the English character count, but each character is wide: pixel width about equal overall (measured on the reference set: Builder Sans +5%, Fredoka One -4%); short katakana labels up to +50% (ショップ vs Shop) |
 | Plural categories (CLDR) | other (only one form) |
-| Model confidence | high -- plenty of training data; the usual misses are register, kanji level and gaming terms |
+| Model confidence | high: plenty of training data; the usual misses are register, kanji level and gaming terms |
 | Native review before shipping | recommended |
 
 ## Audience and register
@@ -145,15 +145,15 @@ Checked 2026-11-08 in Studio and in the PC client files; mobile clients unverifi
 | friends.boost | サーバー内の友達1人につき+{percent}%ブースト | 友達, Roblox's ja word for friends |
 
 ## Sources
-1. Microsoft Japanese Localization Style Guide -- https://aka.ms/japanese-styleguide
-2. CLDR Language Plural Rules -- https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-3. Roblox game page in Japanese (Adopt Me!) and the ja localization bundles it loads (いいね, 投票, コミュニティ, 友達, 参加, ランキング) -- https://www.roblox.com/ja/games/920587237/Adopt-Me
-4. Roblox Creator docs ja-jp, Passes -- https://create.roblox.com/docs/ja-jp/production/monetization/passes
-5. Roblox Creator docs ja-jp, Engagement-based payouts -- https://create.roblox.com/docs/ja-jp/production/monetization/engagement-based-payouts
-6. Roblox Creator docs ja-jp, Automatic translations -- https://create.roblox.com/docs/ja-jp/production/localization/automatic-translations
-7. DevForum, "Friends Are Back!" (2026-04-02) -- https://devforum.roblox.com/t/friends-are-back-expanding-trusted-friends-for-a-new-way-to-chat-and-play/4554217/1
-8. Japanese Wikipedia, Roblox -- https://ja.wikipedia.org/wiki/Roblox
-9. Japanese beginner's guide to Roblox (obby = アスレチック) -- https://lifestyle.assist-all.co.jp/?p=74572
-10. DevForum, "Add more CJK fonts..." (2026-04-09) -- https://devforum.roblox.com/t/add-more-cjk-fonts-as-well-as-different-font-properties-for-each-language/4566304
-11. Roblox PC client, read 2026-11-08: ExtraContent/translations/CoreScriptLocalization.csv (in-game ja UI: 友達, つながり, バックパック, スコアボード, 購入, 読み込み中...) and PlatformContent/pc/fonts/NotoSansCJKjp-Regular.otf -- shipped with every client install
-12. Studio tests, 2026-11-08: TextService bounds and screen captures of Japanese with <b>, Bold weight and TextWrapped -- run for this guide
+1. Microsoft Japanese Localization Style Guide: https://aka.ms/japanese-styleguide
+2. CLDR Language Plural Rules: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+3. Roblox game page in Japanese (Adopt Me!) and the ja localization bundles it loads (いいね, 投票, コミュニティ, 友達, 参加, ランキング): https://www.roblox.com/ja/games/920587237/Adopt-Me
+4. Roblox Creator docs ja-jp, Passes: https://create.roblox.com/docs/ja-jp/production/monetization/passes
+5. Roblox Creator docs ja-jp, Engagement-based payouts: https://create.roblox.com/docs/ja-jp/production/monetization/engagement-based-payouts
+6. Roblox Creator docs ja-jp, Automatic translations: https://create.roblox.com/docs/ja-jp/production/localization/automatic-translations
+7. DevForum, "Friends Are Back!" (2026-04-02): https://devforum.roblox.com/t/friends-are-back-expanding-trusted-friends-for-a-new-way-to-chat-and-play/4554217/1
+8. Japanese Wikipedia, Roblox: https://ja.wikipedia.org/wiki/Roblox
+9. Japanese beginner's guide to Roblox (obby = アスレチック): https://lifestyle.assist-all.co.jp/?p=74572
+10. DevForum, "Add more CJK fonts..." (2026-04-09): https://devforum.roblox.com/t/add-more-cjk-fonts-as-well-as-different-font-properties-for-each-language/4566304
+11. Roblox PC client, read 2026-11-08: ExtraContent/translations/CoreScriptLocalization.csv (in-game ja UI: 友達, つながり, バックパック, スコアボード, 購入, 読み込み中...) and PlatformContent/pc/fonts/NotoSansCJKjp-Regular.otf: shipped with every client install
+12. Studio tests, 2026-11-08: TextService bounds and screen captures of Japanese with <b>, Bold weight and TextWrapped: run for this guide
