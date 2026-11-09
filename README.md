@@ -51,14 +51,20 @@ Swedish and Ukrainian.
         |
    5. per locale, in waves:
         translator ......... uses that language's guide; notes every non-literal choice
-        back-translator .... sees ONLY the translation, never the English; says what it really says
-        reviewer ........... compares source, translation and blind back-translation; fixes with reasons
+        back-translator .... sees ONLY the translation, never the English or the keys; says what it really says
+        reviewer ........... compares source, translation, blind back-translation and lint; fixes with reasons
         resolve round ...... translator answers each major fix; leftovers go to you or a native speaker
         |
-   6. lint ................. params, rich-text tags, script, zh-tw/zh-cn leaks, Zawgyi, length, keep-terms
-   7. export ............... CSV split at 1,000 rows / Rojo CSV in place / Studio load chunks
+   6. lint ................. params, rich-text tags, numbers, script, zh-tw/zh-cn leaks, Zawgyi, length, keep-terms
+   7. export ............... CSV split at 1,000 rows or 2 MB / Rojo CSV in place / Studio load chunks
    8. verify + report ...... check the written CSV; FormatByKey per locale in Studio; native-review list
 ```
+
+Translators, back-translators and reviewers each read a small file the tool
+builds for their batch, never the whole table, so a batch costs the same
+context in a large game as in a small one. The tool also checks each file
+an agent writes before the next agent starts, and names the file and the
+problem when one is broken.
 
 ### The language guides
 
@@ -226,6 +232,13 @@ report.
 - Final lint: 49 locales, 0 errors, 0 warnings.
 - The run also found and fixed three bugs in the tool itself.
 
+The example is a record of that run, so its batch files show the layout of
+the day: agents read `context.json` directly, and the back-translators'
+input was keyed by the real keys. Today's runs add `batch-NN.in.json` and
+`batch-NN.reviewin.json` and hide the keys from the back-translator. The
+tests replay the example through the current tool and expect the same
+`translated.csv`.
+
 ## Limits
 
 - Models are much stronger in some languages than others. Burmese, Khmer,
@@ -239,6 +252,9 @@ report.
   columns; if an upload rejects them, `export csv --columns language` writes
   one column per language.
 - Roblox has no plural or gender selection; the skill phrases around it.
+- One context analyst describes every string. That is tested at 40 strings;
+  a table of many hundreds needs the analyst run in parts, which the skill
+  does not automate yet.
 
 ## Tool reference
 
@@ -247,7 +263,9 @@ python scripts/i18n.py locales <single|main|all> [target]
 python scripts/i18n.py ingest csv <file> [--rojo] [--source en-us]
 python scripts/i18n.py ingest studio <dump.json ...>
 python scripts/i18n.py plan <mode> [target] [--retranslate] [--audit] [--batch 150]
+python scripts/i18n.py pack
 python scripts/i18n.py backpack <locale> <batch>
+python scripts/i18n.py reviewpack <locale> <batch>
 python scripts/i18n.py apply <locale> [--resolve]
 python scripts/i18n.py lint [locale ...]
 python scripts/i18n.py check <exported.csv>
@@ -257,11 +275,13 @@ python scripts/i18n.py studio dump|verify
 python scripts/i18n.py status | report
 ```
 
-Tests: `python -m unittest discover -s tests`.
+Tests: `python -m unittest discover -s tests`. They cover the tool and run
+its linter over every guide's reference translations.
 
 ## Contributing
 
 The most valuable contribution is a native speaker improving a guide in
 `references/locales/`: a gaming word players really use, a wrong rule, a
 better reference translation. Open a pull request with the change and, if
-you can, a source.
+you can, a source. Run the tests first: they fail when a guide loses a
+heading, a reference row or a `{param}`.

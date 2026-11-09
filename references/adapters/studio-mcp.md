@@ -43,4 +43,8 @@ cloud table for the same strings, keep one home per string.
 `FormatByKey(key, sampleArgs)` for every translated key and compares the
 result with the expected text; it also checks fallback locales es-419,
 fr-be and pt-ao. Every mismatch or throw is a bug: a missing column, a
-renamed `{param}`, or a key that differs from the table.
+renamed `{param}`, or a key that differs from the table. Sample values go
+in as strings, because a Lua number in a plain `{param}` renders as
+`99.00`. A string with a format specifier (`{price:int}`) gets a number and
+is only checked for a throw, since its output is formatted per locale.
+Entries with no Key cannot be looked up by key and are skipped.

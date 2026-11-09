@@ -16,7 +16,8 @@ CSV-only job; work files go to `.roblox-i18n/` there. To put them
 elsewhere, pass `--work <folder>` before the command:
 `i18n.py --work <folder> plan main`. File formats: `references/pipeline.md`.
 
-The agent briefs in `references/agents/` use placeholders: `{SKILL}` is
+An agent's brief is the text below the `---` line of its file in
+`references/agents/`, with the placeholders filled in: `{SKILL}` is
 `<skill>`, `{WORK}` the work folder, `{LOCALE}` a locale id (`es-mx`),
 `{LOCALE_NAME}` its name from `data/locales.json`, and `{NN}` the batch
 number with two digits (`01`, as in `batch-01.draft.json`). Commands take
@@ -39,6 +40,7 @@ user means? Ask once; default `single` for one named language.
      Studio Localization Tools: `i18n.py ingest csv <file>`.
    - Rojo project with `.csv` LocalizationTables: `i18n.py ingest csv <file> --rojo`.
    - Live Studio over an MCP with `execute_luau`: `references/adapters/studio-mcp.md`.
+   Add `--source <locale>` when the game's own text is not US English.
    Check: `i18n.py status` shows the string count and existing translations
    per locale. Zero strings means the wrong file or table; stop and ask.
 
@@ -76,22 +78,40 @@ user means? Ask once; default `single` for one named language.
    each string shows, UI role, length budget, parameter meanings and sample
    values, strings on the same screen) and `glossary.json` (every game term
    with a translate / keep / transliterate decision and reason). Rules:
-   `references/context-and-dnt.md`.
+   `references/context-and-dnt.md`. When both files exist from an earlier
+   run, the analyst only adds the strings and terms that are new.
    **Checkpoint:** show the user the tone line, the keep-list and any term
    whose decision was a judgment call; apply their edits. Skip only if they
    said not to ask; then every `"ask": true` term keeps the analyst's
    proposed decision, set `ask` to false, and list those terms in the final
    summary. A wrong glossary entry repeats in every language.
+   Then `i18n.py pack`: it stops if a string has no context or a glossary
+   decision is invalid, and writes each batch's translator input
+   (`batch-NN.in.json`: only that batch's strings, with their context and
+   how the strings next to them already read in that locale). Run it again
+   after any edit to `context.json`.
 
 5. **Translate, per locale.** Waves of up to 8 locales at a time. For each
    locale and batch, three separate agents, in order:
-   1. **Translator** (`references/agents/translator.md`) -> `draft.json`.
+   1. **Translator** (`references/agents/translator.md`) reads
+      `batch-NN.in.json` -> `draft.json`. Skip it when the batch's `mode`
+      is `audit`: `plan` already wrote the existing translation as the
+      draft.
    2. **Back-translator** (`references/agents/back-translator.md`): run
       `i18n.py backpack <locale> <batch>` first; the agent reads only that
-      file (draft text and UI roles, never the source) -> `back.json`.
-   3. **Reviewer** (`references/agents/reviewer.md`) -> `review.json`.
+      file (draft text under ids like `s001` with UI roles; never the
+      source, and never the keys, which name the English) -> `back.json`.
+   3. **Reviewer** (`references/agents/reviewer.md`): run
+      `i18n.py reviewpack <locale> <batch>` first; it joins source,
+      context, draft, back-translation and lint findings per string into
+      `batch-NN.reviewin.json`, and stops if the draft or back-translation
+      is incomplete -> `review.json`.
    Never let one agent do two of these roles for the same locale.
-   Then `i18n.py apply <locale>` builds `final.json` and lints it.
+   Then `i18n.py apply <locale>` builds `final.json` and lints it. When a
+   command rejects an agent's file, fix a JSON syntax slip yourself; for
+   missing or wrong content, run that agent again with the error. If the
+   run stops midway, `i18n.py status` shows which files each batch has;
+   continue from the first missing one.
    **Resolve round** (only if the reviewer marked a major issue, or lint
    failed): a fresh translator agent gets the draft, review and lint output
    and answers each disputed key (`references/agents/translator.md`,
@@ -103,15 +123,20 @@ user means? Ask once; default `single` for one named language.
    shipped silently.
 
 6. **Check everything.** `i18n.py lint` across all locales: placeholders and
-   rich-text tags match the source, no empty values, expected script present,
-   no Simplified characters in zh-tw (or Traditional in zh-cn), no Zawgyi in
-   Burmese, no cedilla s/t in Romanian, glossary keep-terms intact, lengths
-   within budget, no unexplained copies of the source. Fix every error;
-   warnings need a reason in the report.
+   rich-text tags (attributes included) match the source, no empty values,
+   expected script present, no Simplified characters in zh-tw (or
+   Traditional in zh-cn), no Zawgyi in Burmese, no cedilla s/t in Romanian,
+   glossary keep-terms intact, lengths within budget, numbers match the
+   source unless a note explains, no unexplained copies of the source. Fix
+   every error; warnings need a reason in the report.
 
-7. **Write it back.** Same adapter as step 1:
+7. **Write it back.** After `plan --audit`, a reviewer fix would replace a
+   human translation: run `i18n.py report` first, show the user its
+   "changes to existing translations" list and export only with their yes
+   (to keep a translation they prefer, write it to `decisions.json` and
+   apply again). Same adapter as step 1:
    - `i18n.py export csv --out <file>`: Creator Hub upload files, split at
-     1,000 changed rows each (Roblox's per-upload limit).
+     1,000 changed rows or 2 MB each (Roblox's per-upload limits).
    - `i18n.py export csv --rojo <file>`: rewrites the Rojo CSV in place.
    - `i18n.py export studio`: Luau chunks for `execute_luau`
      (`references/adapters/studio-mcp.md`).

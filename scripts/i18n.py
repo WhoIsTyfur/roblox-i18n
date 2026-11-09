@@ -17,11 +17,24 @@ BATCH_SIZE = 150
 CSV_MAX_CHANGED = 1000
 CSV_MAX_ENTRIES = 10000
 CSV_MAX_BYTES = 2 * 1024 * 1024
-META_COLUMNS = ("key", "source", "context", "example")
+META_COLUMNS = ("key", "source", "context", "example", "location")
+DECISIONS = ("translate", "keep", "transliterate")
+SEVERITIES = ("minor", "major", "critical")
+# Number specifiers take a Lua number; FormatByKey output for them is locale-formatted.
+NUMBER_SPECS = ("int", "fixed", "num", "hex", "datetime", "iso8601", "shorttime", "shortdatetime", "shortdate")
+ALIASES = {
+    "brazilian": "pt-br", "brazilian portuguese": "pt-br", "european portuguese": "pt-pt",
+    "latin american spanish": "es-mx", "latam spanish": "es-mx", "mexican spanish": "es-mx", "es-419": "es-mx",
+    "castilian": "es-es", "european spanish": "es-es", "british english": "en-gb", "uk english": "en-gb",
+    "american english": "en-us", "canadian french": "fr-ca", "quebec french": "fr-ca",
+    "tagalog": "fil-ph", "myanmar": "my-mm", "cambodian": "km-kh", "sinhalese": "si-lk",
+}
 
 LANG_COL_RE = re.compile(r"^[a-z]{2,3}(-[a-z0-9]{2,4})?$")
 PARAM_RE = re.compile(r"\{[^{}]*\}")
 TAG_RE = re.compile(r"<\s*(/?)\s*([A-Za-z]+)[^<>]*?(/?)>")
+# A key that reads as an identifier (hud.reel, shop_buy, buyButton), not as a plain word.
+KEYISH_RE = re.compile(r"[._:/-]|[a-z][A-Z]|\d")
 
 SIMPLIFIED_ONLY = set(
     "这个们时间级买卖宠币奖励设关开让说请进还选择输码无过满宝龙点击战剑欢组队务动线经验场东车门问题页钱头发现实体机会来对从张长号数当双获胜败赢购礼积为与"
@@ -60,8 +73,23 @@ def read_json(path, default=None):
         if default is not None:
             return default
         raise Fail("missing file: " + path)
-    with open(path, encoding="utf-8-sig") as f:
-        return json.load(f)
+    try:
+        with open(path, encoding="utf-8-sig") as f:
+            return json.load(f)
+    except ValueError as e:
+        raise Fail("invalid JSON in %s: %s" % (path, e))
+
+
+def json_object(path, default=None):
+    data = read_json(path, default)
+    if not isinstance(data, dict):
+        raise Fail("%s must hold a JSON object" % path)
+    return data
+
+
+def preview(items, limit=8):
+    items = list(items)
+    return ", ".join(str(i) for i in items[:limit]) + (" ... (%d more)" % (len(items) - limit) if len(items) > limit else "")
 
 
 def write_json(path, data):
@@ -96,8 +124,13 @@ def norm(s):
     return "".join(c for c in s if not unicodedata.combining(c)).strip()
 
 
+def words(s):
+    return set(re.findall(r"\w+", norm(s)))
+
+
 def resolve_single(target, locales):
-    t = norm(target)
+    t = norm(target).replace("_", "-")
+    t = ALIASES.get(t, t)
     exact = [l for l in locales if l["id"] == t]
     if exact:
         return exact
@@ -109,6 +142,9 @@ def resolve_single(target, locales):
             names.add("zh")
         if t in names:
             found.append(l)
+    if not found:
+        # "simplified chinese", "norwegian": every word of the ask appears in the name.
+        found = [l for l in locales if words(t) and words(t) <= words(l["name"])]
     if not found:
         raise Fail("unknown language or locale: %s (try `locales all`)" % target)
     return found
@@ -193,8 +229,21 @@ def shash(source, context):
     return hashlib.sha1((source + "\x1f" + (context or "")).encode("utf-8")).hexdigest()[:12]
 
 
-def entry_id(key, source):
-    return key if key else source
+def entry_id(key, source, context=""):
+    # Roblox identifies an entry with no Key by Source plus Context.
+    if key:
+        return key
+    return source + " | " + context if context else source
+
+
+def is_keyless(s):
+    # Work folders from before the flag existed can only guess from Key == Source.
+    return s.get("keyless", s["key"] == s["source"])
+
+
+def blind_ids(keys):
+    # Keys name the English ("hud.reel"), so the back-translator gets ids that say nothing.
+    return {k: "s%03d" % i for i, k in enumerate(keys, 1)}
 
 
 # ---------- csv ----------
@@ -254,16 +303,20 @@ def cmd_locales(a):
 def ingest_rows(work, source_locale, rows_meta, adapter, path):
     strings, existing = [], {}
     seen = set()
-    for key, source, context, example, values in rows_meta:
+    for key, source, context, example, values, location in rows_meta:
         if not source:
             continue
-        eid = entry_id(key, source)
+        eid = entry_id(key, source, context)
         if eid in seen:
-            raise Fail("duplicate entry %r: Roblox requires unique Key and unique Source+Context" % eid)
+            raise Fail("duplicate entry %r: Roblox needs a unique Key, or a unique Source+Context "
+                       "for entries with no Key" % eid)
         seen.add(eid)
-        strings.append({"key": eid, "source": source, "context": context, "example": example,
-                        "hash": shash(source, context)})
-        vals = {c: v for c, v in values.items() if v.strip()}
+        item = {"key": eid, "source": source, "context": context, "example": example,
+                "hash": shash(source, context), "keyless": not key}
+        if location:
+            item["location"] = location
+        strings.append(item)
+        vals = {c: v for c, v in values.items() if isinstance(v, str) and v.strip()}
         if vals:
             existing[eid] = vals
     write_json(work.p("source.json"), {"source_locale": source_locale, "strings": strings})
@@ -284,8 +337,9 @@ def cmd_ingest(a):
         rows = []
         for r in c["rows"]:
             g = lambda n: r[idx[n]] if n in idx else ""
-            rows.append((g("key"), g("source"), g("context"), g("example"), {col: r[i] for i, col in lang_cols}))
-        ingest_rows(work, a.source, rows, "rojo" if a.rojo else "csv", a.paths[0])
+            rows.append((g("key"), g("source"), g("context"), g("example"), {col: r[i] for i, col in lang_cols},
+                         g("location")))
+        ingest_rows(work, a.source.lower(), rows, "rojo" if a.rojo else "csv", a.paths[0])
     elif a.kind == "studio":
         rows, source_locale, table = [], a.source, None
         for path in a.paths:
@@ -293,8 +347,8 @@ def cmd_ingest(a):
             source_locale = (d.get("sourceLocaleId") or source_locale).lower()
             table = d.get("table", table)
             for e in d.get("entries", []):
-                rows.append((e.get("Key", ""), e.get("Source", ""), e.get("Context", ""), e.get("Example", ""),
-                             {k.lower(): v for k, v in (e.get("Values") or {}).items()}))
+                rows.append((e.get("Key") or "", e.get("Source") or "", e.get("Context") or "",
+                             e.get("Example") or "", {k.lower(): v for k, v in (e.get("Values") or {}).items()}, ""))
         ingest_rows(work, source_locale, rows, "studio", None)
         cfg = work.config()
         cfg["table"] = table
@@ -335,12 +389,21 @@ def cmd_plan(a):
     src = work.source()
     source_locale = src["source_locale"]
     targets = target_locales(a.mode, a.target, source_locale, locales)
+    if a.batch < 1:
+        raise Fail("--batch must be 1 or more")
     existing, state = work.existing(), work.state()
     plan = {"mode": a.mode, "target": a.target, "source_locale": source_locale,
             "locales": [l["id"] for l in targets], "batches": {}}
-    total_batches = 0
+    src_keys = {s["key"] for s in src["strings"]}
+    total_batches = runs = 0
+    planned = set()
     for loc in targets:
-        final = read_json(work.loc(loc["id"], "final.json"), {})
+        final_path = work.loc(loc["id"], "final.json")
+        final = read_json(final_path, {})
+        # A string deleted from the game would otherwise sit in final.json and fail lint forever.
+        if any(k not in src_keys for k in final):
+            final = {k: v for k, v in final.items() if k in src_keys}
+            write_json(final_path, final)
         todo, audit = [], []
         for s in src["strings"]:
             k = s["key"]
@@ -374,34 +437,268 @@ def cmd_plan(a):
         n = len(new_todos)
         plan["batches"][loc["id"]] = n
         total_batches += n
+        for t in new_todos:
+            runs += 3 if t["mode"] == "translate" else 2
+            planned.update(t["keys"])
     write_json(work.p("plan.json"), plan)
-    runs = total_batches * 3 + (1 if total_batches else 0)
+    ctx = work.context().get("strings", {})
+    no_context = [k for k in planned if k not in ctx]
+    runs += 1 if no_context else 0
     busy = [l for l in plan["locales"] if plan["batches"][l]]
     out("mode %s: %d locales, %d need work, %d batches" % (a.mode, len(targets), len(busy), total_batches))
     for l in busy:
         out("  %-7s %d batch(es)" % (l, plan["batches"][l]))
-    out("agent runs: about %d (context analyst + translator, back-translator, reviewer per batch; "
-        "+1 per batch that needs a resolve round)" % runs)
+    out("agent runs: about %d (translator, back-translator, reviewer per batch; audit batches skip the "
+        "translator; +1 per batch that needs a resolve round)" % runs)
+    if no_context:
+        out("context analyst needed: %d string(s) have no context entry yet (counted above)" % len(no_context))
+
+
+def param_names(text):
+    return [p[1:-1].split(":")[0] for p in PARAM_RE.findall(text)]
+
+
+def glossary_terms(work, decision=None):
+    return [t["term"] for t in work.glossary().get("terms", [])
+            if isinstance(t, dict) and isinstance(t.get("term"), str) and t["term"]
+            and (decision is None or t.get("decision") == decision)]
+
+
+def check_inputs(work, keys):
+    """Problems in context.json and glossary.json that would repeat in every locale."""
+    src = {s["key"]: s for s in work.source()["strings"]}
+    if not os.path.exists(work.p("context.json")):
+        raise Fail("no context.json yet: run the context analyst first")
+    strings = json_object(work.p("context.json")).get("strings")
+    if not isinstance(strings, dict):
+        raise Fail('context.json needs a "strings" object keyed by string key')
+    errors, warns = [], []
+    missing = [k for k in keys if not isinstance(strings.get(k), dict)]
+    if missing:
+        errors.append("%d string(s) have no context entry: %s" % (len(missing), preview(missing)))
+    for k in keys:
+        c = strings.get(k)
+        if not isinstance(c, dict):
+            continue
+        if not c.get("where") or not c.get("role"):
+            errors.append("%s: context needs both where and role" % k)
+        mx = c.get("max")
+        if mx is not None and (isinstance(mx, bool) or not isinstance(mx, (int, float)) or mx <= 0):
+            errors.append("%s: max must be a positive number or null, got %r" % (k, mx))
+        params = c.get("params") if isinstance(c.get("params"), dict) else {}
+        unknown = sorted(n for n in set(param_names(src[k]["source"])) if n not in params)
+        if unknown:
+            warns.append("%s: no meaning or sample for {%s}" % (k, "}, {".join(unknown)))
+    terms = work.glossary().get("terms")
+    if not isinstance(terms, list):
+        raise Fail('glossary.json needs a "terms" list')
+    for t in terms:
+        if not isinstance(t, dict) or not isinstance(t.get("term"), str) or not t["term"].strip():
+            errors.append("glossary entry without a term: %r" % (t,))
+        elif t.get("decision") not in DECISIONS:
+            errors.append("glossary term %r: decision must be translate, keep or transliterate" % t["term"])
+    asks = [t["term"] for t in terms if isinstance(t, dict) and t.get("ask")]
+    if asks:
+        warns.append("%d glossary term(s) still marked ask (checkpoint not done?): %s" % (len(asks), preview(asks)))
+    return errors, warns
+
+
+def current_translations(work, loc, src, skip):
+    """What players already read in this locale, so new strings can match it."""
+    final = read_json(work.loc(loc["id"], "final.json"), {})
+    existing = work.existing()
+    result = {}
+    for k, s in src.items():
+        if k in skip:
+            continue
+        f = final.get(k, {})
+        if f.get("source_hash") == s["hash"] and f.get("text"):
+            result[k] = f["text"]
+        else:
+            ex = existing_for(existing.get(k, {}), loc, None)
+            if ex:
+                result[k] = ex
+    return result
+
+
+def batch_pack(work, loc, todo, src, ctx, translated):
+    strings = {}
+    for k in todo["keys"]:
+        s, c = src[k], ctx.get("strings", {}).get(k, {})
+        item = {"source": s["source"]}
+        for f in ("example", "location"):
+            if s.get(f):
+                item[f] = s[f]
+        for f in ("where", "role", "max", "params", "notes"):
+            if c.get(f) not in (None, "", {}, []):
+                item[f] = c[f]
+        near = []
+        for nk in c.get("neighbors") or []:
+            if nk in src and nk != k:
+                n = {"key": nk, "source": src[nk]["source"]}
+                if nk in translated:
+                    n["translation"] = translated[nk]
+                near.append(n)
+        if near:
+            item["neighbors"] = near
+        strings[k] = item
+    return {"locale": loc["id"], "locale_name": loc["name"], "batch": todo["batch"], "mode": todo["mode"],
+            "game": ctx.get("game", {}), "strings": strings}
+
+
+def pack_parts(work, locale):
+    loc = locale_by_id(load_locales()).get(locale)
+    if not loc:
+        raise Fail("unknown locale " + locale)
+    src = {s["key"]: s for s in work.source()["strings"]}
+    todos = {n: read_json(work.batch(locale, n, "todo")) for n in work.batches(locale)}
+    gone = [k for t in todos.values() for k in t["keys"] if k not in src]
+    if gone:
+        raise Fail("%s: planned key(s) no longer in source.json, run plan again: %s" % (locale, preview(gone)))
+    skip = {k for t in todos.values() for k in t["keys"]}
+    return loc, src, todos, current_translations(work, loc, src, skip)
+
+
+def cmd_pack(a):
+    work = Work(a.work)
+    plan = read_json(work.p("plan.json"))
+    locs = [l for l in plan["locales"] if work.batches(l)]
+    keys = []
+    for l in locs:
+        for n in work.batches(l):
+            keys += read_json(work.batch(l, n, "todo"))["keys"]
+    keys = list(dict.fromkeys(keys))
+    known = {s["key"] for s in work.source()["strings"]}
+    errors, warns = check_inputs(work, [k for k in keys if k in known])
+    for m in warns:
+        out("warn  " + m)
+    for m in errors:
+        out("ERROR " + m)
+    if errors:
+        raise Fail("fix context.json or glossary.json, then run pack again")
+    ctx = work.context()
+    count = 0
+    for l in locs:
+        loc, src, todos, translated = pack_parts(work, l)
+        for n, todo in todos.items():
+            write_json(work.batch(l, n, "in"), batch_pack(work, loc, todo, src, ctx, translated))
+            count += 1
+    out("pack: %d batch input file(s) for %d locale(s), %d string(s) checked" % (count, len(locs), len(keys)))
+
+
+def agent_object(path, wrapper, expected=(), default=None):
+    """An agent's output file. Agents often copy the wrapper of their input around the entries; drop it."""
+    data = json_object(path, default)
+    inner = data.get(wrapper)
+    if isinstance(inner, dict) and not any(k in data for k in expected):
+        write_json(path, inner)
+        out("note: %s had its entries under \"%s\"; rewrote it flat" % (path, wrapper))
+        return inner
+    return data
+
+
+def load_terms(work, locale):
+    path = work.loc(locale, "terms.json")
+    terms = agent_object(path, "terms", default={})
+    if any(not isinstance(v, str) for v in terms.values()):
+        raise Fail('%s must be one flat object: {"glossary term": "rendering"}' % path)
+    return terms
+
+
+def load_draft(work, locale, n, todo):
+    path = work.batch(locale, n, "draft")
+    draft = agent_object(path, "strings", todo["keys"])
+    bad = [k for k in todo["keys"] if not isinstance(draft.get(k), dict)
+           or not isinstance(draft[k].get("text"), str) or not draft[k]["text"].strip()]
+    if bad:
+        raise Fail('%s: %d key(s) missing or without "text": %s' % (path, len(bad), preview(bad)))
+    return draft
+
+
+def load_back(work, locale, n, todo, required=True):
+    path = work.batch(locale, n, "back")
+    ids = blind_ids(todo["keys"])
+    raw = agent_object(path, "strings", list(ids.values()) + todo["keys"], None if required else {})
+    back = {}
+    for k in todo["keys"]:
+        v = raw.get(ids[k], raw.get(k))
+        if isinstance(v, str) and v.strip():
+            back[k] = v
+    missing = [ids[k] for k in todo["keys"] if k not in back]
+    if required and missing:
+        raise Fail("%s: no back-translation for %d string(s): %s" % (path, len(missing), preview(missing)))
+    return back
+
+
+def load_review(work, locale, n, todo):
+    path = work.batch(locale, n, "review")
+    review = agent_object(path, "strings", todo["keys"])
+    bad = []
+    for k in todo["keys"]:
+        r = review.get(k)
+        if not isinstance(r, dict) or r.get("verdict") not in ("ok", "fix"):
+            bad.append("%s (verdict must be ok or fix)" % k)
+        elif r["verdict"] == "fix" and (not isinstance(r.get("text"), str) or not r["text"].strip()):
+            bad.append("%s (a fix needs text)" % k)
+        elif r["verdict"] == "fix" and r.get("severity") not in SEVERITIES:
+            bad.append("%s (severity must be minor, major or critical)" % k)
+    if bad:
+        raise Fail("%s: %d bad entr%s: %s" % (path, len(bad), "y" if len(bad) == 1 else "ies", preview(bad)))
+    return review
+
+
+def scrub(where, hidden):
+    for t in hidden:
+        if not t:
+            continue
+        where = re.sub(r"(?<!\w)" + re.escape(t) + r"(?!\w)", "[name]", where, flags=re.I)
+    return where
 
 
 def cmd_backpack(a):
     work = Work(a.work)
     ctx = work.context().get("strings", {})
     todo = read_json(work.batch(a.locale, a.batch, "todo"))
-    draft = read_json(work.batch(a.locale, a.batch, "draft"))
-    src = {x["key"]: x["source"] for x in work.source()["strings"]}
-    terms = sorted((t["term"] for t in work.glossary().get("terms", []) if len(t["term"]) > 1), key=len, reverse=True)
+    draft = load_draft(work, a.locale, a.batch, todo)
+    load_terms(work, a.locale)
+    strings = work.source()["strings"]
+    src = {x["key"]: x["source"] for x in strings}
+    hidden = [t for t in glossary_terms(work) if len(t) > 1]
+    hidden +=[x["key"] for x in strings if not is_keyless(x) and KEYISH_RE.search(x["key"])]
+    hidden.sort(key=len, reverse=True)
+    ids = blind_ids(todo["keys"])
     pack = {}
     for k in todo["keys"]:
         c = ctx.get(k, {})
-        where = c.get("where", "")
         # The blind reader must not see source wording, even inside the context note.
-        for t in [src.get(k, "")] + terms:
-            if t:
-                where = re.sub(re.escape(t), "[name]", where, flags=re.I)
-        pack[k] = {"text": draft.get(k, {}).get("text", ""), "role": c.get("role", ""), "where": where}
+        where = scrub(c.get("where", ""), [src.get(k, "")] + hidden)
+        pack[ids[k]] = {"text": draft[k]["text"], "role": c.get("role", ""), "where": where}
     write_json(work.batch(a.locale, a.batch, "backin"), pack)
     out("wrote %s (%d strings)" % (work.batch(a.locale, a.batch, "backin"), len(pack)))
+
+
+def cmd_reviewpack(a):
+    work = Work(a.work)
+    todo = read_json(work.batch(a.locale, a.batch, "todo"))
+    draft = load_draft(work, a.locale, a.batch, todo)
+    back = load_back(work, a.locale, a.batch, todo)
+    loc, src, todos, translated = pack_parts(work, a.locale)
+    pack = batch_pack(work, loc, todo, src, work.context(), translated)
+    report = lint_items(work, a.locale, {k: draft[k] for k in todo["keys"]})
+    for k, item in pack["strings"].items():
+        d = draft[k]
+        item["text"] = d["text"]
+        for f in ("note", "confidence", "keep"):
+            if d.get(f):
+                item[f] = d[f]
+        item["back"] = back[k]
+        e, w = report.get(k, ([], []))
+        if e or w:
+            item["lint"] = ["ERROR: " + m for m in e] + ["warn: " + m for m in w]
+    path = work.batch(a.locale, a.batch, "reviewin")
+    write_json(path, pack)
+    flagged = sum(1 for i in pack["strings"].values() if i.get("lint"))
+    out("wrote %s (%d strings, %d with lint findings)" % (path, len(pack["strings"]), flagged))
 
 
 def visible(text):
@@ -415,7 +712,29 @@ def width(text):
 
 
 def tags(text):
-    return sorted((m.group(1) + m.group(2).lower()) for m in TAG_RE.finditer(text))
+    # Whole tag, so a translated or re-quoted attribute (<font color="rojo">) is caught too.
+    return sorted(re.sub(r"\s+", "", m.group(0)).replace("'", '"').lower() for m in TAG_RE.finditer(text))
+
+
+def digits(text):
+    # Native digits count as their value, so an Arabic-Indic 50 matches "50".
+    found = (unicodedata.digit(c, None) for c in visible(text))
+    return sorted(str(d) for d in found if d is not None)
+
+
+def is_latin(c):
+    # NFKD turns the Spanish and Portuguese ordinal marks (U+00BA, U+00AA) into plain o and a.
+    if unicodedata.category(c) == "Lm":
+        return True
+    return all(unicodedata.name(x, "").startswith("LATIN") for x in unicodedata.normalize("NFKD", c)
+               if unicodedata.category(x).startswith("L"))
+
+
+def letters_outside(text, terms):
+    stripped = visible(text)
+    for term in terms:
+        stripped = term_re(term).sub("", stripped)
+    return [c for c in stripped if unicodedata.category(c).startswith("L")]
 
 
 def term_re(term, suffix=False):
@@ -430,7 +749,7 @@ def has_term(text, term, suffix=False):
 
 def lint_string(key, source, text, loc, item, ctx, keep_terms, src_lang_same, latin_terms=()):
     errors, warns = [], []
-    if text is None or not str(text).strip():
+    if not isinstance(text, str) or not text.strip():
         return ["empty translation"], []
     if "�" in text or any(unicodedata.category(c) == "Cc" and c not in "\n\t" for c in text):
         errors.append("replacement or control character")
@@ -439,25 +758,24 @@ def lint_string(key, source, text, loc, item, ctx, keep_terms, src_lang_same, la
                       (sorted(PARAM_RE.findall(source)), sorted(PARAM_RE.findall(text))))
     if tags(source) != tags(text):
         errors.append("rich-text tags differ: source %s, translation %s" % (tags(source), tags(text)))
-    if text == source and not item.get("keep") and not src_lang_same:
+    # "{count}", "100%" or a string made only of keep-terms has nothing to translate.
+    if text == source and not item.get("keep") and not src_lang_same and letters_outside(source, keep_terms):
         errors.append("identical to source without keep:true")
     for term in keep_terms:
         # Case endings are allowed on the translation side (Estonian "Robuxi", Finnish "Robuxilla").
         if has_term(source, term) and not has_term(text, term, suffix=True):
             errors.append("keep-term %r missing" % term)
-    stripped = visible(text)
-    for term in list(keep_terms) + list(latin_terms):
-        stripped = term_re(term).sub("", stripped)
-    letters = [c for c in stripped if unicodedata.category(c).startswith("L")]
+    letters = letters_outside(text, list(keep_terms) + list(latin_terms))
     want = SCRIPT_NAMES.get(loc.get("script", "Latn"), ("LATIN",))
     if letters and not item.get("keep"):
         ok = sum(1 for c in letters if unicodedata.name(c, "").startswith(want))
         if loc.get("script", "Latn") == "Latn":
-            bad = [c for c in letters if not unicodedata.name(c, "").startswith("LATIN")]
+            bad = [c for c in letters if not is_latin(c)]
             if bad:
                 errors.append("non-Latin letters in a Latin-script locale: %s" % "".join(sorted(set(bad))[:10]))
         elif len(letters) >= 3 and ok / len(letters) < 0.5:
-            errors.append("mostly not in %s script (%d of %d letters)" % (loc["script"], ok, len(letters)))
+            errors.append("mostly not in %s script (%d of %d letters); if the Latin text is deliberate, "
+                          "set keep:true and say why in note" % (loc["script"], ok, len(letters)))
     if loc["id"] == "zh-tw":
         leak = sorted({c for c in text if c in SIMPLIFIED_ONLY})
         if leak:
@@ -476,6 +794,9 @@ def lint_string(key, source, text, loc, item, ctx, keep_terms, src_lang_same, la
         warns.append("leading/trailing whitespace differs from source")
     if "  " in text and "  " not in source:
         warns.append("double space")
+    if digits(source) != digits(text) and not item.get("note"):
+        warns.append("numbers differ from the source with no note: source %s, translation %s" %
+                     ("".join(digits(source)) or "none", "".join(digits(text)) or "none"))
     mx = ctx.get("max")
     if isinstance(mx, (int, float)) and mx > 0:
         w = width(text)
@@ -486,33 +807,44 @@ def lint_string(key, source, text, loc, item, ctx, keep_terms, src_lang_same, la
     return errors, warns
 
 
-def lint_locale(work, locale, stage="final", quiet=False):
+def lint_items(work, locale, items, skip_unknown=False):
     locales = locale_by_id(load_locales())
     loc = locales.get(locale)
     if not loc:
         raise Fail("unknown locale " + locale)
-    src = {s["key"]: s for s in work.source()["strings"]}
+    source = work.source()
+    src = {s["key"]: s for s in source["strings"]}
     ctx = work.context().get("strings", {})
-    keep_terms = [t["term"] for t in work.glossary().get("terms", []) if t.get("decision") == "keep"]
-    src_locale = work.source()["source_locale"]
-    same = locales.get(src_locale, {}).get("code") == loc["code"]
-    terms = read_json(work.loc(locale, "terms.json"), {})
-    latin_terms = [t for t, r in terms.items() if r == t]
+    keep_terms = glossary_terms(work, "keep")
+    same = locales.get(source["source_locale"], {}).get("code") == loc["code"]
+    latin_terms = [t for t, r in load_terms(work, locale).items() if r == t]
+    report = {}
+    for k, item in items.items():
+        if k not in src:
+            # A final.json entry for a string since deleted from the game is not shipped.
+            if not skip_unknown:
+                report[k] = (["key not in source.json"], [])
+            continue
+        if not isinstance(item, dict):
+            report[k] = (["entry is not a JSON object"], [])
+            continue
+        c = ctx.get(k) if isinstance(ctx.get(k), dict) else {}
+        e, w = lint_string(k, src[k]["source"], item.get("text"), loc, item, c, keep_terms, same, latin_terms)
+        if e or w:
+            report[k] = (e, w)
+    return report
+
+
+def lint_locale(work, locale, stage="final", quiet=False):
     if stage == "final":
-        items = read_json(work.loc(locale, "final.json"), {})
+        # needs_native strings are held back from export, so they cannot fail the gate.
+        items = {k: v for k, v in read_json(work.loc(locale, "final.json"), {}).items()
+                 if not (isinstance(v, dict) and v.get("status") == "needs_native")}
     else:
         items = {}
         for n in work.batches(locale):
             items.update(read_json(work.batch(locale, n, "draft"), {}))
-    report = {}
-    for k, item in items.items():
-        if k not in src:
-            report[k] = (["key not in source.json"], [])
-            continue
-        e, w = lint_string(k, src[k]["source"], item.get("text"), loc, item, ctx.get(k, {}), keep_terms, same,
-                           latin_terms)
-        if e or w:
-            report[k] = (e, w)
+    report = lint_items(work, locale, items, skip_unknown=stage == "final")
     if not quiet:
         for k, (e, w) in report.items():
             for m in e:
@@ -538,23 +870,22 @@ def cmd_lint(a):
 def cmd_apply(a):
     work = Work(a.work)
     src = {s["key"]: s for s in work.source()["strings"]}
-    final = read_json(work.loc(a.locale, "final.json"), {})
-    decisions = read_json(work.loc(a.locale, "decisions.json"), {})
+    final = {k: v for k, v in read_json(work.loc(a.locale, "final.json"), {}).items() if k in src}
+    decisions = json_object(work.loc(a.locale, "decisions.json"), {})
     need_resolve, disputes = [], {}
     batches = work.batches(a.locale)
     if not batches:
         raise Fail("no batches for %s; run plan first" % a.locale)
     for n in batches:
         todo = read_json(work.batch(a.locale, n, "todo"))
-        draft = read_json(work.batch(a.locale, n, "draft"))
-        review = read_json(work.batch(a.locale, n, "review"))
-        resolve = read_json(work.batch(a.locale, n, "resolve"), {}) if a.resolve else {}
-        back = read_json(work.batch(a.locale, n, "back"), {})
+        gone = [k for k in todo["keys"] if k not in src]
+        if gone:
+            raise Fail("%s: planned key(s) no longer in source.json, run plan again: %s" % (a.locale, preview(gone)))
+        draft = load_draft(work, a.locale, n, todo)
+        review = load_review(work, a.locale, n, todo)
+        resolve = agent_object(work.batch(a.locale, n, "resolve"), "strings", todo["keys"], {}) if a.resolve else {}
+        back = load_back(work, a.locale, n, todo, required=False)
         for k in todo["keys"]:
-            if k not in draft:
-                raise Fail("%s batch %d: draft is missing key %s" % (a.locale, n, k))
-            if k not in review:
-                raise Fail("%s batch %d: review is missing key %s" % (a.locale, n, k))
             d, r = draft[k], review[k]
             item = {"text": d.get("text"), "confidence": d.get("confidence", "unknown"),
                     "source_hash": src[k]["hash"], "status": "ok", "flags": []}
@@ -566,8 +897,13 @@ def cmd_apply(a):
             if remark and r.get("verdict") != "fix":
                 item["blind_remark"] = remark.group(1)
             if r.get("verdict") == "fix":
+                if todo.get("mode") == "audit":
+                    # The human translation this fix would replace, for the report.
+                    item["was"] = d["text"]
                 item["text"] = r.get("text") or item["text"]
                 item["status"] = "fixed"
+                if r.get("keep"):
+                    item["keep"] = True
                 sev = r.get("severity", "minor")
                 item["flags"].append("review:%s:%s" % (sev, r.get("category", "")))
                 item["review_reason"] = r.get("reason", "")
@@ -575,6 +911,11 @@ def cmd_apply(a):
                     need_resolve.append(k)
             if k in resolve:
                 res = resolve[k]
+                if not isinstance(res, dict) or not (res.get("accept") is True or (
+                        isinstance(res.get("text"), str) and res["text"].strip())):
+                    raise Fail('%s: %s needs {"accept": true} or a "text"' % (work.batch(a.locale, n, "resolve"), k))
+                if res.get("keep"):
+                    item["keep"] = True
                 if r.get("verdict") != "fix":
                     # Lint-only resolve: no reviewer text to dispute, so the translator's answer stands.
                     item["text"] = res.get("text") or item["text"]
@@ -590,11 +931,18 @@ def cmd_apply(a):
                     need_resolve.remove(k)
             if k in decisions:
                 dec = decisions[k]
+                if not isinstance(dec, dict) or not (dec.get("needs_native") or (
+                        isinstance(dec.get("text"), str) and dec["text"].strip())):
+                    raise Fail('%s: %s needs a "text" or "needs_native": true' % (work.loc(a.locale, "decisions.json"), k))
                 if dec.get("text"):
                     item["text"] = dec["text"]
+                if dec.get("keep"):
+                    item["keep"] = True
                 item["status"] = "needs_native" if dec.get("needs_native") else "decided"
                 item["decision_reason"] = dec.get("reason", "")
                 disputes.pop(k, None)
+                if k in need_resolve:
+                    need_resolve.remove(k)
             final[k] = item
     write_json(work.loc(a.locale, "final.json"), final)
     if disputes:
@@ -686,10 +1034,32 @@ def cmd_export(a):
 def column_order(locales):
     order = []
     for l in locales:
-        if l["code"] not in order and any(x["code"] == l["code"] and x.get("default") for x in locales):
+        if l["code"] not in order:
             order.append(l["code"])
         order.append(l["id"])
     return {c: i for i, c in enumerate(order)}
+
+
+def csv_size(row, newline):
+    buf = io.StringIO(newline="")
+    csv.writer(buf, lineterminator=newline).writerow(row)
+    return len(buf.getvalue().encode("utf-8"))
+
+
+def split_parts(header, rows, newline):
+    """Upload files that each stay under Roblox's changed-row and file-size limits."""
+    budget = CSV_MAX_BYTES - 4096
+    head = csv_size(header, newline)
+    parts, cur, size = [], [], head
+    for r in rows:
+        n = csv_size(r, newline)
+        if cur and (len(cur) >= CSV_MAX_CHANGED or size + n > budget):
+            parts.append(cur)
+            cur, size = [], head
+        cur.append(r)
+        size += n
+    parts.append(cur)
+    return parts
 
 
 def export_csv(work, a, values, src_strings, locales):
@@ -700,21 +1070,23 @@ def export_csv(work, a, values, src_strings, locales):
         header, rows, bom, newline = list(c["header"]), [list(r) for r in c["rows"]], c["bom"], c["newline"]
     else:
         header = ["Key", "Source", "Context", "Example"]
-        rows = [[s["key"], s["source"], s["context"], s["example"]] for s in src_strings]
+        rows = [["" if is_keyless(s) else s["key"], s["source"], s["context"], s["example"]] for s in src_strings]
         bom, newline = False, "\n"
     lower = [h.strip().lower() for h in header]
+    order = column_order(locales)
     new_cols = sorted({c for vals in values.values() for c in vals if c not in lower},
-                      key=lambda c: column_order(locales).get(c, 999))
+                      key=lambda c: (order.get(c, len(order)), c))
     for col in new_cols:
         header.append(col)
         lower.append(col)
         for r in rows:
             r.append("")
     ki, si = lower.index("key") if "key" in lower else None, lower.index("source")
+    ci = lower.index("context") if "context" in lower else None
     changed = set()
     for i, r in enumerate(rows):
         r += [""] * (len(header) - len(r))
-        eid = entry_id(r[ki] if ki is not None else "", r[si])
+        eid = entry_id(r[ki] if ki is not None else "", r[si], r[ci] if ci is not None else "")
         for col, text in values.get(eid, {}).items():
             j = lower.index(col)
             if r[j] != text:
@@ -728,8 +1100,7 @@ def export_csv(work, a, values, src_strings, locales):
         return
     outp = a.out or work.p("out", "translations.csv")
     stem, ext = os.path.splitext(outp)
-    changed_rows = [rows[i] for i in sorted(changed)]
-    parts = [changed_rows[i:i + CSV_MAX_CHANGED] for i in range(0, len(changed_rows), CSV_MAX_CHANGED)] or [[]]
+    parts = split_parts(header, [rows[i] for i in sorted(changed)], newline)
     for n, part in enumerate(parts, 1):
         path = outp if len(parts) == 1 else "%s-part%d%s" % (stem, n, ext)
         size = write_csv(path, header, part, bom, newline)
@@ -742,41 +1113,51 @@ LUAU_LOAD = """local HttpService = game:GetService("HttpService")
 local ChangeHistoryService = game:GetService("ChangeHistoryService")
 local LocalizationService = game:GetService("LocalizationService")
 local data = HttpService:JSONDecode([%(eq)s[%(json)s]%(eq)s])
-local tbl = LocalizationService:FindFirstChild(%(table)s)
 local recording = ChangeHistoryService:TryBeginRecording("roblox-i18n chunk %(n)d")
-if not tbl then
-	tbl = Instance.new("LocalizationTable")
-	tbl.Name = %(table)s
-	tbl.SourceLocaleId = %(source)s
-	tbl.Parent = LocalizationService
-end
-local entries = tbl:GetEntries()
-local index = {}
 local function id(key, source, context)
 	return if key ~= "" then "k\\31" .. key else "s\\31" .. source .. "\\31" .. (context or "")
 end
-for i, e in entries do
-	index[id(e.Key or "", e.Source, e.Context)] = i
-end
-local added, updated = 0, 0
-for _, d in data do
-	local i = index[id(d.key, d.source, d.context)]
-	if i then
-		for loc, text in d.values do
-			entries[i].Values[loc] = text
-		end
-		updated += 1
-	else
-		table.insert(entries, { Key = d.key, Source = d.source, Context = d.context, Example = d.example, Values = d.values })
-		index[id(d.key, d.source, d.context)] = #entries
-		added += 1
+-- pcall so a failed chunk still closes its recording; an open one blocks every later recording.
+local ok, result = pcall(function()
+	local tbl = LocalizationService:FindFirstChild(%(table)s)
+	if not tbl then
+		tbl = Instance.new("LocalizationTable")
+		tbl.Name = %(table)s
+		tbl.SourceLocaleId = %(source)s
+		tbl.Parent = LocalizationService
 	end
-end
-tbl:SetEntries(entries)
+	local entries = tbl:GetEntries()
+	local index = {}
+	for i, e in entries do
+		index[id(e.Key or "", e.Source, e.Context)] = i
+	end
+	local added, updated = 0, 0
+	for _, d in data do
+		local i = index[id(d.key, d.source, d.context)]
+		if i then
+			for loc, text in d.values do
+				entries[i].Values[loc] = text
+			end
+			updated += 1
+		else
+			table.insert(entries, { Key = d.key, Source = d.source, Context = d.context, Example = d.example, Values = d.values })
+			index[id(d.key, d.source, d.context)] = #entries
+			added += 1
+		end
+	end
+	tbl:SetEntries(entries)
+	return string.format("chunk %(n)d: %%d updated, %%d added, %%d entries in %%s", updated, added, #entries, tbl.Name)
+end)
 if recording then
-	ChangeHistoryService:FinishRecording(recording, Enum.FinishRecordingOperation.Commit)
+	ChangeHistoryService:FinishRecording(
+		recording,
+		if ok then Enum.FinishRecordingOperation.Commit else Enum.FinishRecordingOperation.Cancel
+	)
 end
-return string.format("chunk %(n)d: %%d updated, %%d added, %%d entries in %%s", updated, added, #entries, tbl.Name)
+if not ok then
+	error(result, 0)
+end
+return result
 """
 
 
@@ -796,7 +1177,7 @@ def export_studio(work, a, values, src_strings, source_locale):
     payload = []
     for s in src_strings:
         if s["key"] in values:
-            key = s["key"] if s["key"] != s["source"] else ""
+            key = "" if is_keyless(s) else s["key"]
             payload.append({"key": key, "source": s["source"], "context": s["context"], "example": s["example"],
                             "values": values[s["key"]]})
     chunks, cur = [], []
@@ -875,6 +1256,14 @@ return HttpService:JSONEncode(result)
 """
 
 
+def as_number(sample):
+    try:
+        n = float(str(sample).replace(",", ""))
+    except ValueError:
+        return 1
+    return int(n) if n == int(n) else n
+
+
 def fill(text, args):
     def rep(m):
         name = m.group(0)[1:-1].split(":")[0]
@@ -901,15 +1290,31 @@ def cmd_studio(a):
         fin = read_json(work.loc(base, "final.json"), {}) if base else {}
         cases = []
         for k, item in fin.items():
-            if k not in src or src[k]["key"] == src[k]["source"]:
+            if (k not in src or is_keyless(src[k]) or item.get("source_hash") != src[k]["hash"]
+                    or item.get("status") == "needs_native"):
                 continue
+            specs = {}
+            for p in PARAM_RE.findall(item["text"]):
+                name, _, spec = p[1:-1].partition(":")
+                specs[name] = spec.lower()
+            params = ctx.get(k, {}).get("params") if isinstance(ctx.get(k), dict) else None
             args = {}
-            for name in [p[1:-1].split(":")[0] for p in PARAM_RE.findall(src[k]["source"])]:
-                sample = ctx.get(k, {}).get("params", {}).get(name)
+            for name, spec in specs.items():
+                sample = params.get(name) if isinstance(params, dict) else None
                 if isinstance(sample, dict):
                     sample = sample.get("sample")
-                args[name] = sample if isinstance(sample, (str, int, float)) else "X"
-            cases.append({"key": k, "args": args, "expect": fill(item["text"], args)})
+                if isinstance(sample, bool) or not isinstance(sample, (str, int, float)):
+                    sample = None
+                if spec in NUMBER_SPECS:
+                    args[name] = as_number(sample)
+                else:
+                    # A Lua number in a plain {param} renders as 99.00, so samples go in as strings.
+                    args[name] = "X" if sample is None else str(sample)
+            case = {"key": k, "args": args}
+            # A specifier formats per locale, so only a throw can be checked there.
+            if not any(specs.values()):
+                case["expect"] = fill(item["text"], args)
+            cases.append(case)
         cases_all[l] = cases
     outdir = work.p("out", "studio")
     os.makedirs(outdir, exist_ok=True)
@@ -939,7 +1344,8 @@ def cmd_status(a):
     for l in plan["locales"]:
         row = []
         for n in work.batches(l):
-            have = [k for k in ("draft", "backin", "back", "review", "resolve") if os.path.exists(work.batch(l, n, k))]
+            have = [k for k in ("in", "draft", "backin", "back", "reviewin", "review", "resolve")
+                    if os.path.exists(work.batch(l, n, k))]
             row.append("b%d:%s" % (n, "+".join(have) or "todo"))
         fin = read_json(work.loc(l, "final.json"), {})
         out("  %-7s %s final=%d" % (l, " ".join(row) or "-", len(fin)))
@@ -952,14 +1358,17 @@ def cmd_check(a):
     lbi = locale_by_id(locales)
     by_code = {l["code"]: l for l in locales if l.get("default")}
     by_code.update({l["code"]: l for l in locales if sum(1 for x in locales if x["code"] == l["code"]) == 1})
-    keep = [t["term"] for t in work.glossary().get("terms", []) if t.get("decision") == "keep"]
+    keep = glossary_terms(work, "keep")
     src_locale = work.config().get("source_locale", "en-us")
+    hashes = {s["key"]: s["hash"] for s in work.source()["strings"]}
+    finals = {}
     c = read_csv(a.path)
     lower = c["lower"]
     si, ki = lower.index("source"), (lower.index("key") if "key" in lower else None)
+    ci = lower.index("context") if "context" in lower else None
     errors = checked = mismatched = 0
     for r in c["rows"]:
-        eid = entry_id(r[ki] if ki is not None else "", r[si])
+        eid = entry_id(r[ki] if ki is not None else "", r[si], r[ci] if ci is not None else "")
         for j, col in enumerate(lower):
             if col in META_COLUMNS or not r[j].strip():
                 continue
@@ -968,12 +1377,16 @@ def cmd_check(a):
                 continue
             checked += 1
             same = lbi.get(src_locale, {}).get("code") == loc["code"]
-            fin = read_json(work.loc(loc["id"], "final.json"), {}).get(eid, {})
+            if loc["id"] not in finals:
+                finals[loc["id"]] = read_json(work.loc(loc["id"], "final.json"), {})
+            fin = finals[loc["id"]].get(eid, {})
             e, _ = lint_string(eid, r[si], r[j], loc, {"keep": fin.get("keep") or r[j] == r[si]}, {}, keep, same)
             for m in e:
                 errors += 1
                 out("%s %s ERROR %s" % (col, eid, m))
-            if col == loc["id"] and fin and fin.get("text") != r[j]:
+            # Only what export would write: a held-back or outdated final.json entry is not in the file.
+            shipped = fin.get("source_hash") == hashes.get(eid) and fin.get("status") != "needs_native"
+            if col == loc["id"] and shipped and fin.get("text") != r[j]:
                 mismatched += 1
                 out("%s %s differs from final.json" % (col, eid))
     out("check: %d values, %d error(s), %d differ from final.json" % (checked, errors, mismatched))
@@ -1006,7 +1419,7 @@ def cmd_report(a):
         second = [k for k, i in fin.items() if i.get("blind_remark") and k not in flagged
                   and not i.get("keep")]
         lines.append("| %s | %d | %d | %d | %d | %d/%d/%d | %s | %s |" % (
-            l, len(fin), st.count("fixed") + st.count("resolved"),
+            l, len(fin), st.count("fixed") + st.count("resolved") + st.count("decided"),
             st.count("disputed") + st.count("needs_native"), errs,
             conf.count("high"), conf.count("medium"), conf.count("low"),
             loc.get("native_review", "?"), loc.get("render_risk", "?")))
@@ -1023,6 +1436,14 @@ def cmd_report(a):
                     i = fin[k]
                     detail.append("- `%s`: %s -> %s (%s)" % (k, src.get(k, {}).get("source", ""), i.get("text"),
                                                             i["blind_remark"]))
+            detail.append("")
+        replaced = [k for k, i in fin.items() if i.get("was") and i.get("was") != i.get("text")]
+        if replaced:
+            detail.append("## %s: changes to existing translations" % l)
+            for k in replaced:
+                i = fin[k]
+                detail.append("- `%s`: %s: %s -> %s (%s)" % (k, src.get(k, {}).get("source", ""), i["was"],
+                                                            i.get("text"), i.get("review_reason", "")))
             detail.append("")
     risky = [l for l in plan["locales"] if lbi[l].get("render_risk") in ("medium", "high")]
     if risky:
@@ -1071,10 +1492,18 @@ def main(argv=None):
     s.add_argument("--batch", type=int, default=BATCH_SIZE)
     s.set_defaults(fn=cmd_plan)
 
+    s = sub.add_parser("pack", help="check context.json and glossary.json, then write each batch's translator input")
+    s.set_defaults(fn=cmd_pack)
+
     s = sub.add_parser("backpack", help="write the blind input for the back-translator")
     s.add_argument("locale")
     s.add_argument("batch", type=int)
     s.set_defaults(fn=cmd_backpack)
+
+    s = sub.add_parser("reviewpack", help="join source, context, draft, back-translation and lint for the reviewer")
+    s.add_argument("locale")
+    s.add_argument("batch", type=int)
+    s.set_defaults(fn=cmd_reviewpack)
 
     s = sub.add_parser("apply", help="merge draft + review (+ resolve, decisions) into final.json and lint")
     s.add_argument("locale")

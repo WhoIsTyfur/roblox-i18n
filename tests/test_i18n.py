@@ -103,6 +103,10 @@ class LocalesTest(Base):
         code, out = run(self.work, "locales", "single", "klingon")
         self.assertEqual(code, 2)
 
+    def test_loose_names(self):
+        for ask in ("norwegian", "simplified chinese", "pt_BR", "Brazilian Portuguese", "tagalog"):
+            self.assertIn("1 target locales", self.count("single", ask), ask)
+
 
 class IngestPlanTest(Base):
     def test_ingest_csv(self):
@@ -135,11 +139,163 @@ class IngestPlanTest(Base):
         run(self.work, "plan", "single", "es-mx", "--batch", "2")
         self.assertTrue(os.path.exists(self.loc("es-mx", "batch-03.todo.json")))
         self.assertFalse(os.path.exists(self.loc("es-mx", "batch-04.todo.json")))
-        run(self.work, "plan", "single", "es-mx", "--audit")
+        code, out = run(self.work, "plan", "single", "es-mx", "--audit")
         self.assertFalse(os.path.exists(self.loc("es-mx", "batch-03.todo.json")))
         audit = read(self.loc("es-mx", "batch-02.todo.json"))
         self.assertEqual(audit["mode"], "audit")
         self.assertEqual(read(self.loc("es-mx", "batch-02.draft.json"))["shop.buy"]["text"], "Comprar")
+        # 3 runs for the translate batch, 2 for the audit batch, 1 context analyst.
+        self.assertIn("agent runs: about 6", out)
+        self.assertIn("context analyst needed: 6 string(s)", out)
+
+    def test_audit_reports_what_a_fix_replaces(self):
+        self.ingest()
+        run(self.work, "plan", "single", "es-mx", "--audit")
+        keys = read(self.loc("es-mx", "batch-01.todo.json"))["keys"]
+        write(self.loc("es-mx", "batch-01.draft.json"), {k: {"text": ES[k], "keep": k == "title"} for k in keys})
+        write(self.loc("es-mx", "batch-01.review.json"), {k: {"verdict": "ok"} for k in keys})
+        write(self.loc("es-mx", "batch-02.review.json"),
+              {"shop.buy": {"verdict": "fix", "text": "Compra", "category": "register", "severity": "minor",
+                            "reason": "informal imperative"}})
+        code, out = run(self.work, "apply", "es-mx")
+        self.assertEqual(code, 0, out)
+        code, out = run(self.work, "report")
+        self.assertIn("## es-mx: changes to existing translations", out)
+        self.assertIn("- `shop.buy`: Buy: Comprar -> Compra (informal imperative)", out)
+
+
+KEYS = ["shop.buy", "coins.need", "like.reward", "multi", "Settings", "title"]
+
+
+class PackTest(Base):
+    def setUp(self):
+        super().setUp()
+        self.ingest()
+        run(self.work, "plan", "single", "es-mx")
+
+    def context(self, **over):
+        strings = {k: {"where": "somewhere", "role": "label", "max": None, "params": {}, "neighbors": []}
+                   for k in KEYS}
+        strings["coins.need"]["params"] = {"amount": {"meaning": "coins missing", "sample": "25"}}
+        strings["Settings"]["neighbors"] = ["shop.buy", "title", "gone.key"]
+        strings.update(over)
+        write(os.path.join(self.work, "context.json"),
+              {"game": {"title": "Pet Hatch Tycoon", "tone": "upbeat"}, "strings": strings})
+
+    def test_every_string_needs_context(self):
+        code, out = run(self.work, "pack")
+        self.assertEqual(code, 2)
+        self.assertIn("run the context analyst first", out)
+        self.context(multi=None, title={"where": "loading screen"})
+        code, out = run(self.work, "pack")
+        self.assertEqual(code, 2)
+        self.assertIn("1 string(s) have no context entry: multi", out)
+        self.assertIn("title: context needs both where and role", out)
+        self.assertFalse(os.path.exists(self.loc("es-mx", "batch-01.in.json")))
+
+    def test_bad_max_and_glossary_stop_the_run(self):
+        self.context(multi={"where": "x", "role": "label", "max": "40"})
+        write(os.path.join(self.work, "glossary.json"),
+              {"terms": [{"term": "Rebirth", "decision": "maybe"}, {"term": "Gems", "decision": "translate", "ask": True}]})
+        code, out = run(self.work, "pack")
+        self.assertEqual(code, 2)
+        self.assertIn("multi: max must be a positive number or null", out)
+        self.assertIn("glossary term 'Rebirth': decision must be", out)
+        self.assertIn("1 glossary term(s) still marked ask", out)
+
+    def test_translator_input(self):
+        self.context()
+        code, out = run(self.work, "pack")
+        self.assertEqual(code, 0, out)
+        pack = read(self.loc("es-mx", "batch-01.in.json"))
+        self.assertEqual((pack["locale"], pack["mode"], pack["game"]["tone"]), ("es-mx", "translate", "upbeat"))
+        self.assertNotIn("shop.buy", pack["strings"])
+        need = pack["strings"]["coins.need"]
+        self.assertEqual(need["source"], "You need {amount} more coins, hurry!")
+        self.assertEqual(need["params"]["amount"]["sample"], "25")
+        self.assertNotIn("max", need)
+        # A neighbor outside the batch carries the translation players already read.
+        self.assertEqual(pack["strings"]["Settings"]["neighbors"],
+                         [{"key": "shop.buy", "source": "Buy", "translation": "Comprar"},
+                          {"key": "title", "source": "Pet Hatch Tycoon"}])
+
+
+KEYLESS_CSV = (
+    "Key,Source,Context,Example,Location\r\n"
+    ",Play,,,StarterGui.Menu.PlayButton\r\n"
+    ",Play,Workspace.Stage.Sign,,\r\n"
+    "Open,Open,,,\r\n"
+    "buy,Buy for {price:int} Robux,,,\r\n"
+    "need,Need {amount} coins,,,\r\n"
+)
+DE = {"Play": "Spielen", "Play | Workspace.Stage.Sign": "Theaterstück", "Open": "Öffnen",
+      "buy": "Für {price:int} Robux kaufen", "need": "Dir fehlen {amount} Münzen"}
+
+
+class KeylessTest(Base):
+    def setUp(self):
+        super().setUp()
+        with open(self.csv, "w", encoding="utf-8", newline="") as f:
+            f.write(KEYLESS_CSV)
+        self.ingest()
+
+    def finish(self):
+        write(os.path.join(self.work, "context.json"),
+              {"strings": {"buy": {"params": {"price": {"sample": "1,250"}}},
+                           "need": {"params": {"amount": {"sample": 25}}}}})
+        run(self.work, "plan", "single", "de-de")
+        self.translate("de-de", DE)
+        code, out = run(self.work, "apply", "de-de")
+        self.assertIn("clean", out)
+
+    def test_source_plus_context_is_the_identity(self):
+        strings = read(os.path.join(self.work, "source.json"))["strings"]
+        self.assertEqual([s["key"] for s in strings], list(DE))
+        self.assertEqual([s.get("keyless", False) for s in strings], [True, True, False, False, False])
+        self.assertEqual(strings[0]["location"], "StarterGui.Menu.PlayButton")
+        with open(self.csv, "a", encoding="utf-8", newline="") as f:
+            f.write(",Play,Workspace.Stage.Sign,,\r\n")
+        code, out = run(self.work, "ingest", "csv", self.csv)
+        self.assertEqual(code, 2)
+        self.assertIn("duplicate", out)
+
+    def test_csv_rows_match_by_context(self):
+        self.finish()
+        outp = os.path.join(self.tmp, "de.csv")
+        code, out = run(self.work, "export", "csv", "--out", outp)
+        self.assertEqual(code, 0, out)
+        rows = read_csv_rows(outp)
+        col = rows[0].index("de-de")
+        self.assertEqual(rows[0][4], "Location")
+        self.assertEqual([r[col] for r in rows[1:4]], ["Spielen", "Theaterstück", "Öffnen"])
+        self.assertEqual(rows[1][4], "StarterGui.Menu.PlayButton")
+        code, out = run(self.work, "check", outp)
+        self.assertEqual(code, 0, out)
+
+    def luau_json(self, name):
+        with open(os.path.join(self.work, "out", "studio", name), encoding="utf-8") as f:
+            text = f.read()
+        return text, json.loads(text[text.index("[=[") + 3:text.index("]=]")])
+
+    def test_studio_keeps_a_key_equal_to_its_source(self):
+        self.finish()
+        code, out = run(self.work, "export", "studio")
+        self.assertEqual(code, 0, out)
+        text, data = self.luau_json("load-01.luau")
+        self.assertEqual([(d["key"], d["context"]) for d in data[:3]],
+                         [("", ""), ("", "Workspace.Stage.Sign"), ("Open", "")])
+        self.assertIn("FinishRecordingOperation.Cancel", text)
+
+    def test_verify_samples(self):
+        self.finish()
+        run(self.work, "export", "studio")
+        code, out = run(self.work, "studio", "verify")
+        self.assertEqual(code, 0, out)
+        cases = {c["key"]: c for c in self.luau_json("verify-01.luau")[1]["de-de"]}
+        self.assertEqual(sorted(cases), ["Open", "buy", "need"])
+        # A Lua number in a plain {param} would render as 25.00.
+        self.assertEqual(cases["need"], {"key": "need", "args": {"amount": "25"}, "expect": "Dir fehlen 25 Münzen"})
+        self.assertEqual(cases["buy"], {"key": "buy", "args": {"price": 1250}})
 
 
 ES = {
@@ -187,6 +343,38 @@ class KeepTermTest(unittest.TestCase):
     def test_width_counts_spacing_marks(self):
         self.assertEqual(i18n.width("खरीदें"), 4)
         self.assertEqual(i18n.width("{n} <b>購入</b>"), 5)
+
+    def lint(self, source, text, locale="es-es", script="Latn", item=None, keep=()):
+        loc = {"id": locale, "code": locale.split("-")[0], "script": script}
+        return i18n.lint_string("k", source, text, loc, item or {}, {}, list(keep), False)
+
+    def test_nothing_to_translate(self):
+        self.assertEqual(self.lint("{count}", "{count}")[0], [])
+        self.assertEqual(self.lint("100%", "100%")[0], [])
+        self.assertEqual(self.lint("{price} Robux", "{price} Robux", keep=["Robux"])[0], [])
+        self.assertIn("identical to source without keep:true", self.lint("Shop", "Shop")[0])
+
+    def test_ordinal_marks_are_latin(self):
+        self.assertEqual(self.lint("1st place", "1.º lugar", "pt-br"), ([], []))
+        self.assertTrue(any("non-Latin" in m for m in self.lint("Buy", "Купить", "pt-br")[0]))
+
+    def test_tag_attributes_must_survive(self):
+        src = '<font color="#FF0000">Sale</font> today'
+        self.assertEqual(self.lint(src, "Hoy: <font color='#ff0000'>Oferta</font>")[0], [])
+        e, _ = self.lint(src, '<font color="rojo">Oferta</font> hoy')
+        self.assertTrue(any("rich-text tags differ" in m for m in e))
+
+    def test_number_mismatch_warns(self):
+        _, w = self.lint("50% off", "5% de descuento")
+        self.assertTrue(any("numbers differ" in m for m in w))
+        self.assertEqual(self.lint("50% off", "Mitad de precio", item={"note": "idiom"})[1], [])
+        self.assertEqual(self.lint("Level 50", "المستوى ٥٠", "ar-001", "Arab")[1], [])
+        self.assertEqual(self.lint("1,000 coins", "1.000 monedas")[1], [])
+
+    def test_latin_acronym_needs_keep(self):
+        e, _ = self.lint("Music", "BGM", "ja-jp", "Jpan")
+        self.assertTrue(any("set keep:true" in m for m in e))
+        self.assertEqual(self.lint("Music", "BGM", "ja-jp", "Jpan", item={"keep": True, "note": "usual label"})[0], [])
 
 
 class ApplyLintTest(Base):
@@ -242,6 +430,59 @@ class ApplyLintTest(Base):
         self.assertEqual(fin["Settings"]["text"], "Ajustes")
         self.assertEqual(fin["Settings"]["status"], "decided")
         self.assertFalse(os.path.exists(self.loc("es-es", "disputes.json")))
+
+    def test_broken_agent_files_name_the_file(self):
+        run(self.work, "plan", "single", "es-es")
+        self.translate("es-es", ES, keep=("title",))
+        review = self.loc("es-es", "batch-01.review.json")
+        good = read(review)
+        write(review, '{"shop.buy": {"verdict": "ok"},')
+        code, out = run(self.work, "apply", "es-es")
+        self.assertEqual(code, 2)
+        self.assertIn("invalid JSON", out)
+        self.assertIn("batch-01.review.json", out)
+        write(review, dict(good, title={"verdict": "fix", "text": "Pet Hatch Tycoon", "severity": "high"}))
+        code, out = run(self.work, "apply", "es-es")
+        self.assertEqual(code, 2)
+        self.assertIn("title (severity must be minor, major or critical)", out)
+        write(review, good)
+        write(self.loc("es-es", "batch-01.draft.json"), dict(read(self.loc("es-es", "batch-01.draft.json")), multi="x"))
+        code, out = run(self.work, "apply", "es-es")
+        self.assertEqual(code, 2)
+        self.assertIn('1 key(s) missing or without "text": multi', out)
+        self.assertFalse(os.path.exists(self.loc("es-es", "final.json")))
+
+    def test_wrapped_agent_files_are_flattened(self):
+        run(self.work, "plan", "single", "es-es")
+        self.translate("es-es", ES, keep=("title",))
+        for name, wrapper in (("batch-01.draft.json", "strings"), ("batch-01.review.json", "strings")):
+            write(self.loc("es-es", name), {"locale": "es-es", wrapper: read(self.loc("es-es", name))})
+        write(self.loc("es-es", "terms.json"), {"locale": "es-es", "terms": {"Coins": "Monedas"}})
+        code, out = run(self.work, "apply", "es-es")
+        self.assertEqual(code, 0, out)
+        self.assertIn("clean", out)
+        self.assertEqual(read(self.loc("es-es", "terms.json")), {"Coins": "Monedas"})
+        self.assertEqual(read(self.loc("es-es", "batch-01.review.json"))["shop.buy"], {"verdict": "ok"})
+        write(self.loc("es-es", "terms.json"), {"Coins": {"text": "Monedas"}})
+        code, out = run(self.work, "backpack", "es-es", "1")
+        self.assertEqual(code, 2)
+        self.assertIn("terms.json must be one flat object", out)
+
+    def test_held_back_string_is_not_shipped(self):
+        run(self.work, "plan", "single", "es-es")
+        self.translate("es-es", dict(ES, Settings="Settings"), keep=("title",))
+        code, out = run(self.work, "apply", "es-es")
+        self.assertIn("identical to source", out)
+        write(self.loc("es-es", "decisions.json"), {"Settings": {"needs_native": True, "reason": "no safe wording"}})
+        code, out = run(self.work, "apply", "es-es")
+        self.assertIn("clean", out)
+        self.assertEqual(run(self.work, "lint")[0], 0)
+        outp = os.path.join(self.tmp, "held.csv")
+        run(self.work, "export", "csv", "--out", outp)
+        rows = read_csv_rows(outp)
+        self.assertIn("es-es", rows[0])
+        self.assertNotIn("Settings", [r[0] or r[1] for r in rows[1:]])
+        self.assertEqual(run(self.work, "check", outp)[0], 0)
 
     def lint_one(self, locale, text, source_key="shop.buy"):
         run(self.work, "plan", "single", locale)
@@ -321,14 +562,96 @@ class ExportTest(Base):
     def test_backpack_is_blind(self):
         write(os.path.join(self.work, "context.json"),
               {"strings": {"title": {"role": "title", "where": "loading screen, shows Pet Hatch Tycoon"},
-                           "shop.buy": {"role": "button", "where": "the Buy button under items"}}})
+                           "shop.buy": {"role": "button", "where": "the Buy button for buyers, next to coins.need"}}})
         run(self.work, "plan", "single", "es-es")
         self.translate("es-es", ES, keep=("title",))
         code, out = run(self.work, "backpack", "es-es", "1")
         self.assertEqual(code, 0, out)
         pack = read(self.loc("es-es", "batch-01.backin.json"))
-        self.assertNotIn("Pet Hatch Tycoon", pack["title"]["where"])
-        self.assertNotIn("Buy", pack["shop.buy"]["where"])
+        self.assertEqual(sorted(pack), ["s001", "s002", "s003", "s004", "s005", "s006"])
+        self.assertEqual(pack["s001"]["text"], "Comprar")
+        self.assertEqual(pack["s001"]["where"], "the [name] button for buyers, next to [name]")
+        self.assertNotIn("Pet Hatch Tycoon", pack["s006"]["where"])
+
+    def test_reviewpack_joins_the_blind_back_translation(self):
+        write(os.path.join(self.work, "context.json"),
+              {"strings": {"shop.buy": {"role": "button", "where": "under each item", "max": 8}}})
+        run(self.work, "plan", "single", "es-es")
+        self.translate("es-es", dict(ES, **{"coins.need": "Te faltan monedas"}), keep=("title",))
+        code, out = run(self.work, "reviewpack", "es-es", "1")
+        self.assertEqual(code, 2, out)
+        run(self.work, "backpack", "es-es", "1")
+        back = {i: "meaning of " + i for i in read(self.loc("es-es", "batch-01.backin.json"))}
+        back["s001"] = "Buy [formal for a button]"
+        del back["s003"]
+        write(self.loc("es-es", "batch-01.back.json"), back)
+        code, out = run(self.work, "reviewpack", "es-es", "1")
+        self.assertEqual(code, 2)
+        self.assertIn("no back-translation for 1 string(s): s003", out)
+        back["s003"] = "Like the game for a free Lucky Potion"
+        write(self.loc("es-es", "batch-01.back.json"), back)
+        code, out = run(self.work, "reviewpack", "es-es", "1")
+        self.assertEqual(code, 0, out)
+        strings = read(self.loc("es-es", "batch-01.reviewin.json"))["strings"]
+        self.assertEqual(strings["shop.buy"]["source"], "Buy")
+        self.assertEqual(strings["shop.buy"]["text"], "Comprar")
+        self.assertEqual(strings["shop.buy"]["back"], "Buy [formal for a button]")
+        self.assertEqual(strings["shop.buy"]["max"], 8)
+        self.assertTrue(any("params differ" in m for m in strings["coins.need"]["lint"]))
+        run(self.work, "apply", "es-es")
+        self.assertEqual(read(self.loc("es-es", "final.json"))["shop.buy"]["blind_remark"], "formal for a button")
+
+    def test_deleted_string_is_pruned(self):
+        run(self.work, "plan", "single", "es-mx")
+        self.finish("es-mx", ES)
+        with open(self.csv, "w", encoding="utf-8", newline="") as f:
+            f.write("".join(line for line in CSV.splitlines(True) if not line.startswith("title,")))
+        self.ingest()
+        code, out = run(self.work, "plan", "single", "es-mx")
+        self.assertIn("0 need work", out)
+        self.assertNotIn("title", read(self.loc("es-mx", "final.json")))
+        code, out = run(self.work, "lint", "es-mx")
+        self.assertEqual(code, 0, out)
+
+    def test_language_columns_keep_a_fixed_order(self):
+        run(self.work, "plan", "main")
+        for locale in ("it-it", "id-id", "de-de"):
+            self.finish(locale, ES)
+        headers = set()
+        for seed in ("0", "1", "2", "3"):
+            outp = os.path.join(self.tmp, "lang%s.csv" % seed)
+            p = subprocess.run([sys.executable, TOOL, "--work", self.work, "export", "csv", "--out", outp,
+                                "--columns", "language"], capture_output=True,
+                               env=dict(os.environ, PYTHONIOENCODING="utf-8", PYTHONHASHSEED=seed))
+            self.assertEqual(p.returncode, 0, p.stderr)
+            headers.add(tuple(read_csv_rows(outp)[0]))
+        self.assertEqual(headers, {("Key", "Source", "Context", "Example", "es", "de", "id", "it")})
+
+    def test_split_by_file_size(self):
+        big = os.path.join(self.tmp, "big.csv")
+        with open(big, "w", encoding="utf-8", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(["Key", "Source", "Context", "Example"])
+            for i in range(300):
+                w.writerow(["k%d" % i, "Item %d" % i, "", ""])
+        run(self.work, "ingest", "csv", big)
+        run(self.work, "plan", "single", "de-de", "--batch", "2000")
+        keys = read(self.loc("de-de", "batch-01.todo.json"))["keys"]
+        write(self.loc("de-de", "batch-01.draft.json"), {k: {"text": k[1:] + " " + "lang " * 1600} for k in keys})
+        write(self.loc("de-de", "batch-01.review.json"), {k: {"verdict": "ok"} for k in keys})
+        run(self.work, "apply", "de-de")
+        outp = os.path.join(self.tmp, "out", "de.csv")
+        code, out = run(self.work, "export", "csv", "--out", outp)
+        self.assertEqual(code, 0, out)
+        parts = sorted(x for x in os.listdir(os.path.dirname(outp)) if x.startswith("de-part"))
+        self.assertEqual(len(parts), 2, out)
+        rows = 0
+        for name in parts:
+            path = os.path.join(os.path.dirname(outp), name)
+            self.assertLess(os.path.getsize(path), 2 * 1024 * 1024)
+            rows += len(read_csv_rows(path)) - 1
+        self.assertEqual(rows, 300)
+        self.assertNotIn("over Roblox", out)
 
     def test_check_exported_csv(self):
         run(self.work, "plan", "single", "es-mx")
