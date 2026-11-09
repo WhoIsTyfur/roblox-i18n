@@ -131,7 +131,7 @@
 | trade.request | “{player}”想和你交易 | |
 | prompt.open_shop | 按 E 打开 | 按 E 打开商店 also fits (7 chars) |
 | pass.buy_price | {price} Robux 购买 | compact price-first shop button (as in 60 钻石购买); 花 {price} Robux 购买 is the chattier alternative. Native check wanted |
-| pass.coins2x | 双倍金币 | |
+| pass.coins2x | 双倍金币 | 双倍 (double) spells out the 2x, the usual wording for a double-reward pass |
 | pass.vip | VIP | kept |
 | reward.daily_title | 每日奖励 | |
 | reward.come_back | {time} 后再来领取下一份奖励！ | time moved to front; ask for a Chinese {time} format |

@@ -153,7 +153,7 @@ Thai Roblox players are mostly kids and young teens. Write short, lively, everyd
 | loading | กำลังโหลด... | Microsoft pattern กำลัง + verb + ... |
 | event.ends_in | กิจกรรมจบใน {time} | กิจกรรม is the usual Thai word for a game event; อีเวนต์ also seen |
 | item.op | ดาบเล่มนี้เทพสุดๆ! | เล่ม = classifier for swords; โกงสุดๆ is the slangier option |
-| friends.boost | บูสต์ +{percent}% ต่อเพื่อน 1 คนในเซิร์ฟเวอร์ | |
+| friends.boost | บูสต์ +{percent}% ต่อเพื่อน 1 คนในเซิร์ฟเวอร์ | Thai counts with a classifier, so "per friend" is ต่อเพื่อน 1 คน (per 1 friend) |
 
 ## Sources
 1. Microsoft Thai Localization Style Guide: https://download.microsoft.com/download/3/f/2/3f236167-639e-46f2-8201-554c36bcbf31/tha-tha-StyleGuide.pdf
