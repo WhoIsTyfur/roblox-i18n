@@ -10,9 +10,17 @@ translator, a blind back-translator and an independent reviewer, guided by a
 per-language guide in `references/locales/`.
 
 `<skill>` below means the folder holding this file. The tool is
-`python <skill>/scripts/i18n.py` (Python 3.9+, standard library only). Work
-files go to `.roblox-i18n/` in the game project (`--work` to change).
-File formats: `references/pipeline.md`.
+`python <skill>/scripts/i18n.py` (Python 3.9+, standard library only). Run
+every command from the game project root, or from any folder you pick for a
+CSV-only job; work files go to `.roblox-i18n/` there. To put them
+elsewhere, pass `--work <folder>` before the command:
+`i18n.py --work <folder> plan main`. File formats: `references/pipeline.md`.
+
+The agent briefs in `references/agents/` use placeholders: `{SKILL}` is
+`<skill>`, `{WORK}` the work folder, `{LOCALE}` a locale id (`es-mx`),
+`{LOCALE_NAME}` its name from `data/locales.json`, and `{NN}` the batch
+number with two digits (`01`, as in `batch-01.draft.json`). Commands take
+the batch as a plain number (`backpack es-mx 1`).
 
 ## Modes
 | Ask | Command arg | Targets |
@@ -71,7 +79,9 @@ user means? Ask once; default `single` for one named language.
    `references/context-and-dnt.md`.
    **Checkpoint:** show the user the tone line, the keep-list and any term
    whose decision was a judgment call; apply their edits. Skip only if they
-   said not to ask. A wrong glossary entry repeats in every language.
+   said not to ask; then every `"ask": true` term keeps the analyst's
+   proposed decision, set `ask` to false, and list those terms in the final
+   summary. A wrong glossary entry repeats in every language.
 
 5. **Translate, per locale.** Waves of up to 8 locales at a time. For each
    locale and batch, three separate agents, in order:
@@ -110,13 +120,16 @@ user means? Ask once; default `single` for one named language.
    Roblox locales, holding the default variant (es-mx, pt-br, fr-fr, en-us).
    Without it, a player in Argentina or Belgium gets an arbitrary sibling.
 
-8. **Verify and report.** Re-ingest the written file and run `lint` again.
-   On the Studio path, `i18n.py studio verify` writes `verify-NN.luau`
+8. **Verify and report.** For CSV output, `i18n.py check <written file>`
+   lints every value in the file against its Source column and confirms it
+   matches `final.json`, without touching the work folder (never re-ingest
+   the export into the same work folder). On the Studio path, `i18n.py studio verify` writes `verify-NN.luau`
    snippets; run each (`FormatByKey` every key per locale, plus the es-419,
    fr-be and pt-ao fallbacks) and fix any mismatch. `i18n.py report` writes
    `.roblox-i18n/report.md`: per locale, string count, confidence, the
-   strings flagged for a native speaker, and Roblox rendering risks. Show
-   the user that summary.
+   strings flagged for a native speaker (including what the blind
+   back-translator questioned), Roblox rendering risks, and the audit
+   findings. Show the user that summary.
 
 ## Hand-off (tell the user)
 - Upload the CSVs in Creator Hub > Localization (or publish the place for

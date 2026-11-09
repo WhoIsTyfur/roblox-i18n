@@ -45,7 +45,7 @@ next run only translates what changed. The rest can be ignored by git.
 
 ## context.json
 ```json
-{"game": {"title": "...", "genre": "...", "audience": "...", "tone": "..."},
+{"game": {"title": "...", "genre": "...", "core_loop": "...", "audience": "...", "tone": "..."},
  "strings": {"shop.buy": {"where": "under each shop item", "role": "button", "max": 8,
    "params": {}, "neighbors": ["shop.title"], "notes": ""}}}
 ```

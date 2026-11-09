@@ -313,6 +313,42 @@ class ExportTest(Base):
         code, out = run(self.work, "apply", "es-mx")
         self.assertEqual(code, 2)
 
+    def test_status_before_plan(self):
+        code, out = run(self.work, "status")
+        self.assertEqual(code, 0, out)
+        self.assertIn("6 strings", out)
+
+    def test_backpack_is_blind(self):
+        write(os.path.join(self.work, "context.json"),
+              {"strings": {"title": {"role": "title", "where": "loading screen, shows Pet Hatch Tycoon"},
+                           "shop.buy": {"role": "button", "where": "the Buy button under items"}}})
+        run(self.work, "plan", "single", "es-es")
+        self.translate("es-es", ES, keep=("title",))
+        code, out = run(self.work, "backpack", "es-es", "1")
+        self.assertEqual(code, 0, out)
+        pack = read(self.loc("es-es", "batch-01.backin.json"))
+        self.assertNotIn("Pet Hatch Tycoon", pack["title"]["where"])
+        self.assertNotIn("Buy", pack["shop.buy"]["where"])
+
+    def test_check_exported_csv(self):
+        run(self.work, "plan", "single", "es-mx")
+        self.finish("es-mx", ES)
+        outp = os.path.join(self.tmp, "check.csv")
+        run(self.work, "export", "csv", "--out", outp)
+        code, out = run(self.work, "check", outp)
+        self.assertEqual(code, 0, out)
+        rows = read_csv_rows(outp)
+        col = rows[0].index("es-mx")
+        for r in rows[1:]:
+            if r[0] == "coins.need":
+                r[col] = "Te faltan monedas"
+        with open(outp, "w", encoding="utf-8", newline="") as fh:
+            csv.writer(fh).writerows(rows)
+        code, out = run(self.work, "check", outp)
+        self.assertEqual(code, 1)
+        self.assertIn("params differ", out)
+        self.assertIn("differs from final.json", out)
+
     def test_english_variant_writes_source_columns(self):
         run(self.work, "plan", "single", "en-gb")
         self.finish("en-gb", {"shop.buy": "Buy", "coins.need": "You need {amount} more coins, hurry!",

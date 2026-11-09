@@ -389,10 +389,17 @@ def cmd_backpack(a):
     ctx = work.context().get("strings", {})
     todo = read_json(work.batch(a.locale, a.batch, "todo"))
     draft = read_json(work.batch(a.locale, a.batch, "draft"))
+    src = {x["key"]: x["source"] for x in work.source()["strings"]}
+    terms = sorted((t["term"] for t in work.glossary().get("terms", []) if len(t["term"]) > 1), key=len, reverse=True)
     pack = {}
     for k in todo["keys"]:
         c = ctx.get(k, {})
-        pack[k] = {"text": draft.get(k, {}).get("text", ""), "role": c.get("role", ""), "where": c.get("where", "")}
+        where = c.get("where", "")
+        # The blind reader must not see source wording, even inside the context note.
+        for t in [src.get(k, "")] + terms:
+            if t:
+                where = re.sub(re.escape(t), "[name]", where, flags=re.I)
+        pack[k] = {"text": draft.get(k, {}).get("text", ""), "role": c.get("role", ""), "where": where}
     write_json(work.batch(a.locale, a.batch, "backin"), pack)
     out("wrote %s (%d strings)" % (work.batch(a.locale, a.batch, "backin"), len(pack)))
 
@@ -926,7 +933,7 @@ def cmd_status(a):
             counts[c] = counts.get(c, 0) + 1
     if counts:
         out("existing translations: " + ", ".join("%s %d" % (c, n) for c, n in sorted(counts.items())))
-    plan = read_json(work.p("plan.json"), None)
+    plan = read_json(work.p("plan.json"), {})
     if not plan:
         return
     for l in plan["locales"]:
@@ -936,6 +943,42 @@ def cmd_status(a):
             row.append("b%d:%s" % (n, "+".join(have) or "todo"))
         fin = read_json(work.loc(l, "final.json"), {})
         out("  %-7s %s final=%d" % (l, " ".join(row) or "-", len(fin)))
+
+
+def cmd_check(a):
+    """Lint the values actually written to an exported CSV against its Source column."""
+    work = Work(a.work)
+    locales = load_locales()
+    lbi = locale_by_id(locales)
+    by_code = {l["code"]: l for l in locales if l.get("default")}
+    by_code.update({l["code"]: l for l in locales if sum(1 for x in locales if x["code"] == l["code"]) == 1})
+    keep = [t["term"] for t in work.glossary().get("terms", []) if t.get("decision") == "keep"]
+    src_locale = work.config().get("source_locale", "en-us")
+    c = read_csv(a.path)
+    lower = c["lower"]
+    si, ki = lower.index("source"), (lower.index("key") if "key" in lower else None)
+    errors = checked = mismatched = 0
+    for r in c["rows"]:
+        eid = entry_id(r[ki] if ki is not None else "", r[si])
+        for j, col in enumerate(lower):
+            if col in META_COLUMNS or not r[j].strip():
+                continue
+            loc = lbi.get(col) or by_code.get(col)
+            if not loc:
+                continue
+            checked += 1
+            same = lbi.get(src_locale, {}).get("code") == loc["code"]
+            fin = read_json(work.loc(loc["id"], "final.json"), {}).get(eid, {})
+            e, _ = lint_string(eid, r[si], r[j], loc, {"keep": fin.get("keep") or r[j] == r[si]}, {}, keep, same)
+            for m in e:
+                errors += 1
+                out("%s %s ERROR %s" % (col, eid, m))
+            if col == loc["id"] and fin and fin.get("text") != r[j]:
+                mismatched += 1
+                out("%s %s differs from final.json" % (col, eid))
+    out("check: %d values, %d error(s), %d differ from final.json" % (checked, errors, mismatched))
+    if errors or mismatched:
+        sys.exit(1)
 
 
 def cmd_report(a):
@@ -981,6 +1024,19 @@ def cmd_report(a):
                     detail.append("- `%s`: %s -> %s (%s)" % (k, src.get(k, {}).get("source", ""), i.get("text"),
                                                             i["blind_remark"]))
             detail.append("")
+    risky = [l for l in plan["locales"] if lbi[l].get("render_risk") in ("medium", "high")]
+    if risky:
+        detail.append("## Rendering risks")
+        for l in risky:
+            detail.append("- %s (%s): %s" % (l, lbi[l]["render_risk"], lbi[l].get("render_note", "")))
+        detail.append("")
+    audit = work.p("audit.md")
+    if os.path.exists(audit):
+        with open(audit, encoding="utf-8") as fh:
+            body = fh.read().strip().splitlines()
+        detail.append("## Localizability audit")
+        detail.extend(body[1:] if body and body[0].startswith("# ") else body)
+        detail.append("")
     text = "\n".join(lines + [""] + detail)
     write_text(work.p("report.md"), text)
     out(text)
@@ -1048,6 +1104,10 @@ def main(argv=None):
     s.add_argument("--extra", default="es-419,fr-be,pt-ao", help="extra fallback locales to check")
     s.add_argument("--per", type=int, default=6, help="locales per verify snippet")
     s.set_defaults(fn=cmd_studio)
+
+    s = sub.add_parser("check", help="lint the values in an exported CSV without touching the work folder")
+    s.add_argument("path")
+    s.set_defaults(fn=cmd_check)
 
     s = sub.add_parser("report", help="write report.md")
     s.set_defaults(fn=cmd_report)

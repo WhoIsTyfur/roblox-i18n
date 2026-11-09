@@ -28,4 +28,6 @@ Robux, Roblox, brand names, keyboard keys and promo codes are meant to stay
 in Latin script; don't remark on that. The bracketed remarks go to a native
 reviewer as a "look here first" list, so make each one count.
 
+Write only `batch-{NN}.back.json`.
+
 Return one line: how many strings, how many with bracketed remarks.

@@ -20,12 +20,16 @@ certainty in `notes`.
 Write `{WORK}/context.json`:
 - `game`: title, genre, core loop in one line, audience, tone.
 - `strings`: for every key, `where` (screen and element), `role` (see
-  `references/pipeline.md`), `max` (character budget: from the element
+  `{SKILL}/references/pipeline.md`), `max` (character budget: from the element
   width at its font size when you can measure it, else about 1.4x the
   source length for short UI text, null for free text), `params` (each
   `{name}`: meaning and a realistic sample value), `neighbors` (keys on the
   same screen), `notes` (anything a translator could get wrong: double
   meanings, slang, a pun, a reference to another string).
+
+Write `where` and `notes` in your own words without quoting the source
+text or names from it ("pass purchase button", not "the Skip Stage
+button"): the back-translator sees `where` and must stay blind.
 
 Write `{WORK}/glossary.json`: every term a translator must render the same
 way everywhere: game title, currencies, mechanics, item and pet names,
@@ -34,6 +38,8 @@ Premium, group), keybinds, promo codes, chat commands. Each with `meaning`,
 `decision` (translate / keep / transliterate) and `reason`, following
 `context-and-dnt.md`. Mark judgment calls with `"ask": true` so the
 orchestrator shows them to the user.
+
+Write only `context.json` and `glossary.json`.
 
 Return a short summary: string count, terms by decision, the judgment calls,
 and any string whose meaning you could not determine.

@@ -40,5 +40,7 @@ A fix keeps every `{param}` and tag. If a string cannot be fixed without
 information you don't have, use `"verdict": "fix"`, keep the best text,
 and say what is unknown in `reason` with severity `major`.
 
+Write only `batch-{NN}.review.json`.
+
 Return one line: ok count, fix count by severity, and the single most
 important problem you saw.

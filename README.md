@@ -57,7 +57,7 @@ Swedish and Ukrainian.
         |
    6. lint ................. params, rich-text tags, script, zh-tw/zh-cn leaks, Zawgyi, length, keep-terms
    7. export ............... CSV split at 1,000 rows / Rojo CSV in place / Studio load chunks
-   8. verify + report ...... FormatByKey per locale in Studio; strings flagged for native review
+   8. verify + report ...... check the written CSV; FormatByKey per locale in Studio; native-review list
 ```
 
 ### The language guides
@@ -250,6 +250,7 @@ python scripts/i18n.py plan <mode> [target] [--retranslate] [--audit] [--batch 1
 python scripts/i18n.py backpack <locale> <batch>
 python scripts/i18n.py apply <locale> [--resolve]
 python scripts/i18n.py lint [locale ...]
+python scripts/i18n.py check <exported.csv>
 python scripts/i18n.py export csv --out <file> | --rojo <file> [--columns locale|language]
 python scripts/i18n.py export studio [--table GameStrings]
 python scripts/i18n.py studio dump|verify

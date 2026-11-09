@@ -55,7 +55,8 @@ Write `{WORK}/locales/{LOCALE}/batch-{NN}.draft.json`:
 `{"key": {"text": "...", "confidence": "high|medium|low", "keep": true?, "note": "..."?}}`
 Use `note` for every non-literal choice a reviewer might question. Use
 `medium` or `low` confidence honestly: a reviewer and possibly a native
-speaker will look at those first.
+speaker will look at those first. Write only this draft (and `terms.json`
+on the first batch).
 
 Return one line: how many strings, how many notes, how many below high
 confidence.
@@ -73,4 +74,4 @@ For every key the reviewer marked `fix` and every lint error, write to
 `{"key": {"accept": false, "text": "...", "reason": "..."}}` with a better
 text. Reject a fix only when you can say concretely why it is worse for a
 native player; "both are fine" means accept. Every lint error must be fixed
-either way.
+either way. Write only `batch-{NN}.resolve.json`.
